@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>L2Dn</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Logging" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="NLog" Version="5.2.8" />
+    </ItemGroup>
+
+</Project>

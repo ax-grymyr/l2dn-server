@@ -1,0 +1,30 @@
+﻿{
+  "ClientListener": {
+    "ListenAddress": "0.0.0.0",
+    "Port": 2106
+  },
+
+  "GameServerListener": {
+    "ListenAddress": "127.0.0.1",
+    "Port": 2107,
+    "AcceptNewGameServer": true
+  },
+
+  "Database": {
+    "Server": "db",
+    "DatabaseName": "l2dev",
+    "UserName": "l2dev_user",
+    "Password": "l2dev_user_pass",
+    "Trace": true
+  },
+  
+  "LoginSettings": {
+    "AutoCreateAccounts": true,
+    "ShowLicense": true,
+    "ShowPIAgreement": false
+  },
+  
+  "Security": {
+    
+  }
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../data/xsd/ClanReward.xsd">
+	<membersOnline>
+		<players size="7" level="1">
+			<skill id="51016" level="1" /> <!-- Clan's Bonus - XP Lv. 1 -->
+		</players>
+		<players size="14" level="2">
+			<skill id="51017" level="1" /> <!-- Clan's Bonus - XP Lv. 2 -->
+		</players>
+		<players size="21" level="3">
+			<skill id="51018" level="1" /> <!-- Clan's Bonus - XP Lv. 3 -->
+		</players>
+		<players size="28" level="4">
+			<skill id="51019" level="1" /> <!-- Clan's Bonus - XP Lv. 4 -->
+		</players>
+	</membersOnline>
+	<huntingBonus>
+		<hunting points="3267000" level="1">
+			<skill id="51020" level="1" /> <!-- Clan's Bonus - P. Atk Lv. 1 -->
+		</hunting>
+		<hunting points="6534000" level="2">
+			<skill id="51021" level="1" /> <!-- Clan's Bonus - P. Atk Lv. 2 -->
+		</hunting>
+		<hunting points="9801000" level="3">
+			<skill id="51022" level="1" /> <!-- Clan's Bonus - P. Atk Lv. 3 -->
+		</hunting>
+		<hunting points="13068000" level="4">
+			<skill id="51023" level="1" /> <!-- Clan's Bonus - P. Atk Lv. 4 -->
+		</hunting>
+	</huntingBonus>
+</list>

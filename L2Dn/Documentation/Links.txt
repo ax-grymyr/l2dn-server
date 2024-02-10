@@ -1,0 +1,12 @@
+﻿http://fursoffers.narod.ru/Packets.htm
+https://github.com/ixkor/l2ph
+http://coderx.ru/forumdisplay.php?f=14
+https://maxcheaters.com/forum/41-client-development-discussion/
+https://svn.code.sf.net/p/l2jadmins/code/C4%20Scions%20of%20Destiny/L2jAdmins_Core/src/l2j/loginserver/crypt/LoginCrypt.java
+https://github.com/yv84/pyph
+http://www.la2kings.ru/la2bot/packets.html
+
+https://maxcheaters.com/
+http://akumu.ru/lineage2/protocols.html
+http://www.la2kings.ru/la2bot/packets.html#ProtocolVersion
+http://fursoffers.narod.ru/Packets.htm#ProtocolVersion

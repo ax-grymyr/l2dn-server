@@ -1,0 +1,88 @@
+﻿{
+  "BaseClasses": {
+    "Human": {
+      "Fighter": "Fighter",
+      "Mage": "Mage"
+    },
+    "Elf": {
+      "Fighter": "ElvenFighter",
+      "Mage": "ElvenMage"
+    },
+    "DarkElf": {
+      "Fighter": "DarkFighter",
+      "Mage": "DarkMage"
+    },
+    "Orc": {
+      "Fighter": "OrcFighter",
+      "Mage": "OrcMage"
+    },
+    "Dwarf": {
+      "Fighter": "DwarvenFighter"
+    }
+  },
+  
+  "Transitions": {
+    "Fighter": ["Warrior", "Knight", "Rogue"],
+    "Warrior": ["Gladiator", "Warlord"],
+    "Knight": ["Paladin", "DarkAvenger"],
+    "Rogue": ["TreasureHunter", "Hawkeye"],
+    "Gladiator": ["Duelist"],
+    "Warlord": ["Dreadnought"],
+    "Paladin": ["PhoenixKnight"],
+    "DarkAvenger": ["HellKnight"],
+    "TreasureHunter": ["Adventurer"],
+    "Hawkeye": ["Sagittarius"],
+    "Mage": ["Wizard", "Cleric"],
+    "Wizard": ["Sorcerer", "Necromancer", "Warlock"],
+    "Cleric": ["Bishop", "Prophet"],
+    "Sorcerer": ["Archmage"],
+    "Necromancer": ["Soultaker"],
+    "Warlock": ["ArcanaLord"],
+    "Bishop": ["Cardinal"],
+    "Prophet": ["Hierophant"],
+    
+    "ElvenFighter": ["ElvenKnight", "ElvenScout"],
+    "ElvenKnight": ["TempleKnight", "SwordSinger"],
+    "ElvenScout": ["PlainsWalker", "SilverRanger"],
+    "TempleKnight": ["EvaTemplar"],
+    "SwordSinger": ["SwordMuse"],
+    "PlainsWalker": ["WindRider"],
+    "SilverRanger": ["MoonlightSentinel"],
+    "ElvenMage": ["ElvenWizard", "Oracle"],
+    "ElvenWizard": ["SpellSinger", "ElementalSummoner"],
+    "Oracle": ["Elder"],
+    "SpellSinger": ["MysticMuse"],
+    "ElementalSummoner": ["ElementalMaster"],
+    "Elder": ["EvaSaint"],
+    
+    "DarkFighter": ["PalusKnight", "Assassin"],
+    "PalusKnight": ["ShillienKnight", "BladeDancer"],
+    "Assassin": ["AbyssWalker", "PhantomRanger"],
+    "ShillienKnight": ["ShillienTemplar"],
+    "BladeDancer": ["SpectralDancer"],
+    "AbyssWalker": ["GhostHunter"],
+    "PhantomRanger": ["GhostSentinel"],
+    "DarkMage": ["DarkWizard", "ShillienOracle"],
+    "DarkWizard": ["SpellHowler", "PhantomSummoner"],
+    "ShillienOracle": ["ShillienElder"],
+    "SpellHowler": ["StormScreamer"],
+    "PhantomSummoner": ["SpectralMaster"],
+    "ShillienElder": ["ShillienSaint"],
+    
+    "OrcFighter": ["OrcRaider", "OrcMonk"],
+    "OrcRaider": ["Destroyer"],
+    "OrcMonk": ["Tyrant"],
+    "Destroyer": ["Titan"],
+    "Tyrant": ["GrandKhavatari"],
+    "OrcMage": ["OrcShaman"],
+    "OrcShaman": ["Overlord", "Warcryer"],
+    "Overlord": ["Dominator"],
+    "Warcryer": ["Doomcryer"],
+    
+    "DwarvenFighter": ["Scavenger", "Artisan"],
+    "Scavenger": ["BountyHunter"],
+    "Artisan": ["Warsmith"],
+    "BountyHunter": ["FortuneSeeker"],
+    "Warsmith": ["Maestro"]
+  }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../data/xsd/SiegeSchedule.xsd">
+	<!-- <schedule castleId="1" castleName="Gludio" siegeEnabled="true" day="SUNDAY" hour="16" maxConcurrent="5" /> -->
+	<!-- <schedule castleId="2" castleName="Dion" siegeEnabled="true" day="SUNDAY" hour="16" maxConcurrent="5" /> -->
+	<schedule castleId="3" castleName="Giran" siegeEnabled="true" day="SUNDAY" hour="16" maxConcurrent="5" />
+	<!-- <schedule castleId="4" castleName="Oren" siegeEnabled="true" day="SUNDAY" hour="16" maxConcurrent="5" /> -->
+	<!-- <schedule castleId="5" castleName="Aden" siegeEnabled="true" day="SUNDAY" hour="16" maxConcurrent="5" /> -->
+	<schedule castleId="7" castleName="Goddard" siegeEnabled="true" day="TUESDAY" hour="16" maxConcurrent="5" />
+</list>

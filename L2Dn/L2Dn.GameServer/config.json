@@ -1,0 +1,26 @@
+﻿{
+  "GameServer": {
+    "Id": 1,
+    "ListenAddress": "0.0.0.0",
+    "PublishAddress": "127.0.0.1",
+    "Port": 7777,
+    "MaxPlayerCount": 5000,
+    "Pvp": false,
+    "Test": false,
+    "Clock": false,
+    "Brackets": false
+  },
+
+  "Protocol":
+  {
+    "Version": 447,
+    "Encryption": false
+  },
+
+  "Database": {
+    "Server": "db",
+    "DatabaseName": "l2dev",
+    "UserName": "l2dev_user",
+    "Password": "l2dev_user_pass"
+  }
+}

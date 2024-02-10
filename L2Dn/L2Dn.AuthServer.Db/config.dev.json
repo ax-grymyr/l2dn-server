@@ -1,0 +1,14 @@
+﻿{
+  "ConnectionStrings": {
+    "AuthServerDb": "Host=db;Database=l2dev;Username=l2dev_user;Password=l2dev_user_pass"
+  },
+  
+  "environment": "development",
+  
+  "Logging": {
+    "LogLevel": {
+      "Default": "Trace",
+      "Database": "Trace"
+    }
+  }
+}
