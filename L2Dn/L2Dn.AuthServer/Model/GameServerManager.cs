@@ -2,7 +2,6 @@
 using L2Dn.AuthServer.Configuration;
 using L2Dn.AuthServer.Db;
 using L2Dn.AuthServer.Network.GameServer.OutgoingPacket;
-using L2Dn.Logging;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,7 +13,6 @@ internal sealed class GameServerManager: ISingleton<GameServerManager>
 
     private GameServerManager()
     {
-        LoadServers();
     }
 
     public static GameServerManager Instance { get; } = new();
@@ -92,7 +90,7 @@ internal sealed class GameServerManager: ISingleton<GameServerManager>
         return RegistrationResult.Success;
     }
 
-    private void LoadServers()
+    public void LoadServers()
     {
         // Load servers synchronously and test db connection at the same time.
         using AuthServerDbContext context = new();
@@ -111,6 +109,8 @@ internal sealed class GameServerManager: ISingleton<GameServerManager>
                 AccessKey = server.AccessKey,
                 FromDatabase = true
             }).ToImmutableSortedSet(new GameServerInfoComparer());
+        
+        Logger.Info($"Loaded {_servers.Count} game servers from db");
     }
 
     private static int ConvertAddress(string address, byte serverId)

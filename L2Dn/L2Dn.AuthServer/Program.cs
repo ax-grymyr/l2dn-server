@@ -1,13 +1,9 @@
-﻿using AR.L2;
-using AR.L2.AuthServer;
-using L2Dn;
+﻿using L2Dn;
 using L2Dn.AuthServer;
 using L2Dn.AuthServer.Configuration;
+using L2Dn.AuthServer.Db;
 using L2Dn.AuthServer.Model;
-using L2Dn.AuthServer.Network.Client;
-using L2Dn.DbModel;
-using L2Dn.Logging;
-using L2Dn.Network;
+using L2Dn.Utilities;
 
 try
 {
@@ -19,31 +15,26 @@ catch (Exception exception)
     return;
 }
 
+AuthServer authServer = new();
 try
 {
     Logger.Info("Loading configuration...");
-    ServerConfig.LoadConfig();
+    Config.Load();
 
-    L2DbContext.Config = ServerConfig.Instance.Database;
-    AuthServerConfig authServerConfig = ServerConfig.Instance.AuthServer;
-    Console.Title = $"Auth Server {authServerConfig.ListenAddress}:{authServerConfig.Port}";
+    Logger.Info("Test database connection...");
+    AuthServerDbContext.Config = Config.Instance.Database;
+    GameServerManager.Instance.LoadServers();
 
-    Logger.Info("Updating game server list...");
-    GameServerList.Instance.UpdateFrom(await DbUtility.GetGameServerListAsync());
-    
-    Listener<AuthSession> listener = new(new AuthSessionFactory(), new AuthPacketEncoderFactory(),
-        new AuthPacketHandler(), new BufferPool(), authServerConfig.ListenIpAddress, authServerConfig.Port);
-
-    Logger.Info($"Starting listener {authServerConfig.ListenIpAddress}:{authServerConfig.Port}...");
-    Task task = listener.Start();
-    await ConsoleUtility.WaitForCtrlC().ConfigureAwait(false);
-
-    Logger.Info("Stopping listener...");
-    listener.Stop();
-    await task.ConfigureAwait(false);
-    Logger.Info("Login server stopped. It is safe to close terminal or window.");
+    authServer.Start();
 }
 catch (Exception exception)
 {
     Logger.Fatal($"Exception during server start: {exception}");
+    authServer.Stop(); 
+    return;
 }
+
+// Wait for Ctrl-C
+await ConsoleUtil.WaitForCtrlC().ConfigureAwait(false);
+authServer.Stop(); 
+Logger.Info("Login server stopped. It is safe to close terminal or window.");

@@ -3,7 +3,6 @@ using System.Security.Cryptography;
 using System.Text;
 using L2Dn.AuthServer.Configuration;
 using L2Dn.AuthServer.Db;
-using L2Dn.Logging;
 using Microsoft.EntityFrameworkCore;
 
 namespace L2Dn.AuthServer.Model;

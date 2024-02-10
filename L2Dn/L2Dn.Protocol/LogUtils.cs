@@ -1,5 +1,4 @@
-﻿using L2Dn.Logging;
-using L2Dn.Packets;
+﻿using L2Dn.Packets;
 
 namespace L2Dn;
 

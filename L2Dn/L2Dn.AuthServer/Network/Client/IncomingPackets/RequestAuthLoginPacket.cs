@@ -4,7 +4,6 @@ using L2Dn.AuthServer.Configuration;
 using L2Dn.AuthServer.Cryptography;
 using L2Dn.AuthServer.Model;
 using L2Dn.AuthServer.Network.Client.OutgoingPackets;
-using L2Dn.Logging;
 using L2Dn.Network;
 using L2Dn.Packets;
 using Org.BouncyCastle.Crypto.Engines;
@@ -53,8 +52,7 @@ internal struct RequestAuthLoginPacket: IIncomingPacket<AuthSession>
             return;
         }
 
-        session.AccountId = account.AccountId;
-        session.SelectedGameServerId = account.LastServerId;
+        session.AccountInfo = account;
         session.State = AuthSessionState.GameServerLogin;
 
         if (Config.Instance.Settings.ShowLicense)
@@ -64,7 +62,7 @@ internal struct RequestAuthLoginPacket: IIncomingPacket<AuthSession>
         }
         else
         {
-            ServerListPacket serverListPacket = new(GameServerManager.Instance.Servers, session.SelectedGameServerId);
+            ServerListPacket serverListPacket = new(GameServerManager.Instance.Servers, account.LastServerId);
             connection.Send(ref serverListPacket);
         }
     }

@@ -21,22 +21,23 @@ internal struct RequestServerLoginPacket: IIncomingPacket<AuthSession>
     public async ValueTask ProcessAsync(Connection<AuthSession> connection)
     {
         AuthSession session = connection.Session;
+        AccountInfo? accountInfo = session.AccountInfo;
         
         byte serverId = _serverId;
         GameServerInfo? serverInfo = GameServerManager.Instance.Servers.SingleOrDefault(x => x.ServerId == serverId);
         
-        if (_loginKey1 != session.LoginKey1 || _loginKey2 != session.LoginKey2 || serverInfo is null ||
-            !serverInfo.IsOnline)
+        if (_loginKey1 != session.LoginKey1 || _loginKey2 != session.LoginKey2 || accountInfo is null || 
+            serverInfo is null || !serverInfo.IsOnline)
         {
             PlayFailPacket loginFailPacket = new(PlayFailReason.AccessFailed);
             connection.Send(ref loginFailPacket, SendPacketOptions.CloseAfterSending);
             return;
         }
 
-        if (serverId != session.SelectedGameServerId)
+        if (serverId != accountInfo.LastServerId)
         {
-            session.SelectedGameServerId = serverInfo.ServerId;
-            await AccountManager.Instance.UpdateSelectedGameServerAsync(session.AccountId, serverId);
+            accountInfo.LastServerId = serverInfo.ServerId;
+            await AccountManager.Instance.UpdateSelectedGameServerAsync(accountInfo.AccountId, serverId);
         }
         
         if (serverInfo.PlayerCount >= serverInfo.MaxPlayerCount)

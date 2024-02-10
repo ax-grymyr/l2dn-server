@@ -1,4 +1,5 @@
 ﻿using L2Dn.AuthServer.Cryptography;
+using L2Dn.AuthServer.Model;
 using L2Dn.Cryptography;
 using L2Dn.Network;
 
@@ -19,6 +20,5 @@ internal sealed class AuthSession(
     public int PlayKey1 { get; } = RandomGenerator.GetInt32();
     public int PlayKey2 { get; } = RandomGenerator.GetInt32();
 
-    public int AccountId { get; set; }
-    public byte? SelectedGameServerId { get; set; }
+    public AccountInfo? AccountInfo { get; set; }
 }

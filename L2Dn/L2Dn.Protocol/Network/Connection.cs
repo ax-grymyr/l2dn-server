@@ -1,10 +1,9 @@
-﻿using System.Collections.Concurrent;
+﻿using System.Buffers;
+using System.Collections.Concurrent;
 using System.Net;
 using System.Net.Sockets;
-using System.Runtime.InteropServices;
 using L2Dn.Conversion;
 using L2Dn.Cryptography;
-using L2Dn.Logging;
 using L2Dn.Packets;
 
 namespace L2Dn.Network;
@@ -12,7 +11,6 @@ namespace L2Dn.Network;
 public sealed class Connection<TSession>
     where TSession: ISession
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 4)]
     private record struct PacketData(byte[] Buffer, int Length, SendPacketOptions Options = SendPacketOptions.None);
 
     private readonly IConnectionCloseEvent _closeEvent;
@@ -20,20 +18,19 @@ public sealed class Connection<TSession>
     private readonly TSession _session;
     private readonly IPacketEncoder _packetEncoder;
     private readonly IPacketHandler<TSession> _packetHandler;
-    private readonly BufferPool _bufferPool;
     private readonly ConcurrentQueue<PacketData> _sendQueue = new();
     private SpinLock _sendLock; // must not be readonly
+    private int _buffersInRent;
     private bool _closed;
 
     internal Connection(IConnectionCloseEvent closeEvent, TcpClient client, TSession session,
-        IPacketEncoder packetEncoder, IPacketHandler<TSession> packetHandler, BufferPool bufferPool)
+        IPacketEncoder packetEncoder, IPacketHandler<TSession> packetHandler)
     {
         _closeEvent = closeEvent;
         _client = client;
         _session = session;
         _packetEncoder = packetEncoder;
         _packetHandler = packetHandler;
-        _bufferPool = bufferPool;
 
         ConfigureSocket();
 
@@ -46,12 +43,12 @@ public sealed class Connection<TSession>
 
     public TSession Session => _session;
     public bool Closed => _closed;
-    
+
     public void Send<T>(ref T packet, SendPacketOptions options = SendPacketOptions.None)
         where T: struct, IOutgoingPacket
     {
         // Serialize the packet
-        byte[] buffer = _bufferPool.Rent(65536);
+        byte[] buffer = RentBuffer(65536);
         int offset = 0;
         PacketBitWriter writer = new(buffer, ref offset);
         try
@@ -62,7 +59,7 @@ public sealed class Connection<TSession>
         catch (Exception exception)
         {
             Logger.Error($"S({_session.Id})  Error serializing packet: {exception}");
-            _bufferPool.Return(buffer);
+            ReturnBuffer(buffer);
             Close();
             return;
         }
@@ -81,9 +78,9 @@ public sealed class Connection<TSession>
 
     public async void Close()
     {
-        if (_closed) 
+        if (_closed)
             return;
-        
+
         try
         {
             _client.Client.Close(100);
@@ -111,6 +108,8 @@ public sealed class Connection<TSession>
         }
 
         Logger.Trace($"S({_session.Id})  Session disconnected");
+        if (_buffersInRent != 0)
+            Logger.Warn($"S({_session.Id})  Rented buffers count = {_buffersInRent}");
     }
 
     internal async void BeginReceivingAsync(CancellationToken cancellationToken)
@@ -145,7 +144,7 @@ public sealed class Connection<TSession>
             Logger.Warn($"S({_session.Id})  Exception in packet handler OnConnectedAsync: {exception}");
         }
     }
-    
+
     private void SendPackets()
     {
         bool lockTaken = false;
@@ -204,7 +203,7 @@ public sealed class Connection<TSession>
 
             // Set packet length
             LittleEndianBitConverter.WriteUInt16(buffer, (ushort)length);
-            
+
             try
             {
                 SendBuffer(buffer.AsSpan(0, length));
@@ -218,24 +217,24 @@ public sealed class Connection<TSession>
         }
         finally
         {
-            _bufferPool.Return(buffer);
+            ReturnBuffer(buffer);
         }
 
         if ((options & SendPacketOptions.CloseAfterSending) != 0)
             Close();
     }
-    
+
     private async ValueTask ReceivePacketAsync(CancellationToken cancellationToken)
     {
-        byte[] buffer = _bufferPool.Rent(1024);
-            
+        byte[] buffer = RentBuffer(1024);
+
         // Packet length
         await ReceiveAsync(buffer, 2, cancellationToken).ConfigureAwait(false);
         int length = LittleEndianBitConverter.ToUInt16(buffer) - 2;
         if (length > buffer.Length)
         {
-            _bufferPool.Return(buffer);
-            buffer = _bufferPool.Rent(length);
+            ReturnBuffer(buffer);
+            buffer = RentBuffer(length);
         }
 
         await ReceiveAsync(buffer, length, cancellationToken).ConfigureAwait(false);
@@ -246,7 +245,7 @@ public sealed class Connection<TSession>
             Close();
             return;
         }
-        
+
         Logger.Trace($"S({_session.Id})  Packet received: code 0x{buffer[0]:X2}, length {length}");
         ThreadPool.QueueUserWorkItem(_ => HandlePacket(buffer, length));
     }
@@ -264,10 +263,10 @@ public sealed class Connection<TSession>
         }
         finally
         {
-            _bufferPool.Return(buffer);
+            ReturnBuffer(buffer);
         }
     }
-    
+
     private async ValueTask ReceiveAsync(byte[] buffer, int count, CancellationToken cancellationToken)
     {
         int offset = 0;
@@ -275,10 +274,10 @@ public sealed class Connection<TSession>
         {
             int bytesReceived = await _client.Client.ReceiveAsync(buffer.AsMemory(offset, count), cancellationToken)
                 .ConfigureAwait(false);
-            
+
             if (bytesReceived == 0)
                 throw new SocketException();
-            
+
             offset += bytesReceived;
             count -= bytesReceived;
         }
@@ -288,14 +287,14 @@ public sealed class Connection<TSession>
     {
         // Console.WriteLine($"Sending packet data, length: {buffer.Length}");
         // LogUtils.TracePacketData(buffer, _session.Id);
-        
+
         ReadOnlySpan<byte> data = buffer;
         while (data.Length > 0)
         {
             int bytesSent = _client.Client.Send(data, SocketFlags.None);
             if (bytesSent == 0)
                 throw new SocketException();
-            
+
             data = data.Slice(bytesSent);
         }
     }
@@ -305,5 +304,17 @@ public sealed class Connection<TSession>
         Socket socket = _client.Client;
         socket.LingerState = new LingerOption(true, 30);
         socket.NoDelay = true;
+    }
+
+    private byte[] RentBuffer(int size)
+    {
+        _buffersInRent++;
+        return ArrayPool<byte>.Shared.Rent(size);
+    }
+
+    private void ReturnBuffer(byte[] buffer)
+    {
+        _buffersInRent--;
+        ArrayPool<byte>.Shared.Return(buffer);
     }
 }

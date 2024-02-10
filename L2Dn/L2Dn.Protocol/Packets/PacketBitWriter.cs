@@ -118,7 +118,7 @@ public readonly ref struct PacketBitWriter
             WriteByte((byte)code);
         else
         {
-            WriteByte((byte)(code >> 16);
+            WriteByte((byte)(code >> 16));
             WriteUInt16((ushort)code);
         }
     }

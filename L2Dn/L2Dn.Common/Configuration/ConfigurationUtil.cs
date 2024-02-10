@@ -59,12 +59,13 @@ public static class ConfigurationUtil
     
     private static void CombineObjects(JsonObject target, JsonObject source)
     {
-        foreach (var (key, srcNode) in source)
+        List<KeyValuePair<string, JsonNode?>> nodes = source.ToList();
+        foreach (var (key, srcNode) in nodes)
         {
-            if (target.TryGetPropertyValue(key, out JsonNode? targetNode))
-                target[key] = CombineNodes(targetNode, srcNode);
-            else
-                target[key] = srcNode;
+            source.Remove(key);
+            target[key] = target.TryGetPropertyValue(key, out JsonNode? targetNode)
+                ? CombineNodes(targetNode, srcNode)
+                : srcNode;
         }
     }
 }

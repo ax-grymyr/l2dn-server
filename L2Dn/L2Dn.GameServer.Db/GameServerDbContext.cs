@@ -6,30 +6,33 @@ namespace L2Dn.GameServer.Db;
 
 public class GameServerDbContext: DbContext
 {
+    public static DatabaseConfig? Config { get; set; }
+    
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
         {
-            const string devConfigFile = "config.dev.json"; 
-            if (File.Exists(devConfigFile))
+            DatabaseConfig? databaseConfig = Config;
+            if (databaseConfig is null)
             {
-                BaseConfig config = ConfigurationUtil.LoadConfig<BaseConfig>();
-                DatabaseConfig databaseConfig = config.Database;
-                NpgsqlConnectionStringBuilder sb = new()
-                {
-                    Host = databaseConfig.Server,
-                    Database = databaseConfig.DatabaseName,
-                    Username = databaseConfig.UserName,
-                    Password = databaseConfig.Password
-                };
+                ConfigBase config = ConfigurationUtil.LoadConfig<ConfigBase>();
+                databaseConfig = config.Database;
+            }
 
-                optionsBuilder.UseNpgsql(sb.ToString());
+            NpgsqlConnectionStringBuilder sb = new()
+            {
+                Host = databaseConfig.Server,
+                Database = databaseConfig.DatabaseName,
+                Username = databaseConfig.UserName,
+                Password = databaseConfig.Password
+            };
 
-                if (databaseConfig.Trace)
-                {
-                    optionsBuilder.LogTo((_, _) => true,
-                        data => { Logger.Log(NLog.LogLevel.FromOrdinal((int)data.LogLevel), data.ToString()); });
-                }
+            optionsBuilder.UseNpgsql(sb.ToString());
+
+            if (databaseConfig.Trace)
+            {
+                optionsBuilder.LogTo((_, _) => true,
+                    data => { Logger.Log(NLog.LogLevel.FromOrdinal((int)data.LogLevel), data.ToString()); });
             }
         }        
     }

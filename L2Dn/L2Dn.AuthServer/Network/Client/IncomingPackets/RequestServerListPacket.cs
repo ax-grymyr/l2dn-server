@@ -19,14 +19,15 @@ internal struct RequestServerListPacket: IIncomingPacket<AuthSession>
     public async ValueTask ProcessAsync(Connection<AuthSession> connection)
     {
         AuthSession session = connection.Session;
-        if (_loginKey1 != session.LoginKey1 || _loginKey2 != session.LoginKey2)
+        AccountInfo? accountInfo = session.AccountInfo;
+        if (_loginKey1 != session.LoginKey1 || _loginKey2 != session.LoginKey2 || accountInfo is null)
         {
             LoginFailPacket loginFailPacket = new(LoginFailReason.AccessDenied);
             connection.Send(ref loginFailPacket, SendPacketOptions.CloseAfterSending);
             return;
         }
 
-        ServerListPacket serverListPacket = new(GameServerManager.Instance.Servers, session.SelectedGameServerId);
+        ServerListPacket serverListPacket = new(GameServerManager.Instance.Servers, accountInfo.LastServerId);
         connection.Send(ref serverListPacket);
     }
 }

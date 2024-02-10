@@ -1,5 +1,5 @@
-﻿using L2Dn.Logging;
-using L2Dn.Network;
+﻿using L2Dn.Network;
+using L2Dn.Utilities;
 
 namespace L2Dn.Packets;
 
@@ -65,7 +65,7 @@ public class PacketHandler<TSession, TSessionState>: IPacketHandler<TSession>
     public virtual bool OnPacketInvalidState(Connection<TSession> connection) => true;
 
     private static bool IsInAllowedState(TSessionState currentState, TSessionState allowedStates) =>
-        !EnumUtility.Equal(EnumUtility.BitwiseAnd(currentState, allowedStates), default);
+        !EnumUtil.Equal(EnumUtil.BitwiseAnd(currentState, allowedStates), default);
 
     private abstract record PacketHandlerHelper(byte PacketCode, TSessionState AllowedStates)
     {

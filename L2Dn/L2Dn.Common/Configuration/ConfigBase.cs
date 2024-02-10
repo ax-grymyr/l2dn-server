@@ -1,6 +1,6 @@
 ﻿namespace L2Dn.Configuration;
 
-public class BaseConfig
+public class ConfigBase
 {
     public DatabaseConfig Database { get; set; } = new();
 }

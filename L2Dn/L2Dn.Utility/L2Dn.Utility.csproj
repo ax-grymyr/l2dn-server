@@ -8,11 +8,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Logging" />
+      <PackageReference Include="NLog" Version="5.2.8" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="NLog" Version="5.2.8" />
+      <ProjectReference Include="..\L2Dn.Common\L2Dn.Common.csproj" />
     </ItemGroup>
 
 </Project>
