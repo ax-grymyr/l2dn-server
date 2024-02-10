@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace AR.L2.AuthServer.Db.Migrations
+namespace L2Dn.AuthServer.Db.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration
@@ -36,9 +36,14 @@ namespace AR.L2.AuthServer.Db.Migrations
                 columns: table => new
                 {
                     ServerId = table.Column<byte>(type: "smallint", nullable: false),
+                    IPAddress = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    Port = table.Column<int>(type: "integer", nullable: false),
+                    AgeLimit = table.Column<byte>(type: "smallint", nullable: false),
                     IsPvpServer = table.Column<bool>(type: "boolean", nullable: false),
                     Attributes = table.Column<int>(type: "integer", nullable: false),
-                    Brackets = table.Column<bool>(type: "boolean", nullable: false)
+                    Brackets = table.Column<bool>(type: "boolean", nullable: false),
+                    AccessKey = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
+                    MaxPlayerCount = table.Column<short>(type: "smallint", nullable: false)
                 },
                 constraints: table =>
                 {

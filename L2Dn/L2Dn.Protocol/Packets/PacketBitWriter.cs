@@ -63,6 +63,10 @@ public readonly ref struct PacketBitWriter
     public void WriteDouble(double value) => WriteValue(value);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public void WriteEnum<TEnum>(TEnum value)
+        where TEnum: unmanaged, Enum => WriteValue(value);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void WriteBytes(ReadOnlySpan<byte> value)
     {
         value.CopyTo(_buffer.AsSpan(_offset));
@@ -92,10 +96,31 @@ public readonly ref struct PacketBitWriter
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public void WritePacketCode<TPacketCode>(TPacketCode code)
-        where TPacketCode: unmanaged, Enum
+    public void WritePacketCode(byte code)
     {
-        WriteValue(code);
+        WriteByte(code);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public void WritePacketCode(byte code, ushort exCode)
+    {
+        WriteByte(code);
+        WriteUInt16(exCode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public void WritePacketCode(int code)
+    {
+        if (code is < 0 or > 0xFFFFFF)
+            throw new ArgumentOutOfRangeException(nameof(code));
+        
+        if (code <= 0xFF)
+            WriteByte((byte)code);
+        else
+        {
+            WriteByte((byte)(code >> 16);
+            WriteUInt16((ushort)code);
+        }
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]

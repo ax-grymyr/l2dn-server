@@ -14,4 +14,14 @@
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\L2Dn.Common\L2Dn.Common.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="config.dev.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

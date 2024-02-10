@@ -16,6 +16,14 @@ namespace L2Dn.Cryptography
             return NativeEndianBitConverter.ToInt32(_buffer);
         }
 
+        public static int GetInt32(int maxValue)
+        {
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(maxValue);
+
+            _random.GetBytes(_buffer ??= new byte[4]);
+            return NativeEndianBitConverter.ToInt32(_buffer) % maxValue;
+        }
+
         public static uint GetUInt32()
         {
             _random.GetBytes(_buffer ??= new byte[4]);

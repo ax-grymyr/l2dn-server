@@ -6,7 +6,7 @@ namespace L2Dn.AuthServer.Network.GameServer;
 
 internal sealed class GameServerPacketEncoderFactory: IPacketEncoderFactory<GameServerSession>
 {
-    private readonly OldBlowfishEngine _staticBlowfishEngine = new(StaticBlowfishKeys.P447());
+    private readonly BlowfishEngine _staticBlowfishEngine = new(StaticBlowfishKeys.GameServer());
 
-    public IPacketEncoder Create(GameServerSession session) => new AuthPacketEncoder(session.BlowfishEngine);
+    public IPacketEncoder Create(GameServerSession session) => new AuthPacketEncoder(_staticBlowfishEngine);
 }

@@ -2,14 +2,11 @@
 
 namespace L2Dn.AuthServer.Network.Client.OutgoingPackets;
 
-/// <summary>
-/// 0x03 - LoginOk
-/// </summary>
 internal readonly struct LoginOkPacket(int loginKey1, int loginKey2): IOutgoingPacket
 {
     public void WriteContent(PacketBitWriter writer)
     {
-        writer.WriteByte(0x03); // packet code
+        writer.WritePacketCode(OutgoingPacketCodes.LoginOk);
         writer.WriteInt32(loginKey1);
         writer.WriteInt32(loginKey2);
         writer.WriteInt32(0);

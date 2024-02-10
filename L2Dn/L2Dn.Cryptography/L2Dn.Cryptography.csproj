@@ -11,4 +11,8 @@
       <PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\L2Dn.Common\L2Dn.Common.csproj" />
+    </ItemGroup>
+
 </Project>

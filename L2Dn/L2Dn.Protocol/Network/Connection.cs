@@ -1,4 +1,5 @@
 ﻿using System.Collections.Concurrent;
+using System.Net;
 using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using L2Dn.Conversion;
@@ -39,6 +40,9 @@ public sealed class Connection<TSession>
         Logger.Trace($"S({_session.Id})  Session connected; remote endpoint {client.Client.RemoteEndPoint}");
         OnConnected();
     }
+
+    public IPAddress? GetRemoteAddress() =>
+        _client.Client.RemoteEndPoint is IPEndPoint ipEndPoint ? ipEndPoint.Address : null;
 
     public TSession Session => _session;
     public bool Closed => _closed;

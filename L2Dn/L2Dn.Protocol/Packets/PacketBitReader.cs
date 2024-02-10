@@ -48,6 +48,10 @@ public struct PacketBitReader
         Advance(size);
         return result;
     }
+    
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public TEnum ReadEnum<TEnum>()
+        where TEnum: unmanaged, Enum => ReadValue<TEnum>();
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public ushort ReadUInt16() => ReadValue<ushort>();

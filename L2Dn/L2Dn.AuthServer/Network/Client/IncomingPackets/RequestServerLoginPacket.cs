@@ -9,7 +9,7 @@ internal struct RequestServerLoginPacket: IIncomingPacket<AuthSession>
 {
     private int _loginKey1;
     private int _loginKey2;
-    private int _serverId;
+    private byte _serverId;
 
     public void ReadContent(PacketBitReader reader)
     {
@@ -22,8 +22,8 @@ internal struct RequestServerLoginPacket: IIncomingPacket<AuthSession>
     {
         AuthSession session = connection.Session;
         
-        int serverId = _serverId;
-        GameServerInfo? serverInfo = session.GameServers.Find(s => s.ServerId == serverId);
+        byte serverId = _serverId;
+        GameServerInfo? serverInfo = GameServerManager.Instance.Servers.SingleOrDefault(x => x.ServerId == serverId);
         
         if (_loginKey1 != session.LoginKey1 || _loginKey2 != session.LoginKey2 || serverInfo is null ||
             !serverInfo.IsOnline)
@@ -33,10 +33,10 @@ internal struct RequestServerLoginPacket: IIncomingPacket<AuthSession>
             return;
         }
 
-        if (serverInfo.ServerId != session.SelectedGameServerId)
+        if (serverId != session.SelectedGameServerId)
         {
             session.SelectedGameServerId = serverInfo.ServerId;
-            await session.UpdateSelectedGameServerAsync();
+            await AccountManager.Instance.UpdateSelectedGameServerAsync(session.AccountId, serverId);
         }
         
         if (serverInfo.PlayerCount >= serverInfo.MaxPlayerCount)
@@ -45,8 +45,8 @@ internal struct RequestServerLoginPacket: IIncomingPacket<AuthSession>
             connection.Send(ref loginFailPacket, SendPacketOptions.CloseAfterSending);
             return;
         }
-
-        await session.InsertOrUpdateAuthDataAsync();
+        
+        // TODO send login data to game server
         
         PlayOkPacket playOkPacket = new(session.PlayKey1, session.PlayKey2);
         connection.Send(ref playOkPacket, SendPacketOptions.CloseAfterSending);

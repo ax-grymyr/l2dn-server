@@ -1,7 +1,9 @@
-﻿using System.Text;
+﻿using System.Net;
+using System.Text;
+using L2Dn.AuthServer.Configuration;
 using L2Dn.AuthServer.Cryptography;
+using L2Dn.AuthServer.Model;
 using L2Dn.AuthServer.Network.Client.OutgoingPackets;
-using L2Dn.DbModel;
 using L2Dn.Logging;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -42,7 +44,8 @@ internal struct RequestAuthLoginPacket: IIncomingPacket<AuthSession>
 
         Logger.Info($"S({session.Id})  RequestAuthLogin, user: {username}, password: {password}");
 
-        Account? account = await session.GetAccountAsync(username, password);
+        IPAddress? address = connection.GetRemoteAddress();
+        AccountInfo? account = await AccountManager.Instance.LoginAsync(username, password, address?.ToString());
         if (account is null)
         {
             LoginFailPacket loginFailPacket = new(LoginFailReason.InvalidLoginOrPassword);
@@ -50,12 +53,20 @@ internal struct RequestAuthLoginPacket: IIncomingPacket<AuthSession>
             return;
         }
 
-        session.AccountId = account.Id;
-        session.SelectedGameServerId = account.LastSelectedServerId;
+        session.AccountId = account.AccountId;
+        session.SelectedGameServerId = account.LastServerId;
         session.State = AuthSessionState.GameServerLogin;
-        
-        LoginOkPacket loginOkPacket = new(session.LoginKey1, session.LoginKey2);
-        connection.Send(ref loginOkPacket);
+
+        if (Config.Instance.Settings.ShowLicense)
+        {
+            LoginOkPacket loginOkPacket = new(session.LoginKey1, session.LoginKey2);
+            connection.Send(ref loginOkPacket);
+        }
+        else
+        {
+            ServerListPacket serverListPacket = new(GameServerManager.Instance.Servers, session.SelectedGameServerId);
+            connection.Send(ref serverListPacket);
+        }
     }
 
     private static (string Username, string Password) DecryptUsernameAndPassword(RsaKeyPair keyPair, byte[] data)

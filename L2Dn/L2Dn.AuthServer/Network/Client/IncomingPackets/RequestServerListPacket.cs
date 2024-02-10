@@ -1,4 +1,5 @@
-﻿using L2Dn.AuthServer.Network.Client.OutgoingPackets;
+﻿using L2Dn.AuthServer.Model;
+using L2Dn.AuthServer.Network.Client.OutgoingPackets;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -25,11 +26,7 @@ internal struct RequestServerListPacket: IIncomingPacket<AuthSession>
             return;
         }
 
-        await session.UpdateGameServerListAsync();
-        if (session.SelectedGameServerId is null && session.GameServers.Count!=0)
-            session.SelectedGameServerId = session.GameServers[0].ServerId;
-        
-        ServerListPacket serverListPacket = new(session.GameServers, session.SelectedGameServerId);
+        ServerListPacket serverListPacket = new(GameServerManager.Instance.Servers, session.SelectedGameServerId);
         connection.Send(ref serverListPacket);
     }
 }

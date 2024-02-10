@@ -1,45 +1,34 @@
-﻿using L2Dn.AuthServer.Model;
-using L2Dn.Logging;
+﻿using System.Collections.Immutable;
+using L2Dn.AuthServer.Model;
 using L2Dn.Packets;
 
 namespace L2Dn.AuthServer.Network.Client.OutgoingPackets;
 
-/// <summary>
-/// 0x04 - ServerList
-/// </summary>
-internal readonly struct ServerListPacket(List<GameServerInfo> servers, int? selectedServerId): IOutgoingPacket
+internal readonly struct ServerListPacket(ImmutableSortedSet<GameServerInfo> servers, byte? selectedServerId)
+    : IOutgoingPacket
 {
     public void WriteContent(PacketBitWriter writer)
     {
-        Span<byte> addressBytes = stackalloc byte[4];
+        // Check selectedServerId
+        byte selectedSrvId = 0;
+        if (selectedServerId is not null)
+        {
+            selectedSrvId = selectedServerId.Value;
+            if (servers.All(s => s.ServerId != selectedSrvId))
+                selectedSrvId = 0;
+        }
 
-        writer.WriteByte(0x04); // packet code
+        writer.WritePacketCode(OutgoingPacketCodes.ServerList);
 
         writer.WriteByte((byte)servers.Count);
-        writer.WriteByte((byte)(selectedServerId ?? 0));
+        writer.WriteByte(selectedSrvId);
 
         foreach (GameServerInfo serverInfo in servers)
         {
-            writer.WriteByte((byte)serverInfo.ServerId); // server id
-
-            if (serverInfo.Address.TryWriteBytes(addressBytes, out int bytesWritten) && bytesWritten == 4)
-            {
-                writer.WriteByte(addressBytes[0]);
-                writer.WriteByte(addressBytes[1]);
-                writer.WriteByte(addressBytes[2]);
-                writer.WriteByte(addressBytes[3]);
-            }
-            else
-            {
-                Logger.Error($"Error converting IP address {serverInfo.Address} to bytes");
-                writer.WriteByte(127);
-                writer.WriteByte(0);
-                writer.WriteByte(0);
-                writer.WriteByte(1);
-            }
-            
+            writer.WriteByte(serverInfo.ServerId); // server id
+            writer.WriteInt32(serverInfo.Address);
             writer.WriteInt32(serverInfo.Port);
-            writer.WriteByte(0x0f); // age limit: 0, 15, 18
+            writer.WriteByte(serverInfo.AgeLimit); // age limit: 0, 15, 18
             writer.WriteBoolean(serverInfo.IsPvpServer);
             writer.WriteUInt16((ushort)serverInfo.PlayerCount);
             writer.WriteUInt16((ushort)serverInfo.MaxPlayerCount);
@@ -54,7 +43,7 @@ internal readonly struct ServerListPacket(List<GameServerInfo> servers, int? sel
         // Chars on servers
         foreach (GameServerInfo serverInfo in servers)
         {
-            writer.WriteByte((byte)serverInfo.ServerId);
+            writer.WriteByte(serverInfo.ServerId);
             writer.WriteByte(0); // TODO: chars on the server
         }
     }

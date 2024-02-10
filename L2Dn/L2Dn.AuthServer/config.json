@@ -7,6 +7,7 @@
   "GameServerListener": {
     "ListenAddress": "127.0.0.1",
     "Port": 2107,
+    "AccessKey": "", // empty key allows any server to connect
     "AcceptNewGameServer": true
   },
 
@@ -18,13 +19,9 @@
     "Trace": true
   },
   
-  "LoginSettings": {
+  "Settings": {
     "AutoCreateAccounts": true,
     "ShowLicense": true,
     "ShowPIAgreement": false
-  },
-  
-  "Security": {
-    
   }
 }

@@ -1,5 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+﻿using L2Dn.Configuration;
+using Microsoft.EntityFrameworkCore;
+using Npgsql;
 
 namespace L2Dn.AuthServer.Db;
 
@@ -9,23 +10,26 @@ public class AuthServerDbContext: DbContext
     {
         if (!optionsBuilder.IsConfigured)
         {
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("config.json", true)
-                .AddJsonFile("config.dev.json", true)
-                .Build();
-
-            string? connectionString = configuration.GetConnectionString("AuthServerDb");
-            Console.WriteLine(configuration.GetConnectionString("AuthServerDb"));
-            if (!string.IsNullOrEmpty(connectionString))
+            const string devConfigFile = "config.dev.json"; 
+            if (File.Exists(devConfigFile))
             {
-                optionsBuilder.UseNpgsql(connectionString);
-            }
+                BaseConfig config = ConfigurationUtil.LoadConfig<BaseConfig>();
+                DatabaseConfig databaseConfig = config.Database;
+                NpgsqlConnectionStringBuilder sb = new()
+                {
+                    Host = databaseConfig.Server,
+                    Database = databaseConfig.DatabaseName,
+                    Username = databaseConfig.UserName,
+                    Password = databaseConfig.Password
+                };
 
-            string? loggingLevel = configuration.GetSection("Logging").GetSection("LogLevel")["Database"];
-            if (loggingLevel == "Trace")
-            {
-                optionsBuilder.LogTo(Console.WriteLine);
+                optionsBuilder.UseNpgsql(sb.ToString());
+
+                if (databaseConfig.Trace)
+                {
+                    optionsBuilder.LogTo((_, _) => true,
+                        data => { Logger.Log(NLog.LogLevel.FromOrdinal((int)data.LogLevel), data.ToString()); });
+                }
             }
         }        
     }

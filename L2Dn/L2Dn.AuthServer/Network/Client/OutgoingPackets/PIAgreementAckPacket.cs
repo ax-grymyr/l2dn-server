@@ -6,7 +6,7 @@ internal readonly struct PIAgreementAckPacket(int accountId, byte status): IOutg
 {
     public void WriteContent(PacketBitWriter writer)
     {
-        writer.WriteByte(0x12); // packet code
+        writer.WritePacketCode(OutgoingPacketCodes.PIAgreementAck);
         writer.WriteInt32(accountId);
         writer.WriteByte(status);
     }

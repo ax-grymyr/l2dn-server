@@ -1,33 +1,42 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using L2Dn.Configuration;
+using Microsoft.EntityFrameworkCore;
 using Npgsql;
 
 namespace L2Dn.GameServer.Db;
 
 public class GameServerDbContext: DbContext
 {
-    public static DatabaseConfig Config { get; set; } = new()
-    {
-        Server = "db",
-        DatabaseName = "l2dev",
-        UserName = "l2dev_user",
-        Password = "l2dev_user_pass"
-    };
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        DatabaseConfig config = Config;
-        NpgsqlConnectionStringBuilder sb = new()
+        if (!optionsBuilder.IsConfigured)
         {
-            Host = config.Server,
-            Database = config.DatabaseName,
-            Username = config.UserName,
-            Password = config.Password
-        };
+            const string devConfigFile = "config.dev.json"; 
+            if (File.Exists(devConfigFile))
+            {
+                BaseConfig config = ConfigurationUtil.LoadConfig<BaseConfig>();
+                DatabaseConfig databaseConfig = config.Database;
+                NpgsqlConnectionStringBuilder sb = new()
+                {
+                    Host = databaseConfig.Server,
+                    Database = databaseConfig.DatabaseName,
+                    Username = databaseConfig.UserName,
+                    Password = databaseConfig.Password
+                };
 
-        optionsBuilder.UseNpgsql(sb.ConnectionString);
+                optionsBuilder.UseNpgsql(sb.ToString());
 
-        //optionsBuilder.LogTo(Console.WriteLine);
+                if (databaseConfig.Trace)
+                {
+                    optionsBuilder.LogTo((_, _) => true,
+                        data => { Logger.Log(NLog.LogLevel.FromOrdinal((int)data.LogLevel), data.ToString()); });
+                }
+            }
+        }        
     }
     
-    public DbSet<AccountRef> Accounts { get; set; }
+    public DbSet<AccountRef> AccountRefs { get; set; }
+    public DbSet<Character> Characters { get; set; }
+    public DbSet<Clan> Clans { get; set; }
+    public DbSet<Ally> Allys { get; set; }
+    public DbSet<Crest> Crests { get; set; }
 }
