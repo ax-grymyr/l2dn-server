@@ -39,6 +39,6 @@ public class AuthServerDbContext: DbContext
         }        
     }
     
-    public DbSet<Account> Accounts { get; set; }
-    public DbSet<GameServer> GameServers { get; set; }
+    public DbSet<Account> Accounts => Set<Account>();
+    public DbSet<GameServer> GameServers => Set<GameServer>();
 }

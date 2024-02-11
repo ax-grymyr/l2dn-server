@@ -2345,7 +2345,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		_status = value;
 	}
 	
-	public CreatureTemplate getTemplate()
+	public virtual CreatureTemplate getTemplate()
 	{
 		return _template;
 	}

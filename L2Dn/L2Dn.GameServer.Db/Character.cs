@@ -9,14 +9,12 @@ namespace L2Dn.GameServer.Db;
 [Index(nameof(Created))]
 public class Character
 {
-    [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
     
     public int AccountId { get; set; }
 
     [ForeignKey(nameof(AccountId))]
-    public AccountRef Account { get; set; } = null!;
+    public AccountRef Account { get; set; } = null!; // TODO: check how EF core loading navigation properties
 
     public int AccessLevel { get; set; }
     
@@ -26,7 +24,7 @@ public class Character
     public string Name { get; set; } = string.Empty;
 
     public CharacterClass Class { get; set; } // Race and base class are calculated from the class
-    public byte Level { get; set; } = 1;
+    public short Level { get; set; } = 1;
     public long Exp { get; set; }
     public long ExpBeforeDeath { get; set; }
     public long Sp { get; set; }
@@ -86,7 +84,7 @@ public class Character
     public byte LevelJoinedAcademy { get; set; } = 1;
 
     // Some data
-    public DateTime Created { get; set; }
+    public DateOnly Created { get; set; }
     public DateTime? LastLogin { get; set; }
     public TimeSpan OnlineTime { get; set; }
     public DateTime? DeleteTime { get; set; }

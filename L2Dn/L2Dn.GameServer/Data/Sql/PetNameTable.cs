@@ -1,5 +1,6 @@
 using System.Text;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Utilities;
 using NLog;
 

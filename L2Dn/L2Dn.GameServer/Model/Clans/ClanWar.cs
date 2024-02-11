@@ -1,6 +1,11 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
+using L2Dn.GameServer.Model.Events.Impl.Clans;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Utilities;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Clans;
 
@@ -13,9 +18,9 @@ public class ClanWar
 	private readonly int _attackedClanId;
 	private int _winnerClanId = 0;
 	private ClanWarState _state;
-	private Future<?> _cancelTask;
-	private readonly long _startTime;
-	private long _endTime = 0;
+	private ScheduledFuture _cancelTask;
+	private readonly DateTime _startTime;
+	private DateTime? _endTime = 0;
 	
 	private AtomicInteger _attackerKillCount = new AtomicInteger();
 	private AtomicInteger _attackedKillCount = new AtomicInteger();
@@ -44,7 +49,7 @@ public class ClanWar
 		attacked.broadcastToOnlineMembers(sm);
 	}
 	
-	public ClanWar(Clan attacker, Clan attacked, int attackerKillCount, int attackedKillCount, int winnerClan, long startTime, long endTime, ClanWarState state)
+	public ClanWar(Clan attacker, Clan attacked, int attackerKillCount, int attackedKillCount, int? winnerClan, DateTime startTime, DateTime? endTime, ClanWarState state)
 	{
 		_attackerClanId = attacker.getId();
 		_attackedClanId = attacked.getId();
@@ -59,10 +64,10 @@ public class ClanWar
 			_cancelTask = ThreadPool.schedule(this::clanWarTimeout, (_startTime + TIME_TO_CANCEL_NON_MUTUAL_CLAN_WAR) - System.currentTimeMillis());
 		}
 		
-		if (_endTime > 0)
+		if (_endTime is not null)
 		{
-			long endTimePeriod = _endTime + (_state == ClanWarState.TIE ? TIME_TO_DELETION_AFTER_CANCELLATION : TIME_TO_DELETION_AFTER_DEFEAT);
-			if (endTimePeriod > System.currentTimeMillis())
+			DateTime endTimePeriod = _endTime.Value.AddMilliseconds(_state == ClanWarState.TIE ? TIME_TO_DELETION_AFTER_CANCELLATION : TIME_TO_DELETION_AFTER_DEFEAT);
+			if (endTimePeriod > DateTime.UtcNow)
 			{
 				ThreadPool.schedule(() => ClanTable.getInstance().deleteClanWars(_attackerClanId, _attackedClanId), 10000);
 			}
@@ -233,12 +238,12 @@ public class ClanWar
 		return _winnerClanId;
 	}
 	
-	public long getStartTime()
+	public DateTime? getStartTime()
 	{
 		return _startTime;
 	}
 	
-	public long getEndTime()
+	public DateTime? getEndTime()
 	{
 		return _endTime;
 	}

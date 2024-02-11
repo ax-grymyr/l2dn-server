@@ -4,7 +4,7 @@ using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -19,10 +19,10 @@ public class Servitor : Summon, Runnable
 	private float _expMultiplier = 0;
 	private ItemHolder _itemConsume;
 	private int _lifeTime;
-	private int _lifeTimeRemaining;
+	private TimeSpan _lifeTimeRemaining;
 	private int _consumeItemInterval;
 	private int _consumeItemIntervalRemaining;
-	protected Future<?> _summonLifeTask;
+	protected ScheduledFuture? _summonLifeTask;
 	
 	private int _referenceSkill;
 	
@@ -103,12 +103,12 @@ public class Servitor : Summon, Runnable
 	
 	// ************************************/
 	
-	public void setLifeTimeRemaining(int time)
+	public void setLifeTimeRemaining(TimeSpan time)
 	{
 		_lifeTimeRemaining = time;
 	}
 	
-	public int getLifeTimeRemaining()
+	public TimeSpan getLifeTimeRemaining()
 	{
 		return _lifeTimeRemaining;
 	}

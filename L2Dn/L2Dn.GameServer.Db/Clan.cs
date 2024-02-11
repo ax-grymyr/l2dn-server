@@ -6,10 +6,9 @@ namespace L2Dn.GameServer.Db;
 
 [Index(nameof(Name), IsUnique = true)]
 [Index(nameof(LeaderId), IsUnique = true)]
+[Index(nameof(AllyId))]
 public class Clan
 {
-    [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
 
     [MaxLength(70)]

@@ -2717,22 +2717,22 @@ public class Player: Playable
 		_clanJoinExpiryTime = time;
 	}
 	
-	public long getClanJoinTime()
+	public DateTime getClanJoinTime()
 	{
 		return getVariables().getLong(PlayerVariables.CLAN_JOIN_TIME, 0L);
 	}
 	
-	public void setClanJoinTime(long time)
+	public void setClanJoinTime(DateTime time)
 	{
 		getVariables().set(PlayerVariables.CLAN_JOIN_TIME, time);
 	}
 	
-	public long getClanCreateExpiryTime()
+	public DateTime getClanCreateExpiryTime()
 	{
 		return _clanCreateExpiryTime;
 	}
 	
-	public void setClanCreateExpiryTime(long time)
+	public void setClanCreateExpiryTime(DateTime time)
 	{
 		_clanCreateExpiryTime = time;
 	}

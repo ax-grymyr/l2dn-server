@@ -38,16 +38,24 @@ public class GameServerDbContext: DbContext
             }
         }        
     }
+
+    public DbSet<AccountRef> AccountRefs => Set<AccountRef>();
+    public DbSet<Character> Characters => Set<Character>();
+    public DbSet<CharacterFriend> CharacterFriends => Set<CharacterFriend>();
+    public DbSet<CharacterSummon> CharacterSummons => Set<CharacterSummon>();
+    public DbSet<Pet> Pets => Set<Pet>();
+    public DbSet<Clan> Clans => Set<Clan>();
+    public DbSet<ClanPrivileges> ClanPrivileges => Set<ClanPrivileges>();
+    public DbSet<ClanSkill> ClanSkills => Set<ClanSkill>();
+    public DbSet<ClanSubPledge> ClanSubPledges => Set<ClanSubPledge>();
+    public DbSet<ClanNotice> ClanNotices => Set<ClanNotice>();
+    public DbSet<ClanWar> ClanWars => Set<ClanWar>();
+    public DbSet<Ally> Allys => Set<Ally>();
+    public DbSet<Crest> Crests => Set<Crest>();
     
-    public DbSet<AccountRef> AccountRefs { get; set; }
-    public DbSet<Character> Characters { get; set; }
-    public DbSet<Clan> Clans { get; set; }
-    public DbSet<Ally> Allys { get; set; }
-    public DbSet<Crest> Crests { get; set; }
+    public DbSet<Forum> Forums => Set<Forum>();
+    public DbSet<Topic> Topics => Set<Topic>();
+    public DbSet<Post> Posts => Set<Post>();
     
-    public DbSet<Forum> Forums { get; set; }
-    public DbSet<Topic> Topics { get; set; }
-    public DbSet<Post> Posts { get; set; }
-    
-    public DbSet<Announcement> Announcements { get; set; }
+    public DbSet<Announcement> Announcements => Set<Announcement>();
 }

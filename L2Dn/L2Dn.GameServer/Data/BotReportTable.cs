@@ -1,12 +1,13 @@
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
 using ThreadPool = System.Threading.ThreadPool;
 
 namespace L2Dn.GameServer.Data;

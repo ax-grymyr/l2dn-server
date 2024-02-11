@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using L2Dn.GameServer.CommunityBbs.Managers;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
@@ -12,8 +13,11 @@ using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using ClanWar = L2Dn.GameServer.Model.Clans.ClanWar;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Data.Sql;
 
@@ -34,28 +38,24 @@ public class ClanTable
 		}
 		
 		// Get all clan ids.
-		List<int> cids = new();
-		try 
+		List<int> cids;
+		try
 		{
 			using GameServerDbContext ctx = new();
-			Statement s = con.createStatement();
-			ResultSet rs = s.executeQuery("SELECT clan_id FROM clan_data");
-			while (rs.next())
-			{
-				cids.add(rs.getInt("clan_id"));
-			}
+			cids = ctx.Clans.Select(c => c.Id).ToList();
 		}
 		catch (Exception e)
 		{
 			LOGGER.Error("Error restoring ClanTable.", e);
+			cids = new();
 		}
-		
+
 		// Create clans.
 		foreach (int cid in cids)
 		{
 			Clan clan = new Clan(cid);
 			_clans.put(cid, clan);
-			if (clan.getDissolvingExpiryTime() != 0)
+			if (clan.getDissolvingExpiryTime() is not null)
 			{
 				scheduleRemoveClan(clan.getId());
 			}
@@ -111,7 +111,7 @@ public class ClanTable
 	 * @param clanName
 	 * @return NULL if clan with same name already exists
 	 */
-	public Clan createClan(Player player, String clanName)
+	public Clan? createClan(Player player, String clanName)
 	{
 		if (player == null)
 		{
@@ -128,7 +128,7 @@ public class ClanTable
 			player.sendPacket(SystemMessageId.FAILED_TO_CREATE_A_CLAN);
 			return null;
 		}
-		if (System.currentTimeMillis() < player.getClanCreateExpiryTime())
+		if (DateTime.UtcNow < player.getClanCreateExpiryTime())
 		{
 			player.sendPacket(SystemMessageId.YOU_MUST_WAIT_10_DAYS_BEFORE_CREATING_A_NEW_CLAN);
 			return null;
@@ -237,48 +237,14 @@ public class ClanTable
 		
 		try
 		{
+			// TODO: set cascade delete for dependent tables
 			using GameServerDbContext ctx = new();
-
-			{
-				PreparedStatement ps = con.prepareStatement("DELETE FROM clan_data WHERE clan_id=?");
-				ps.setInt(1, clanId);
-				ps.execute();
-			}
-
-
-			{
-				PreparedStatement ps = con.prepareStatement("DELETE FROM clan_privs WHERE clan_id=?");
-				ps.setInt(1, clanId);
-				ps.execute();
-			}
-
-
-			{
-				PreparedStatement ps = con.prepareStatement("DELETE FROM clan_skills WHERE clan_id=?");
-				ps.setInt(1, clanId);
-				ps.execute();
-			}
-
-			{
-				PreparedStatement ps = con.prepareStatement("DELETE FROM clan_subpledges WHERE clan_id=?");
-				ps.setInt(1, clanId);
-				ps.execute();
-			}
-
-
-			{
-				PreparedStatement ps = con.prepareStatement("DELETE FROM clan_wars WHERE clan1=? OR clan2=?");
-				ps.setInt(1, clanId);
-				ps.setInt(2, clanId);
-				ps.execute();
-			}
-
-
-			{
-				PreparedStatement ps = con.prepareStatement("DELETE FROM clan_notices WHERE clan_id=?");
-				ps.setInt(1, clanId);
-				ps.execute();
-			}
+			ctx.Clans.Where(c => c.Id == clanId).ExecuteDelete();
+			ctx.ClanPrivileges.Where(c => c.ClanId == clanId).ExecuteDelete();
+			ctx.ClanSkills.Where(c => c.ClanId == clanId).ExecuteDelete();
+			ctx.ClanSubPledges.Where(c => c.ClanId == clanId).ExecuteDelete();
+			ctx.ClanWars.Where(c => c.Clan1Id == clanId || c.Clan2Id == clanId).ExecuteDelete();
+			ctx.ClanNotices.Where(c => c.ClanId == clanId).ExecuteDelete();
 			
 			if (fortId != 0)
 			{
@@ -307,17 +273,21 @@ public class ClanTable
 	
 	public void scheduleRemoveClan(int clanId)
 	{
+		TimeSpan delay = getClan(clanId).getDissolvingExpiryTime().Value - DateTime.UtcNow;
+		if (delay < TimeSpan.FromMilliseconds(300000))
+			delay = TimeSpan.FromMilliseconds(300000);
+			
 		ThreadPool.schedule(() =>
 		{
 			if (getClan(clanId) == null)
 			{
 				return;
 			}
-			if (getClan(clanId).getDissolvingExpiryTime() != 0)
+			if (getClan(clanId).getDissolvingExpiryTime() != DateTime.MinValue)
 			{
 				destroyClan(clanId);
 			}
-		}, Math.Max(getClan(clanId).getDissolvingExpiryTime() - System.currentTimeMillis(), 300000));
+		}, delay);
 	}
 	
 	public bool isAllyExists(String allyName)
@@ -337,17 +307,20 @@ public class ClanTable
 		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(
-				"REPLACE INTO clan_wars (clan1, clan2, clan1Kill, clan2Kill, winnerClan, startTime, endTime, state) VALUES(?,?,?,?,?,?,?,?)");
-			ps.setInt(1, war.getAttackerClanId());
-			ps.setInt(2, war.getAttackedClanId());
-			ps.setInt(3, war.getAttackerKillCount());
-			ps.setInt(4, war.getAttackedKillCount());
-			ps.setInt(5, war.getWinnerClanId());
-			ps.setLong(6, war.getStartTime());
-			ps.setLong(7, war.getEndTime());
-			ps.setInt(8, war.getState().ordinal());
-			ps.execute();
+			var dbWar = new Db.ClanWar
+			{
+				Clan1Id = war.getAttackerClanId(),
+				Clan2Id = war.getAttackedClanId(),
+				Clan1Kills = war.getAttackerKillCount(),
+				Clan2Kills = war.getAttackedKillCount(),
+				WinnerClanId = war.getWinnerClanId(),
+				StartTime = war.getStartTime(),
+				EndTime = war.getEndTime(),
+				State = (short)war.getState()
+			};
+			
+			ctx.ClanWars.Add(dbWar);
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -373,10 +346,7 @@ public class ClanTable
 		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM clan_wars WHERE clan1=? AND clan2=?");
-			ps.setInt(1, clanId1);
-			ps.setInt(2, clanId2);
-			ps.execute();
+			ctx.ClanWars.Where(cw => cw.Clan1Id == clanId1 && cw.Clan2Id == clanId2).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -389,17 +359,15 @@ public class ClanTable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			Statement statement = con.createStatement();
-			ResultSet rset = statement.executeQuery(
-				"SELECT clan1, clan2, clan1Kill, clan2Kill, winnerClan, startTime, endTime, state FROM clan_wars");
-			while (rset.next())
+			foreach (var war in ctx.ClanWars)
 			{
-				Clan attacker = getClan(rset.getInt("clan1"));
-				Clan attacked = getClan(rset.getInt("clan2"));
+				Clan attacker = getClan(war.Clan1Id);
+				Clan attacked = getClan(war.Clan2Id);
 				if ((attacker != null) && (attacked != null))
 				{
-					ClanWarState state = ClanWarState.values()[rset.getInt("state")];
-					ClanWar clanWar = new ClanWar(attacker, attacked, rset.getInt("clan1Kill"), rset.getInt("clan2Kill"), rset.getInt("winnerClan"), rset.getLong("startTime"), rset.getLong("endTime"), state);
+					ClanWarState state = (ClanWarState)war.State;
+					ClanWar clanWar = new ClanWar(attacker, attacked, war.Clan1Kills, war.Clan2Kills,
+						war.WinnerClanId, war.StartTime, war.EndTime, state);
 					attacker.addWar(attacked.getId(), clanWar);
 					attacked.addWar(attacker.getId(), clanWar);
 				}

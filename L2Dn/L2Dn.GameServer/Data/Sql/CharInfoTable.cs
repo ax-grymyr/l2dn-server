@@ -13,30 +13,31 @@ public class CharInfoTable
 	private readonly Map<int, String> _names = new();
 	private readonly Map<int, int> _accessLevels = new();
 	private readonly Map<int, int> _levels = new();
-	private readonly Map<int, int> _classes = new();
+	private readonly Map<int, CharacterClass> _classes = new();
 	private readonly Map<int, int> _clans = new();
 	private readonly Map<int, Map<int, String>> _memos = new();
-	private readonly Map<int, DateTime> _creationDates = new();
-	private readonly Map<int, long> _lastAccess = new();
+	private readonly Map<int, DateOnly> _creationDates = new();
+	private readonly Map<int, DateTime> _lastAccess = new();
 	
 	protected CharInfoTable()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = new();
-			Statement s = con.createStatement();
-			ResultSet rs = s.executeQuery("SELECT charId, char_name, accesslevel FROM characters");
-			while (rs.next())
+			var chars = ctx.Characters.Select(c => new { c.Id, c.Name, c.AccessLevel });
+
+			foreach (var ch in chars)
 			{
-				int id = rs.getInt("charId");
-				_names.put(id, rs.getString("char_name"));
-				_accessLevels.put(id, rs.getInt("accesslevel"));
+				int id = ch.Id;
+				_names.put(id, ch.Name);
+				_accessLevels.put(id, ch.AccessLevel);
 			}
 		}
 		catch (Exception e)
 		{
 			LOGGER.Warn(GetType().Name + ": Couldn't retrieve all char id/name/access: " + e);
 		}
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _names.size() + " char names.");
 	}
 	
@@ -86,15 +87,13 @@ public class CharInfoTable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT charId,accesslevel FROM characters WHERE char_name=?");
-			ps.setString(1, name);
+			var ch = ctx.Characters.Where(c => c.Name == name).Select(c => new { c.Id, c.AccessLevel })
+				.SingleOrDefault();
+
+			if (ch is not null)
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
-				{
-					id = rs.getInt("charId");
-					accessLevel = rs.getInt("accesslevel");
-				}
+				id = ch.Id;
+				accessLevel = ch.AccessLevel;
 			}
 		}
 		catch (Exception e)
@@ -112,14 +111,14 @@ public class CharInfoTable
 		return -1; // Not found.
 	}
 	
-	public String getNameById(int id)
+	public String? getNameById(int id)
 	{
 		if (id <= 0)
 		{
 			return null;
 		}
 		
-		String name = _names.get(id);
+		String? name = _names.get(id);
 		if (name != null)
 		{
 			return name;
@@ -128,18 +127,15 @@ public class CharInfoTable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT char_name,accesslevel FROM characters WHERE charId=?");
-			ps.setInt(1, id);
+			var ch = ctx.Characters.Where(c => c.Id == id).Select(c => new { c.Name, c.AccessLevel })
+				.SingleOrDefault();
 
+			if (ch is not null)
 			{
-				ResultSet rset = ps.executeQuery();
-				if (rset.next())
-				{
-					name = rset.getString("char_name");
-					_names.put(id, name);
-					_accessLevels.put(id, rset.getInt("accesslevel"));
-					return name;
-				}
+				name = ch.Name;
+				_names.put(id, name);
+				_accessLevels.put(id, ch.AccessLevel);
+				return name;
 			}
 		}
 		catch (Exception e)
@@ -162,16 +158,7 @@ public class CharInfoTable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) as count FROM characters WHERE char_name=?");
-			ps.setString(1, name);
-
-			{
-				ResultSet rs = ps.executeQuery();
-				if (rs.next())
-				{
-					result = rs.getInt("count") > 0;
-				}
-			}
+			result = ctx.Characters.Any(c => c.Name == name);
 		}
 		catch (Exception e)
 		{
@@ -185,17 +172,7 @@ public class CharInfoTable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement("SELECT COUNT(char_name) as count FROM characters WHERE account_name=?");
-			ps.setString(1, account);
-
-			{
-				ResultSet rset = ps.executeQuery();
-				if (rset.next())
-				{
-					return rset.getInt("count");
-				}
-			}
+			return ctx.Characters.Count(c => c.Name == account);
 		}
 		catch (Exception e)
 		{
@@ -211,8 +188,7 @@ public class CharInfoTable
 	
 	public int getLevelById(int objectId)
 	{
-		int level = _levels.get(objectId);
-		if (level != null)
+		if (_levels.TryGetValue(objectId, out int level))
 		{
 			return level;
 		}
@@ -220,35 +196,29 @@ public class CharInfoTable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT level FROM characters WHERE charId = ?");
-			ps.setInt(1, objectId);
-
+			byte? lv = ctx.Characters.Where(c => c.Id == objectId).Select(c => (byte?)c.Level).SingleOrDefault();
+			if (lv is not null)
 			{
-				ResultSet rset = ps.executeQuery();
-				if (rset.next())
-				{
-					int dbLevel = rset.getInt("level");
-					_levels.put(objectId, dbLevel);
-					return dbLevel;
-				}
+				_levels.put(objectId, lv.Value);
+				return lv.Value;
 			}
 		}
 		catch (Exception e)
 		{
 			LOGGER.Warn(GetType().Name + ": Could not check existing char count: " + e);
 		}
+		
 		return 0;
 	}
 	
-	public void setClassId(int objectId, int classId)
+	public void setClassId(int objectId, CharacterClass classId)
 	{
 		_classes.put(objectId, classId);
 	}
 	
-	public int getClassIdById(int objectId)
+	public CharacterClass getClassIdById(int objectId)
 	{
-		int classId = _classes.get(objectId);
-		if (classId != null)
+		if (_classes.TryGetValue(objectId, out CharacterClass classId))
 		{
 			return classId;
 		}
@@ -256,17 +226,11 @@ public class CharInfoTable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT classid FROM characters WHERE charId = ?");
-			ps.setInt(1, objectId);
-
+			CharacterClass? clsId = ctx.Characters.Where(c => c.Id == objectId).Select(c => (CharacterClass?)c.Class).SingleOrDefault();
+			if (clsId is not null)
 			{
-				ResultSet rset = ps.executeQuery();
-				if (rset.next())
-				{
-					int dbClassId = rset.getInt("classid");
-					_classes.put(objectId, dbClassId);
-					return dbClassId;
-				}
+				_classes.put(objectId, clsId.Value);
+				return clsId.Value;
 			}
 		}
 		catch (Exception e)
@@ -297,17 +261,11 @@ public class CharInfoTable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT clanId FROM characters WHERE charId = ?");
-			ps.setInt(1, objectId);
-
+			int? dbClanId = ctx.Characters.Where(c => c.Id == objectId).Select(c => c.ClanId).SingleOrDefault();
+			if (dbClanId is not null)
 			{
-				ResultSet rset = ps.executeQuery();
-				while (rset.next())
-				{
-					int dbClanId = rset.getInt("clanId");
-					_clans.put(objectId, dbClanId);
-					return dbClanId;
-				}
+				_clans.put(objectId, dbClanId ?? 0);
+				return dbClanId ?? 0;
 			}
 		}
 		catch (Exception e)
@@ -360,7 +318,7 @@ public class CharInfoTable
 	
 	public String getFriendMemo(int charId, int friendId)
 	{
-		Map<int, String> memos = _memos.get(charId);
+		Map<int, String>? memos = _memos.get(charId);
 		if (memos == null)
 		{
 			memos = new();
@@ -374,21 +332,11 @@ public class CharInfoTable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement =
-				con.prepareStatement("SELECT memo FROM character_friends WHERE charId=? AND friendId=?");
-			statement.setInt(1, charId);
-			statement.setInt(2, friendId);
+			string memo = ctx.CharacterFriends.Where(cf => cf.CharacterId == charId && cf.FriendId == friendId)
+				.Select(cf => cf.Memo).SingleOrDefault() ?? string.Empty;
 
-
-			{
-				ResultSet rset = statement.executeQuery();
-				if (rset.next())
-				{
-					String dbMemo = rset.getString("memo");
-					memos.put(friendId, dbMemo == null ? "" : dbMemo);
-					return dbMemo;
-				}
-			}
+			memos.put(friendId, memo);
+            return memo;
 		}
 		catch (Exception e)
 		{
@@ -396,34 +344,25 @@ public class CharInfoTable
 		}
 		
 		// Prevent searching again.
-		memos.put(friendId, "");
-		return null;
+		memos.put(friendId, string.Empty);
+		return string.Empty;
 	}
 	
-	public Calendar getCharacterCreationDate(int objectId)
+	public DateOnly? getCharacterCreationDate(int objectId)
 	{
-		Calendar calendar = _creationDates.get(objectId);
-		if (calendar != null)
-		{
-			return calendar;
-		}
+		if (_creationDates.TryGetValue(objectId, out DateOnly date))
+			return date;
 		
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT createDate FROM characters WHERE charId = ?");
-			ps.setInt(1, objectId);
-
+			DateOnly? createDate = ctx.Characters.Where(c => c.Id == objectId).Select(c => (DateOnly?)c.Created)
+				.SingleOrDefault();
+			
+			if (createDate is not null)
 			{
-				ResultSet rset = ps.executeQuery();
-				if (rset.next())
-				{
-					Date createDate = rset.getDate("createDate");
-					Calendar newCalendar = Calendar.getInstance();
-					newCalendar.setTime(createDate);
-					_creationDates.put(objectId, newCalendar);
-					return newCalendar;
-				}
+				_creationDates.put(objectId, createDate.Value);
+				return createDate;
 			}
 		}
 		catch (Exception e)
@@ -433,45 +372,39 @@ public class CharInfoTable
 		return null;
 	}
 	
-	public void setLastAccess(int objectId, long lastAccess)
+	public void setLastAccess(int objectId, DateTime lastAccess)
 	{
 		_lastAccess.put(objectId, lastAccess);
 	}
 	
-	public int getLastAccessDelay(int objectId)
+	public TimeSpan getLastAccessDelay(int objectId)
 	{
-		long lastAccess = _lastAccess.get(objectId);
-		if (lastAccess != null)
+		if (_lastAccess.TryGetValue(objectId, out DateTime lastAccess))
 		{
-			long currentTime = System.currentTimeMillis();
-			long timeDifferenceInMillis = currentTime - lastAccess;
-			return (int) (timeDifferenceInMillis / 1000);
+			DateTime currentTime = DateTime.UtcNow;
+			TimeSpan timeDifference = currentTime - lastAccess;
+			return timeDifference;
 		}
 		
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT lastAccess FROM characters WHERE charId = ?");
-			ps.setInt(1, objectId);
+			DateTime? dbLastAccess = ctx.Characters.Where(c => c.Id == objectId).Select(c => c.LastLogin)
+				.SingleOrDefault();
 
+			if (dbLastAccess is not null)
 			{
-				ResultSet rset = ps.executeQuery();
-				if (rset.next())
-				{
-					long dbLastAccess = rset.getLong("lastAccess");
-					_lastAccess.put(objectId, dbLastAccess);
-					
-					long currentTime = System.currentTimeMillis();
-					long timeDifferenceInMillis = currentTime - dbLastAccess;
-					return (int) (timeDifferenceInMillis / 1000);
-				}
+				_lastAccess.put(objectId, dbLastAccess.Value);
+				DateTime currentTime = DateTime.UtcNow;
+				return currentTime - dbLastAccess.Value;
 			}
 		}
 		catch (Exception e)
 		{
 			LOGGER.Warn(GetType().Name + ": Could not retrieve lastAccess timestamp: " + e);
 		}
-		return 0;
+		
+		return TimeSpan.Zero;
 	}
 	
 	public static CharInfoTable getInstance()

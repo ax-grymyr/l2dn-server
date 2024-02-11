@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -8,7 +9,9 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
+using Pet = L2Dn.GameServer.Model.Actor.Instances.Pet;
 
 namespace L2Dn.GameServer.Data.Sql;
 
@@ -20,13 +23,6 @@ public class CharSummonTable
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CharSummonTable));
 	private static readonly Map<int, int> _pets = new();
 	private static readonly Map<int, Set<int>> _servitors = new();
-	
-	// SQL
-	private const string INIT_PET = "SELECT ownerId, item_obj_id FROM pets WHERE restore = 'true'";
-	private const string INIT_SUMMONS = "SELECT ownerId, summonId FROM character_summons";
-	private const string LOAD_SUMMON = "SELECT summonSkillId, summonId, curHp, curMp, time FROM character_summons WHERE ownerId = ?";
-	private const string REMOVE_SUMMON = "DELETE FROM character_summons WHERE ownerId = ? and summonId = ?";
-	private const string SAVE_SUMMON = "REPLACE INTO character_summons (ownerId,summonId,summonSkillId,curHp,curMp,time) VALUES (?,?,?,?,?,?)";
 	
 	public Map<int, int> getPets()
 	{
@@ -45,11 +41,10 @@ public class CharSummonTable
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				Statement s = con.createStatement();
-				ResultSet rs = s.executeQuery(INIT_SUMMONS);
-				while (rs.next())
+				var summons = ctx.CharacterSummons.Select(cs => new { cs.OwnerId, cs.SummonId });
+				foreach (var summon in summons)
 				{
-					_servitors.computeIfAbsent(rs.getInt("ownerId"), k => ConcurrentHashMap.newKeySet()).add(rs.getInt("summonId"));
+					_servitors.computeIfAbsent(summon.OwnerId, k => new()).add(summon.SummonId);
 				}
 			}
 			catch (Exception e)
@@ -63,11 +58,10 @@ public class CharSummonTable
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				Statement s = con.createStatement();
-				ResultSet rs = s.executeQuery(INIT_PET);
-				while (rs.next())
+				var pets = ctx.Pets.Where(p => p.Restore).Select(p => new { p.OwnerId, p.ItemObjectId });
+				foreach (var pet in pets)
 				{
-					_pets.put(rs.getInt("ownerId"), rs.getInt("item_obj_id"));
+					_pets.put(pet.OwnerId, pet.ItemObjectId);
 				}
 			}
 			catch (Exception e)
@@ -84,14 +78,13 @@ public class CharSummonTable
 			v.remove(summonObjectId);
 			return !v.isEmpty() ? v : null;
 		});
-		
-		try 
+
+		try
 		{
+			int ownerId = player.getObjectId();
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(REMOVE_SUMMON);
-			ps.setInt(1, player.getObjectId());
-			ps.setInt(2, summonObjectId);
-			ps.execute();
+			ctx.CharacterSummons.Where(p => p.OwnerId == ownerId && p.SummonId == summonObjectId)
+				.ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -152,50 +145,48 @@ public class CharSummonTable
 	{
 		try 
 		{
+			int ownerId = player.getObjectId();
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(LOAD_SUMMON);
-			ps.setInt(1, player.getObjectId());
-			try
+			var summons = ctx.CharacterSummons.Where(s => s.OwnerId == ownerId);
+			Skill skill;
+			foreach (CharacterSummon dbSummon in summons)
 			{
-				ResultSet rs = ps.executeQuery();
-				Skill skill;
-				while (rs.next())
+				int summonObjId = dbSummon.SummonId;
+				int skillId = dbSummon.SummonSkillId;
+				int curHp = dbSummon.CurrentHp;
+				int curMp = dbSummon.CurrentMp;
+				TimeSpan time = dbSummon.Time;
+
+				removeServitor(player, summonObjId);
+				skill = SkillData.getInstance().getSkill(skillId, player.getSkillLevel(skillId));
+				if (skill == null)
 				{
-					int summonObjId = rs.getInt("summonId");
-					int skillId = rs.getInt("summonSkillId");
-					int curHp = rs.getInt("curHp");
-					int curMp = rs.getInt("curMp");
-					int time = rs.getInt("time");
-					
-					removeServitor(player, summonObjId);
-					skill = SkillData.getInstance().getSkill(skillId, player.getSkillLevel(skillId));
-					if (skill == null)
+					return;
+				}
+
+				skill.applyEffects(player, player);
+
+				if (player.hasServitors())
+				{
+					Servitor servitor = null;
+					foreach (Summon summon in player.getServitors().values())
 					{
-						return;
-					}
-					skill.applyEffects(player, player);
-					
-					if (player.hasServitors())
-					{
-						Servitor servitor = null;
-						foreach (Summon summon in player.getServitors().values())
+						if (summon is Servitor)
 						{
-							if (summon is Servitor)
+							Servitor s = (Servitor)summon;
+							if (s.getReferenceSkill() == skillId)
 							{
-								Servitor s = (Servitor) summon;
-								if (s.getReferenceSkill() == skillId)
-								{
-									servitor = s;
-									break;
-								}
+								servitor = s;
+								break;
 							}
 						}
-						if (servitor != null)
-						{
-							servitor.setCurrentHp(curHp);
-							servitor.setCurrentMp(curMp);
-							servitor.setLifeTimeRemaining(time);
-						}
+					}
+
+					if (servitor != null)
+					{
+						servitor.setCurrentHp(curHp);
+						servitor.setCurrentMp(curMp);
+						servitor.setLifeTimeRemaining(time);
 					}
 				}
 			}
@@ -218,14 +209,22 @@ public class CharSummonTable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(SAVE_SUMMON);
-			ps.setInt(1, summon.getOwner().getObjectId());
-			ps.setInt(2, summon.getObjectId());
-			ps.setInt(3, summon.getReferenceSkill());
-			ps.setInt(4, (int) Math.Round(summon.getCurrentHp()));
-			ps.setInt(5, (int) Math.Round(summon.getCurrentMp()));
-			ps.setInt(6, Math.Max(0, summon.getLifeTimeRemaining()));
-			ps.execute();
+			TimeSpan remainingTime = summon.getLifeTimeRemaining();
+			if (remainingTime < TimeSpan.Zero)
+				remainingTime = TimeSpan.Zero;
+				
+			var dbSummon = new CharacterSummon
+			{
+				OwnerId = summon.getOwner().getObjectId(),
+				SummonId = summon.getObjectId(),
+				SummonSkillId = summon.getReferenceSkill(),
+				CurrentHp = (int) summon.getCurrentHp(),
+				CurrentMp =(int) summon.getCurrentMp(), 
+				Time = remainingTime
+			};
+			
+			ctx.CharacterSummons.Add(dbSummon);
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{

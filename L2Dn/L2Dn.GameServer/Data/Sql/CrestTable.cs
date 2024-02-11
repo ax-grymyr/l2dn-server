@@ -1,9 +1,10 @@
 using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
-using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using Crest = L2Dn.GameServer.Model.Crest;
 
 namespace L2Dn.GameServer.Data.Sql;
 

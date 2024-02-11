@@ -1,11 +1,21 @@
 ﻿using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
+using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
 using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.GameServer.Model.ItemContainers;
+using L2Dn.GameServer.Model.Sieges;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Model.Variables;
+using L2Dn.GameServer.Model.Zones;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using Forum = L2Dn.GameServer.CommunityBbs.BB.Forum;
 
 namespace L2Dn.GameServer.Model.Clans;
 
@@ -58,15 +68,15 @@ public class Clan: IIdentifiable, INamable
 	private int _crestLargeId;
 	private int _allyCrestId;
 	private int _auctionBiddedAt = 0;
-	private long _allyPenaltyExpiryTime;
+	private DateTime? _allyPenaltyExpiryTime;
 	private int _allyPenaltyType;
-	private long _charPenaltyExpiryTime;
-	private long _dissolvingExpiryTime;
+	private DateTime? _charPenaltyExpiryTime;
+	private DateTime? _dissolvingExpiryTime;
 	private int _bloodAllianceCount;
 	private int _bloodOathCount;
 	
 	private readonly ItemContainer _warehouse = new ClanWarehouse(this);
-	private readonly ConcurrentHashMap<int, ClanWar> _atWarWith = new ConcurrentHashMap<>();
+	private readonly Map<int, ClanWar> _atWarWith = new();
 	
 	private Forum _forum;
 	
@@ -436,12 +446,12 @@ public class Clan: IIdentifiable, INamable
 			if (player.isClanLeader())
 			{
 				SiegeManager.getInstance().removeSiegeSkills(player);
-				player.setClanCreateExpiryTime(System.currentTimeMillis() + (Config.ALT_CLAN_CREATE_DAYS * 86400000)); // 24*60*60*1000 = 86400000
+				player.setClanCreateExpiryTime(DateTime.UtcNow.AddMilliseconds(Config.ALT_CLAN_CREATE_DAYS * 86400000)); // 24*60*60*1000 = 86400000
 			}
 			
 			// remove Clan skills from Player
 			removeSkillEffects(player);
-			player.getEffectList().stopSkillEffects(SkillFinishType.REMOVED, CommonSkill.CLAN_ADVENT.getId());
+			player.getEffectList().stopSkillEffects(SkillFinishType.REMOVED, (int)CommonSkill.CLAN_ADVENT);
 			
 			// remove Residential skills
 			if (getCastleId() > 0)
@@ -476,7 +486,8 @@ public class Clan: IIdentifiable, INamable
 		}
 		else
 		{
-			removeMemberInDatabase(exMember, clanJoinExpiryTime, getLeaderId() == objectId ? System.currentTimeMillis() + (Config.ALT_CLAN_CREATE_DAYS * 86400000) : 0);
+			removeMemberInDatabase(exMember, clanJoinExpiryTime, getLeaderId() == objectId ? 
+				DateTime.UtcNow.AddMilliseconds(Config.ALT_CLAN_CREATE_DAYS * 86400000) : DateTime.MinValue);
 		}
 		
 		// Notify to scripts
@@ -2164,7 +2175,7 @@ public class Clan: IIdentifiable, INamable
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ASK_YOURSELF_TO_APPLY_TO_A_CLAN);
 			return false;
 		}
-		if (_charPenaltyExpiryTime > System.currentTimeMillis())
+		if (_charPenaltyExpiryTime > DateTime.UtcNow)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ACCEPT_A_NEW_CLAN_MEMBER_FOR_24_H_AFTER_DISMISSING_SOMEONE);
 			return false;
@@ -2176,7 +2187,7 @@ public class Clan: IIdentifiable, INamable
 			player.sendPacket(sm);
 			return false;
 		}
-		if (target.getClanJoinExpiryTime() > System.currentTimeMillis())
+		if (target.getClanJoinExpiryTime() > DateTime.UtcNow)
 		{
 			SystemMessage sm = new SystemMessage(SystemMessageId.C1_WILL_BE_ABLE_TO_JOIN_YOUR_CLAN_IN_S2_MIN_AFTER_LEAVING_THE_PREVIOUS_ONE);
 			sm.addString(target.getName());
@@ -2226,7 +2237,7 @@ public class Clan: IIdentifiable, INamable
 			return false;
 		}
 		Clan leaderClan = player.getClan();
-		if ((leaderClan.getAllyPenaltyExpiryTime() > System.currentTimeMillis()) && (leaderClan.getAllyPenaltyType() == PENALTY_TYPE_DISMISS_CLAN))
+		if ((leaderClan.getAllyPenaltyExpiryTime() > DateTime.UtcNow) && (leaderClan.getAllyPenaltyType() == PENALTY_TYPE_DISMISS_CLAN))
 		{
 			player.sendPacket(SystemMessageId.YOU_CAN_ACCEPT_A_NEW_CLAN_IN_THE_ALLIANCE_IN_24_H_AFTER_DISMISSING_ANOTHER_ONE);
 			return false;
@@ -2262,7 +2273,7 @@ public class Clan: IIdentifiable, INamable
 			player.sendPacket(sm);
 			return false;
 		}
-		if (targetClan.getAllyPenaltyExpiryTime() > System.currentTimeMillis())
+		if (targetClan.getAllyPenaltyExpiryTime() > DateTime.UtcNow)
 		{
 			if (targetClan.getAllyPenaltyType() == PENALTY_TYPE_CLAN_LEAVED)
 			{
@@ -2298,7 +2309,7 @@ public class Clan: IIdentifiable, INamable
 		return true;
 	}
 	
-	public long getAllyPenaltyExpiryTime()
+	public DateTime getAllyPenaltyExpiryTime()
 	{
 		return _allyPenaltyExpiryTime;
 	}
@@ -2308,23 +2319,23 @@ public class Clan: IIdentifiable, INamable
 		return _allyPenaltyType;
 	}
 	
-	public void setAllyPenaltyExpiryTime(long expiryTime, int penaltyType)
+	public void setAllyPenaltyExpiryTime(DateTime expiryTime, int penaltyType)
 	{
 		_allyPenaltyExpiryTime = expiryTime;
 		_allyPenaltyType = penaltyType;
 	}
 	
-	public long getCharPenaltyExpiryTime()
+	public DateTime getCharPenaltyExpiryTime()
 	{
 		return _charPenaltyExpiryTime;
 	}
 	
-	public void setCharPenaltyExpiryTime(long time)
+	public void setCharPenaltyExpiryTime(DateTime time)
 	{
 		_charPenaltyExpiryTime = time;
 	}
 	
-	public long getDissolvingExpiryTime()
+	public DateTime? getDissolvingExpiryTime()
 	{
 		return _dissolvingExpiryTime;
 	}
