@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Network;
+using L2Dn.GameServer.NetworkAuthServer;
 using L2Dn.Network;
 using NLog;
 
@@ -10,6 +11,7 @@ public class GameServer
     private static readonly Logger _logger = LogManager.GetLogger(nameof(GameServer));
     private readonly CancellationTokenSource _cancellationTokenSource = new();
     private Listener<GameSession>? _clientListener;
+    private Connector<AuthServerSession>? _authServerConnector;
     private Task? _clientListenerTask;
 
     public void Start()
@@ -21,6 +23,12 @@ public class GameServer
 
         _logger.Info($"Starting listener {clientListenerConfig.ListenAddress}:{clientListenerConfig.Port}...");
         _clientListenerTask = _clientListener.Start(_cancellationTokenSource.Token);
+
+        AuthServerConnectionConfig authServerConnectionConfig = ServerConfig.Instance.AuthServerConnection;
+        _authServerConnector = new Connector<AuthServerSession>(new AuthServerSession(), new AuthServerPacketEncoder(),
+            new AuthServerPacketHandler(), authServerConnectionConfig.Address, authServerConnectionConfig.Port);
+        
+        _authServerConnector.Start(_cancellationTokenSource.Token);
     }
 
     public async Task StopAsync()

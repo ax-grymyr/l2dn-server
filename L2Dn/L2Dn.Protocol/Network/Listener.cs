@@ -1,7 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using System.Net;
 using System.Net.Sockets;
-using L2Dn.Extensions;
 using L2Dn.Packets;
 using NLog;
 
@@ -45,7 +44,7 @@ public sealed class Listener<TSession>: IConnectionCloseEvent
             {
                 TcpClient client = await _listener.AcceptTcpClientAsync(cancellationToken).ConfigureAwait(false);
                 _logger.Trace($"Accepted connection from {client.Client.RemoteEndPoint}");
-                ThreadPool.QueueUserWorkItem(_ => { HandleConnection(client); });
+                ThreadPool.QueueUserWorkItem(_ => { HandleConnection(client, cancellationToken); });
             }
             catch (OperationCanceledException)
             {
@@ -65,7 +64,7 @@ public sealed class Listener<TSession>: IConnectionCloseEvent
         try
         {
             _listener.Stop();
-            _connections.Values.ForEach(c => c.Close());
+            _connections.Clear();
         }
         catch (Exception exception)
         {
@@ -73,11 +72,12 @@ public sealed class Listener<TSession>: IConnectionCloseEvent
         }
     }
     
-    private void HandleConnection(TcpClient client)
+    private void HandleConnection(TcpClient client, CancellationToken cancellationToken)
     {
         TSession session = _sessionFactory.Create();
         Connection<TSession> connection = _connections.GetOrAdd(session.Id,
-            id => new Connection<TSession>(this, client, session, _packetEncoderFactory.Create(session), _packetHandler));
+            id => new Connection<TSession>(this, client, session, _packetEncoderFactory.Create(session),
+                _packetHandler));
 
         if (!ReferenceEquals(session, connection.Session))
         {
@@ -86,7 +86,7 @@ public sealed class Listener<TSession>: IConnectionCloseEvent
             return;
         }
         
-        connection.BeginReceivingAsync(default);
+        connection.BeginReceivingAsync(cancellationToken);
     }
 
     void IConnectionCloseEvent.ConnectionClosed(int sessionId)
