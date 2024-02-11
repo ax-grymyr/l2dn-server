@@ -25,7 +25,7 @@ public class MailManager
 		int count = 0;
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement ps = con.createStatement();
 			ResultSet rs = ps.executeQuery("SELECT * FROM messages ORDER BY expiration");
 			while (rs.next())
@@ -157,7 +157,7 @@ public class MailManager
 		_messages.put(msg.getId(), msg);
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = Message.getStatement(msg, con);
 			ps.execute();
 		}
@@ -180,7 +180,7 @@ public class MailManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("UPDATE messages SET isUnread = 'false' WHERE messageId = ?");
 			ps.setInt(1, msgId);
 			ps.execute();
@@ -195,7 +195,7 @@ public class MailManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement("UPDATE messages SET isDeletedBySender = 'true' WHERE messageId = ?");
 			ps.setInt(1, msgId);
@@ -211,7 +211,7 @@ public class MailManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement("UPDATE messages SET isDeletedByReceiver = 'true' WHERE messageId = ?");
 			ps.setInt(1, msgId);
@@ -227,7 +227,7 @@ public class MailManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement("UPDATE messages SET hasAttachments = 'false' WHERE messageId = ?");
 			ps.setInt(1, msgId);
@@ -243,7 +243,7 @@ public class MailManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM messages WHERE messageId = ?");
 			ps.setInt(1, msgId);
 			ps.execute();

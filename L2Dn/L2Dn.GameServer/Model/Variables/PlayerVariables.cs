@@ -86,7 +86,7 @@ public class PlayerVariables: AbstractVariables
 		// Restore previous variables.
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement st = con.prepareStatement(SELECT_QUERY);
 			st.setInt(1, _objectId);
 			ResultSet rset = st.executeQuery();
@@ -118,7 +118,7 @@ public class PlayerVariables: AbstractVariables
 
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			// Clear previous entries.
 			PreparedStatement st1 = con.prepareStatement(DELETE_QUERY);
 			st1.setInt(1, _objectId);
@@ -153,7 +153,7 @@ public class PlayerVariables: AbstractVariables
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			// Clear previous entries.
 			PreparedStatement st = con.prepareStatement(DELETE_QUERY);
 			st.setInt(1, _objectId);

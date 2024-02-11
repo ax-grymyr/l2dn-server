@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
 using NLog;
@@ -15,14 +16,14 @@ public class CharInfoTable
 	private readonly Map<int, int> _classes = new();
 	private readonly Map<int, int> _clans = new();
 	private readonly Map<int, Map<int, String>> _memos = new();
-	private readonly Map<int, Calendar> _creationDates = new();
+	private readonly Map<int, DateTime> _creationDates = new();
 	private readonly Map<int, long> _lastAccess = new();
 	
 	protected CharInfoTable()
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery("SELECT charId, char_name, accesslevel FROM characters");
 			while (rs.next())
@@ -69,11 +70,11 @@ public class CharInfoTable
 			return -1;
 		}
 		
-		for (Entry<int, String> entry : _names.entrySet())
+		foreach (var entry in _names)
 		{
-			if (entry.getValue().equalsIgnoreCase(name))
+			if (entry.Value.equalsIgnoreCase(name))
 			{
-				return entry.getKey();
+				return entry.Key;
 			}
 		}
 		
@@ -84,7 +85,7 @@ public class CharInfoTable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT charId,accesslevel FROM characters WHERE char_name=?");
 			ps.setString(1, name);
 			{
@@ -126,7 +127,7 @@ public class CharInfoTable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT char_name,accesslevel FROM characters WHERE charId=?");
 			ps.setInt(1, id);
 
@@ -160,7 +161,7 @@ public class CharInfoTable
 		bool result = false;
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) as count FROM characters WHERE char_name=?");
 			ps.setString(1, name);
 
@@ -183,7 +184,7 @@ public class CharInfoTable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement("SELECT COUNT(char_name) as count FROM characters WHERE account_name=?");
 			ps.setString(1, account);
@@ -218,7 +219,7 @@ public class CharInfoTable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT level FROM characters WHERE charId = ?");
 			ps.setInt(1, objectId);
 
@@ -254,7 +255,7 @@ public class CharInfoTable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT classid FROM characters WHERE charId = ?");
 			ps.setInt(1, objectId);
 
@@ -295,7 +296,7 @@ public class CharInfoTable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT clanId FROM characters WHERE charId = ?");
 			ps.setInt(1, objectId);
 
@@ -372,7 +373,7 @@ public class CharInfoTable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement =
 				con.prepareStatement("SELECT memo FROM character_friends WHERE charId=? AND friendId=?");
 			statement.setInt(1, charId);
@@ -409,7 +410,7 @@ public class CharInfoTable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT createDate FROM characters WHERE charId = ?");
 			ps.setInt(1, objectId);
 
@@ -449,7 +450,7 @@ public class CharInfoTable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT lastAccess FROM characters WHERE charId = ?");
 			ps.setInt(1, objectId);
 

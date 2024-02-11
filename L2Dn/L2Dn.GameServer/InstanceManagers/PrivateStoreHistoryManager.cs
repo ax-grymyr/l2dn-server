@@ -36,7 +36,7 @@ public class PrivateStoreHistoryManager
 		_items.Clear();
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(SELECT);
 
 			{
@@ -61,7 +61,7 @@ public class PrivateStoreHistoryManager
 		_items.Clear();
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(TRUNCATE);
 			statement.execute();
 		}
@@ -239,7 +239,7 @@ public class PrivateStoreHistoryManager
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement(INSERT);
 				ps.setLong(1, _transactionDate);
 				ps.setInt(2, _itemId);

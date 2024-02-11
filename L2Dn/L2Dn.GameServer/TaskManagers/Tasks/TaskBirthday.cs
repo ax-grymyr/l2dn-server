@@ -42,7 +42,7 @@ public class TaskBirthday: Task
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(QUERY);
 			statement.setString(1, "%-" + getNum(month + 1) + "-" + getNum(day));
 

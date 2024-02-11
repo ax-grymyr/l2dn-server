@@ -365,7 +365,7 @@ public class MonsterRace
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement("SELECT * FROM mdt_history");
 			ResultSet rset = statement.executeQuery();
 			
@@ -392,7 +392,7 @@ public class MonsterRace
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement("REPLACE INTO mdt_history (race_id, first, second, odd_rate) VALUES (?,?,?,?)");
 			statement.setInt(1, history.getRaceId());
 			statement.setInt(2, history.getFirst());
@@ -414,7 +414,7 @@ public class MonsterRace
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement("SELECT * FROM mdt_bets");
 			ResultSet rset = statement.executeQuery();
 			
@@ -441,7 +441,7 @@ public class MonsterRace
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement("REPLACE INTO mdt_bets (lane_id, bet) VALUES (?,?)");
 			statement.setInt(1, lane);
 			statement.setLong(2, sum);
@@ -466,7 +466,7 @@ public class MonsterRace
 		
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement("UPDATE mdt_bets SET bet = 0");
 			statement.execute();
 			statement.close();

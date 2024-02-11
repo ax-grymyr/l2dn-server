@@ -25,7 +25,7 @@ public class Mentee
         {
             try 
             {
-                using Connection con = DatabaseFactory.getConnection();
+                using GameServerDbContext ctx = new();
                 using PreparedStatement statement =
                     con.prepareStatement("SELECT char_name, level, base_class FROM characters WHERE charId = ?");
                 statement.setInt(1, _objectId);

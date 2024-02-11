@@ -67,7 +67,7 @@ public class Hero
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement s1 = con.createStatement();
 			ResultSet rset = s1.executeQuery(GET_HEROES);
 			PreparedStatement ps = con.prepareStatement(GET_CLAN_ALLY);
@@ -160,7 +160,7 @@ public class Hero
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT message FROM heroes WHERE charId=?");
 			ps.setInt(1, charId);
 			{
@@ -183,7 +183,7 @@ public class Hero
 		int diaryentries = 0;
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM  heroes_diary WHERE charId=? ORDER BY time ASC");
 			ps.setInt(1, charId);
 			{
@@ -248,7 +248,7 @@ public class Hero
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(
 				"SELECT * FROM olympiad_fights WHERE (charOneId=? OR charTwoId=?) AND start<? ORDER BY start ASC");
 			ps.setInt(1, charId);
@@ -652,7 +652,7 @@ public class Hero
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			if (setDefault)
 			{
 				{
@@ -791,7 +791,7 @@ public class Hero
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement("INSERT INTO heroes_diary (charId, time, action, param) values(?,?,?,?)");
 			ps.setInt(1, charId);
@@ -829,7 +829,7 @@ public class Hero
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("UPDATE heroes SET message=? WHERE charId=?;");
 			ps.setString(1, HERO_MESSAGE.get(charId));
 			ps.setInt(2, charId);
@@ -845,7 +845,7 @@ public class Hero
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement s = con.createStatement();
 			s.executeUpdate(DELETE_ITEMS);
 		}

@@ -72,7 +72,7 @@ public class ClanHall: AbstractResidence
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement loadStatement = con.prepareStatement(LOAD_CLANHALL);
 			PreparedStatement insertStatement = con.prepareStatement(INSERT_CLANHALL);
 			loadStatement.setInt(1, getResidenceId());
@@ -106,7 +106,7 @@ public class ClanHall: AbstractResidence
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(UPDATE_CLANHALL);
 			statement.setInt(1, getOwnerId());
 			statement.setLong(2, _paidUntil);

@@ -199,7 +199,7 @@ public class Clan: IIdentifiable, INamable
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement("UPDATE characters SET clan_privs = ? WHERE charId = ?");
 				ps.setInt(1, 0);
 				ps.setInt(2, getLeaderId());
@@ -240,7 +240,7 @@ public class Clan: IIdentifiable, INamable
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement("UPDATE characters SET clan_privs = ? WHERE charId = ?");
 				ps.setInt(1, EnumIntBitmask.getAllBitmask(ClanPrivilege.class));
 				ps.setInt(2, getLeaderId());
@@ -836,7 +836,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("UPDATE clan_data SET blood_alliance_count=? WHERE clan_id=?");
 			ps.setInt(1, _bloodAllianceCount);
 			ps.setInt(2, _clanId);
@@ -881,7 +881,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("UPDATE clan_data SET blood_oath_count=? WHERE clan_id=?");
 			ps.setInt(1, _bloodOathCount);
 			ps.setInt(2, _clanId);
@@ -911,7 +911,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(
 				"UPDATE clan_data SET leader_id=?,ally_id=?,ally_name=?,reputation_score=?,ally_penalty_expiry_time=?,ally_penalty_type=?,char_penalty_expiry_time=?,dissolving_expiry_time=?,new_leader_id=?,exp=? WHERE clan_id=?");
 			ps.setInt(1, getLeaderId());
@@ -952,7 +952,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(INSERT_CLAN_DATA);
 			ps.setInt(1, _clanId);
 			ps.setString(2, _name);
@@ -985,7 +985,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps1 = con.prepareStatement("UPDATE characters SET clanid=0, title=?, clan_join_expiry_time=?, clan_create_expiry_time=?, clan_privs=0, wantspeace=0, subpledge=0, lvl_joined_academy=0, apprentice=0, sponsor=0 WHERE charId=?");
 			PreparedStatement ps2 = con.prepareStatement("UPDATE characters SET apprentice=0 WHERE apprentice=?");
 			PreparedStatement ps3 = con.prepareStatement("UPDATE characters SET sponsor=0 WHERE sponsor=?");
@@ -1011,7 +1011,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(SELECT_CLAN_DATA);
 			ps.setInt(1, _clanId);
 			ResultSet clanData = ps.executeQuery();
@@ -1088,7 +1088,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT enabled,notice FROM clan_notices WHERE clan_id=?");
 			ps.setInt(1, _clanId);
 			ResultSet noticeData = ps.executeQuery();
@@ -1121,7 +1121,7 @@ public class Clan: IIdentifiable, INamable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(
 				"INSERT INTO clan_notices (clan_id,notice,enabled) values (?,?,?) ON DUPLICATE KEY UPDATE notice=?,enabled=?");
 			ps.setInt(1, _clanId);
@@ -1191,7 +1191,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement("SELECT skill_id,skill_level,sub_pledge_id FROM clan_skills WHERE clan_id=?");
 			// Retrieve all skills of this Player from the database
@@ -1312,7 +1312,7 @@ public class Clan: IIdentifiable, INamable
 			
 			try
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				if (oldSkill != null)
 				{
 					PreparedStatement ps =
@@ -1721,7 +1721,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement("SELECT sub_pledge_id,name,leader_id FROM clan_subpledges WHERE clan_id=?");
 			// Retrieve all subpledges of this clan from the database
@@ -1822,7 +1822,7 @@ public class Clan: IIdentifiable, INamable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement(
 					"INSERT INTO clan_subpledges (clan_id,sub_pledge_id,name,leader_id) values (?,?,?,?)");
@@ -1904,7 +1904,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement(
 					"UPDATE clan_subpledges SET leader_id=?, name=? WHERE clan_id=? AND sub_pledge_id=?");
@@ -1924,7 +1924,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT privs,`rank`,party FROM clan_privs WHERE clan_id=?");
 			// Retrieve all skills of this Player from the database
 			ps.setInt(1, _clanId);
@@ -1974,7 +1974,7 @@ public class Clan: IIdentifiable, INamable
 			
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps =
 					con.prepareStatement("REPLACE INTO clan_privs (clan_id,`rank`,party,privs) VALUES (?,?,?,?)");
 				// Retrieve all skills of this Player from the database
@@ -2005,7 +2005,7 @@ public class Clan: IIdentifiable, INamable
 			
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps =
 					con.prepareStatement("REPLACE INTO clan_privs (clan_id,`rank`,party,privs) VALUES (?,?,?,?)");
 				// Retrieve all skills of this Player from the database
@@ -2124,7 +2124,7 @@ public class Clan: IIdentifiable, INamable
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement("UPDATE clan_data SET auction_bid_at=? WHERE clan_id=?");
 				ps.setInt(1, id);
 				ps.setInt(2, _clanId);
@@ -2559,7 +2559,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("UPDATE clan_data SET clan_level = ? WHERE clan_id = ?");
 			ps.setInt(1, level);
 			ps.setInt(2, _clanId);
@@ -2607,7 +2607,7 @@ public class Clan: IIdentifiable, INamable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("UPDATE clan_data SET crest_id = ? WHERE clan_id = ?");
 			ps.setInt(1, crestId);
 			ps.setInt(2, _clanId);
@@ -2645,7 +2645,7 @@ public class Clan: IIdentifiable, INamable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(sqlStatement);
 			ps.setInt(1, crestId);
 			ps.setInt(2, allyId);
@@ -2692,7 +2692,7 @@ public class Clan: IIdentifiable, INamable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("UPDATE clan_data SET crest_large_id = ? WHERE clan_id = ?");
 			ps.setInt(1, crestId);
 			ps.setInt(2, _clanId);

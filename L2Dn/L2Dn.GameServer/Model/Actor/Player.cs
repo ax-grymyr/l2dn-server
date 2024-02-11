@@ -1150,7 +1150,7 @@ public class Player: Playable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement =
 				con.prepareStatement("INSERT INTO character_recipebook (charId, id, classIndex, type) values(?,?,?,?)");
 			statement.setInt(1, getObjectId());
@@ -1169,7 +1169,7 @@ public class Player: Playable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement =
 				con.prepareStatement("DELETE FROM character_recipebook WHERE charId=? AND id=? AND classIndex=?");
 			statement.setInt(1, getObjectId());
@@ -6267,7 +6267,7 @@ public class Player: Playable
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement(UPDATE_CHARACTER_ACCESS);
 				ps.setInt(1, accessLevel.getLevel());
 				ps.setInt(2, getObjectId());
@@ -6387,7 +6387,7 @@ public class Player: Playable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement =
 				con.prepareStatement("UPDATE characters SET online=?, lastAccess=? WHERE charId=?");
 			statement.setInt(1, isOnlineInt());
@@ -6409,7 +6409,7 @@ public class Player: Playable
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(INSERT_CHARACTER);
 			statement.setString(1, _accountName);
 			statement.setInt(2, getObjectId());
@@ -6476,7 +6476,7 @@ public class Player: Playable
 		double currentMp = 0;
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(RESTORE_CHARACTER);
 			// Retrieve the Player from the characters table of the database
 			statement.setInt(1, objectId);
@@ -6830,7 +6830,7 @@ public class Player: Playable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(RESTORE_CHAR_SUBCLASSES);
 			statement.setInt(1, player.getObjectId());
 			{
@@ -6932,7 +6932,7 @@ public class Player: Playable
 		String sql = loadCommon ? "SELECT id, type, classIndex FROM character_recipebook WHERE charId=?" : "SELECT id FROM character_recipebook WHERE charId=? AND classIndex=? AND type = 1";
 		try 
 		{
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             PreparedStatement statement = con.prepareStatement(sql);
 			statement.setInt(1, getObjectId());
 			if (!loadCommon)
@@ -6987,7 +6987,7 @@ public class Player: Playable
 		String sql = "SELECT itemNum, itemId, itemCount, itemSender FROM character_premium_items WHERE charId=?";
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(sql);
 			statement.setInt(1, getObjectId());
 					{
@@ -7012,7 +7012,7 @@ public class Player: Playable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement =
 				con.prepareStatement("UPDATE character_premium_items SET itemCount=? WHERE charId=? AND itemNum=? ");
 			statement.setLong(1, newcount);
@@ -7030,7 +7030,7 @@ public class Player: Playable
 	{
 		try 
 		{
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             			PreparedStatement statement = con.prepareStatement("DELETE FROM character_premium_items WHERE charId=? AND itemNum=? ");
 			statement.setInt(1, getObjectId());
 			statement.setInt(2, itemNum);
@@ -7129,7 +7129,7 @@ public class Player: Playable
 		long sp = getStat().getBaseSp();
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(UPDATE_CHARACTER);
 			statement.setInt(1, level);
 			statement.setInt(2, getMaxHp());
@@ -7213,7 +7213,7 @@ public class Player: Playable
 		
 		try 
 		{
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             			PreparedStatement statement = con.prepareStatement(UPDATE_CHAR_SUBCLASS);
 			foreach (SubClassHolder subClass in getSubClasses().values())
 			{
@@ -7244,7 +7244,7 @@ public class Player: Playable
 		
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			// Delete all current stored effects for char to avoid dupe
 
 			{
@@ -7366,7 +7366,7 @@ public class Player: Playable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps1 = con.prepareStatement(DELETE_ITEM_REUSE_SAVE);
 			PreparedStatement ps2 = con.prepareStatement(ADD_ITEM_REUSE_SAVE);
 			ps1.setInt(1, getObjectId());
@@ -7512,7 +7512,7 @@ public class Player: Playable
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement statement = con.prepareStatement(DELETE_SKILL_FROM_CHAR);
 				// Remove or update a Player skill from the character_skills table of the database
 				statement.setInt(1, oldSkill.getId());
@@ -7556,7 +7556,7 @@ public class Player: Playable
 		int classIndex = (newClassIndex > -1) ? newClassIndex : _classIndex;
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			if ((oldSkill != null) && (newSkill != null))
 			{
 				
@@ -7609,7 +7609,7 @@ public class Player: Playable
 		int classIndex = (newClassIndex > -1) ? newClassIndex : _classIndex;
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(ADD_NEW_SKILLS);
 			foreach (Skill addSkill in newSkills)
 			{
@@ -7635,7 +7635,7 @@ public class Player: Playable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(RESTORE_SKILLS_FOR_CHAR);
 			// Retrieve all skills of this Player from the database
 			statement.setInt(1, getObjectId());
@@ -7684,7 +7684,7 @@ public class Player: Playable
 	{
 		try
 		{
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             PreparedStatement statement = con.prepareStatement(RESTORE_SKILL_SAVE);
 			statement.setInt(1, getObjectId());
 			statement.setInt(2, _classIndex);
@@ -7744,7 +7744,7 @@ public class Player: Playable
 	{
 		try 
         {
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             			PreparedStatement statement = con.prepareStatement(RESTORE_ITEM_REUSE_SAVE);
             			PreparedStatement delete = con.prepareStatement(DELETE_ITEM_REUSE_SAVE);
 			statement.setInt(1, getObjectId());
@@ -7821,7 +7821,7 @@ public class Player: Playable
 		
 		try 
 		{
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             			PreparedStatement statement = con.prepareStatement(RESTORE_CHAR_HENNAS);
 			statement.setInt(1, getObjectId());
 			statement.setInt(2, _classIndex);
@@ -7949,7 +7949,7 @@ public class Player: Playable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(DELETE_CHAR_HENNA);
 			statement.setInt(1, getObjectId());
 			statement.setInt(2, slot);
@@ -8029,7 +8029,7 @@ public class Player: Playable
 				
 				try 
 				{
-					Connection con = DatabaseFactory.getConnection();
+					using GameServerDbContext ctx = new();
 					PreparedStatement statement = con.prepareStatement(ADD_CHAR_HENNA);
 					statement.setInt(1, getObjectId());
 					statement.setInt(2, henna.getDyeId());
@@ -8101,7 +8101,7 @@ public class Player: Playable
 		int pos = 0;
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(RESTORE_CHAR_HENNA_POTENS);
 			statement.setInt(1, getObjectId());
 
@@ -8139,7 +8139,7 @@ public class Player: Playable
 			{
 				try 
 				{
-                    Connection con = DatabaseFactory.getConnection();
+                    using GameServerDbContext ctx = new();
                     					PreparedStatement statement = con.prepareStatement(ADD_CHAR_HENNA_POTENS);
 					statement.setInt(1, getObjectId());
 					statement.setInt(2, _hennaPoten[i].getSlotPosition());
@@ -9837,7 +9837,7 @@ public class Player: Playable
 			
 			try 
 			{
-                Connection con = DatabaseFactory.getConnection();
+                using GameServerDbContext ctx = new();
                 				PreparedStatement statement = con.prepareStatement(ADD_CHAR_SUBCLASS);
 				// Store the basic info about this new sub-class.
 				statement.setInt(1, getObjectId());
@@ -9938,7 +9938,7 @@ public class Player: Playable
 		
 		try
 		{
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             			PreparedStatement deleteHennas = con.prepareStatement(DELETE_CHAR_HENNA);
             			PreparedStatement deleteShortcuts = con.prepareStatement(DELETE_CHAR_SHORTCUTS);
             			PreparedStatement deleteSkillReuse = con.prepareStatement(DELETE_SKILL_SAVE);
@@ -12435,7 +12435,7 @@ public class Player: Playable
 			req = "UPDATE pets SET fed=? WHERE item_obj_id = ?";
 			try
 			{
-                Connection con = DatabaseFactory.getConnection();
+                using GameServerDbContext ctx = new();
                 				PreparedStatement statement = con.prepareStatement(req);
 				statement.setInt(1, _curFeed);
 				statement.setInt(2, _controlItemId);
@@ -12563,7 +12563,7 @@ public class Player: Playable
 			
 			try 
 			{
-                Connection con = DatabaseFactory.getConnection();
+                using GameServerDbContext ctx = new();
                 				PreparedStatement statement = con.prepareStatement(UPDATE_TP_BOOKMARK);
 				statement.setInt(1, icon);
 				statement.setString(2, tag);
@@ -12587,7 +12587,7 @@ public class Player: Playable
 		{
 			try
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement statement = con.prepareStatement(DELETE_TP_BOOKMARK);
 				statement.setInt(1, getObjectId());
 				statement.setInt(2, id);
@@ -12750,7 +12750,7 @@ public class Player: Playable
 		
 		try 
 		{
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             			PreparedStatement statement = con.prepareStatement(INSERT_TP_BOOKMARK);
 			statement.setInt(1, getObjectId());
 			statement.setInt(2, id);
@@ -12773,7 +12773,7 @@ public class Player: Playable
 	{
 		try
 		{
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             			PreparedStatement statement = con.prepareStatement(RESTORE_TP_BOOKMARK);
 			statement.setInt(1, getObjectId());
 			
@@ -12995,7 +12995,7 @@ public class Player: Playable
 		_friendList.clear();
 		try 
 		{
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             			PreparedStatement statement = con.prepareStatement("SELECT friendId FROM character_friends WHERE charId=? AND relation=0");
 			statement.setInt(1, getObjectId());
 
@@ -13041,7 +13041,7 @@ public class Player: Playable
 		_surveillanceList.clear();
 		try
 		{
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             			PreparedStatement statement = con.prepareStatement("SELECT targetId FROM character_surveillances WHERE charId=?");
 			statement.setInt(1, getObjectId());
 			
@@ -13073,7 +13073,7 @@ public class Player: Playable
 		
 		try 
 		{
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             			PreparedStatement statement = con.prepareStatement("UPDATE character_friends SET memo=? WHERE charId=? AND friendId=?");
 			int friendId = CharInfoTable.getInstance().getIdByName(name);
 			statement.setString(1, memo);
@@ -13145,7 +13145,7 @@ public class Player: Playable
 		{
 			try
 			{
-                Connection con = DatabaseFactory.getConnection();
+                using GameServerDbContext ctx = new();
 				
 				{
                     PreparedStatement st = con.prepareStatement(DELETE_CHAR_RECIPE_SHOP);
@@ -13186,7 +13186,7 @@ public class Player: Playable
 		
 		try 
 		{
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             			PreparedStatement statement = con.prepareStatement(RESTORE_CHAR_RECIPE_SHOP);
 			statement.setInt(1, getObjectId());
 			
@@ -13608,7 +13608,7 @@ public class Player: Playable
 	{
 		try 
         {
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             			PreparedStatement statement = con.prepareStatement("SELECT object_id FROM `items` WHERE `owner_id`=? AND (`loc`='PET' OR `loc`='PET_EQUIP') LIMIT 1;");
 			statement.setInt(1, getObjectId());
 			
@@ -13640,7 +13640,7 @@ public class Player: Playable
 	{
 		try 
 		{
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             			PreparedStatement statement = con.prepareStatement("SELECT rec_have, rec_left FROM character_reco_bonus WHERE charId = ?");
 			statement.setInt(1, getObjectId());
 			
@@ -13666,7 +13666,7 @@ public class Player: Playable
 	{
 		try 
 		{
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             			PreparedStatement ps = con.prepareStatement("REPLACE INTO character_reco_bonus (charId,rec_have,rec_left,time_left) VALUES (?,?,?,?)");
 			ps.setInt(1, getObjectId());
 			ps.setInt(2, _recomHave);
@@ -14833,7 +14833,7 @@ public class Player: Playable
 		List<ElementalSpiritDataHolder> restoredSpirits = new();
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement stmt = con.prepareStatement(RESTORE_ELEMENTAL_SPIRITS);
 			stmt.setInt(1, getObjectId());
 			 
@@ -15375,7 +15375,7 @@ public class Player: Playable
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps2 = con.prepareStatement("SELECT pet_evolves.index, pet_evolves.level as evolve, pets.name, pets.level, pets.exp FROM pet_evolves, pets WHERE pet_evolves.itemObjId=? AND pet_evolves.itemObjId = pets.item_obj_id");
 				ps2.setInt(1, it.getObjectId());
 				
@@ -15565,7 +15565,7 @@ public class Player: Playable
 	{
 		try
 		{
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             			PreparedStatement st = con.prepareStatement(INSERT_COLLECTION);
 			_collections.forEach(data =>
 			{
@@ -15595,7 +15595,7 @@ public class Player: Playable
 	{
 		try 
         {
-		    Connection con = DatabaseFactory.getConnection();
+		    using GameServerDbContext ctx = new();
             {
                 PreparedStatement st = con.prepareStatement(DELETE_COLLECTION_FAVORITE);
 				st.setString(1, getAccountName());
@@ -15634,7 +15634,7 @@ public class Player: Playable
 		
 		try 
 		{
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             			PreparedStatement statement = con.prepareStatement(RESTORE_COLLECTION);
 			statement.setString(1, getAccountName());
 			
@@ -15692,7 +15692,7 @@ public class Player: Playable
 		
 		try 
         {
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             			PreparedStatement statement = con.prepareStatement(RESTORE_COLLECTION_FAVORITE);
 			statement.setString(1, getAccountName());
 			try			
@@ -15719,7 +15719,7 @@ public class Player: Playable
 	{
 		try 
 		{
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
 			
 			{
                 PreparedStatement st = con.prepareStatement(DELETE_SUBJUGATION);
@@ -15765,7 +15765,7 @@ public class Player: Playable
 		
 		try 
         {
-            Connection con = DatabaseFactory.getConnection();
+            using GameServerDbContext ctx = new();
             			PreparedStatement statement = con.prepareStatement(RESTORE_SUBJUGATION);
 			statement.setInt(1, getObjectId());
 

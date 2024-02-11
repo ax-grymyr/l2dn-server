@@ -63,7 +63,7 @@ public class ShortCuts : IRestorable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(
 				"REPLACE INTO character_shortcuts (charId,slot,page,type,shortcut_id,level,sub_level,class_index) values(?,?,?,?,?,?,?,?)");
 			statement.setInt(1, _owner.getObjectId());
@@ -117,7 +117,7 @@ public class ShortCuts : IRestorable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement =
 				con.prepareStatement(
 					"DELETE FROM character_shortcuts WHERE charId=? AND slot=? AND page=? AND class_index=?");
@@ -138,7 +138,7 @@ public class ShortCuts : IRestorable
 		_shortCuts.clear();
 		try 
 		{
-			using Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			using PreparedStatement statement = con.prepareStatement(
 				"SELECT charId, slot, page, type, shortcut_id, level, sub_level FROM character_shortcuts WHERE charId=? AND class_index=?");
 			statement.setInt(1, _owner.getObjectId());

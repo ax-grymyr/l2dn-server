@@ -119,7 +119,7 @@ public class ItemAuctionInstance
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(SELECT_AUCTION_ID_BY_INSTANCE_ID);
 			ps.setInt(1, _instanceId);
 			ResultSet rset = ps.executeQuery();
@@ -491,7 +491,7 @@ public class ItemAuctionInstance
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			int auctionItemId = 0;
 			long startingTime = 0;
 			long endingTime = 0;

@@ -43,7 +43,7 @@ public class IdManager
 		// Update characters online status.
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement statement = con.createStatement();
 			statement.executeUpdate("UPDATE characters SET online = 0");
 			LOGGER.Info("Updated characters online status.");
@@ -58,7 +58,7 @@ public class IdManager
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				Statement statement = con.createStatement();
 				long cleanupStart = System.currentTimeMillis();
 				int cleanCount = 0;
@@ -145,7 +145,7 @@ public class IdManager
 		// Cleanup timestamps.
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			int cleanCount = 0;
 			foreach (String line in TIMESTAMPS_CLEAN)
 			{
@@ -174,7 +174,7 @@ public class IdManager
 			List<int> usedIds = new();
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				Statement statement = con.createStatement();
 				StringBuilder extractUsedObjectIdsQuery = new StringBuilder();
 				foreach (String[] tblClmn in ID_EXTRACTS)

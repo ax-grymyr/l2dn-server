@@ -50,7 +50,7 @@ public class Pet: Summon
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps1 = con.prepareStatement("DELETE FROM pet_evolves WHERE itemObjId=?");
 			ps1.setInt(1, _controlObjectId);
 			ps1.execute();
@@ -65,7 +65,7 @@ public class Pet: Summon
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps2 = con.prepareStatement(SELECT_EVOLVED_PETS);
 			ps2.setInt(1, _controlObjectId);
 			ResultSet rset = ps2.executeQuery();
@@ -85,7 +85,7 @@ public class Pet: Summon
 		deletePetEvolved();
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement stmt = con.prepareStatement(UPDATE_EVOLVED_PETS);
 			stmt.setInt(1, controlItemObjId);
 			stmt.setInt(2, index);
@@ -104,7 +104,7 @@ public class Pet: Summon
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps2 = con.prepareStatement(INSERT_PET_SKILLS);
 			ps2.setInt(1, _controlObjectId);
 			ps2.setInt(2, skillId);
@@ -121,7 +121,7 @@ public class Pet: Summon
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps1 = con.prepareStatement(SELECT_PET_SKILLS);
 			PreparedStatement ps2 = con.prepareStatement(DELETE_PET_SKILLS);
 			ps1.setInt(1, _controlObjectId);
@@ -848,7 +848,7 @@ public class Pet: Summon
 		// pet control item no longer exists, delete the pet from the db
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement("DELETE FROM pets WHERE item_obj_id = ?");
 			statement.setInt(1, _controlObjectId);
 			statement.execute();
@@ -905,7 +905,7 @@ public class Pet: Summon
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement =
 				con.prepareStatement(
 					"SELECT item_obj_id, name, level, curHp, curMp, exp, sp, fed FROM pets WHERE item_obj_id=?");
@@ -1004,7 +1004,7 @@ public class Pet: Summon
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(req);
 			statement.setString(1, getName());
 			statement.setInt(2, getStat().getLevel());
@@ -1053,7 +1053,7 @@ public class Pet: Summon
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps1 = con.prepareStatement(DELETE_SKILL_SAVE);
 			PreparedStatement ps2 = con.prepareStatement(ADD_SKILL_SAVE);
 			
@@ -1129,7 +1129,7 @@ public class Pet: Summon
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps1 = con.prepareStatement(RESTORE_SKILL_SAVE);
 			PreparedStatement ps2 = con.prepareStatement(DELETE_SKILL_SAVE);
 			if (!SummonEffectTable.getInstance().getPetEffects().containsKey(getControlObjectId()))

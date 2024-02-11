@@ -166,7 +166,7 @@ public class Fort: AbstractResidence
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement(
 					"REPLACE INTO fort_functions (fort_id, type, lvl, lease, rate, endTime) VALUES (?,?,?,?,?,?)");
 				ps.setInt(1, getResidenceId());
@@ -440,7 +440,7 @@ public class Fort: AbstractResidence
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("UPDATE fort SET supplyLvL=? WHERE id = ?");
 			ps.setInt(1, _supplyLvL);
 			ps.setInt(2, getResidenceId());
@@ -548,7 +548,7 @@ public class Fort: AbstractResidence
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM fort WHERE id = ?");
 			ps.setInt(1, getResidenceId());
 			int ownerId = 0;
@@ -610,7 +610,7 @@ public class Fort: AbstractResidence
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM fort_functions WHERE fort_id = ?");
 			ps.setInt(1, getResidenceId());
 			{
@@ -636,7 +636,7 @@ public class Fort: AbstractResidence
 		_function.remove(functionType);
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM fort_functions WHERE fort_id=? AND type=?");
 			ps.setInt(1, getResidenceId());
 			ps.setInt(2, functionType);
@@ -729,7 +729,7 @@ public class Fort: AbstractResidence
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM fort_doorupgrade WHERE fortId = ?");
 			ps.setInt(1, getResidenceId());
 
@@ -751,7 +751,7 @@ public class Fort: AbstractResidence
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM fort_doorupgrade WHERE fortId = ?");
 			ps.setInt(1, getResidenceId());
 			ps.execute();
@@ -766,7 +766,7 @@ public class Fort: AbstractResidence
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement("INSERT INTO fort_doorupgrade (doorId, hp, pDef, mDef) VALUES (?,?,?,?)");
 			ps.setInt(1, doorId);
@@ -797,7 +797,7 @@ public class Fort: AbstractResidence
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement("UPDATE fort SET owner=?,lastOwnedTime=?,state=?,castleId=? WHERE id = ?");
 			ps.setInt(1, clanId);
@@ -1001,7 +1001,7 @@ public class Fort: AbstractResidence
 		_castleId = castleId;
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("UPDATE fort SET state=?,castleId=? WHERE id = ?");
 			ps.setInt(1, _state);
 			ps.setInt(2, _castleId);
@@ -1137,7 +1137,7 @@ public class Fort: AbstractResidence
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement("SELECT * FROM fort_spawnlist WHERE fortId = ? AND spawnType = ?");
 			ps.setInt(1, getResidenceId());
@@ -1169,7 +1169,7 @@ public class Fort: AbstractResidence
 		_siegeNpcs.clear();
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(
 				"SELECT id, npcId, x, y, z, heading FROM fort_spawnlist WHERE fortId = ? AND spawnType = ? ORDER BY id");
 			ps.setInt(1, getResidenceId());
@@ -1199,7 +1199,7 @@ public class Fort: AbstractResidence
 		_npcCommanders.clear();
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(
 				"SELECT id, npcId, x, y, z, heading FROM fort_spawnlist WHERE fortId = ? AND spawnType = ? ORDER BY id");
 			ps.setInt(1, getResidenceId());
@@ -1232,7 +1232,7 @@ public class Fort: AbstractResidence
 		_availableCastles.clear();
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(
 				"SELECT id, npcId, x, y, z, heading, castleId FROM fort_spawnlist WHERE fortId = ? AND spawnType = ? ORDER BY id");
 			ps.setInt(1, getResidenceId());

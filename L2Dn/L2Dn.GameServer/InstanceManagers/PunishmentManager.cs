@@ -33,7 +33,7 @@ public class PunishmentManager
 		// Load punishments.
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement st = con.createStatement();
 			ResultSet rset = st.executeQuery("SELECT * FROM punishments");
 			while (rset.next())

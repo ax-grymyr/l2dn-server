@@ -28,7 +28,7 @@ public class ClanHallAuction
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(LOAD_CLANHALL_BIDDERS);
 			ps.setInt(1, _clanHallId);
 			{
@@ -73,7 +73,7 @@ public class ClanHallAuction
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(INSERT_CLANHALL_BIDDER);
 			ps.setInt(1, _clanHallId);
 			ps.setInt(2, clan.getId());
@@ -93,7 +93,7 @@ public class ClanHallAuction
 		getBids().remove(clan.getId());
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(DELETE_CLANHALL_BIDDER);
 			ps.setInt(1, clan.getId());
 			ps.execute();
@@ -144,7 +144,7 @@ public class ClanHallAuction
 			
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement(DELETE_CLANHALL_BIDDERS);
 				ps.setInt(1, _clanHallId);
 				ps.execute();

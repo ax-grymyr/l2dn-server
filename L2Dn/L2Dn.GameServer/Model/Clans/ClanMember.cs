@@ -220,7 +220,7 @@ public class ClanMember
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("UPDATE characters SET subpledge=? WHERE charId=?");
 			ps.setLong(1, _pledgeType);
 			ps.setInt(2, getObjectId());
@@ -266,7 +266,7 @@ public class ClanMember
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("UPDATE characters SET power_grade=? WHERE charId=?");
 			ps.setLong(1, _powerGrade);
 			ps.setInt(2, getObjectId());
@@ -778,7 +778,7 @@ public class ClanMember
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("UPDATE characters SET apprentice=?,sponsor=? WHERE charId=?");
 			ps.setInt(1, apprentice);
 			ps.setInt(2, sponsor);

@@ -238,7 +238,7 @@ public class Servitor : Summon, Runnable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(DELETE_SKILL_SAVE);
 			
 			// Delete all current stored effects for summon to avoid dupe
@@ -340,7 +340,7 @@ public class Servitor : Summon, Runnable
 		
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			if (!SummonEffectTable.getInstance().getServitorEffectsOwner().containsKey(getOwner().getObjectId()) || !SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).containsKey(getOwner().getClassIndex()) || !SummonEffectTable.getInstance().getServitorEffects(getOwner()).containsKey(getReferenceSkill()))
 			{
 				PreparedStatement statement = con.prepareStatement(RESTORE_SKILL_SAVE);

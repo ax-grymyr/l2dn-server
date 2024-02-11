@@ -99,7 +99,7 @@ public class CursedWeaponsManager: IXmlReader
 	
 	private void restore()
 	{
-		try (Connection con = DatabaseFactory.getConnection();
+		try (using GameServerDbContext ctx = new();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery("SELECT itemId, charId, playerReputation, playerPkKills, nbKills, endTime FROM cursed_weapons"))
 		{
@@ -124,7 +124,7 @@ public class CursedWeaponsManager: IXmlReader
 	
 	private void controlPlayers()
 	{
-		try (Connection con = DatabaseFactory.getConnection();
+		try (using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT owner_id FROM items WHERE item_id=?"))
 		{
 			// TODO: See comments below...
@@ -295,7 +295,7 @@ public class CursedWeaponsManager: IXmlReader
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM cursed_weapons WHERE itemId = ?");
 			ps.setInt(1, itemId);
 			ps.executeUpdate();

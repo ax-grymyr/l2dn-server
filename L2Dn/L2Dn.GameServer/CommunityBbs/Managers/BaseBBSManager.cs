@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.CommunityBbs.Managers;
@@ -17,7 +18,7 @@ public abstract class BaseBBSManager
 	{
 		if (html.Length < 8192)
 		{
-			acha.sendPacket(new ShowBoard(html, "1001"));
+			acha.sendPacket(new ShowBoardPacket(html, "1001"));
 		}
 	}
 	
@@ -28,7 +29,7 @@ public abstract class BaseBBSManager
 	{
 		send1002(acha, " ", " ", "0");
 	}
-	
+
 	/**
 	 * @param player
 	 * @param string
@@ -37,24 +38,22 @@ public abstract class BaseBBSManager
 	 */
 	protected void send1002(Player player, String str, String string2, String string3)
 	{
-		List<String> arg = new(20);
-		arg.add("0");
-		arg.add("0");
-		arg.add("0");
-		arg.add("0");
-		arg.add("0");
-		arg.add("0");
-		arg.add(player.getName());
-		arg.add(player.getObjectId().ToString());
-		arg.add(player.getAccountName());
-		arg.add("9");
-		arg.add(string2); // subject?
-		arg.add(string2); // subject?
-		arg.add(str); // text
-		arg.add(string3); // date?
-		arg.add(string3); // date?
-		arg.add("0");
-		arg.add("0");
-		player.sendPacket(new ShowBoard(arg));
+		string[] args =
+		[
+			"0", "0", "0", "0", "0", "0", 
+			player.getName(),
+			player.getObjectId().ToString(),
+			player.getAccountName(),
+			"9",
+			string2, // subject?
+			string2, // subject?
+			str, // text
+			string3, // date?
+			string3, // date?
+			"0",
+			"0"
+		];
+		
+		player.sendPacket(new ShowBoardPacket(args));
 	}
 }

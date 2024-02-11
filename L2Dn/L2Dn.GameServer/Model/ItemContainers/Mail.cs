@@ -82,7 +82,7 @@ public class Mail: ItemContainer
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement =
 				con.prepareStatement("SELECT * FROM items WHERE owner_id=? AND loc=? AND loc_data=?");
 			statement.setInt(1, _ownerId);

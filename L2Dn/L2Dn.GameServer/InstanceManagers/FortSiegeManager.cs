@@ -181,7 +181,7 @@ public class FortSiegeManager
 		bool register = false;
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement("SELECT clan_id FROM fortsiege_clans where clan_id=? and fort_id=?");
 			ps.setInt(1, clan.getId());

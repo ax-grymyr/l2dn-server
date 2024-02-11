@@ -48,7 +48,7 @@ public class CrestTable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement("SELECT `crest_id`, `data`, `type` FROM `crests` ORDER BY `crest_id` DESC");
 			ResultSet rs = statement.executeQuery();
 			while (rs.next())
@@ -130,7 +130,7 @@ public class CrestTable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement =
 				con.prepareStatement("INSERT INTO `crests`(`crest_id`, `data`, `type`) VALUES(?, ?, ?)");
 			Crest crest = new Crest(_nextId.getAndIncrement(), data, crestType);
@@ -165,7 +165,7 @@ public class CrestTable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement("DELETE FROM `crests` WHERE `crest_id`=?");
 			statement.setInt(1, crestId);
 			statement.executeUpdate();

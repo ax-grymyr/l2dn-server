@@ -29,7 +29,7 @@ public class RankingHistory
 		
 		try 
 		{
-			using Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			using PreparedStatement statement = con.prepareStatement(
 				"INSERT INTO character_ranking_history (charId, day, ranking, exp) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE ranking = ?, exp = ?");
 			using PreparedStatement deleteSt =
@@ -66,7 +66,7 @@ public class RankingHistory
 			_nextUpdate = currentTime + Config.CHAR_DATA_STORE_INTERVAL;
 			try 
 			{
-				using Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				using PreparedStatement statement =
 					con.prepareStatement("SELECT * FROM character_ranking_history WHERE charId = ? ORDER BY day DESC");
 				statement.setInt(1, _player.getObjectId());

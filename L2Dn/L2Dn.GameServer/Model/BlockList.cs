@@ -46,7 +46,7 @@ public class BlockList
 		Set<int> list = new();
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement =
 				con.prepareStatement("SELECT friendId FROM character_friends WHERE charId=? AND relation=1");
 			statement.setInt(1, objId);
@@ -73,7 +73,7 @@ public class BlockList
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			if (state) // add
 			{
 				PreparedStatement statement =

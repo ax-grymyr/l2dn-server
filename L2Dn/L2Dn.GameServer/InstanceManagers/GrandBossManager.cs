@@ -32,7 +32,7 @@ public class GrandBossManager: IStorable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery("SELECT * from grandboss_data ORDER BY boss_id");
 			// Read all info from DB, and store it for AI to read and decide what to do faster than accessing DB in real time
@@ -120,7 +120,7 @@ public class GrandBossManager: IStorable
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			foreach (var e in _storedInfo)
 			{
 				GrandBoss boss = _bosses.get(e.Key);
@@ -174,7 +174,7 @@ public class GrandBossManager: IStorable
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			GrandBoss boss = _bosses.get(bossId);
 			StatSet info = _storedInfo.get(bossId);
 			if (statusOnly || (boss == null) || (info == null))

@@ -1,4 +1,14 @@
+using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.InstanceManagers.Events;
+using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Announcements;
+using L2Dn.GameServer.Model.Events;
+using L2Dn.GameServer.Model.Events.Impl;
+using L2Dn.GameServer.Model.Events.Listeners;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Scripts;
+using L2Dn.GameServer.Utilities;
+using ThreadPool = System.Threading.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Quests;
 
@@ -57,7 +67,7 @@ public class LongTimeEvent: Quest
 			{
 				long delay = _eventPeriod.getStartDate().getTime() - System.currentTimeMillis();
 				ThreadPool.schedule(new ScheduleStart(), delay);
-				LOGGER.info("Event " + _eventName + " will be started at " + _eventPeriod.getStartDate());
+				LOGGER.Info("Event " + _eventName + " will be started at " + _eventPeriod.getStartDate());
 			}
 			else
 			{
@@ -75,13 +85,11 @@ public class LongTimeEvent: Quest
 	{
 		new IXmlReader()
 		{
-			@Override
 			public void load()
 			{
 				parseDatapackFile("data/scripts/events/" + getScriptName() + "/config.xml");
 			}
 			
-			@Override
 			public void parseDocument(Document doc, File f)
 			{
 				if (!doc.getDocumentElement().getNodeName().equalsIgnoreCase("event"))
@@ -323,10 +331,10 @@ public class LongTimeEvent: Quest
 	/**
 	 * Event spawns must initialize after server loads scripts.
 	 */
-	private Consumer<OnServerStart> _spawnNpcs = event =>
+	private Action<OnServerStart> _spawnNpcs = ev =>
 	{
 		Long millisToEventEnd = _eventPeriod.getEndDate().getTime() - System.currentTimeMillis();
-		for (NpcSpawn npcSpawn : _spawnList)
+		foreach (NpcSpawn npcSpawn in _spawnList)
 		{
 			Npc npc = addSpawn(npcSpawn.npcId, npcSpawn.loc.getX(), npcSpawn.loc.getY(), npcSpawn.loc.getZ(), npcSpawn.loc.getHeading(), false, millisToEventEnd, false);
 			int respawnDelay = (int) npcSpawn.respawnTime.toMillis();
@@ -342,9 +350,8 @@ public class LongTimeEvent: Quest
 		Containers.Global().removeListenerIf(EventType.ON_SERVER_START, listener => listener.getOwner() == this);
 	};
 	
-	protected class ScheduleEnd implements Runnable
+	protected class ScheduleEnd: Runnable
 	{
-		@Override
 		public void run()
 		{
 			stopEvent();
@@ -385,10 +392,10 @@ public class LongTimeEvent: Quest
 	{
 		if (!_destroyItemsOnEnd.isEmpty())
 		{
-			for (int itemId : _destroyItemsOnEnd)
+			foreach (int itemId in _destroyItemsOnEnd)
 			{
 				// Remove item from online players.
-				for (Player player : World.getInstance().getPlayers())
+				foreach (Player player in World.getInstance().getPlayers())
 				{
 					if (player != null)
 					{
@@ -396,15 +403,16 @@ public class LongTimeEvent: Quest
 					}
 				}
 				// Update database.
-				try (Connection con = DatabaseFactory.getConnection();
-					PreparedStatement statement = con.prepareStatement("DELETE FROM items WHERE item_id=?"))
+				try
 				{
+					using GameServerDbContext ctx = new();
+					PreparedStatement statement = con.prepareStatement("DELETE FROM items WHERE item_id=?");
 					statement.setInt(1, itemId);
 					statement.execute();
 				}
-				catch (SQLException e)
+				catch (Exception e)
 				{
-					LOGGER.warning(e.toString());
+					LOGGER.Warn(e);
 				}
 			}
 		}

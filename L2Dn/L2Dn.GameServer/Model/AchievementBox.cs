@@ -78,7 +78,7 @@ public class AchievementBox
 		refreshPvpEndDate();
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM achievement_box WHERE charId=?");
 			ps.setInt(1, _owner.getObjectId());
 			{
@@ -126,7 +126,7 @@ public class AchievementBox
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement("INSERT INTO achievement_box VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			ps.setInt(1, _owner.getObjectId());
@@ -152,7 +152,7 @@ public class AchievementBox
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(
 				"UPDATE achievement_box SET box_owned=?,monster_point=?,pvp_point=?,pending_box=?,open_time=?,box_state_slot_1=?,boxtype_slot_1=?,box_state_slot_2=?,boxtype_slot_2=?,box_state_slot_3=?,boxtype_slot_3=?,box_state_slot_4=?,boxtype_slot_4=? WHERE charId=?");
 			ps.setInt(1, getBoxOwned());

@@ -175,7 +175,7 @@ public class CastleManager
 			// else offline-player circlet removal
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement("DELETE FROM items WHERE owner_id = ? and item_id = ?");
 				ps.setInt(1, member.getObjectId());
 				ps.setInt(2, circletId);
@@ -192,7 +192,7 @@ public class CastleManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery("SELECT id FROM castle ORDER BY id");
 			while (rs.next())

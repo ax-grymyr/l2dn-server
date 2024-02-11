@@ -59,7 +59,7 @@ public class SchemeBufferTable
 		int count = 0;
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement st = con.prepareStatement(LOAD_SCHEMES);
 			ResultSet rs = st.executeQuery();
 			while (rs.next())
@@ -100,7 +100,7 @@ public class SchemeBufferTable
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			// Delete all entries from database.
 
 			{

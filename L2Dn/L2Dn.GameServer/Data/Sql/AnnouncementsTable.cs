@@ -1,8 +1,11 @@
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Announcements;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Announcement = L2Dn.GameServer.Model.Announcements.Announcement;
 
 namespace L2Dn.GameServer.Data.Sql;
 
@@ -24,27 +27,26 @@ public class AnnouncementsTable
 	private void load()
 	{
 		_announcements.clear();
-		try 
+		try
 		{
-			Connection con = DatabaseFactory.getConnection();
-			Statement st = con.createStatement();
-			ResultSet rset = st.executeQuery("SELECT * FROM announcements");
-			while (rset.next())
+			using GameServerDbContext ctx = new();
+			var announcements = ctx.Announcements;
+			foreach (var announcement in announcements)
 			{
-				AnnouncementType type = AnnouncementType.findById(rset.getInt("type"));
+				AnnouncementType type = (AnnouncementType)announcement.Type;
 				Announcement announce;
 				switch (type)
 				{
 					case AnnouncementType.NORMAL:
 					case AnnouncementType.CRITICAL:
 					{
-						announce = new Announcement(rset);
+						announce = new Announcement(announcement);
 						break;
 					}
 					case AnnouncementType.AUTO_NORMAL:
 					case AnnouncementType.AUTO_CRITICAL:
 					{
-						announce = new AutoAnnouncement(rset);
+						announce = new AutoAnnouncement(announcement);
 						break;
 					}
 					default:
@@ -83,7 +85,7 @@ public class AnnouncementsTable
 		{
 			if (announce.isValid() && (announce.getType() == type))
 			{
-				player.sendPacket(new CreatureSay(null,
+				player.sendPacket(new CreatureSayPacket(null,
 					type == AnnouncementType.CRITICAL ? ChatType.CRITICAL_ANNOUNCE : ChatType.ANNOUNCEMENT,
 					player.getName(), announce.getContent()));
 			}

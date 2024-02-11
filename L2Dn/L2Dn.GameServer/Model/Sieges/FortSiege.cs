@@ -1,56 +1,79 @@
+using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
+using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Events;
+using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Sieges;
+using L2Dn.GameServer.Model.Events.Listeners;
+using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Model.Spawns;
+using L2Dn.GameServer.Model.Zones;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Utilities;
+using NLog;
+using FortManager = L2Dn.GameServer.InstanceManagers.FortManager;
+using ThreadPool = System.Threading.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Sieges;
 
 //public class FortSiege implements Siegable
 public class FortSiege: ListenersContainer, Siegable
 {
-	protected static final Logger LOGGER = Logger.getLogger(FortSiege.class.getName());
+	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(FortSiege));
 	
-	public static final String ORC_FORTRESS_GREG_UPPER_LEFT_SPAWN = "orc_fortress_greg_upper_left";
-	public static final String ORC_FORTRESS_GREG_UPPER_RIGHT_SPAWN = "orc_fortress_greg_upper_right";
-	public static final String ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN = "orc_fortress_greg_bottom_right";
-	public static final String GREG_SPAWN_VAR = "GREG_SPAWN";
+	public const String ORC_FORTRESS_GREG_UPPER_LEFT_SPAWN = "orc_fortress_greg_upper_left";
+	public const String ORC_FORTRESS_GREG_UPPER_RIGHT_SPAWN = "orc_fortress_greg_upper_right";
+	public const String ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN = "orc_fortress_greg_bottom_right";
+	public const String GREG_SPAWN_VAR = "GREG_SPAWN";
 	
-	boolean _hasSpawnedPreparationNpcs = false;
+	private bool _hasSpawnedPreparationNpcs = false;
 	
-	private static final AtomicReference<SpawnTemplate> SPAWN_PREPARATION_NPCS = new AtomicReference<>();
+	private static readonly AtomicReference<SpawnTemplate> SPAWN_PREPARATION_NPCS = new();
 	
-	private static final ZoneType FORTRESS_ZONE = ZoneManager.getInstance().getZoneByName("orc_fortress_general_area");
+	private static readonly ZoneType FORTRESS_ZONE = ZoneManager.getInstance().getZoneByName("orc_fortress_general_area");
 	
-	ScheduledFuture<?> _siegeGregSentryTask = null;
+	private ScheduledFuture _siegeGregSentryTask = null;
 	
-	int _flagCount = 0;
+	private int _flagCount = 0;
 	
 	// SQL
-	private static final String DELETE_FORT_SIEGECLANS_BY_CLAN_ID = "DELETE FROM fortsiege_clans WHERE fort_id = ? AND clan_id = ?";
-	private static final String DELETE_FORT_SIEGECLANS = "DELETE FROM fortsiege_clans WHERE fort_id = ?";
+	private const String DELETE_FORT_SIEGECLANS_BY_CLAN_ID = "DELETE FROM fortsiege_clans WHERE fort_id = ? AND clan_id = ?";
+	private const String DELETE_FORT_SIEGECLANS = "DELETE FROM fortsiege_clans WHERE fort_id = ?";
 	
-	public class ScheduleEndSiegeTask implements Runnable
+	public class ScheduleEndSiegeTask: Runnable
 	{
-		@Override
+		private readonly FortSiege _fortSiege;
+
+		public ScheduleEndSiegeTask(FortSiege fortSiege)
+		{
+			_fortSiege = fortSiege;
+		}
+        
 		public void run()
 		{
-			if (!_isInProgress)
+			if (!_fortSiege._isInProgress)
 			{
 				return;
 			}
 			
 			try
 			{
-				_siegeEnd = null;
-				endSiege();
+				_fortSiege._siegeEnd = null;
+				_fortSiege.endSiege();
 			}
 			catch (Exception e)
 			{
-				LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Exception: ScheduleEndSiegeTask() for Fort: " + _fort.getName() + " " + e.getMessage(), e);
+				LOGGER.Warn(GetType().Name + ": Exception: ScheduleEndSiegeTask() for Fort: " + _fortSiege._fort.getName() + " " + e);
 			}
 		}
 	}
 	
-	public class ScheduleGregSentrySpawnTask implements Runnable
+	public class ScheduleGregSentrySpawnTask: Runnable
 	{
-		@Override
 		public void run()
 		{
 			FORTRESS_ZONE.broadcastPacket(new ExShowScreenMessage(2, -1, 2, 0, 0, 0, 0, true, 8000, false, null, NpcStringId.FLAG_SENTRY_GREG_HAS_APPEARED, null));
@@ -60,12 +83,12 @@ public class FortSiege: ListenersContainer, Siegable
 			}
 			try
 			{
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate -> spawnTemplate.getGroupsByName(ORC_FORTRESS_GREG_UPPER_LEFT_SPAWN).forEach(holder ->
+				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName(ORC_FORTRESS_GREG_UPPER_LEFT_SPAWN).forEach(holder =>
 				{
 					holder.spawnAll();
-					for (NpcSpawnTemplate nst : holder.getSpawns())
+					foreach (NpcSpawnTemplate nst in holder.getSpawns())
 					{
-						for (Npc npc : nst.getSpawnedNpcs())
+						foreach (Npc npc in nst.getSpawnedNpcs())
 						{
 							Spawn spawn = npc.getSpawn();
 							if (spawn != null)
@@ -75,12 +98,12 @@ public class FortSiege: ListenersContainer, Siegable
 						}
 					}
 				}));
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate -> spawnTemplate.getGroupsByName(ORC_FORTRESS_GREG_UPPER_RIGHT_SPAWN).forEach(holder ->
+				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName(ORC_FORTRESS_GREG_UPPER_RIGHT_SPAWN).forEach(holder =>
 				{
 					holder.spawnAll();
-					for (NpcSpawnTemplate nst : holder.getSpawns())
+					foreach (NpcSpawnTemplate nst in holder.getSpawns())
 					{
-						for (Npc npc : nst.getSpawnedNpcs())
+						foreach (Npc npc in nst.getSpawnedNpcs())
 						{
 							Spawn spawn = npc.getSpawn();
 							if (spawn != null)
@@ -90,12 +113,12 @@ public class FortSiege: ListenersContainer, Siegable
 						}
 					}
 				}));
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate -> spawnTemplate.getGroupsByName(ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN).forEach(holder ->
+				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName(ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN).forEach(holder =>
 				{
 					holder.spawnAll();
-					for (NpcSpawnTemplate nst : holder.getSpawns())
+					foreach (NpcSpawnTemplate nst in holder.getSpawns())
 					{
-						for (Npc npc : nst.getSpawnedNpcs())
+						foreach (Npc npc in nst.getSpawnedNpcs())
 						{
 							Spawn spawn = npc.getSpawn();
 							if (spawn != null)
@@ -108,17 +131,16 @@ public class FortSiege: ListenersContainer, Siegable
 			}
 			catch (Exception e)
 			{
-				LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Exception: ScheduleGregSentrySpawn() for Fort: " + _fort.getName() + " " + e.getMessage(), e);
+				LOGGER.Warn(GetType().Name + ": Exception: ScheduleGregSentrySpawn() for Fort: " + _fort.getName() + " " + e);
 			}
 		}
 	}
 	
-	public class ScheduleStartSiegeTask implements Runnable
+	public class ScheduleStartSiegeTask: Runnable
 	{
-		private final Fort _fortInst;
-		private final int _time;
-		
-		private final long _initialDelayInMilliseconds;
+		private readonly Fort _fortInst;
+		private readonly int _time;
+		private readonly long _initialDelayInMilliseconds;
 		
 		public ScheduleStartSiegeTask(int time)
 		{
@@ -134,7 +156,6 @@ public class FortSiege: ListenersContainer, Siegable
 			_initialDelayInMilliseconds = initialDelayInMilliseconds;
 		}
 		
-		@Override
 		public void run()
 		{
 			if (_isInProgress)
@@ -146,12 +167,12 @@ public class FortSiege: ListenersContainer, Siegable
 			{
 				_hasSpawnedPreparationNpcs = true;
 				
-				SPAWN_PREPARATION_NPCS.set(SpawnData.getInstance().getSpawns().stream().filter(t -> t.getName() != null).filter(t -> t.getName().contains("orc_fortress_preparation_npcs")).findAny().orElse(null));
+				SPAWN_PREPARATION_NPCS.set(SpawnData.getInstance().getSpawns().stream().filter(t => t.getName() != null).filter(t => t.getName().contains("orc_fortress_preparation_npcs")).findAny().orElse(null));
 				SPAWN_PREPARATION_NPCS.get().getGroups().forEach(SpawnGroup::spawnAll);
 			}
 			try
 			{
-				final SystemMessage sm;
+				SystemMessage sm;
 				if ((_initialDelayInMilliseconds != 0) && (_fortInst.getResidenceId() == FortManager.ORC_FORTRESS))
 				{
 					int nextTask = 0;
@@ -303,9 +324,8 @@ public class FortSiege: ListenersContainer, Siegable
 		}
 	}
 	
-	public class ScheduleSuspiciousMerchantSpawn implements Runnable
+	public class ScheduleSuspiciousMerchantSpawn: Runnable
 	{
-		@Override
 		public void run()
 		{
 			if (_isInProgress)
@@ -324,9 +344,8 @@ public class FortSiege: ListenersContainer, Siegable
 		}
 	}
 	
-	public class ScheduleSiegeRestore implements Runnable
+	public class ScheduleSiegeRestore: Runnable
 	{
-		@Override
 		public void run()
 		{
 			if (!_isInProgress)
@@ -347,18 +366,18 @@ public class FortSiege: ListenersContainer, Siegable
 		}
 	}
 	
-	private final Set<SiegeClan> _attackerClans = ConcurrentHashMap.newKeySet();
+	private readonly Set<SiegeClan> _attackerClans = new();
 	
 	// Fort setting
-	protected Set<Spawn> _commanders = ConcurrentHashMap.newKeySet();
-	protected final Fort _fort;
-	boolean _isInProgress = false;
-	private final Collection<Spawn> _siegeGuards = new LinkedList<>();
-	ScheduledFuture<?> _siegeEnd = null;
-	ScheduledFuture<?> _siegeRestore = null;
-	ScheduledFuture<?> _siegeStartTask = null;
+	protected Set<Spawn> _commanders = new();
+	protected readonly Fort _fort;
+	bool _isInProgress = false;
+	private List<Spawn> _siegeGuards = new();
+	ScheduledFuture? _siegeEnd = null;
+	ScheduledFuture? _siegeRestore = null;
+	ScheduledFuture? _siegeStartTask = null;
 	// Orc Fortress
-	boolean _isInPreparation = false;
+	bool _isInPreparation = false;
 	
 	public FortSiege(Fort fort)
 	{
@@ -367,43 +386,42 @@ public class FortSiege: ListenersContainer, Siegable
 		FortSiegeManager.getInstance().addSiege(this);
 		if (_fort.getResidenceId() == FortManager.ORC_FORTRESS)
 		{
-			Containers.Global().addListener(new ConsumerEventListener(this, EventType.ON_FORT_SIEGE_START, (OnFortSiegeStart event) -> announceStartToPlayers(event), this));
-			Containers.Global().addListener(new ConsumerEventListener(this, EventType.ON_FORT_SIEGE_FINISH, (OnFortSiegeFinish event) -> announceEndToPlayers(event), this));
-			Containers.Global().addListener(new ConsumerEventListener(this, EventType.ON_PLAYER_LOGIN, (OnPlayerLogin event) -> showHUDToPlayer(event), this));
+			Containers.Global().addListener(new ConsumerEventListener(this, EventType.ON_FORT_SIEGE_START, (OnFortSiegeStart ev) => announceStartToPlayers(ev), this));
+			Containers.Global().addListener(new ConsumerEventListener(this, EventType.ON_FORT_SIEGE_FINISH, (OnFortSiegeFinish ev) => announceEndToPlayers(ev), this));
+			Containers.Global().addListener(new ConsumerEventListener(this, EventType.ON_PLAYER_LOGIN, (OnPlayerLogin ev) => showHUDToPlayer(ev), this));
 			
 		}
 	}
 	
-	private void announceStartToPlayers(OnFortSiegeStart event)
+	private void announceStartToPlayers(OnFortSiegeStart ev)
 	{
-		Broadcast.toAllOnlinePlayers(new OrcFortressSiegeInfoHUD(event.getSiege().getFort().getResidenceId(), 1, 0, 30 * 60));
+		Broadcast.toAllOnlinePlayers(new OrcFortressSiegeInfoHUD(ev.getSiege().getFort().getResidenceId(), 1, 0, 30 * 60));
 		Broadcast.toAllOnlinePlayers(new SystemMessage(SystemMessageId.SEAL_THE_SEAL_TOWER_AND_CONQUER_ORC_FORTRESS));
 	}
 	
-	private void announceEndToPlayers(OnFortSiegeFinish event)
+	private void announceEndToPlayers(OnFortSiegeFinish ev)
 	{
-		Broadcast.toAllOnlinePlayers(new OrcFortressSiegeInfoHUD(event.getSiege().getFort().getResidenceId(), 0, 0, 0));
+		Broadcast.toAllOnlinePlayers(new OrcFortressSiegeInfoHUD(ev.getSiege().getFort().getResidenceId(), 0, 0, 0));
 	}
 	
-	private void showHUDToPlayer(OnPlayerLogin event)
+	private void showHUDToPlayer(OnPlayerLogin ev)
 	{
 		if (_isInPreparation)
 		{
-			final int remainingTimeInSeconds = (int) (_fort.getSiegeDate().getTimeInMillis() - Calendar.getInstance().getTimeInMillis()) / 1000;
-			event.getPlayer().sendPacket(new OrcFortressSiegeInfoHUD(_fort.getResidenceId(), 0, (int) Calendar.getInstance().getTimeInMillis() / 1000, remainingTimeInSeconds));
+			int remainingTimeInSeconds = (int) (_fort.getSiegeDate().getTimeInMillis() - Calendar.getInstance().getTimeInMillis()) / 1000;
+			ev.getPlayer().sendPacket(new OrcFortressSiegeInfoHUD(_fort.getResidenceId(), 0, (int) Calendar.getInstance().getTimeInMillis() / 1000, remainingTimeInSeconds));
 		}
 		else if (_isInProgress)
 		{
-			final int remainingTimeInSeconds = (int) _siegeEnd.getDelay(TimeUnit.SECONDS);
-			event.getPlayer().sendPacket(new OrcFortressSiegeInfoHUD(_fort.getResidenceId(), 1, (int) Calendar.getInstance().getTimeInMillis() / 1000, remainingTimeInSeconds));
+			int remainingTimeInSeconds = (int) _siegeEnd.getDelay(TimeUnit.SECONDS);
+			ev.getPlayer().sendPacket(new OrcFortressSiegeInfoHUD(_fort.getResidenceId(), 1, (int) Calendar.getInstance().getTimeInMillis() / 1000, remainingTimeInSeconds));
 		}
 	}
 	
 	/**
 	 * When siege ends.
 	 */
-	@Override
-	public void endSiege()
+	public override void endSiege()
 	{
 		if (_isInProgress)
 		{
@@ -416,7 +434,7 @@ public class FortSiege: ListenersContainer, Siegable
 			
 			if (_fort.getResidenceId() == FortManager.ORC_FORTRESS)
 			{
-				for (Player player : World.getInstance().getPlayers())
+				foreach (Player player in World.getInstance().getPlayers())
 				{
 					Item weap = player.getActiveWeaponInstance();
 					if ((weap != null) && (weap.getId() == FortManager.ORC_FORTRESS_FLAG))
@@ -425,9 +443,9 @@ public class FortSiege: ListenersContainer, Siegable
 					}
 				}
 				
-				for (WorldObject obj : World.getInstance().getVisibleObjects())
+				foreach (WorldObject obj in World.getInstance().getVisibleObjects())
 				{
-					if (obj instanceof Item)
+					if (obj is Item)
 					{
 						if (obj.getId() == FortManager.ORC_FORTRESS_FLAG)
 						{
@@ -436,13 +454,13 @@ public class FortSiege: ListenersContainer, Siegable
 					}
 				}
 				
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate -> spawnTemplate.getGroupsByName("orc_fortress").forEach(holder -> holder.despawnAll()));
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate -> spawnTemplate.getGroupsByName("orc_runners").forEach(holder -> holder.despawnAll()));
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate -> spawnTemplate.getGroupsByName("orc_fortress_inside").forEach(holder -> holder.despawnAll()));
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate -> spawnTemplate.getGroupsByName("orc_fortress_jeras_guards").forEach(holder -> holder.despawnAll()));
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate -> spawnTemplate.getGroupsByName(ORC_FORTRESS_GREG_UPPER_LEFT_SPAWN).forEach(holder -> holder.despawnAll()));
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate -> spawnTemplate.getGroupsByName(ORC_FORTRESS_GREG_UPPER_RIGHT_SPAWN).forEach(holder -> holder.despawnAll()));
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate -> spawnTemplate.getGroupsByName(ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN).forEach(holder -> holder.despawnAll()));
+				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress").forEach(holder => holder.despawnAll()));
+				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_runners").forEach(holder => holder.despawnAll()));
+				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress_inside").forEach(holder => holder.despawnAll()));
+				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress_jeras_guards").forEach(holder => holder.despawnAll()));
+				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName(ORC_FORTRESS_GREG_UPPER_LEFT_SPAWN).forEach(holder => holder.despawnAll()));
+				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName(ORC_FORTRESS_GREG_UPPER_RIGHT_SPAWN).forEach(holder => holder.despawnAll()));
+				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName(ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN).forEach(holder => holder.despawnAll()));
 				SPAWN_PREPARATION_NPCS.get().getGroups().forEach(SpawnGroup::despawnAll);
 			}
 			
@@ -478,7 +496,7 @@ public class FortSiege: ListenersContainer, Siegable
 			else
 			{
 				_fort.CloseOrcFortressDoors();
-				LOGGER.info("FortSiege: Closed Orc Fortress doors.");
+				LOGGER.Info("FortSiege: Closed Orc Fortress doors.");
 			}
 			_fort.SetOrcFortressOwnerNpcs(true);
 			ThreadPool.schedule(new ScheduleSuspiciousMerchantSpawn(), FortSiegeManager.getInstance().getSuspiciousMerchantRespawnDelay() * 60 * 1000); // Prepare 3hr task for suspicious merchant respawn
@@ -499,7 +517,7 @@ public class FortSiege: ListenersContainer, Siegable
 				_fort.setVisibleFlag(true);
 			}
 			
-			LOGGER.info(getClass().getSimpleName() + ": Siege of " + _fort.getName() + " fort finished.");
+			LOGGER.Info(GetType().Name + ": Siege of " + _fort.getName() + " fort finished.");
 			
 			// Notify to scripts.
 			if (EventDispatcher.getInstance().hasListener(EventType.ON_FORT_SIEGE_FINISH, getFort()))
@@ -512,8 +530,7 @@ public class FortSiege: ListenersContainer, Siegable
 	/**
 	 * When siege starts
 	 */
-	@Override
-	public void startSiege()
+	public override void startSiege()
 	{
 		if (!_isInProgress)
 		{
@@ -546,7 +563,7 @@ public class FortSiege: ListenersContainer, Siegable
 			else
 			{
 				_fort.OpenOrcFortressDoors();
-				LOGGER.info("FortSiege: Opened Orc Fortress doors.");
+				LOGGER.Info("FortSiege: Opened Orc Fortress doors.");
 			}
 			
 			_fort.SetOrcFortressOwnerNpcs(false);
@@ -573,12 +590,12 @@ public class FortSiege: ListenersContainer, Siegable
 			
 			if (_fort.getResidenceId() == FortManager.ORC_FORTRESS)
 			{
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate -> spawnTemplate.getGroupsByName("orc_fortress").forEach(holder ->
+				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress").forEach(holder =>
 				{
 					holder.spawnAll();
-					for (NpcSpawnTemplate nst : holder.getSpawns())
+					foreach (NpcSpawnTemplate nst in holder.getSpawns())
 					{
-						for (Npc npc : nst.getSpawnedNpcs())
+						foreach (Npc npc in nst.getSpawnedNpcs())
 						{
 							Spawn spawn = npc.getSpawn();
 							if (spawn != null)
@@ -588,12 +605,12 @@ public class FortSiege: ListenersContainer, Siegable
 						}
 					}
 				}));
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate -> spawnTemplate.getGroupsByName("orc_runners").forEach(holder ->
+				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_runners").forEach(holder =>
 				{
 					holder.spawnAll();
-					for (NpcSpawnTemplate nst : holder.getSpawns())
+					foreach (NpcSpawnTemplate nst in holder.getSpawns())
 					{
-						for (Npc npc : nst.getSpawnedNpcs())
+						foreach (Npc npc in nst.getSpawnedNpcs())
 						{
 							Spawn spawn = npc.getSpawn();
 							if (spawn != null)
@@ -605,12 +622,12 @@ public class FortSiege: ListenersContainer, Siegable
 					
 				}));
 				
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate -> spawnTemplate.getGroupsByName("orc_fortress_inside").forEach(holder ->
+				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress_inside").forEach(holder =>
 				{
 					holder.spawnAll();
-					for (NpcSpawnTemplate nst : holder.getSpawns())
+					foreach (NpcSpawnTemplate nst in holder.getSpawns())
 					{
-						for (Npc npc : nst.getSpawnedNpcs())
+						foreach (Npc npc in nst.getSpawnedNpcs())
 						{
 							Spawn spawn = npc.getSpawn();
 							if (spawn != null)
@@ -622,12 +639,12 @@ public class FortSiege: ListenersContainer, Siegable
 					
 				}));
 			}
-			SpawnData.getInstance().getSpawns().forEach(spawnTemplate -> spawnTemplate.getGroupsByName("orc_fortress_jeras_guards").forEach(holder ->
+			SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress_jeras_guards").forEach(holder =>
 			{
 				holder.spawnAll();
-				for (NpcSpawnTemplate nst : holder.getSpawns())
+				foreach (NpcSpawnTemplate nst in holder.getSpawns())
 				{
-					for (Npc npc : nst.getSpawnedNpcs())
+					foreach (Npc npc in nst.getSpawnedNpcs())
 					{
 						Spawn spawn = npc.getSpawn();
 						if (spawn != null)
@@ -640,7 +657,7 @@ public class FortSiege: ListenersContainer, Siegable
 			}));
 		}
 		
-		LOGGER.info(getClass().getSimpleName() + ": Siege of " + _fort.getName() + " fort started.");
+		LOGGER.Info(GetType().Name + ": Siege of " + _fort.getName() + " fort started.");
 		
 		// Notify to scripts.
 		if (EventDispatcher.getInstance().hasListener(EventType.ON_FORT_SIEGE_START, getFort()))
@@ -658,10 +675,10 @@ public class FortSiege: ListenersContainer, Siegable
 	{
 		// announce messages only for participants
 		Clan clan;
-		for (SiegeClan siegeclan : _attackerClans)
+		foreach (SiegeClan siegeclan in _attackerClans)
 		{
 			clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
-			for (Player member : clan.getOnlineMembers(0))
+			foreach (Player member in clan.getOnlineMembers(0))
 			{
 				if (member != null)
 				{
@@ -672,7 +689,7 @@ public class FortSiege: ListenersContainer, Siegable
 		if (_fort.getOwnerClan() != null)
 		{
 			clan = ClanTable.getInstance().getClan(getFort().getOwnerClan().getId());
-			for (Player member : clan.getOnlineMembers(0))
+			foreach (Player member in clan.getOnlineMembers(0))
 			{
 				if (member != null)
 				{
@@ -688,13 +705,13 @@ public class FortSiege: ListenersContainer, Siegable
 		announceToPlayer(sm);
 	}
 	
-	public void updatePlayerSiegeStateFlags(boolean clear)
+	public void updatePlayerSiegeStateFlags(bool clear)
 	{
 		Clan clan;
-		for (SiegeClan siegeclan : _attackerClans)
+		foreach (SiegeClan siegeclan in _attackerClans)
 		{
 			clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
-			for (Player member : clan.getOnlineMembers(0))
+			foreach (Player member in clan.getOnlineMembers(0))
 			{
 				if (member == null)
 				{
@@ -724,7 +741,7 @@ public class FortSiege: ListenersContainer, Siegable
 		if (_fort.getOwnerClan() != null)
 		{
 			clan = ClanTable.getInstance().getClan(getFort().getOwnerClan().getId());
-			for (Player member : clan.getOnlineMembers(0))
+			foreach (Player member in clan.getOnlineMembers(0))
 			{
 				if (member == null)
 				{
@@ -757,9 +774,9 @@ public class FortSiege: ListenersContainer, Siegable
 	 * @param object
 	 * @return true if object is inside the zone
 	 */
-	public boolean checkIfInZone(WorldObject object)
+	public bool checkIfInZone(WorldObject obj)
 	{
-		return checkIfInZone(object.getX(), object.getY(), object.getZ());
+		return checkIfInZone(obj.getX(), obj.getY(), obj.getZ());
 	}
 	
 	/**
@@ -768,7 +785,7 @@ public class FortSiege: ListenersContainer, Siegable
 	 * @param z
 	 * @return true if object is inside the zone
 	 */
-	public boolean checkIfInZone(int x, int y, int z)
+	public bool checkIfInZone(int x, int y, int z)
 	{
 		return (_isInProgress && (_fort.checkIfInZone(x, y, z))); // Fort zone during siege
 	}
@@ -777,8 +794,7 @@ public class FortSiege: ListenersContainer, Siegable
 	 * @param clan The Clan of the player
 	 * @return true if clan is attacker
 	 */
-	@Override
-	public boolean checkIsAttacker(Clan clan)
+	public override bool checkIsAttacker(Clan clan)
 	{
 		return (getAttackerClan(clan) != null);
 	}
@@ -787,8 +803,7 @@ public class FortSiege: ListenersContainer, Siegable
 	 * @param clan The Clan of the player
 	 * @return true if clan is defender
 	 */
-	@Override
-	public boolean checkIsDefender(Clan clan)
+	public override bool checkIsDefender(Clan clan)
 	{
 		return (clan != null) && (_fort.getOwnerClan() == clan);
 	}
@@ -796,16 +811,18 @@ public class FortSiege: ListenersContainer, Siegable
 	/** Clear all registered siege clans from database for fort */
 	public void clearSiegeClan()
 	{
-		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM fortsiege_clans WHERE fort_id=?"))
+		try
 		{
+			using GameServerDbContext ctx = new();
+			PreparedStatement ps = con.prepareStatement("DELETE FROM fortsiege_clans WHERE fort_id=?");
 			ps.setInt(1, _fort.getResidenceId());
 			ps.execute();
 			
 			if (_fort.getOwnerClan() != null)
 			{
-				try (PreparedStatement delete = con.prepareStatement("DELETE FROM fortsiege_clans WHERE clan_id=?"))
+
 				{
+					PreparedStatement delete = con.prepareStatement("DELETE FROM fortsiege_clans WHERE clan_id=?");
 					delete.setInt(1, _fort.getOwnerClan().getId());
 					delete.execute();
 				}
@@ -828,7 +845,7 @@ public class FortSiege: ListenersContainer, Siegable
 		}
 		catch (Exception e)
 		{
-			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Exception: clearSiegeClan(): " + e.getMessage(), e);
+			LOGGER.Warn(GetType().Name + ": Exception: clearSiegeClan(): " + e);
 		}
 	}
 	
@@ -841,14 +858,13 @@ public class FortSiege: ListenersContainer, Siegable
 	/**
 	 * @return list of Player registered as attacker in the zone.
 	 */
-	@Override
-	public List<Player> getAttackersInZone()
+	public override List<Player> getAttackersInZone()
 	{
-		final List<Player> players = new LinkedList<>();
-		for (SiegeClan siegeclan : _attackerClans)
+		List<Player> players = new();
+		foreach (SiegeClan siegeclan in _attackerClans)
 		{
-			final Clan clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
-			for (Player player : clan.getOnlineMembers(0))
+			Clan clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
+			foreach (Player player in clan.getOnlineMembers(0))
 			{
 				if (player == null)
 				{
@@ -877,16 +893,16 @@ public class FortSiege: ListenersContainer, Siegable
 	 */
 	public List<Player> getOwnersInZone()
 	{
-		final List<Player> players = new LinkedList<>();
+		List<Player> players = new();
 		if (_fort.getOwnerClan() != null)
 		{
-			final Clan clan = ClanTable.getInstance().getClan(getFort().getOwnerClan().getId());
+			Clan clan = ClanTable.getInstance().getClan(getFort().getOwnerClan().getId());
 			if (clan != _fort.getOwnerClan())
 			{
 				return null;
 			}
 			
-			for (Player player : clan.getOnlineMembers(0))
+			foreach (Player player in clan.getOnlineMembers(0))
 			{
 				if (player == null)
 				{
@@ -912,10 +928,10 @@ public class FortSiege: ListenersContainer, Siegable
 		int RisidenceId = _fort.getResidenceId();
 		if ((_fort != null) && (!_commanders.isEmpty() && (RisidenceId != 122)))
 		{
-			final Spawn spawn = instance.getSpawn();
+			Spawn spawn = instance.getSpawn();
 			if (spawn != null)
 			{
-				for (FortSiegeSpawn spawn2 : FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId()))
+				foreach (FortSiegeSpawn spawn2 in FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId()))
 				{
 					if (spawn2.getId() == spawn.getId())
 					{
@@ -961,7 +977,7 @@ public class FortSiege: ListenersContainer, Siegable
 						_siegeRestore.cancel(true);
 					}
 					// open doors in main building
-					for (Door door : _fort.getDoors())
+					foreach (Door door in _fort.getDoors())
 					{
 						if (door.isShowHp())
 						{
@@ -986,7 +1002,7 @@ public class FortSiege: ListenersContainer, Siegable
 			}
 			else
 			{
-				LOGGER.warning(getClass().getSimpleName() + ": FortSiege.killedCommander(): killed commander, but commander not registered for fortress. NpcId: " + instance.getId() + " FortId: " + _fort.getResidenceId());
+				LOGGER.Warn(GetType().Name + ": FortSiege.killedCommander(): killed commander, but commander not registered for fortress. NpcId: " + instance.getId() + " FortId: " + _fort.getResidenceId());
 			}
 		}
 	}
@@ -1002,7 +1018,7 @@ public class FortSiege: ListenersContainer, Siegable
 			return;
 		}
 		
-		for (SiegeClan clan : _attackerClans)
+		foreach (SiegeClan clan in _attackerClans)
 		{
 			if (clan.removeFlag(flag))
 			{
@@ -1022,7 +1038,7 @@ public class FortSiege: ListenersContainer, Siegable
 	 *         3 - Players clan is already registered to siege.<br>
 	 *         4 - Players clan is successfully registered to siege.
 	 */
-	public int addAttacker(Player player, boolean checkConditions)
+	public int addAttacker(Player player, bool checkConditions)
 	{
 		if (player.getClan() == null)
 		{
@@ -1036,7 +1052,7 @@ public class FortSiege: ListenersContainer, Siegable
 				return 1; // Player don't have enough adena to register
 			}
 			
-			for (Fort fort : FortManager.getInstance().getForts())
+			foreach (Fort fort in FortManager.getInstance().getForts())
 			{
 				if (fort.getSiege().getAttackerClan(player.getClanId()) != null)
 				{
@@ -1081,10 +1097,11 @@ public class FortSiege: ListenersContainer, Siegable
 	 */
 	private void removeSiegeClan(int clanId)
 	{
-		final String query = (clanId != 0) ? DELETE_FORT_SIEGECLANS_BY_CLAN_ID : DELETE_FORT_SIEGECLANS;
-		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement statement = con.prepareStatement(query))
+		String query = (clanId != 0) ? DELETE_FORT_SIEGECLANS_BY_CLAN_ID : DELETE_FORT_SIEGECLANS;
+		try 
 		{
+			using GameServerDbContext ctx = new();
+			PreparedStatement statement = con.prepareStatement(query);
 			statement.setInt(1, _fort.getResidenceId());
 			if (clanId != 0)
 			{
@@ -1113,7 +1130,7 @@ public class FortSiege: ListenersContainer, Siegable
 		}
 		catch (Exception e)
 		{
-			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Exception on removeSiegeClan: " + e.getMessage(), e);
+			LOGGER.Warn(GetType().Name + ": Exception on removeSiegeClan: " + e);
 		}
 	}
 	
@@ -1136,7 +1153,7 @@ public class FortSiege: ListenersContainer, Siegable
 			
 			ThreadPool.execute(new ScheduleSuspiciousMerchantSpawn());
 			
-			final Calendar cal = Calendar.getInstance();
+			Calendar cal = Calendar.getInstance();
 			cal.set(Calendar.HOUR_OF_DAY, Config.ORC_FORTRESS_HOUR);
 			cal.set(Calendar.MINUTE, Config.ORC_FORTRESS_MINUTE);
 			cal.set(Calendar.SECOND, 0);
@@ -1149,14 +1166,14 @@ public class FortSiege: ListenersContainer, Siegable
 			_fort.setSiegeDate(cal);
 			saveSiegeDate();
 			
-			final long initialDelayInMilliseconds = _fort.getSiegeDate().getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
+			long initialDelayInMilliseconds = _fort.getSiegeDate().getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
 			_siegeStartTask = ThreadPool.schedule(new ScheduleStartSiegeTask(0, initialDelayInMilliseconds), 0);
 			
 		}
 		else
 		{
 			
-			final long delay = getFort().getSiegeDate().getTimeInMillis() - System.currentTimeMillis();
+			long delay = getFort().getSiegeDate().getTimeInMillis() - System.currentTimeMillis();
 			if (delay < 0)
 			{
 				// siege time in past
@@ -1200,7 +1217,7 @@ public class FortSiege: ListenersContainer, Siegable
 						_siegeStartTask = ThreadPool.schedule(new ScheduleStartSiegeTask(60), 0);
 					}
 					
-					LOGGER.info(getClass().getSimpleName() + ": Siege of " + _fort.getName() + " fort: " + _fort.getSiegeDate().getTime());
+					LOGGER.Info(GetType().Name + ": Siege of " + _fort.getName() + " fort: " + _fort.getSiegeDate().getTime());
 				}
 			}
 		}
@@ -1210,7 +1227,7 @@ public class FortSiege: ListenersContainer, Siegable
 	 * Start the auto task
 	 * @param setTime
 	 */
-	public void startAutoTask(boolean setTime)
+	public void startAutoTask(bool setTime)
 	{
 		if (_siegeStartTask != null)
 		{
@@ -1241,12 +1258,12 @@ public class FortSiege: ListenersContainer, Siegable
 		List<Player> players;
 		switch (teleportWho)
 		{
-			case Owner:
+			case FortTeleportWhoType.Owner:
 			{
 				players = getOwnersInZone();
 				break;
 			}
-			case Attacker:
+			case FortTeleportWhoType.Attacker:
 			{
 				players = getAttackersInZone();
 				break;
@@ -1254,10 +1271,11 @@ public class FortSiege: ListenersContainer, Siegable
 			default:
 			{
 				players = _fort.getZone().getPlayersInside();
+				break;
 			}
 		}
 		
-		for (Player player : players)
+		foreach (Player player in players)
 		{
 			if (player.canOverrideCond(PlayerCondOverride.FORTRESS_CONDITIONS) || player.isJailed())
 			{
@@ -1281,9 +1299,9 @@ public class FortSiege: ListenersContainer, Siegable
 	 * @param clan
 	 * @return {@code true} if the clan has already registered to a siege for the same day, {@code false} otherwise.
 	 */
-	public boolean checkIfAlreadyRegisteredForSameDay(Clan clan)
+	public bool checkIfAlreadyRegisteredForSameDay(Clan clan)
 	{
-		for (FortSiege siege : FortSiegeManager.getInstance().getSieges())
+		foreach (FortSiege siege in FortSiegeManager.getInstance().getSieges())
 		{
 			if (siege == this)
 			{
@@ -1306,9 +1324,9 @@ public class FortSiege: ListenersContainer, Siegable
 		return false;
 	}
 	
-	private void setSiegeDateTime(boolean merchant)
+	private void setSiegeDateTime(bool merchant)
 	{
-		final Calendar newDate = Calendar.getInstance();
+		Calendar newDate = Calendar.getInstance();
 		if (merchant)
 		{
 			newDate.add(Calendar.MINUTE, FortSiegeManager.getInstance().getSuspiciousMerchantRespawnDelay());
@@ -1325,12 +1343,14 @@ public class FortSiege: ListenersContainer, Siegable
 	private void loadSiegeClan()
 	{
 		_attackerClans.clear();
-		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("SELECT clan_id FROM fortsiege_clans WHERE fort_id=?"))
+		try 
 		{
+			using GameServerDbContext ctx = new();
+			PreparedStatement ps = con.prepareStatement("SELECT clan_id FROM fortsiege_clans WHERE fort_id=?");
 			ps.setInt(1, _fort.getResidenceId());
-			try (ResultSet rs = ps.executeQuery())
+
 			{
+				ResultSet rs = ps.executeQuery();
 				while (rs.next())
 				{
 					addAttacker(rs.getInt("clan_id"));
@@ -1339,7 +1359,7 @@ public class FortSiege: ListenersContainer, Siegable
 		}
 		catch (Exception e)
 		{
-			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Exception: loadSiegeClan(): " + e.getMessage(), e);
+			LOGGER.Warn(GetType().Name + ": Exception: loadSiegeClan(): " + e);
 		}
 	}
 	
@@ -1347,7 +1367,7 @@ public class FortSiege: ListenersContainer, Siegable
 	private void removeCommanders()
 	{
 		// Remove all instance of commanders for this fort
-		for (Spawn spawn : _commanders)
+		foreach (Spawn spawn in _commanders)
 		{
 			if (spawn != null)
 			{
@@ -1364,7 +1384,7 @@ public class FortSiege: ListenersContainer, Siegable
 	/** Remove all flags. */
 	private void removeFlags()
 	{
-		for (SiegeClan sc : _attackerClans)
+		foreach (SiegeClan sc in _attackerClans)
 		{
 			if (sc != null)
 			{
@@ -1383,16 +1403,17 @@ public class FortSiege: ListenersContainer, Siegable
 	/** Save siege date to database. */
 	private void saveSiegeDate()
 	{
-		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("UPDATE fort SET siegeDate = ? WHERE id = ?"))
+		try 
 		{
+			using GameServerDbContext ctx = new();
+			PreparedStatement ps = con.prepareStatement("UPDATE fort SET siegeDate = ? WHERE id = ?");
 			ps.setLong(1, _fort.getSiegeDate().getTimeInMillis());
 			ps.setInt(2, _fort.getResidenceId());
 			ps.execute();
 		}
 		catch (Exception e)
 		{
-			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Exception: saveSiegeDate(): " + e.getMessage(), e);
+			LOGGER.Warn(GetType().Name + ": Exception: saveSiegeDate(): " + e);
 		}
 	}
 	
@@ -1407,9 +1428,11 @@ public class FortSiege: ListenersContainer, Siegable
 			return;
 		}
 		
-		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement statement = con.prepareStatement("INSERT INTO fortsiege_clans (clan_id,fort_id) values (?,?)"))
+		try 
 		{
+			using GameServerDbContext ctx = new();
+			PreparedStatement statement =
+				con.prepareStatement("INSERT INTO fortsiege_clans (clan_id,fort_id) values (?,?)");
 			statement.setInt(1, clan.getId());
 			statement.setInt(2, _fort.getResidenceId());
 			statement.execute();
@@ -1418,7 +1441,7 @@ public class FortSiege: ListenersContainer, Siegable
 		}
 		catch (Exception e)
 		{
-			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Exception: saveSiegeClan(Pledge clan): " + e.getMessage(), e);
+			LOGGER.Warn(GetType().Name + ": Exception: saveSiegeClan(Pledge clan): " + e);
 		}
 	}
 	
@@ -1429,9 +1452,9 @@ public class FortSiege: ListenersContainer, Siegable
 		try
 		{
 			_commanders.clear();
-			for (FortSiegeSpawn _sp : FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId()))
+			foreach (FortSiegeSpawn _sp in FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId()))
 			{
-				final Spawn spawnDat = new Spawn(_sp.getId());
+				Spawn spawnDat = new Spawn(_sp.getId());
 				spawnDat.setAmount(1);
 				spawnDat.setXYZ(_sp.getLocation());
 				spawnDat.setHeading(_sp.getLocation().getHeading());
@@ -1444,13 +1467,13 @@ public class FortSiege: ListenersContainer, Siegable
 		catch (Exception e)
 		{
 			// problem with initializing spawn, go to next one
-			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": FortSiege.spawnCommander: Spawn could not be initialized: " + e.getMessage(), e);
+			LOGGER.Warn(GetType().Name + ": FortSiege.spawnCommander: Spawn could not be initialized: " + e);
 		}
 	}
 	
 	private void spawnFlag(int id)
 	{
-		for (CombatFlag cf : FortSiegeManager.getInstance().getFlagList(id))
+		foreach (CombatFlag cf in FortSiegeManager.getInstance().getFlagList(id))
 		{
 			cf.spawnMe();
 		}
@@ -1463,7 +1486,7 @@ public class FortSiege: ListenersContainer, Siegable
 			return;
 		}
 		
-		for (CombatFlag cf : FortSiegeManager.getInstance().getFlagList(getFort().getResidenceId()))
+		foreach (CombatFlag cf in FortSiegeManager.getInstance().getFlagList(getFort().getResidenceId()))
 		{
 			cf.unSpawnMe();
 		}
@@ -1487,17 +1510,21 @@ public class FortSiege: ListenersContainer, Siegable
 	
 	public void loadSiegeGuard()
 	{
-		_siegeGuards.clear();
-		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("SELECT npcId, x, y, z, heading, respawnDelay FROM fort_siege_guards WHERE fortId = ?"))
+		_siegeGuards.Clear();
+		try 
 		{
-			final int fortId = _fort.getResidenceId();
+			using GameServerDbContext ctx = new();
+			PreparedStatement ps =
+				con.prepareStatement(
+					"SELECT npcId, x, y, z, heading, respawnDelay FROM fort_siege_guards WHERE fortId = ?");
+			int fortId = _fort.getResidenceId();
 			ps.setInt(1, fortId);
-			try (ResultSet rs = ps.executeQuery())
+
 			{
+				ResultSet rs = ps.executeQuery();
 				while (rs.next())
 				{
-					final Spawn spawn = new Spawn(rs.getInt("npcId"));
+					Spawn spawn = new Spawn(rs.getInt("npcId"));
 					spawn.setAmount(1);
 					spawn.setXYZ(rs.getInt("x"), rs.getInt("y"), rs.getInt("z"));
 					spawn.setHeading(rs.getInt("heading"));
@@ -1510,7 +1537,7 @@ public class FortSiege: ListenersContainer, Siegable
 		}
 		catch (Exception e)
 		{
-			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Error loading siege guard for fort " + _fort.getName() + ": " + e.getMessage(), e);
+			LOGGER.Warn(GetType().Name + ": Error loading siege guard for fort " + _fort.getName() + ": " + e);
 		}
 	}
 	
@@ -1521,7 +1548,7 @@ public class FortSiege: ListenersContainer, Siegable
 	{
 		try
 		{
-			for (Spawn spawnDat : _siegeGuards)
+			foreach (Spawn spawnDat in _siegeGuards)
 			{
 				spawnDat.doSpawn(false);
 				if (spawnDat.getRespawnDelay() == 0)
@@ -1536,7 +1563,7 @@ public class FortSiege: ListenersContainer, Siegable
 		}
 		catch (Exception e)
 		{
-			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Error spawning siege guards for fort " + _fort.getName() + ":" + e.getMessage(), e);
+			LOGGER.Warn(GetType().Name + ": Error spawning siege guards for fort " + _fort.getName() + ":" + e);
 		}
 	}
 	
@@ -1544,7 +1571,7 @@ public class FortSiege: ListenersContainer, Siegable
 	{
 		try
 		{
-			for (Spawn spawnDat : _siegeGuards)
+			foreach (Spawn spawnDat in _siegeGuards)
 			{
 				spawnDat.stopRespawn();
 				if (spawnDat.getLastSpawn() != null)
@@ -1555,12 +1582,11 @@ public class FortSiege: ListenersContainer, Siegable
 		}
 		catch (Exception e)
 		{
-			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Error unspawning siege guards for fort " + _fort.getName() + ":" + e.getMessage(), e);
+			LOGGER.Warn(GetType().Name + ": Error unspawning siege guards for fort " + _fort.getName() + ":" + e);
 		}
 	}
 	
-	@Override
-	public SiegeClan getAttackerClan(Clan clan)
+	public override SiegeClan getAttackerClan(Clan clan)
 	{
 		if (clan == null)
 		{
@@ -1569,10 +1595,9 @@ public class FortSiege: ListenersContainer, Siegable
 		return getAttackerClan(clan.getId());
 	}
 	
-	@Override
-	public SiegeClan getAttackerClan(int clanId)
+	public override SiegeClan getAttackerClan(int clanId)
 	{
-		for (SiegeClan sc : _attackerClans)
+		foreach (SiegeClan sc in _attackerClans)
 		{
 			if ((sc != null) && (sc.getClanId() == clanId))
 			{
@@ -1582,8 +1607,7 @@ public class FortSiege: ListenersContainer, Siegable
 		return null;
 	}
 	
-	@Override
-	public Collection<SiegeClan> getAttackerClans()
+	public override ICollection<SiegeClan> getAttackerClans()
 	{
 		return _attackerClans;
 	}
@@ -1593,23 +1617,21 @@ public class FortSiege: ListenersContainer, Siegable
 		return _fort;
 	}
 	
-	public boolean isInProgress()
+	public bool isInProgress()
 	{
 		return _isInProgress;
 	}
 	
-	@Override
-	public Calendar getSiegeDate()
+	public override Calendar getSiegeDate()
 	{
 		return _fort.getSiegeDate();
 	}
 	
-	@Override
-	public Set<Npc> getFlag(Clan clan)
+	public override Set<Npc> getFlag(Clan clan)
 	{
 		if (clan != null)
 		{
-			final SiegeClan sc = getAttackerClan(clan);
+			SiegeClan sc = getAttackerClan(clan);
 			if (sc != null)
 			{
 				return sc.getFlag();
@@ -1631,44 +1653,37 @@ public class FortSiege: ListenersContainer, Siegable
 		return _commanders;
 	}
 	
-	@Override
-	public SiegeClan getDefenderClan(int clanId)
+	public override SiegeClan getDefenderClan(int clanId)
 	{
 		return null;
 	}
 	
-	@Override
-	public SiegeClan getDefenderClan(Clan clan)
+	public override SiegeClan getDefenderClan(Clan clan)
 	{
 		return null;
 	}
 	
-	@Override
-	public List<SiegeClan> getDefenderClans()
+	public override List<SiegeClan> getDefenderClans()
 	{
 		return null;
 	}
 	
-	@Override
-	public boolean giveFame()
+	public override bool giveFame()
 	{
 		return true;
 	}
 	
-	@Override
-	public int getFameFrequency()
+	public override int getFameFrequency()
 	{
 		return Config.FORTRESS_ZONE_FAME_TASK_FREQUENCY;
 	}
 	
-	@Override
-	public int getFameAmount()
+	public override int getFameAmount()
 	{
 		return Config.FORTRESS_ZONE_FAME_AQUIRE_POINTS;
 	}
 	
-	@Override
-	public void updateSiege()
+	public override void updateSiege()
 	{
 	}
 }

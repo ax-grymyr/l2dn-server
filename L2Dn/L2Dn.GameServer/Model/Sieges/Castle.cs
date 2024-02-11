@@ -169,7 +169,7 @@ public class Castle: AbstractResidence
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement(
 					"REPLACE INTO castle_functions (castle_id, type, lvl, lease, rate, endTime) VALUES (?,?,?,?,?,?)");
 				ps.setInt(1, getResidenceId());
@@ -316,7 +316,7 @@ public class Castle: AbstractResidence
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("UPDATE castle SET treasury = ? WHERE id = ?");
 			ps.setLong(1, _treasury);
 			ps.setInt(2, getResidenceId());
@@ -596,7 +596,7 @@ public class Castle: AbstractResidence
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps1 = con.prepareStatement("SELECT * FROM castle WHERE id = ?");
 			PreparedStatement ps2 = con.prepareStatement("SELECT clan_id FROM clan_data WHERE hasCastle = ?");
 			ps1.setInt(1, getResidenceId());
@@ -638,7 +638,7 @@ public class Castle: AbstractResidence
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM castle_functions WHERE castle_id = ?");
 			ps.setInt(1, getResidenceId());
 
@@ -665,7 +665,7 @@ public class Castle: AbstractResidence
 		_function.remove(functionType);
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM castle_functions WHERE castle_id=? AND type=?");
 			ps.setInt(1, getResidenceId());
 			ps.setInt(2, functionType);
@@ -735,7 +735,7 @@ public class Castle: AbstractResidence
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM castle_doorupgrade WHERE castleId=?");
 			ps.setInt(1, getResidenceId());
 			{
@@ -762,7 +762,7 @@ public class Castle: AbstractResidence
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM castle_doorupgrade WHERE castleId=?");
 			ps.setInt(1, getResidenceId());
 			ps.execute();
@@ -788,7 +788,7 @@ public class Castle: AbstractResidence
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps =
 					con.prepareStatement("REPLACE INTO castle_doorupgrade (doorId, ratio, castleId) values (?,?,?)");
 				ps.setInt(1, doorId);
@@ -817,7 +817,7 @@ public class Castle: AbstractResidence
 		
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			// Need to remove has castle flag from clan_data, should be checked from castle table.
 			{
 				PreparedStatement ps = con.prepareStatement("UPDATE clan_data SET hasCastle = 0 WHERE hasCastle = ?");
@@ -1009,7 +1009,7 @@ public class Castle: AbstractResidence
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("UPDATE castle SET showNpcCrest = ? WHERE id = ?");
 			ps.setString(1, String.valueOf(_showNpcCrest));
 			ps.setInt(2, getResidenceId());
@@ -1054,7 +1054,7 @@ public class Castle: AbstractResidence
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("UPDATE castle SET ticketBuyCount = ? WHERE id = ?");
 			ps.setInt(1, _ticketBuyCount);
 			ps.setInt(2, getResidenceId());
@@ -1078,7 +1078,7 @@ public class Castle: AbstractResidence
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps =
 					con.prepareStatement(
 						"REPLACE INTO castle_trapupgrade (castleId, towerIndex, level) values (?,?,?)");
@@ -1108,7 +1108,7 @@ public class Castle: AbstractResidence
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM castle_trapupgrade WHERE castleId=?");
 			ps.setInt(1, getResidenceId());
 			ps.execute();
@@ -1194,7 +1194,7 @@ public class Castle: AbstractResidence
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("UPDATE castle SET side = ? WHERE id = ?");
 			ps.setString(1, side.ToString());
 			ps.setInt(2, getResidenceId());

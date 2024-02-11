@@ -48,7 +48,7 @@ public class ItemCommissionManager
 		Map<int, Item> itemInstances = new();
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			
 			{
 				PreparedStatement ps = con.prepareStatement(SELECT_ALL_ITEMS)
@@ -260,7 +260,7 @@ public class ItemCommissionManager
 			
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement(INSERT_COMMISSION_ITEM, Statement.RETURN_GENERATED_KEYS);
 				Instant startTime = Instant.now();
 				ps.setInt(1, itemInstance.getObjectId());
@@ -419,7 +419,7 @@ public class ItemCommissionManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(DELETE_COMMISSION_ITEM);
 			ps.setLong(1, commissionId);
 			if (ps.executeUpdate() > 0)

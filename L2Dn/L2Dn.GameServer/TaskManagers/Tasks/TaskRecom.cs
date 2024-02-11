@@ -16,7 +16,7 @@ public class TaskRecom : Task
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 
 			{
 				PreparedStatement ps = con.prepareStatement(

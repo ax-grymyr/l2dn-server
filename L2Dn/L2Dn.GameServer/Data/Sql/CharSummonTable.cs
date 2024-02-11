@@ -44,7 +44,7 @@ public class CharSummonTable
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				Statement s = con.createStatement();
 				ResultSet rs = s.executeQuery(INIT_SUMMONS);
 				while (rs.next())
@@ -62,7 +62,7 @@ public class CharSummonTable
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				Statement s = con.createStatement();
 				ResultSet rs = s.executeQuery(INIT_PET);
 				while (rs.next())
@@ -87,7 +87,7 @@ public class CharSummonTable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(REMOVE_SUMMON);
 			ps.setInt(1, player.getObjectId());
 			ps.setInt(2, summonObjectId);
@@ -152,7 +152,7 @@ public class CharSummonTable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(LOAD_SUMMON);
 			ps.setInt(1, player.getObjectId());
 			try
@@ -217,7 +217,7 @@ public class CharSummonTable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(SAVE_SUMMON);
 			ps.setInt(1, summon.getOwner().getObjectId());
 			ps.setInt(2, summon.getObjectId());

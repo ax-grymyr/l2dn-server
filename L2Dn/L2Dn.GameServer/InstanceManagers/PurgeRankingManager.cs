@@ -122,7 +122,7 @@ public class PurgeRankingManager
 						
 						try
 						{
-							Connection con = DatabaseFactory.getConnection();
+							using GameServerDbContext ctx = new();
 
 							{
 								PreparedStatement st = con.prepareStatement(DELETE_SUBJUGATION);
@@ -163,7 +163,7 @@ public class PurgeRankingManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(RESTORE_SUBJUGATION);
 			statement.setInt(1, category);
 

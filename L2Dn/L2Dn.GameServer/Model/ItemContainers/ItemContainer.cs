@@ -606,7 +606,7 @@ public abstract class ItemContainer
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM items WHERE owner_id=? AND (loc=?)");
 			ps.setInt(1, getOwnerId());
 			ps.setString(2, getBaseLocation().name());

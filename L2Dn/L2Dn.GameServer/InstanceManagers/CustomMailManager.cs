@@ -26,7 +26,7 @@ public class CustomMailManager
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				Statement ps = con.createStatement();
 				ResultSet rs = ps.executeQuery(READ_SQL);
 				while (rs.next())

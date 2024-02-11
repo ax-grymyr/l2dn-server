@@ -1,15 +1,12 @@
-﻿using NLog;
+﻿using L2Dn.GameServer.Db;
+using Microsoft.EntityFrameworkCore;
+using NLog;
 
 namespace L2Dn.GameServer.Model.Announcements;
 
 public class Announcement: IAnnouncement
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(Announcement));
-	
-	private const String INSERT_QUERY = "INSERT INTO announcements (type, content, author) VALUES (?, ?, ?)";
-	private const String UPDATE_QUERY = "UPDATE announcements SET type = ?, content = ?, author = ? WHERE id = ?";
-	private const String DELETE_QUERY = "DELETE FROM announcements WHERE id = ?";
-	
 	protected int _id;
 	private AnnouncementType _type;
 	private String _content;
@@ -22,12 +19,12 @@ public class Announcement: IAnnouncement
 		_author = author;
 	}
 	
-	public Announcement(ResultSet rset)
+	public Announcement(Db.Announcement announcement)
 	{
-		_id = rset.getInt("id");
-		_type = AnnouncementType.findById(rset.getInt("type"));
-		_content = rset.getString("content");
-		_author = rset.getString("author");
+		_id = announcement.Id;
+		_type = (AnnouncementType)announcement.Type;
+		_content = announcement.Content;
+		_author = announcement.Author;
 	}
 	
 	public int getId()
@@ -74,19 +71,17 @@ public class Announcement: IAnnouncement
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement(INSERT_QUERY, Statement.RETURN_GENERATED_KEYS);
-			ps.setInt(1, _type.ordinal());
-			ps.setString(2, _content);
-			ps.setString(3, _author);
-			ps.execute();
-			ResultSet rset = ps.getGeneratedKeys();
+			using GameServerDbContext ctx = new();
+			var announcement = new Db.Announcement
 			{
-				if (rset.next())
-				{
-					_id = rset.getInt(1);
-				}
-			}
+				Type = (int)_type,
+				Content = _content,
+				Author = _author
+			};
+
+			ctx.Announcements.Add(announcement);
+			ctx.SaveChangesAsync();
+			_id = announcement.Id;
 		}
 		catch (Exception e)
 		{
@@ -100,13 +95,11 @@ public class Announcement: IAnnouncement
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement(UPDATE_QUERY);
-			ps.setInt(1, (int)_type);
-			ps.setString(2, _content);
-			ps.setString(3, _author);
-			ps.setInt(4, _id);
-			ps.execute();
+			using GameServerDbContext ctx = new();
+			ctx.Announcements.Where(a => a.Id == _id)
+				.ExecuteUpdate(s =>
+					s.SetProperty(a => a.Type, (int)_type).SetProperty(a => a.Content, _content)
+						.SetProperty(a => a.Author, _author));
 		}
 		catch (Exception e)
 		{
@@ -120,10 +113,8 @@ public class Announcement: IAnnouncement
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement(DELETE_QUERY);
-			ps.setInt(1, _id);
-			ps.execute();
+			using GameServerDbContext ctx = new();
+			ctx.Announcements.Where(a => a.Id == _id).ExecuteDelete();
 		}
 		catch (Exception e)
 		{

@@ -108,7 +108,7 @@ public class FortManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery("SELECT id FROM fort ORDER BY id");
 			while (rs.next())

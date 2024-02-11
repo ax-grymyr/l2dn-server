@@ -110,7 +110,7 @@ public abstract class AbstractResidence: ListenersContainer, INamable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM residence_functions WHERE residenceId = ?");
 			ps.setInt(1, _residenceId);
 			{
@@ -149,7 +149,7 @@ public abstract class AbstractResidence: ListenersContainer, INamable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(
 				"INSERT INTO residence_functions (id, level, expiration, residenceId) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE level = ?, expiration = ?");
 			ps.setInt(1, func.getId());
@@ -182,7 +182,7 @@ public abstract class AbstractResidence: ListenersContainer, INamable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement("DELETE FROM residence_functions WHERE residenceId = ? and id = ?");
 			ps.setInt(1, _residenceId);
@@ -207,7 +207,7 @@ public abstract class AbstractResidence: ListenersContainer, INamable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM residence_functions WHERE residenceId = ?");
 			ps.setInt(1, _residenceId);
 			ps.execute();

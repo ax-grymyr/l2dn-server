@@ -713,7 +713,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(
 				"INSERT INTO olympiad_fights (charOneId, charTwoId, charOneClass, charTwoClass, winner, start, time, classed) values(?,?,?,?,?,?,?,?)");
 			statement.setInt(1, one.getObjectId());

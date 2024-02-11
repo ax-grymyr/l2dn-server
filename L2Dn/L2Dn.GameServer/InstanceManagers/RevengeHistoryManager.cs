@@ -44,7 +44,7 @@ public class RevengeHistoryManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM character_revenge_history");
 			ResultSet rs = ps.executeQuery();
 			while (rs.next())
@@ -99,7 +99,7 @@ public class RevengeHistoryManager
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps1 = con.prepareStatement(DELETE_REVENGE_HISTORY);
 			PreparedStatement ps2 = con.prepareStatement(INSERT_REVENGE_HISTORY);
 			ps1.execute();

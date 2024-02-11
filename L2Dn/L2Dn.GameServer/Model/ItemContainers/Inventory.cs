@@ -2384,7 +2384,7 @@ public abstract class Inventory: ItemContainer
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement("SELECT * FROM items WHERE owner_id=? AND (loc=? OR loc=?) ORDER BY loc_data");
 			ps.setInt(1, getOwnerId());

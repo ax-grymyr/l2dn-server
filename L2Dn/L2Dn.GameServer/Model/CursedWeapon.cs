@@ -84,7 +84,7 @@ public class CursedWeapon : INamable
 				LOGGER.Info(_name + " being removed offline.");
 				
 				try {
-					Connection con = DatabaseFactory.getConnection();
+					using GameServerDbContext ctx = new();
 					PreparedStatement del = con.prepareStatement("DELETE FROM items WHERE owner_id=? AND item_id=?");
 					PreparedStatement ps =
 						con.prepareStatement("UPDATE characters SET reputation=?, pkkills=? WHERE charId=?");
@@ -390,7 +390,7 @@ public class CursedWeapon : INamable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement del = con.prepareStatement("DELETE FROM cursed_weapons WHERE itemId = ?");
 			PreparedStatement ps = con.prepareStatement(
 				"INSERT INTO cursed_weapons (itemId, charId, playerReputation, playerPkKills, nbKills, endTime) VALUES (?, ?, ?, ?, ?, ?)");

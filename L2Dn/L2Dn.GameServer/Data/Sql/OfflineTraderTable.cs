@@ -30,7 +30,7 @@ public class OfflineTraderTable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement stm1 = con.prepareStatement(CLEAR_OFFLINE_TABLE);
 			PreparedStatement stm2 = con.prepareStatement(CLEAR_OFFLINE_TABLE_ITEMS);
 			PreparedStatement stm3 = con.prepareStatement(SAVE_OFFLINE_STATUS);
@@ -147,7 +147,7 @@ public class OfflineTraderTable
 		int nTraders = 0;
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement stm = con.createStatement();
 			ResultSet rs = stm.executeQuery(LOAD_OFFLINE_STATUS);
 			while (rs.next())
@@ -308,7 +308,7 @@ public class OfflineTraderTable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement stm1 = con.prepareStatement(CLEAR_OFFLINE_TABLE_ITEMS_PLAYER);
 			PreparedStatement stm2 = con.prepareStatement(CLEAR_OFFLINE_TABLE_PLAYER);
 			PreparedStatement stm3 = con.prepareStatement(SAVE_ITEMS);
@@ -429,7 +429,7 @@ public class OfflineTraderTable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement stm1 = con.prepareStatement(CLEAR_OFFLINE_TABLE_ITEMS_PLAYER);
 			PreparedStatement stm2 = con.prepareStatement(CLEAR_OFFLINE_TABLE_PLAYER);
 			stm1.setInt(1, traderObjId);

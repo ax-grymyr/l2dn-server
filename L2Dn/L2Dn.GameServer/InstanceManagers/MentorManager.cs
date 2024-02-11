@@ -26,7 +26,7 @@ public class MentorManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement statement = con.createStatement();
 			ResultSet rset = statement.executeQuery("SELECT * FROM character_mentees");
 			while (rset.next())
@@ -49,7 +49,7 @@ public class MentorManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement =
 				con.prepareStatement("DELETE FROM character_mentees WHERE mentorId = ? AND charId = ?");
 			statement.setInt(1, mentorId);
@@ -70,7 +70,7 @@ public class MentorManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement =
 				con.prepareStatement("DELETE FROM character_mentees WHERE mentorId = ? AND charId = ?");
 			statement.setInt(1, mentorId);

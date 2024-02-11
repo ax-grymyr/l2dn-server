@@ -37,7 +37,7 @@ public class ClanTable
 		List<int> cids = new();
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery("SELECT clan_id FROM clan_data");
 			while (rs.next())
@@ -237,7 +237,7 @@ public class ClanTable
 		
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 
 			{
 				PreparedStatement ps = con.prepareStatement("DELETE FROM clan_data WHERE clan_id=?");
@@ -336,7 +336,7 @@ public class ClanTable
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(
 				"REPLACE INTO clan_wars (clan1, clan2, clan1Kill, clan2Kill, winnerClan, startTime, endTime, state) VALUES(?,?,?,?,?,?,?,?)");
 			ps.setInt(1, war.getAttackerClanId());
@@ -372,7 +372,7 @@ public class ClanTable
 		
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM clan_wars WHERE clan1=? AND clan2=?");
 			ps.setInt(1, clanId1);
 			ps.setInt(2, clanId2);
@@ -388,7 +388,7 @@ public class ClanTable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement statement = con.createStatement();
 			ResultSet rset = statement.executeQuery(
 				"SELECT clan1, clan2, clan1Kill, clan2Kill, winnerClan, startTime, endTime, state FROM clan_wars");

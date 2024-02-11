@@ -34,7 +34,7 @@ public class GlobalVariablesManager: AbstractVariables
 		// Restore previous variables.
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement st = con.createStatement();
 			ResultSet rset = st.executeQuery(SELECT_QUERY);
 			while (rset.next())
@@ -56,7 +56,7 @@ public class GlobalVariablesManager: AbstractVariables
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement del = con.createStatement();
 			PreparedStatement st = con.prepareStatement(INSERT_QUERY);
 			// Clear previous entries.
@@ -85,7 +85,7 @@ public class GlobalVariablesManager: AbstractVariables
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement del = con.createStatement();
 			del.execute(DELETE_QUERY);
 		}

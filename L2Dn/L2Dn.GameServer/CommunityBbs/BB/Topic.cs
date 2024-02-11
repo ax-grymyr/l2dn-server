@@ -1,4 +1,6 @@
 using L2Dn.GameServer.CommunityBbs.Managers;
+using L2Dn.GameServer.Db;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.CommunityBbs.BB;
@@ -52,18 +54,21 @@ public class Topic
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement(
-				"INSERT INTO topic (topic_id,topic_forum_id,topic_name,topic_date,topic_ownername,topic_ownerid,topic_type,topic_reply) values (?,?,?,?,?,?,?,?)");
-			ps.setInt(1, _id);
-			ps.setInt(2, _forumId);
-			ps.setString(3, _topicName);
-			ps.setLong(4, _date);
-			ps.setString(5, _ownerName);
-			ps.setInt(6, _ownerId);
-			ps.setInt(7, _type);
-			ps.setInt(8, _cReply);
-			ps.execute();
+			using GameServerDbContext ctx = new();
+			var topic = new Db.Topic
+			{
+				Id = _id,
+				ForumId = _forumId,
+				Name = _topicName,
+				Date = _date,
+				OwnerName = _ownerName,
+				OwnerId = _ownerId,
+				Type = _type,
+				Reply = _cReply
+			};
+			
+			ctx.Topics.Add(topic);
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -106,11 +111,8 @@ public class Topic
 		f.rmTopicByID(_id);
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM topic WHERE topic_id=? AND topic_forum_id=?");
-			ps.setInt(1, _id);
-			ps.setInt(2, f.getID());
-			ps.execute();
+			using GameServerDbContext ctx = new();
+			ctx.Topics.Where(t => t.Id == _id && t.ForumId == f.getID()).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -121,7 +123,7 @@ public class Topic
 	/**
 	 * @return the topic date
 	 */
-	public long getDate()
+	public DateTime getDate()
 	{
 		return _date;
 	}

@@ -925,7 +925,7 @@ public class Instance : IIdentifiable, INamable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement(
 					"INSERT IGNORE INTO character_instance_time (charId,instanceId,time) VALUES (?,?,?)");

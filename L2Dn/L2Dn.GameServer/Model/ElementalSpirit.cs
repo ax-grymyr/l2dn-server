@@ -228,7 +228,7 @@ public class ElementalSpirit
 	{
 		try 
 		{
-			using Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			using PreparedStatement statement = con.prepareStatement(STORE_ELEMENTAL_SPIRIT_QUERY);
 			statement.setInt(1, _data.getCharId());
 			statement.setInt(2, _data.getType());

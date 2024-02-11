@@ -44,4 +44,10 @@ public class GameServerDbContext: DbContext
     public DbSet<Clan> Clans { get; set; }
     public DbSet<Ally> Allys { get; set; }
     public DbSet<Crest> Crests { get; set; }
+    
+    public DbSet<Forum> Forums { get; set; }
+    public DbSet<Topic> Topics { get; set; }
+    public DbSet<Post> Posts { get; set; }
+    
+    public DbSet<Announcement> Announcements { get; set; }
 }

@@ -1,4 +1,5 @@
 using L2Dn.GameServer.CommunityBbs.Managers;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -67,22 +68,18 @@ public class Forum
 	
 	private void load()
 	{
-		try 
-		{
-			Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM forums WHERE forum_id=?");
-			ps.setInt(1, _forumId);
+		using GameServerDbContext ctx = new();
 
+		try
+		{
+			var forum = ctx.Forums.SingleOrDefault(f => f.Id == _forumId);
+			if (forum is not null)
 			{
-				ResultSet rs = ps.executeQuery();
-				if (rs.next())
-				{
-					_forumName = rs.getString("forum_name");
-					_forumPost = rs.getInt("forum_post");
-					_forumType = rs.getInt("forum_type");
-					_forumPerm = rs.getInt("forum_perm");
-					_ownerID = rs.getInt("forum_owner_id");
-				}
+				_forumName = forum.Name;
+				_forumPost = forum.Post ?? 0;
+				_forumType = forum.Type ?? 0;
+				_forumPerm = forum.Perm ?? 0;
+				_ownerID = forum.OwnerId ?? 0;
 			}
 		}
 		catch (Exception e)
@@ -90,22 +87,17 @@ public class Forum
 			LOGGER.Warn("Data error on Forum " + _forumId + " : " + e);
 		}
 		
-		try 
+		try
 		{
-			Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps =
-				con.prepareStatement("SELECT * FROM topic WHERE topic_forum_id=? ORDER BY topic_id DESC");
-			ps.setInt(1, _forumId);
-			ResultSet rs = ps.executeQuery();
+			var topics = ctx.Topics.Where(t => t.ForumId == _forumId).ToList();
+			foreach (var topic in topics)
 			{
-				while (rs.next())
+				Topic t = new Topic(TopicConstructorType.RESTORE, topic.Id, topic.ForumId, topic.Name, topic.Date,
+					topic.OwnerName ?? string.Empty, topic.OwnerId ?? 0, topic.Type ?? 0, topic.Reply ?? 0);
+				_topic.put(t.getID(), t);
+				if (t.getID() > TopicBBSManager.getInstance().getMaxID(this))
 				{
-					Topic t = new Topic(TopicConstructorType.RESTORE, rs.getInt("topic_id"), rs.getInt("topic_forum_id"), rs.getString("topic_name"), rs.getLong("topic_date"), rs.getString("topic_ownername"), rs.getInt("topic_ownerid"), rs.getInt("topic_type"), rs.getInt("topic_reply"));
-					_topic.put(t.getID(), t);
-					if (t.getID() > TopicBBSManager.getInstance().getMaxID(this))
-					{
-						TopicBBSManager.getInstance().setMaxID(t.getID(), this);
-					}
+					TopicBBSManager.getInstance().setMaxID(t.getID(), this);
 				}
 			}
 		}
@@ -119,18 +111,13 @@ public class Forum
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("SELECT forum_id FROM forums WHERE forum_parent=?");
-			ps.setInt(1, _forumId);
-
+			using GameServerDbContext ctx = new();
+			var children = ctx.Forums.Where(f => f.ParentId == _forumId).Select(f => f.Id).ToList();
+			foreach (var child in children)
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
-				{
-					Forum f = new Forum(rs.getInt("forum_id"), this);
-					_children.add(f);
-					ForumsBBSManager.getInstance().addForum(f);
-				}
+				Forum f = new Forum(child, this);
+				_children.add(f);
+				ForumsBBSManager.getInstance().addForum(f);
 			}
 		}
 		catch (Exception e)
@@ -206,17 +193,21 @@ public class Forum
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement(
-				"INSERT INTO forums (forum_id,forum_name,forum_parent,forum_post,forum_type,forum_perm,forum_owner_id) VALUES (?,?,?,?,?,?,?)");
-			ps.setInt(1, _forumId);
-			ps.setString(2, _forumName);
-			ps.setInt(3, _fParent.getID());
-			ps.setInt(4, _forumPost);
-			ps.setInt(5, _forumType);
-			ps.setInt(6, _forumPerm);
-			ps.setInt(7, _ownerID);
-			ps.execute();
+			using GameServerDbContext ctx = new();
+
+			var forum = new Db.Forum()
+			{
+				Id = _forumId,
+				Name = _forumName,
+				ParentId = _fParent.getID(),
+				Post = _forumPost,
+				Type = _forumType,
+				Perm = _forumPerm,
+				OwnerId = _ownerID
+			};
+			
+			ctx.Forums.Add(forum);
+			ctx.SaveChangesAsync();
 		}
 		catch (Exception e)
 		{

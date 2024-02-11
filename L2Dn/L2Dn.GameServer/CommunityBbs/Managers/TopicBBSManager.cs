@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text;
 using L2Dn.GameServer.CommunityBbs.BB;
 using L2Dn.GameServer.Data.Sql;
@@ -61,7 +62,7 @@ public class TopicBBSManager: BaseBBSManager
 			}
 			else
 			{
-				DateTime currentTime = DateTime.Now;
+				DateTime currentTime = DateTime.UtcNow;
 				f.vload();
 				Topic t = new Topic(TopicConstructorType.CREATE, getInstance().getMaxID(f) + 1, int.Parse(ar2), ar5, currentTime, player.getName(), player.getObjectId(), Topic.MEMO, 0);
 				f.addTopic(t);
@@ -210,7 +211,6 @@ public class TopicBBSManager: BaseBBSManager
 		forum.vload();
 		StringBuilder html = new StringBuilder(2000);
 		html.Append("<html><body><br><br><table border=0 width=610><tr><td width=10></td><td width=600 align=left><a action=\"bypass _bbshome\">HOME</a>&nbsp;>&nbsp;<a action=\"bypass _bbsmemo\">Memo Form</a></td></tr></table><img src=\"L2UI.squareblank\" width=\"1\" height=\"10\"><center><table border=0 cellspacing=0 cellpadding=2 bgcolor=888888 width=610><tr><td FIXWIDTH=5></td><td FIXWIDTH=415 align=center>&$413;</td><td FIXWIDTH=120 align=center></td><td FIXWIDTH=70 align=center>&$418;</td></tr></table>");
-		DateFormat dateFormat = DateFormat.getInstance();
 		for (int i = 0, j = getMaxID(forum) + 1; i < (12 * index); j--)
 		{
 			if (j < 0)
@@ -220,7 +220,12 @@ public class TopicBBSManager: BaseBBSManager
 			Topic t = forum.getTopic(j);
 			if ((t != null) && (i++ >= (12 * (index - 1))))
 			{
-				html.Append("<table border=0 cellspacing=0 cellpadding=5 WIDTH=610><tr><td FIXWIDTH=5></td><td FIXWIDTH=415><a action=\"bypass _bbsposts;read;" + forum.getID() + ";" + t.getID() + "\">" + t.getName() + "</a></td><td FIXWIDTH=120 align=center></td><td FIXWIDTH=70 align=center>" + dateFormat.format(new Date(t.getDate())) + "</td></tr></table><img src=\"L2UI.Squaregray\" width=\"610\" height=\"1\">");
+				html.Append(
+					"<table border=0 cellspacing=0 cellpadding=5 WIDTH=610><tr><td FIXWIDTH=5></td><td FIXWIDTH=415><a action=\"bypass _bbsposts;read;" +
+					forum.getID() + ";" + t.getID() + "\">" + t.getName() +
+					"</a></td><td FIXWIDTH=120 align=center></td><td FIXWIDTH=70 align=center>" +
+					t.getDate().ToString("D", CultureInfo.InvariantCulture) +
+					"</td></tr></table><img src=\"L2UI.Squaregray\" width=\"610\" height=\"1\">");
 			}
 		}
 		

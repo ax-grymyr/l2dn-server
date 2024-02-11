@@ -29,7 +29,7 @@ public class ClanVariables: AbstractVariables
 		// Restore previous variables.
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement st = con.prepareStatement(SELECT_QUERY);
 			st.setInt(1, _objectId);
 			ResultSet rset = st.executeQuery()
@@ -60,7 +60,7 @@ public class ClanVariables: AbstractVariables
 		
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			// Clear previous entries.
 			PreparedStatement st = con.prepareStatement(DELETE_QUERY);
 			st.setInt(1, _objectId);
@@ -93,7 +93,7 @@ public class ClanVariables: AbstractVariables
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			// Clear previous entries.
 			PreparedStatement st = con.prepareStatement(DELETE_QUERY);
 			st.setInt(1, _objectId);
@@ -114,7 +114,7 @@ public class ClanVariables: AbstractVariables
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			// Clear previous entries.
 			PreparedStatement st = con.prepareStatement(DELETE_WEAKLY_QUERY);
 			st.setInt(1, _objectId);

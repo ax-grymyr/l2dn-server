@@ -36,7 +36,7 @@ public class ContactList
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(QUERY_LOAD);
 			statement.setInt(1, _player.getObjectId());
 			ResultSet rset = statement.executeQuery();
@@ -101,7 +101,7 @@ public class ContactList
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(QUERY_ADD);
 			statement.setInt(1, _player.getObjectId());
 			statement.setInt(2, contactId);
@@ -138,7 +138,7 @@ public class ContactList
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(QUERY_REMOVE);
 			statement.setInt(1, _player.getObjectId());
 			statement.setInt(2, contactId);

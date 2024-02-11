@@ -76,7 +76,7 @@ public class BotReportTable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement st = con.createStatement();
 			ResultSet rset = st.executeQuery(SQL_LOAD_REPORTED_CHAR_DATA);
 			long lastResetTime = 0;
@@ -147,7 +147,7 @@ public class BotReportTable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement st = con.createStatement();
 			PreparedStatement ps = con.prepareStatement(SQL_INSERT_REPORTED_CHAR_DATA);
 			st.execute(SQL_CLEAR_REPORTED_CHAR_DATA);

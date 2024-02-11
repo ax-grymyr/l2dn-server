@@ -95,7 +95,7 @@ public class MacroList : IRestorable
 	{
 		try 
 		{
-			using Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			using PreparedStatement ps = con.prepareStatement(
 				"INSERT INTO character_macroses (charId,id,icon,name,descr,acronym,commands) values(?,?,?,?,?,?,?)");
 			ps.setInt(1, _owner.getObjectId());
@@ -132,7 +132,7 @@ public class MacroList : IRestorable
 	private void deleteMacroFromDb(Macro macro)
 	{
 		try 
-		{using Connection con = DatabaseFactory.getConnection();
+		{using GameServerDbContext ctx = new();
 			using PreparedStatement ps = con.prepareStatement("DELETE FROM character_macroses WHERE charId=? AND id=?");
 			ps.setInt(1, _owner.getObjectId());
 			ps.setInt(2, macro.getId());
@@ -149,7 +149,7 @@ public class MacroList : IRestorable
 		_macroses.clear();
 		try
 		{
-			using Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			using PreparedStatement ps = con.prepareStatement(
 				"SELECT charId, id, icon, name, descr, acronym, commands FROM character_macroses WHERE charId=?");
 			ps.setInt(1, _owner.getObjectId());

@@ -56,7 +56,7 @@ public class ItemsOnGroundManager: Runnable
 			
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement(str);
 				ps.setLong(1, System.currentTimeMillis());
 				ps.execute();
@@ -70,7 +70,7 @@ public class ItemsOnGroundManager: Runnable
 		// Add items to world
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement(
 					"SELECT object_id,item_id,count,enchant_level,x,y,z,drop_time,equipable FROM itemsonground");
@@ -153,7 +153,7 @@ public class ItemsOnGroundManager: Runnable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement s = con.createStatement();
 			s.executeUpdate("DELETE FROM itemsonground");
 		}
@@ -180,7 +180,7 @@ public class ItemsOnGroundManager: Runnable
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(
 				"INSERT INTO itemsonground(object_id,item_id,count,enchant_level,x,y,z,drop_time,equipable) VALUES(?,?,?,?,?,?,?,?,?)");
 			foreach (Item item in _items)

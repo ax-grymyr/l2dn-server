@@ -56,7 +56,7 @@ public class ClanEntryManager
 	
 	private void load()
 	{
-		try (Connection con = DatabaseFactory.getConnection();
+		try (using GameServerDbContext ctx = new();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery("SELECT * FROM pledge_recruit"))
 		{
@@ -77,7 +77,7 @@ public class ClanEntryManager
 			LOGGER.Warn(GetType().Name + ": Failed to load: " + e);
 		}
 		
-		try (Connection con = DatabaseFactory.getConnection();
+		try (using GameServerDbContext ctx = new();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery("SELECT a.char_id, a.karma, b.base_class, b.level, b.char_name FROM pledge_waiting_list as a LEFT JOIN characters as b ON a.char_id = b.charId"))
 		{
@@ -93,7 +93,7 @@ public class ClanEntryManager
 			LOGGER.Warn(GetType().Name + ": Failed to load: " + e);
 		}
 		
-		try (Connection con = DatabaseFactory.getConnection();
+		try (using GameServerDbContext ctx = new();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery("SELECT a.charId, a.clanId, a.karma, a.message, b.base_class, b.level, b.char_name FROM pledge_applicant as a LEFT JOIN characters as b ON a.charId = b.charId"))
 		{
@@ -139,7 +139,7 @@ public class ClanEntryManager
 	{
 		Map<int, PledgeApplicantInfo> clanApplicantList = _applicantList.get(clanId);
 		
-		try (Connection con = DatabaseFactory.getConnection();
+		try (using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(DELETE_APPLICANT))
 		{
 			statement.setInt(1, playerId);
@@ -159,7 +159,7 @@ public class ClanEntryManager
 		{
 			_applicantList.computeIfAbsent(clanId, k => new ConcurrentHashMap<>()).put(info.getPlayerId(), info);
 			
-			try (Connection con = DatabaseFactory.getConnection();
+			try (using GameServerDbContext ctx = new();
 				PreparedStatement statement = con.prepareStatement(INSERT_APPLICANT))
 			{
 				statement.setInt(1, info.getPlayerId());
@@ -193,7 +193,7 @@ public class ClanEntryManager
 	{
 		if (!_playerLocked.containsKey(playerId))
 		{
-			try (Connection con = DatabaseFactory.getConnection();
+			try (using GameServerDbContext ctx = new();
 				PreparedStatement statement = con.prepareStatement(INSERT_WAITING_LIST))
 			{
 				statement.setInt(1, info.getPlayerId());
@@ -214,7 +214,7 @@ public class ClanEntryManager
 	{
 		if (_waitingList.containsKey(playerId))
 		{
-			try (Connection con = DatabaseFactory.getConnection();
+			try (using GameServerDbContext ctx = new();
 				PreparedStatement statement = con.prepareStatement(DELETE_WAITING_LIST))
 			{
 				statement.setInt(1, playerId);
@@ -235,7 +235,7 @@ public class ClanEntryManager
 	{
 		if (!_clanList.containsKey(clanId) && !_clanLocked.containsKey(clanId))
 		{
-			try (Connection con = DatabaseFactory.getConnection();
+			try (using GameServerDbContext ctx = new();
 				PreparedStatement statement = con.prepareStatement(INSERT_CLAN_RECRUIT))
 			{
 				statement.setInt(1, info.getClanId());
@@ -260,7 +260,7 @@ public class ClanEntryManager
 	{
 		if (_clanList.containsKey(clanId) && !_clanLocked.containsKey(clanId))
 		{
-			try (Connection con = DatabaseFactory.getConnection();
+			try (using GameServerDbContext ctx = new();
 				PreparedStatement statement = con.prepareStatement(UPDATE_CLAN_RECRUIT))
 			{
 				statement.setInt(1, info.getKarma());
@@ -284,7 +284,7 @@ public class ClanEntryManager
 	{
 		if (_clanList.containsKey(clanId))
 		{
-			try (Connection con = DatabaseFactory.getConnection();
+			try (using GameServerDbContext ctx = new();
 				PreparedStatement statement = con.prepareStatement(DELETE_CLAN_RECRUIT))
 			{
 				statement.setInt(1, clanId);

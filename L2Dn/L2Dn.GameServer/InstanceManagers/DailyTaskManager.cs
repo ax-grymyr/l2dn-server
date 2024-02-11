@@ -366,7 +366,7 @@ public class DailyTaskManager
 		}
 		
 		// Update data for offline players.
-		try (Connection con = DatabaseFactory.getConnection();
+		try (using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("UPDATE character_variables SET val = ? WHERE var = ?"))
 		{
 			ps.setInt(1, 0);
@@ -424,7 +424,7 @@ public class DailyTaskManager
 		if (Config.TRAINING_CAMP_ENABLE)
 		{
 			// Update data for offline players.
-			try (Connection con = DatabaseFactory.getConnection();
+			try (using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var = ?"))
 			{
 				ps.setString(1, "TRAINING_CAMP_DURATION");
@@ -479,7 +479,7 @@ public class DailyTaskManager
 			}
 			
 			// Update data for offline players.
-			try (Connection con = DatabaseFactory.getConnection();
+			try (using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var IN (?, ?, ?)"))
 			{
 				ps.setString(1, PlayerVariables.HUNTING_ZONE_ENTRY + holder.getZoneId());
@@ -515,7 +515,7 @@ public class DailyTaskManager
 			}
 			
 			// Update data for offline players.
-			try (Connection con = DatabaseFactory.getConnection();
+			try (using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var IN (?, ?, ?)"))
 			{
 				ps.setString(1, PlayerVariables.HUNTING_ZONE_ENTRY + holder.getZoneId());
@@ -600,7 +600,7 @@ public class DailyTaskManager
 		for (PrimeShopGroup holder : PrimeShopData.getInstance().getPrimeItems().values())
 		{
 			// Update data for offline players.
-			try (Connection con = DatabaseFactory.getConnection();
+			try (using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var=?"))
 			{
 				ps.setString(1, AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + holder.getBrId());
@@ -626,7 +626,7 @@ public class DailyTaskManager
 		for (LimitShopProductHolder holder : LimitShopData.getInstance().getProducts())
 		{
 			// Update data for offline players.
-			try (Connection con = DatabaseFactory.getConnection();
+			try (using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var=?"))
 			{
 				ps.setString(1, AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + holder.getProductionId());
@@ -652,7 +652,7 @@ public class DailyTaskManager
 		for (LimitShopProductHolder holder : LimitShopData.getInstance().getProducts())
 		{
 			// Update data for offline players.
-			try (Connection con = DatabaseFactory.getConnection();
+			try (using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var=?"))
 			{
 				ps.setString(1, AccountVariables.LCOIN_SHOP_PRODUCT_MONTLY_COUNT + holder.getProductionId());
@@ -675,7 +675,7 @@ public class DailyTaskManager
 	private void resetHuntPass()
 	{
 		// Update data for offline players.
-		try (Connection con = DatabaseFactory.getConnection();
+		try (using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement("DELETE FROM huntpass"))
 		{
 			statement.execute();
@@ -764,7 +764,7 @@ public class DailyTaskManager
 		// Update data for offline players.
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 
 			{
 				PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var=?");

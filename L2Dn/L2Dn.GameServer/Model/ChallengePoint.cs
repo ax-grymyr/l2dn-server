@@ -80,7 +80,7 @@ public class ChallengePoint
 		_challengePoints.clear();
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			{
 				PreparedStatement ps = con.prepareStatement(RESTORE_CHALLENGE_POINTS);
 				ps.setInt(1, _owner.getObjectId());

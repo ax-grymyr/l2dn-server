@@ -458,7 +458,7 @@ public class ItemData
 			{
 				try 
 				{
-					Connection con = DatabaseFactory.getConnection();
+					using GameServerDbContext ctx = new();
 					PreparedStatement statement = con.prepareStatement("DELETE FROM pets WHERE item_obj_id=?");
 					// Delete the pet in db
 					statement.setInt(1, item.getObjectId());

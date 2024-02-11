@@ -1520,7 +1520,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement invalidQuestData = con.prepareStatement("DELETE FROM character_quests WHERE charId = ? AND name = ?");
 			PreparedStatement invalidQuestDataVar = con.prepareStatement("DELETE FROM character_quests WHERE charId = ? AND name = ? AND var = ?");
 			PreparedStatement ps1 =
@@ -1605,7 +1605,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(
 				"INSERT INTO character_quests (charId,name,var,value) VALUES (?,?,?,?) ON DUPLICATE KEY UPDATE value=?");
 			statement.setInt(1, qs.getPlayer().getObjectId());
@@ -1631,7 +1631,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement =
 				con.prepareStatement("UPDATE character_quests SET value=? WHERE charId=? AND name=? AND var = ?");
 			statement.setString(1, value);
@@ -1655,7 +1655,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement =
 				con.prepareStatement("DELETE FROM character_quests WHERE charId=? AND name=? AND var=?");
 			statement.setInt(1, qs.getPlayer().getObjectId());
@@ -1678,7 +1678,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(repeatable
 				? QUEST_DELETE_FROM_CHAR_QUERY
 				: QUEST_DELETE_FROM_CHAR_QUERY_NON_REPEATABLE_QUERY);

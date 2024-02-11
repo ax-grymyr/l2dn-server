@@ -111,7 +111,7 @@ public class Olympiad: ListenersContainer
 		bool loaded = false;
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(OLYMPIAD_LOAD_DATA);
 			ResultSet rset = statement.executeQuery();
 			while (rset.next())
@@ -192,7 +192,7 @@ public class Olympiad: ListenersContainer
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(OLYMPIAD_LOAD_NOBLES);
 			ResultSet rset = statement.executeQuery();
 			StatSet statData;
@@ -276,7 +276,7 @@ public class Olympiad: ListenersContainer
 		Map<int, int> tmpPlace = new();
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(GET_ALL_CLASSIFIED_NOBLESS);
 			ResultSet rset = statement.executeQuery();
 			int place = 1;
@@ -341,7 +341,7 @@ public class Olympiad: ListenersContainer
 					// Remove previous record.
 					try 
 					{
-						Connection con = DatabaseFactory.getConnection();
+						using GameServerDbContext ctx = new();
 						PreparedStatement statement = con.prepareStatement(REMOVE_UNCLAIMED_POINTS);
 						statement.setInt(1, noblesId);
 						statement.setString(2, UNCLAIMED_OLYMPIAD_POINTS_VAR);
@@ -354,7 +354,7 @@ public class Olympiad: ListenersContainer
 					// Add new value.
 					try 
 					{
-						Connection con = DatabaseFactory.getConnection();
+						using GameServerDbContext ctx = new();
 						PreparedStatement statement = con.prepareStatement(INSERT_UNCLAIMED_POINTS);
 						statement.setInt(1, noblesId);
 						statement.setString(2, UNCLAIMED_OLYMPIAD_POINTS_VAR);
@@ -481,7 +481,7 @@ public class Olympiad: ListenersContainer
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps1 = con.prepareStatement("DELETE FROM olympiad_nobles WHERE charId=?");
 			PreparedStatement ps2 = con.prepareStatement("DELETE FROM olympiad_nobles_eom WHERE charId=?");
 			ps1.setInt(1, playerId);
@@ -846,7 +846,7 @@ public class Olympiad: ListenersContainer
 		
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			foreach (var entry in NOBLES)
 			{
 				StatSet nobleInfo = entry.Value;
@@ -911,7 +911,7 @@ public class Olympiad: ListenersContainer
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(OLYMPIAD_SAVE_DATA);
 			statement.setInt(1, _currentCycle);
 			statement.setInt(2, _period);
@@ -953,7 +953,7 @@ public class Olympiad: ListenersContainer
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps1 = con.prepareStatement(OLYMPIAD_MONTH_CLEAR);
 			PreparedStatement ps2 = con.prepareStatement(OLYMPIAD_MONTH_CREATE);
 			ps1.execute();
@@ -996,7 +996,7 @@ public class Olympiad: ListenersContainer
 		int legendId = 0;
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(OLYMPIAD_GET_LEGEND);
 			{
 				ResultSet rset = statement.executeQuery();
@@ -1013,7 +1013,7 @@ public class Olympiad: ListenersContainer
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(OLYMPIAD_GET_HEROS);
 			StatSet hero;
 			foreach (int element in HERO_IDS.Keys)
@@ -1054,7 +1054,7 @@ public class Olympiad: ListenersContainer
 		String query = Config.ALT_OLY_SHOW_MONTHLY_WINNERS ? ((classId == 132) ? GET_EACH_CLASS_LEADER_SOULHOUND : GET_EACH_CLASS_LEADER) : ((classId == 132) ? GET_EACH_CLASS_LEADER_CURRENT_SOULHOUND : GET_EACH_CLASS_LEADER_CURRENT);
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(query);
 			ps.setInt(1, classId);
 
@@ -1155,7 +1155,7 @@ public class Olympiad: ListenersContainer
 		int result = 0;
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement("SELECT olympiad_points FROM olympiad_nobles_eom WHERE charId = ?");
 			ps.setInt(1, objId);
@@ -1230,7 +1230,7 @@ public class Olympiad: ListenersContainer
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(OLYMPIAD_DELETE_ALL);
 			statement.execute();
 		}

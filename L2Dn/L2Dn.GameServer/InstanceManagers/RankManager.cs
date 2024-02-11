@@ -61,7 +61,7 @@ public class RankManager
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(SELECT_CHARACTERS);
 
 			{
@@ -104,7 +104,7 @@ public class RankManager
 		// load olympiad data.
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(GET_CURRENT_CYCLE_DATA);
 
 			{
@@ -166,7 +166,7 @@ public class RankManager
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(SELECT_CHARACTERS_PVP);
 
 			{
@@ -208,7 +208,7 @@ public class RankManager
 		
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(SELECT_PETS);
 
 			{
@@ -242,7 +242,7 @@ public class RankManager
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(SELECT_CLANS);
 
 			{
@@ -273,7 +273,7 @@ public class RankManager
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(GET_CHARACTERS_BY_CLASS);
 			ps.setInt(1, classId);
 
@@ -304,7 +304,7 @@ public class RankManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(SELECT_CHARACTERS_BY_RACE);
 			ps.setInt(1, race);
 			{

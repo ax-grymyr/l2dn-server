@@ -1,4 +1,7 @@
+using L2Dn.GameServer.CommunityBbs.Managers;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.CommunityBbs.BB;
@@ -15,7 +18,7 @@ public class Post
 		private int _postId;
 		private String _postOwner;
 		private int _postOwnerId;
-		private long _postDate;
+		private DateTime _postDate;
 		private int _postTopicId;
 		private int _postForumId;
 		private String _postText;
@@ -50,12 +53,12 @@ public class Post
 			return _postOwnerId;
 		}
 		
-		public void setPostDate(long postDate)
+		public void setPostDate(DateTime postDate)
 		{
 			_postDate = postDate;
 		}
 		
-		public long getPostDate()
+		public DateTime getPostDate()
 		{
 			return _postDate;
 		}
@@ -114,7 +117,7 @@ public class Post
 	 * @param postForumId
 	 * @param txt
 	 */
-	public Post(String postOwner, int postOwnerId, long date, int tid, int postForumId, String txt)
+	public Post(String postOwner, int postOwnerId, DateTime date, int tid, int postForumId, String txt)
 	{
 		_post = new();
 		CPost cp = new CPost();
@@ -131,19 +134,22 @@ public class Post
 	
 	private void insertindb(CPost cp)
 	{
-		try 
+		try
 		{
-			Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement(
-				"INSERT INTO posts (post_id,post_owner_name,post_ownerid,post_date,post_topic_id,post_forum_id,post_txt) values (?,?,?,?,?,?,?)");
-			ps.setInt(1, cp.getPostId());
-			ps.setString(2, cp.getPostOwner());
-			ps.setInt(3, cp.getPostOwnerId());
-			ps.setLong(4, cp.getPostDate());
-			ps.setInt(5, cp.getPostTopicId());
-			ps.setInt(6, cp.getPostForumId());
-			ps.setString(7, cp.getPostText());
-			ps.execute();
+			using GameServerDbContext ctx = new();
+			var post = new Db.Post
+			{
+				Id = cp.getPostId(),
+				OwnerName = cp.getPostOwner(),
+				OwnerId =cp.getPostOwnerId(),
+				Date = cp.getPostDate(),
+				TopicId = cp.getPostTopicId(),
+				ForumId = cp.getPostForumId(),
+				Text = cp.getPostText()
+			};
+			
+			ctx.Posts.Add(post);
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -175,11 +181,8 @@ public class Post
 		PostBBSManager.getInstance().delPostByTopic(t);
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM posts WHERE post_forum_id=? AND post_topic_id=?");
-			ps.setInt(1, t.getForumID());
-			ps.setInt(2, t.getID());
-			ps.execute();
+			using GameServerDbContext ctx = new();
+			ctx.Posts.Where(p => p.ForumId == t.getForumID() && p.TopicId == t.getID()).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -191,25 +194,21 @@ public class Post
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM posts WHERE post_forum_id=? AND post_topic_id=? ORDER BY post_id ASC");
-			ps.setInt(1, t.getForumID());
-			ps.setInt(2, t.getID());
+			using GameServerDbContext ctx = new();
+			var posts = ctx.Posts.Where(p => p.ForumId == t.getForumID() && p.TopicId == t.getID()).OrderBy(p => p.Id)
+				.ToList();
 
+			foreach (var post in posts)
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
-				{
-					CPost cp = new CPost();
-					cp.setPostId(rs.getInt("post_id"));
-					cp.setPostOwner(rs.getString("post_owner_name"));
-					cp.setPostOwnerId(rs.getInt("post_ownerid"));
-					cp.setPostDate(rs.getLong("post_date"));
-					cp.setPostTopicId(rs.getInt("post_topic_id"));
-					cp.setPostForumId(rs.getInt("post_forum_id"));
-					cp.setPostText(rs.getString("post_txt"));
-					_post.add(cp);
-				}
+				CPost cp = new CPost();
+				cp.setPostId(post.Id);
+				cp.setPostOwner(post.OwnerName ?? string.Empty);
+				cp.setPostOwnerId(post.OwnerId ?? 0);
+				cp.setPostDate(post.Date);
+				cp.setPostTopicId(post.TopicId);
+				cp.setPostForumId(post.ForumId);
+				cp.setPostText(post.Text);
+				_post.add(cp);
 			}
 		}
 		catch (Exception e)
@@ -220,18 +219,13 @@ public class Post
 	
 	public void updateText(int i)
 	{
-		try 
+		try
 		{
-			Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps =
-				con.prepareStatement(
-					"UPDATE posts SET post_txt=? WHERE post_id=? AND post_topic_id=? AND post_forum_id=?");
+			using GameServerDbContext ctx = new();
 			CPost cp = getCPost(i);
-			ps.setString(1, cp.getPostText());
-			ps.setInt(2, cp.getPostId());
-			ps.setInt(3, cp.getPostTopicId());
-			ps.setInt(4, cp.getPostForumId());
-			ps.execute();
+			ctx.Posts.Where(p =>
+					p.Id == cp.getPostId() && p.TopicId == cp.getPostTopicId() && p.ForumId == cp.getPostForumId())
+				.ExecuteUpdate(p => p.SetProperty(x => x.Text, cp.getPostText()));
 		}
 		catch (Exception e)
 		{

@@ -38,7 +38,7 @@ public class AccountVariables: AbstractVariables
 		// Restore previous variables.
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement st = con.prepareStatement(SELECT_QUERY);
 			st.setString(1, _accountName);
 			ResultSet rset = st.executeQuery();
@@ -70,7 +70,7 @@ public class AccountVariables: AbstractVariables
 		
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			// Clear previous entries.
 			PreparedStatement st = con.prepareStatement(DELETE_QUERY);
 			st.setString(1, _accountName);
@@ -103,7 +103,7 @@ public class AccountVariables: AbstractVariables
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			// Clear previous entries.
 			PreparedStatement st = con.prepareStatement(DELETE_QUERY);
 			st.setString(1, _accountName);
@@ -129,7 +129,7 @@ public class AccountVariables: AbstractVariables
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			// Clear previous entries.
 			PreparedStatement st = con.prepareStatement(DELETE_QUERY_VAR);
 			st.setString(1, var);

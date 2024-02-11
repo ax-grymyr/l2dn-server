@@ -72,7 +72,7 @@ public abstract class MatchingRoom: IIdentifiable
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(INSERT_PARTY_HISTORY);
 			statement.setString(1, _title);
 			statement.setString(2, _leader.getName());

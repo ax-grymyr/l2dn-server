@@ -60,7 +60,7 @@ public class TaskManager
 			
 			try
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement statement = con.prepareStatement(SQL_STATEMENTS[1]);
 				statement.setLong(1, lastActivation);
 				statement.setInt(2, id);
@@ -147,7 +147,7 @@ public class TaskManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(SQL_STATEMENTS[0]);
 			ResultSet rset = statement.executeQuery();
 			while (rset.next())
@@ -282,7 +282,7 @@ public class TaskManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps1 = con.prepareStatement(SQL_STATEMENTS[2]);
 			ps1.setString(1, task);
 
@@ -320,7 +320,7 @@ public class TaskManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(SQL_STATEMENTS[3]);
 			statement.setString(1, task);
 			statement.setString(2, type.toString());

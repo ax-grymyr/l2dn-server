@@ -1,7 +1,8 @@
-using L2Dn.GameServer.CommunityBbs.BB;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Forum = L2Dn.GameServer.CommunityBbs.BB.Forum;
 
 namespace L2Dn.GameServer.CommunityBbs.Managers;
 
@@ -17,14 +18,14 @@ public class ForumsBBSManager: BaseBBSManager
 	protected ForumsBBSManager()
 	{
 		_table = new();
-		try 
+		try
 		{
-			Connection con = DatabaseFactory.getConnection();
-			Statement s = con.createStatement();
-			ResultSet rs = s.executeQuery("SELECT forum_id FROM forums WHERE forum_type = 0");
-			while (rs.next())
+			using GameServerDbContext ctx = new();
+			List<int> forumIds = ctx.Forums.Where(f => f.Type == 0).Select(f => f.Id).ToList();
+
+			foreach (int forumId in forumIds)
 			{
-				addForum(new Forum(rs.getInt("forum_id"), null));
+				addForum(new Forum(forumId, null));
 			}
 		}
 		catch (Exception e)

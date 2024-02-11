@@ -1035,7 +1035,7 @@ public class Item: WorldObject
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM item_variations WHERE itemId = ?");
 			ps.setInt(1, getObjectId());
 			ps.executeUpdate();
@@ -1056,7 +1056,7 @@ public class Item: WorldObject
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps1 = con.prepareStatement("SELECT mineralId,option1,option2 FROM item_variations WHERE itemId=?");
 			PreparedStatement ps2 =
 				con.prepareStatement("SELECT elemType,elemValue FROM item_elementals WHERE itemId=?");
@@ -1099,7 +1099,7 @@ public class Item: WorldObject
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			updateItemOptions(con);
 		}
 		catch (Exception e)
@@ -1129,7 +1129,7 @@ public class Item: WorldObject
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			updateItemElements(con);
 		}
 		catch (Exception e)
@@ -1298,7 +1298,7 @@ public class Item: WorldObject
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement("DELETE FROM item_elementals WHERE itemId = ? AND elemType = ?");
 			ps.setInt(1, getObjectId());
@@ -1325,7 +1325,7 @@ public class Item: WorldObject
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM item_elementals WHERE itemId = ?");
 			ps.setInt(1, getObjectId());
 			ps.executeUpdate();
@@ -1613,7 +1613,7 @@ public class Item: WorldObject
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(
 				"UPDATE items SET owner_id=?,count=?,loc=?,loc_data=?,enchant_level=?,custom_type1=?,custom_type2=?,mana_left=?,time=? WHERE object_id = ?");
 			ps.setInt(1, _ownerId);
@@ -1660,7 +1660,7 @@ public class Item: WorldObject
 		
 		try 
 		{
-		Connection con = DatabaseFactory.getConnection();
+		using GameServerDbContext ctx = new();
 		PreparedStatement ps =
 			con.prepareStatement(
 				"INSERT INTO items (owner_id,item_id,count,loc,loc_data,enchant_level,object_id,custom_type1,custom_type2,mana_left,time) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
@@ -1710,7 +1710,7 @@ public class Item: WorldObject
 		
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 
 			{
 				PreparedStatement ps = con.prepareStatement("DELETE FROM items WHERE object_id = ?");
@@ -2270,7 +2270,7 @@ public class Item: WorldObject
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement("DELETE FROM item_special_abilities WHERE objectId = ? AND optionId = ?");
 			ps.setInt(1, getObjectId());
@@ -2333,7 +2333,7 @@ public class Item: WorldObject
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps =
 				con.prepareStatement("SELECT * FROM item_special_abilities WHERE objectId = ? ORDER BY position");
 			ps.setInt(1, getObjectId());
@@ -2362,7 +2362,7 @@ public class Item: WorldObject
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			updateSpecialAbilities(con);
 		}
 		catch (Exception e)

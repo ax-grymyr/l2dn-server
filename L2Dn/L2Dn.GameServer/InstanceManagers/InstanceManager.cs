@@ -470,7 +470,7 @@ public class InstanceManager: IXmlReader
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement ps = con.createStatement();
 			ResultSet rs = ps.executeQuery("SELECT * FROM character_instance_time ORDER BY charId");
 			while (rs.next())
@@ -523,7 +523,7 @@ public class InstanceManager: IXmlReader
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement(DELETE_INSTANCE_TIME);
 				foreach (int id in invalidPenalty)
 				{
@@ -589,7 +589,7 @@ public class InstanceManager: IXmlReader
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(DELETE_INSTANCE_TIME);
 			ps.setInt(1, player.getObjectId());
 			ps.setInt(2, id);

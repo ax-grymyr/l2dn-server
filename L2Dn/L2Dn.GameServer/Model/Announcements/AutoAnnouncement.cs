@@ -1,20 +1,20 @@
-﻿using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Announcements;
 
 public class AutoAnnouncement : Announcement, Runnable
 {
-	private const String INSERT_QUERY = "INSERT INTO announcements (`type`, `content`, `author`, `initial`, `delay`, `repeat`) VALUES (?, ?, ?, ?, ?, ?)";
-	private const String UPDATE_QUERY = "UPDATE announcements SET `type` = ?, `content` = ?, `author` = ?, `initial` = ?, `delay` = ?, `repeat` = ? WHERE id = ?";
-	
-	private long _initial;
-	private long _delay;
+	private TimeSpan _initial;
+	private TimeSpan _delay;
 	private int _repeat = -1;
 	private int _currentState;
-	private ScheduledFuture<?> _task;
+	private ScheduledFuture? _task;
 	
-	public AutoAnnouncement(AnnouncementType type, String content, String author, long initial, long delay, int repeat): base(type, content, author)
+	public AutoAnnouncement(AnnouncementType type, String content, String author, TimeSpan initial, TimeSpan delay, int repeat)
+		: base(type, content, author)
 	{
 		_initial = initial;
 		_delay = delay;
@@ -22,30 +22,30 @@ public class AutoAnnouncement : Announcement, Runnable
 		restartMe();
 	}
 	
-	public AutoAnnouncement(ResultSet rset): base(rset)
+	public AutoAnnouncement(Db.Announcement announcement): base(announcement)
 	{
-		_initial = rset.getLong("initial");
-		_delay = rset.getLong("delay");
-		_repeat = rset.getInt("repeat");
+		_initial = announcement.InitialDelay;
+		_delay = announcement.Period;
+		_repeat = announcement.Repeat;
 		restartMe();
 	}
 	
-	public long getInitial()
+	public TimeSpan getInitial()
 	{
 		return _initial;
 	}
 	
-	public void setInitial(long initial)
+	public void setInitial(TimeSpan initial)
 	{
 		_initial = initial;
 	}
 	
-	public long getDelay()
+	public TimeSpan getDelay()
 	{
 		return _delay;
 	}
 	
-	public void setDelay(long delay)
+	public void setDelay(TimeSpan delay)
 	{
 		_delay = delay;
 	}
@@ -64,22 +64,20 @@ public class AutoAnnouncement : Announcement, Runnable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
-			PreparedStatement st = con.prepareStatement(INSERT_QUERY, Statement.RETURN_GENERATED_KEYS);
-			st.setInt(1, getType().ordinal());
-			st.setString(2, getContent());
-			st.setString(3, getAuthor());
-			st.setLong(4, _initial);
-			st.setLong(5, _delay);
-			st.setInt(6, _repeat);
-			st.execute();
-			ResultSet rset = st.getGeneratedKeys();
+			using GameServerDbContext ctx = new();
+			var announcement = new Db.Announcement
 			{
-				if (rset.next())
-				{
-					_id = rset.getInt(1);
-				}
-			}
+				Type = (int)getType(),
+				Content = getContent(),
+				Author = getAuthor(),
+				InitialDelay = _initial,
+				Period = _delay,
+				Repeat = _repeat
+			};
+
+			ctx.Announcements.Add(announcement);
+			ctx.SaveChanges();
+			_id = announcement.Id;
 		}
 		catch (Exception e)
 		{
@@ -93,16 +91,11 @@ public class AutoAnnouncement : Announcement, Runnable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
-			PreparedStatement st = con.prepareStatement(UPDATE_QUERY);
-			st.setInt(1, getType().ordinal());
-			st.setString(2, getContent());
-			st.setString(3, getAuthor());
-			st.setLong(4, _initial);
-			st.setLong(5, _delay);
-			st.setLong(6, _repeat);
-			st.setLong(7, getId());
-			st.execute();
+			using GameServerDbContext ctx = new();
+			ctx.Announcements.Where(a => a.Id == _id).ExecuteUpdate(s =>
+				s.SetProperty(a => a.Type, (int)getType()).SetProperty(a => a.Content, getContent())
+					.SetProperty(a => a.Author, getAuthor()).SetProperty(a => a.InitialDelay, _initial)
+					.SetProperty(a => a.Period, _delay).SetProperty(a => a.Repeat, _repeat));
 		}
 		catch (Exception e)
 		{
@@ -136,7 +129,7 @@ public class AutoAnnouncement : Announcement, Runnable
 	{
 		if ((_currentState == -1) || (_currentState > 0))
 		{
-			foreach (String content in getContent().split(Config.EOL))
+			foreach (string content in getContent().Split(Environment.NewLine))
 			{
 				Broadcast.toAllOnlinePlayers(content, (getType() == AnnouncementType.AUTO_CRITICAL));
 			}

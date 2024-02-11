@@ -35,7 +35,7 @@ public class BuyListData
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement statement = con.createStatement();
 			ResultSet rs = statement.executeQuery("SELECT * FROM `buylists`");
 			while (rs.next())

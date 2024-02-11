@@ -59,7 +59,7 @@ public class SiegeManager
 		bool register = false;
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement =
 				con.prepareStatement("SELECT clan_id FROM siege_clans where clan_id=? and castle_id=?");
 			statement.setInt(1, clan.getId());
@@ -274,7 +274,7 @@ public class SiegeManager
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM castle_trapupgrade WHERE castleId=?");
 			ps.setInt(1, castleId);
 

@@ -40,7 +40,7 @@ public class HuntPass
 	public void restoreHuntPass()
 	{
 		try 
-		{ using Connection con = DatabaseFactory.getConnection();
+		{ using GameServerDbContext ctx = new();
 			using PreparedStatement statement = con.prepareStatement(RESTORE_SEASONPASS);
 			statement.setString(1, getAccountName());
 			using ResultSet rset = statement.executeQuery();				
@@ -86,7 +86,7 @@ public class HuntPass
 	{
 		try 
 		{
-			using Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			using PreparedStatement statement = con.prepareStatement(INSERT_SEASONPASS);
 			statement.setString(1, getAccountName());
 			statement.setInt(2, getCurrentStep());

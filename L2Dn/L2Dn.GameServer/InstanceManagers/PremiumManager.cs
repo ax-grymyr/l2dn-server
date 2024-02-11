@@ -99,7 +99,7 @@ public class PremiumManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement stmt = con.prepareStatement(LOAD_SQL);
 			stmt.setString(1, accountName.toLowerCase());
 			try (ResultSet rset = stmt.executeQuery())
@@ -132,7 +132,7 @@ public class PremiumManager
 		// UPDATE DATABASE
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement stmt = con.prepareStatement(UPDATE_SQL);
 			stmt.setString(1, accountName.toLowerCase());
 			stmt.setLong(2, newPremiumExpiration);
@@ -183,7 +183,7 @@ public class PremiumManager
 		// UPDATE DATABASE
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement stmt = con.prepareStatement(DELETE_SQL);
 			stmt.setString(1, accountName.ToLower());
 			stmt.execute();

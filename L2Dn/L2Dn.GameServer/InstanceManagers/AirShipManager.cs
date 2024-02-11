@@ -136,7 +136,7 @@ public class AirShipManager
 			
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement(ADD_DB);
 				ps.setInt(1, ownerId);
 				ps.setInt(2, info.getInt("fuel"));
@@ -228,7 +228,7 @@ public class AirShipManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery(LOAD_DB);
 			StatSet info;
@@ -260,7 +260,7 @@ public class AirShipManager
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(UPDATE_DB);
 			ps.setInt(1, info.getInt("fuel"));
 			ps.setInt(2, ownerId);

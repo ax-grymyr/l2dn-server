@@ -56,7 +56,7 @@ public class DBSpawnManager
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement("SELECT * FROM npc_respawns");
 			ResultSet rset = statement.executeQuery();
 			while (rset.next())
@@ -278,7 +278,7 @@ public class DBSpawnManager
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement statement = con.prepareStatement(
 					"INSERT INTO npc_respawns (id, x, y, z, heading, respawnTime, currentHp, currentMp) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
 				statement.setInt(1, spawn.getId());
@@ -335,7 +335,7 @@ public class DBSpawnManager
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement statement = con.prepareStatement(
 					"INSERT INTO npc_respawns (id, x, y, z, heading, respawnTime, currentHp, currentMp) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
 				statement.setInt(1, spawn.getId());
@@ -385,7 +385,7 @@ public class DBSpawnManager
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ps = con.prepareStatement("DELETE FROM npc_respawns WHERE id = ?");
 				ps.setInt(1, npcId);
 				ps.execute();
@@ -407,7 +407,7 @@ public class DBSpawnManager
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement =
 				con.prepareStatement(
 					"UPDATE npc_respawns SET respawnTime = ?, currentHP = ?, currentMP = ? WHERE id = ?");

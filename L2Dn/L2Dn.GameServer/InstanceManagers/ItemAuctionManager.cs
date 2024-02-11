@@ -24,7 +24,7 @@ public class ItemAuctionManager: IXmlReader
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			Statement statement = con.createStatement();
 			ResultSet rset =
 				statement.executeQuery("SELECT auctionId FROM item_auction ORDER BY auctionId DESC LIMIT 0, 1");
@@ -102,7 +102,7 @@ public class ItemAuctionManager: IXmlReader
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 
 			{
 				PreparedStatement statement = con.prepareStatement("DELETE FROM item_auction WHERE auctionId=?");

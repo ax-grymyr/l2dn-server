@@ -174,7 +174,7 @@ public class WorldExchangeManager: IXmlReader
 		Map<int, Item> itemInstances = new();
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(SELECT_ALL_ITEMS);
 			ps.setString(1, ItemLocation.EXCHANGE.name());
 			ResultSet rs = ps.executeQuery();
@@ -206,7 +206,7 @@ public class WorldExchangeManager: IXmlReader
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(RESTORE_INFO);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next())
@@ -984,7 +984,7 @@ public class WorldExchangeManager: IXmlReader
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(INSERT_WORLD_EXCHANGE);
 			foreach (WorldExchangeHolder holder in _itemBids.values())
 			{
@@ -1021,7 +1021,7 @@ public class WorldExchangeManager: IXmlReader
 		
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement statement = con.prepareStatement(INSERT_WORLD_EXCHANGE);
 			WorldExchangeHolder holder = _itemBids.get(worldExchangeId);
 			statement.setLong(1, holder.getWorldExchangeId());

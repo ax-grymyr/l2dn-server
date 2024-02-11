@@ -2,31 +2,97 @@
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
-public struct CreatureSayPacket: IOutgoingPacket
+internal struct CreatureSayPacket: IOutgoingPacket
 {
-    private readonly Creature _sender;
+    private readonly Creature? _sender;
     private readonly ChatType _chatType;
-    private String _senderName = null;
-    private String _text = null;
-    private int _charId = 0;
-    private int _messageId = -1;
-    private int _mask;
-    private List<String> _parameters;
-    private bool _shareLocation;
+    private readonly string? _senderName = null;
+    private readonly string? _text = null;
+    private readonly int _charId = 0;
+    private readonly int _messageId = -1;
+    private readonly int _mask;
+    private List<string> _parameters;
+    private readonly bool _shareLocation;
 
-    public CreatureSayPacket()
+    public CreatureSayPacket(Player sender, Player receiver, String name, ChatType chatType, String text)
+        : this(sender, receiver, name, chatType, text, false)
     {
-        
+    }
+    public CreatureSayPacket(Player sender, Player receiver, String name, ChatType chatType, String text, bool shareLocation)
+    {
+        _sender = sender;
+        _senderName = name;
+        _chatType = chatType;
+        _text = text;
+        _shareLocation = shareLocation;
+        if (receiver != null)
+        {
+            if (receiver.getFriendList().Contains(sender.getObjectId()))
+            {
+                _mask |= 0x01;
+            }
+            if ((receiver.getClanId() > 0) && (receiver.getClanId() == sender.getClanId()))
+            {
+                _mask |= 0x02;
+            }
+            if ((MentorManager.getInstance().getMentee(receiver.getObjectId(), sender.getObjectId()) != null) || (MentorManager.getInstance().getMentee(sender.getObjectId(), receiver.getObjectId()) != null))
+            {
+                _mask |= 0x04;
+            }
+            if ((receiver.getAllyId() > 0) && (receiver.getAllyId() == sender.getAllyId()))
+            {
+                _mask |= 0x08;
+            }
+        }
+        // Does not shows level
+        if (sender.isGM())
+        {
+            _mask |= 0x10;
+        }
+    }
+	
+    public CreatureSayPacket(Creature? sender, ChatType chatType, String senderName, String text)
+        : this(sender, chatType, senderName, text, false)
+    {
+    }
+	
+    public CreatureSayPacket(Creature? sender, ChatType chatType, String senderName, String text, bool shareLocation)
+    {
+        _sender = sender;
+        _chatType = chatType;
+        _senderName = senderName;
+        _text = text;
+        _shareLocation = shareLocation;
+    }
+	
+    public CreatureSayPacket(Creature? sender, ChatType chatType, NpcStringId npcStringId)
+    {
+        _sender = sender;
+        _chatType = chatType;
+        _messageId = (int)npcStringId;
+        if (sender != null)
+        {
+            _senderName = sender.getName();
+        }
+    }
+	
+    public CreatureSayPacket(ChatType chatType, int charId, SystemMessageId systemMessageId)
+    {
+        _sender = null;
+        _chatType = chatType;
+        _charId = charId;
+        _messageId = (int)systemMessageId;
     }
 
     public void WriteContent(PacketBitWriter writer)
     {
-        writer.WritePacketCode(ServerPacketCode.SAY2);
-        writer.WriteInt32(_sender == null ? 0 : _sender.getObjectId());
+        writer.WritePacketCode(OutgoingPacketCodes.SAY2);
+        writer.WriteInt32(_sender?.getObjectId() ?? 0);
         writer.WriteInt32((int)_chatType);
         if (_senderName != null)
         {
@@ -88,7 +154,7 @@ public struct CreatureSayPacket: IOutgoingPacket
 
             if (clan != null)
             {
-                writer.WriteByte(clan.getCastleId());
+                writer.WriteByte((byte)clan.getCastleId());
             }
             else
             {
@@ -98,7 +164,7 @@ public struct CreatureSayPacket: IOutgoingPacket
             if (_shareLocation)
             {
                 writer.WriteByte(1);
-                writer.WriteInt16(SharedTeleportManager.getInstance().nextId(_sender));
+                writer.WriteInt16((short)SharedTeleportManager.getInstance().nextId(_sender));
             }
         }
         else

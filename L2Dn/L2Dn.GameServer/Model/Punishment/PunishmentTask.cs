@@ -160,7 +160,7 @@ public class PunishmentTask: Runnable
 		{
 			try
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement st = con.prepareStatement(INSERT_QUERY, Statement.RETURN_GENERATED_KEYS);
 				st.setString(1, _key);
 				st.setString(2, _affect.name());
@@ -201,7 +201,7 @@ public class PunishmentTask: Runnable
 		{
 			try
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement st = con.prepareStatement(UPDATE_QUERY);
 				st.setLong(1, System.currentTimeMillis());
 				st.setLong(2, _id);

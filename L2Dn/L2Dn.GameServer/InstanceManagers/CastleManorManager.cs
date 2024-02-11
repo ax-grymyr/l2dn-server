@@ -117,7 +117,7 @@ public class CastleManorManager: IXmlReader, IStorable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement stProduction = con.prepareStatement("SELECT * FROM castle_manor_production WHERE castle_id=?");
 			PreparedStatement stProcure = con.prepareStatement("SELECT * FROM castle_manor_procure WHERE castle_id=?");
 			foreach (Castle castle in CastleManager.getInstance().getCastles())
@@ -392,7 +392,7 @@ public class CastleManorManager: IXmlReader, IStorable
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement dps = con.prepareStatement("DELETE FROM castle_manor_production WHERE castle_id = ? AND next_period = 1");
 				PreparedStatement ips = con.prepareStatement(INSERT_PRODUCT);
 				// Delete old data
@@ -429,7 +429,7 @@ public class CastleManorManager: IXmlReader, IStorable
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement dps = con.prepareStatement("DELETE FROM castle_manor_procure WHERE castle_id = ? AND next_period = 1");
 				PreparedStatement ips = con.prepareStatement(INSERT_CROP);
 				// Delete old data
@@ -464,7 +464,7 @@ public class CastleManorManager: IXmlReader, IStorable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(
 				"UPDATE castle_manor_production SET amount = ? WHERE castle_id = ? AND seed_id = ? AND next_period = 0");
 			foreach (SeedProduction sp in items)
@@ -486,7 +486,7 @@ public class CastleManorManager: IXmlReader, IStorable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ps = con.prepareStatement(
 				"UPDATE castle_manor_procure SET amount = ? WHERE castle_id = ? AND crop_id = ? AND next_period = 0");
 			foreach (CropProcure sp in items)
@@ -559,7 +559,7 @@ public class CastleManorManager: IXmlReader, IStorable
 	{
 		try 
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			PreparedStatement ds = con.prepareStatement("DELETE FROM castle_manor_production");
 			PreparedStatement is1 = con.prepareStatement(INSERT_PRODUCT);
 			PreparedStatement dp = con.prepareStatement("DELETE FROM castle_manor_procure");
@@ -663,7 +663,7 @@ public class CastleManorManager: IXmlReader, IStorable
 		{
 			try 
 			{
-				Connection con = DatabaseFactory.getConnection();
+				using GameServerDbContext ctx = new();
 				PreparedStatement ds = con.prepareStatement("DELETE FROM castle_manor_production WHERE castle_id = ?");
 				PreparedStatement dc = con.prepareStatement("DELETE FROM castle_manor_procure WHERE castle_id = ?");
 				// Delete seeds
