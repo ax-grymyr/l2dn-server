@@ -159,16 +159,16 @@ public static class EnumUtil
         where TEnum: struct, Enum
     {
         if (Unsafe.SizeOf<TEnum>() == 1)
-            return BitUtility.Compare(Unsafe.As<TEnum, byte>(ref left), Unsafe.As<TEnum, byte>(ref right));
+            return BitUtil.Compare(Unsafe.As<TEnum, byte>(ref left), Unsafe.As<TEnum, byte>(ref right));
 
         if (Unsafe.SizeOf<TEnum>() == 2)
-            return BitUtility.Compare(Unsafe.As<TEnum, ushort>(ref left), Unsafe.As<TEnum, ushort>(ref right));
+            return BitUtil.Compare(Unsafe.As<TEnum, ushort>(ref left), Unsafe.As<TEnum, ushort>(ref right));
 
         if (Unsafe.SizeOf<TEnum>() == 4)
-            return BitUtility.Compare(Unsafe.As<TEnum, uint>(ref left), Unsafe.As<TEnum, uint>(ref right));
+            return BitUtil.Compare(Unsafe.As<TEnum, uint>(ref left), Unsafe.As<TEnum, uint>(ref right));
 
         if (Unsafe.SizeOf<TEnum>() == 8)
-            return BitUtility.Compare(Unsafe.As<TEnum, ulong>(ref left), Unsafe.As<TEnum, ulong>(ref right));
+            return BitUtil.Compare(Unsafe.As<TEnum, ulong>(ref left), Unsafe.As<TEnum, ulong>(ref right));
 
         throw new InvalidOperationException("Unsupported enum size");
     }

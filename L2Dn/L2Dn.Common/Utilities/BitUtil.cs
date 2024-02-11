@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace L2Dn.Utilities;
 
-public static class BitUtility
+public static class BitUtil
 {
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int Compare<T>(T a, T b)

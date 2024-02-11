@@ -1,12 +1,14 @@
-﻿using System.Diagnostics;
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Text.Json.Nodes;
 using L2Dn.Utilities;
+using NLog;
 
 namespace L2Dn.Configuration;
 
 public static class ConfigurationUtil
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(ConfigurationUtil));
+    
     public static TConfig LoadConfig<TConfig>()
         where TConfig: class
     {
@@ -30,7 +32,7 @@ public static class ConfigurationUtil
         if (!File.Exists(filePath))
             return null;
  
-        Logger.Trace($"Loading configuration from '{filePath}'");
+        _logger.Trace($"Loading configuration from '{filePath}'");
         
         using FileStream fileStream = new(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
         return JsonNode.Parse(fileStream, new JsonNodeOptions

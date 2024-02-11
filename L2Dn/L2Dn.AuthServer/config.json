@@ -23,5 +23,16 @@
     "AutoCreateAccounts": true,
     "ShowLicense": true,
     "ShowPIAgreement": false
+  },
+  
+  "Logging": {
+    "File": {
+      "Enabled": true,
+      "LogLevel": "Trace"
+    },
+    "Console": {
+      "Enabled": true,
+      "LogLevel": "Trace"
+    }
   }
 }

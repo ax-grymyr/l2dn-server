@@ -1,9 +1,12 @@
 ﻿using L2Dn.Packets;
+using NLog;
 
 namespace L2Dn;
 
 internal static class LogUtils
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(LogUtils));
+    
     public static void TracePacketData(ReadOnlySpan<byte> data, int sessionId)
     {
         ReadOnlySpan<byte> span = data;
@@ -15,7 +18,7 @@ internal static class LogUtils
             for (int i = 1; i < len; i++)
                 bytes += " " + span[i].ToString("X2");
 
-            Logger.Trace($"S({sessionId})  0x{position:X8}: {bytes}");
+            _logger.Trace($"S({sessionId})  0x{position:X8}: {bytes}");
             span = span[len..];
             position += 8;
         }
@@ -35,7 +38,7 @@ internal static class LogUtils
                 bytes += " " + reader.ReadByte().ToString("X2");
             }
 
-            Logger.Trace($"S({sessionId})  0x{position:X8}: {bytes}");
+            _logger.Trace($"S({sessionId})  0x{position:X8}: {bytes}");
             position += 8;
         }
     }

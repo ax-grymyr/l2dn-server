@@ -41,7 +41,7 @@ internal struct RequestAuthLoginPacket: IIncomingPacket<AuthSession>
             return;
         }
 
-        Logger.Info($"S({session.Id})  RequestAuthLogin, user: {username}, password: {password}");
+        //Logger.Info($"S({session.Id})  RequestAuthLogin, user: {username}, password: {password}");
 
         IPAddress? address = connection.GetRemoteAddress();
         AccountInfo? account = await AccountManager.Instance.LoginAsync(username, password, address?.ToString());

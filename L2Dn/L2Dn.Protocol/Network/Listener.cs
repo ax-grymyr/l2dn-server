@@ -3,12 +3,14 @@ using System.Net;
 using System.Net.Sockets;
 using L2Dn.Extensions;
 using L2Dn.Packets;
+using NLog;
 
 namespace L2Dn.Network;
 
 public sealed class Listener<TSession>: IConnectionCloseEvent
     where TSession: ISession
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(Listener<TSession>));
     private readonly ConcurrentDictionary<int, Connection<TSession>> _connections = new();
     private readonly ISessionFactory<TSession> _sessionFactory;
     private readonly IPacketEncoderFactory<TSession> _packetEncoderFactory;
@@ -29,20 +31,20 @@ public sealed class Listener<TSession>: IConnectionCloseEvent
             _listener.Server.DualMode = true;
     }
 
-    public void Start(CancellationToken cancellationToken)
+    public Task Start(CancellationToken cancellationToken)
     {
         _listener.Start();
-        AcceptConnectionsAsync(cancellationToken);
+        return AcceptConnectionsAsync(cancellationToken);
     }
 
-    private async void AcceptConnectionsAsync(CancellationToken cancellationToken)
+    private async Task AcceptConnectionsAsync(CancellationToken cancellationToken)
     {
         while (!cancellationToken.IsCancellationRequested)
         {
             try
             {
                 TcpClient client = await _listener.AcceptTcpClientAsync(cancellationToken).ConfigureAwait(false);
-                Logger.Trace($"Accepted connection from {client.Client.RemoteEndPoint}");
+                _logger.Trace($"Accepted connection from {client.Client.RemoteEndPoint}");
                 ThreadPool.QueueUserWorkItem(_ => { HandleConnection(client); });
             }
             catch (OperationCanceledException)
@@ -56,7 +58,7 @@ public sealed class Listener<TSession>: IConnectionCloseEvent
                     break;
                 }
                 
-                Logger.Error($"Exception in Listener: {exception}");
+                _logger.Error($"Exception in Listener: {exception}");
             }
         }
 
@@ -67,7 +69,7 @@ public sealed class Listener<TSession>: IConnectionCloseEvent
         }
         catch (Exception exception)
         {
-            Logger.Error($"Exception in Listener: {exception}");
+            _logger.Error($"Exception in Listener: {exception}");
         }
     }
     
@@ -79,7 +81,7 @@ public sealed class Listener<TSession>: IConnectionCloseEvent
 
         if (!ReferenceEquals(session, connection.Session))
         {
-            Logger.Error($"Duplicated session id: {session.Id}");
+            _logger.Error($"Duplicated session id: {session.Id}");
             connection.Close();
             return;
         }

@@ -1,5 +1,6 @@
 ﻿using L2Dn.Network;
 using L2Dn.Utilities;
+using NLog;
 
 namespace L2Dn.Packets;
 
@@ -7,6 +8,7 @@ public class PacketHandler<TSession, TSessionState>: IPacketHandler<TSession>
     where TSession: ISession<TSessionState>
     where TSessionState: struct, Enum
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(PacketHandler<TSession, TSessionState>));
     private readonly Dictionary<byte, PacketHandlerHelper> _helpers = new();
 
     public void RegisterPacket<T>(int code, TSessionState allowedStates = default)
@@ -55,7 +57,7 @@ public class PacketHandler<TSession, TSessionState>: IPacketHandler<TSession>
         else
         {
             TSession session = connection.Session;
-            Logger.Trace($"S({session.Id})  Unknown packet 0x{packetCode:X2}, length {reader.Length + 1}");
+            _logger.Trace($"S({session.Id})  Unknown packet 0x{packetCode:X2}, length {reader.Length + 1}");
             LogUtils.TracePacketData(reader, session.Id);
         }
     }
@@ -81,13 +83,13 @@ public class PacketHandler<TSession, TSessionState>: IPacketHandler<TSession>
             Connection<TSession> connection, PacketBitReader reader)
         {
             TSession session = connection.Session;
-            Logger.Trace($"S({session.Id})  Received packet {typeof(T).Name} (0x{PacketCode:X2}), " +
-                         $"length {reader.Length + 1}");
+            _logger.Trace($"S({session.Id})  Received packet {typeof(T).Name} (0x{PacketCode:X2}), " +
+                          $"length {reader.Length + 1}");
 
             if (!IsInAllowedState(session.State, AllowedStates))
             {
-                Logger.Trace($"S({session.Id})  Packet {typeof(T).Name} (0x{PacketCode:X2}) " +
-                             $"is not allowed in state '{session.State}'");
+                _logger.Trace($"S({session.Id})  Packet {typeof(T).Name} (0x{PacketCode:X2}) " +
+                              $"is not allowed in state '{session.State}'");
 
                 if (!handler.OnPacketInvalidState(connection))
                 {
@@ -102,8 +104,8 @@ public class PacketHandler<TSession, TSessionState>: IPacketHandler<TSession>
             }
             catch (Exception exception)
             {
-                Logger.Warn($"S({session.Id})  Exception reading packet 0x{PacketCode:X2}" +
-                            $": {exception}");
+                _logger.Warn($"S({session.Id})  Exception reading packet 0x{PacketCode:X2}" +
+                             $": {exception}");
             }
 
             try
@@ -112,8 +114,8 @@ public class PacketHandler<TSession, TSessionState>: IPacketHandler<TSession>
             }
             catch (Exception exception)
             {
-                Logger.Warn($"S({session.Id})  Exception processing packet 0x{PacketCode:X2}" +
-                            $": {exception}");
+                _logger.Warn($"S({session.Id})  Exception processing packet 0x{PacketCode:X2}" +
+                             $": {exception}");
             }
         }
     }
@@ -134,8 +136,8 @@ public class PacketHandler<TSession, TSessionState>: IPacketHandler<TSession>
             }
 
             TSession session = connection.Session;
-            Logger.Trace($"S({session.Id})  Unknown packet 0x{PacketCode:X2}:0x{exPacketCode:X4}, " +
-                         $"length {reader.Length + 1}");
+            _logger.Trace($"S({session.Id})  Unknown packet 0x{PacketCode:X2}:0x{exPacketCode:X4}, " +
+                          $"length {reader.Length + 1}");
 
             LogUtils.TracePacketData(reader, session.Id);
         }
@@ -156,15 +158,15 @@ public class PacketHandler<TSession, TSessionState>: IPacketHandler<TSession>
             PacketBitReader reader)
         {
             TSession session = connection.Session;
-            Logger.Trace($"S({session.Id})  Received packet {typeof(T).Name} " +
-                         $"(0x{PacketCode:X2}:0x{PacketExCode:X4}), length {reader.Length + 1}");
+            _logger.Trace($"S({session.Id})  Received packet {typeof(T).Name} " +
+                          $"(0x{PacketCode:X2}:0x{PacketExCode:X4}), length {reader.Length + 1}");
 
             LogUtils.TracePacketData(reader, session.Id);
 
             if (!IsInAllowedState(session.State, AllowedStates))
             {
-                Logger.Trace($"S({session.Id})  Packet {typeof(T).Name} " +
-                             $"(0x{PacketCode:X2}:0x{PacketExCode:X4}) not allowed in state '{session.State}'");
+                _logger.Trace($"S({session.Id})  Packet {typeof(T).Name} " +
+                              $"(0x{PacketCode:X2}:0x{PacketExCode:X4}) not allowed in state '{session.State}'");
 
                 if (!handler.OnPacketInvalidState(connection))
                 {
@@ -179,8 +181,8 @@ public class PacketHandler<TSession, TSessionState>: IPacketHandler<TSession>
             }
             catch (Exception exception)
             {
-                Logger.Warn($"S({session.Id})  Exception reading packet 0x{PacketCode:X2}:0x{PacketExCode:X4}" +
-                            $": {exception}");
+                _logger.Warn($"S({session.Id})  Exception reading packet 0x{PacketCode:X2}:0x{PacketExCode:X4}" +
+                             $": {exception}");
             }
 
             try
@@ -189,8 +191,8 @@ public class PacketHandler<TSession, TSessionState>: IPacketHandler<TSession>
             }
             catch (Exception exception)
             {
-                Logger.Warn($"S({session.Id})  Exception processing packet 0x{PacketCode:X2}:0x{PacketExCode:X4}" +
-                            $": {exception}");
+                _logger.Warn($"S({session.Id})  Exception processing packet 0x{PacketCode:X2}:0x{PacketExCode:X4}" +
+                             $": {exception}");
             }
         }
     }

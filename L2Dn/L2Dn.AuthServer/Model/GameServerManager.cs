@@ -4,11 +4,13 @@ using L2Dn.AuthServer.Db;
 using L2Dn.AuthServer.Network.GameServer.OutgoingPacket;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
+using NLog;
 
 namespace L2Dn.AuthServer.Model;
 
 internal sealed class GameServerManager: ISingleton<GameServerManager>
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(GameServerManager));
     private ImmutableSortedSet<GameServerInfo> _servers = ImmutableSortedSet<GameServerInfo>.Empty;
 
     private GameServerManager()
@@ -110,7 +112,7 @@ internal sealed class GameServerManager: ISingleton<GameServerManager>
                 FromDatabase = true
             }).ToImmutableSortedSet(new GameServerInfoComparer());
         
-        Logger.Info($"Loaded {_servers.Count} game servers from db");
+        _logger.Info($"Loaded {_servers.Count} game servers from db");
     }
 
     private static int ConvertAddress(string address, byte serverId)
@@ -119,9 +121,9 @@ internal sealed class GameServerManager: ISingleton<GameServerManager>
         {
             return IPAddressUtil.ConvertIP4AddressToInt(address);
         }
-        catch (ArgumentException exception)
+        catch (ArgumentException)
         {
-            Logger.Error($"Invalid IPv4 address '{address}' in {nameof(GameServer)}s table, server id '{serverId}'");
+            _logger.Error($"Invalid IPv4 address '{address}' in {nameof(GameServer)}s table, server id '{serverId}'");
             return 0x0100007F; // 127.0.0.1
         }
     }

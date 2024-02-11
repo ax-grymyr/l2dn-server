@@ -4,11 +4,13 @@ using System.Text;
 using L2Dn.AuthServer.Configuration;
 using L2Dn.AuthServer.Db;
 using Microsoft.EntityFrameworkCore;
+using NLog;
 
 namespace L2Dn.AuthServer.Model;
 
 public sealed class AccountManager: ISingleton<AccountManager>
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AccountManager));
     private readonly ConcurrentDictionary<string, AccountInfo> _accounts = new();
     
     private AccountManager()
@@ -71,7 +73,7 @@ public sealed class AccountManager: ISingleton<AccountManager>
         }
         catch (Exception exception)
         {
-            Logger.Error("Could not create account: " + exception);
+            _logger.Error("Could not create account: " + exception);
             return null;
         }
 

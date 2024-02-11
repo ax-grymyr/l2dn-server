@@ -16,7 +16,7 @@ internal struct RequestServerListPacket: IIncomingPacket<AuthSession>
         _loginKey2 = reader.ReadInt32();
     }
 
-    public async ValueTask ProcessAsync(Connection<AuthSession> connection)
+    public ValueTask ProcessAsync(Connection<AuthSession> connection)
     {
         AuthSession session = connection.Session;
         AccountInfo? accountInfo = session.AccountInfo;
@@ -24,10 +24,11 @@ internal struct RequestServerListPacket: IIncomingPacket<AuthSession>
         {
             LoginFailPacket loginFailPacket = new(LoginFailReason.AccessDenied);
             connection.Send(ref loginFailPacket, SendPacketOptions.CloseAfterSending);
-            return;
+            return ValueTask.CompletedTask;
         }
 
         ServerListPacket serverListPacket = new(GameServerManager.Instance.Servers, accountInfo.LastServerId);
         connection.Send(ref serverListPacket);
+        return ValueTask.CompletedTask;
     }
 }
