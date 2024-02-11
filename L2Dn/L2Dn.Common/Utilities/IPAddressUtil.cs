@@ -6,6 +6,8 @@ namespace L2Dn.Utilities;
 
 public static class IPAddressUtil
 {
+    public const int Loopback = 0x0100007F; // 127.0.0.1
+    
     public static int ConvertIP4AddressToInt(IPAddress address)
     {
         Span<byte> span = stackalloc byte[4];

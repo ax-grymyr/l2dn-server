@@ -7,23 +7,16 @@ using NLog;
 
 Logger logger = LogManager.GetLogger(nameof(AuthServer));
 
+AuthServer authServer = new();
 try
 {
     LogUtil.ConfigureConsoleOutput();
     logger.Info("Loading configuration...");
     Config.Load();
+
     logger.Info("Initialize logger...");
     Config.Instance.Logging.ConfigureLogger();
-}
-catch (Exception exception)
-{
-    Console.WriteLine($"Exception when initializing logger: {exception}");
-    return;
-}
-
-AuthServer authServer = new();
-try
-{
+    
     logger.Info("Test database connection...");
     AuthServerDbContext.Config = Config.Instance.Database;
     GameServerManager.Instance.LoadServers();

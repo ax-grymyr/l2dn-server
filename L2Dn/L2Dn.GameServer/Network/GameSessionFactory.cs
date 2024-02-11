@@ -16,7 +16,7 @@ internal sealed class GameSessionFactory: ISessionFactory<GameSession>
         //byte[] encryptionKey = new byte[16];
         //RandomGenerator.GetNonZeroBytes(encryptionKey);
 
-        byte[]? cryptKey = ServerConfig.Instance.Protocol.Encryption ? _cryptKey : null;
+        byte[]? cryptKey = ServerConfig.Instance.ClientListener.Encryption ? _cryptKey : null;
         return new GameSession(cryptKey);
     }
 }

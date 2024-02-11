@@ -1,8 +1,10 @@
 ﻿using L2Dn.AuthServer.Db;
+using L2Dn.AuthServer.NetworkGameServer;
+using L2Dn.Network;
 
 namespace L2Dn.AuthServer.Model;
 
-public sealed class GameServerInfo
+internal sealed class GameServerInfo
 {
     public byte ServerId { get; set; }
 
@@ -21,4 +23,6 @@ public sealed class GameServerInfo
     
     public string? AccessKey { get; set; }
     public bool FromDatabase { get; set; }
+    
+    public Connection<GameServerSession>? Connection { get; set; }
 }

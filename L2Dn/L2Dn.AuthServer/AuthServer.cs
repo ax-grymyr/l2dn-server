@@ -1,6 +1,6 @@
 ﻿using L2Dn.AuthServer.Configuration;
-using L2Dn.AuthServer.Network.Client;
-using L2Dn.AuthServer.Network.GameServer;
+using L2Dn.AuthServer.Network;
+using L2Dn.AuthServer.NetworkGameServer;
 using L2Dn.Network;
 using NLog;
 

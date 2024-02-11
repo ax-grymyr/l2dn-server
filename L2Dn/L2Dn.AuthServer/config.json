@@ -7,7 +7,7 @@
   "GameServerListener": {
     "ListenAddress": "127.0.0.1",
     "Port": 2107,
-    "AccessKey": "", // empty key allows any server to connect
+    "AccessKey": "oE~{!5cmTK{Z.gYA~%yx!^m=nbC=L", // empty key allows any server to connect
     "AcceptNewGameServer": true
   },
 

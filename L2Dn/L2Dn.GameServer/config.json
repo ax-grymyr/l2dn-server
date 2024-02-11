@@ -1,20 +1,26 @@
 ﻿{
-  "GameServer": {
-    "Id": 1,
+  "ClientListener": {
     "ListenAddress": "0.0.0.0",
-    "PublishAddress": "127.0.0.1",
     "Port": 7777,
-    "MaxPlayerCount": 5000,
-    "Pvp": false,
-    "Test": false,
-    "Clock": false,
-    "Brackets": false
+    
+    "Protocol": 447,
+    "Encryption": false
   },
 
-  "Protocol":
-  {
-    "Version": 447,
-    "Encryption": false
+  "AuthServerConnection": {
+    "Address": "localhost",
+    "Port": 2107,
+    "AccessKey": "oE~{!5cmTK{Z.gYA~%yx!^m=nbC=L",
+    "PublishAddress": "127.0.0.1"
+  },
+
+  "GameServerParams": {
+    "Id": 1,
+    "AgeLimit": 15,
+    "IsPvpServer": false,
+    "IsTestServer": false,
+    "Brackets": false,
+    "MaxPlayerCount": 5000
   },
 
   "Database": {
@@ -22,5 +28,16 @@
     "DatabaseName": "l2dev",
     "UserName": "l2dev_user",
     "Password": "l2dev_user_pass"
+  },
+
+  "Logging": {
+    "File": {
+      "Enabled": true,
+      "LogLevel": "Trace"
+    },
+    "Console": {
+      "Enabled": true,
+      "LogLevel": "Trace"
+    }
   }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Immutable;
 using L2Dn.AuthServer.Configuration;
 using L2Dn.AuthServer.Db;
-using L2Dn.AuthServer.Network.GameServer.OutgoingPacket;
+using L2Dn.AuthServer.NetworkGameServer.OutgoingPacket;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;

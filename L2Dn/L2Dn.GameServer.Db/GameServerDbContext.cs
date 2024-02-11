@@ -1,11 +1,13 @@
 ﻿using L2Dn.Configuration;
 using Microsoft.EntityFrameworkCore;
+using NLog;
 using Npgsql;
 
 namespace L2Dn.GameServer.Db;
 
 public class GameServerDbContext: DbContext
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(GameServerDbContext));
     public static DatabaseConfig? Config { get; set; }
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -32,7 +34,7 @@ public class GameServerDbContext: DbContext
             if (databaseConfig.Trace)
             {
                 optionsBuilder.LogTo((_, _) => true,
-                    data => { Logger.Log(NLog.LogLevel.FromOrdinal((int)data.LogLevel), data.ToString()); });
+                    data => { _logger.Log(NLog.LogLevel.FromOrdinal((int)data.LogLevel), data.ToString()); });
             }
         }        
     }

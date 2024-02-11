@@ -20,5 +20,5 @@ internal sealed class GamePacketEncoderFactory: IPacketEncoderFactory<GameSessio
     };
 
     public IPacketEncoder Create(GameSession session) =>
-        ServerConfig.Instance.Protocol.Encryption ? new C4GamePacketEncoder(_cryptKey) : new NullPacketEncoder();
+        ServerConfig.Instance.ClientListener.Encryption ? new C4GamePacketEncoder(_cryptKey) : new NullPacketEncoder();
 }
