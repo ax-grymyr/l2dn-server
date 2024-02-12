@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Sql;
@@ -14,14 +15,14 @@ public class OfflineTraderTable
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(OfflineTraderTable));
 	
 	// SQL DEFINITIONS
-	private const string SAVE_OFFLINE_STATUS = "INSERT INTO character_offline_trade (`charId`,`time`,`type`,`title`) VALUES (?,?,?,?)";
-	private const string SAVE_ITEMS = "INSERT INTO character_offline_trade_items (`charId`,`item`,`count`,`price`) VALUES (?,?,?,?)";
-	private const string CLEAR_OFFLINE_TABLE = "DELETE FROM character_offline_trade";
-	private const string CLEAR_OFFLINE_TABLE_PLAYER = "DELETE FROM character_offline_trade WHERE `charId`=?";
-	private const string CLEAR_OFFLINE_TABLE_ITEMS = "DELETE FROM character_offline_trade_items";
-	private const string CLEAR_OFFLINE_TABLE_ITEMS_PLAYER = "DELETE FROM character_offline_trade_items WHERE `charId`=?";
-	private const string LOAD_OFFLINE_STATUS = "SELECT * FROM character_offline_trade";
-	private const string LOAD_OFFLINE_ITEMS = "SELECT * FROM character_offline_trade_items WHERE `charId`=?";
+	const string CLEAR_OFFLINE_TABLE_PLAYER = "DELETE FROM character_offline_trade WHERE `charId`=?";
+	const string CLEAR_OFFLINE_TABLE_ITEMS_PLAYER = "DELETE FROM character_offline_trade_items WHERE `charId`=?";
+	const string LOAD_OFFLINE_STATUS = "SELECT * FROM character_offline_trade";
+	const string LOAD_OFFLINE_ITEMS = "SELECT * FROM character_offline_trade_items WHERE `charId`=?";
+	const string CLEAR_OFFLINE_TABLE = "DELETE FROM character_offline_trade";
+	const string CLEAR_OFFLINE_TABLE_ITEMS = "DELETE FROM character_offline_trade_items";
+	const string SAVE_OFFLINE_STATUS = "INSERT INTO character_offline_trade (`charId`,`time`,`type`,`title`) VALUES (?,?,?,?)";
+	const string SAVE_ITEMS = "INSERT INTO character_offline_trade_items (`charId`,`item`,`count`,`price`) VALUES (?,?,?,?)";
 	
 	protected OfflineTraderTable()
 	{
@@ -32,23 +33,20 @@ public class OfflineTraderTable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement stm1 = con.prepareStatement(CLEAR_OFFLINE_TABLE);
-			PreparedStatement stm2 = con.prepareStatement(CLEAR_OFFLINE_TABLE_ITEMS);
-			PreparedStatement stm3 = con.prepareStatement(SAVE_OFFLINE_STATUS);
-			PreparedStatement stmItems = con.prepareStatement(SAVE_ITEMS);
-			stm1.execute();
-			stm2.execute();
-			con.setAutoCommit(false); // avoid halfway done
+			ctx.CharacterOfflineTradeItems.ExecuteDelete();
+			ctx.CharacterOfflineTrades.ExecuteDelete();
 			foreach (Player pc in World.getInstance().getPlayers())
 			{
 				try
 				{
 					if ((pc.getPrivateStoreType() != PrivateStoreType.NONE) && ((pc.getClient() == null) || pc.getClient().isDetached()))
 					{
-						stm3.setInt(1, pc.getObjectId()); // Char Id
-						stm3.setLong(2, pc.getOfflineStartTime());
-						stm3.setInt(3, pc.isSellingBuffs() ? PrivateStoreType.SELL_BUFFS.getId() : pc.getPrivateStoreType().getId()); // store type
-						String title = null;
+						var trade = new CharacterOfflineTrade
+						{
+							CharacterId = pc.getObjectId(), // Char Id
+							Time = pc.getOfflineStartTime(),
+							Type = (byte)(pc.isSellingBuffs() ? PrivateStoreType.SELL_BUFFS : pc.getPrivateStoreType()),
+						};
 						
 						switch (pc.getPrivateStoreType())
 						{
@@ -58,16 +56,17 @@ public class OfflineTraderTable
 								{
 									continue;
 								}
-								title = pc.getBuyList().getTitle();
-								foreach (TradeItem i in pc.getBuyList().getItems())
-								{
-									stmItems.setInt(1, pc.getObjectId());
-									stmItems.setInt(2, i.getItem().getId());
-									stmItems.setLong(3, i.getCount());
-									stmItems.setLong(4, i.getPrice());
-									stmItems.executeUpdate();
-									stmItems.clearParameters();
-								}
+
+								trade.Title = pc.getBuyList().getTitle();
+								ctx.CharacterOfflineTradeItems.AddRange(pc.getBuyList().getItems().Select(i =>
+									new CharacterOfflineTradeItem
+									{
+										CharacterId = pc.getObjectId(),
+										ItemId = i.getItem().getId(),
+										Count = i.getCount(),
+										Price = i.getPrice()
+									}));
+								
 								break;
 							}
 							case PrivateStoreType.SELL:
@@ -77,31 +76,31 @@ public class OfflineTraderTable
 								{
 									continue;
 								}
-								title = pc.getSellList().getTitle();
+
+								trade.Title = pc.getSellList().getTitle();
 								if (pc.isSellingBuffs())
 								{
-									foreach (SellBuffHolder holder in pc.getSellingBuffs())
-									{
-										stmItems.setInt(1, pc.getObjectId());
-										stmItems.setInt(2, holder.getSkillId());
-										stmItems.setLong(3, 0);
-										stmItems.setLong(4, holder.getPrice());
-										stmItems.executeUpdate();
-										stmItems.clearParameters();
-									}
+									ctx.CharacterOfflineTradeItems.AddRange(pc.getSellingBuffs().Select(holder =>
+										new CharacterOfflineTradeItem
+										{
+											CharacterId = pc.getObjectId(),
+											ItemId = holder.getSkillId(),
+											Count = 0,
+											Price = holder.getPrice()
+										}));
 								}
 								else
 								{
-									foreach (TradeItem i in pc.getSellList().getItems())
-									{
-										stmItems.setInt(1, pc.getObjectId());
-										stmItems.setInt(2, i.getObjectId());
-										stmItems.setLong(3, i.getCount());
-										stmItems.setLong(4, i.getPrice());
-										stmItems.executeUpdate();
-										stmItems.clearParameters();
-									}
+									ctx.CharacterOfflineTradeItems.AddRange(pc.getSellList().getItems().Select(i =>
+										new CharacterOfflineTradeItem
+										{
+											CharacterId = pc.getObjectId(),
+											ItemId = i.getObjectId(),
+											Count = i.getCount(),
+											Price = i.getPrice()
+										}));
 								}
+
 								break;
 							}
 							case PrivateStoreType.MANUFACTURE:
@@ -110,23 +109,22 @@ public class OfflineTraderTable
 								{
 									continue;
 								}
-								title = pc.getStoreName();
-								foreach (ManufactureItem i in pc.getManufactureItems().values())
-								{
-									stmItems.setInt(1, pc.getObjectId());
-									stmItems.setInt(2, i.getRecipeId());
-									stmItems.setLong(3, 0);
-									stmItems.setLong(4, i.getCost());
-									stmItems.executeUpdate();
-									stmItems.clearParameters();
-								}
+								trade.Title = pc.getStoreName();
+								ctx.CharacterOfflineTradeItems.AddRange(pc.getManufactureItems().values().Select(i =>
+									new CharacterOfflineTradeItem
+									{
+										CharacterId = pc.getObjectId(),
+										ItemId = i.getRecipeId(),
+										Count = 0,
+										Price = i.getCost()
+									}));
+
 								break;
 							}
 						}
-						stm3.setString(4, title);
-						stm3.executeUpdate();
-						stm3.clearParameters();
-						con.commit(); // flush
+						
+						ctx.CharacterOfflineTrades.Add(trade);
+						ctx.SaveChanges(); // flush
 					}
 				}
 				catch (Exception e)
@@ -149,33 +147,26 @@ public class OfflineTraderTable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			Statement stm = con.createStatement();
-			ResultSet rs = stm.executeQuery(LOAD_OFFLINE_STATUS);
-			while (rs.next())
+			var trades = ctx.CharacterOfflineTrades;
+			foreach (var trade in trades)
 			{
-				long time = rs.getLong("time");
+				DateTime time = trade.Time;
 				if (Config.OFFLINE_MAX_DAYS > 0)
 				{
-					Calendar cal = Calendar.getInstance();
-					cal.setTimeInMillis(time);
-					cal.add(Calendar.DAY_OF_YEAR, Config.OFFLINE_MAX_DAYS);
-					if (cal.getTimeInMillis() <= System.currentTimeMillis())
+					time = time.AddDays(Config.OFFLINE_MAX_DAYS);
+					if (time <= DateTime.UtcNow)
 					{
 						continue;
 					}
 				}
 				
-				int typeId = rs.getInt("type");
-				bool isSellBuff = false;
-				if (typeId == PrivateStoreType.SELL_BUFFS.getId())
-				{
-					isSellBuff = true;
-				}
+				PrivateStoreType typeId = (PrivateStoreType)trade.Type;
+				bool isSellBuff = typeId == PrivateStoreType.SELL_BUFFS;
 				
-				PrivateStoreType type = isSellBuff ? PrivateStoreType.PACKAGE_SELL : PrivateStoreType.findById(typeId);
-				if (type == null)
+				PrivateStoreType type = isSellBuff ? PrivateStoreType.PACKAGE_SELL : typeId;
+				if (!Enum.IsDefined(type))
 				{
-					LOGGER.Warn(GetType().Name + ": PrivateStoreType with id " + rs.getInt("type") + " could not be found.");
+					LOGGER.Warn(GetType().Name + ": PrivateStoreType with id " + type + " could not be found.");
 					continue;
 				}
 				

@@ -43,6 +43,8 @@ public class GameServerDbContext: DbContext
     public DbSet<Character> Characters => Set<Character>();
     public DbSet<CharacterFriend> CharacterFriends => Set<CharacterFriend>();
     public DbSet<CharacterSummon> CharacterSummons => Set<CharacterSummon>();
+    public DbSet<CharacterOfflineTrade> CharacterOfflineTrades => Set<CharacterOfflineTrade>();
+    public DbSet<CharacterOfflineTradeItem> CharacterOfflineTradeItems => Set<CharacterOfflineTradeItem>();
     public DbSet<Pet> Pets => Set<Pet>();
     public DbSet<Clan> Clans => Set<Clan>();
     public DbSet<ClanPrivileges> ClanPrivileges => Set<ClanPrivileges>();

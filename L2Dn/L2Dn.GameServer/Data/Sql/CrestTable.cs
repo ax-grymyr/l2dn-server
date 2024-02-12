@@ -2,6 +2,7 @@ using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
 using Crest = L2Dn.GameServer.Model.Crest;
@@ -50,11 +51,10 @@ public class CrestTable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement("SELECT `crest_id`, `data`, `type` FROM `crests` ORDER BY `crest_id` DESC");
-			ResultSet rs = statement.executeQuery();
-			while (rs.next())
+			var crests = ctx.Crests.OrderByDescending(c => c.Id);
+			foreach (var crest in crests)
 			{
-				int id = rs.getInt("crest_id");
+				int id = crest.Id;
 				if (_nextId.get() <= id)
 				{
 					_nextId.set(id + 1);
@@ -68,15 +68,15 @@ public class CrestTable
 					continue;
 				}
 				
-				byte[] data = rs.getBytes("data");
-				CrestType crestType = CrestType.getById(rs.getInt("type"));
-				if (crestType != null)
+				byte[] data = crest.Data;
+				CrestType crestType = (CrestType)crest.Type;
+				if (Enum.IsDefined(crestType))
 				{
 					_crests.put(id, new Crest(id, data, crestType));
 				}
 				else
 				{
-					LOGGER.Warn("Unknown crest type found in database. Type:" + rs.getInt("type"));
+					LOGGER.Warn("Unknown crest type found in database. Type: " + crest.Type);
 				}
 			}
 		}
@@ -132,13 +132,15 @@ public class CrestTable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement =
-				con.prepareStatement("INSERT INTO `crests`(`crest_id`, `data`, `type`) VALUES(?, ?, ?)");
 			Crest crest = new Crest(_nextId.getAndIncrement(), data, crestType);
-			statement.setInt(1, crest.getId());
-			statement.setBytes(2, crest.getData());
-			statement.setInt(3, crest.getType().getId());
-			statement.executeUpdate();
+			ctx.Crests.Add(new()
+			{
+				Id = crest.getId(),
+				Data = crest.getData(),
+				Type = (byte)crest.getType()
+			});
+
+			ctx.SaveChanges();
 			_crests.put(crest.getId(), crest);
 			return crest;
 		}
@@ -167,9 +169,7 @@ public class CrestTable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement("DELETE FROM `crests` WHERE `crest_id`=?");
-			statement.setInt(1, crestId);
-			statement.executeUpdate();
+			ctx.Crests.Where(c => c.Id == crestId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{

@@ -13415,12 +13415,12 @@ public class Player: Playable
 		return result;
 	}
 	
-	public long getOfflineStartTime()
+	public DateTime getOfflineStartTime()
 	{
 		return _offlineShopStart;
 	}
 	
-	public void setOfflineStartTime(long time)
+	public DateTime setOfflineStartTime(long time)
 	{
 		_offlineShopStart = time;
 	}
