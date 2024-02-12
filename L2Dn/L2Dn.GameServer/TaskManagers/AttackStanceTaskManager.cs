@@ -13,7 +13,7 @@ public class AttackStanceTaskManager: Runnable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AttackStanceTaskManager));
 	
-	public const long COMBAT_TIME = 15000;
+	public static readonly TimeSpan COMBAT_TIME = TimeSpan.FromSeconds(15);
 	
 	private static readonly Map<Creature, DateTime> CREATURE_ATTACK_STANCES = new();
 	private static bool _working = false;

@@ -25,7 +25,8 @@ public struct ExServerPrimitivePacket: IOutgoingPacket
     
     public void WriteContent(PacketBitWriter writer)
     {
-        writer.WritePacketCode(ServerPacketCode.EXTENDED, ServerExPacketCode.EX_SERVER_PRIMITIVE);
+        writer.WritePacketCode(OutgoingPacketCodes.EX_SERVER_PRIMITIVE);
+        
         writer.WriteString(_name);
         writer.WriteInt32(_x);
         writer.WriteInt32(_y);

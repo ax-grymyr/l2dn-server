@@ -1,4 +1,6 @@
-﻿namespace L2Dn.GameServer.Network.Enums;
+﻿using L2Dn.CustomAttributes;
+	
+namespace L2Dn.GameServer.Network.Enums;
 
 public enum NpcStringId
 {

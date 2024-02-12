@@ -12,6 +12,7 @@ using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
 using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
@@ -147,7 +148,7 @@ public class ClanTable
 		if (getClanByName(clanName) != null)
 		{
 			// clan name is already taken
-			SystemMessage sm = new SystemMessage(SystemMessageId.S1_ALREADY_EXISTS);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_ALREADY_EXISTS);
 			sm.addString(clanName);
 			player.sendPacket(sm);
 			return null;
@@ -160,14 +161,14 @@ public class ClanTable
 		clan.store();
 		player.setClan(clan);
 		player.setPledgeClass(ClanMember.calculatePledgeClass(player));
-		player.setClanPrivileges(new EnumIntBitmask<>(ClanPrivilege, true));
+		player.setClanPrivileges(ClanPrivilege.All);
 		
 		_clans.put(clan.getId(), clan);
 		
 		// should be update packet only
-		player.sendPacket(new PledgeShowInfoUpdate(clan));
-		PledgeShowMemberListAll.sendAllTo(player);
-		player.sendPacket(new PledgeShowMemberListUpdate(player));
+		player.sendPacket(new PledgeShowInfoUpdatePacket(clan));
+		PledgeShowMemberListAllPacket.sendAllTo(player);
+		player.sendPacket(new PledgeShowMemberListUpdatePacket(player));
 		player.sendPacket(SystemMessageId.YOUR_CLAN_HAS_BEEN_CREATED);
 		player.broadcastUserInfo(UserInfoType.RELATION, UserInfoType.CLAN);
 		
@@ -189,7 +190,7 @@ public class ClanTable
 			return;
 		}
 		
-		clan.broadcastToOnlineMembers(new SystemMessage(SystemMessageId.CLAN_HAS_DISPERSED));
+		clan.broadcastToOnlineMembers(new SystemMessagePacket(SystemMessageId.CLAN_HAS_DISPERSED));
 		
 		ClanEntryManager.getInstance().removeFromClanList(clan.getId());
 		

@@ -87,7 +87,8 @@ public readonly struct DiePacket: IOutgoingPacket
 	
 	public void WriteContent(PacketBitWriter writer)
 	{
-		writer.WritePacketCode(ServerPacketCode.DIE);
+		writer.WritePacketCode(OutgoingPacketCodes.DIE);
+		
 		writer.WriteInt32(_objectId);
 		writer.WriteInt64(_flags);
 		writer.WriteInt32(_isSweepable);

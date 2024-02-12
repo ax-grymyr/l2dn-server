@@ -31,7 +31,8 @@ public readonly struct MoveToPawnPacket: IOutgoingPacket
     
     public void WriteContent(PacketBitWriter writer)
     {
-        writer.WritePacketCode(ServerPacketCode.MOVE_TO_PAWN);
+        writer.WritePacketCode(OutgoingPacketCodes.MOVE_TO_PAWN);
+        
         writer.WriteInt32(_objectId);
         writer.WriteInt32(_targetId);
         writer.WriteInt32(_distance);

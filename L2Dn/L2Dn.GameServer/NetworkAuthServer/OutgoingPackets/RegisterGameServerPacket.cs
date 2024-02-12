@@ -31,7 +31,7 @@ internal readonly struct RegisterGameServerPacket: IOutgoingPacket
             attributes |= GameServerAttributes.PublicTest;
         
         writer.WritePacketCode(OutgoingPacketCodes.RegisterGameServer);
-        writer.WriteByte(serverParams.Id);
+        writer.WriteByte(serverParams.ServerId);
         writer.WriteString(authServerConnection.AccessKey);
         writer.WriteInt32(ipAddress);
         writer.WriteUInt16((ushort)config.ClientListener.Port);

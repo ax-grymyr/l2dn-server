@@ -15,7 +15,7 @@
   },
 
   "GameServerParams": {
-    "Id": 1,
+    "ServerId": 1,
     "AgeLimit": 15,
     "IsPvpServer": false,
     "IsTestServer": false,

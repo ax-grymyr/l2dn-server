@@ -24,22 +24,13 @@ public readonly ref struct PacketBitWriter
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public void WriteByte(byte value)
-    {
-        _buffer[_offset] = value;
-        _offset++;
-    }
+    public void WriteByte(byte value) => WriteValue(value);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public void WriteBoolean(bool value) => WriteByte(value ? (byte)1 : (byte)0);
+    public void WriteByte(bool value) => WriteValue(value ? (byte)1 : (byte)0);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public void WriteValue<T>(T value)
-        where T: unmanaged
-    {
-        LittleEndianBitConverter.WriteValue(_buffer.AsSpan(_offset), value);
-        _offset += Unsafe.SizeOf<T>();
-    }
+    public void WriteSByte(sbyte value) => WriteValue(value);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void WriteInt16(short value) => WriteValue(value);
@@ -49,6 +40,9 @@ public readonly ref struct PacketBitWriter
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void WriteInt32(int value) => WriteValue(value);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public void WriteInt32(bool value) => WriteValue(value ? 1 : 0);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void WriteUInt32(uint value) => WriteValue(value);
@@ -61,10 +55,6 @@ public readonly ref struct PacketBitWriter
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void WriteDouble(double value) => WriteValue(value);
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public void WriteEnum<TEnum>(TEnum value)
-        where TEnum: unmanaged, Enum => WriteValue(value);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void WriteBytes(ReadOnlySpan<byte> value)
@@ -130,5 +120,13 @@ public readonly ref struct PacketBitWriter
     {
         WriteValue(code);
         WriteValue(exCode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private void WriteValue<T>(T value)
+        where T: unmanaged
+    {
+        LittleEndianBitConverter.WriteValue(_buffer.AsSpan(_offset), value);
+        _offset += Unsafe.SizeOf<T>();
     }
 }

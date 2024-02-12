@@ -20,7 +20,7 @@ public class ClanWar
 	private ClanWarState _state;
 	private ScheduledFuture _cancelTask;
 	private readonly DateTime _startTime;
-	private DateTime? _endTime = 0;
+	private DateTime? _endTime;
 	
 	private AtomicInteger _attackerKillCount = new AtomicInteger();
 	private AtomicInteger _attackedKillCount = new AtomicInteger();
@@ -238,7 +238,7 @@ public class ClanWar
 		return _winnerClanId;
 	}
 	
-	public DateTime? getStartTime()
+	public DateTime getStartTime()
 	{
 		return _startTime;
 	}

@@ -218,7 +218,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	
 	public abstract void sendInfo(Player player);
 	
-	public void sendPacket<TPacket>(TPacket packet)
+	public virtual void sendPacket<TPacket>(TPacket packet)
 		where TPacket: IOutgoingPacket 
 	{
 	}

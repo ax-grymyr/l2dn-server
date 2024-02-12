@@ -24,7 +24,8 @@ public readonly struct VehicleDeparturePacket: IOutgoingPacket
 	
     public void WriteContent(PacketBitWriter writer)
     {
-        writer.WritePacketCode(ServerPacketCode.VEHICLE_DEPARTURE);
+        writer.WritePacketCode(OutgoingPacketCodes.VEHICLE_DEPARTURE);
+        
         writer.WriteInt32(_objId);
         writer.WriteInt32(_moveSpeed);
         writer.WriteInt32(_rotationSpeed);

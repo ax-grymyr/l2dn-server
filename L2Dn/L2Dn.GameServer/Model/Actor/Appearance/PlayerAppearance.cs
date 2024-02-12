@@ -23,7 +23,7 @@ public class PlayerAppearance
 	private String _visibleTitle;
 	
 	/** The default name color is 0xFFFFFF. */
-	private int _nameColor = 0xFFFFFF;
+	private Color _nameColor = Colors.White;
 	
 	/** The default title color is 0xECF9A2. */
 	private Color _titleColor = new(DEFAULT_TITLE_COLOR);
@@ -152,13 +152,8 @@ public class PlayerAppearance
 		return _nameColor;
 	}
 	
-	public void setNameColor(int nameColor)
+	public void setNameColor(Color nameColor)
 	{
-		if (nameColor < 0)
-		{
-			return;
-		}
-		
 		_nameColor = nameColor;
 	}
 	

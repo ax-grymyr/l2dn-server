@@ -1,4 +1,4 @@
-﻿namespace L2Dn.GameServer.Network.Enums;
+﻿namespace L2Dn.CustomAttributes;
 
 public sealed class TextAttribute(string text): Attribute
 {

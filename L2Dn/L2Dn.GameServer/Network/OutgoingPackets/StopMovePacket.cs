@@ -12,7 +12,8 @@ internal readonly struct StopMovePacket(int objectId, int x, int y, int z, int h
     
     public void WriteContent(PacketBitWriter writer)
     {
-        writer.WritePacketCode(ServerPacketCode.STOP_MOVE);
+        writer.WritePacketCode(OutgoingPacketCodes.STOP_MOVE);
+        
         writer.WriteInt32(objectId);
         writer.WriteInt32(x);
         writer.WriteInt32(y);

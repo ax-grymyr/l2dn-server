@@ -19,7 +19,8 @@ public readonly struct VehicleStartedPacket: IOutgoingPacket
 	
     public void WriteContent(PacketBitWriter writer)
     {
-        writer.WritePacketCode(ServerPacketCode.VEHICLE_START);
+        writer.WritePacketCode(OutgoingPacketCodes.VEHICLE_START);
+        
         writer.WriteInt32(_objectId);
         writer.WriteInt32(_state);
     }

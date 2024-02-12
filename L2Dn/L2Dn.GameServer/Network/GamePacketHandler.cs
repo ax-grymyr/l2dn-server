@@ -47,6 +47,19 @@ internal sealed class GamePacketHandler: PacketHandler<GameSession, GameSessionS
             GameSessionState.Authorization | GameSessionState.CharacterScreen);
     }
 
+    public override ValueTask OnConnectedAsync(Connection<GameSession> connection)
+    {
+        connection.Session.Connection = connection;
+        return base.OnConnectedAsync(connection);
+    }
+
+    public override ValueTask OnDisconnectedAsync(Connection<GameSession> connection)
+    {
+        connection.Session.Connection = null;
+        Disconnection
+        return base.OnDisconnectedAsync(connection);
+    }
+
     public override bool OnPacketInvalidState(Connection<GameSession> connection)
     {
         GameSessionState currentState = connection.Session.State;

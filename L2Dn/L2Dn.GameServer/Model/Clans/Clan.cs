@@ -14,6 +14,7 @@ using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Packets;
 using NLog;
 using Forum = L2Dn.GameServer.CommunityBbs.BB.Forum;
 
@@ -1538,7 +1539,8 @@ public class Clan: IIdentifiable, INamable
 		}
 	}
 	
-	public void broadcastToOnlineAllyMembers(ServerPacket packet)
+	public void broadcastToOnlineAllyMembers<TPacket>(TPacket packet)
+		where TPacket: IOutgoingPacket
 	{
 		foreach (Clan clan in ClanTable.getInstance().getClanAllies(getAllyId()))
 		{
@@ -1546,7 +1548,8 @@ public class Clan: IIdentifiable, INamable
 		}
 	}
 	
-	public void broadcastToOnlineMembers(ServerPacket packet)
+	public void broadcastToOnlineMembers<TPacket>(TPacket packet)
+		where TPacket: IOutgoingPacket
 	{
 		foreach (ClanMember member in _members.values())
 		{
@@ -1568,7 +1571,8 @@ public class Clan: IIdentifiable, INamable
 		}
 	}
 	
-	public void broadcastToOtherOnlineMembers(ServerPacket packet, Player player)
+	public void broadcastToOtherOnlineMembers<TPacket>(TPacket packet, Player player)
+		where TPacket: IOutgoingPacket
 	{
 		foreach (ClanMember member in _members.values())
 		{

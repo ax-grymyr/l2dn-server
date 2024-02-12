@@ -46,10 +46,12 @@ using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Model.Vips;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Model.Zones.Types;
+using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Network;
 using FortManager = L2Dn.GameServer.Model.Actor.Instances.FortManager;
 using ThreadPool = System.Threading.ThreadPool;
 
@@ -136,7 +138,7 @@ public class Player: Playable
 	
 	private int _pcCafePoints = 0;
 	
-	private GameClient _client;
+	private Connection<GameSession>? _client;
 	private String _ip = "N/A";
 	
 	private readonly String _accountName;
@@ -386,7 +388,7 @@ public class Player: Playable
 	private long _clanCreateExpiryTime;
 	
 	private int _powerGrade = 0;
-	private EnumIntBitmask<ClanPrivilege> _clanPrivileges = new();
+	private ClanPrivilege _clanPrivileges;
 	
 	/** Player's pledge class (knight, Baron, etc.) */
 	private int _pledgeClass = 0;
@@ -3743,22 +3745,22 @@ public class Player: Playable
 	
 	public bool isSpawnProtected()
 	{
-		return (_spawnProtectEndTime != 0) && (_spawnProtectEndTime > DateTime.Now);
+		return (_spawnProtectEndTime != 0) && (_spawnProtectEndTime > DateTime.UtcNow);
 	}
 	
 	public bool isTeleportProtected()
 	{
-		return (_teleportProtectEndTime != 0) && (_teleportProtectEndTime > DateTime.Now);
+		return (_teleportProtectEndTime != 0) && (_teleportProtectEndTime > DateTime.UtcNow);
 	}
 	
 	public void setSpawnProtection(bool protect)
 	{
-		_spawnProtectEndTime = protect ? DateTime.Now.AddMilliseconds(Config.PLAYER_SPAWN_PROTECTION * 1000) : 0;
+		_spawnProtectEndTime = protect ? DateTime.UtcNow.AddMilliseconds(Config.PLAYER_SPAWN_PROTECTION * 1000) : 0;
 	}
 	
 	public void setTeleportProtection(bool protect)
 	{
-		_teleportProtectEndTime = protect ? DateTime.Now.AddMilliseconds(Config.PLAYER_TELEPORT_PROTECTION * 1000) : 0;
+		_teleportProtectEndTime = protect ? DateTime.UtcNow.AddMilliseconds(Config.PLAYER_TELEPORT_PROTECTION * 1000) : 0;
 	}
 	
 	/**
@@ -3788,12 +3790,12 @@ public class Player: Playable
 	/**
 	 * @return the client owner of this char.
 	 */
-	public GameClient getClient()
+	public Connection<GameSession>? getClient()
 	{
 		return _client;
 	}
 	
-	public void setClient(GameClient client)
+	public void setClient(Connection<GameSession>? client)
 	{
 		_client = client;
 		if ((_client != null) && (_client.getIp() != null))
@@ -4130,7 +4132,7 @@ public class Player: Playable
 	 */
 	public override void sendPacket(SystemMessageId id)
 	{
-		sendPacket(new SystemMessage(id));
+		sendPacket(new SystemMessagePacket(id));
 	}
 	
 	/**
@@ -9152,12 +9154,12 @@ public class Player: Playable
 		}
 	}
 	
-	public EnumIntBitmask<ClanPrivilege> getClanPrivileges()
+	public ClanPrivilege getClanPrivileges()
 	{
 		return _clanPrivileges;
 	}
 	
-	public void setClanPrivileges(EnumIntBitmask<ClanPrivilege> clanPrivileges)
+	public void setClanPrivileges(ClanPrivilege clanPrivileges)
 	{
 		_clanPrivileges = clanPrivileges.clone();
 	}
@@ -13420,7 +13422,7 @@ public class Player: Playable
 		return _offlineShopStart;
 	}
 	
-	public DateTime setOfflineStartTime(long time)
+	public void setOfflineStartTime(DateTime time)
 	{
 		_offlineShopStart = time;
 	}

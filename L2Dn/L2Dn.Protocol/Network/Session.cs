@@ -3,12 +3,19 @@
 public abstract class Session: ISession
 {
     private static int _globalId;
-    private readonly int _id;
-    
+
     protected Session()
     {
-        _id = Interlocked.Increment(ref _globalId);
+        Id = Interlocked.Increment(ref _globalId);
     }
 
-    public int Id => _id;
+    public int Id { get; }
+    
+    //public Connection? Connection { get; }
+}
+
+public abstract class Session<TSessionState>: Session, ISession<TSessionState>
+    where TSessionState: struct, Enum
+{
+    public virtual TSessionState State { get; }
 }

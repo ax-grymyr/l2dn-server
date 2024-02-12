@@ -1,11 +1,13 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Olympiads;
+using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Network;
 using NLog;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
-public class AntiFeedManager
+internal class AntiFeedManager
 {
 	protected static readonly Logger LOGGER_ACCOUNTING = LogManager.GetLogger(nameof(AntiFeedManager));
 	
@@ -14,7 +16,7 @@ public class AntiFeedManager
 	public const int TVT_ID = 2;
 	public const int L2EVENT_ID = 3;
 	
-	private readonly Map<int, long> _lastDeathTimes = new();
+	private readonly Map<int, DateTime> _lastDeathTimes = new();
 	private readonly Map<int, Map<int, AtomicInteger>> _eventIPs = new();
 	
 	protected AntiFeedManager()
@@ -27,7 +29,7 @@ public class AntiFeedManager
 	 */
 	public void setLastDeathTime(int objectId)
 	{
-		_lastDeathTimes.put(objectId, System.currentTimeMillis());
+		_lastDeathTimes.put(objectId, DateTime.UtcNow);
 	}
 	
 	/**
@@ -59,12 +61,13 @@ public class AntiFeedManager
 		{
 			return false;
 		}
-		
-		if ((Config.ANTIFEED_INTERVAL > 0) && _lastDeathTimes.containsKey(targetPlayer.getObjectId()) && ((System.currentTimeMillis() - _lastDeathTimes.get(targetPlayer.getObjectId())) < Config.ANTIFEED_INTERVAL))
+
+		if ((Config.ANTIFEED_INTERVAL > 0) && _lastDeathTimes.containsKey(targetPlayer.getObjectId()) &&
+		    ((DateTime.UtcNow - _lastDeathTimes.get(targetPlayer.getObjectId())) < Config.ANTIFEED_INTERVAL))
 		{
 			return false;
 		}
-		
+
 		if (Config.ANTIFEED_DUALBOX && (attacker != null))
 		{
 			Player attackerPlayer = attacker.getActingPlayer();
@@ -73,9 +76,10 @@ public class AntiFeedManager
 				return false;
 			}
 			
-			GameClient targetClient = targetPlayer.getClient();
-			GameClient attackerClient = attackerPlayer.getClient();
-			if ((targetClient == null) || (attackerClient == null) || targetClient.isDetached() || attackerClient.isDetached())
+			Connection<GameSession>? targetClient = targetPlayer.getClient();
+			Connection<GameSession>? attackerClient = attackerPlayer.getClient();
+			if ((targetClient == null) || (attackerClient == null) || 
+			    targetClient.isDetached() || attackerClient.isDetached())
 			{
 				// unable to check ip address
 				return !Config.ANTIFEED_DISCONNECTED_AS_DUALBOX;
@@ -192,7 +196,7 @@ public class AntiFeedManager
 	 * Remove player connection IP address from all registered events lists.
 	 * @param client
 	 */
-	public void onDisconnect(GameClient client)
+	public void onDisconnect(Connection<GameSession>? client)
 	{
 		if (client == null)
 		{

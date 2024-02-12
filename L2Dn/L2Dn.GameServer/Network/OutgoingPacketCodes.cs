@@ -134,7 +134,7 @@ public static class OutgoingPacketCodes
     public const byte TRADE_UPDATE = 0x81;
     public const byte TRADE_PRESS_OTHER_OK = 0x82;
     public const byte FRIEND_ADD_REQUEST = 0x83;
-    public const byte LOG_OUT_OK = 0x84;
+    public const byte LEAVE_WORLD = 0x84;
     public const byte ABNORMAL_STATUS_UPDATE = 0x85;
     public const byte QUEST_LIST = 0x86;
     public const byte ENCHANT_RESULT = 0x87;

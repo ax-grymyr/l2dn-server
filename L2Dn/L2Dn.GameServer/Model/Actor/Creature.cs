@@ -2022,7 +2022,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	/**
 	 * @return True if the Creature is dead or use fake death.
 	 */
-	public bool isAlikeDead()
+	public virtual bool isAlikeDead()
 	{
 		return _isDead;
 	}

@@ -22,7 +22,8 @@ public readonly struct VehicleInfoPacket: IOutgoingPacket
 	
     public void WriteContent(PacketBitWriter writer)
     {
-        writer.WritePacketCode(ServerPacketCode.VEHICLE_INFO);
+        writer.WritePacketCode(OutgoingPacketCodes.VEHICLE_INFO);
+        
         writer.WriteInt32(_objId);
         writer.WriteInt32(_x);
         writer.WriteInt32(_y);

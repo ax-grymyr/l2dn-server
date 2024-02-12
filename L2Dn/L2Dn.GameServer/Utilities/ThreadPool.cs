@@ -37,14 +37,19 @@ public static class ThreadPool
         return new ScheduledFuture(runnable.run, Validate(delayInMs), Timeout.Infinite);
     }
     
+    public static ScheduledFuture schedule(Runnable runnable, TimeSpan delay)
+    {
+        return schedule(runnable, (int)delay.TotalMilliseconds);
+    }
+    
     public static ScheduledFuture schedule(Action action, int delayInMs)
     {
         return new ScheduledFuture(action, Validate(delayInMs), Timeout.Infinite);
     }
     
-    public static ScheduledFuture schedule(Runnable runnable, TimeSpan delay)
+    public static ScheduledFuture schedule(Action action, TimeSpan delay)
     {
-        return schedule(runnable, (int)delay.TotalMilliseconds);
+        return schedule(action, (int)delay.TotalMilliseconds);
     }
     
     private static int Validate(int delay)
