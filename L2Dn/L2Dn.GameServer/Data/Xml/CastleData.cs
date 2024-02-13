@@ -1,6 +1,9 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Data.Xml;
 
@@ -21,66 +24,56 @@ public class CastleData
 	{
 		_spawns.clear();
 		_siegeGuards.clear();
-		parseDatapackDirectory("data/residences/castles", true);
-	}
-	
-	public void parseDocument(Document doc, File f)
-	{
-		for (Node listNode = doc.getFirstChild(); listNode != null; listNode = listNode.getNextSibling())
+		
+		string dirPath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/residences/castles");
+		Directory.EnumerateFiles(dirPath, "*.xml", SearchOption.AllDirectories).ForEach(filePath =>
 		{
-			if ("list".equals(listNode.getNodeName()))
-			{
-				for (Node castleNode = listNode.getFirstChild(); castleNode != null; castleNode = castleNode.getNextSibling())
-				{
-					if ("castle".equals(castleNode.getNodeName()))
-					{
-						int castleId = parseInteger(castleNode.getAttributes(), "id");
-						for (Node tpNode = castleNode.getFirstChild(); tpNode != null; tpNode = tpNode.getNextSibling())
-						{
-							List<CastleSpawnHolder> spawns = new();
-							if ("spawns".equals(tpNode.getNodeName()))
-							{
-								for (Node npcNode = tpNode.getFirstChild(); npcNode != null; npcNode = npcNode.getNextSibling())
-								{
-									if ("npc".equals(npcNode.getNodeName()))
-									{
-										NamedNodeMap np = npcNode.getAttributes();
-										int npcId = parseInteger(np, "id");
-										CastleSide side = parseEnum(np, CastleSide.class, "castleSide", CastleSide.NEUTRAL);
-										int x = parseInteger(np, "x");
-										int y = parseInteger(np, "y");
-										int z = parseInteger(np, "z");
-										int heading = parseInteger(np, "heading");
-										spawns.add(new CastleSpawnHolder(npcId, side, x, y, z, heading));
-									}
-								}
-								_spawns.put(castleId, spawns);
-							}
-							else if ("siegeGuards".equals(tpNode.getNodeName()))
-							{
-								List<SiegeGuardHolder> guards = new();
-								for (Node npcNode = tpNode.getFirstChild(); npcNode != null; npcNode = npcNode.getNextSibling())
-								{
-									if ("guard".equals(npcNode.getNodeName()))
-									{
-										NamedNodeMap np = npcNode.getAttributes();
-										int itemId = parseInteger(np, "itemId");
-										SiegeGuardType type = parseEnum(tpNode.getAttributes(), SiegeGuardType.class, "type");
-										bool stationary = parseBoolean(np, "stationary", false);
-										int npcId = parseInteger(np, "npcId");
-										int npcMaxAmount = parseInteger(np, "npcMaxAmount");
-										guards.add(new SiegeGuardHolder(castleId, itemId, type, stationary, npcId, npcMaxAmount));
-									}
-								}
-								_siegeGuards.put(castleId, guards);
-							}
-						}
-					}
-				}
-			}
-		}
+			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+			XDocument document = XDocument.Load(stream);
+			document.Root?.Elements("castle").ForEach(x => loadElement(filePath, x));
+		});
 	}
-	
+
+	private void loadElement(string filePath, XElement element)
+	{
+		int castleId = element.Attribute("id").GetInt32();
+
+		element.Elements("spawns").ForEach(el =>
+		{
+			List<CastleSpawnHolder> spawns = new();
+
+			el.Elements("npc").ForEach(e =>
+			{
+				int npcId = e.Attribute("id").GetInt32();
+				CastleSide side = e.Attribute("castleSide").GetEnum(CastleSide.NEUTRAL);
+				int x = e.Attribute("x").GetInt32();
+				int y = e.Attribute("y").GetInt32();
+				int z = e.Attribute("z").GetInt32();
+				int heading = e.Attribute("heading").GetInt32();
+				spawns.add(new CastleSpawnHolder(npcId, side, x, y, z, heading));
+			});
+
+			_spawns.put(castleId, spawns);
+		});
+
+		element.Elements("siegeGuards").ForEach(el =>
+		{
+			List<SiegeGuardHolder> guards = new();
+
+			el.Elements("guard").ForEach(e =>
+			{
+				int itemId = e.Attribute("itemId").GetInt32();
+				SiegeGuardType type = e.Attribute("type").GetEnum<SiegeGuardType>();
+				bool stationary = e.Attribute("stationary").GetBoolean(false);
+				int npcId = e.Attribute("npcId").GetInt32();
+				int npcMaxAmount = e.Attribute("npcMaxAmount").GetInt32();
+				guards.add(new SiegeGuardHolder(castleId, itemId, type, stationary, npcId, npcMaxAmount));
+			});
+
+			_siegeGuards.put(castleId, guards);
+		});
+	}
+
 	public List<CastleSpawnHolder> getSpawnsForSide(int castleId, CastleSide side)
 	{
 		List<CastleSpawnHolder> result = new();

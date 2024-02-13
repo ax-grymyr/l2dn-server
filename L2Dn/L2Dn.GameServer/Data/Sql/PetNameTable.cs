@@ -1,7 +1,5 @@
-using System.Text;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
-using L2Dn.GameServer.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Sql;
@@ -18,24 +16,15 @@ public class PetNameTable
 	public bool doesPetNameExist(String name, int petNpcId)
 	{
 		bool result = true;
-		try 
+		try
 		{
-			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(
-				"SELECT name FROM pets p, items i WHERE p.item_obj_id = i.object_id AND name=? AND i.item_id IN (?)");
-			ps.setString(1, name);
-			StringBuilder cond = new StringBuilder();
-			if (!cond.ToString().isEmpty())
-			{
-				cond.Append(", ");
-			}
+			int itemId = PetDataTable.getInstance().getPetItemsByNpc(petNpcId);
 			
-			cond.Append(PetDataTable.getInstance().getPetItemsByNpc(petNpcId));
-			ps.setString(2, cond.ToString());
-			{
-				ResultSet rs = ps.executeQuery();
-				result = rs.next();
-			}
+			using GameServerDbContext ctx = new();
+			return (from pet in ctx.Pets
+				from item in ctx.Items
+				where pet.ItemObjectId == item.ObjectId && item.ItemId == itemId && pet.Name == name
+				select pet.Name).Any();
 		}
 		catch (Exception e)
 		{
@@ -44,33 +33,28 @@ public class PetNameTable
 		return result;
 	}
 	
-	public bool isValidPetName(String name)
+	public bool isValidPetName(string name)
 	{
-		bool result = true;
 		if (!isAlphaNumeric(name))
 		{
-			return result;
+			return false;
 		}
 		
-		Pattern pattern;
 		try
 		{
-			pattern = Pattern.compile(Config.PET_NAME_TEMPLATE);
+			return Config.PET_NAME_TEMPLATE.IsMatch(name);
 		}
-		catch (PatternSyntaxException e) // case of illegal pattern
+		catch (Exception e) // case of illegal pattern
 		{
-			LOGGER.Warn(GetType().Name + ": Pet name pattern of config is wrong!");
-			pattern = Pattern.compile(".*");
+			LOGGER.Warn(GetType().Name + ": Pet name pattern of config is wrong!: " + e);
 		}
-		Matcher regexp = pattern.matcher(name);
-		if (!regexp.matches())
-		{
-			result = false;
-		}
-		return result;
+		
+		// TODO: check length
+		
+		return true;
 	}
 	
-	private bool isAlphaNumeric(String text)
+	private static bool isAlphaNumeric(String text)
 	{
 		bool result = true;
 		foreach (char aChar in text)

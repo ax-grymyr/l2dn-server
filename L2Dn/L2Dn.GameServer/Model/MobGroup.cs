@@ -4,11 +4,13 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Model;
 
 public class MobGroup
 {
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(MobGroup));
 	private readonly NpcTemplate _npcTemplate;
 	private readonly int _groupId;
 	private readonly int _maxMobCount;
@@ -50,7 +52,7 @@ public class MobGroup
 	{
 		try
 		{
-			ControllableMobAI mobGroupAI = (ControllableMobAI) getMobs().stream().findFirst().get().getAI();
+			ControllableMobAI mobGroupAI = (ControllableMobAI) getMobs().First().getAI();
 			
 			switch (mobGroupAI.getAlternateAI())
 			{
@@ -132,8 +134,9 @@ public class MobGroup
 				getMobs().add((ControllableMob) spawn.doGroupSpawn());
 			}
 		}
-		catch (ClassNotFoundException | NoSuchMethodException e)
+		catch (Exception e)
 		{
+			_logger.Error(e);
 		}
 	}
 	

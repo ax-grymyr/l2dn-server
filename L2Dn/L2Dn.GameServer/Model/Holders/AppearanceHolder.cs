@@ -1,6 +1,8 @@
+using System.Xml.Linq;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Items.Appearance;
 using L2Dn.GameServer.Model.Items.Types;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Holders;
 
@@ -17,15 +19,15 @@ public class AppearanceHolder
 	private readonly AppearanceTargetType _targetType;
 	private readonly long _bodyPart;
 	
-	public AppearanceHolder(StatSet set)
+	public AppearanceHolder(XElement element)
 	{
-		_visualId = set.getInt("id", 0);
-		_weaponType = set.getEnum("weaponType", WeaponType.NONE);
-		_armorType = set.getEnum("armorType", ArmorType.NONE);
-		_handType = set.getEnum("handType", AppearanceHandType.NONE);
-		_magicType = set.getEnum("magicType", AppearanceMagicType.NONE);
-		_targetType = set.getEnum("targetType", AppearanceTargetType.NONE);
-		_bodyPart = ItemData.SLOTS.get(set.getString("bodyPart", "none"));
+		_visualId = element.Attribute("id").GetInt32(0);
+		_weaponType = element.Attribute("weaponType").GetEnum(WeaponType.NONE);
+		_armorType = element.Attribute("armorType").GetEnum(ArmorType.NONE);
+		_handType = element.Attribute("handType").GetEnum(AppearanceHandType.NONE);
+		_magicType = element.Attribute("magicType").GetEnum(AppearanceMagicType.NONE);
+		_targetType = element.Attribute("targetType").GetEnum(AppearanceTargetType.NONE);
+		_bodyPart = ItemData.SLOTS.get(element.Attribute("bodyPart").GetString("none"));
 	}
 	
 	public WeaponType getWeaponType()

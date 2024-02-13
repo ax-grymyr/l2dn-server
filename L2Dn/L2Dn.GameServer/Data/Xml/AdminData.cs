@@ -1,7 +1,10 @@
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
 using NLog;
@@ -32,60 +35,38 @@ public class AdminData
 		// TODO: load data into temp collection and then replace collections at once
 		_accessLevels.clear();
 		_adminCommandAccessRights.clear();
-		parseDatapackFile("config/AccessLevels.xml");
-		LOGGER.Info(GetType().Name + ": Loaded " + _accessLevels.size() + " access levels.");
-		parseDatapackFile("config/AdminCommands.xml");
-		LOGGER.Info(GetType().Name + ": Loaded " + _adminCommandAccessRights.size() + " access commands.");
-	}
 
-	private void LoadAccessLevels()
-	{
-		XDocument document = XDocument.Load("config/AccessLevels.xml");
-	}
-	
-	public void parseDocument(Document doc, File f)
-	{
-		NamedNodeMap attrs;
-		Node attr;
-		StatSet set;
-		AccessLevel level;
-		AdminCommandAccessRight command;
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
+			using FileStream stream =
+				new FileStream("config/AccessLevels.xml", FileMode.Open, FileAccess.Read, FileShare.Read);
+
+			XDocument doc = XDocument.Load(stream);
+			doc.Root?.Elements("access").ForEach(node =>
 			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+				AccessLevel level = new AccessLevel(node);
+				if (level.getLevel() > _highestLevel)
 				{
-					if ("access".equalsIgnoreCase(d.getNodeName()))
-					{
-						set = new StatSet();
-						attrs = d.getAttributes();
-						for (int i = 0; i < attrs.getLength(); i++)
-						{
-							attr = attrs.item(i);
-							set.set(attr.getNodeName(), attr.getNodeValue());
-						}
-						level = new AccessLevel(set);
-						if (level.getLevel() > _highestLevel)
-						{
-							_highestLevel = level.getLevel();
-						}
-						_accessLevels.put(level.getLevel(), level);
-					}
-					else if ("admin".equalsIgnoreCase(d.getNodeName()))
-					{
-						set = new StatSet();
-						attrs = d.getAttributes();
-						for (int i = 0; i < attrs.getLength(); i++)
-						{
-							attr = attrs.item(i);
-							set.set(attr.getNodeName(), attr.getNodeValue());
-						}
-						command = new AdminCommandAccessRight(set);
-						_adminCommandAccessRights.put(command.getAdminCommand(), command);
-					}
+					_highestLevel = level.getLevel();
 				}
-			}
+
+				_accessLevels.put(level.getLevel(), level);
+			});
+
+			LOGGER.Info(GetType().Name + ": Loaded " + _accessLevels.size() + " access levels.");
+		}
+
+		{
+			using FileStream stream =
+				new FileStream("config/AdminCommands.xml", FileMode.Open, FileAccess.Read, FileShare.Read);
+
+			XDocument doc = XDocument.Load(stream);
+			doc.Root?.Elements("admin").ForEach(node =>
+			{
+				AdminCommandAccessRight command = new AdminCommandAccessRight(node);
+				_adminCommandAccessRights.put(command.getAdminCommand(), command);
+			});
+
+			LOGGER.Info(GetType().Name + ": Loaded " + _adminCommandAccessRights.size() + " access commands.");
 		}
 	}
 	
@@ -253,7 +234,7 @@ public class AdminData
 			
 			foreach (String name in getAllGmNames(player.isGM()))
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.GM_C1);
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.GM_C1);
 				sm.addString(name);
 				player.sendPacket(sm);
 			}

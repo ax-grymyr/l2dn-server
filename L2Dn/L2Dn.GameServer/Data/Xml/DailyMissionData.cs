@@ -1,8 +1,7 @@
-using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Handlers;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -27,61 +26,29 @@ public class DailyMissionData
 	public void load()
 	{
 		_dailyMissionRewards.clear();
-		parseDatapackFile("data/DailyMission.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/DailyMission.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Root?.Elements("reward").ForEach(loadElement);
 		
 		_dailyMissionData.Clear();
 		foreach (List<DailyMissionDataHolder> missionList in _dailyMissionRewards.values())
 		{
-			_dailyMissionData.addAll(missionList);
+			_dailyMissionData.AddRange(missionList);
 		}
 		
 		_isAvailable = !_dailyMissionRewards.isEmpty();
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _dailyMissionRewards.size() + " one day rewards.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void loadElement(XElement element)
 	{
-		forEach(doc, "list", listNode => forEach(listNode, "reward", rewardNode =>
-		{
-			StatSet set = new StatSet(parseAttributes(rewardNode));
-			List<ItemHolder> items = new();
-			forEach(rewardNode, "items", itemsNode => forEach(itemsNode, "item", itemNode =>
-			{
-				int itemId = parseInteger(itemNode.getAttributes(), "id");
-				int itemCount = parseInteger(itemNode.getAttributes(), "count");
-				if ((itemId == AbstractDailyMissionHandler.MISSION_LEVEL_POINTS) && (MissionLevel.getInstance().getCurrentSeason() <= 0))
-				{
-					return;
-				}
-				items.add(new ItemHolder(itemId, itemCount));
-			}));
-			
-			set.set("items", items);
-			
-			List<ClassId> classRestriction = new();
-			forEach(rewardNode, "classId", classRestrictionNode => classRestriction.add(ClassId.getClassId(int.Parse(classRestrictionNode.getTextContent()))));
-			set.set("classRestriction", classRestriction);
-			
-			// Initial values in case handler doesn't exists
-			set.set("handler", "");
-			set.set("params", StatSet.EMPTY_STATSET);
-			
-			// Parse handler and parameters
-			forEach(rewardNode, "handler", handlerNode =>
-			{
-				set.set("handler", parseString(handlerNode.getAttributes(), "name"));
-				
-				StatSet @params = new StatSet();
-				set.set("params", @params);
-				forEach(handlerNode, "param", paramNode => @params.set(parseString(paramNode.getAttributes(), "name"), paramNode.getTextContent()));
-			});
-			
-			DailyMissionDataHolder holder = new DailyMissionDataHolder(set);
-			_dailyMissionRewards.computeIfAbsent(holder.getId(), k => new()).add(holder);
-		}));
+		DailyMissionDataHolder holder = new DailyMissionDataHolder(element);
+		_dailyMissionRewards.computeIfAbsent(holder.getId(), k => new()).add(holder);
 	}
-	
+
 	public ICollection<DailyMissionDataHolder> getDailyMissionData()
 	{
 		return _dailyMissionData;

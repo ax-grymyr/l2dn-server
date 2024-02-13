@@ -1,4 +1,7 @@
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -28,39 +31,27 @@ public class ClanLevelData
 		MAX_CLAN_LEVEL = 0;
 		MAX_CLAN_EXP = 0;
 		
-		parseDatapackFile("data/ClanLevelData.xml");
-		LOGGER.Info(GetType().Name + ": Loaded " + (EXPECTED_CLAN_LEVEL_DATA - 1) /* level 0 excluded */ + " clan level data.");
-	}
-	
-	public void parseDocument(Document doc, File f)
-	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/ClanLevelData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Root?.Elements("clan").ForEach(element =>
 		{
-			if ("list".equals(n.getNodeName()))
+			int level = element.Attribute("level").GetInt32();
+			int exp = element.Attribute("exp").GetInt32();
+						
+			if (MAX_CLAN_LEVEL < level)
 			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("clan".equals(d.getNodeName()))
-					{
-						NamedNodeMap attrs = d.getAttributes();
-						
-						int level = parseInteger(attrs, "level");
-						int exp = parseInteger(attrs, "exp");
-						
-						if (MAX_CLAN_LEVEL < level)
-						{
-							MAX_CLAN_LEVEL = level;
-						}
-						if (MAX_CLAN_EXP < exp)
-						{
-							MAX_CLAN_EXP = exp;
-						}
-						
-						CLAN_EXP[level] = exp;
-					}
-				}
+				MAX_CLAN_LEVEL = level;
 			}
-		}
+			if (MAX_CLAN_EXP < exp)
+			{
+				MAX_CLAN_EXP = exp;
+			}
+						
+			CLAN_EXP[level] = exp;
+		});
+		
+		LOGGER.Info(GetType().Name + ": Loaded " + (EXPECTED_CLAN_LEVEL_DATA - 1) /* level 0 excluded */ + " clan level data.");
 	}
 	
 	public int getLevelExp(int clanLevel)

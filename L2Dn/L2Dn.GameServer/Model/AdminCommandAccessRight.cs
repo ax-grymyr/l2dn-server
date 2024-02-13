@@ -1,4 +1,6 @@
-﻿using L2Dn.GameServer.Data.Xml;
+﻿using System.Xml.Linq;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model;
 
@@ -8,14 +10,14 @@ public class AdminCommandAccessRight
     private readonly int _accessLevel;
     private readonly bool _requireConfirm;
 
-    public AdminCommandAccessRight(StatSet set)
+    public AdminCommandAccessRight(XElement element)
     {
-        _adminCommand = set.getString("command");
-        _requireConfirm = set.getBoolean("confirmDlg", false);
-        _accessLevel = set.getInt("accessLevel", 7);
+        _adminCommand = element.Attribute("command").GetString();
+        _requireConfirm = element.Attribute("confirmDlg").GetBoolean(false);
+        _accessLevel = element.Attribute("accessLevel").GetInt32(7);
     }
 
-    public AdminCommandAccessRight(String command, bool confirm, int level)
+    public AdminCommandAccessRight(string command, bool confirm, int level)
     {
         _adminCommand = command;
         _requireConfirm = confirm;

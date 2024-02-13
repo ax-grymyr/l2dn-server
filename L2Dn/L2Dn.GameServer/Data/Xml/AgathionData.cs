@@ -1,7 +1,9 @@
-using L2Dn.GameServer.Model;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -23,79 +25,84 @@ public class AgathionData
 	public void load()
 	{
 		AGATHION_SKILLS.clear();
-		parseDatapackFile("data/AgathionData.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/AgathionData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Root?.Elements("agathion").ForEach(loadElement);
 		LOGGER.Info(GetType().Name + ": Loaded " + AGATHION_SKILLS.size() + " agathion data.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void loadElement(XElement element)
 	{
-		forEach(doc, "list", listNode => forEach(listNode, "agathion", agathionNode =>
+		int id = element.Attribute("id").GetInt32();
+		if (ItemData.getInstance().getTemplate(id) == null)
 		{
-			StatSet set = new StatSet(parseAttributes(agathionNode));
-			
-			int id = set.getInt("id");
-			if (ItemData.getInstance().getTemplate(id) == null)
+			LOGGER.Info(GetType().Name + ": Could not find agathion with id " + id + ".");
+			return;
+		}
+
+		int enchant = element.Attribute("enchant").GetInt32(0);
+
+		Map<int, List<Skill>> mainSkills =
+			AGATHION_SKILLS.containsKey(id) ? AGATHION_SKILLS.get(id).getMainSkills() : new();
+		
+		List<Skill> mainSkillList = new();
+		String main = element.Attribute("mainSkill").GetString(string.Empty);
+		foreach (String ids in main.Split(";"))
+		{
+			if (ids.isEmpty())
 			{
-				LOGGER.Info(GetType().Name + ": Could not find agathion with id " + id + ".");
+				continue;
+			}
+
+			String[] split = ids.Split(",");
+			int skillId = int.Parse(split[0]);
+			int level = int.Parse(split[1]);
+
+			Skill skill = SkillData.getInstance().getSkill(skillId, level);
+			if (skill == null)
+			{
+				LOGGER.Info(GetType().Name + ": Could not find agathion skill id " + skillId + ".");
 				return;
 			}
-			
-			int enchant = set.getInt("enchant", 0);
-			
-			Map<int, List<Skill>> mainSkills = AGATHION_SKILLS.containsKey(id) ? AGATHION_SKILLS.get(id).getMainSkills() : new();
-			List<Skill> mainSkillList = new();
-			String main = set.getString("mainSkill", "");
-			foreach (String ids in main.Split(";"))
+
+			mainSkillList.add(skill);
+		}
+
+		mainSkills.put(enchant, mainSkillList);
+
+		Map<int, List<Skill>> subSkills =
+			AGATHION_SKILLS.containsKey(id) ? AGATHION_SKILLS.get(id).getSubSkills() : new();
+		
+		List<Skill> subSkillList = new();
+		String sub = element.Attribute("subSkill").GetString(string.Empty);
+		foreach (String ids in sub.Split(";"))
+		{
+			if (ids.isEmpty())
 			{
-				if (ids.isEmpty())
-				{
-					continue;
-				}
-				
-				String[] split = ids.Split(",");
-				int skillId = int.Parse(split[0]);
-				int level = int.Parse(split[1]);
-				
-				Skill skill = SkillData.getInstance().getSkill(skillId, level);
-				if (skill == null)
-				{
-					LOGGER.Info(GetType().Name + ": Could not find agathion skill id " + skillId + ".");
-					return;
-				}
-				
-				mainSkillList.add(skill);
+				continue;
 			}
-			mainSkills.put(enchant, mainSkillList);
-			
-			Map<int, List<Skill>> subSkills = AGATHION_SKILLS.containsKey(id) ? AGATHION_SKILLS.get(id).getSubSkills() : new();
-			List<Skill> subSkillList = new();
-			String sub = set.getString("subSkill", "");
-			foreach (String ids in sub.Split(";"))
+
+			String[] split = ids.Split(",");
+			int skillId = int.Parse(split[0]);
+			int level = int.Parse(split[1]);
+
+			Skill skill = SkillData.getInstance().getSkill(skillId, level);
+			if (skill == null)
 			{
-				if (ids.isEmpty())
-				{
-					continue;
-				}
-				
-				String[] split = ids.Split(",");
-				int skillId = int.Parse(split[0]);
-				int level = int.Parse(split[1]);
-				
-				Skill skill = SkillData.getInstance().getSkill(skillId, level);
-				if (skill == null)
-				{
-					LOGGER.Info(GetType().Name + ": Could not find agathion skill id " + skillId + ".");
-					return;
-				}
-				
-				subSkillList.add(skill);
+				LOGGER.Info(GetType().Name + ": Could not find agathion skill id " + skillId + ".");
+				return;
 			}
-			subSkills.put(enchant, subSkillList);
-			
-			AGATHION_SKILLS.put(id, new AgathionSkillHolder(mainSkills, subSkills));
-		}));
+
+			subSkillList.add(skill);
+		}
+
+		subSkills.put(enchant, subSkillList);
+
+		AGATHION_SKILLS.put(id, new AgathionSkillHolder(mainSkills, subSkills));
 	}
-	
+
 	public AgathionSkillHolder getSkills(int agathionId)
 	{
 		return AGATHION_SKILLS.get(agathionId);

@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 
 namespace L2Dn.GameServer.Model.Holders;
@@ -8,9 +9,9 @@ namespace L2Dn.GameServer.Model.Holders;
  */
 public class ClassInfoHolder
 {
-	private readonly ClassId _classId;
+	private readonly CharacterClass _classId;
 	private readonly String _className;
-	private readonly ClassId _parentClassId;
+	private readonly CharacterClass? _parentClassId;
 
 	/**
 	 * Constructor for ClassInfo.
@@ -18,7 +19,7 @@ public class ClassInfoHolder
 	 * @param className the in game class name.
 	 * @param parentClassId the parent class for the given {@code classId}.
 	 */
-	public ClassInfoHolder(ClassId classId, String className, ClassId parentClassId)
+	public ClassInfoHolder(CharacterClass classId, String className, CharacterClass? parentClassId)
 	{
 		_classId = classId;
 		_className = className;
@@ -28,7 +29,7 @@ public class ClassInfoHolder
 	/**
 	 * @return the class Id.
 	 */
-	public ClassId getClassId()
+	public CharacterClass getClassId()
 	{
 		return _classId;
 	}
@@ -100,7 +101,7 @@ public class ClassInfoHolder
 	/**
 	 * @return the parent class Id.
 	 */
-	public ClassId getParentClassId()
+	public CharacterClass? getParentClassId()
 	{
 		return _parentClassId;
 	}

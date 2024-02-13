@@ -1,3 +1,4 @@
+using System.Xml.Linq;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
@@ -6,6 +7,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Items.Appearance;
 
@@ -30,26 +32,26 @@ public class AppearanceStone
 	private Set<Race> _racesNot;
 	private Set<AppearanceHolder> _allVisualIds;
 
-	public AppearanceStone(StatSet set)
+	public AppearanceStone(XElement element)
 	{
-		_id = set.getInt("id");
-		_visualId = set.getInt("visualId", 0);
-		_cost = set.getInt("cost", 0);
-		_lifeTime = set.getDuration("lifeTime", TimeSpan.Zero);
-		_type = set.getEnum("type", AppearanceType.NONE);
-		_weaponType = set.getEnum("weaponType", WeaponType.NONE);
-		_armorType = set.getEnum("armorType", ArmorType.NONE);
-		_handType = set.getEnum("handType", AppearanceHandType.NONE);
-		_magicType = set.getEnum("magicType", AppearanceMagicType.NONE);
+		_id = element.Attribute("id").GetInt32();
+		_visualId = element.Attribute("visualId").GetInt32(0);
+		_cost = element.Attribute("cost").GetInt32(0);
+		_lifeTime = element.Attribute("lifeTime").GetTimeSpan(TimeSpan.Zero);
+		_type = element.Attribute("type").GetEnum(AppearanceType.NONE);
+		_weaponType = element.Attribute("weaponType").GetEnum(WeaponType.NONE);
+		_armorType = element.Attribute("armorType").GetEnum(ArmorType.NONE);
+		_handType = element.Attribute("handType").GetEnum(AppearanceHandType.NONE);
+		_magicType = element.Attribute("magicType").GetEnum(AppearanceMagicType.NONE);
 
-		AppearanceTargetType targetType = set.getEnum("targetType", AppearanceTargetType.NONE);
+		AppearanceTargetType targetType = element.Attribute("targetType").GetEnum(AppearanceTargetType.NONE);
 		if (targetType != AppearanceTargetType.NONE)
 		{
 			addTargetType(targetType);
 		}
 
 		// No grade items cannot change appearance, because client doesn't have No-Grade restoration stones.
-		CrystalType crystalType = set.getEnum("grade", CrystalType.NONE);
+		CrystalType crystalType = element.Attribute("grade").GetEnum(CrystalType.NONE);
 
 		// If no crystal type is defined, we must add all defaults.
 		if (crystalType == null)
@@ -83,19 +85,19 @@ public class AppearanceStone
 			addCrystalType(crystalType);
 		}
 
-		long bodyPart = ItemData.SLOTS.get(set.getString("bodyPart", "none"));
+		long bodyPart = ItemData.SLOTS.get(element.Attribute("bodyPart").GetString("none"));
 		if (bodyPart != ItemTemplate.SLOT_NONE)
 		{
 			addBodyPart(bodyPart);
 		}
 
-		Race race = set.getEnum("race", Race.NONE);
+		Race race = element.Attribute("race").GetEnum(Race.NONE);
 		if (race != Race.NONE)
 		{
 			addRace(race);
 		}
 
-		Race raceNot = set.getEnum("raceNot", Race.NONE);
+		Race raceNot = element.Attribute("raceNot").GetEnum(Race.NONE);
 		if (raceNot != Race.NONE)
 		{
 			addRaceNot(raceNot);
@@ -181,7 +183,7 @@ public class AppearanceStone
 	{
 		if (_bodyParts == null)
 		{
-			_bodyParts = new HashSet<>();
+			_bodyParts = new();
 		}
 
 		_bodyParts.add(part);
@@ -298,7 +300,7 @@ public class AppearanceStone
 			{
 				// Seems like in retail item with already changed appearance, can be changed again without being restored.
 
-				AppearanceTargetType targetType = getTargetTypes().stream().findFirst().get();
+				AppearanceTargetType targetType = getTargetTypes().First();
 				switch (targetType)
 				{
 					case AppearanceTargetType.NONE:
@@ -446,6 +448,8 @@ public class AppearanceStone
 						player.sendPacket(SystemMessageId.THIS_ITEM_DOES_NOT_MEET_REQUIREMENTS);
 						return false;
 					}
+
+					break;
 				}
 			}
 		}
@@ -471,6 +475,8 @@ public class AppearanceStone
 						player.sendPacket(SystemMessageId.THIS_ITEM_DOES_NOT_MEET_REQUIREMENTS);
 						return false;
 					}
+
+					break;
 				}
 			}
 		}
@@ -544,6 +550,8 @@ public class AppearanceStone
 						{
 							continue;
 						}
+						
+						break;
 					}
 				}
 			}
@@ -567,6 +575,8 @@ public class AppearanceStone
 						{
 							continue;
 						}
+
+						break;
 					}
 				}
 			}

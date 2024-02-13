@@ -119,6 +119,9 @@ public abstract class Connection
                 await ReceivePacketAsync(cancellationToken).ConfigureAwait(false);
             }
         }
+        catch (OperationCanceledException)
+        {
+        }
         catch (Exception exception)
         {
             if (exception is SocketException { SocketErrorCode: SocketError.Success or SocketError.OperationAborted })
@@ -225,7 +228,15 @@ public abstract class Connection
             buffer = RentBuffer(length);
         }
 
-        await ReceiveAsync(buffer, length, cancellationToken).ConfigureAwait(false);
+        try
+        {
+            await ReceiveAsync(buffer, length, cancellationToken).ConfigureAwait(false);
+        }
+        catch
+        {
+            ReturnBuffer(buffer);
+            throw;
+        }
 
         if (!_packetEncoder.Decode(buffer.AsSpan(0, length)))
         {

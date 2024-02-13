@@ -1,6 +1,10 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Clans;
+using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -20,80 +24,53 @@ public class ClanRewardData
 	
 	public void load()
 	{
-		parseDatapackFile("config/ClanReward.xml");
-		foreach (ClanRewardType type in ClanRewardType.values())
+		const string filePath = "config/ClanReward.xml";
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Root?.Elements("membersOnline").ForEach(parseMembersOnline);
+		document.Root?.Elements("huntingBonus").ForEach(parseHuntingBonus);
+
+		foreach (ClanRewardType type in Enum.GetValues<ClanRewardType>())
 		{
-			LOGGER.Info(GetType().Name + ": Loaded " + (_clanRewards.containsKey(type) ? _clanRewards.get(type).size() : 0) + " rewards for " + type.toString().replace("_", " ").toLowerCase() + ".");
+			LOGGER.Info(GetType().Name + ": Loaded " +
+			            (_clanRewards.containsKey(type) ? _clanRewards.get(type).size() : 0) + " rewards for " +
+			            type.ToString().Replace("_", " ").toLowerCase() + ".");
 		}
 	}
 	
-	public void parseDocument(Document doc, File f)
+	private void parseMembersOnline(XElement node)
 	{
-		forEach(doc.getFirstChild(), IXmlReader::isNode, listNode =>
+		node.Elements("players").ForEach(el =>
 		{
-			switch (listNode.getNodeName())
+			int requiredAmount = el.Attribute("size").GetInt32();
+			int level = el.Attribute("level").GetInt32();
+			ClanRewardBonus bonus = new ClanRewardBonus(ClanRewardType.MEMBERS_ONLINE, level, requiredAmount);
+			el.Elements("skill").ForEach(e =>
 			{
-				case "membersOnline":
-				{
-					parseMembersOnline(listNode);
-					break;
-				}
-				case "huntingBonus":
-				{
-					parseHuntingBonus(listNode);
-					break;
-				}
-			}
+				int skillId = e.Attribute("id").GetInt32();
+				int skillLevel = e.Attribute("level").GetInt32();
+				bonus.setSkillReward(new SkillHolder(skillId, skillLevel));
+			});
+			
+			_clanRewards.computeIfAbsent(bonus.getType(), key => new()).add(bonus);
 		});
 	}
 	
-	private void parseMembersOnline(Node node)
+	private void parseHuntingBonus(XElement node)
 	{
-		forEach(node, IXmlReader::isNode, memberNode =>
+		node.Elements("hunting").ForEach(el =>
 		{
-			if ("players".equalsIgnoreCase(memberNode.getNodeName()))
+			int requiredAmount = el.Attribute("points").GetInt32();
+			int level = el.Attribute("level").GetInt32();
+			ClanRewardBonus bonus = new ClanRewardBonus(ClanRewardType.HUNTING_MONSTERS, level, requiredAmount);
+			el.Elements("skill").ForEach(e =>
 			{
-				NamedNodeMap attrs = memberNode.getAttributes();
-				int requiredAmount = parseInteger(attrs, "size");
-				int level = parseInteger(attrs, "level");
-				ClanRewardBonus bonus = new ClanRewardBonus(ClanRewardType.MEMBERS_ONLINE, level, requiredAmount);
-				forEach(memberNode, IXmlReader::isNode, skillNode =>
-				{
-					if ("skill".equalsIgnoreCase(skillNode.getNodeName()))
-					{
-						NamedNodeMap skillAttr = skillNode.getAttributes();
-						int skillId = parseInteger(skillAttr, "id");
-						int skillLevel = parseInteger(skillAttr, "level");
-						bonus.setSkillReward(new SkillHolder(skillId, skillLevel));
-					}
-				});
-				_clanRewards.computeIfAbsent(bonus.getType(), key => new()).add(bonus);
-			}
-		});
-	}
-	
-	private void parseHuntingBonus(Node node)
-	{
-		forEach(node, IXmlReader::isNode, memberNode =>
-		{
-			if ("hunting".equalsIgnoreCase(memberNode.getNodeName()))
-			{
-				NamedNodeMap attrs = memberNode.getAttributes();
-				int requiredAmount = parseInteger(attrs, "points");
-				int level = parseInteger(attrs, "level");
-				ClanRewardBonus bonus = new ClanRewardBonus(ClanRewardType.HUNTING_MONSTERS, level, requiredAmount);
-				forEach(memberNode, IXmlReader::isNode, skillNode =>
-				{
-					if ("skill".equalsIgnoreCase(skillNode.getNodeName()))
-					{
-						NamedNodeMap skillAttr = skillNode.getAttributes();
-						int skillId = parseInteger(skillAttr, "id");
-						int skillLevel = parseInteger(skillAttr, "level");
-						bonus.setSkillReward(new SkillHolder(skillId, skillLevel));
-					}
-				});
-				_clanRewards.computeIfAbsent(bonus.getType(), key => new()).add(bonus);
-			}
+				int skillId = e.Attribute("id").GetInt32();
+				int skillLevel = e.Attribute("level").GetInt32();
+				bonus.setSkillReward(new SkillHolder(skillId, skillLevel));
+			});
+			
+			_clanRewards.computeIfAbsent(bonus.getType(), key => new()).add(bonus);
 		});
 	}
 	

@@ -1,42 +1,80 @@
 ﻿using System.Globalization;
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model;
 
 public class DailyMissionDataHolder
 {
 	private readonly int _id;
-	private readonly List<ItemHolder> _rewardsItems;
-	private readonly List<ClassId> _classRestriction;
+	private readonly List<ItemHolder> _rewardsItems = new();
+	private readonly List<CharacterClass> _classRestriction = new();
 	private readonly int _requiredCompletions;
-	private readonly StatSet _params;
+	private readonly StatSet _params = new();
 	private readonly bool _dailyReset;
 	private readonly bool _isOneTime;
 	private readonly bool _isMainClassOnly;
 	private readonly bool _isDualClassOnly;
 	private readonly bool _isDisplayedWhenNotAvailable;
-	private readonly AbstractDailyMissionHandler _handler;
+	private readonly AbstractDailyMissionHandler? _handler;
 	private readonly MissionResetType _missionResetSlot;
 	
-	public DailyMissionDataHolder(StatSet set)
+	public DailyMissionDataHolder(XElement element)
 	{
-		Func<DailyMissionDataHolder, AbstractDailyMissionHandler> handler = DailyMissionHandler.getInstance().getHandler(set.getString("handler"));
-		_id = set.getInt("id");
-		_requiredCompletions = set.getInt("requiredCompletion", 0);
-		_rewardsItems = set.getList<ItemHolder>("items");
-		_classRestriction = set.getList<ClassId>("classRestriction");
-		_params = set.getObject<StatSet>("params");
-		_dailyReset = set.getBoolean("dailyReset", true);
-		_isOneTime = set.getBoolean("isOneTime", true);
-		_isMainClassOnly = set.getBoolean("isMainClassOnly", true);
-		_isDualClassOnly = set.getBoolean("isDualClassOnly", false);
-		_isDisplayedWhenNotAvailable = set.getBoolean("isDisplayedWhenNotAvailable", true);
-		_handler = handler != null ? handler(this) : null;
-		_missionResetSlot = set.getEnum("duration", MissionResetType.DAY);
+		_id = element.Attribute("id").GetInt32();
+		_requiredCompletions = element.Attribute("requiredCompletion").GetInt32(0);
+		_dailyReset = element.Attribute("dailyReset").GetBoolean(true);
+		_isOneTime = element.Attribute("isOneTime").GetBoolean(true);
+		_isMainClassOnly = element.Attribute("isMainClassOnly").GetBoolean(true);
+		_isDualClassOnly = element.Attribute("isDualClassOnly").GetBoolean(false);
+		_isDisplayedWhenNotAvailable = element.Attribute("isDisplayedWhenNotAvailable").GetBoolean(true);
+		_missionResetSlot = element.Attribute("duration").GetEnum(MissionResetType.DAY);
+
+		// reward items
+		element.Elements("items").Elements("item").ForEach(el =>
+		{
+			int itemId = el.Attribute("id").GetInt32();
+			int itemCount = el.Attribute("count").GetInt32();
+			if ((itemId == AbstractDailyMissionHandler.MISSION_LEVEL_POINTS) && (MissionLevel.getInstance().getCurrentSeason() <= 0))
+			{
+				return;
+			}
+				
+			_rewardsItems.add(new ItemHolder(itemId, itemCount));
+		});
+		
+		// class restrictions
+		element.Elements("classId").ForEach(el =>
+		{
+			CharacterClass classId = (CharacterClass)(int)el;
+			_classRestriction.add(classId);
+		});
+		
+		// handler
+		XElement? handlerEl = element.Elements("handler").SingleOrDefault();
+		if (handlerEl is not null)
+		{
+			string handlerName = handlerEl.Attribute("name").GetString();
+			Func<DailyMissionDataHolder, AbstractDailyMissionHandler> handler =
+				DailyMissionHandler.getInstance().getHandler(handlerName);
+
+			handlerEl.Elements("param").ForEach(paramEl =>
+			{
+				string paramName = paramEl.Attribute("name").GetString();
+				string paramValue = paramEl.Value;
+				_params.set(paramName, paramValue);
+			});
+			
+			_handler = handler != null ? handler(this) : null;
+		}
 	}
 	
 	public int getId()
@@ -44,7 +82,7 @@ public class DailyMissionDataHolder
 		return _id;
 	}
 	
-	public List<ClassId> getClassRestriction()
+	public List<CharacterClass> getClassRestriction()
 	{
 		return _classRestriction;
 	}

@@ -1,5 +1,9 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -22,7 +26,11 @@ public class CollectionData
 	public void load()
 	{
 		_collections.clear();
-		parseDatapackFile("data/CollectionData.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/CollectionData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Root?.Elements("collection").ForEach(loadElement);
 		
 		if (!_collections.isEmpty())
 		{
@@ -33,58 +41,35 @@ public class CollectionData
 			LOGGER.Info(GetType().Name + ": System is disabled.");
 		}
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void loadElement(XElement element)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		int id = element.Attribute("id").GetInt32();
+		int optionId = element.Attribute("optionId").GetInt32();
+		int category = element.Attribute("category").GetInt32();
+		int completeCount = element.Attribute("completeCount").GetInt32();
+		List<ItemEnchantHolder> items = new();
+		
+		element.Elements("item").ForEach(el =>
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
+			int itemId = el.Attribute("id").GetInt32();
+			long itemCount = el.Attribute("count").GetInt64(1);
+			int itemEnchantLevel = el.Attribute("enchantLevel").GetInt32(0);
+			ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
+			if (item == null)
 			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("collection".equalsIgnoreCase(d.getNodeName()))
-					{
-						NamedNodeMap attrs = d.getAttributes();
-						Node att;
-						StatSet set = new StatSet();
-						for (int i = 0; i < attrs.getLength(); i++)
-						{
-							att = attrs.item(i);
-							set.set(att.getNodeName(), att.getNodeValue());
-						}
-						
-						int id = parseInteger(attrs, "id");
-						int optionId = parseInteger(attrs, "optionId");
-						int category = parseInteger(attrs, "category");
-						int completeCount = parseInteger(attrs, "completeCount");
-						List<ItemEnchantHolder> items = new();
-						for (Node b = d.getFirstChild(); b != null; b = b.getNextSibling())
-						{
-							attrs = b.getAttributes();
-							if ("item".equalsIgnoreCase(b.getNodeName()))
-							{
-								int itemId = parseInteger(attrs, "id");
-								long itemCount = Parse(attrs, "count", 1L);
-								int itemEnchantLevel = parseInteger(attrs, "enchantLevel", 0);
-								ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
-								if (item == null)
-								{
-									LOGGER.Error(GetType().Name + ": Item template null for itemId: " + itemId + " collection item: " + id);
-									continue;
-								}
-								items.add(new ItemEnchantHolder(itemId, itemCount, itemEnchantLevel));
-							}
-						}
-						
-						CollectionDataHolder template = new CollectionDataHolder(id, optionId, category, completeCount, items);
-						_collections.put(id, template);
-						_collectionsByTabId.computeIfAbsent(template.getCategory(), list => new()).add(template);
-					}
-				}
+				LOGGER.Error(GetType().Name + ": Item template null for itemId: " + itemId + " collection item: " + id);
+				return;
 			}
-		}
+
+			items.add(new ItemEnchantHolder(itemId, itemCount, itemEnchantLevel));
+		});
+
+		CollectionDataHolder template = new CollectionDataHolder(id, optionId, category, completeCount, items);
+		_collections.put(id, template);
+		_collectionsByTabId.computeIfAbsent(template.getCategory(), list => new()).add(template);
 	}
-	
+
 	public CollectionDataHolder getCollection(int id)
 	{
 		return _collections.get(id);

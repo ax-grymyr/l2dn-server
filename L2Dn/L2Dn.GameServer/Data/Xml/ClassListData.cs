@@ -1,6 +1,10 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -13,7 +17,7 @@ public class ClassListData
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ClassListData));
 	
-	private readonly Map<ClassId, ClassInfoHolder> _classData = new();
+	private readonly Map<CharacterClass, ClassInfoHolder> _classData = new();
 	
 	/**
 	 * Instantiates a new class list data.
@@ -26,60 +30,32 @@ public class ClassListData
 	public void load()
 	{
 		_classData.clear();
-		parseDatapackFile("data/stats/chars/classList.xml");
+
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/chars/classList.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Root?.Elements("class").ForEach(loadElement);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _classData.size() + " class data.");
 	}
 	
-	public void parseDocument(Document doc, File f)
+	private void loadElement(XElement element)
 	{
-		NamedNodeMap attrs;
-		Node attr;
-		ClassId classId;
-		String className;
-		ClassId parentClassId;
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
-		{
-			if ("list".equals(n.getNodeName()))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					attrs = d.getAttributes();
-					if ("class".equals(d.getNodeName()))
-					{
-						attr = attrs.getNamedItem("classId");
-						classId = ClassId.getClassId(parseInteger(attr));
-						if (classId == null)
-						{
-							System.out.println(parseInteger(attr));
-						}
-						attr = attrs.getNamedItem("name");
-						className = attr.getNodeValue();
-						attr = attrs.getNamedItem("parentClassId");
-						parentClassId = (attr != null) ? ClassId.getClassId(parseInteger(attr)) : null;
-						_classData.put(classId, new ClassInfoHolder(classId, className, parentClassId));
-					}
-				}
-			}
-		}
+		CharacterClass classId = (CharacterClass)element.Attribute("classId").GetInt32();
+		string className = element.Attribute("classId").GetString();
+
+		int parentId = element.Attribute("parentClassId").GetInt32(-1);
+		CharacterClass? parentClassId = parentId < 0 ? null : (CharacterClass)parentId;
+		_classData.put(classId, new ClassInfoHolder(classId, className, parentClassId));
 	}
 	
 	/**
 	 * Gets the class list.
 	 * @return the complete class list.
 	 */
-	public Map<ClassId, ClassInfoHolder> getClassList()
+	public Map<CharacterClass, ClassInfoHolder> getClassList()
 	{
 		return _classData;
-	}
-	
-	/**
-	 * Gets the class info.
-	 * @param classId the class Id.
-	 * @return the class info related to the given {@code classId}.
-	 */
-	public ClassInfoHolder getClass(ClassId classId)
-	{
-		return _classData.get(classId);
 	}
 	
 	/**
@@ -87,10 +63,9 @@ public class ClassListData
 	 * @param classId the class Id as integer.
 	 * @return the class info related to the given {@code classId}.
 	 */
-	public ClassInfoHolder getClass(int classId)
+	public ClassInfoHolder getClass(CharacterClass classId)
 	{
-		ClassId id = ClassId.getClassId(classId);
-		return (id != null) ? _classData.get(id) : null;
+		return _classData[classId];
 	}
 	
 	/**

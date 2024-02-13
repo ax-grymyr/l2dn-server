@@ -1,4 +1,6 @@
+using System.Xml.Linq;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Items.Combination;
 
@@ -16,15 +18,15 @@ public class CombinationItem
 	private readonly bool _announce;
 	private readonly Map<CombinationItemType, CombinationItemReward> _rewards = new();
 
-	public CombinationItem(StatSet set)
+	public CombinationItem(XElement element)
 	{
-		_itemOne = set.getInt("one");
-		_enchantOne = set.getInt("enchantOne", 0);
-		_itemTwo = set.getInt("two");
-		_enchantTwo = set.getInt("enchantTwo", 0);
-		_commission = set.getLong("commission", 0);
-		_chance = set.getFloat("chance", 33);
-		_announce = set.getBoolean("announce", false);
+		_itemOne = element.Attribute("one").GetInt32();
+		_enchantOne = element.Attribute("enchantOne").GetInt32(0);
+		_itemTwo = element.Attribute("two").GetInt32();
+		_enchantTwo = element.Attribute("enchantTwo").GetInt32(0);
+		_commission = element.Attribute("commission").GetInt32(0);
+		_chance = element.Attribute("chance").GetFloat(33);
+		_announce = element.Attribute("announce").GetBoolean(false);
 	}
 
 	public int getItemOne()

@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Spawns;
@@ -67,97 +68,97 @@ public class SpawnTable
 	{
 		addSpawn(spawn);
 		
-		if (store)
-		{
-			// Create output directory if it doesn't exist
-			File outputDirectory = new File(OTHER_XML_FOLDER);
-			if (!outputDirectory.exists())
-			{
-				bool result = false;
-				try
-				{
-					outputDirectory.mkdir();
-					result = true;
-				}
-				catch (Exception se)
-				{
-					// empty
-				}
-				if (result)
-				{
-					LOGGER.Info(GetType().Name + ": Created directory: " + OTHER_XML_FOLDER);
-				}
-			}
-			
-			// XML file for spawn
-			int x = ((spawn.getX() - World.WORLD_X_MIN) >> 15) + World.TILE_X_MIN;
-			int y = ((spawn.getY() - World.WORLD_Y_MIN) >> 15) + World.TILE_Y_MIN;
-			File spawnFile = new File(OTHER_XML_FOLDER + "/" + x + "_" + y + ".xml");
-			
-			// Write info to XML
-			String spawnId = String.valueOf(spawn.getId());
-			String spawnCount = String.valueOf(spawn.getAmount());
-			String spawnX = String.valueOf(spawn.getX());
-			String spawnY = String.valueOf(spawn.getY());
-			String spawnZ = String.valueOf(spawn.getZ());
-			String spawnHeading = String.valueOf(spawn.getHeading());
-			String spawnDelay = String.valueOf(spawn.getRespawnDelay() / 1000);
-			if (spawnFile.exists()) // update
-			{
-				File tempFile = new File(spawnFile.getAbsolutePath().substring(Config.DATAPACK_ROOT_PATH.getAbsolutePath().length() + 1).replace('\\', '/') + ".tmp");
-				try
-				{
-					BufferedReader reader = new BufferedReader(new FileReader(spawnFile));
-					BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
-					String currentLine;
-					while ((currentLine = reader.readLine()) != null)
-					{
-						if (currentLine.Contains("</group>"))
-						{
-							NpcTemplate template = NpcData.getInstance().getTemplate(spawn.getId());
-							String title = template.getTitle();
-							String name = title.isEmpty() ? template.getName() : template.getName() + " - " + title;
-							writer.write("			<npc id=\"" + spawnId + (spawn.getAmount() > 1 ? "\" count=\"" + spawnCount : "") + "\" x=\"" + spawnX + "\" y=\"" + spawnY + "\" z=\"" + spawnZ + (spawn.getHeading() > 0 ? "\" heading=\"" + spawnHeading : "") + "\" respawnTime=\"" + spawnDelay + "sec\" /> <!-- " + name + " -->" + Config.EOL);
-							writer.write(currentLine + Config.EOL);
-							continue;
-						}
-						writer.write(currentLine + Config.EOL);
-					}
-					writer.close();
-					reader.close();
-					spawnFile.delete();
-					tempFile.renameTo(spawnFile);
-				}
-				catch (Exception e)
-				{
-					LOGGER.Warn(GetType().Name + ": Could not store spawn in the spawn XML files: " + e);
-				}
-			}
-			else // new file
-			{
-				try
-				{
-					NpcTemplate template = NpcData.getInstance().getTemplate(spawn.getId());
-					String title = template.getTitle();
-					String name = title.isEmpty() ? template.getName() : template.getName() + " - " + title;
-					BufferedWriter writer = new BufferedWriter(new FileWriter(spawnFile));
-					writer.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + Environment.NewLine);
-					writer.write("<list xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"../../xsd/spawns.xsd\">" + Config.EOL);
-					writer.write("	<spawn name=\"" + x + "_" + y + "\">" + Environment.NewLine);
-					writer.write("		<group>" + Environment.NewLine);
-					writer.write("			<npc id=\"" + spawnId + (spawn.getAmount() > 1 ? "\" count=\"" + spawnCount : "") + "\" x=\"" + spawnX + "\" y=\"" + spawnY + "\" z=\"" + spawnZ + (spawn.getHeading() > 0 ? "\" heading=\"" + spawnHeading : "") + "\" respawnTime=\"" + spawnDelay + "sec\" /> <!-- " + name + " -->" + Config.EOL);
-					writer.write("		</group>" + Environment.NewLine);
-					writer.write("	</spawn>" + Environment.NewLine);
-					writer.write("</list>" + Environment.NewLine);
-					writer.close();
-					LOGGER.Info(GetType().Name + ": Created file: " + OTHER_XML_FOLDER + "/" + x + "_" + y + ".xml");
-				}
-				catch (Exception e)
-				{
-					LOGGER.Warn(GetType().Name + ": Spawn " + spawn + " could not be added to the spawn XML files: " + e);
-				}
-			}
-		}
+		// if (store)
+		// {
+		// 	// Create output directory if it doesn't exist
+		// 	File outputDirectory = new File(OTHER_XML_FOLDER);
+		// 	if (!outputDirectory.exists())
+		// 	{
+		// 		bool result = false;
+		// 		try
+		// 		{
+		// 			outputDirectory.mkdir();
+		// 			result = true;
+		// 		}
+		// 		catch (Exception se)
+		// 		{
+		// 			// empty
+		// 		}
+		// 		if (result)
+		// 		{
+		// 			LOGGER.Info(GetType().Name + ": Created directory: " + OTHER_XML_FOLDER);
+		// 		}
+		// 	}
+		// 	
+		// 	// XML file for spawn
+		// 	int x = ((spawn.getX() - World.WORLD_X_MIN) >> 15) + World.TILE_X_MIN;
+		// 	int y = ((spawn.getY() - World.WORLD_Y_MIN) >> 15) + World.TILE_Y_MIN;
+		// 	File spawnFile = new File(OTHER_XML_FOLDER + "/" + x + "_" + y + ".xml");
+		// 	
+		// 	// Write info to XML
+		// 	String spawnId = String.valueOf(spawn.getId());
+		// 	String spawnCount = String.valueOf(spawn.getAmount());
+		// 	String spawnX = String.valueOf(spawn.getX());
+		// 	String spawnY = String.valueOf(spawn.getY());
+		// 	String spawnZ = String.valueOf(spawn.getZ());
+		// 	String spawnHeading = String.valueOf(spawn.getHeading());
+		// 	String spawnDelay = String.valueOf(spawn.getRespawnDelay() / 1000);
+		// 	if (spawnFile.exists()) // update
+		// 	{
+		// 		File tempFile = new File(spawnFile.getAbsolutePath().substring(Config.DATAPACK_ROOT_PATH.getAbsolutePath().length() + 1).replace('\\', '/') + ".tmp");
+		// 		try
+		// 		{
+		// 			BufferedReader reader = new BufferedReader(new FileReader(spawnFile));
+		// 			BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
+		// 			String currentLine;
+		// 			while ((currentLine = reader.readLine()) != null)
+		// 			{
+		// 				if (currentLine.Contains("</group>"))
+		// 				{
+		// 					NpcTemplate template = NpcData.getInstance().getTemplate(spawn.getId());
+		// 					String title = template.getTitle();
+		// 					String name = title.isEmpty() ? template.getName() : template.getName() + " - " + title;
+		// 					writer.write("			<npc id=\"" + spawnId + (spawn.getAmount() > 1 ? "\" count=\"" + spawnCount : "") + "\" x=\"" + spawnX + "\" y=\"" + spawnY + "\" z=\"" + spawnZ + (spawn.getHeading() > 0 ? "\" heading=\"" + spawnHeading : "") + "\" respawnTime=\"" + spawnDelay + "sec\" /> <!-- " + name + " -->" + Config.EOL);
+		// 					writer.write(currentLine + Config.EOL);
+		// 					continue;
+		// 				}
+		// 				writer.write(currentLine + Config.EOL);
+		// 			}
+		// 			writer.close();
+		// 			reader.close();
+		// 			spawnFile.delete();
+		// 			tempFile.renameTo(spawnFile);
+		// 		}
+		// 		catch (Exception e)
+		// 		{
+		// 			LOGGER.Warn(GetType().Name + ": Could not store spawn in the spawn XML files: " + e);
+		// 		}
+		// 	}
+		// 	else // new file
+		// 	{
+		// 		try
+		// 		{
+		// 			NpcTemplate template = NpcData.getInstance().getTemplate(spawn.getId());
+		// 			String title = template.getTitle();
+		// 			String name = title.isEmpty() ? template.getName() : template.getName() + " - " + title;
+		// 			BufferedWriter writer = new BufferedWriter(new FileWriter(spawnFile));
+		// 			writer.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + Environment.NewLine);
+		// 			writer.write("<list xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"../../xsd/spawns.xsd\">" + Config.EOL);
+		// 			writer.write("	<spawn name=\"" + x + "_" + y + "\">" + Environment.NewLine);
+		// 			writer.write("		<group>" + Environment.NewLine);
+		// 			writer.write("			<npc id=\"" + spawnId + (spawn.getAmount() > 1 ? "\" count=\"" + spawnCount : "") + "\" x=\"" + spawnX + "\" y=\"" + spawnY + "\" z=\"" + spawnZ + (spawn.getHeading() > 0 ? "\" heading=\"" + spawnHeading : "") + "\" respawnTime=\"" + spawnDelay + "sec\" /> <!-- " + name + " -->" + Config.EOL);
+		// 			writer.write("		</group>" + Environment.NewLine);
+		// 			writer.write("	</spawn>" + Environment.NewLine);
+		// 			writer.write("</list>" + Environment.NewLine);
+		// 			writer.close();
+		// 			LOGGER.Info(GetType().Name + ": Created file: " + OTHER_XML_FOLDER + "/" + x + "_" + y + ".xml");
+		// 		}
+		// 		catch (Exception e)
+		// 		{
+		// 			LOGGER.Warn(GetType().Name + ": Spawn " + spawn + " could not be added to the spawn XML files: " + e);
+		// 		}
+		// 	}
+		// }
 	}
 	
 	/**
@@ -173,131 +174,131 @@ public class SpawnTable
 			return;
 		}
 		
-		if (update)
-		{
-			int x = ((spawn.getX() - World.WORLD_X_MIN) >> 15) + World.TILE_X_MIN;
-			int y = ((spawn.getY() - World.WORLD_Y_MIN) >> 15) + World.TILE_Y_MIN;
-			NpcSpawnTemplate npcSpawnTemplate = spawn.getNpcSpawnTemplate();
-			File spawnFile = npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnTemplate().getFile() : new File(OTHER_XML_FOLDER + "/" + x + "_" + y + ".xml");
-			File tempFile = new File(spawnFile.getAbsolutePath().substring(Config.DATAPACK_ROOT_PATH.getAbsolutePath().length() + 1).replace('\\', '/') + ".tmp");
-			try
-			{
-				BufferedReader reader = new BufferedReader(new FileReader(spawnFile));
-				BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
-				
-				bool found = false; // in XML you can have more than one spawn with same coords
-				bool isMultiLine = false; // in case spawn has more stats
-				bool lastLineFound = false; // used to check for empty file
-				int lineCount = 0;
-				String currentLine;
-				
-				SpawnGroup group = npcSpawnTemplate != null ? npcSpawnTemplate.getGroup() : null;
-				List<SpawnTerritory> territories = group != null ? group.getTerritories() : new();
-				bool simpleTerritory = false;
-				if (territories.isEmpty())
-				{
-					SpawnTemplate spawnTemplate = npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnTemplate() : null;
-					if (spawnTemplate != null)
-					{
-						territories = spawnTemplate.getTerritories();
-						simpleTerritory = true;
-					}
-				}
-				
-				if (territories.isEmpty())
-				{
-					String spawnId = String.valueOf(spawn.getId());
-					String spawnX = String.valueOf(npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnLocation().getX() : spawn.getX());
-					String spawnY = String.valueOf(npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnLocation().getY() : spawn.getY());
-					String spawnZ = String.valueOf(npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnLocation().getZ() : spawn.getZ());
-					
-					while ((currentLine = reader.readLine()) != null)
-					{
-						if (!found)
-						{
-							if (isMultiLine)
-							{
-								if (currentLine.Contains("</npc>"))
-								{
-									found = true;
-								}
-								continue;
-							}
-							if (currentLine.Contains(spawnId) && currentLine.Contains(spawnX) && currentLine.Contains(spawnY) && currentLine.Contains(spawnZ))
-							{
-								if (!currentLine.Contains("/>") && !currentLine.Contains("</npc>"))
-								{
-									isMultiLine = true;
-								}
-								else
-								{
-									found = true;
-								}
-								continue;
-							}
-						}
-						writer.write(currentLine + Environment.NewLine);
-						if (currentLine.Contains("</list>"))
-						{
-							lastLineFound = true;
-						}
-						if (!lastLineFound)
-						{
-							lineCount++;
-						}
-					}
-				}
-				else
-				{
-					SEARCH: while ((currentLine = reader.readLine()) != null)
-					{
-						if (!found)
-						{
-							if (isMultiLine)
-							{
-								if (currentLine.Contains("</group>") || (simpleTerritory && currentLine.Contains("<territories>")))
-								{
-									found = true;
-								}
-								continue;
-							}
-							foreach (SpawnTerritory territory in territories)
-							{
-								if (currentLine.Contains('"' + territory.getName() + '"'))
-								{
-									isMultiLine = true;
-									continue SEARCH;
-								}
-							}
-						}
-						writer.write(currentLine + Environment.NewLine);
-						if (currentLine.Contains("</list>"))
-						{
-							lastLineFound = true;
-						}
-						if (!lastLineFound)
-						{
-							lineCount++;
-						}
-					}
-				}
-				
-				writer.close();
-				reader.close();
-				spawnFile.delete();
-				tempFile.renameTo(spawnFile);
-				// Delete empty file
-				if (lineCount < 8)
-				{
-					LOGGER.Info(GetType().Name + ": Deleted empty file: " + spawnFile.getAbsolutePath().substring(Config.DATAPACK_ROOT.getAbsolutePath().length() + 1).replace('\\', '/'));
-					spawnFile.delete();
-				}
-			}
-			catch (Exception e)
-			{
-				LOGGER.Warn(GetType().Name + ": Spawn " + spawn + " could not be removed from the spawn XML files: " + e);
-			}
-		}
+		// if (update)
+		// {
+		// 	int x = ((spawn.getX() - World.WORLD_X_MIN) >> 15) + World.TILE_X_MIN;
+		// 	int y = ((spawn.getY() - World.WORLD_Y_MIN) >> 15) + World.TILE_Y_MIN;
+		// 	NpcSpawnTemplate npcSpawnTemplate = spawn.getNpcSpawnTemplate();
+		// 	File spawnFile = npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnTemplate().getFile() : new File(OTHER_XML_FOLDER + "/" + x + "_" + y + ".xml");
+		// 	File tempFile = new File(spawnFile.getAbsolutePath().substring(Config.DATAPACK_ROOT_PATH.getAbsolutePath().length() + 1).replace('\\', '/') + ".tmp");
+		// 	try
+		// 	{
+		// 		BufferedReader reader = new BufferedReader(new FileReader(spawnFile));
+		// 		BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
+		// 		
+		// 		bool found = false; // in XML you can have more than one spawn with same coords
+		// 		bool isMultiLine = false; // in case spawn has more stats
+		// 		bool lastLineFound = false; // used to check for empty file
+		// 		int lineCount = 0;
+		// 		String currentLine;
+		// 		
+		// 		SpawnGroup group = npcSpawnTemplate != null ? npcSpawnTemplate.getGroup() : null;
+		// 		List<SpawnTerritory> territories = group != null ? group.getTerritories() : new();
+		// 		bool simpleTerritory = false;
+		// 		if (territories.isEmpty())
+		// 		{
+		// 			SpawnTemplate spawnTemplate = npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnTemplate() : null;
+		// 			if (spawnTemplate != null)
+		// 			{
+		// 				territories = spawnTemplate.getTerritories();
+		// 				simpleTerritory = true;
+		// 			}
+		// 		}
+		// 		
+		// 		if (territories.isEmpty())
+		// 		{
+		// 			String spawnId = String.valueOf(spawn.getId());
+		// 			String spawnX = String.valueOf(npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnLocation().getX() : spawn.getX());
+		// 			String spawnY = String.valueOf(npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnLocation().getY() : spawn.getY());
+		// 			String spawnZ = String.valueOf(npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnLocation().getZ() : spawn.getZ());
+		// 			
+		// 			while ((currentLine = reader.readLine()) != null)
+		// 			{
+		// 				if (!found)
+		// 				{
+		// 					if (isMultiLine)
+		// 					{
+		// 						if (currentLine.Contains("</npc>"))
+		// 						{
+		// 							found = true;
+		// 						}
+		// 						continue;
+		// 					}
+		// 					if (currentLine.Contains(spawnId) && currentLine.Contains(spawnX) && currentLine.Contains(spawnY) && currentLine.Contains(spawnZ))
+		// 					{
+		// 						if (!currentLine.Contains("/>") && !currentLine.Contains("</npc>"))
+		// 						{
+		// 							isMultiLine = true;
+		// 						}
+		// 						else
+		// 						{
+		// 							found = true;
+		// 						}
+		// 						continue;
+		// 					}
+		// 				}
+		// 				writer.write(currentLine + Environment.NewLine);
+		// 				if (currentLine.Contains("</list>"))
+		// 				{
+		// 					lastLineFound = true;
+		// 				}
+		// 				if (!lastLineFound)
+		// 				{
+		// 					lineCount++;
+		// 				}
+		// 			}
+		// 		}
+		// 		else
+		// 		{
+		// 			SEARCH: while ((currentLine = reader.readLine()) != null)
+		// 			{
+		// 				if (!found)
+		// 				{
+		// 					if (isMultiLine)
+		// 					{
+		// 						if (currentLine.Contains("</group>") || (simpleTerritory && currentLine.Contains("<territories>")))
+		// 						{
+		// 							found = true;
+		// 						}
+		// 						continue;
+		// 					}
+		// 					foreach (SpawnTerritory territory in territories)
+		// 					{
+		// 						if (currentLine.Contains('"' + territory.getName() + '"'))
+		// 						{
+		// 							isMultiLine = true;
+		// 							continue SEARCH;
+		// 						}
+		// 					}
+		// 				}
+		// 				writer.write(currentLine + Environment.NewLine);
+		// 				if (currentLine.Contains("</list>"))
+		// 				{
+		// 					lastLineFound = true;
+		// 				}
+		// 				if (!lastLineFound)
+		// 				{
+		// 					lineCount++;
+		// 				}
+		// 			}
+		// 		}
+		// 		
+		// 		writer.close();
+		// 		reader.close();
+		// 		spawnFile.delete();
+		// 		tempFile.renameTo(spawnFile);
+		// 		// Delete empty file
+		// 		if (lineCount < 8)
+		// 		{
+		// 			LOGGER.Info(GetType().Name + ": Deleted empty file: " + spawnFile.getAbsolutePath().substring(Config.DATAPACK_ROOT.getAbsolutePath().length() + 1).replace('\\', '/'));
+		// 			spawnFile.delete();
+		// 		}
+		// 	}
+		// 	catch (Exception e)
+		// 	{
+		// 		LOGGER.Warn(GetType().Name + ": Spawn " + spawn + " could not be removed from the spawn XML files: " + e);
+		// 	}
+		// }
 	}
 	
 	/**

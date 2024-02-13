@@ -1,4 +1,9 @@
-﻿using NLog;
+﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Items.Types;
+using L2Dn.GameServer.TaskManagers;
+using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Model.BuyList;
 
@@ -9,18 +14,18 @@ public class Product
 	private readonly int _buyListId;
 	private readonly ItemTemplate _item;
 	private readonly long _price;
-	private readonly long _restockDelay;
+	private readonly TimeSpan _restockDelay;
 	private readonly long _maxCount;
 	private readonly double _baseTax;
 	private long _count;
 	
-	public Product(int buyListId, ItemTemplate item, long price, long restockDelay, long maxCount, int baseTax)
+	public Product(int buyListId, ItemTemplate item, long price, TimeSpan restockDelay, long maxCount, int baseTax)
 	{
 		Objects.requireNonNull(item);
 		_buyListId = buyListId;
 		_item = item;
 		_price = (price < 0) ? item.getReferencePrice() : price;
-		_restockDelay = restockDelay * 60000;
+		_restockDelay = restockDelay;
 		_maxCount = maxCount;
 		_baseTax = baseTax / 100.0;
 		if (hasLimitedStock())
@@ -44,8 +49,9 @@ public class Product
 		long price = _price;
 		if (_item.getItemType().equals(EtcItemType.CASTLE_GUARD))
 		{
-			price *= Config.RATE_SIEGE_GUARDS_PRICE;
+			price = (long)(price * Config.RATE_SIEGE_GUARDS_PRICE);
 		}
+		
 		return price;
 	}
 	
@@ -54,7 +60,7 @@ public class Product
 		return _baseTax;
 	}
 	
-	public long getRestockDelay()
+	public TimeSpan getRestockDelay()
 	{
 		return _restockDelay;
 	}
@@ -82,7 +88,7 @@ public class Product
 			return false;
 		}
 		
-		BuyListTaskManager.getInstance().add(this, System.currentTimeMillis() + _restockDelay);
+		BuyListTaskManager.getInstance().add(this, DateTime.UtcNow + _restockDelay);
 		
 		bool result = Interlocked.Add(ref _count, -value) >= 0;
 		save();
@@ -94,10 +100,10 @@ public class Product
 		return _maxCount > -1;
 	}
 	
-	public void restartRestockTask(long nextRestockTime)
+	public void restartRestockTask(DateTime nextRestockTime)
 	{
-		long remainTime = nextRestockTime - System.currentTimeMillis();
-		if (remainTime > 0)
+		TimeSpan remainTime = nextRestockTime - DateTime.UtcNow;
+		if (remainTime > TimeSpan.Zero)
 		{
 			BuyListTaskManager.getInstance().update(this, remainTime);
 		}

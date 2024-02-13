@@ -6,11 +6,11 @@ public class ActionDataHolder
     private readonly String _handler;
     private readonly int _optionId;
 	
-    public ActionDataHolder(StatSet set)
+    public ActionDataHolder(int id, string handler, int optionId)
     {
-        _id = set.getInt("id");
-        _handler = set.getString("handler");
-        _optionId = set.getInt("option", 0);
+        _id = id;
+        _handler = handler;
+        _optionId = optionId;
     }
 	
     public int getId()

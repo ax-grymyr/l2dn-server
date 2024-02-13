@@ -1,3 +1,5 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
@@ -15,7 +17,6 @@ public class AppearanceItemData
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AppearanceItemData));
 	
-	private AppearanceStone[] _stones;
 	private readonly Map<int, AppearanceStone> _stoneMap = new();
 	
 	protected AppearanceItemData()
@@ -25,18 +26,12 @@ public class AppearanceItemData
 	
 	public void load()
 	{
-		parseDatapackFile("data/AppearanceStones.xml");
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/AppearanceStones.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Root?.Elements("appearance_stone").ForEach(loadElement);
 		
-		if (!_stoneMap.isEmpty())
-		{
-			_stones = new AppearanceStone[Collections.max(_stoneMap.keySet()) + 1];
-			foreach (Entry<int, AppearanceStone> stone in _stoneMap.entrySet())
-			{
-				_stones[stone.getKey()] = stone.getValue();
-			}
-			
-			LOGGER.Info(GetType().Name + ": Loaded " + _stoneMap.size() + " stones.");
-		}
+		LOGGER.Info(GetType().Name + ": Loaded " + _stoneMap.size() + " stones.");
 		
 		//@formatter:off
 		/*
@@ -58,79 +53,59 @@ public class AppearanceItemData
 		
 		_stoneMap.clear();
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void loadElement(XElement element)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		AppearanceStone stone = new AppearanceStone(element);
+		
+		element.Elements("grade").ForEach(el =>
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("appearance_stone".equalsIgnoreCase(d.getNodeName()))
-					{
-						AppearanceStone stone = new AppearanceStone(new StatSet(parseAttributes(d)));
-						for (Node c = d.getFirstChild(); c != null; c = c.getNextSibling())
-						{
-							switch (c.getNodeName())
-							{
-								case "grade":
-								{
-									CrystalType type = CrystalType.valueOf(c.getTextContent());
-									stone.addCrystalType(type);
-									break;
-								}
-								case "targetType":
-								{
-									AppearanceTargetType type = AppearanceTargetType.valueOf(c.getTextContent());
-									stone.addTargetType(type);
-									break;
-								}
-								case "bodyPart":
-								{
-									long part = ItemData.SLOTS.get(c.getTextContent());
-									stone.addBodyPart(part);
-									break;
-								}
-								case "race":
-								{
-									Race race = Race.valueOf(c.getTextContent());
-									stone.addRace(race);
-									break;
-								}
-								case "raceNot":
-								{
-									Race raceNot = Race.valueOf(c.getTextContent());
-									stone.addRaceNot(raceNot);
-									break;
-								}
-								case "visual":
-								{
-									stone.addVisualId(new AppearanceHolder(new StatSet(parseAttributes(c))));
-								}
-							}
-						}
-						if (ItemData.getInstance().getTemplate(stone.getId()) != null)
-						{
-							_stoneMap.put(stone.getId(), stone);
-						}
-						else
-						{
-							LOGGER.Info(GetType().Name + ": Could not find appearance stone item " + stone.getId());
-						}
-					}
-				}
-			}
+			CrystalType type = Enum.Parse<CrystalType>(el.Value);
+			stone.addCrystalType(type);
+		});
+		
+		element.Elements("targetType").ForEach(el =>
+		{
+			AppearanceTargetType type = Enum.Parse<AppearanceTargetType>(el.Value);
+			stone.addTargetType(type);
+		});
+		
+		element.Elements("bodyPart").ForEach(el =>
+		{
+			long part = ItemData.SLOTS.get(el.Value);
+			stone.addBodyPart(part);
+		});
+		
+		element.Elements("race").ForEach(el =>
+		{
+			Race race = Enum.Parse<Race>(el.Value);
+			stone.addRace(race);
+		});
+		
+		element.Elements("raceNot").ForEach(el =>
+		{
+			Race raceNot = Enum.Parse<Race>(el.Value);
+			stone.addRaceNot(raceNot);
+		});
+
+		element.Elements("visual").ForEach(el =>
+		{
+			stone.addVisualId(new AppearanceHolder(el));
+		});
+
+		if (ItemData.getInstance().getTemplate(stone.getId()) != null)
+		{
+			_stoneMap.put(stone.getId(), stone);
+		}
+		else
+		{
+			LOGGER.Info(GetType().Name + ": Could not find appearance stone item " + stone.getId());
 		}
 	}
-	
+
 	public AppearanceStone getStone(int stone)
 	{
-		if (_stones.Length > stone)
-		{
-			return _stones[stone];
-		}
-		return null;
+		return _stoneMap.get(stone);
 	}
 	
 	/**

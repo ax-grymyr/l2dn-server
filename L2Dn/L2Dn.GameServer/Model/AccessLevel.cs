@@ -1,5 +1,7 @@
 ﻿using System.Globalization;
+using System.Xml.Linq;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model;
 
@@ -14,9 +16,9 @@ public class AccessLevel
 	/** Child access levels. */
 	private int _child = 0;
 	/** The name color for the access level. */
-	private int _nameColor = 0;
+	private Color _nameColor;
 	/** The title color for the access level. */
-	private int _titleColor = 0;
+	private Color _titleColor;
 	/** Flag to determine if the access level has GM access. */
 	private bool _isGm = false;
 	/** Flag for peace zone attack */
@@ -34,29 +36,29 @@ public class AccessLevel
 	/** Flag to gain exp in party */
 	private bool _gainExp = false;
 	
-	public AccessLevel(StatSet set)
+	public AccessLevel(XElement element)
 	{
-		_accessLevel = set.getInt("level");
-		_name = set.getString("name");
-		_nameColor = int.Parse("0x" + set.getString("nameColor", "FFFFFF"), NumberStyles.HexNumber);
-		_titleColor = int.Parse("0x" + set.getString("titleColor", "FFFFFF"), NumberStyles.HexNumber);
-		_child = set.getInt("childAccess", 0);
-		_isGm = set.getBoolean("isGM", false);
-		_allowPeaceAttack = set.getBoolean("allowPeaceAttack", false);
-		_allowFixedRes = set.getBoolean("allowFixedRes", false);
-		_allowTransaction = set.getBoolean("allowTransaction", true);
-		_allowAltG = set.getBoolean("allowAltg", false);
-		_giveDamage = set.getBoolean("giveDamage", true);
-		_takeAggro = set.getBoolean("takeAggro", true);
-		_gainExp = set.getBoolean("gainExp", true);
+		_accessLevel = element.Attribute("level").GetInt32();
+		_name = element.Attribute("name").GetString();
+		_nameColor = element.Attribute("nameColor").GetColor(Colors.White);
+		_titleColor = element.Attribute("titleColor").GetColor(Colors.White);
+		_child = element.Attribute("childAccess").GetInt32(0);
+		_isGm = element.Attribute("isGM").GetBoolean(false);
+		_allowPeaceAttack = element.Attribute("allowPeaceAttack").GetBoolean(false);
+		_allowFixedRes = element.Attribute("allowFixedRes").GetBoolean(false);
+		_allowTransaction = element.Attribute("allowTransaction").GetBoolean(true);
+		_allowAltG = element.Attribute("allowAltg").GetBoolean(false);
+		_giveDamage = element.Attribute("giveDamage").GetBoolean(true);
+		_takeAggro = element.Attribute("takeAggro").GetBoolean(true);
+		_gainExp = element.Attribute("gainExp").GetBoolean(true);
 	}
 	
 	public AccessLevel()
 	{
 		_accessLevel = 0;
 		_name = "User";
-		_nameColor = 0xFFFFFF;
-		_titleColor = 0xFFFFFF;
+		_nameColor = Colors.White;
+		_titleColor = Colors.White;
 		_child = 0;
 		_isGm = false;
 		_allowPeaceAttack = false;
@@ -90,7 +92,7 @@ public class AccessLevel
 	 * Returns the name color of the access level
 	 * @return int: the name color for the access level
 	 */
-	public int getNameColor()
+	public Color getNameColor()
 	{
 		return _nameColor;
 	}
@@ -99,7 +101,7 @@ public class AccessLevel
 	 * Returns the title color color of the access level
 	 * @return int: the title color for the access level
 	 */
-	public int getTitleColor()
+	public Color getTitleColor()
 	{
 		return _titleColor;
 	}

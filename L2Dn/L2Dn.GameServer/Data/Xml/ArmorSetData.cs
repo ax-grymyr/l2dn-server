@@ -1,5 +1,11 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -24,15 +30,22 @@ public class ArmorSetData
 	
 	public void load()
 	{
-		parseDatapackDirectory("data/stats/armorsets", false);
-		
-		_armorSets = new ArmorSet[Collections.max(_armorSetMap.Keys) + 1];
+		string dirPath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/armorsets");
+		Directory.EnumerateFiles(dirPath, "*.xml", SearchOption.AllDirectories).ForEach(filePath =>
+		{
+			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+			XDocument document = XDocument.Load(stream);
+			document.Root?.Elements("set").ForEach(x => loadElement(filePath, x));
+		});
+
+		int count = _armorSetMap.Keys.Max() + 1;
+		_armorSets = new ArmorSet[count];
 		foreach (var armorSet in _armorSetMap)
 		{
 			_armorSets[armorSet.Key] = armorSet.Value;
 		}
 		
-		_itemSets = new();
+		_itemSets = new List<ArmorSet>[count];
 		foreach (var armorSet in _armorSetItems)
 		{
 			_itemSets[armorSet.Key] = armorSet.Value;
@@ -42,105 +55,89 @@ public class ArmorSetData
 		_armorSetMap.clear();
 		_armorSetItems.clear();
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void loadElement(string filePath, XElement element)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		int id = element.Attribute("id").GetInt32();
+		int minimumPieces = element.Attribute("minimumPieces").GetInt32(0);
+		bool isVisual = element.Attribute("visual").GetBoolean(false);
+		Set<int> requiredItems = new();
+		Set<int> optionalItems = new();
+		List<ArmorsetSkillHolder> skills = new();
+		Map<BaseStat, double> stats = new();
+
+		element.Elements("requiredItems").ForEach(el =>
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
+			el.Elements("item").ForEach(e =>
 			{
-				for (Node setNode = n.getFirstChild(); setNode != null; setNode = setNode.getNextSibling())
+				int itemId = e.Attribute("id").GetInt32();
+				ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
+				if (item == null)
 				{
-					if ("set".equalsIgnoreCase(setNode.getNodeName()))
-					{
-						int id = parseInteger(setNode.getAttributes(), "id");
-						int minimumPieces = parseInteger(setNode.getAttributes(), "minimumPieces", 0);
-						bool isVisual = parseBoolean(setNode.getAttributes(), "visual", false);
-						Set<int> requiredItems = new LinkedHashSet<>();
-						Set<int> optionalItems = new LinkedHashSet<>();
-						List<ArmorsetSkillHolder> skills = new();
-						Map<BaseStat, Double> stats = new();
-						for (Node innerSetNode = setNode.getFirstChild(); innerSetNode != null; innerSetNode = innerSetNode.getNextSibling())
-						{
-							switch (innerSetNode.getNodeName())
-							{
-								case "requiredItems":
-								{
-									forEach(innerSetNode, b => "item".equals(b.getNodeName()), node =>
-									{
-										NamedNodeMap attrs = node.getAttributes();
-										int itemId = parseInteger(attrs, "id");
-										ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
-										if (item == null)
-										{
-											LOGGER.Warn("Attempting to register non existing required item: " + itemId + " to a set: " + f.getName());
-										}
-										else if (!requiredItems.add(itemId))
-										{
-											LOGGER.Warn("Attempting to register duplicate required item " + item + " to a set: " + f.getName());
-										}
-									});
-									break;
-								}
-								case "optionalItems":
-								{
-									forEach(innerSetNode, b => "item".equals(b.getNodeName()), node =>
-									{
-										NamedNodeMap attrs = node.getAttributes();
-										int itemId = parseInteger(attrs, "id");
-										ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
-										if (item == null)
-										{
-											LOGGER.Warn("Attempting to register non existing optional item: " + itemId + " to a set: " + f.getName());
-										}
-										else if (!optionalItems.add(itemId))
-										{
-											LOGGER.Warn("Attempting to register duplicate optional item " + item + " to a set: " + f.getName());
-										}
-									});
-									break;
-								}
-								case "skills":
-								{
-									forEach(innerSetNode, b => "skill".equals(b.getNodeName()), node =>
-									{
-										NamedNodeMap attrs = node.getAttributes();
-										int skillId = parseInteger(attrs, "id");
-										int skillLevel = parseInteger(attrs, "level");
-										int minPieces = parseInteger(attrs, "minimumPieces", minimumPieces);
-										int minEnchant = parseInteger(attrs, "minimumEnchant", 0);
-										bool isOptional = parseBoolean(attrs, "optional", false);
-										int artifactSlotMask = parseInteger(attrs, "slotMask", 0);
-										int artifactBookSlot = parseInteger(attrs, "bookSlot", 0);
-										skills.add(new ArmorsetSkillHolder(skillId, skillLevel, minPieces, minEnchant, isOptional, artifactSlotMask, artifactBookSlot));
-									});
-									break;
-								}
-								case "stats":
-								{
-									forEach(innerSetNode, b => "stat".equals(b.getNodeName()), node =>
-									{
-										NamedNodeMap attrs = node.getAttributes();
-										stats.put(parseEnum(attrs, BaseStat.class, "type"), parseDouble(attrs, "val"));
-									});
-									break;
-								}
-							}
-						}
-						
-						ArmorSet set = new ArmorSet(id, minimumPieces, isVisual, requiredItems, optionalItems, skills, stats);
-						if (_armorSetMap.putIfAbsent(id, set) != null)
-						{
-							LOGGER.Warn("Duplicate set entry with id: " + id + " in file: " + f.getName());
-						}
-						
-						Stream.concat(Arrays.stream(set.getRequiredItems()).boxed(), Arrays.stream(set.getOptionalItems()).boxed()).forEach(itemHolder => _armorSetItems.computeIfAbsent(itemHolder, key => new()).add(set));
-					}
+					LOGGER.Warn("Attempting to register non existing required item: " + itemId + " to a set: " +
+					            filePath);
 				}
-			}
+				else if (!requiredItems.add(itemId))
+				{
+					LOGGER.Warn("Attempting to register duplicate required item " + item + " to a set: " + filePath);
+				}
+			});
+		});
+
+		element.Elements("optionalItems").ForEach(el =>
+		{
+			el.Elements("item").ForEach(e =>
+			{
+				int itemId = e.Attribute("id").GetInt32();
+				ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
+				if (item == null)
+				{
+					LOGGER.Warn("Attempting to register non existing optional item: " + itemId + " to a set: " +
+					            filePath);
+				}
+				else if (!optionalItems.add(itemId))
+				{
+					LOGGER.Warn("Attempting to register duplicate optional item " + item + " to a set: " + filePath);
+				}
+			});
+		});
+
+		element.Elements("skills").ForEach(el =>
+		{
+			el.Elements("skill").ForEach(e =>
+			{
+				int skillId = e.Attribute("id").GetInt32();
+				int skillLevel = e.Attribute("level").GetInt32();
+				int minPieces = e.Attribute("minimumPieces").GetInt32(minimumPieces);
+				int minEnchant = e.Attribute("minimumEnchant").GetInt32(0);
+				bool isOptional = e.Attribute("optional").GetBoolean(false);
+				int artifactSlotMask = e.Attribute("slotMask").GetInt32(0);
+				int artifactBookSlot = e.Attribute("bookSlot").GetInt32(0);
+				skills.add(new ArmorsetSkillHolder(skillId, skillLevel, minPieces, minEnchant, isOptional,
+					artifactSlotMask, artifactBookSlot));
+			});
+		});
+
+		element.Elements("stats").ForEach(el =>
+		{
+			el.Elements("stat").ForEach(e =>
+			{
+				BaseStat stat = e.Attribute("type").GetEnum<BaseStat>();
+				double val = e.Attribute("val").GetDouble();
+				stats.put(stat, val);
+			});
+		});
+
+		ArmorSet set = new ArmorSet(id, minimumPieces, isVisual, requiredItems, optionalItems, skills, stats);
+		if (_armorSetMap.putIfAbsent(id, set) != null)
+		{
+			LOGGER.Warn("Duplicate set entry with id: " + id + " in file: " + filePath);
 		}
+
+		set.getRequiredItems().Concat(set.getOptionalItems()).ForEach(itemHolder =>
+			_armorSetItems.computeIfAbsent(itemHolder, key => new()).add(set));
 	}
-	
+
 	/**
 	 * @param setId the set id that is attached to a set
 	 * @return the armor set associated to the given item id

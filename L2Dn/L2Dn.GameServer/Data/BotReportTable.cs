@@ -1,3 +1,5 @@
+using System.Net;
+using System.Xml.Linq;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
@@ -5,10 +7,13 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Data;
 
@@ -17,24 +22,9 @@ namespace L2Dn.GameServer.Data;
  */
 public class BotReportTable
 {
-	// Zoey76: TODO: Split XML parsing from SQL operations, use IGameXmlReader instead of SAXParser.
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(BotReportTable));
 	
-	private const int COLUMN_BOT_ID = 1;
-	private const int COLUMN_REPORTER_ID = 2;
-	private const int COLUMN_REPORT_TIME = 3;
-	
-	public const int ATTACK_ACTION_BLOCK_ID = -1;
-	public const int TRADE_ACTION_BLOCK_ID = -2;
-	public const int PARTY_ACTION_BLOCK_ID = -3;
-	public const int ACTION_BLOCK_ID = -4;
-	public const int CHAT_BLOCK_ID = -5;
-	
-	private const string SQL_LOAD_REPORTED_CHAR_DATA = "SELECT * FROM bot_reported_char_data";
-	private const string SQL_INSERT_REPORTED_CHAR_DATA = "INSERT INTO bot_reported_char_data VALUES (?,?,?)";
-	private const string SQL_CLEAR_REPORTED_CHAR_DATA = "DELETE FROM bot_reported_char_data";
-	
-	private Map<int, long> _ipRegistry;
+	private Map<int, DateTime> _ipRegistry;
 	private Map<int, ReporterCharData> _charRegistry;
 	private Map<int, ReportedCharData> _reports;
 	private Map<int, PunishHolder> _punishments;
@@ -50,14 +40,29 @@ public class BotReportTable
 			
 			try
 			{
-				File punishments = new File("./config/BotReportPunishments.xml");
-				if (!punishments.exists())
+				// TODO: separate XML and SQL
+				using FileStream stream = new FileStream("./config/BotReportPunishments.xml", FileMode.Open,
+					FileAccess.Read, FileShare.Read);
+
+				XDocument document = XDocument.Load(stream);
+				var elements = document.Root.Elements("punishment");
+				foreach (XElement element in elements)
 				{
-					throw new FileNotFoundException(punishments.getName());
+					try
+					{
+						int reportCount = int.Parse(element.Attribute("neededReportCount")?.Value);
+						int skillId = int.Parse(element.Attribute("skillId")?.Value);
+						int skillLevel = int.Parse(element.Attribute("skillLevel")?.Value);
+						SystemMessageId messageId =
+							(SystemMessageId)int.Parse(element.Attribute("sysMessageId")?.Value);
+						
+						addPunishment(reportCount, skillId, skillLevel, messageId);
+					}
+					catch (Exception e)
+					{
+						LOGGER.Warn("Problem with ./config/BotReportPunishments.xml: " + e);
+					}
 				}
-				
-				SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
-				parser.parse(punishments, new PunishmentsLoader());
 			}
 			catch (Exception e)
 			{
@@ -77,34 +82,31 @@ public class BotReportTable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
-			Statement st = con.createStatement();
-			ResultSet rset = st.executeQuery(SQL_LOAD_REPORTED_CHAR_DATA);
-			long lastResetTime = 0;
+			DateTime lastResetTime = default;
 			try
 			{
-				int hour = int.Parse(Config.BOTREPORT_RESETPOINT_HOUR[0]);
-				int minute = int.Parse(Config.BOTREPORT_RESETPOINT_HOUR[1]);
-				long currentTime = System.currentTimeMillis();
-				Calendar calendar = Calendar.getInstance();
-				calendar.set(Calendar.HOUR_OF_DAY, hour);
-				calendar.set(Calendar.MINUTE, minute);
-				if (currentTime < calendar.getTimeInMillis())
+				TimeOnly resetPoint = Config.BOTREPORT_RESETPOINT_HOUR;
+				DateTime currentTime = DateTime.Now;
+				DateTime calendar = new(currentTime.Year, currentTime.Month, currentTime.Day, resetPoint.Hour, resetPoint.Minute, 0); 
+				if (currentTime < calendar)
 				{
-					calendar.set(Calendar.DAY_OF_YEAR, calendar.get(Calendar.DAY_OF_YEAR) - 1);
+					calendar = calendar.AddDays(-1);
 				}
-				lastResetTime = calendar.getTimeInMillis();
+				
+				lastResetTime = calendar;
 			}
 			catch (Exception e)
 			{
 				// Ignore.
 			}
 			
-			while (rset.next())
+			using GameServerDbContext ctx = new();
+			var reports = ctx.BotReports;
+			foreach (var report in reports)
 			{
-				int botId = rset.getInt(COLUMN_BOT_ID);
-				int reporter = rset.getInt(COLUMN_REPORTER_ID);
-				long date = rset.getLong(COLUMN_REPORT_TIME);
+				int botId = report.BotId;
+				int reporter = report.ReporterId;
+				DateTime date = report.ReportTime;
 				if (_reports.containsKey(botId))
 				{
 					_reports.get(botId).addReporter(reporter, date);
@@ -113,7 +115,7 @@ public class BotReportTable
 				{
 					ReportedCharData rcd = new ReportedCharData();
 					rcd.addReporter(reporter, date);
-					_reports.put(rset.getInt(COLUMN_BOT_ID), rcd);
+					_reports.put(report.BotId, rcd);
 				}
 				
 				if (date > lastResetTime)
@@ -149,20 +151,21 @@ public class BotReportTable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			Statement st = con.createStatement();
-			PreparedStatement ps = con.prepareStatement(SQL_INSERT_REPORTED_CHAR_DATA);
-			st.execute(SQL_CLEAR_REPORTED_CHAR_DATA);
-			
+			ctx.BotReports.ExecuteDelete();
 			foreach (var entrySet in _reports)
 			{
-				foreach (int reporterId in entrySet.Value._reporters.Keys)
+				foreach (int reporterId in entrySet.Value.Reporters.Keys)
 				{
-					ps.setInt(1, entrySet.Key);
-					ps.setInt(2, reporterId);
-					ps.setLong(3, entrySet.Value._reporters.get(reporterId));
-					ps.execute();
+					ctx.BotReports.Add(new()
+					{
+						BotId = entrySet.Key,
+						ReporterId = reporterId,
+						ReportTime = entrySet.Value.Reporters.get(reporterId)
+					});
 				}
 			}
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -217,6 +220,7 @@ public class BotReportTable
 		ReporterCharData rcdRep = _charRegistry.get(reporter.getObjectId());
 		int reporterId = reporter.getObjectId();
 		
+		SystemMessagePacket sm;
 		lock (this)
 		{
 			if (_reports.containsKey(reporterId))
@@ -246,7 +250,7 @@ public class BotReportTable
 					return false;
 				}
 			}
-			
+
 			if (rcdRep != null)
 			{
 				if (rcdRep.getPointsLeft() == 0)
@@ -255,18 +259,18 @@ public class BotReportTable
 					return false;
 				}
 				
-				long reuse = (System.currentTimeMillis() - rcdRep.getLastReporTime());
-				if (reuse < Config.BOTREPORT_REPORT_DELAY)
+				TimeSpan reuse = DateTime.UtcNow - rcdRep.getLastReporTime();
+				if (reuse < TimeSpan.FromMilliseconds(Config.BOTREPORT_REPORT_DELAY))
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.YOU_CAN_MAKE_ANOTHER_REPORT_IN_S1_MIN_YOU_HAVE_S2_POINT_S_LEFT);
-					sm.addInt((int) (reuse / 60000));
+					sm = new SystemMessagePacket(SystemMessageId.YOU_CAN_MAKE_ANOTHER_REPORT_IN_S1_MIN_YOU_HAVE_S2_POINT_S_LEFT);
+					sm.addInt((int)reuse.TotalMinutes);
 					sm.addInt(rcdRep.getPointsLeft());
 					reporter.sendPacket(sm);
 					return false;
 				}
 			}
 			
-			long curTime = System.currentTimeMillis();
+			DateTime curTime = DateTime.UtcNow;
 			if (rcd == null)
 			{
 				rcd = new ReportedCharData();
@@ -283,11 +287,11 @@ public class BotReportTable
 			_charRegistry.put(reporterId, rcdRep);
 		}
 		
-		SystemMessage sm = new SystemMessage(SystemMessageId.C1_WAS_REPORTED_AS_A_BOT);
+		sm = new SystemMessagePacket(SystemMessageId.C1_WAS_REPORTED_AS_A_BOT);
 		sm.addString(bot.getName());
 		reporter.sendPacket(sm);
 		
-		sm = new SystemMessage(SystemMessageId.YOU_HAVE_USED_A_REPORT_POINT_ON_C1_YOU_HAVE_S2_POINTS_REMAINING_ON_THIS_ACCOUNT);
+		sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_USED_A_REPORT_POINT_ON_C1_YOU_HAVE_S2_POINTS_REMAINING_ON_THIS_ACCOUNT);
 		sm.addString(bot.getName());
 		sm.addInt(rcdRep.getPointsLeft());
 		reporter.sendPacket(sm);
@@ -330,10 +334,10 @@ public class BotReportTable
 	{
 		if (ph != null)
 		{
-			ph._punish.applyEffects(bot, bot);
-			if (ph._systemMessageId > -1)
+			ph.Punish.applyEffects(bot, bot);
+			if (ph.MessageId >= 0)
 			{
-				SystemMessageId id = SystemMessageId.getSystemMessageId(ph._systemMessageId);
+				SystemMessageId id = ph.MessageId;
 				if (id != null)
 				{
 					bot.sendPacket(id);
@@ -349,7 +353,7 @@ public class BotReportTable
 	 * @param skillLevel
 	 * @param sysMsg (id of a system message to send when applying the punish)
 	 */
-	void addPunishment(int neededReports, int skillId, int skillLevel, int sysMsg)
+	void addPunishment(int neededReports, int skillId, int skillLevel, SystemMessageId sysMsg)
 	{
 		Skill sk = SkillData.getInstance().getSkill(skillId, skillLevel);
 		if (sk != null)
@@ -379,28 +383,26 @@ public class BotReportTable
 	{
 		try
 		{
-			int hour = int.Parse(Config.BOTREPORT_RESETPOINT_HOUR[0]);
-			int minute = int.Parse(Config.BOTREPORT_RESETPOINT_HOUR[1]);
-			long currentTime = System.currentTimeMillis();
-			Calendar calendar = Calendar.getInstance();
-			calendar.set(Calendar.HOUR_OF_DAY, hour);
-			calendar.set(Calendar.MINUTE, minute);
-			if (calendar.getTimeInMillis() < currentTime)
+			TimeOnly resetPoint = Config.BOTREPORT_RESETPOINT_HOUR;
+			DateTime currentTime = DateTime.Now;
+			DateTime calendar = new(currentTime.Year, currentTime.Month, currentTime.Day, resetPoint.Hour, resetPoint.Minute, 0); 
+			if (calendar < currentTime)
 			{
-				calendar.add(Calendar.DAY_OF_YEAR, 1);
+				calendar = calendar.AddDays(1);
 			}
-			ThreadPool.schedule(new ResetPointTask(), calendar.getTimeInMillis() - currentTime);
+
+			ThreadPool.schedule(new ResetPointTask(this), calendar - currentTime);
 		}
 		catch (Exception e)
 		{
-			ThreadPool.schedule(new ResetPointTask(), 24 * 3600 * 1000);
+			ThreadPool.schedule(new ResetPointTask(this), TimeSpan.FromDays(1));
 			LOGGER.Warn(GetType().Name + ": Could not properly schedule bot report points reset task. Scheduled in 24 hours.", e);
 		}
 	}
 	
 	public static BotReportTable getInstance()
 	{
-		return Data.SingletonHolder.INSTANCE;
+		return SingletonHolder.INSTANCE;
 	}
 	
 	/**
@@ -410,14 +412,11 @@ public class BotReportTable
 	 */
 	private static int hashIp(Player player)
 	{
-		String con = player.getClient().getIp();
-		String[] rawByte = con.Split("\\.");
-		int[] rawIp = new int[4];
-		for (int i = 0; i < 4; i++)
-		{
-			rawIp[i] = int.Parse(rawByte[i]);
-		}
-		return rawIp[0] | (rawIp[1] << 8) | (rawIp[2] << 16) | (rawIp[3] << 24);
+		IPAddress? address = player.getClient()?.Connection?.GetRemoteAddress();
+		if (address is not null)
+			return IPAddressUtil.ConvertIP4AddressToInt(address);
+
+		return 0;
 	}
 	
 	/**
@@ -426,12 +425,13 @@ public class BotReportTable
 	 * @param objectId (an existent map key)
 	 * @return true if the time has passed.
 	 */
-	private static bool timeHasPassed(Map<int, long> map, int objectId)
+	private static bool timeHasPassed(Map<int, DateTime> map, int objectId)
 	{
 		if (map.containsKey(objectId))
 		{
-			return (System.currentTimeMillis() - map.get(objectId)) > Config.BOTREPORT_REPORT_DELAY;
+			return (DateTime.UtcNow - map.get(objectId)) > TimeSpan.FromMilliseconds(Config.BOTREPORT_REPORT_DELAY);
 		}
+		
 		return true;
 	}
 	
@@ -440,34 +440,33 @@ public class BotReportTable
 	 */
 	private class ReporterCharData
 	{
-		private long _lastReport;
-		private byte _reportPoints;
+		private DateTime _lastReport;
+		private int _reportPoints;
 		
-		ReporterCharData()
+		public ReporterCharData()
 		{
 			_reportPoints = 7;
-			_lastReport = 0;
 		}
 		
-		void registerReport(long time)
+		public void registerReport(DateTime time)
 		{
 			_reportPoints -= 1;
 			_lastReport = time;
 		}
 		
-		long getLastReporTime()
+		public DateTime getLastReporTime()
 		{
 			return _lastReport;
 		}
 		
-		byte getPointsLeft()
+		public int getPointsLeft()
 		{
 			return _reportPoints;
 		}
 		
-		void setPoints(int points)
+		public void setPoints(int points)
 		{
-			_reportPoints = (byte) points;
+			_reportPoints = points;
 		}
 	}
 	
@@ -476,29 +475,31 @@ public class BotReportTable
 	 */
 	private class ReportedCharData
 	{
-		Map<int, long> _reporters;
+		private readonly Map<int, DateTime> _reporters;
 		
-		ReportedCharData()
+		public ReportedCharData()
 		{
 			_reporters = new();
 		}
+
+		public Map<int, DateTime> Reporters => _reporters;
 		
-		int getReportCount()
+		public int getReportCount()
 		{
 			return _reporters.size();
 		}
 		
-		bool alredyReportedBy(int objectId)
+		public bool alredyReportedBy(int objectId)
 		{
 			return _reporters.containsKey(objectId);
 		}
 		
-		void addReporter(int objectId, long reportTime)
+		public void addReporter(int objectId, DateTime reportTime)
 		{
 			_reporters.put(objectId, reportTime);
 		}
 		
-		bool reportedBySameClan(Clan clan)
+		public bool reportedBySameClan(Clan clan)
 		{
 			if (clan == null)
 			{
@@ -517,70 +518,17 @@ public class BotReportTable
 		}
 	}
 	
-	/**
-	 * SAX loader to parse /config/BotReportPunishments.xml file
-	 */
-	private class PunishmentsLoader: DefaultHandler
+	private class PunishHolder(Skill sk, SystemMessageId sysMsg)
 	{
-		PunishmentsLoader()
-		{
-		}
-		
-		public void startElement(String uri, String localName, String qName, Attributes attr)
-		{
-			if (qName.equals("punishment"))
-			{
-				int reportCount = -1;
-				int skillId = -1;
-				int skillLevel = 1;
-				int sysMessage = -1;
-				try
-				{
-					reportCount = int.Parse(attr.getValue("neededReportCount"));
-					skillId = int.Parse(attr.getValue("skillId"));
-					String level = attr.getValue("skillLevel");
-					String systemMessageId = attr.getValue("sysMessageId");
-					if (level != null)
-					{
-						skillLevel = int.Parse(level);
-					}
-					
-					if (systemMessageId != null)
-					{
-						sysMessage = int.Parse(systemMessageId);
-					}
-				}
-				catch (Exception e)
-				{
-					LOGGER.Warn("Problem with BotReportTable: " + e);
-				}
-				
-				addPunishment(reportCount, skillId, skillLevel, sysMessage);
-			}
-		}
+		public Skill Punish => sk;
+		public SystemMessageId MessageId => sysMsg;
 	}
 	
-	private class PunishHolder
+	private class ResetPointTask(BotReportTable table): Runnable
 	{
-		Skill _punish;
-		int _systemMessageId;
-		
-		public PunishHolder(Skill sk, int sysMsg)
-		{
-			_punish = sk;
-			_systemMessageId = sysMsg;
-		}
-	}
-	
-	private class ResetPointTask: Runnable
-	{
-		public ResetPointTask()
-		{
-		}
-		
 		public void run()
 		{
-			resetPointsAndSchedule();
+			table.resetPointsAndSchedule();
 		}
 	}
 	

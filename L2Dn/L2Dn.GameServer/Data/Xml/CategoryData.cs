@@ -1,5 +1,8 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -22,43 +25,29 @@ public class CategoryData
 	public void load()
 	{
 		_categories.clear();
-		parseDatapackFile("data/CategoryData.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/CategoryData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Root?.Elements("category").ForEach(loadElement);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _categories.size() + " categories.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void loadElement(XElement element)
 	{
-		for (Node node = doc.getFirstChild(); node != null; node = node.getNextSibling())
+		CategoryType categoryType = element.Attribute("name").GetEnum<CategoryType>();
+		if (categoryType == null)
 		{
-			if ("list".equalsIgnoreCase(node.getNodeName()))
-			{
-				for (Node list_node = node.getFirstChild(); list_node != null; list_node = list_node.getNextSibling())
-				{
-					if ("category".equalsIgnoreCase(list_node.getNodeName()))
-					{
-						NamedNodeMap attrs = list_node.getAttributes();
-						CategoryType categoryType = CategoryType.findByName(attrs.getNamedItem("name").getNodeValue());
-						if (categoryType == null)
-						{
-							LOGGER.Warn(GetType().Name + ": Can't find category by name: " + attrs.getNamedItem("name").getNodeValue());
-							continue;
-						}
-						
-						Set<int> ids = new();
-						for (Node category_node = list_node.getFirstChild(); category_node != null; category_node = category_node.getNextSibling())
-						{
-							if ("id".equalsIgnoreCase(category_node.getNodeName()))
-							{
-								ids.add(int.Parse(category_node.getTextContent()));
-							}
-						}
-						_categories.put(categoryType, ids);
-					}
-				}
-			}
+			LOGGER.Warn(GetType().Name + ": Can't find category by name: " + element.Attribute("name")?.Value);
+			return;
 		}
+
+		Set<int> ids = new();
+		element.Elements("id").Select(x => (int)x).ForEach(x => ids.add(x));
+		_categories.put(categoryType, ids);
 	}
-	
+
 	/**
 	 * Checks if ID is in category.
 	 * @param type The category type

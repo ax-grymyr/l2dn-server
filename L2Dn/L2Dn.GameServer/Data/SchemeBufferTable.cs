@@ -1,6 +1,9 @@
 using System.Text;
+using System.Xml.Linq;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.Data;
@@ -23,31 +26,26 @@ public class SchemeBufferTable
 	{
 		try
 		{
-			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-			DocumentBuilder db = dbf.newDocumentBuilder();
-			Document doc = db.parse(new File("./data/SchemeBufferSkills.xml"));
-			Node n = doc.getFirstChild();
-			for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+			using FileStream stream = new FileStream("./data/SchemeBufferSkills.xml", FileMode.Open, FileAccess.Read,
+				FileShare.Read);
+
+			XDocument document = XDocument.Load(stream);
+			var categories = document.Root.Elements("category");
+			foreach (var category in categories)
 			{
-				if (!d.getNodeName().equalsIgnoreCase("category"))
+				string? categoryType = category.Attribute("type")?.Value;
+				if (!string.IsNullOrEmpty(categoryType))
 				{
-					continue;
-				}
-
-				String category = d.getAttributes().getNamedItem("type").getNodeValue();
-				for (Node c = d.getFirstChild(); c != null; c = c.getNextSibling())
-				{
-					if (!c.getNodeName().equalsIgnoreCase("buff"))
+					var buffs = category.Elements("buff");
+					foreach (var buff in buffs)
 					{
-						continue;
-					}
+						int buffId = int.Parse(buff.Attribute("id")?.Value);
+						int buffLevel = int.Parse(buff.Attribute("level")?.Value);
+						int price = int.Parse(buff.Attribute("price")?.Value);
+						string desc = buff.Attribute("desc")?.Value;
 
-					NamedNodeMap attrs = c.getAttributes();
-					int skillId = int.Parse(attrs.getNamedItem("id").getNodeValue());
-					_availableBuffs.put(skillId,
-						new BuffSkillHolder(skillId, int.Parse(attrs.getNamedItem("level").getNodeValue()),
-							int.Parse(attrs.getNamedItem("price").getNodeValue()), category,
-							attrs.getNamedItem("desc").getNodeValue()));
+						_availableBuffs.put(buffId, new BuffSkillHolder(buffId, buffLevel, price, categoryType, desc));
+					}
 				}
 			}
 		}
@@ -60,15 +58,14 @@ public class SchemeBufferTable
 		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement st = con.prepareStatement(LOAD_SCHEMES);
-			ResultSet rs = st.executeQuery();
-			while (rs.next())
+			var schemes = ctx.BufferSchemes;
+			foreach (var scheme in schemes)
 			{
-				int objectId = rs.getInt("object_id");
-				String schemeName = rs.getString("scheme_name");
-				String[] skills = rs.getString("skills").split(",");
+				int objectId = scheme.ObjectId;
+				string schemeName = scheme.Name;
+				string[] skills = scheme.Skills.Split(",");
 				List<int> schemeList = new();
-				foreach (String skill in skills)
+				foreach (string skill in skills)
 				{
 					// Don't feed the skills list if the list is empty.
 					if (skill.isEmpty())
@@ -101,43 +98,27 @@ public class SchemeBufferTable
 		try
 		{
 			using GameServerDbContext ctx = new();
+			
 			// Delete all entries from database.
-
-			{
-				PreparedStatement st = con.prepareStatement(DELETE_SCHEMES);
-				st.execute();
-			}
+			ctx.BufferSchemes.ExecuteDelete();
 
 			// Save _schemesTable content.
-			try
+			foreach (var player in _schemesTable)
 			{
-				PreparedStatement st = con.prepareStatement(INSERT_SCHEME);
-				foreach (var player in _schemesTable)
+				foreach (var scheme in player.Value)
 				{
-					foreach (var scheme in player.Value)
+					// Build a String composed of skill ids seperated by a ",".
+					string skills = string.Join(",", scheme.Value); 
+					ctx.BufferSchemes.Add(new()
 					{
-						// Build a String composed of skill ids seperated by a ",".
-						StringBuilder sb = new StringBuilder();
-						foreach (int skillId in scheme.Value)
-						{
-							sb.Append(skillId + ",");
-						}
-
-						// Delete the last "," : must be called only if there is something to delete !
-						if (sb.Length > 0)
-						{
-							sb.Remove(sb.Length - 1, 1);
-						}
-
-						st.setInt(1, player.Key);
-						st.setString(2, scheme.Key);
-						st.setString(3, sb.ToString());
-						st.addBatch();
-					}
+						ObjectId = player.Key,
+						Name = scheme.Key,
+						Skills = skills
+					});
 				}
-
-				st.executeBatch();
 			}
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{

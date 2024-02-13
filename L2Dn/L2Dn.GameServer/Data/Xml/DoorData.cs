@@ -1,8 +1,11 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -29,50 +32,39 @@ public class DoorData
 	{
 		_doors.clear();
 		_groups.clear();
-		parseDatapackFile("data/DoorData.xml");
-	}
-	
-	public void parseDocument(Document doc, File f)
-	{
-		forEach(doc, "list", listNode => forEach(listNode, "door", doorNode => spawnDoor(parseDoor(doorNode))));
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/DoorData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Root?.Elements("door").ForEach(element => spawnDoor(parseDoor(element)));
 		LOGGER.Info(GetType().Name + ": Loaded " + _doors.size() + " doors.");
 	}
 	
-	public StatSet parseDoor(Node doorNode)
+	private StatSet parseDoor(XElement doorNode)
 	{
-		StatSet @params = new StatSet(parseAttributes(doorNode));
-		@params.set("baseHpMax", 1); // Avoid doors without HP value created dead due to default value 0 in CreatureTemplate
+		StatSet stat = new StatSet();
+		foreach (XAttribute attribute in doorNode.Attributes())
+			stat.set(attribute.Name.LocalName, attribute.Value);
 		
-		forEach(doorNode, IXmlReader::isNode, innerDoorNode =>
+		stat.set("baseHpMax", 1); // Avoid doors without HP value created dead due to default value 0 in CreatureTemplate
+
+		doorNode.Elements("nodes").ForEach(nodesEl =>
 		{
-			NamedNodeMap attrs = innerDoorNode.getAttributes();
-			if (innerDoorNode.getNodeName().equals("nodes"))
+			stat.set("nodeZ", nodesEl.Attribute("nodeZ").GetInt32());
+			
+			int count = 0;
+			nodesEl.Elements("node").ForEach(nodeEl =>
 			{
-				params.set("nodeZ", parseInteger(attrs, "nodeZ"));
-				
-				AtomicInteger count = new AtomicInteger();
-				forEach(innerDoorNode, IXmlReader::isNode, nodes =>
-				{
-					NamedNodeMap nodeAttrs = nodes.getAttributes();
-					if ("node".equals(nodes.getNodeName()))
-					{
-						@params.set("nodeX_" + count.get(), parseInteger(nodeAttrs, "x"));
-						@params.set("nodeY_" + count.getAndIncrement(), parseInteger(nodeAttrs, "y"));
-					}
-				});
-			}
-			else if (attrs != null)
-			{
-				for (int i = 0; i < attrs.getLength(); i++)
-				{
-					Node att = attrs.item(i);
-					@params.set(att.getNodeName(), att.getNodeValue());
-				}
-			}
+				stat.set("nodeX_" + count, nodeEl.Attribute("x").GetInt32());
+				stat.set("nodeY_" + count, nodeEl.Attribute("y").GetInt32());
+			});
 		});
+
+		doorNode.Elements().Where(el => el.Name.LocalName != "nodes").Attributes()
+			.ForEach(a => stat.set(a.Name.LocalName, a.Value));
 		
-		applyCollisions(@params);
-		return @params;
+		applyCollisions(stat);
+		return stat;
 	}
 	
 	/**
@@ -141,7 +133,7 @@ public class DoorData
 		// Register door's group
 		if (template.getGroupName() != null)
 		{
-			_groups.computeIfAbsent(door.getGroupName(), key => new HashSet<>()).add(door.getId());
+			_groups.computeIfAbsent(door.getGroupName(), key => new()).add(door.getId());
 		}
 		return door;
 	}

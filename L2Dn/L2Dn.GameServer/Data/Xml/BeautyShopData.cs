@@ -1,7 +1,10 @@
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.BeautyShop;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Data.Xml;
 
@@ -11,7 +14,6 @@ namespace L2Dn.GameServer.Data.Xml;
 public class BeautyShopData
 {
 	private readonly Map<Race, Map<Sex, BeautyData>> _beautyList = new();
-	private readonly Map<Sex, BeautyData> _beautyData = new();
 	
 	protected BeautyShopData()
 	{
@@ -22,92 +24,56 @@ public class BeautyShopData
 	public void load()
 	{
 		_beautyList.clear();
-		_beautyData.clear();
-		parseDatapackFile("data/BeautyShop.xml");
+
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/BeautyShop.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Root?.Elements("race").ForEach(loadElement);
 	}
 	
-	public void parseDocument(Document doc, File f)
+	private void loadElement(XElement element)
 	{
-		NamedNodeMap attrs;
-		StatSet set;
-		Node att;
-		Race race = null;
-		Sex sex = null;
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		Race race = element.Attribute("type").GetEnum<Race>();
+		Map<Sex, BeautyData> map = new(); 
+		element.Elements("sex").ForEach(el =>
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
+			Sex sex = el.Attribute("type").GetEnum<Sex>();
+			BeautyData beautyData = new BeautyData();
+			el.Elements("hair").ForEach(he =>
 			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+				int id = he.Attribute("id").GetInt32();
+				int adena = he.Attribute("adena").GetInt32(0);
+				int resetAdena = he.Attribute("reset_adena").GetInt32(0);
+				int beautyShopTicket = he.Attribute("beauty_shop_ticket").GetInt32(0);
+				BeautyItem hair = new BeautyItem(id, adena, resetAdena, beautyShopTicket);
+				
+				he.Elements("color").ForEach(ce =>
 				{
-					if ("race".equalsIgnoreCase(d.getNodeName()))
-					{
-						att = d.getAttributes().getNamedItem("type");
-						if (att != null)
-						{
-							race = parseEnum(att, Race.class);
-						}
+					int colorId = ce.Attribute("id").GetInt32();
+					int colorAdena = ce.Attribute("adena").GetInt32(0);
+					int colorResetAdena = ce.Attribute("reset_adena").GetInt32(0);
+					int colorBeautyShopTicket = ce.Attribute("beauty_shop_ticket").GetInt32(0);
+					BeautyItem color = new BeautyItem(colorId, colorAdena, colorResetAdena, colorBeautyShopTicket);
+					hair.addColor(color);
+				});
+				
+				beautyData.addHair(hair);
+			});
+			
+			el.Elements("face").ForEach(fe =>
+			{
+				int id = fe.Attribute("id").GetInt32();
+				int adena = fe.Attribute("adena").GetInt32(0);
+				int resetAdena = fe.Attribute("reset_adena").GetInt32(0);
+				int beautyShopTicket = fe.Attribute("beauty_shop_ticket").GetInt32(0);
+				BeautyItem face = new BeautyItem(id, adena, resetAdena, beautyShopTicket);
+				beautyData.addFace(face);
+			});
+
+			map.put(sex, beautyData);
+		});
 						
-						for (Node b = d.getFirstChild(); b != null; b = b.getNextSibling())
-						{
-							if ("sex".equalsIgnoreCase(b.getNodeName()))
-							{
-								att = b.getAttributes().getNamedItem("type");
-								if (att != null)
-								{
-									sex = parseEnum(att, Sex.class);
-								}
-								
-								BeautyData beautyData = new BeautyData();
-								for (Node a = b.getFirstChild(); a != null; a = a.getNextSibling())
-								{
-									if ("hair".equalsIgnoreCase(a.getNodeName()))
-									{
-										attrs = a.getAttributes();
-										set = new StatSet();
-										for (int i = 0; i < attrs.getLength(); i++)
-										{
-											att = attrs.item(i);
-											set.set(att.getNodeName(), att.getNodeValue());
-										}
-										BeautyItem hair = new BeautyItem(set);
-										for (Node g = a.getFirstChild(); g != null; g = g.getNextSibling())
-										{
-											if ("color".equalsIgnoreCase(g.getNodeName()))
-											{
-												attrs = g.getAttributes();
-												set = new StatSet();
-												for (int i = 0; i < attrs.getLength(); i++)
-												{
-													att = attrs.item(i);
-													set.set(att.getNodeName(), att.getNodeValue());
-												}
-												hair.addColor(set);
-											}
-										}
-										beautyData.addHair(hair);
-									}
-									else if ("face".equalsIgnoreCase(a.getNodeName()))
-									{
-										attrs = a.getAttributes();
-										set = new StatSet();
-										for (int i = 0; i < attrs.getLength(); i++)
-										{
-											att = attrs.item(i);
-											set.set(att.getNodeName(), att.getNodeValue());
-										}
-										BeautyItem face = new BeautyItem(set);
-										beautyData.addFace(face);
-									}
-								}
-								
-								_beautyData.put(sex, beautyData);
-							}
-						}
-						_beautyList.put(race, _beautyData);
-					}
-				}
-			}
-		}
+		_beautyList.put(race, map);
 	}
 	
 	public bool hasBeautyData(Race race, Sex sex)

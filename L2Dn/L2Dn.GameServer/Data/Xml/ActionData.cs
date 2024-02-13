@@ -1,5 +1,8 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -23,7 +26,19 @@ public class ActionData
 	{
 		_actionData.clear();
 		_actionSkillsData.clear();
-		parseDatapackFile("data/ActionData.xml");
+
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/ActionData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Root?.Elements("action").ForEach(node =>
+		{
+			int id = node.Attribute("id").GetInt32();
+			string handler = node.Attribute("handler").GetString("None");
+			int optionId = node.Attribute("optionId").GetInt32(0);
+			
+			ActionDataHolder holder = new ActionDataHolder(id, handler, optionId);
+			_actionData.put(holder.getId(), holder);
+		});
 		
 		foreach (ActionDataHolder holder in _actionData.values())
 		{
@@ -34,15 +49,6 @@ public class ActionData
 		}
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _actionData.size() + " player actions.");
-	}
-	
-	public void parseDocument(Document doc, File f)
-	{
-		forEach(doc, "list", listNode => forEach(listNode, "action", actionNode =>
-		{
-			ActionDataHolder holder = new ActionDataHolder(new StatSet(parseAttributes(actionNode)));
-			_actionData.put(holder.getId(), holder);
-		}));
 	}
 	
 	/**

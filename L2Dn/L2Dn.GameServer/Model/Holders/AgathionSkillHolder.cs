@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Holders;
@@ -30,7 +31,7 @@ public class AgathionSkillHolder
 	{
 		if (!_mainSkill.containsKey(enchantLevel))
 		{
-			return Collections.emptyList();
+			return new();
 		}
 
 		return _mainSkill.get(enchantLevel);
@@ -40,7 +41,7 @@ public class AgathionSkillHolder
 	{
 		if (!_subSkill.containsKey(enchantLevel))
 		{
-			return Collections.emptyList();
+			return new();
 		}
 
 		return _subSkill.get(enchantLevel);

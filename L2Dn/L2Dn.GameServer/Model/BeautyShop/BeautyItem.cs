@@ -10,12 +10,12 @@ public class BeautyItem
     private readonly int _beautyShopTicket;
     private readonly Map<int, BeautyItem> _colors = new();
 	
-    public BeautyItem(StatSet set)
+    public BeautyItem(int id, int adena, int resetAdena, int beautyShopTicket)
     {
-        _id = set.getInt("id");
-        _adena = set.getInt("adena", 0);
-        _resetAdena = set.getInt("reset_adena", 0);
-        _beautyShopTicket = set.getInt("beauty_shop_ticket", 0);
+        _id = id;
+        _adena = adena;
+        _resetAdena = resetAdena;
+        _beautyShopTicket = beautyShopTicket;
     }
 	
     public int getId()
@@ -38,10 +38,9 @@ public class BeautyItem
         return _beautyShopTicket;
     }
 	
-    public void addColor(StatSet set)
+    public void addColor(BeautyItem color)
     {
-        BeautyItem color = new BeautyItem(set);
-        _colors.put(set.getInt("id"), color);
+        _colors.put(color.getId(), color);
     }
 	
     public Map<int, BeautyItem> getColors()

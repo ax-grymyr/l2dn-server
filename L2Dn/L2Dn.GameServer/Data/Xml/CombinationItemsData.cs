@@ -1,6 +1,9 @@
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Items.Combination;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -22,31 +25,35 @@ public class CombinationItemsData
 	public void load()
 	{
 		_items.Clear();
-		parseDatapackFile("data/CombinationItems.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/CombinationItems.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Root?.Elements("item").ForEach(loadElement);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _items.size() + " combinations.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void loadElement(XElement element)
 	{
-		forEach(doc, "list", listNode => forEach(listNode, "item", itemNode =>
+		CombinationItem item = new CombinationItem(element);
+
+		element.Elements("reward").ForEach(el =>
 		{
-			CombinationItem item = new CombinationItem(new StatSet(parseAttributes(itemNode)));
-			forEach(itemNode, "reward", rewardNode =>
+			int id = el.Attribute("id").GetInt32();
+			int count = el.Attribute("count").GetInt32(1);
+			int enchant = el.Attribute("enchant").GetInt32(0);
+			CombinationItemType type = el.Attribute("type").GetEnum<CombinationItemType>();
+			item.addReward(new CombinationItemReward(id, count, type, enchant));
+			if (ItemData.getInstance().getTemplate(id) == null)
 			{
-				int id = parseInteger(rewardNode.getAttributes(), "id");
-				int count = parseInteger(rewardNode.getAttributes(), "count", 1);
-				int enchant = parseInteger(rewardNode.getAttributes(), "enchant", 0);
-				CombinationItemType type = parseEnum(rewardNode.getAttributes(), CombinationItemType.class, "type");
-				item.addReward(new CombinationItemReward(id, count, type, enchant));
-				if (ItemData.getInstance().getTemplate(id) == null)
-				{
-					LOGGER.Info(GetType().Name + ": Could not find item with id " + id);
-				}
-			});
-			_items.add(item);
-		}));
+				LOGGER.Error(GetType().Name + ": Could not find item with id " + id);
+			}
+		});
+
+		_items.add(item);
 	}
-	
+
 	public int getLoadedElementsCount()
 	{
 		return _items.size();
