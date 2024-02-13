@@ -8,7 +8,7 @@ internal sealed class AuthPacketEncoderFactory: IPacketEncoderFactory<AuthSessio
 {
     private readonly OldBlowfishEngine _staticBlowfishEngine = new(StaticBlowfishKeys.P447());
 
-    public IPacketEncoder Create(AuthSession session) => new AuthPacketEncoder(session.BlowfishEngine);
+    public PacketEncoder Create(AuthSession session) => new AuthPacketEncoder(session.BlowfishEngine);
 
     // public IPacketEncoder Create(AuthSession session) =>
     //     new NewAuthPacketEncoder(_staticBlowfishEngine, session.BlowfishEngine);

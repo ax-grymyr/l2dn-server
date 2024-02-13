@@ -16,7 +16,7 @@ internal struct RequestPIAgreementCheckPacket: IIncomingPacket<AuthSession>
         // 12 bytes - padding1
     }
 
-    public ValueTask ProcessAsync(Connection<AuthSession> connection)
+    public ValueTask ProcessAsync(Connection connection, AuthSession session)
     {
         const bool showAgreement = false;
         PIAgreementCheckPacket piAgreementCheckPacket = new(_accountId, showAgreement);

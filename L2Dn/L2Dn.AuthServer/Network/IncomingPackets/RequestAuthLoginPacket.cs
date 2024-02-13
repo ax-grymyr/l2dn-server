@@ -22,7 +22,7 @@ internal struct RequestAuthLoginPacket: IIncomingPacket<AuthSession>
             _raw = reader.ReadBytes(128).ToArray();
     }
 
-    public async ValueTask ProcessAsync(Connection<AuthSession> connection)
+    public async ValueTask ProcessAsync(Connection connection, AuthSession session)
     {
         if (_raw is null)
         {
@@ -31,8 +31,6 @@ internal struct RequestAuthLoginPacket: IIncomingPacket<AuthSession>
             return;
         }
         
-        AuthSession session = connection.Session;
-
         (string username, string password) = DecryptUsernameAndPassword(session.RsaKeyPair, _raw);
         if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
         {

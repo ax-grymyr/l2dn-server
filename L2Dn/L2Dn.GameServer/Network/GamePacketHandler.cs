@@ -5,25 +5,12 @@ using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network;
 
-internal sealed class GamePacketHandler: PacketHandler<GameSession, GameSessionState>
+internal sealed class GamePacketHandler: PacketHandler<GameSession>
 {
     public GamePacketHandler()
     {
-        // C4
-        // RegisterPacket<ProtocolVersionPacket>(0x00, GameSessionState.ProtocolVersion);
-        // RegisterPacket<RequestMovePacket>(0x01, GameSessionState.InGame);
-        // RegisterPacket<EnterWorldPacket>(0x03, GameSessionState.EnteringGame);
-        // RegisterPacket<AuthLoginPacket>(0x08, GameSessionState.Authorization);
-        // RegisterPacket<RequestLogoutPacket>(0x09, GameSessionState.InGame);
-        // RegisterPacket<RequestCharacterSelectPacket>(0x0D, GameSessionState.CharacterScreen);
-        // RegisterPacket<RequestRestartPacket>(0x46, GameSessionState.InGame);
-        // RegisterPacket<RequestPositionPacket>(0x48, GameSessionState.InGame);
-        // RegisterPacket<RequestQuestListPacket>(0x63, GameSessionState.EnteringGame | GameSessionState.InGame);
-        // RegisterPacket<RequestShowMiniMapPacket>(0xCD, GameSessionState.InGame);
-        //
-        // RegisterExPacket<RequestManorListPacket>(0xD0, 0x08, GameSessionState.EnteringGame | GameSessionState.InGame);
-
-        // P447
+        SetDefaultAllowedStates(GameSessionState.InGame);
+        
         RegisterPacket<RequestLogoutPacket>(0x00, GameSessionState.InGame | GameSessionState.CharacterScreen);
         RegisterPacket<RequestCharacterCreatePacket>(0x0C, GameSessionState.CharacterScreen);
         RegisterPacket<RequestCharacterDeletePacket>(0x0D, GameSessionState.CharacterScreen);
@@ -47,22 +34,9 @@ internal sealed class GamePacketHandler: PacketHandler<GameSession, GameSessionS
             GameSessionState.Authorization | GameSessionState.CharacterScreen);
     }
 
-    public override ValueTask OnConnectedAsync(Connection<GameSession> connection)
+    protected override bool OnPacketInvalidState(Connection connection, GameSession session)
     {
-        connection.Session.Connection = connection;
-        return base.OnConnectedAsync(connection);
-    }
-
-    public override ValueTask OnDisconnectedAsync(Connection<GameSession> connection)
-    {
-        connection.Session.Connection = null;
-        Disconnection
-        return base.OnDisconnectedAsync(connection);
-    }
-
-    public override bool OnPacketInvalidState(Connection<GameSession> connection)
-    {
-        GameSessionState currentState = connection.Session.State;
+        GameSessionState currentState = session.State;
         if (currentState != GameSessionState.InGame)
         {
             AuthLoginFailedPacket authLoginFailedPacket = new(0, AuthFailedReason.AccessFailedTryLater);

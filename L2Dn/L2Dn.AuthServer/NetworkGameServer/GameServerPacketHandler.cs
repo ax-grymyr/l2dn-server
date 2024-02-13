@@ -5,7 +5,7 @@ using L2Dn.Packets;
 
 namespace L2Dn.AuthServer.NetworkGameServer;
 
-internal sealed class GameServerPacketHandler: PacketHandler<GameServerSession, GameServerSessionState>
+internal sealed class GameServerPacketHandler: PacketHandler<GameServerSession>
 {
     public GameServerPacketHandler()
     {
@@ -13,15 +13,13 @@ internal sealed class GameServerPacketHandler: PacketHandler<GameServerSession, 
         RegisterPacket<PingRequestPacket>(IncomingPacketCodes.PingRequest);
     }
 
-    public override ValueTask OnDisconnectedAsync(Connection<GameServerSession> connection)
+    protected override void OnDisconnected(Connection connection, GameServerSession session)
     {
-        GameServerInfo? serverInfo = connection.Session.ServerInfo;
+        GameServerInfo? serverInfo = session.ServerInfo;
         if (serverInfo is not null)
         {
             serverInfo.Connection = null;
             serverInfo.IsOnline = false;
         }
-        
-        return base.OnDisconnectedAsync(connection);
     }
 }

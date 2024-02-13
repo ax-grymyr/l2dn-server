@@ -196,14 +196,14 @@ internal class AntiFeedManager
 	 * Remove player connection IP address from all registered events lists.
 	 * @param client
 	 */
-	public void onDisconnect(Connection<GameSession>? client)
+	public void onDisconnect(GameSession? client)
 	{
 		if (client == null)
 		{
 			return;
 		}
 		
-		Player player = client.getPlayer();
+		Player? player = client.Player;
 		if (player == null)
 		{
 			return;

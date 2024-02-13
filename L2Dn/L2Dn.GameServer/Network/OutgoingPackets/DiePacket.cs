@@ -110,7 +110,7 @@ public readonly struct DiePacket: IOutgoingPacket
 			else
 			{
 				writer.WriteInt32(0);
-				getValues(_player, originalValue);
+				getValues(writer, originalValue);
 			}
 		}
 		else
@@ -125,7 +125,7 @@ public readonly struct DiePacket: IOutgoingPacket
 		writer.WriteInt32(0);
 	}
 	
-	private void getValues(Player player, int originalValue)
+	private void getValues(PacketBitWriter writer, int originalValue)
 	{
 		if ((Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES == null) || (Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES == null))
 		{
@@ -147,7 +147,7 @@ public readonly struct DiePacket: IOutgoingPacket
 				break;
 			}
 			
-			if ((player.getLevel() >= level) && (levelListSecond.lastIndexOf(level) != (levelListSecond.size() - 1)))
+			if ((_player.getLevel() >= level) && (levelListSecond.LastIndexOf(level) != (levelListSecond.Count - 1)))
 			{
 				continue;
 			}
@@ -155,7 +155,7 @@ public readonly struct DiePacket: IOutgoingPacket
 			int maxResTime;
 			try
 			{
-				maxResTime = Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES.get(level).keySet().stream().max(Integer::compareTo).get();
+				maxResTime = Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES[level].Keys.Max();
 			}
 			catch (Exception e)
 			{
@@ -165,9 +165,9 @@ public readonly struct DiePacket: IOutgoingPacket
 			}
 			
 			int getValue = maxResTime <= originalValue ? maxResTime : originalValue + 1;
-			ResurrectByPaymentHolder rbph = Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES.get(level).get(getValue);
-			writer.WriteInt32((int) (rbph.getAmount() * player.getStat().getValue(Stat.RESURRECTION_FEE_MODIFIER, 1))); // Adena resurrection
-			writer.WriteInt32(Math.toIntExact(Math.round(rbph.getResurrectPercent()))); // Adena count%
+			ResurrectByPaymentHolder rbph = Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES[level][getValue];
+			writer.WriteInt32((int) (rbph.getAmount() * _player.getStat().getValue(Stat.RESURRECTION_FEE_MODIFIER, 1))); // Adena resurrection
+			writer.WriteInt32((int)rbph.getResurrectPercent()); // Adena count%
 			break;
 		}
 		
@@ -180,7 +180,7 @@ public readonly struct DiePacket: IOutgoingPacket
 				break;
 			}
 			
-			if ((player.getLevel() >= level) && (levelListFirst.lastIndexOf(level) != (levelListFirst.size() - 1)))
+			if ((_player.getLevel() >= level) && (levelListFirst.LastIndexOf(level) != (levelListFirst.Count - 1)))
 			{
 				continue;
 			}
@@ -188,7 +188,7 @@ public readonly struct DiePacket: IOutgoingPacket
 			int maxResTime;
 			try
 			{
-				maxResTime = Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES.get(level).keySet().stream().max(Integer::compareTo).get();
+				maxResTime = Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES[level].Keys.Max();
 			}
 			catch (Exception e)
 			{
@@ -198,9 +198,9 @@ public readonly struct DiePacket: IOutgoingPacket
 			}
 			
 			int getValue = maxResTime <= originalValue ? maxResTime : originalValue + 1;
-			ResurrectByPaymentHolder rbph = Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES.get(level).get(getValue);
-			writer.WriteInt32((int) (rbph.getAmount() * player.getStat().getValue(Stat.RESURRECTION_FEE_MODIFIER, 1))); // L-Coin resurrection
-			writer.WriteInt32(Math.toIntExact(Math.round(rbph.getResurrectPercent()))); // L-Coin count%
+			ResurrectByPaymentHolder rbph = Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES[level][getValue];
+			writer.WriteInt32((int) (rbph.getAmount() * _player.getStat().getValue(Stat.RESURRECTION_FEE_MODIFIER, 1))); // L-Coin resurrection
+			writer.WriteInt32((int)rbph.getResurrectPercent()); // L-Coin count%
 			break;
 		}
 	}

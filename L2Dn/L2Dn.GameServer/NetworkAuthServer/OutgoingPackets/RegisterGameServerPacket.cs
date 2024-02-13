@@ -36,11 +36,11 @@ internal readonly struct RegisterGameServerPacket: IOutgoingPacket
         writer.WriteInt32(ipAddress);
         writer.WriteUInt16((ushort)config.ClientListener.Port);
         writer.WriteByte(serverParams.AgeLimit);
-        writer.WriteBoolean(serverParams.IsPvpServer);
+        writer.WriteByte(serverParams.IsPvpServer);
         writer.WriteUInt16(0); // todo: playerCount
         writer.WriteUInt16((ushort)serverParams.MaxPlayerCount);
-        writer.WriteEnum(attributes);
-        writer.WriteBoolean(serverParams.Brackets);
+        writer.WriteInt32((int)attributes);
+        writer.WriteByte(serverParams.Brackets);
     }
 
     [Flags]

@@ -1,7 +1,7 @@
 ﻿namespace L2Dn.GameServer.Network;
 
 [Flags]
-internal enum GameSessionState
+public enum GameSessionState
 {
     ProtocolVersion = 1,
     Authorization = 2,

@@ -138,7 +138,7 @@ public class Player: Playable
 	
 	private int _pcCafePoints = 0;
 	
-	private Connection<GameSession>? _client;
+	private GameSession? _client;
 	private String _ip = "N/A";
 	
 	private readonly String _accountName;
@@ -3790,12 +3790,12 @@ public class Player: Playable
 	/**
 	 * @return the client owner of this char.
 	 */
-	public Connection<GameSession>? getClient()
+	public GameSession? getClient()
 	{
 		return _client;
 	}
 	
-	public void setClient(Connection<GameSession>? client)
+	public void setClient(GameSession? client)
 	{
 		_client = client;
 		if ((_client != null) && (_client.getIp() != null))

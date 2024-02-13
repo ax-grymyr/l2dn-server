@@ -13,7 +13,7 @@ internal struct PingRequestPacket: IIncomingPacket<GameServerSession>
         _value = reader.ReadInt32();
     }
 
-    public ValueTask ProcessAsync(Connection<GameServerSession> connection)
+    public ValueTask ProcessAsync(Connection connection, GameServerSession session)
     {
         PingResponsePacket pingResponsePacket = new(_value);
         connection.Send(ref pingResponsePacket);

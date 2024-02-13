@@ -9,7 +9,7 @@ internal sealed class AuthSession(
     RsaKeyPair rsaKeyPair,
     ReadOnlyMemory<byte> blowfishKey,
     BlowfishEngine blowfishEngine)
-    : Session, ISession<AuthSessionState>
+    : Session
 {
     public AuthSessionState State { get; set; } = AuthSessionState.Authorization;
     public ReadOnlyMemory<byte> BlowfishKey => blowfishKey;
@@ -21,4 +21,6 @@ internal sealed class AuthSession(
     public int PlayKey2 { get; } = RandomGenerator.GetInt32();
 
     public AccountInfo? AccountInfo { get; set; }
+    
+    protected override long GetState() => (long)State;
 }

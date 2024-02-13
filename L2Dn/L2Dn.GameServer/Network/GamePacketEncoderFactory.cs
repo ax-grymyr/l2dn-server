@@ -19,6 +19,6 @@ internal sealed class GamePacketEncoderFactory: IPacketEncoderFactory<GameSessio
         0xC8, 0x27, 0x93, 0x01, 0xA1, 0x6C, 0x31, 0x97 // constant part
     };
 
-    public IPacketEncoder Create(GameSession session) =>
+    public PacketEncoder Create(GameSession session) =>
         ServerConfig.Instance.ClientListener.Encryption ? new C4GamePacketEncoder(_cryptKey) : new NullPacketEncoder();
 }

@@ -3,7 +3,7 @@ using L2Dn.Cryptography;
 
 namespace L2Dn.AuthServer.Cryptography;
 
-internal sealed class NewAuthPacketEncoder: IPacketEncoder
+internal sealed class NewAuthPacketEncoder: PacketEncoder
 {
     private readonly ICryptoEngine _staticEngine;
     private readonly ICryptoEngine _engine;
@@ -20,7 +20,7 @@ internal sealed class NewAuthPacketEncoder: IPacketEncoder
         _engine = engine;
     }
 
-    public bool Decode(Span<byte> packet)
+    public override bool Decode(Span<byte> packet)
     {
         if (!_staticKey)
             return true;
@@ -32,7 +32,7 @@ internal sealed class NewAuthPacketEncoder: IPacketEncoder
         return VerifyChecksum(packet);
     }
 
-    public int GetRequiredLength(int length)
+    public override int GetRequiredLength(int length)
     {
         int newLength = length + 4; // reserve checksum
 
@@ -47,7 +47,7 @@ internal sealed class NewAuthPacketEncoder: IPacketEncoder
         return newLength;
     }
 
-    public int Encode(Span<byte> buffer, int packetLength)
+    public override int Encode(Span<byte> buffer, int packetLength)
     {
         int newLength = GetRequiredLength(packetLength);
         Span<byte> packet = buffer[..newLength];

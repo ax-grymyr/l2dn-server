@@ -5,29 +5,38 @@ using L2Dn.Packets;
 
 namespace L2Dn.AuthServer.Network;
 
-internal sealed class AuthPacketHandler: PacketHandler<AuthSession, AuthSessionState>
+internal sealed class AuthPacketHandler: PacketHandler<AuthSession>
 {
     public AuthPacketHandler()
     {
-        RegisterPacket<RequestAuthLoginPacket>(IncomingPacketCodes.RequestAuthLogin, AuthSessionState.Authorization);
-        RegisterPacket<RequestServerLoginPacket>(IncomingPacketCodes.RequestServerLogin, AuthSessionState.GameServerLogin);
-        RegisterPacket<RequestServerListPacket>(IncomingPacketCodes.RequestServerList, AuthSessionState.GameServerLogin);
-        RegisterPacket<RequestGGAuthPacket>(IncomingPacketCodes.RequestGGAuth, AuthSessionState.Authorization);
-        RegisterPacket<RequestPIAgreementCheckPacket>(IncomingPacketCodes.RequestPIAgreementCheck, AuthSessionState.GameServerLogin);
-        RegisterPacket<RequestPIAgreementPacket>(IncomingPacketCodes.RequestPIAgreement, AuthSessionState.GameServerLogin);
-    }
-    
-    public override ValueTask OnConnectedAsync(Connection<AuthSession> connection)
-    {
-        AuthSession session = connection.Session;
-        InitPacket initPacket = new(session.Id, session.RsaKeyPair.ScrambledModulus, session.BlowfishKey);
-        connection.Send(ref initPacket, SendPacketOptions.DontEncrypt | SendPacketOptions.NoPadding);
-        return ValueTask.CompletedTask;
+        RegisterPacket<RequestAuthLoginPacket>(IncomingPacketCodes.RequestAuthLogin)
+            .WithAllowedStates(AuthSessionState.Authorization);
+        
+        RegisterPacket<RequestServerLoginPacket>(IncomingPacketCodes.RequestServerLogin)
+            .WithAllowedStates(AuthSessionState.GameServerLogin);
+        
+        RegisterPacket<RequestServerListPacket>(IncomingPacketCodes.RequestServerList)
+            .WithAllowedStates(AuthSessionState.GameServerLogin);
+        
+        RegisterPacket<RequestGGAuthPacket>(IncomingPacketCodes.RequestGGAuth)
+            .WithAllowedStates(AuthSessionState.Authorization);
+        
+        RegisterPacket<RequestPIAgreementCheckPacket>(IncomingPacketCodes.RequestPIAgreementCheck)
+            .WithAllowedStates(AuthSessionState.GameServerLogin);
+        
+        RegisterPacket<RequestPIAgreementPacket>(IncomingPacketCodes.RequestPIAgreement)
+            .WithAllowedStates(AuthSessionState.GameServerLogin);
     }
 
-    public override bool OnPacketInvalidState(Connection<AuthSession> connection)
+    protected override void OnConnected(Connection connection, AuthSession session)
     {
-        switch (connection.Session.State)
+        InitPacket initPacket = new(session.Id, session.RsaKeyPair.ScrambledModulus, session.BlowfishKey);
+        connection.Send(ref initPacket, SendPacketOptions.DontEncrypt | SendPacketOptions.NoPadding);
+    }
+
+    protected override bool OnPacketInvalidState(Connection connection, AuthSession session)
+    {
+        switch (session.State)
         {
             case AuthSessionState.Authorization:
                 LoginFailPacket loginFailPacket = new(LoginFailReason.AccessDenied);

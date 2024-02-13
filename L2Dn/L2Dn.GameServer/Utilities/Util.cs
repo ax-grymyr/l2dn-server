@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
 using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using NLog;
 using Org.BouncyCastle.Utilities;
 
@@ -497,32 +498,32 @@ public class Util
 		
 		if (fillMultiEdit != null)
 		{
-			player.sendPacket(new ShowBoard(html, "1001"));
+			player.sendPacket(new ShowBoardPacket(html, "1001"));
 			fillMultiEditContent(player, fillMultiEdit);
 		}
 		else if (html.Length < 16250)
 		{
-			player.sendPacket(new ShowBoard(html, "101"));
-			player.sendPacket(new ShowBoard(null, "102"));
-			player.sendPacket(new ShowBoard(null, "103"));
+			player.sendPacket(new ShowBoardPacket(html, "101"));
+			player.sendPacket(new ShowBoardPacket(null, "102"));
+			player.sendPacket(new ShowBoardPacket(null, "103"));
 		}
 		else if (html.Length < (16250 * 2))
 		{
-			player.sendPacket(new ShowBoard(html.Substring(0, 16250), "101"));
-			player.sendPacket(new ShowBoard(html.Substring(16250), "102"));
-			player.sendPacket(new ShowBoard(null, "103"));
+			player.sendPacket(new ShowBoardPacket(html.Substring(0, 16250), "101"));
+			player.sendPacket(new ShowBoardPacket(html.Substring(16250), "102"));
+			player.sendPacket(new ShowBoardPacket(null, "103"));
 		}
 		else if (html.Length < (16250 * 3))
 		{
-			player.sendPacket(new ShowBoard(html.Substring(0, 16250), "101"));
-			player.sendPacket(new ShowBoard(html.Substring(16250, 16250 * 2), "102"));
-			player.sendPacket(new ShowBoard(html.Substring(16250 * 2), "103"));
+			player.sendPacket(new ShowBoardPacket(html.Substring(0, 16250), "101"));
+			player.sendPacket(new ShowBoardPacket(html.Substring(16250, 16250 * 2), "102"));
+			player.sendPacket(new ShowBoardPacket(html.Substring(16250 * 2), "103"));
 		}
 		else
 		{
-			player.sendPacket(new ShowBoard("<html><body><br><center>Error: HTML was too long!</center></body></html>", "101"));
-			player.sendPacket(new ShowBoard(null, "102"));
-			player.sendPacket(new ShowBoard(null, "103"));
+			player.sendPacket(new ShowBoardPacket("<html><body><br><center>Error: HTML was too long!</center></body></html>", "101"));
+			player.sendPacket(new ShowBoardPacket(null, "102"));
+			player.sendPacket(new ShowBoardPacket(null, "103"));
 		}
 	}
 	
@@ -533,7 +534,7 @@ public class Util
 	 */
 	public static void fillMultiEditContent(Player player, String text)
 	{
-		player.sendPacket(new ShowBoard(Arrays.asList("0", "0", "0", "0", "0", "0", player.getName(),
+		player.sendPacket(new ShowBoardPacket(Arrays.asList("0", "0", "0", "0", "0", "0", player.getName(),
 			player.getObjectId().ToString(), player.getAccountName(), "9", " ", " ",
 			text.Replace("<br>", Environment.NewLine), "0", "0", "0", "0")));
 	}

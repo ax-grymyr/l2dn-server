@@ -12,7 +12,7 @@ internal struct PingResponsePacket: IIncomingPacket<AuthServerSession>
         _value = reader.ReadInt32();
     }
 
-    public ValueTask ProcessAsync(Connection<AuthServerSession> connection)
+    public ValueTask ProcessAsync(Connection connection, AuthServerSession session)
     {
         throw new NotImplementedException();
     }

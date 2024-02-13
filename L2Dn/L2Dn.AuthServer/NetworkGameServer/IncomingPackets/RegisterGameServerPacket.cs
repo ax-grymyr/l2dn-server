@@ -33,7 +33,7 @@ internal struct RegisterGameServerPacket: IIncomingPacket<GameServerSession>
         _brackets = reader.ReadBoolean();
     }
 
-    public ValueTask ProcessAsync(Connection<GameServerSession> connection)
+    public ValueTask ProcessAsync(Connection connection, GameServerSession session)
     {
         RegistrationResult result = GameServerManager.Instance.RegisterServer(new GameServerInfo
         {
@@ -50,7 +50,7 @@ internal struct RegisterGameServerPacket: IIncomingPacket<GameServerSession>
         });
 
         GameServerInfo? serverInfo = GameServerManager.Instance.GetServerInfo(_serverId);
-        connection.Session.ServerInfo = serverInfo;
+        session.ServerInfo = serverInfo;
         if (serverInfo is not null)
             serverInfo.Connection = connection;
         

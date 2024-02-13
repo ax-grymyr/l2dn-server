@@ -19,7 +19,7 @@ public class GeoUtils
 		int tgy = GeoEngine.getInstance().getGeoY(ty);
 
 		ExServerPrimitivePacket prim = new ExServerPrimitivePacket("Debug2DLine", x, y, z);
-		prim.addLine(Color.BLUE, GeoEngine.getInstance().getWorldX(gx), GeoEngine.getInstance().getWorldY(gy), z,
+		prim.addLine(Colors.BLUE, GeoEngine.getInstance().getWorldX(gx), GeoEngine.getInstance().getWorldY(gy), z,
 			GeoEngine.getInstance().getWorldX(tgx), GeoEngine.getInstance().getWorldY(tgy), z);
 
 		LinePointIterator iter = new LinePointIterator(gx, gy, tgx, tgy);
@@ -29,7 +29,7 @@ public class GeoUtils
 			int wx = GeoEngine.getInstance().getWorldX(iter.x());
 			int wy = GeoEngine.getInstance().getWorldY(iter.y());
 
-			prim.addPoint(Color.RED, wx, wy, z);
+			prim.addPoint(Colors.RED, wx, wy, z);
 		}
 
 		player.sendPacket(prim);
@@ -44,7 +44,7 @@ public class GeoUtils
 		int tgy = GeoEngine.getInstance().getGeoY(ty);
 
 		ExServerPrimitivePacket prim = new ExServerPrimitivePacket("Debug3DLine", x, y, z);
-		prim.addLine(Color.BLUE, GeoEngine.getInstance().getWorldX(gx), GeoEngine.getInstance().getWorldY(gy), z,
+		prim.addLine(Colors.BLUE, GeoEngine.getInstance().getWorldX(gx), GeoEngine.getInstance().getWorldY(gy), z,
 			GeoEngine.getInstance().getWorldX(tgx), GeoEngine.getInstance().getWorldY(tgy), tz);
 
 		LinePointIterator3D iter = new LinePointIterator3D(gx, gy, z, tgx, tgy, tz);
@@ -54,7 +54,7 @@ public class GeoUtils
 		int wx = GeoEngine.getInstance().getWorldX(prevX);
 		int wy = GeoEngine.getInstance().getWorldY(prevY);
 		int wz = iter.z();
-		prim.addPoint(Color.RED, wx, wy, wz);
+		prim.addPoint(Colors.RED, wx, wy, wz);
 
 		while (iter.next())
 		{
@@ -67,7 +67,7 @@ public class GeoUtils
 				wy = GeoEngine.getInstance().getWorldY(curY);
 				wz = iter.z();
 
-				prim.addPoint(Color.RED, wx, wy, wz);
+				prim.addPoint(Colors.RED, wx, wy, wz);
 
 				prevX = curX;
 				prevY = curY;
@@ -81,10 +81,10 @@ public class GeoUtils
 	{
 		if (GeoEngine.getInstance().checkNearestNswe(x, y, z, nswe))
 		{
-			return Color.GREEN;
+			return Colors.GREEN;
 		}
 
-		return Color.RED;
+		return Colors.RED;
 	}
 
 	public static void debugGrid(Player player)

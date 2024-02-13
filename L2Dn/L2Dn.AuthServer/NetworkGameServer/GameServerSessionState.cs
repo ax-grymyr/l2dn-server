@@ -4,4 +4,5 @@
 internal enum GameServerSessionState
 {
     None = 0,
+    Default = 1
 }

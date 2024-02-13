@@ -2,9 +2,9 @@
 
 namespace L2Dn.GameServer.Cryptography;
 
-internal sealed class NullPacketEncoder: IPacketEncoder
+internal sealed class NullPacketEncoder: PacketEncoder
 {
-    public int GetRequiredLength(int length) => length;
-    public int Encode(Span<byte> buffer, int packetLength) => packetLength;
-    public bool Decode(Span<byte> packet) => true;
+    public override int GetRequiredLength(int length) => length;
+    public override int Encode(Span<byte> buffer, int packetLength) => packetLength;
+    public override bool Decode(Span<byte> packet) => true;
 }

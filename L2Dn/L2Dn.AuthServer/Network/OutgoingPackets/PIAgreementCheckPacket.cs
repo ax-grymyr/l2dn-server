@@ -8,6 +8,6 @@ internal readonly struct PIAgreementCheckPacket(int accountId, bool showAgreemen
     {
         writer.WritePacketCode(OutgoingPacketCodes.PIAgreementCheck);
         writer.WriteInt32(accountId);
-        writer.WriteBoolean(showAgreement);
+        writer.WriteByte(showAgreement);
     }
 }

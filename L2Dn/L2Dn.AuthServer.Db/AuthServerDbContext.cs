@@ -34,7 +34,7 @@ public class AuthServerDbContext: DbContext
             if (databaseConfig.Trace)
             {
                 optionsBuilder.LogTo((_, _) => true,
-                    data => { _logger.Log(NLog.LogLevel.FromOrdinal((int)data.LogLevel), data.ToString()); });
+                    data => { _logger.Log(LogLevel.FromOrdinal((int)data.LogLevel), data.ToString()); });
             }
         }        
     }

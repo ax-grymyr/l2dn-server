@@ -29,13 +29,13 @@ internal readonly struct ServerListPacket(ImmutableSortedSet<GameServerInfo> ser
             writer.WriteInt32(serverInfo.Address);
             writer.WriteInt32(serverInfo.Port);
             writer.WriteByte(serverInfo.AgeLimit); // age limit: 0, 15, 18
-            writer.WriteBoolean(serverInfo.IsPvpServer);
+            writer.WriteByte(serverInfo.IsPvpServer);
             writer.WriteUInt16((ushort)serverInfo.PlayerCount);
             writer.WriteUInt16((ushort)serverInfo.MaxPlayerCount);
-            writer.WriteBoolean(serverInfo.IsOnline);
+            writer.WriteByte(serverInfo.IsOnline);
 
             writer.WriteInt32((int)serverInfo.Attributes);
-            writer.WriteBoolean(serverInfo.Brackets);
+            writer.WriteByte(serverInfo.Brackets);
         }
 
         writer.WriteInt16(0xA4); // unknown

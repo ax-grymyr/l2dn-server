@@ -4,196 +4,97 @@ using NLog;
 
 namespace L2Dn.Packets;
 
-public class PacketHandler<TSession, TSessionState>: IPacketHandler<TSession>
-    where TSession: ISession<TSessionState>
-    where TSessionState: struct, Enum
+public class PacketHandler<TSession>
+    where TSession: Session
 {
-    private static readonly Logger _logger = LogManager.GetLogger(nameof(PacketHandler<TSession, TSessionState>));
-    private readonly Dictionary<byte, PacketHandlerHelper> _helpers = new();
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(PacketHandler<TSession>));
+    private readonly PacketHandlerHelper<TSession>?[] _helpers = new PacketHandlerHelper<TSession>?[256];
+    private long _defaultStates;
 
-    public void RegisterPacket<T>(int code, TSessionState allowedStates = default)
-        where T: struct, IIncomingPacket<TSession>
-    {
-        if (code is < 0 or > 0xFFFFFF)
-            throw new ArgumentOutOfRangeException(nameof(code), "Packet code must be in the range 0x00 - 0xFFFFFF");
-
-        if (code <= 0xFF)
-            RegisterPacket<T>((byte)code, allowedStates);
-        else
-            RegisterExPacket<T>((byte)(code >> 16), (ushort)code, allowedStates);
-    }
-
-    public void RegisterPacket<T>(byte code, TSessionState allowedStates = default)
-        where T: struct, IIncomingPacket<TSession>
-    {
-        _helpers.Add(code, new PacketHandlerHelper<T>(code, allowedStates));
-    }
-
-    public void RegisterExPacket<T>(byte code, ushort exCode, TSessionState allowedStates = default)
-        where T: struct, IIncomingPacket<TSession>
-    {
-        ExPacketHandlerHelper exHelper;
-        if (_helpers.TryGetValue(code, out PacketHandlerHelper? helper))
+    public PacketRegistration RegisterPacket<TPacket>(int code)
+        where TPacket: struct, IIncomingPacket<TSession> =>
+        code switch
         {
-            exHelper = helper as ExPacketHandlerHelper ?? throw new InvalidOperationException(
+            < 0 or > 0xFFFFFF => throw new ArgumentOutOfRangeException(nameof(code),
+                "Packet code must be in the range 0x00 - 0xFFFFFF"),
+            <= 0xFF => RegisterPacket<TPacket>((byte)code),
+            _ => RegisterExPacket<TPacket>((byte)(code >> 16), (ushort)code)
+        };
+
+    public PacketRegistration RegisterPacket<TPacket>(byte code)
+        where TPacket: struct, IIncomingPacket<TSession>
+    {
+        if (_helpers[code] is not null)
+            throw new InvalidOperationException($"Packet with code {code:X8} already registered");
+        
+        PacketHandlerHelper helper = _helpers[code] = new PacketHandlerHelper<TSession, TPacket>(code);
+        helper.AllowedStates = _defaultStates;
+        return new PacketRegistration(helper);
+    }
+
+    public PacketRegistration RegisterExPacket<TPacket>(byte code, ushort exCode)
+        where TPacket: struct, IIncomingPacket<TSession>
+    {
+        PacketHandlerHelper<TSession>? helper = _helpers[code];
+        if (helper is ExPacketHandlerHelper<TSession> exHelper)
+        {
+            // do nothing
+        }
+        else if (helper is null)
+        {
+            exHelper = new(code);
+            _helpers[code] = exHelper;
+        }
+        else
+        {
+            throw new InvalidOperationException(
                 "Attempt to register extended and non-extended packet with the same code");
         }
-        else
-        {
-            exHelper = new ExPacketHandlerHelper(code);
-            _helpers.Add(code, exHelper);
-        }
 
-        exHelper.RegisterExPacket<T>(code, exCode, allowedStates);
+        return exHelper.RegisterExPacket<TPacket>(code, exCode, _defaultStates);
     }
 
-    public virtual ValueTask OnConnectedAsync(Connection<TSession> connection) => ValueTask.CompletedTask;
+    public void SetDefaultAllowedStates<TAllowedStates>(TAllowedStates states)
+        where TAllowedStates: struct, Enum
+    {
+        _defaultStates = states.ToInt64();
+    }
+    
+    internal void OnConnectedInternal(Connection connection, TSession session) => OnConnected(connection, session);
 
-    public async ValueTask OnPacketReceivedAsync(Connection<TSession> connection, PacketBitReader reader)
+    internal void OnDisconnectedInternal(Connection connection, TSession session) =>
+        OnDisconnected(connection, session);
+
+    internal bool OnPacketInvalidStateInternal(Connection connection, TSession session) =>
+        OnPacketInvalidState(connection, session);
+    
+    
+    protected virtual void OnConnected(Connection connection, TSession session)
+    {
+    }
+
+    protected virtual void OnDisconnected(Connection connection, TSession session)
+    {
+    }
+
+    /// <summary>
+    /// Packet received when the current session state in not in the list of the allowed states for the packet. 
+    /// </summary>
+    /// <param name="connection"></param>
+    /// <param name="session"></param>
+    /// <returns>True to permit packet processing, false to skip the packet.</returns>
+    protected virtual bool OnPacketInvalidState(Connection connection, TSession session) => true;
+
+    internal async ValueTask OnPacketReceivedAsync(Connection connection, TSession session,
+        PacketBitReader reader)
     {
         byte packetCode = reader.ReadByte();
-        if (_helpers.TryGetValue(packetCode, out PacketHandlerHelper? helper))
-            await helper.HandlePacketAsync(this, connection, reader);
+        if (_helpers[packetCode] is { } helper)
+            await helper.HandlePacketAsync(this, connection, session, reader);
         else
         {
-            TSession session = connection.Session;
             _logger.Trace($"S({session.Id})  Unknown packet 0x{packetCode:X2}, length {reader.Length + 1}");
             LogUtils.TracePacketData(reader, session.Id);
-        }
-    }
-
-    public virtual ValueTask OnDisconnectedAsync(Connection<TSession> connection) => ValueTask.CompletedTask;
-
-    public virtual bool OnPacketInvalidState(Connection<TSession> connection) => true;
-
-    private static bool IsInAllowedState(TSessionState currentState, TSessionState allowedStates) =>
-        !EnumUtil.Equal(EnumUtil.BitwiseAnd(currentState, allowedStates), default);
-
-    private abstract record PacketHandlerHelper(byte PacketCode, TSessionState AllowedStates)
-    {
-        public abstract ValueTask HandlePacketAsync(IPacketHandler<TSession> handler, Connection<TSession> connection,
-            PacketBitReader reader);
-    }
-
-    private sealed record PacketHandlerHelper<T>(byte PacketCode, TSessionState AllowedStates)
-        : PacketHandlerHelper(PacketCode, AllowedStates)
-        where T: struct, IIncomingPacket<TSession>
-    {
-        public override async ValueTask HandlePacketAsync(IPacketHandler<TSession> handler,
-            Connection<TSession> connection, PacketBitReader reader)
-        {
-            TSession session = connection.Session;
-            _logger.Trace($"S({session.Id})  Received packet {typeof(T).Name} (0x{PacketCode:X2}), " +
-                          $"length {reader.Length + 1}");
-
-            if (!IsInAllowedState(session.State, AllowedStates))
-            {
-                _logger.Trace($"S({session.Id})  Packet {typeof(T).Name} (0x{PacketCode:X2}) " +
-                              $"is not allowed in state '{session.State}'");
-
-                if (!handler.OnPacketInvalidState(connection))
-                {
-                    return;
-                }
-            }
-
-            T packet = default;
-            try
-            {
-                packet.ReadContent(reader);
-            }
-            catch (Exception exception)
-            {
-                _logger.Warn($"S({session.Id})  Exception reading packet 0x{PacketCode:X2}" +
-                             $": {exception}");
-            }
-
-            try
-            {
-                await packet.ProcessAsync(connection);
-            }
-            catch (Exception exception)
-            {
-                _logger.Warn($"S({session.Id})  Exception processing packet 0x{PacketCode:X2}" +
-                             $": {exception}");
-            }
-        }
-    }
-
-    private sealed record ExPacketHandlerHelper(byte PacketCode): PacketHandlerHelper(PacketCode, default)
-    {
-        private readonly Dictionary<ushort, PacketHandlerHelper> _helpers = new();
-
-        public override async ValueTask HandlePacketAsync(IPacketHandler<TSession> handler,
-            Connection<TSession> connection,
-            PacketBitReader reader)
-        {
-            ushort exPacketCode = reader.ReadUInt16();
-            if (_helpers.TryGetValue(exPacketCode, out PacketHandlerHelper? helper))
-            {
-                await helper.HandlePacketAsync(handler, connection, reader);
-                return;
-            }
-
-            TSession session = connection.Session;
-            _logger.Trace($"S({session.Id})  Unknown packet 0x{PacketCode:X2}:0x{exPacketCode:X4}, " +
-                          $"length {reader.Length + 1}");
-
-            LogUtils.TracePacketData(reader, session.Id);
-        }
-
-        public void RegisterExPacket<T>(byte code, ushort exCode, TSessionState allowedStates)
-            where T: struct, IIncomingPacket<TSession>
-        {
-            _helpers.Add(exCode, new ExPacketHandlerHelper<T>(code, exCode, allowedStates));
-        }
-    }
-
-    private sealed record ExPacketHandlerHelper<T>(byte PacketCode, ushort PacketExCode, TSessionState AllowedStates)
-        : PacketHandlerHelper(PacketCode, AllowedStates)
-        where T: struct, IIncomingPacket<TSession>
-    {
-        public override async ValueTask HandlePacketAsync(IPacketHandler<TSession> handler,
-            Connection<TSession> connection,
-            PacketBitReader reader)
-        {
-            TSession session = connection.Session;
-            _logger.Trace($"S({session.Id})  Received packet {typeof(T).Name} " +
-                          $"(0x{PacketCode:X2}:0x{PacketExCode:X4}), length {reader.Length + 1}");
-
-            LogUtils.TracePacketData(reader, session.Id);
-
-            if (!IsInAllowedState(session.State, AllowedStates))
-            {
-                _logger.Trace($"S({session.Id})  Packet {typeof(T).Name} " +
-                              $"(0x{PacketCode:X2}:0x{PacketExCode:X4}) not allowed in state '{session.State}'");
-
-                if (!handler.OnPacketInvalidState(connection))
-                {
-                    return;
-                }
-            }
-
-            T packet = default;
-            try
-            {
-                packet.ReadContent(reader);
-            }
-            catch (Exception exception)
-            {
-                _logger.Warn($"S({session.Id})  Exception reading packet 0x{PacketCode:X2}:0x{PacketExCode:X4}" +
-                             $": {exception}");
-            }
-
-            try
-            {
-                await packet.ProcessAsync(connection);
-            }
-            catch (Exception exception)
-            {
-                _logger.Warn($"S({session.Id})  Exception processing packet 0x{PacketCode:X2}:0x{PacketExCode:X4}" +
-                             $": {exception}");
-            }
         }
     }
 }

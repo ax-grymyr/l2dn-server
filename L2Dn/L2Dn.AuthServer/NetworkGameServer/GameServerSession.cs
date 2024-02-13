@@ -3,8 +3,7 @@ using L2Dn.Network;
 
 namespace L2Dn.AuthServer.NetworkGameServer;
 
-internal sealed class GameServerSession: Session, ISession<GameServerSessionState>
+internal sealed class GameServerSession: Session
 {
-    public GameServerSessionState State => GameServerSessionState.None; // State not used
     public GameServerInfo? ServerInfo { get; set; }
- }
+}

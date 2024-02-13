@@ -13,9 +13,9 @@ internal struct UpdateStatusPacket: IIncomingPacket<GameServerSession>
         _playerCount = reader.ReadUInt16();
     }
 
-    public ValueTask ProcessAsync(Connection<GameServerSession> connection)
+    public ValueTask ProcessAsync(Connection connection, GameServerSession session)
     {
-        GameServerInfo? serverInfo = connection.Session.ServerInfo;
+        GameServerInfo? serverInfo = session.ServerInfo;
         if (serverInfo is null)
         {
             connection.Close();

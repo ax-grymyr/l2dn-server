@@ -3,7 +3,7 @@ using L2Dn.Cryptography;
 
 namespace L2Dn.GameServer.Cryptography;
 
-internal sealed class GamePacketEncoder: IPacketEncoder
+internal sealed class GamePacketEncoder: PacketEncoder
 {
     private readonly byte[] _inKey;
     private readonly byte[] _outKey;
@@ -20,9 +20,9 @@ internal sealed class GamePacketEncoder: IPacketEncoder
         _enabled = true;
     }
 
-    public int GetRequiredLength(int length) => length;
+    public override int GetRequiredLength(int length) => length;
 
-    public int Encode(Span<byte> buffer, int packetLength)
+    public override int Encode(Span<byte> buffer, int packetLength)
     {
         if (!_enabled)
             return packetLength;
@@ -62,7 +62,7 @@ internal sealed class GamePacketEncoder: IPacketEncoder
         return packetLength;
     }
 
-    public bool Decode(Span<byte> packet)
+    public override bool Decode(Span<byte> packet)
     {
         if (!_enabled)
             return true;

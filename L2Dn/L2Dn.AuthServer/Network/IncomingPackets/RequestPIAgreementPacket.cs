@@ -15,7 +15,7 @@ internal struct RequestPIAgreementPacket: IIncomingPacket<AuthSession>
         _status = reader.ReadByte();
     }
 
-    public ValueTask ProcessAsync(Connection<AuthSession> connection)
+    public ValueTask ProcessAsync(Connection connection, AuthSession session)
     {
         PIAgreementAckPacket piAgreementAckPacket = new(_accountId, _status);
         connection.Send(ref piAgreementAckPacket);

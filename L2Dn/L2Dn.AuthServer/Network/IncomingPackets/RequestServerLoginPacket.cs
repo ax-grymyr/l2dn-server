@@ -20,9 +20,8 @@ internal struct RequestServerLoginPacket: IIncomingPacket<AuthSession>
         _serverId = reader.ReadByte();
     }
 
-    public async ValueTask ProcessAsync(Connection<AuthSession> connection)
+    public async ValueTask ProcessAsync(Connection connection, AuthSession session)
     {
-        AuthSession session = connection.Session;
         AccountInfo? accountInfo = session.AccountInfo;
         
         byte serverId = _serverId;
@@ -49,7 +48,7 @@ internal struct RequestServerLoginPacket: IIncomingPacket<AuthSession>
             return;
         }
         
-        Connection<GameServerSession>? serverConnection = GameServerManager.Instance.GetServerInfo(serverId)?.Connection;
+        Connection? serverConnection = GameServerManager.Instance.GetServerInfo(serverId)?.Connection;
         if (serverConnection is null || serverConnection.Closed)
         {
             PlayFailPacket loginFailPacket = new(PlayFailReason.AccessFailed);

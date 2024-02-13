@@ -3,7 +3,7 @@ using L2Dn.Packets;
 
 namespace L2Dn.GameServer.NetworkAuthServer;
 
-internal sealed class AuthServerPacketHandler: PacketHandler<AuthServerSession, AuthServerSessionState>
+internal sealed class AuthServerPacketHandler: PacketHandler<AuthServerSession>
 {
     public AuthServerPacketHandler()
     {

@@ -8,5 +8,5 @@ internal sealed class GameServerPacketEncoderFactory: IPacketEncoderFactory<Game
 {
     private readonly BlowfishEngine _staticBlowfishEngine = new(StaticBlowfishKeys.GameServer());
 
-    public IPacketEncoder Create(GameServerSession session) => new AuthPacketEncoder(_staticBlowfishEngine);
+    public PacketEncoder Create(GameServerSession session) => new AuthPacketEncoder(_staticBlowfishEngine);
 }

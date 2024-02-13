@@ -2,7 +2,7 @@
 	
 namespace L2Dn.GameServer.Network.Enums;
 
-public enum SystemMessageId: ushort
+public enum SystemMessageId
 {
 [Text("You have been disconnected from the server.")] YOU_HAVE_BEEN_DISCONNECTED_FROM_THE_SERVER = 0,
 	

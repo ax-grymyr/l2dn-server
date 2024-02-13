@@ -7,6 +7,6 @@ internal readonly struct RegistrationResultPacket(RegistrationResult result): IO
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.RegistrationResult);
-        writer.WriteEnum(result);
+        writer.WriteInt32((int)result);
     }
 }

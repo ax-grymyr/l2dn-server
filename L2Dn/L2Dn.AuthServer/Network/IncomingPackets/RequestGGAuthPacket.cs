@@ -13,9 +13,9 @@ internal struct RequestGGAuthPacket: IIncomingPacket<AuthSession>
         _sessionId = reader.ReadInt32();
     }
 
-    public ValueTask ProcessAsync(Connection<AuthSession> connection)
+    public ValueTask ProcessAsync(Connection connection, AuthSession session)
     {
-        if (connection.Session.Id != _sessionId)
+        if (session.Id != _sessionId)
         {
             LoginFailPacket loginFailPacket = new(LoginFailReason.AccessDenied);
             connection.Send(ref loginFailPacket, SendPacketOptions.CloseAfterSending);

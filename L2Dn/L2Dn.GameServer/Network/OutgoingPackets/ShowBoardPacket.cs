@@ -20,7 +20,7 @@ internal readonly struct ShowBoardPacket(bool showBoard, string content): IOutgo
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.SHOW_BOARD);
-        writer.WriteBoolean(showBoard); // c4 1 to show community 00 to hide
+        writer.WriteByte(showBoard); // c4 1 to show community 00 to hide
         writer.WriteString("bypass _bbshome"); // top
         writer.WriteString("bypass _bbsgetfav"); // favorite
         writer.WriteString("bypass _bbsloc"); // region

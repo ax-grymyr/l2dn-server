@@ -11,7 +11,7 @@ internal class Disconnection
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Disconnection));
 	
-	public static Connection<GameSession>? getClient(Connection<GameSession>? client, Player? player)
+	public static GameSession? getClient(GameSession? client, Player? player)
 	{
 		if (client != null)
 		{
@@ -26,7 +26,7 @@ internal class Disconnection
 		return null;
 	}
 	
-	public static Player getActiveChar(Connection<GameSession>? client, Player? player)
+	public static Player? getActiveChar(GameSession? client, Player? player)
 	{
 		if (player != null)
 		{
@@ -35,34 +35,34 @@ internal class Disconnection
 		
 		if (client != null)
 		{
-			return client.Session.Player;
+			return client.Player;
 		}
 		
 		return null;
 	}
 	
-	private readonly Connection<GameSession> _client;
-	private readonly Player _player;
+	private readonly GameSession? _client;
+	private readonly Player? _player;
 	
-	private Disconnection(Connection<GameSession> client): this(client, null)
+	private Disconnection(GameSession? client): this(client, null)
 	{
 	}
 	
-	public static Disconnection of(Connection<GameSession> client)
+	public static Disconnection of(GameSession? client)
 	{
 		return new Disconnection(client);
 	}
 	
-	private Disconnection(Player player): this(null, player)
+	private Disconnection(Player? player): this(null, player)
 	{
 	}
 	
-	public static Disconnection of(Player player)
+	public static Disconnection of(Player? player)
 	{
 		return new Disconnection(player);
 	}
 	
-	private Disconnection(Connection<GameSession> client, Player player)
+	private Disconnection(GameSession? client, Player? player)
 	{
 		_client = getClient(client, player);
 		_player = getActiveChar(client, player);
@@ -78,7 +78,7 @@ internal class Disconnection
 		
 		if (_client != null)
 		{
-			_client.Session.Player = null;
+			_client.Player = null;
 		}
 		
 		if (_player != null)
@@ -87,7 +87,7 @@ internal class Disconnection
 		}
 	}
 	
-	public static Disconnection of(Connection<GameSession> client, Player player)
+	public static Disconnection of(GameSession client, Player player)
 	{
 		return new Disconnection(client, player);
 	}
@@ -126,22 +126,22 @@ internal class Disconnection
 		return this;
 	}
 	
-	public Disconnection close<TPacket>(TPacket packet)
+	public Disconnection close<TPacket>(ref TPacket packet)
 		where TPacket: struct, IOutgoingPacket
 	{
 		if (_client != null)
 		{
-			_client.Send(ref packet, SendPacketOptions.CloseAfterSending);
+			_client.Connection?.Send(ref packet, SendPacketOptions.CloseAfterSending);
 		}
 		
 		return this;
 	}
 	
-	public void defaultSequence<TPacket>(TPacket packet)
+	public void defaultSequence<TPacket>(ref TPacket packet)
 		where TPacket: struct, IOutgoingPacket
 	{
 		defaultSequence();
-		close(packet);
+		close(ref packet);
 	}
 	
 	private void defaultSequence()

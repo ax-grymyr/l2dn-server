@@ -16,9 +16,8 @@ internal struct RequestServerListPacket: IIncomingPacket<AuthSession>
         _loginKey2 = reader.ReadInt32();
     }
 
-    public ValueTask ProcessAsync(Connection<AuthSession> connection)
+    public ValueTask ProcessAsync(Connection connection, AuthSession session)
     {
-        AuthSession session = connection.Session;
         AccountInfo? accountInfo = session.AccountInfo;
         if (_loginKey1 != session.LoginKey1 || _loginKey2 != session.LoginKey2 || accountInfo is null)
         {

@@ -1,6 +1,6 @@
 ﻿namespace L2Dn.Network;
 
-public abstract class Session: ISession
+public abstract class Session
 {
     private static int _globalId;
 
@@ -10,12 +10,8 @@ public abstract class Session: ISession
     }
 
     public int Id { get; }
-    
-    //public Connection? Connection { get; }
-}
 
-public abstract class Session<TSessionState>: Session, ISession<TSessionState>
-    where TSessionState: struct, Enum
-{
-    public virtual TSessionState State { get; }
+    public Connection? Connection { get; internal set; }
+
+    protected internal virtual long GetState() => 0;
 }

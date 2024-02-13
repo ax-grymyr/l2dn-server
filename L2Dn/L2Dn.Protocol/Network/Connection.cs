@@ -9,42 +9,34 @@ using NLog;
 
 namespace L2Dn.Network;
 
-public sealed class Connection<TSession>
-    where TSession: ISession
+public abstract class Connection
 {
     private record struct PacketData(byte[] Buffer, int Length, SendPacketOptions Options = SendPacketOptions.None);
 
-    private static readonly Logger _logger = LogManager.GetLogger(nameof(Connection<TSession>)); 
-
-    private readonly IConnectionCloseEvent _closeEvent;
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(Connection)); 
+    private readonly ConnectionCallback _callback;
     private readonly TcpClient _client;
-    private readonly TSession _session;
-    private readonly IPacketEncoder _packetEncoder;
-    private readonly IPacketHandler<TSession> _packetHandler;
+    private readonly int _sessionId;
+    private readonly PacketEncoder _packetEncoder;
     private readonly ConcurrentQueue<PacketData> _sendQueue = new();
     private SpinLock _sendLock; // must not be readonly
     private int _buffersInRent;
     private bool _closed;
 
-    internal Connection(IConnectionCloseEvent closeEvent, TcpClient client, TSession session,
-        IPacketEncoder packetEncoder, IPacketHandler<TSession> packetHandler)
+    private protected Connection(ConnectionCallback callback, TcpClient client, int sessionId,
+        PacketEncoder packetEncoder)
     {
-        _closeEvent = closeEvent;
+        _callback = callback;
         _client = client;
-        _session = session;
+        _sessionId = sessionId;
         _packetEncoder = packetEncoder;
-        _packetHandler = packetHandler;
 
         ConfigureSocket();
-
-        _logger.Trace($"S({_session.Id})  Session connected; remote endpoint {client.Client.RemoteEndPoint}");
-        OnConnected();
     }
 
     public IPAddress? GetRemoteAddress() =>
         _client.Client.RemoteEndPoint is IPEndPoint ipEndPoint ? ipEndPoint.Address : null;
-
-    public TSession Session => _session;
+    
     public bool Closed => _closed;
 
     public void Send<T>(ref T packet, SendPacketOptions options = SendPacketOptions.None)
@@ -61,7 +53,7 @@ public sealed class Connection<TSession>
         }
         catch (Exception exception)
         {
-            _logger.Error($"S({_session.Id})  Error serializing packet: {exception}");
+            _logger.Error($"S({_sessionId})  Error serializing packet: {exception}");
             ReturnBuffer(buffer);
             Close();
             return;
@@ -69,17 +61,17 @@ public sealed class Connection<TSession>
 
         if (offset >= 65536)
         {
-            _logger.Warn($"S({_session.Id})  Packet {typeof(T).Name} (0x{buffer[2]:X2}) is too long ({offset} bytes)");
+            _logger.Warn($"S({_sessionId})  Packet {typeof(T).Name} (0x{buffer[2]:X2}) is too long ({offset} bytes)");
             Close();
             return;
         }
 
-        _logger.Trace($"S({_session.Id})  Sending packet {typeof(T).Name} (0x{buffer[2]:X2}), length: {offset}");
+        _logger.Trace($"S({_sessionId})  Sending packet {typeof(T).Name} (0x{buffer[2]:X2}), length: {offset}");
         _sendQueue.Enqueue(new PacketData(buffer, offset, options));
         ThreadPool.QueueUserWorkItem(_ => SendPackets());
     }
 
-    public async void Close()
+    public void Close()
     {
         if (_closed)
             return;
@@ -90,7 +82,7 @@ public sealed class Connection<TSession>
         }
         catch (Exception exception)
         {
-            _logger.Warn($"S({_session.Id})  Error closing connection: {exception}");
+            _logger.Warn($"S({_sessionId})  Error closing connection: {exception}");
         }
         finally
         {
@@ -99,22 +91,25 @@ public sealed class Connection<TSession>
 
         try
         {
-            await _packetHandler.OnDisconnectedAsync(this);
+            OnDisconnected();
         }
         catch (Exception exception)
         {
-            _logger.Warn($"S({_session.Id})  Error in packet handler: {exception}");
+            _logger.Warn($"S({_sessionId})  Exception in packet handler: {exception}");
         }
         finally
         {
-            _closeEvent.ConnectionClosed(_session.Id);
+            _callback.ConnectionClosed(_sessionId);
         }
 
-        _logger.Trace($"S({_session.Id})  Session disconnected");
+        _logger.Trace($"S({_sessionId})  Session disconnected");
         if (_buffersInRent != 0)
-            _logger.Warn($"S({_session.Id})  Rented buffers count = {_buffersInRent}");
+            _logger.Warn($"S({_sessionId})  Rented buffers count = {_buffersInRent}");
     }
 
+    protected abstract void OnDisconnected();
+    protected abstract ValueTask OnPacketReceivedAsync(PacketBitReader reader);
+    
     internal async void BeginReceivingAsync(CancellationToken cancellationToken)
     {
         try
@@ -131,23 +126,13 @@ public sealed class Connection<TSession>
                 return;
             }
 
-            _logger.Warn($"S({_session.Id})  Error receiving data: {exception}");
+            _logger.Warn($"S({_sessionId})  Error receiving data: {exception}");
             Close();
         }
     }
 
-    private async void OnConnected()
-    {
-        try
-        {
-            await _packetHandler.OnConnectedAsync(this);
-        }
-        catch (Exception exception)
-        {
-            _logger.Warn($"S({_session.Id})  Exception in packet handler OnConnectedAsync: {exception}");
-        }
-    }
-
+    private protected static Logger Logger => _logger;
+    
     private void SendPackets()
     {
         bool lockTaken = false;
@@ -185,7 +170,7 @@ public sealed class Connection<TSession>
                 }
                 catch (Exception exception)
                 {
-                    _logger.Error($"S({_session.Id})  Error encoding packet: {exception}");
+                    _logger.Error($"S({_sessionId})  Error encoding packet: {exception}");
                     Close();
                     return;
                 }
@@ -199,7 +184,7 @@ public sealed class Connection<TSession>
 
             if (length >= 65536)
             {
-                _logger.Error($"S({_session.Id})  Encrypted packet is too long ({length} bytes)");
+                _logger.Error($"S({_sessionId})  Encrypted packet is too long ({length} bytes)");
                 Close();
                 return;
             }
@@ -213,7 +198,7 @@ public sealed class Connection<TSession>
             }
             catch (Exception exception)
             {
-                _logger.Error($"S({_session.Id})  Error sending packet: {exception}");
+                _logger.Error($"S({_sessionId})  Error sending packet: {exception}");
                 Close();
                 return;
             }
@@ -244,12 +229,12 @@ public sealed class Connection<TSession>
 
         if (!_packetEncoder.Decode(buffer.AsSpan(0, length)))
         {
-            _logger.Warn($"S({_session.Id})  Error decoding packet");
+            _logger.Warn($"S({_sessionId})  Error decoding packet");
             Close();
             return;
         }
 
-        _logger.Trace($"S({_session.Id})  Packet received: code 0x{buffer[0]:X2}, length {length}");
+        _logger.Trace($"S({_sessionId})  Packet received: code 0x{buffer[0]:X2}, length {length}");
         ThreadPool.QueueUserWorkItem(_ => HandlePacket(buffer, length));
     }
 
@@ -258,11 +243,11 @@ public sealed class Connection<TSession>
         try
         {
             PacketBitReader reader = new(buffer, 0, length);
-            await _packetHandler.OnPacketReceivedAsync(this, reader);
+            await OnPacketReceivedAsync(reader);
         }
         catch (Exception exception)
         {
-            _logger.Warn($"S({_session.Id})  Error handling packet: {exception}");
+            _logger.Warn($"S({_sessionId})  Error handling packet: {exception}");
         }
         finally
         {
@@ -298,7 +283,7 @@ public sealed class Connection<TSession>
             if (bytesSent == 0)
                 throw new SocketException();
 
-            data = data.Slice(bytesSent);
+            data = data[bytesSent..];
         }
     }
 
@@ -320,4 +305,36 @@ public sealed class Connection<TSession>
         _buffersInRent--;
         ArrayPool<byte>.Shared.Return(buffer);
     }
+}
+
+internal sealed class Connection<TSession>: Connection
+    where TSession: Session
+{
+    private readonly TSession _session;
+    private readonly PacketHandler<TSession> _packetHandler;
+
+    internal Connection(ConnectionCallback callback, TcpClient client, TSession session,
+        PacketEncoder packetEncoder, PacketHandler<TSession> packetHandler)
+        : base(callback, client, session.Id, packetEncoder)
+    {
+        session.Connection = this;
+        _session = session;
+        _packetHandler = packetHandler;
+
+        try
+        {
+            _packetHandler.OnConnectedInternal(this, _session);
+        }
+        catch (Exception exception)
+        {
+            Logger.Warn($"S({_session.Id})  Exception in packet handler: {exception}");
+        }
+
+        Logger.Trace($"S({_session.Id})  Session connected; remote endpoint {client.Client.RemoteEndPoint}");
+    }
+
+    protected override void OnDisconnected() => _packetHandler.OnDisconnectedInternal(this, _session);
+
+    protected override ValueTask OnPacketReceivedAsync(PacketBitReader reader) =>
+        _packetHandler.OnPacketReceivedAsync(this, _session, reader);
 }

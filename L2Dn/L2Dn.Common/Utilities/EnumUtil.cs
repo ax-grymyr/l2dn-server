@@ -12,6 +12,44 @@ public static class EnumUtil
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int ToInt32<TEnum>(this TEnum value)
+        where TEnum: struct, Enum
+    {
+        if (Unsafe.SizeOf<TEnum>() == 1)
+            return Unsafe.As<TEnum, byte>(ref value); 
+
+        if (Unsafe.SizeOf<TEnum>() == 2)
+            return Unsafe.As<TEnum, short>(ref value); 
+
+        if (Unsafe.SizeOf<TEnum>() == 4)
+            return Unsafe.As<TEnum, int>(ref value); 
+
+        if (Unsafe.SizeOf<TEnum>() == 8)
+            return (int)Unsafe.As<TEnum, long>(ref value); 
+
+        throw new InvalidOperationException("Unsupported enum size");
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static long ToInt64<TEnum>(this TEnum value)
+        where TEnum: struct, Enum
+    {
+        if (Unsafe.SizeOf<TEnum>() == 1)
+            return Unsafe.As<TEnum, byte>(ref value); 
+
+        if (Unsafe.SizeOf<TEnum>() == 2)
+            return Unsafe.As<TEnum, short>(ref value); 
+
+        if (Unsafe.SizeOf<TEnum>() == 4)
+            return Unsafe.As<TEnum, int>(ref value); 
+
+        if (Unsafe.SizeOf<TEnum>() == 8)
+            return Unsafe.As<TEnum, long>(ref value); 
+
+        throw new InvalidOperationException("Unsupported enum size");
+    }
+    
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static TEnum BitwiseComplement<TEnum>(TEnum value)
         where TEnum: struct, Enum
     {

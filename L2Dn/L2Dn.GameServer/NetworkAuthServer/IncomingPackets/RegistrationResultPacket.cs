@@ -12,7 +12,7 @@ internal struct RegistrationResultPacket: IIncomingPacket<AuthServerSession>
         _result = reader.ReadEnum<RegistrationResult>();
     }
 
-    public ValueTask ProcessAsync(Connection<AuthServerSession> connection)
+    public ValueTask ProcessAsync(Connection connection, AuthServerSession session)
     {
         throw new NotImplementedException();
     }

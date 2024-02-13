@@ -6,25 +6,23 @@ using NLog;
 
 namespace L2Dn.Network;
 
-public sealed class Listener<TSession>: IConnectionCloseEvent
-    where TSession: ISession
+public sealed class Listener<TSession>: ConnectionCallback
+    where TSession: Session
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(Listener<TSession>));
     private readonly ConcurrentDictionary<int, Connection<TSession>> _connections = new();
     private readonly ISessionFactory<TSession> _sessionFactory;
     private readonly IPacketEncoderFactory<TSession> _packetEncoderFactory;
-    private readonly IPacketHandler<TSession> _packetHandler;
+    private readonly PacketHandler<TSession> _packetHandler;
     private readonly TcpListener _listener;
 
-    public Listener(ISessionFactory<TSession> sessionFactory,
-        IPacketEncoderFactory<TSession> packetEncoderFactory,
-        IPacketHandler<TSession> packetHandler,
-        IPAddress address, int port)
+    public Listener(ISessionFactory<TSession> sessionFactory, IPacketEncoderFactory<TSession> packetEncoderFactory,
+        PacketHandler<TSession> packetHandler, IPAddress address, int port)
     {
         _sessionFactory = sessionFactory;
         _packetEncoderFactory = packetEncoderFactory;
         _packetHandler = packetHandler;
-        
+
         _listener = new TcpListener(address, port);
         if (address.AddressFamily == AddressFamily.InterNetworkV6)
             _listener.Server.DualMode = true;
@@ -56,7 +54,7 @@ public sealed class Listener<TSession>: IConnectionCloseEvent
                 {
                     break;
                 }
-                
+
                 _logger.Error($"Exception in Listener: {exception}");
             }
         }
@@ -71,25 +69,19 @@ public sealed class Listener<TSession>: IConnectionCloseEvent
             _logger.Error($"Exception in Listener: {exception}");
         }
     }
-    
+
     private void HandleConnection(TcpClient client, CancellationToken cancellationToken)
     {
         TSession session = _sessionFactory.Create();
+
         Connection<TSession> connection = _connections.GetOrAdd(session.Id,
             id => new Connection<TSession>(this, client, session, _packetEncoderFactory.Create(session),
                 _packetHandler));
 
-        if (!ReferenceEquals(session, connection.Session))
-        {
-            _logger.Error($"Duplicated session id: {session.Id}");
-            connection.Close();
-            return;
-        }
-        
         connection.BeginReceivingAsync(cancellationToken);
     }
 
-    void IConnectionCloseEvent.ConnectionClosed(int sessionId)
+    internal override void ConnectionClosed(int sessionId)
     {
         _connections.TryRemove(sessionId, out _);
     }

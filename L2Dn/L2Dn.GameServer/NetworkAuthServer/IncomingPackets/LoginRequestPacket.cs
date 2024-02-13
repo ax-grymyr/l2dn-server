@@ -22,7 +22,7 @@ internal struct LoginRequestPacket: IIncomingPacket<AuthServerSession>
         _playKey2 = reader.ReadInt32();
     }
 
-    public ValueTask ProcessAsync(Connection<AuthServerSession> connection)
+    public ValueTask ProcessAsync(Connection connection, AuthServerSession session)
     {
         throw new NotImplementedException();
     }

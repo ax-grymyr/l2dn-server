@@ -12,7 +12,7 @@ internal readonly struct KeyPacket(bool isProtocolOk, int serverId, byte[]? encr
         // 0x00 in C4
         writer.WriteByte(0x2E); // packet code
 
-        writer.WriteBoolean(isProtocolOk);
+        writer.WriteByte(isProtocolOk);
         
         if (encryptionKey is not null)
         {

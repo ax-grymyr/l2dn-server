@@ -2,9 +2,8 @@
 
 namespace L2Dn.Packets;
 
-public interface IIncomingPacket<TSession>
-    where TSession: ISession
+public interface IIncomingPacket<in TSession>
 {
     void ReadContent(PacketBitReader reader);
-    ValueTask ProcessAsync(Connection<TSession> connection);
+    ValueTask ProcessAsync(Connection connection, TSession session);
 }

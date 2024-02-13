@@ -298,12 +298,12 @@ internal struct SystemMessagePacket: IOutgoingPacket
 		if (_paramIndex < _params.Length)
 			_logger.Error($"Wrong parameter count '{(_paramIndex + 1)}' for SystemMessageId: {_smId}");
         
-		writer.WriteEnum(_smId);
+		writer.WriteInt16((short)_smId);
 		writer.WriteByte((byte)_paramIndex);
 		for (int index = 0, count = Math.Min(_paramIndex, _params.Length); index < count; index++)
 		{
 			SmParam param = _params[index];
-			writer.WriteEnum(param.Type);
+			writer.WriteByte((byte)param.Type);
 			switch (param.Type)
 			{
 				case SmParamType.TYPE_ELEMENT_NAME:
@@ -368,7 +368,7 @@ internal struct SystemMessagePacket: IOutgoingPacket
 
 		if (_popupParam is not null)
 		{
-			writer.WriteEnum(SmParamType.TYPE_POPUP_ID);
+			writer.WriteByte((byte)SmParamType.TYPE_POPUP_ID);
 			writer.WriteInt32(_popupParam[0]);
 			writer.WriteInt32(_popupParam[1]);
 			writer.WriteInt32(_popupParam[2]);

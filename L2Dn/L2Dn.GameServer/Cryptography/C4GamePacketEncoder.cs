@@ -2,7 +2,7 @@
 
 namespace L2Dn.GameServer.Cryptography;
 
-internal sealed class C4GamePacketEncoder: IPacketEncoder
+internal sealed class C4GamePacketEncoder: PacketEncoder
 {
     private readonly byte[] _inKey;
     private readonly byte[] _outKey;
@@ -19,9 +19,9 @@ internal sealed class C4GamePacketEncoder: IPacketEncoder
         _enabled = true;
     }
 
-    public int GetRequiredLength(int length) => length;
+    public override int GetRequiredLength(int length) => length;
 
-    public int Encode(Span<byte> buffer, int packetLength)
+    public override int Encode(Span<byte> buffer, int packetLength)
     {
         if (!_enabled)
         {
@@ -64,7 +64,7 @@ internal sealed class C4GamePacketEncoder: IPacketEncoder
         return packetLength;
     }
 
-    public bool Decode(Span<byte> packet)
+    public override bool Decode(Span<byte> packet)
     {
         if (!_enabled)
             return true;
