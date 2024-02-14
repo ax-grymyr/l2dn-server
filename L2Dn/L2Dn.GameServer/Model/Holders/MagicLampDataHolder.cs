@@ -14,14 +14,14 @@ public class MagicLampDataHolder
 	private readonly int _fromLevel;
 	private readonly int _toLevel;
 
-	public MagicLampDataHolder(StatSet @params)
+	public MagicLampDataHolder(LampType type, long exp, long sp, double chance, int fromLevel, int toLevel)
 	{
-		_type = @params.getEnum<LampType>("type");
-		_exp = @params.getLong("exp");
-		_sp = @params.getLong("sp");
-		_chance = @params.getDouble("chance");
-		_fromLevel = @params.getInt("minLevel");
-		_toLevel = @params.getInt("maxLevel");
+		_type = type;
+		_exp = exp;
+		_sp = sp;
+		_chance = chance;
+		_fromLevel = fromLevel;
+		_toLevel = toLevel;
 	}
 
 	public LampType getType()

@@ -8,10 +8,10 @@ public class ShuttleDataHolder
     private readonly List<ShuttleStop> _stops = new(2);
     private readonly List<VehiclePathPoint[]> _routes = new(2);
 
-    public ShuttleDataHolder(StatSet set)
+    public ShuttleDataHolder(int id, Location loc)
     {
-        _id = set.getInt("id");
-        _loc = new Location(set);
+        _id = id;
+        _loc = loc;
     }
 
     public int getId()

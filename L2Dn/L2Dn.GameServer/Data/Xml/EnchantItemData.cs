@@ -1,8 +1,12 @@
+using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Items.Enchant;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -31,79 +35,50 @@ public class EnchantItemData
 	{
 		_scrolls.clear();
 		_supports.clear();
-		parseDatapackFile("data/EnchantItemData.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/EnchantItemData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("enchant").ForEach(parseEnchant);
+		document.Elements("list").Elements("support").ForEach(parseSupport);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _scrolls.size() + " enchant scrolls.");
 		LOGGER.Info(GetType().Name + ": Loaded " + _supports.size() + " support items.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseEnchant(XElement element)
 	{
-		StatSet set;
-		Node att;
-		NamedNodeMap attrs;
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		try
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
+			EnchantScroll item = new EnchantScroll(element);
+			element.Elements("item").ForEach(itemElement =>
 			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("enchant".equalsIgnoreCase(d.getNodeName()))
-					{
-						attrs = d.getAttributes();
-						set = new StatSet();
-						for (int i = 0; i < attrs.getLength(); i++)
-						{
-							att = attrs.item(i);
-							set.set(att.getNodeName(), att.getNodeValue());
-						}
-						
-						try
-						{
-							EnchantScroll item = new EnchantScroll(set);
-							for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
-							{
-								if ("item".equalsIgnoreCase(cd.getNodeName()))
-								{
-									item.addItem(parseInteger(cd.getAttributes(), "id"), parseInteger(cd.getAttributes(), "altScrollGroupId", -1));
-								}
-							}
-							_scrolls.put(item.getId(), item);
-						}
-						catch (NullPointerException e)
-						{
-							LOGGER.Warn(GetType().Name + ": Unexistent enchant scroll: " + set.getString("id") + " defined in enchant data!");
-						}
-						catch (IllegalAccessError e)
-						{
-							LOGGER.Warn(GetType().Name + ": Wrong enchant scroll item type: " + set.getString("id") + " defined in enchant data!");
-						}
-					}
-					else if ("support".equalsIgnoreCase(d.getNodeName()))
-					{
-						attrs = d.getAttributes();
-						set = new StatSet();
-						for (int i = 0; i < attrs.getLength(); i++)
-						{
-							att = attrs.item(i);
-							set.set(att.getNodeName(), att.getNodeValue());
-						}
-						
-						try
-						{
-							EnchantSupportItem item = new EnchantSupportItem(set);
-							_supports.put(item.getId(), item);
-						}
-						catch (NullPointerException e)
-						{
-							LOGGER.Warn(GetType().Name + ": Unexistent enchant support item: " + set.getString("id") + " defined in enchant data!");
-						}
-						catch (IllegalAccessError e)
-						{
-							LOGGER.Warn(GetType().Name + ": Wrong enchant support item type: " + set.getString("id") + " defined in enchant data!");
-						}
-					}
-				}
-			}
+				int id = itemElement.Attribute("id").GetInt32();
+				int altScrollGroupId = itemElement.Attribute("altScrollGroupId").GetInt32(-1);
+				item.addItem(id, altScrollGroupId);
+			});
+
+			_scrolls.put(item.getId(), item);
+		}
+		catch (Exception e)
+		{
+			LOGGER.Error(GetType().Name + ": Unexistent enchant scroll or wrong data: " +
+			             element.Attribute("id").GetInt32() +
+			             " defined in enchant data!: " + e);
+		}
+	}
+
+	private void parseSupport(XElement element)
+	{
+		try
+		{
+			EnchantSupportItem item = new EnchantSupportItem(element);
+			_supports.put(item.getId(), item);
+		}
+		catch (Exception e)
+		{
+			LOGGER.Error(GetType().Name + ": Unexistent enchant support item or wrong data: " +
+			            element.Attribute("id").GetInt32() + " defined in enchant data!: " + e);
 		}
 	}
 	

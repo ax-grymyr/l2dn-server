@@ -9,11 +9,11 @@ public class EnchantItemExpHolder
 	private readonly int _exp;
 	private readonly int _starLevel;
 
-	public EnchantItemExpHolder(StatSet set)
+	public EnchantItemExpHolder(int id, int exp, int starLevel)
 	{
-		_id = set.getInt("id", 1);
-		_exp = set.getInt("exp", 1);
-		_starLevel = set.getInt("starLevel", 1);
+		_id = id;
+		_exp = exp;
+		_starLevel = starLevel;
 	}
 
 	public int getStarLevel()

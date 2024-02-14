@@ -1,4 +1,9 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -16,45 +21,34 @@ public class MagicLampData
 		load();
 	}
 	
-	@Override
 	public void load()
 	{
-		LAMPS.clear();
-		parseDatapackFile("data/MagicLampData.xml");
+		LAMPS.Clear();
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/MagicLampData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("levelRange").ForEach(parseElement);
+		
 		LOGGER.Info("MagicLampData: Loaded " + LAMPS.size() + " magic lamps exp types.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		NodeList list = doc.getFirstChild().getChildNodes();
-		for (int i = 0; i < list.getLength(); i++)
+		int minLevel = element.Attribute("fromLevel").GetInt32();
+		int maxLevel = element.Attribute("toLevel").GetInt32();
+		
+		element.Elements("lamp").ForEach(el =>
 		{
-			Node n = list.item(i);
-			if ("levelRange".equalsIgnoreCase(n.getNodeName()))
-			{
-				int minLevel = parseInteger(n.getAttributes(), "fromLevel");
-				int maxLevel = parseInteger(n.getAttributes(), "toLevel");
-				NodeList lamps = n.getChildNodes();
-				for (int j = 0; j < lamps.getLength(); j++)
-				{
-					Node d = lamps.item(j);
-					if ("lamp".equalsIgnoreCase(d.getNodeName()))
-					{
-						NamedNodeMap attrs = d.getAttributes();
-						StatSet set = new StatSet();
-						set.set("type", parseString(attrs, "type"));
-						set.set("exp", parseInteger(attrs, "exp"));
-						set.set("sp", parseInteger(attrs, "sp"));
-						set.set("chance", parseInteger(attrs, "chance"));
-						set.set("minLevel", minLevel);
-						set.set("maxLevel", maxLevel);
-						LAMPS.add(new MagicLampDataHolder(set));
-					}
-				}
-			}
-		}
+			LampType type = el.Attribute("type").GetEnum<LampType>();
+			long exp = el.Attribute("exp").GetInt64();
+			long sp = el.Attribute("sp").GetInt64();
+			double chance = el.Attribute("chance").GetDouble();
+			
+			LAMPS.add(new MagicLampDataHolder(type, exp, sp, chance, minLevel, maxLevel));
+		});
 	}
-	
+
 	public List<MagicLampDataHolder> getLamps()
 	{
 		return LAMPS;

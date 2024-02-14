@@ -34,7 +34,7 @@ public class ClanLevelData
 		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/ClanLevelData.xml");
 		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 		XDocument document = XDocument.Load(stream);
-		document.Root?.Elements("clan").ForEach(element =>
+		document.Elements("list").Elements("clan").ForEach(element =>
 		{
 			int level = element.Attribute("level").GetInt32();
 			int exp = element.Attribute("exp").GetInt32();

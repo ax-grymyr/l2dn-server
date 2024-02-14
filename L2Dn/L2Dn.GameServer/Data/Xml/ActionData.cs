@@ -30,7 +30,7 @@ public class ActionData
 		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/ActionData.xml");
 		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 		XDocument document = XDocument.Load(stream);
-		document.Root?.Elements("action").ForEach(node =>
+		document.Elements("list").Elements("action").ForEach(node =>
 		{
 			int id = node.Attribute("id").GetInt32();
 			string handler = node.Attribute("handler").GetString("None");

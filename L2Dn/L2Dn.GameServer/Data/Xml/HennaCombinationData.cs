@@ -1,6 +1,10 @@
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Model.Items.Combination;
 using L2Dn.GameServer.Model.Items.Henna;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -23,38 +27,39 @@ public class HennaCombinationData
 	public void load()
 	{
 		_henna.Clear();
-		parseDatapackFile("data/stats/hennaCombinations.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/hennaCombinations.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("henna").ForEach(parseElement);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _henna.size() + " henna combinations.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		forEach(doc, "list", listNode =>
+		CombinationHenna henna = new CombinationHenna(element);
+		element.Elements("reward").ForEach(el =>
 		{
-			forEach(listNode, "henna", hennaNode =>
+			int hennaId = el.Attribute("dyeId").GetInt32();
+			int id = el.Attribute("id").GetInt32(-1);
+			int count = el.Attribute("count").GetInt32(0);
+			CombinationItemType type = el.Attribute("type").GetEnum<CombinationItemType>();
+			henna.addReward(new CombinationHennaReward(hennaId, id, count, type));
+			if ((id != -1) && (ItemData.getInstance().getTemplate(id) == null))
 			{
-				CombinationHenna henna = new CombinationHenna(new StatSet(parseAttributes(hennaNode)));
-				forEach(hennaNode, "reward", rewardNode =>
-				{
-					int hennaId = parseInteger(rewardNode.getAttributes(), "dyeId");
-					int id = parseInteger(rewardNode.getAttributes(), "id", -1);
-					int count = parseInteger(rewardNode.getAttributes(), "count", 0);
-					CombinationItemType type = parseEnum(rewardNode.getAttributes(), CombinationItemType.class, "type");
-					henna.addReward(new CombinationHennaReward(hennaId, id, count, type));
-					if ((id != -1) && (ItemData.getInstance().getTemplate(id) == null))
-					{
-						LOGGER.Info(GetType().Name + ": Could not find item with id " + id);
-					}
-					if ((hennaId != 0) && (HennaData.getInstance().getHenna(hennaId) == null))
-					{
-						LOGGER.Info(GetType().Name + ": Could not find henna with id " + id);
-					}
-				});
-				_henna.add(henna);
-			});
+				LOGGER.Error(GetType().Name + ": Could not find item with id " + id);
+			}
+
+			if ((hennaId != 0) && (HennaData.getInstance().getHenna(hennaId) == null))
+			{
+				LOGGER.Error(GetType().Name + ": Could not find henna with id " + id);
+			}
 		});
+
+		_henna.add(henna);
 	}
-	
+
 	public List<CombinationHenna> getHenna()
 	{
 		return _henna;

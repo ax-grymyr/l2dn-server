@@ -29,7 +29,7 @@ public class CombinationItemsData
 		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/CombinationItems.xml");
 		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 		XDocument document = XDocument.Load(stream);
-		document.Root?.Elements("item").ForEach(loadElement);
+		document.Elements("list").Elements("item").ForEach(loadElement);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _items.size() + " combinations.");
 	}

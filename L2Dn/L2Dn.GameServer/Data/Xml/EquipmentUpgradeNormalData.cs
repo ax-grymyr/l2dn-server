@@ -1,7 +1,10 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -35,89 +38,119 @@ public class EquipmentUpgradeNormalData
 		_commission = -1;
 		_discount.clear();
 		_upgrades.clear();
-		parseDatapackFile("data/EquipmentUpgradeNormalData.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/EquipmentUpgradeNormalData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("params").ForEach(el => _commission = el.Attribute("commission").GetInt32());
+		if (_commission < 0)
+		{
+			LOGGER.Warn(GetType().Name +
+			            ": Commission in file EquipmentUpgradeNormalData.xml not set or " +
+			            "less than 0! Setting up default value - 100!");
+
+			_commission = 100;
+		}
+
+		document.Elements("list").Elements("discount").Elements("item").ForEach(parseDiscountElement);
+		document.Elements("list").Elements("upgrade").ForEach(parseUpgradeElement);
+		
 		if (!_upgrades.isEmpty())
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + _upgrades.size() + " upgrade-normal equipment data. Adena commission is " + _commission + ".");
 		}
+		
 		if (!_discount.isEmpty())
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + _discount.size() + " upgrade-normal discount data.");
 		}
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseDiscountElement(XElement element)
 	{
-		forEach(doc, "list", listNode => forEach(listNode, "params", paramNode => _commission = new StatSet(parseAttributes(paramNode)).getInt("commission")));
-		if (_commission < 0)
-		{
-			LOGGER.Warn(GetType().Name + ": Commission in file EquipmentUpgradeNormalData.xml not set or less than 0! Setting up default value - 100!");
-			_commission = 100;
-		}
-		forEach(doc, "list", listNode => forEach(listNode, "discount", discountNode => forEach(discountNode, "item", itemNode =>
-		{
-			StatSet successSet = new StatSet(parseAttributes(itemNode));
-			_discount.add(new ItemHolder(successSet.getInt("id"), successSet.getLong("count")));
-		})));
-		forEach(doc, "list", listNode => forEach(listNode, "upgrade", upgradeNode =>
-		{
-			AtomicReference<ItemEnchantHolder> initialItem = new();
-			AtomicReference<List<ItemEnchantHolder>> materialItems = new(new());
-			AtomicReference<List<ItemEnchantHolder>> onSuccessItems = new(new());
-			AtomicReference<List<ItemEnchantHolder>> onFailureItems = new(new());
-			AtomicReference<List<ItemEnchantHolder>> bonusItems = new(new());
-			AtomicReference<Double> bonusChance = new AtomicReference<>();
-			StatSet headerSet = new StatSet(parseAttributes(upgradeNode));
-			int id = headerSet.getInt("id");
-			int type = headerSet.getInt("type");
-			double chance = headerSet.getDouble("chance");
-			long commission = _commission == 0 ? 0 : ((headerSet.getLong("commission") / 100) * _commission);
-			forEach(upgradeNode, "upgradeItem", upgradeItemNode =>
+		int id = element.Attribute("id").GetInt32();
+		long count = element.Attribute("count").GetInt64();
+		_discount.add(new ItemHolder(id, count));
+	}
+
+	private void parseUpgradeElement(XElement element)
+	{
+			ItemEnchantHolder? initialItem = null;
+			List<ItemEnchantHolder> materialItems = new();
+			List<ItemEnchantHolder> onSuccessItems = new();
+			List<ItemEnchantHolder> onFailureItems = new();
+			List<ItemEnchantHolder> bonusItems = new();
+			double bonusChance = 0;
+
+			int id = element.Attribute("id").GetInt32();
+			int type = element.Attribute("type").GetInt32();
+			double chance = element.Attribute("chance").GetDouble();
+			long commission = _commission == 0 ? 0 : ((element.Attribute("commission").GetInt64() / 100) * _commission);
+			
+			element.Elements("upgradeItem").ForEach(upgradeEl =>
 			{
-				StatSet initialSet = new StatSet(parseAttributes(upgradeItemNode));
-				initialItem.set(new ItemEnchantHolder(initialSet.getInt("id"), initialSet.getLong("count"), initialSet.getByte("enchantLevel")));
-				if (initialItem.get() == null)
-				{
-					LOGGER.Warn(GetType().Name + ": upgradeItem in file EquipmentUpgradeNormalData.xml for upgrade id " + id + " seems like broken!");
-				}
-				if (initialItem.get().getCount() < 0)
+				int itemId = upgradeEl.Attribute("id").GetInt32();
+				long count =  upgradeEl.Attribute("count").GetInt64();
+				byte enchantLevel = upgradeEl.Attribute("enchantLevel").GetByte();
+				initialItem = new ItemEnchantHolder(itemId, count, enchantLevel);
+				if (initialItem.getCount() < 0)
 				{
 					LOGGER.Warn(GetType().Name + ": upgradeItem => item => count in file EquipmentUpgradeNormalData.xml for upgrade id " + id + " cant be less than 0!");
 				}
 			});
-			forEach(upgradeNode, "material", materialItemNode => forEach(materialItemNode, "item", itemNode =>
+
+			element.Elements("material").Elements("item").ForEach(materialEl =>
 			{
-				StatSet successSet = new StatSet(parseAttributes(itemNode));
-				materialItems.get().add(new ItemEnchantHolder(successSet.getInt("id"), successSet.getLong("count"), successSet.getInt("enchantLevel")));
+				int itemId = materialEl.Attribute("id").GetInt32();
+				long count = materialEl.Attribute("count").GetInt64();
+				int enchantLevel = materialEl.Attribute("enchantLevel").GetInt32();
 				// {
 				// LOGGER.Warn(GetType().Name + ": material => item => count in file EquipmentUpgradeNormalData.xml for upgrade id " + id +" cant be less than 0!");
 				// }
-			}));
-			forEach(upgradeNode, "successItems", successItemNode => forEach(successItemNode, "item", itemNode =>
+				materialItems.add(new ItemEnchantHolder(itemId, count, enchantLevel));
+			});
+
+			element.Elements("successItems").Elements("item").ForEach(materialEl =>
 			{
-				StatSet successSet = new StatSet(parseAttributes(itemNode));
-				onSuccessItems.get().add(new ItemEnchantHolder(successSet.getInt("id"), successSet.getLong("count"), successSet.getInt("enchantLevel")));
-			}));
-			forEach(upgradeNode, "failureItems", failureItemNode => forEach(failureItemNode, "item", itemNode =>
+				int itemId = materialEl.Attribute("id").GetInt32();
+				long count = materialEl.Attribute("count").GetInt64();
+				int enchantLevel = materialEl.Attribute("enchantLevel").GetInt32();
+				onSuccessItems.add(new ItemEnchantHolder(itemId, count, enchantLevel));
+			});
+
+			element.Elements("failureItems").Elements("item").ForEach(materialEl =>
 			{
-				StatSet successSet = new StatSet(parseAttributes(itemNode));
-				onFailureItems.get().add(new ItemEnchantHolder(successSet.getInt("id"), successSet.getLong("count"), successSet.getInt("enchantLevel")));
-			}));
-			forEach(upgradeNode, "bonus_items", bonusItemNode =>
+				int itemId = materialEl.Attribute("id").GetInt32();
+				long count = materialEl.Attribute("count").GetInt64();
+				int enchantLevel = materialEl.Attribute("enchantLevel").GetInt32();
+				onFailureItems.add(new ItemEnchantHolder(itemId, count, enchantLevel));
+			});
+
+			element.Elements("bonus_items").ForEach(bonusEl =>
 			{
-				bonusChance.set(new StatSet(parseAttributes(bonusItemNode)).getDouble("chance"));
-				if (bonusChance.get() < 0)
+				bonusChance = bonusEl.Attribute("chance").GetDouble();
+				if (bonusChance < 0)
 				{
 					LOGGER.Warn(GetType().Name + ": bonus_items => chance in file EquipmentUpgradeNormalData.xml for upgrade id " + id + " cant be less than 0!");
 				}
-				forEach(bonusItemNode, "item", itemNode =>
+				
+				bonusEl.Elements("item").ForEach(materialEl =>
 				{
-					StatSet successSet = new StatSet(parseAttributes(itemNode));
-					bonusItems.get().add(new ItemEnchantHolder(successSet.getInt("id"), successSet.getLong("count"), successSet.getInt("enchantLevel")));
+					int itemId = materialEl.Attribute("id").GetInt32();
+					long count = materialEl.Attribute("count").GetInt64();
+					int enchantLevel = materialEl.Attribute("enchantLevel").GetInt32();
+					bonusItems.add(new ItemEnchantHolder(itemId, count, enchantLevel));
 				});
 			});
-			_upgrades.put(id, new EquipmentUpgradeNormalHolder(id, type, commission, chance, initialItem.get(), materialItems.get(), onSuccessItems.get(), onFailureItems.get(), bonusChance.get() == null ? 0 : bonusChance.get(), bonusItems.get()));
-		}));
+
+			if (initialItem is null)
+			{
+				LOGGER.Error(GetType().Name + ": no upgradeItem for upgrade id " + id);
+			}
+			
+			_upgrades.put(id,
+				new EquipmentUpgradeNormalHolder(id, type, commission, chance, initialItem, materialItems,
+					onSuccessItems, onFailureItems, bonusChance, bonusItems));
 	}
 	
 	public EquipmentUpgradeNormalHolder getUpgrade(int id)

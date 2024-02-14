@@ -29,7 +29,7 @@ public class CategoryData
 		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/CategoryData.xml");
 		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 		XDocument document = XDocument.Load(stream);
-		document.Root?.Elements("category").ForEach(loadElement);
+		document.Elements("list").Elements("category").ForEach(loadElement);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _categories.size() + " categories.");
 	}

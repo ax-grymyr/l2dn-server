@@ -34,7 +34,7 @@ public class ClassListData
 		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/chars/classList.xml");
 		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 		XDocument document = XDocument.Load(stream);
-		document.Root?.Elements("class").ForEach(loadElement);
+		document.Elements("list").Elements("class").ForEach(loadElement);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _classData.size() + " class data.");
 	}

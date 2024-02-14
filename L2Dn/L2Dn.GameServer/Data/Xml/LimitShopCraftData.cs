@@ -1,6 +1,9 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -22,7 +25,12 @@ public class LimitShopCraftData
 	public void load()
 	{
 		_products.Clear();
-		parseDatapackFile("data/LimitShopCraft.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/LimitShopCraft.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Where(l => l.Attribute("enabled").GetBoolean(false)).Elements("product")
+			.ForEach(parseElement);
 		
 		if (!_products.isEmpty())
 		{
@@ -33,201 +41,173 @@ public class LimitShopCraftData
 			LOGGER.Info(GetType().Name + ": System is disabled.");
 		}
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		int id = element.Attribute("id").GetInt32();
+		int category = element.Attribute("category").GetInt32();
+		int minLevel = element.Attribute("minLevel").GetInt32(1);
+		int maxLevel = element.Attribute("maxLevel").GetInt32(999);
+		int[] ingredientIds = new int[5];
+		ingredientIds[0] = 0;
+		ingredientIds[1] = 0;
+		ingredientIds[2] = 0;
+		ingredientIds[3] = 0;
+		ingredientIds[4] = 0;
+		long[] ingredientQuantities = new long[5];
+		ingredientQuantities[0] = 0;
+		ingredientQuantities[1] = 0;
+		ingredientQuantities[2] = 0;
+		ingredientQuantities[3] = 0;
+		ingredientQuantities[4] = 0;
+		int[] ingredientEnchants = new int[5];
+		ingredientEnchants[0] = 0;
+		ingredientEnchants[1] = 0;
+		ingredientEnchants[2] = 0;
+		ingredientEnchants[3] = 0;
+		ingredientEnchants[4] = 0;
+		int productionId = 0;
+		int productionId2 = 0;
+		int productionId3 = 0;
+		int productionId4 = 0;
+		int productionId5 = 0;
+		long count = 1L;
+		long count2 = 1L;
+		long count3 = 1L;
+		long count4 = 1L;
+		long count5 = 1L;
+		float chance = 100f;
+		float chance2 = 100f;
+		float chance3 = 100f;
+		float chance4 = 100f;
+		bool announce = false;
+		bool announce2 = false;
+		bool announce3 = false;
+		bool announce4 = false;
+		bool announce5 = false;
+		int enchant = 0;
+		int accountDailyLimit = 0;
+		int accountMontlyLimit = 0;
+		int accountBuyLimit = 0;
+
+		element.Elements("ingredient").ForEach(el =>
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
+			int ingredientId = el.Attribute("id").GetInt32();
+			long ingredientQuantity = el.Attribute("count").GetInt64(1);
+			int ingredientEnchant = el.Attribute("enchant").GetInt32(0);
+
+			if (ingredientId > 0)
 			{
-				NamedNodeMap at = n.getAttributes();
-				Node attribute = at.getNamedItem("enabled");
-				if ((attribute != null) && Boolean.parseBoolean(attribute.getNodeValue()))
+				ItemTemplate item = ItemData.getInstance().getTemplate(ingredientId);
+				if (item == null)
 				{
-					for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-					{
-						if ("product".equalsIgnoreCase(d.getNodeName()))
-						{
-							NamedNodeMap attrs = d.getAttributes();
-							Node att;
-							StatSet set = new StatSet();
-							for (int i = 0; i < attrs.getLength(); i++)
-							{
-								att = attrs.item(i);
-								set.set(att.getNodeName(), att.getNodeValue());
-							}
-							
-							int id = parseInteger(attrs, "id");
-							int category = parseInteger(attrs, "category");
-							int minLevel = parseInteger(attrs, "minLevel", 1);
-							int maxLevel = parseInteger(attrs, "maxLevel", 999);
-							int[] ingredientIds = new int[5];
-							ingredientIds[0] = 0;
-							ingredientIds[1] = 0;
-							ingredientIds[2] = 0;
-							ingredientIds[3] = 0;
-							ingredientIds[4] = 0;
-							long[] ingredientQuantities = new long[5];
-							ingredientQuantities[0] = 0;
-							ingredientQuantities[1] = 0;
-							ingredientQuantities[2] = 0;
-							ingredientQuantities[3] = 0;
-							ingredientQuantities[4] = 0;
-							int[] ingredientEnchants = new int[5];
-							ingredientEnchants[0] = 0;
-							ingredientEnchants[1] = 0;
-							ingredientEnchants[2] = 0;
-							ingredientEnchants[3] = 0;
-							ingredientEnchants[4] = 0;
-							int productionId = 0;
-							int productionId2 = 0;
-							int productionId3 = 0;
-							int productionId4 = 0;
-							int productionId5 = 0;
-							long count = 1L;
-							long count2 = 1L;
-							long count3 = 1L;
-							long count4 = 1L;
-							long count5 = 1L;
-							float chance = 100f;
-							float chance2 = 100f;
-							float chance3 = 100f;
-							float chance4 = 100f;
-							bool announce = false;
-							bool announce2 = false;
-							bool announce3 = false;
-							bool announce4 = false;
-							bool announce5 = false;
-							int enchant = 0;
-							int accountDailyLimit = 0;
-							int accountMontlyLimit = 0;
-							int accountBuyLimit = 0;
-							for (Node b = d.getFirstChild(); b != null; b = b.getNextSibling())
-							{
-								attrs = b.getAttributes();
-								
-								if ("ingredient".equalsIgnoreCase(b.getNodeName()))
-								{
-									int ingredientId = parseInteger(attrs, "id");
-									long ingredientQuantity = Parse(attrs, "count", 1L);
-									int ingredientEnchant = parseInteger(attrs, "enchant", 0);
-									
-									if (ingredientId > 0)
-									{
-										ItemTemplate item = ItemData.getInstance().getTemplate(ingredientId);
-										if (item == null)
-										{
-											LOGGER.Error(GetType().Name + ": Item template null for itemId: " + productionId + " productId: " + id);
-											continue;
-										}
-									}
-									
-									if (ingredientIds[0] == 0)
-									{
-										ingredientIds[0] = ingredientId;
-									}
-									else if (ingredientIds[1] == 0)
-									{
-										ingredientIds[1] = ingredientId;
-									}
-									else if (ingredientIds[2] == 0)
-									{
-										ingredientIds[2] = ingredientId;
-									}
-									else if (ingredientIds[3] == 0)
-									{
-										ingredientIds[3] = ingredientId;
-									}
-									else
-									{
-										ingredientIds[4] = ingredientId;
-									}
-									
-									if (ingredientQuantities[0] == 0)
-									{
-										ingredientQuantities[0] = ingredientQuantity;
-									}
-									else if (ingredientQuantities[1] == 0)
-									{
-										ingredientQuantities[1] = ingredientQuantity;
-									}
-									else if (ingredientQuantities[2] == 0)
-									{
-										ingredientQuantities[2] = ingredientQuantity;
-									}
-									else if (ingredientQuantities[3] == 0)
-									{
-										ingredientQuantities[3] = ingredientQuantity;
-									}
-									else
-									{
-										ingredientQuantities[4] = ingredientQuantity;
-									}
-									
-									if (ingredientEnchants[0] == 0)
-									{
-										ingredientEnchants[0] = ingredientEnchant;
-									}
-									else if (ingredientEnchants[1] == 0)
-									{
-										ingredientEnchants[1] = ingredientEnchant;
-									}
-									else if (ingredientEnchants[2] == 0)
-									{
-										ingredientEnchants[2] = ingredientEnchant;
-									}
-									else if (ingredientEnchants[3] == 0)
-									{
-										ingredientEnchants[3] = ingredientEnchant;
-									}
-									else
-									{
-										ingredientEnchants[4] = ingredientEnchant;
-									}
-								}
-								else if ("production".equalsIgnoreCase(b.getNodeName()))
-								{
-									productionId = parseInteger(attrs, "id");
-									count = Parse(attrs, "count", 1L);
-									chance = parseFloat(attrs, "chance", 100f);
-									announce = parseBoolean(attrs, "announce", false);
-									enchant = parseInteger(attrs, "enchant", 0);
-									productionId2 = parseInteger(attrs, "id2", 0);
-									count2 = Parse(attrs, "count2", 1L);
-									chance2 = parseFloat(attrs, "chance2", 100f);
-									announce2 = parseBoolean(attrs, "announce2", false);
-									productionId3 = parseInteger(attrs, "id3", 0);
-									count3 = Parse(attrs, "count3", 1L);
-									chance3 = parseFloat(attrs, "chance3", 100f);
-									announce3 = parseBoolean(attrs, "announce3", false);
-									productionId4 = parseInteger(attrs, "id4", 0);
-									count4 = Parse(attrs, "count4", 1L);
-									chance4 = parseFloat(attrs, "chance4", 100f);
-									announce4 = parseBoolean(attrs, "announce4", false);
-									productionId5 = parseInteger(attrs, "id5", 0);
-									count5 = Parse(attrs, "count5", 1L);
-									announce5 = parseBoolean(attrs, "announce5", false);
-									accountDailyLimit = parseInteger(attrs, "accountDailyLimit", 0);
-									accountMontlyLimit = parseInteger(attrs, "accountMontlyLimit", 0);
-									accountBuyLimit = parseInteger(attrs, "accountBuyLimit", 0);
-									
-									ItemTemplate item = ItemData.getInstance().getTemplate(productionId);
-									if (item == null)
-									{
-										LOGGER.Error(GetType().Name + ": Item template null for itemId: " + productionId + " productId: " + id);
-										continue;
-									}
-								}
-							}
-							
-							_products.add(new LimitShopProductHolder(id, category, minLevel, maxLevel, ingredientIds, ingredientQuantities, ingredientEnchants, productionId, count, chance, announce, enchant, productionId2, count2, chance2, announce2, productionId3, count3, chance3, announce3, productionId4, count4, chance4, announce4, productionId5, count5, announce5, accountDailyLimit, accountMontlyLimit, accountBuyLimit));
-						}
-					}
+					LOGGER.Error(GetType().Name + ": Item template null for itemId: " + productionId + " productId: " +
+					             id);
+					return;
 				}
 			}
-		}
+
+			if (ingredientIds[0] == 0)
+			{
+				ingredientIds[0] = ingredientId;
+			}
+			else if (ingredientIds[1] == 0)
+			{
+				ingredientIds[1] = ingredientId;
+			}
+			else if (ingredientIds[2] == 0)
+			{
+				ingredientIds[2] = ingredientId;
+			}
+			else if (ingredientIds[3] == 0)
+			{
+				ingredientIds[3] = ingredientId;
+			}
+			else
+			{
+				ingredientIds[4] = ingredientId;
+			}
+
+			if (ingredientQuantities[0] == 0)
+			{
+				ingredientQuantities[0] = ingredientQuantity;
+			}
+			else if (ingredientQuantities[1] == 0)
+			{
+				ingredientQuantities[1] = ingredientQuantity;
+			}
+			else if (ingredientQuantities[2] == 0)
+			{
+				ingredientQuantities[2] = ingredientQuantity;
+			}
+			else if (ingredientQuantities[3] == 0)
+			{
+				ingredientQuantities[3] = ingredientQuantity;
+			}
+			else
+			{
+				ingredientQuantities[4] = ingredientQuantity;
+			}
+
+			if (ingredientEnchants[0] == 0)
+			{
+				ingredientEnchants[0] = ingredientEnchant;
+			}
+			else if (ingredientEnchants[1] == 0)
+			{
+				ingredientEnchants[1] = ingredientEnchant;
+			}
+			else if (ingredientEnchants[2] == 0)
+			{
+				ingredientEnchants[2] = ingredientEnchant;
+			}
+			else if (ingredientEnchants[3] == 0)
+			{
+				ingredientEnchants[3] = ingredientEnchant;
+			}
+			else
+			{
+				ingredientEnchants[4] = ingredientEnchant;
+			}
+		});
+
+		element.Elements("production").ForEach(el =>
+		{
+			productionId = el.Attribute("id").GetInt32();
+			count = el.Attribute("count").GetInt64(1);
+			chance = el.Attribute("chance").GetFloat(100f);
+			announce = el.Attribute("announce").GetBoolean(false);
+			enchant = el.Attribute("enchant").GetInt32(0);
+			productionId2 = el.Attribute("id2").GetInt32(0);
+			count2 = el.Attribute("count2").GetInt64(1);
+			chance2 = el.Attribute("chance2").GetFloat(100f);
+			announce2 = el.Attribute("announce2").GetBoolean(false);
+			productionId3 = el.Attribute("id3").GetInt32(0);
+			count3 = el.Attribute("count3").GetInt64(1);
+			chance3 = el.Attribute("chance3").GetFloat(100f);
+			announce3 = el.Attribute("announce3").GetBoolean(false);
+			productionId4 = el.Attribute("id4").GetInt32(0);
+			count4 = el.Attribute("count4").GetInt64(1);
+			chance4 = el.Attribute("chance4").GetFloat(100f);
+			announce4 = el.Attribute("announce4").GetBoolean(false);
+			productionId5 = el.Attribute("id5").GetInt32(0);
+			count5 = el.Attribute("count5").GetInt64(1);
+			announce5 = el.Attribute("announce5").GetBoolean(false);
+			accountDailyLimit = el.Attribute("accountDailyLimit").GetInt32(0);
+			accountMontlyLimit = el.Attribute("accountMontlyLimit").GetInt32(0);
+			accountBuyLimit = el.Attribute("accountBuyLimit").GetInt32(0);
+
+			ItemTemplate item = ItemData.getInstance().getTemplate(productionId);
+			if (item == null)
+				LOGGER.Error(GetType().Name + ": Item template null for itemId: " + productionId + " productId: " + id);
+		});
+
+		_products.add(new LimitShopProductHolder(id, category, minLevel, maxLevel, ingredientIds, ingredientQuantities,
+			ingredientEnchants, productionId, count, chance, announce, enchant, productionId2, count2, chance2,
+			announce2, productionId3, count3, chance3, announce3, productionId4, count4, chance4, announce4,
+			productionId5, count5, announce5, accountDailyLimit, accountMontlyLimit, accountBuyLimit));
 	}
-	
+
 	public LimitShopProductHolder getProduct(int id)
 	{
 		foreach (LimitShopProductHolder product in _products)

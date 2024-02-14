@@ -1,6 +1,9 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -22,48 +25,32 @@ public class RaidDropAnnounceData
 	public void load()
 	{
 		_itemIds.clear();
-		parseDatapackFile("data/RaidDropAnnounceData.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/RaidDropAnnounceData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("item").ForEach(parseElement);
+		
 		if (!_itemIds.isEmpty())
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + _itemIds.size() + " raid drop announce data.");
 		}
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		int id = element.Attribute("id").GetInt32();
+		ItemTemplate item = ItemData.getInstance().getTemplate(id);
+		if (item != null)
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("item".equalsIgnoreCase(d.getNodeName()))
-					{
-						NamedNodeMap attrs = d.getAttributes();
-						Node att;
-						StatSet set = new StatSet();
-						for (int i = 0; i < attrs.getLength(); i++)
-						{
-							att = attrs.item(i);
-							set.set(att.getNodeName(), att.getNodeValue());
-						}
-						
-						int id = parseInteger(attrs, "id");
-						ItemTemplate item = ItemData.getInstance().getTemplate(id);
-						if (item != null)
-						{
-							_itemIds.add(id);
-						}
-						else
-						{
-							LOGGER.Warn(GetType().Name + ": Could not find item with id: " + id);
-						}
-					}
-				}
-			}
+			_itemIds.add(id);
+		}
+		else
+		{
+			LOGGER.Error(GetType().Name + ": Could not find item with id: " + id);
 		}
 	}
-	
+
 	public bool isAnnounce(int itemId)
 	{
 		return _itemIds.Contains(itemId);

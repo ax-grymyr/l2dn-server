@@ -1,3 +1,4 @@
+using System.Xml.Linq;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Utilities;
 
@@ -14,10 +15,10 @@ public class EnchantSkillHolder
 	private readonly Map<SkillEnchantType, int> _chance = new();
 	private readonly Map<SkillEnchantType, Set<ItemHolder>> _requiredItems = new();
 	
-	public EnchantSkillHolder(StatSet set)
+	public EnchantSkillHolder(int level, int enchantFailLevel)
 	{
-		_level = set.getInt("level");
-		_enchantFailLevel = set.getInt("enchantFailLevel");
+		_level = level;
+		_enchantFailLevel = enchantFailLevel;
 	}
 	
 	public int getLevel()

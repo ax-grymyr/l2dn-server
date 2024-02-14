@@ -1,6 +1,8 @@
-using L2Dn.GameServer.Model;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -22,32 +24,35 @@ public class SubjugationData
 	public void load()
 	{
 		_subjugations.Clear();
-		parseDatapackFile("data/SubjugationData.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/SubjugationData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("purge").ForEach(parseElement);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _subjugations.size() + " data.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		forEach(doc, "list", listNode => forEach(listNode, "purge", purgeNode =>
+		int category = element.Attribute("category").GetInt32();
+		List<int[]> hottimes = element.Attribute("hottimes").GetString().Split(";")
+			.Select(it => it.Split("-").Select(int.Parse).ToArray()).ToList();
+		
+		Map<int, int> npcs = new();
+		element.Elements("npc").ForEach(el =>
 		{
-			StatSet set = new StatSet(parseAttributes(purgeNode));
-			int category = set.getInt("category");
-			List<int[]> hottimes = Arrays.stream(set.getString("hottimes").split(";")).map(it => Arrays.stream(it.split("-")).mapToInt(int::Parse).toArray()).collect(Collectors.toList());
-			Map<int, int> npcs = new();
-			forEach(purgeNode, "npc", npcNode =>
-			{
-				StatSet stats = new StatSet(parseAttributes(npcNode));
-				int npcId = stats.getInt("id");
-				int points = stats.getInt("points");
-				npcs.put(npcId, points);
-			});
-			_subjugations.add(new SubjugationHolder(category, hottimes, npcs));
-		}));
+			int npcId = el.Attribute("id").GetInt32();
+			int points = el.Attribute("points").GetInt32();
+			npcs.put(npcId, points);
+		});
+
+		_subjugations.add(new SubjugationHolder(category, hottimes, npcs));
 	}
-	
+
 	public SubjugationHolder getSubjugation(int category)
 	{
-		return _subjugations.stream().filter(it => it.getCategory() == category).findFirst().orElse(null);
+		return _subjugations.FirstOrDefault(it => it.getCategory() == category);
 	}
 	
 	public static SubjugationData getInstance()

@@ -1,4 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Items.Henna;
@@ -63,7 +65,7 @@ public class Henna
 	
 	public int getBaseStats(BaseStat stat)
 	{
-		return !_baseStats.containsKey(stat) ? 0 : _baseStats.get(stat).intValue();
+		return !_baseStats.containsKey(stat) ? 0 : _baseStats.get(stat);
 	}
 	
 	public Map<BaseStat, int> getBaseStats()
@@ -151,7 +153,7 @@ public class Henna
 	 */
 	public bool isAllowedClass(Player c)
 	{
-		return _wearClass.contains(c.getClassId().level());
+		return _wearClass.Contains(c.getClassId().level());
 	}
 	
 	/**

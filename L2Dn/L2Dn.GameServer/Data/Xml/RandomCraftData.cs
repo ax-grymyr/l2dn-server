@@ -1,8 +1,11 @@
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -27,7 +30,14 @@ public class RandomCraftData
 	public void load()
 	{
 		EXTRACT_DATA.clear();
-		parseDatapackFile("data/RandomCraftExtractData.xml");
+
+		{
+			string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/RandomCraftExtractData.xml");
+			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+			XDocument document = XDocument.Load(stream);
+			document.Elements("list").Elements("extract").Elements("item").ForEach(parseExtractElement);
+		}
+
 		int extractCount = EXTRACT_DATA.size();
 		if (extractCount > 0)
 		{
@@ -35,7 +45,14 @@ public class RandomCraftData
 		}
 		
 		REWARD_DATA.clear();
-		parseDatapackFile("data/RandomCraftRewardData.xml");
+
+		{
+			string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/RandomCraftRewardData.xml");
+			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+			XDocument document = XDocument.Load(stream);
+			document.Elements("list").Elements("rewards").Elements("item").ForEach(parseRewardElement);
+		}
+		
 		int rewardCount = REWARD_DATA.size();
 		if (rewardCount > 4)
 		{
@@ -49,40 +66,35 @@ public class RandomCraftData
 		
 		randomizeRewards();
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseExtractElement(XElement element)
 	{
-		forEach(doc, "list", listNode => forEach(listNode, "extract", extractNode =>
-		{
-			forEach(extractNode, "item", itemNode =>
-			{
-				StatSet stats = new StatSet(parseAttributes(itemNode));
-				int itemId = stats.getInt("id");
-				long points = stats.getLong("points");
-				long fee = stats.getLong("fee");
-				EXTRACT_DATA.put(itemId, new RandomCraftExtractDataHolder(points, fee));
-			});
-		}));
-		
-		forEach(doc, "list", listNode => forEach(listNode, "rewards", rewardNode =>
-		{
-			forEach(rewardNode, "item", itemNode =>
-			{
-				StatSet stats = new StatSet(parseAttributes(itemNode));
-				int itemId = stats.getInt("id");
-				ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
-				if (item == null)
-				{
-					LOGGER.Warn(GetType().Name + " unexisting item reward: " + itemId);
-				}
-				else
-				{
-					REWARD_DATA.put(itemId, new RandomCraftRewardDataHolder(stats.getInt("id"), stats.getLong("count", 1), Math.min(100, Math.max(0.00000000000001, stats.getDouble("chance", 100))), stats.getBoolean("announce", false)));
-				}
-			});
-		}));
+		int itemId = element.Attribute("id").GetInt32();
+		long points = element.Attribute("points").GetInt64();
+		long fee = element.Attribute("fee").GetInt64();
+		EXTRACT_DATA.put(itemId, new RandomCraftExtractDataHolder(points, fee));
 	}
-	
+
+	private void parseRewardElement(XElement element)
+	{
+		int itemId = element.Attribute("id").GetInt32();
+		ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
+		if (item == null)
+		{
+			LOGGER.Warn(GetType().Name + " unexisting item reward: " + itemId);
+		}
+		else
+		{
+			long count = element.Attribute("count").GetInt64(1);
+			double chance = element.Attribute("chance").GetDouble(100);
+			bool announce = element.Attribute("announce").GetBoolean(false);
+
+			REWARD_DATA.put(itemId,
+				new RandomCraftRewardDataHolder(itemId, count, Math.Min(100, Math.Max(0.00000000000001, chance)),
+					announce));
+		}
+	}
+
 	public bool isEmpty()
 	{
 		return REWARD_DATA.isEmpty();

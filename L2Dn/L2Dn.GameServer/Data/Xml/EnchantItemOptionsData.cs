@@ -1,8 +1,11 @@
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Options;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -21,72 +24,64 @@ public class EnchantItemOptionsData
 		load();
 	}
 	
-	[MethodImpl(MethodImplOptions.Synchronized)] 
+	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void load()
 	{
 		_data.clear();
-		parseDatapackFile("data/EnchantItemOptions.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/EnchantItemOptions.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("item").ForEach(parseItem);
+
+		int optionCount = _data.values().SelectMany(v => v.values()).Count();
+		LOGGER.Info(GetType().Name + ": Loaded " + _data.size() + " items and " + optionCount + " options.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseItem(XElement element)
 	{
-		int counter = 0;
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		int itemId = element.Attribute("id").GetInt32();
+		ItemTemplate template = ItemData.getInstance().getTemplate(itemId);
+		if (template == null)
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
+			LOGGER.Warn(GetType().Name + ": Could not find item template for id " + itemId);
+			return;
+		}
+
+		element.Elements("options").ForEach(optionsElement =>
+		{
+			int level = optionsElement.Attribute("level").GetInt32();
+			EnchantOptions op = new EnchantOptions(level);
+			for (byte i = 0; i < 3; i++)
 			{
-				ITEM: for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+				XAttribute? optionAttribute = optionsElement.Attribute("option" + (i + 1));
+				if (optionAttribute != null && Util.isDigit(optionAttribute.Value))
 				{
-					if ("item".equalsIgnoreCase(d.getNodeName()))
+					int id = (int)optionAttribute;
+					if (OptionData.getInstance().getOptions(id) == null)
 					{
-						int itemId = parseInteger(d.getAttributes(), "id");
-						ItemTemplate template = ItemData.getInstance().getTemplate(itemId);
-						if (template == null)
-						{
-							LOGGER.Warn(GetType().Name + ": Could not find item template for id " + itemId);
-							continue ITEM;
-						}
-						for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
-						{
-							if ("options".equalsIgnoreCase(cd.getNodeName()))
-							{
-								EnchantOptions op = new EnchantOptions(parseInteger(cd.getAttributes(), "level"));
-								for (byte i = 0; i < 3; i++)
-								{
-									Node att = cd.getAttributes().getNamedItem("option" + (i + 1));
-									if ((att != null) && Util.isDigit(att.getNodeValue()))
-									{
-										int id = parseInteger(att);
-										if (OptionData.getInstance().getOptions(id) == null)
-										{
-											LOGGER.Warn(GetType().Name + ": Could not find option " + id + " for item " + template);
-											continue ITEM;
-										}
-										
-										Map<int, EnchantOptions> data = _data.get(itemId);
-										if (data == null)
-										{
-											data = new();
-											_data.put(itemId, data);
-										}
-										if (!data.containsKey(op.getLevel()))
-										{
-											data.put(op.getLevel(), op);
-										}
-										
-										op.setOption(i, id);
-									}
-								}
-								counter++;
-							}
-						}
+						LOGGER.Warn(GetType().Name + ": Could not find option " + id + " for item " + template);
+						return;
 					}
+
+					Map<int, EnchantOptions> data = _data.get(itemId);
+					if (data == null)
+					{
+						data = new();
+						_data.put(itemId, data);
+					}
+
+					if (!data.containsKey(op.getLevel()))
+					{
+						data.put(op.getLevel(), op);
+					}
+
+					op.setOption(i, id);
 				}
 			}
-		}
-		LOGGER.Info(GetType().Name + ": Loaded " + _data.size() + " items and " + counter + " options.");
+		});
 	}
-	
+
 	/**
 	 * @param itemId
 	 * @return if specified item id has available enchant effects.

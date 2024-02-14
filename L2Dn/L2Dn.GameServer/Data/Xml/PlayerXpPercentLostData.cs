@@ -1,4 +1,6 @@
-using L2Dn.GameServer.Utilities;
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -11,43 +13,36 @@ public class PlayerXpPercentLostData
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PlayerXpPercentLostData));
 	
-	private readonly int _maxlevel = ExperienceData.getInstance().getMaxLevel();
-	private readonly double[] _playerXpPercentLost = new double[_maxlevel + 1];
+	private readonly int _maxlevel;
+	private readonly double[] _playerXpPercentLost;
 	
 	protected PlayerXpPercentLostData()
 	{
-		Arrays.fill(_playerXpPercentLost, 1.0);
+		_maxlevel = ExperienceData.getInstance().getMaxLevel();
+		_playerXpPercentLost = new double[_maxlevel + 1];
+		Array.Fill(_playerXpPercentLost, 1.0);
+		
 		load();
 	}
 	
-	public void load()
+	private void load()
 	{
-		parseDatapackFile("data/stats/chars/playerXpPercentLost.xml");
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/chars/playerXpPercentLost.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("xpLost").ForEach(parseElement);
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
-		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("xpLost".equalsIgnoreCase(d.getNodeName()))
-					{
-						NamedNodeMap attrs = d.getAttributes();
-						int level = parseInteger(attrs, "level");
-						if (level > _maxlevel)
-						{
-							break;
-						}
-						_playerXpPercentLost[level] = parseDouble(attrs, "val");
-					}
-				}
-			}
-		}
+		int level = element.Attribute("level").GetInt32();
+		if (level > _maxlevel)
+			return;
+
+		double val = element.Attribute("val").GetDouble();
+		_playerXpPercentLost[level] = val;
 	}
-	
+
 	public double getXpPercent(int level)
 	{
 		if (level > _maxlevel)

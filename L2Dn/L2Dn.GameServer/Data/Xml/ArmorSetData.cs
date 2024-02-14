@@ -35,7 +35,7 @@ public class ArmorSetData
 		{
 			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 			XDocument document = XDocument.Load(stream);
-			document.Root?.Elements("set").ForEach(x => loadElement(filePath, x));
+			document.Elements("list").Elements("set").ForEach(x => loadElement(filePath, x));
 		});
 
 		int count = _armorSetMap.Keys.Max() + 1;

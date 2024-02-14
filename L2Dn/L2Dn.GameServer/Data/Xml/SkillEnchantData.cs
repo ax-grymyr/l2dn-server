@@ -1,7 +1,10 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -26,50 +29,57 @@ public class SkillEnchantData
 	
 	public void load()
 	{
-		parseDatapackFile("data/SkillEnchantData.xml");
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/SkillEnchantData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("skills").Elements("skill").ForEach(parseSkillElement);
+		document.Elements("list").Elements("stars").Elements("star").ForEach(parseStarElement);
+		document.Elements("list").Elements("chances").Elements("chance").ForEach(parseChanceElement);
+		document.Elements("list").Elements("itemsPoints").Elements("star").ForEach(parseItemPointStarElement);
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _enchantStarMap.size() + " star levels.");
 		LOGGER.Info(GetType().Name + ": Loaded " + _enchantItemMap.size() + " enchant items.");
 		LOGGER.Info(GetType().Name + ": Loaded " + _skillEnchantMap.size() + " skill enchants.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseSkillElement(XElement element)
 	{
-		forEach(doc, "list", listNode =>
+		int id = element.Attribute("id").GetInt32();
+		int starLevel = element.Attribute("starLevel").GetInt32();
+		int maxEnchantLevel = element.Attribute("maxEnchantLevel").GetInt32();
+		_skillEnchantMap.put(id, new SkillEnchantHolder(id, starLevel, maxEnchantLevel));
+	}
+
+	private void parseStarElement(XElement element)
+	{
+		int level = element.Attribute("level").GetInt32();
+		int expMax = element.Attribute("expMax").GetInt32();
+		int expOnFail = element.Attribute("expOnFail").GetInt32();
+		long feeAdena = element.Attribute("feeAdena").GetInt64();
+		EnchantStarHolder starHolder = new EnchantStarHolder(level, expMax, expOnFail, feeAdena);
+		_enchantStarMap.put(level, starHolder);
+	}
+
+	private void parseChanceElement(XElement element)
+	{
+		int enchantLevel = element.Attribute("enchantLevel").GetInt32();
+		int chance = element.Attribute("chance").GetInt32();
+		_chanceEnchantMap.put(enchantLevel, chance);
+	}
+
+	private void parseItemPointStarElement(XElement element)
+	{
+		int level = element.Attribute("level").GetInt32();
+		Map<int, EnchantItemExpHolder> itemMap = new();
+		element.Elements("item").ForEach(el =>
 		{
-			forEach(listNode, "skills", skills => forEach(skills, "skill", skill =>
-			{
-				StatSet set = new StatSet(parseAttributes(skill));
-				int id = set.getInt("id");
-				_skillEnchantMap.put(id, new SkillEnchantHolder(set));
-			}));
-			forEach(listNode, "stars", stars => forEach(stars, "star", star =>
-			{
-				StatSet set = new StatSet(parseAttributes(star));
-				int level = set.getInt("level");
-				EnchantStarHolder starHolder = new EnchantStarHolder(set);
-				_enchantStarMap.put(level, starHolder);
-			}));
-			forEach(listNode, "chances", itemsPoints => forEach(itemsPoints, "chance", item =>
-			{
-				StatSet set = new StatSet(parseAttributes(item));
-				int enchantLevel = set.getInt("enchantLevel");
-				int chance = set.getInt("chance");
-				_chanceEnchantMap.put(enchantLevel, chance);
-			}));
-			forEach(listNode, "itemsPoints", itemsPoints => forEach(itemsPoints, "star", star =>
-			{
-				StatSet set = new StatSet(parseAttributes(star));
-				int level = set.getInt("level");
-				Map<int, EnchantItemExpHolder> itemMap = new();
-				forEach(star, "item", item =>
-				{
-					StatSet statSet = new StatSet(parseAttributes(item));
-					int id = statSet.getInt("id");
-					itemMap.put(id, new EnchantItemExpHolder(statSet));
-				});
-				_enchantItemMap.put(level, itemMap);
-			}));
+			int id = el.Attribute("id").GetInt32();
+			int exp = el.Attribute("exp").GetInt32(1);
+			int starLevel = el.Attribute("starLevel").GetInt32(1);
+			itemMap.put(id, new EnchantItemExpHolder(id, exp, starLevel));
 		});
+
+		_enchantItemMap.put(level, itemMap);
 	}
 	
 	public EnchantStarHolder getEnchantStar(int level)

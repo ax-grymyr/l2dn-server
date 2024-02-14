@@ -147,7 +147,7 @@ public class DailyMissionDataHolder
 			return false;
 		}
 		
-		int status = getStatus(player);
+		DailyMissionStatus status = getStatus(player);
 		if (!isDisplayedWhenNotAvailable() && (status == DailyMissionStatus.NOT_AVAILABLE))
 		{
 			return false;
@@ -167,32 +167,32 @@ public class DailyMissionDataHolder
 	
 	public DailyMissionStatus getStatus(Player player)
 	{
-		return _handler != null ? _handler.getStatus(player) : DailyMissionStatus.NOT_AVAILABLE;
+		return _handler?.getStatus(player) ?? DailyMissionStatus.NOT_AVAILABLE;
 	}
 	
-	public DailyMissionStatus getProgress(Player player)
+	public int getProgress(Player player)
 	{
-		return _handler != null ? _handler.getProgress(player) : DailyMissionStatus.NOT_AVAILABLE;
+		return _handler?.getProgress(player) ?? 0;
 	}
 	
 	public bool isRecentlyCompleted(Player player)
 	{
-		return (_handler != null) && _handler.isRecentlyCompleted(player);
+		return _handler != null && _handler.isRecentlyCompleted(player);
 	}
 	
 	public void reset()
 	{
 		if (_handler != null)
 		{
-			if ((_missionResetSlot == MissionResetType.WEEK) && (Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY))
+			if ((_missionResetSlot == MissionResetType.WEEK) && (DateTime.Now.DayOfWeek == DayOfWeek.Monday))
 			{
 				_handler.reset();
 			}
-			else if ((_missionResetSlot == MissionResetType.MONTH) && (Calendar.getInstance().get(Calendar.DAY_OF_MONTH) == 1))
+			else if ((_missionResetSlot == MissionResetType.MONTH) && (DateTime.Now.Day == 1))
 			{
 				_handler.reset();
 			}
-			else if ((_missionResetSlot == MissionResetType.WEEKEND) && (Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY))
+			else if ((_missionResetSlot == MissionResetType.WEEKEND) && (DateTime.Now.DayOfWeek == DayOfWeek.Saturday))
 			{
 				_handler.reset();
 			}

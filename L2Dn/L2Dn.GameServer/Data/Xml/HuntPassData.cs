@@ -1,6 +1,9 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -26,7 +29,12 @@ public class HuntPassData
 		if (Config.ENABLE_HUNT_PASS)
 		{
 			_rewards.Clear();
-			parseDatapackFile("data/HuntPass.xml");
+			
+			string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/HuntPass.xml");
+			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+			XDocument document = XDocument.Load(stream);
+			document.Elements("hitConditionBonus").Elements("item").ForEach(parseElement);
+			
 			_rewardCount = _rewards.size();
 			_premiumRewardCount = _premiumRewards.size();
 			LOGGER.Info(GetType().Name + ": Loaded " + _rewardCount + " HuntPass rewards.");
@@ -37,25 +45,21 @@ public class HuntPassData
 		}
 	}
 	
-	public void parseDocument(Document doc, File f)
+	private void parseElement(XElement element)
 	{
-		forEach(doc, "list", listNode => forEach(listNode, "item", rewardNode =>
+		int itemId = element.Attribute("id").GetInt32();
+		int itemCount = element.Attribute("count").GetInt32();
+		int premiumitemId = element.Attribute("premiumId").GetInt32();
+		int premiumitemCount = element.Attribute("premiumCount").GetInt32();
+		if (ItemData.getInstance().getTemplate(itemId) == null)
 		{
-			StatSet set = new StatSet(parseAttributes(rewardNode));
-			int itemId = set.getInt("id");
-			int itemCount = set.getInt("count");
-			int premiumitemId = set.getInt("premiumId");
-			int premiumitemCount = set.getInt("premiumCount");
-			if (ItemData.getInstance().getTemplate(itemId) == null)
-			{
-				LOGGER.Info(GetType().Name + ": Item with id " + itemId + " does not exist.");
-			}
-			else
-			{
-				_rewards.add(new ItemHolder(itemId, itemCount));
-				_premiumRewards.add(new ItemHolder(premiumitemId, premiumitemCount));
-			}
-		}));
+			LOGGER.Error(GetType().Name + ": Item with id " + itemId + " does not exist.");
+		}
+		else
+		{
+			_rewards.add(new ItemHolder(itemId, itemCount));
+			_premiumRewards.add(new ItemHolder(premiumitemId, premiumitemCount));
+		}
 	}
 	
 	public List<ItemHolder> getRewards()

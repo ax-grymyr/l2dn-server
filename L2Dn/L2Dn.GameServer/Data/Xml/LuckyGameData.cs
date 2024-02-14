@@ -1,6 +1,8 @@
-using L2Dn.GameServer.Model;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -22,40 +24,53 @@ public class LuckyGameData
 	public void load()
 	{
 		_luckyGame.clear();
-		parseDatapackFile("data/LuckyGameData.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/LuckyGameData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("luckygame").ForEach(parseElement);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _luckyGame.size() + " lucky game data.");
 	}
 	
-	public void parseDocument(Document doc, File f)
+	private void parseElement(XElement element)
 	{
-		forEach(doc, "list", listNode => forEach(listNode, "luckygame", rewardNode =>
-		{
-			LuckyGameDataHolder holder = new LuckyGameDataHolder(new StatSet(parseAttributes(rewardNode)));
+		int index = element.Attribute("index").GetInt32();
+		int turningPoints = element.Attribute("turning_point").GetInt32();
+			LuckyGameDataHolder holder = new LuckyGameDataHolder(index, turningPoints);
 			
-			forEach(rewardNode, "common_reward", commonRewardNode => forEach(commonRewardNode, "item", itemNode =>
+			element.Elements("common_reward").Elements("item").ForEach(el =>
 			{
-				StatSet stats = new StatSet(parseAttributes(itemNode));
-				holder.addCommonReward(new ItemChanceHolder(stats.getInt("id"), stats.getDouble("chance"), stats.getLong("count")));
-			}));
+				int id = el.Attribute("id").GetInt32();
+				double chance = el.Attribute("chance").GetDouble();
+				long count = el.Attribute("count").GetInt64();
+				holder.addCommonReward(new ItemChanceHolder(id, chance, count));
+			});
 			
-			forEach(rewardNode, "unique_reward", uniqueRewardNode => forEach(uniqueRewardNode, "item", itemNode =>
+			element.Elements("common_reward").Elements("item").ForEach(el =>
 			{
-				holder.addUniqueReward(new ItemPointHolder(new StatSet(parseAttributes(itemNode))));
-			}));
-			
-			forEach(rewardNode, "modify_reward", uniqueRewardNode =>
+				int id = el.Attribute("id").GetInt32();
+				long count = el.Attribute("count").GetInt64();
+				int points = el.Attribute("points").GetInt32();
+				holder.addUniqueReward(new ItemPointHolder(id, count, points));
+			});
+
+			element.Elements("modify_reward").ForEach(el =>
 			{
-				holder.setMinModifyRewardGame(parseInteger(uniqueRewardNode.getAttributes(), "min_game"));
-				holder.setMaxModifyRewardGame(parseInteger(uniqueRewardNode.getAttributes(), "max_game"));
-				forEach(uniqueRewardNode, "item", itemNode =>
+				int minGame = el.Attribute("min_game").GetInt32();
+				int maxGame = el.Attribute("max_game").GetInt32();
+				holder.setMinModifyRewardGame(minGame);
+				holder.setMaxModifyRewardGame(maxGame);
+				el.Elements("item").ForEach(e =>
 				{
-					StatSet stats = new StatSet(parseAttributes(itemNode));
-					holder.addModifyReward(new ItemChanceHolder(stats.getInt("id"), stats.getDouble("chance"), stats.getLong("count")));
+					int id = el.Attribute("id").GetInt32();
+					double chance = el.Attribute("chance").GetDouble();
+					long count = el.Attribute("count").GetInt64();
+					holder.addModifyReward(new ItemChanceHolder(id, chance, count));
 				});
 			});
 			
-			_luckyGame.put(parseInteger(rewardNode.getAttributes(), "index"), holder);
-		}));
+			_luckyGame.put(index, holder);
 	}
 	
 	public int getLuckyGameCount()

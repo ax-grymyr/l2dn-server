@@ -1,8 +1,12 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -16,7 +20,7 @@ public class InitialShortcutData
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(InitialShortcutData));
 	
-	private readonly Map<ClassId, List<Shortcut>> _initialShortcutData = new();
+	private readonly Map<CharacterClass, List<Shortcut>> _initialShortcutData = new();
 	private readonly List<Shortcut> _initialGlobalShortcutList = new();
 	private readonly Map<int, Macro> _macroPresets = new();
 	
@@ -33,166 +37,113 @@ public class InitialShortcutData
 		_initialShortcutData.clear();
 		_initialGlobalShortcutList.Clear();
 		
-		parseDatapackFile("data/stats/initialShortcuts.xml");
-		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/initialShortcuts.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("shortcuts").ForEach(parseShortcut);
+		document.Elements("list").Elements("macros").Elements("macro").ForEach(parseMacro);
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _initialGlobalShortcutList.size() + " initial global shortcuts data.");
 		LOGGER.Info(GetType().Name + ": Loaded " + _initialShortcutData.size() + " initial shortcuts data.");
 		LOGGER.Info(GetType().Name + ": Loaded " + _macroPresets.size() + " macro presets.");
-	}
-	
-	public void parseDocument(Document doc, File f)
-	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
-		{
-			if ("list".equals(n.getNodeName()))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					switch (d.getNodeName())
-					{
-						case "shortcuts":
-						{
-							parseShortcuts(d);
-							break;
-						}
-						case "macros":
-						{
-							parseMacros(d);
-							break;
-						}
-					}
-				}
-			}
-		}
 	}
 	
 	/**
 	 * Parses a shortcut.
 	 * @param d the node
 	 */
-	private void parseShortcuts(Node d)
+	private void parseShortcut(XElement element)
 	{
-		NamedNodeMap attrs = d.getAttributes();
-		Node classIdNode = attrs.getNamedItem("classId");
+		int classId = element.Attribute("classId").GetInt32(-1);
 		List<Shortcut> list = new();
-		for (Node c = d.getFirstChild(); c != null; c = c.getNextSibling())
-		{
-			if ("page".equals(c.getNodeName()))
-			{
-				attrs = c.getAttributes();
-				int pageId = parseInteger(attrs, "pageId");
-				for (Node b = c.getFirstChild(); b != null; b = b.getNextSibling())
-				{
-					if ("slot".equals(b.getNodeName()))
-					{
-						list.add(createShortcut(pageId, b));
-					}
-				}
-			}
-		}
 		
-		if (classIdNode != null)
+		element.Elements("page").ForEach(pageElement =>
 		{
-			_initialShortcutData.put(ClassId.getClassId(int.Parse(classIdNode.getNodeValue())), list);
-		}
+			int pageId = pageElement.Attribute("pageId").GetInt32();
+			pageElement.Elements("slot").ForEach(slotElement =>
+			{
+				int slotId = slotElement.Attribute("slotId").GetInt32();
+				ShortcutType shortcutType = slotElement.Attribute("shortcutType").GetEnum<ShortcutType>();
+				int shortcutId = slotElement.Attribute("shortcutId").GetInt32();
+				int shortcutLevel = slotElement.Attribute("shortcutLevel").GetInt32(0);
+				int characterType = slotElement.Attribute("characterType").GetInt32(0);
+				Shortcut shortcut = new Shortcut(slotId, pageId, shortcutType, shortcutId, shortcutLevel, 0, characterType);
+				list.add(shortcut);
+			});
+		});
+		
+		if (classId < 0)
+			_initialGlobalShortcutList.AddRange(list);
 		else
-		{
-			_initialGlobalShortcutList.addAll(list);
-		}
+			_initialShortcutData.put((CharacterClass)classId, list);
 	}
-	
+
 	/**
 	 * Parses a macro.
 	 * @param d the node
 	 */
-	private void parseMacros(Node d)
+	private void parseMacro(XElement element)
 	{
-		for (Node c = d.getFirstChild(); c != null; c = c.getNextSibling())
+		bool enabled = element.Attribute("enabled").GetBoolean(true);
+		if (!enabled)
+			return;
+
+		int macroId = element.Attribute("macroId").GetInt32();
+		int icon = element.Attribute("icon").GetInt32();
+		String name = element.Attribute("name").GetString();
+		String description = element.Attribute("description").GetString();
+		String acronym = element.Attribute("acronym").GetString();
+		List<MacroCmd> commands = new();
+		int entry = 0;
+
+		element.Elements("command").ForEach(el =>
 		{
-			if ("macro".equals(c.getNodeName()))
+			MacroType type = el.Attribute("type").GetEnum<MacroType>();
+			int d1 = 0;
+			int d2 = 0;
+			string cmd = (string)el;
+			switch (type)
 			{
-				NamedNodeMap attrs = c.getAttributes();
-				if (!parseBoolean(attrs, "enabled", true))
+				case MacroType.SKILL:
 				{
-					continue;
+					d1 = el.Attribute("skillId").GetInt32(); // Skill ID
+					d2 = el.Attribute("skillLevel").GetInt32(0); // Skill level
+					break;
 				}
-				
-				int macroId = parseInteger(attrs, "macroId");
-				int icon = parseInteger(attrs, "icon");
-				String name = parseString(attrs, "name");
-				String description = parseString(attrs, "description");
-				String acronym = parseString(attrs, "acronym");
-				List<MacroCmd> commands = new ArrayList<>(1);
-				int entry = 0;
-				for (Node b = c.getFirstChild(); b != null; b = b.getNextSibling())
+				case MacroType.ACTION:
 				{
-					if ("command".equals(b.getNodeName()))
-					{
-						attrs = b.getAttributes();
-						MacroType type = parseEnum(attrs, MacroType.class, "type");
-						int d1 = 0;
-						int d2 = 0;
-						String cmd = b.getTextContent();
-						switch (type)
-						{
-							case MacroType.SKILL:
-							{
-								d1 = parseInteger(attrs, "skillId"); // Skill ID
-								d2 = parseInteger(attrs, "skillLevel", 0); // Skill level
-								break;
-							}
-							case MacroType.ACTION:
-							{
-								// Not handled by client.
-								d1 = parseInteger(attrs, "actionId");
-								break;
-							}
-							case MacroType.TEXT:
-							{
-								// Doesn't have numeric parameters.
-								break;
-							}
-							case MacroType.SHORTCUT:
-							{
-								d1 = parseInteger(attrs, "page"); // Page
-								d2 = parseInteger(attrs, "slot", 0); // Slot
-								break;
-							}
-							case MacroType.ITEM:
-							{
-								// Not handled by client.
-								d1 = parseInteger(attrs, "itemId");
-								break;
-							}
-							case MacroType.DELAY:
-							{
-								d1 = parseInteger(attrs, "delay"); // Delay in seconds
-								break;
-							}
-						}
-						commands.add(new MacroCmd(entry++, type, d1, d2, cmd));
-					}
+					// Not handled by client.
+					d1 = el.Attribute("actionId").GetInt32();
+					break;
 				}
-				_macroPresets.put(macroId, new Macro(macroId, icon, name, description, acronym, commands));
+				case MacroType.TEXT:
+				{
+					// Doesn't have numeric parameters.
+					break;
+				}
+				case MacroType.SHORTCUT:
+				{
+					d1 = el.Attribute("page").GetInt32(); // Page
+					d2 = el.Attribute("slot").GetInt32(0); // Slot
+					break;
+				}
+				case MacroType.ITEM:
+				{
+					// Not handled by client.
+					d1 = el.Attribute("itemId").GetInt32();
+					break;
+				}
+				case MacroType.DELAY:
+				{
+					d1 = el.Attribute("delay").GetInt32(); // Delay in seconds
+					break;
+				}
 			}
-		}
-	}
-	
-	/**
-	 * Parses a node an create a shortcut from it.
-	 * @param pageId the page ID
-	 * @param b the node to parse
-	 * @return the new shortcut
-	 */
-	private Shortcut createShortcut(int pageId, Node b)
-	{
-		NamedNodeMap attrs = b.getAttributes();
-		int slotId = parseInteger(attrs, "slotId");
-		ShortcutType shortcutType = parseEnum(attrs, ShortcutType.class, "shortcutType");
-		int shortcutId = parseInteger(attrs, "shortcutId");
-		int shortcutLevel = parseInteger(attrs, "shortcutLevel", 0);
-		int characterType = parseInteger(attrs, "characterType", 0);
-		return new Shortcut(slotId, pageId, shortcutType, shortcutId, shortcutLevel, 0, characterType);
+
+			commands.add(new MacroCmd(entry++, type, d1, d2, cmd));
+		});
+
+		_macroPresets.put(macroId, new Macro(macroId, icon, name, description, acronym, commands));
 	}
 	
 	/**
@@ -200,19 +151,9 @@ public class InitialShortcutData
 	 * @param cId the class ID for the shortcut list
 	 * @return the shortcut list for the give class ID
 	 */
-	public List<Shortcut> getShortcutList(ClassId cId)
+	public List<Shortcut> getShortcutList(CharacterClass cId)
 	{
 		return _initialShortcutData.get(cId);
-	}
-	
-	/**
-	 * Gets the shortcut list.
-	 * @param cId the class ID for the shortcut list
-	 * @return the shortcut list for the give class ID
-	 */
-	public List<Shortcut> getShortcutList(int cId)
-	{
-		return _initialShortcutData.get(ClassId.getClassId(cId));
 	}
 	
 	/**

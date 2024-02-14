@@ -1,6 +1,10 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -29,23 +33,47 @@ public class EnchantSkillGroupsData
 	public void load()
 	{
 		_enchantSkillHolders.clear();
-		parseDatapackFile("data/EnchantSkillGroups.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/EnchantSkillGroups.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("enchant").ForEach(parseEnchant);
+		
 		MAX_ENCHANT_LEVEL = _enchantSkillHolders.size();
 		LOGGER.Info(GetType().Name + ": Loaded " + _enchantSkillHolders.size() + " enchant routes, max enchant set to " + MAX_ENCHANT_LEVEL + ".");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseEnchant(XElement element)
 	{
-		forEach(doc, "list", listNode => forEach(listNode, "enchant", enchantNode =>
+		int level = element.Attribute("level").GetInt32();
+		int enchantFailLevel = element.Attribute("enchantFailLevel").GetInt32();
+		EnchantSkillHolder enchantSkillHolder = new EnchantSkillHolder(level, enchantFailLevel);
+
+		element.Elements("sps").Elements("sp").ForEach(spElement =>
 		{
-			EnchantSkillHolder enchantSkillHolder = new EnchantSkillHolder(new StatSet(parseAttributes(enchantNode)));
-			forEach(enchantNode, "sps", spsNode => forEach(spsNode, "sp", spNode => enchantSkillHolder.addSp(parseEnum(spNode.getAttributes(), SkillEnchantType.class, "type"), parseInteger(spNode.getAttributes(), "amount"))));
-			forEach(enchantNode, "chances", chancesNode => forEach(chancesNode, "chance", chanceNode => enchantSkillHolder.addChance(parseEnum(chanceNode.getAttributes(), SkillEnchantType.class, "type"), parseInteger(chanceNode.getAttributes(), "value"))));
-			forEach(enchantNode, "items", itemsNode => forEach(itemsNode, "item", itemNode => enchantSkillHolder.addRequiredItem(parseEnum(itemNode.getAttributes(), SkillEnchantType.class, "type"), new ItemHolder(new StatSet(parseAttributes(itemNode))))));
-			_enchantSkillHolders.put(parseInteger(enchantNode.getAttributes(), "level"), enchantSkillHolder);
-		}));
+			int amount = spElement.Attribute("amount").GetInt32();
+			SkillEnchantType type = spElement.Attribute("type").GetEnum<SkillEnchantType>();
+			enchantSkillHolder.addSp(type, amount);
+		});
+
+		element.Elements("chances").Elements("chance").ForEach(chanceElement =>
+		{
+			int value = chanceElement.Attribute("value").GetInt32();
+			SkillEnchantType type = chanceElement.Attribute("type").GetEnum<SkillEnchantType>();
+			enchantSkillHolder.addChance(type, value);
+		});
+
+		element.Elements("items").Elements("item").ForEach(chanceElement =>
+		{
+			int id = chanceElement.Attribute("id").GetInt32();
+			long count = chanceElement.Attribute("count").GetInt64();
+			SkillEnchantType type = chanceElement.Attribute("type").GetEnum<SkillEnchantType>();
+			enchantSkillHolder.addRequiredItem(type, new ItemHolder(id, count));
+		});
+		
+		_enchantSkillHolders.put(level, enchantSkillHolder);
 	}
-	
+
 	public void addRouteForSkill(int skillId, int level, int route)
 	{
 		addRouteForSkill(new SkillHolder(skillId, level), route);
@@ -53,7 +81,7 @@ public class EnchantSkillGroupsData
 	
 	public void addRouteForSkill(SkillHolder holder, int route)
 	{
-		_enchantSkillTrees.computeIfAbsent(holder, k => new HashSet<>()).add(route);
+		_enchantSkillTrees.computeIfAbsent(holder, k => new()).add(route);
 	}
 	
 	public Set<int> getRouteForSkill(int skillId, int level)

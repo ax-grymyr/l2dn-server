@@ -2,20 +2,20 @@
 
 public class SiegeScheduleDate
 {
-    private readonly int _day;
+    private readonly DayOfWeek _day;
     private readonly int _hour;
     private readonly int _maxConcurrent;
     private readonly bool _siegeEnabled;
 	
-    public SiegeScheduleDate(StatSet set)
+    public SiegeScheduleDate(DayOfWeek day, int hour, int maxConcurrent, bool siegeEnabled)
     {
-        _day = set.getInt("day", Calendar.SUNDAY);
-        _hour = set.getInt("hour", 16);
-        _maxConcurrent = set.getInt("maxConcurrent", 5);
-        _siegeEnabled = set.getBoolean("siegeEnabled", false);
+        _day = day;
+        _hour = hour;
+        _maxConcurrent = maxConcurrent;
+        _siegeEnabled = siegeEnabled;
     }
 	
-    public int getDay()
+    public DayOfWeek getDay()
     {
         return _day;
     }

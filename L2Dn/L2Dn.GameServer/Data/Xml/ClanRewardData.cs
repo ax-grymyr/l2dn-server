@@ -27,8 +27,8 @@ public class ClanRewardData
 		const string filePath = "config/ClanReward.xml";
 		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 		XDocument document = XDocument.Load(stream);
-		document.Root?.Elements("membersOnline").ForEach(parseMembersOnline);
-		document.Root?.Elements("huntingBonus").ForEach(parseHuntingBonus);
+		document.Elements("list").Elements("membersOnline").ForEach(parseMembersOnline);
+		document.Elements("list").Elements("huntingBonus").ForEach(parseHuntingBonus);
 
 		foreach (ClanRewardType type in Enum.GetValues<ClanRewardType>())
 		{

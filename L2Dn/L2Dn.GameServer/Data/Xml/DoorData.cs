@@ -36,7 +36,7 @@ public class DoorData
 		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/DoorData.xml");
 		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 		XDocument document = XDocument.Load(stream);
-		document.Root?.Elements("door").ForEach(element => spawnDoor(parseDoor(element)));
+		document.Elements("list").Elements("door").ForEach(element => spawnDoor(parseDoor(element)));
 		LOGGER.Info(GetType().Name + ": Loaded " + _doors.size() + " doors.");
 	}
 	

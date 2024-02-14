@@ -41,7 +41,7 @@ public class AdminData
 				new FileStream("config/AccessLevels.xml", FileMode.Open, FileAccess.Read, FileShare.Read);
 
 			XDocument doc = XDocument.Load(stream);
-			doc.Root?.Elements("access").ForEach(node =>
+			doc.Elements("list").Elements("access").ForEach(node =>
 			{
 				AccessLevel level = new AccessLevel(node);
 				if (level.getLevel() > _highestLevel)
@@ -60,7 +60,7 @@ public class AdminData
 				new FileStream("config/AdminCommands.xml", FileMode.Open, FileAccess.Read, FileShare.Read);
 
 			XDocument doc = XDocument.Load(stream);
-			doc.Root?.Elements("admin").ForEach(node =>
+			doc.Elements("list").Elements("admin").ForEach(node =>
 			{
 				AdminCommandAccessRight command = new AdminCommandAccessRight(node);
 				_adminCommandAccessRights.put(command.getAdminCommand(), command);

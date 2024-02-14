@@ -1,7 +1,9 @@
+using System.Xml.Linq;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Items.Enchant;
@@ -48,9 +50,9 @@ public abstract class AbstractEnchantItem
 	private readonly double _bonusRate;
 	private readonly bool _isBlessed;
 
-	public AbstractEnchantItem(StatSet set)
+	public AbstractEnchantItem(XElement element)
 	{
-		_id = set.getInt("id");
+		_id = element.Attribute("id").GetInt32();
 		if (getItem() == null)
 		{
 			throw new InvalidOperationException();
@@ -61,14 +63,14 @@ public abstract class AbstractEnchantItem
 			throw new InvalidOperationException();
 		}
 
-		_grade = set.getEnum("targetGrade", CrystalType.NONE);
-		_minEnchantLevel = set.getInt("minEnchant", 0);
-		_maxEnchantLevel = set.getInt("maxEnchant", 127);
-		_safeEnchantLevel = set.getInt("safeEnchant", 0);
-		_randomEnchantMin = set.getInt("randomEnchantMin", 1);
-		_randomEnchantMax = set.getInt("randomEnchantMax", _randomEnchantMin);
-		_bonusRate = set.getDouble("bonusRate", 0);
-		_isBlessed = set.getBoolean("isBlessed", false);
+		_grade = element.Attribute("targetGrade").GetEnum(CrystalType.NONE);
+		_minEnchantLevel = element.Attribute("minEnchant").GetInt32(0);
+		_maxEnchantLevel = element.Attribute("maxEnchant").GetInt32(127);
+		_safeEnchantLevel = element.Attribute("safeEnchant").GetInt32(0);
+		_randomEnchantMin = element.Attribute("randomEnchantMin").GetInt32(1);
+		_randomEnchantMax = element.Attribute("randomEnchantMax").GetInt32(_randomEnchantMin);
+		_bonusRate = element.Attribute("bonusRate").GetDouble(0);
+		_isBlessed = element.Attribute("isBlessed").GetBoolean(false);
 	}
 
 	/**

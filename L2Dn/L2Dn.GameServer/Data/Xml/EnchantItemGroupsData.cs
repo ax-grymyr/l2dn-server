@@ -1,7 +1,11 @@
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Enchant;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -29,119 +33,12 @@ public class EnchantItemGroupsData
 	{
 		_itemGroups.clear();
 		_scrollGroups.clear();
-		parseDatapackFile("data/EnchantItemGroups.xml");
-		LOGGER.Info(GetType().Name + ": Loaded " + _itemGroups.size() + " item group templates.");
-		LOGGER.Info(GetType().Name + ": Loaded " + _scrollGroups.size() + " scroll group templates.");
 		
-		if (Config.OVER_ENCHANT_PROTECTION)
-		{
-			LOGGER.Info(GetType().Name + ": Max weapon enchant is set to " + _maxWeaponEnchant + ".");
-			LOGGER.Info(GetType().Name + ": Max armor enchant is set to " + _maxArmorEnchant + ".");
-			LOGGER.Info(GetType().Name + ": Max accessory enchant is set to " + _maxAccessoryEnchant + ".");
-		}
-	}
-	
-	public void parseDocument(Document doc, File f)
-	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
-		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("enchantRateGroup".equalsIgnoreCase(d.getNodeName()))
-					{
-						String name = parseString(d.getAttributes(), "name");
-						EnchantItemGroup group = new EnchantItemGroup(name);
-						for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
-						{
-							if ("current".equalsIgnoreCase(cd.getNodeName()))
-							{
-								String range = parseString(cd.getAttributes(), "enchant");
-								double chance = parseDouble(cd.getAttributes(), "chance");
-								int min = -1;
-								int max = 0;
-								if (range.contains("-"))
-								{
-									String[] split = range.split("-");
-									if ((split.length == 2) && Util.isDigit(split[0]) && Util.isDigit(split[1]))
-									{
-										min = int.Parse(split[0]);
-										max = int.Parse(split[1]);
-									}
-								}
-								else if (Util.isDigit(range))
-								{
-									min = int.Parse(range);
-									max = min;
-								}
-								if ((min > -1) && (max > -1))
-								{
-									group.addChance(new RangeChanceHolder(min, max, chance));
-								}
-								
-								// Try to get a generic max value.
-								if (chance > 0)
-								{
-									if (name.contains("WEAPON"))
-									{
-										if (_maxWeaponEnchant < max)
-										{
-											_maxWeaponEnchant = max;
-										}
-									}
-									else if (name.contains("ACCESSORIES") || name.contains("RING") || name.contains("EARRING") || name.contains("NECK"))
-									{
-										if (_maxAccessoryEnchant < max)
-										{
-											_maxAccessoryEnchant = max;
-										}
-									}
-									else if (_maxArmorEnchant < max)
-									{
-										_maxArmorEnchant = max;
-									}
-								}
-							}
-						}
-						_itemGroups.put(name, group);
-					}
-					else if ("enchantScrollGroup".equals(d.getNodeName()))
-					{
-						int id = parseInteger(d.getAttributes(), "id");
-						EnchantScrollGroup group = new EnchantScrollGroup(id);
-						for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
-						{
-							if ("enchantRate".equalsIgnoreCase(cd.getNodeName()))
-							{
-								EnchantRateItem rateGroup = new EnchantRateItem(parseString(cd.getAttributes(), "group"));
-								for (Node z = cd.getFirstChild(); z != null; z = z.getNextSibling())
-								{
-									if ("item".equals(z.getNodeName()))
-									{
-										NamedNodeMap attrs = z.getAttributes();
-										if (attrs.getNamedItem("slot") != null)
-										{
-											rateGroup.addSlot(ItemData.SLOTS.get(parseString(attrs, "slot")));
-										}
-										if (attrs.getNamedItem("magicWeapon") != null)
-										{
-											rateGroup.setMagicWeapon(parseBoolean(attrs, "magicWeapon"));
-										}
-										if (attrs.getNamedItem("itemId") != null)
-										{
-											rateGroup.addItemId(parseInteger(attrs, "itemId"));
-										}
-									}
-								}
-								group.addRateGroup(rateGroup);
-							}
-						}
-						_scrollGroups.put(id, group);
-					}
-				}
-			}
-		}
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/EnchantItemGroups.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("enchantRateGroup").ForEach(parseEnchantRateGroup);
+		document.Elements("list").Elements("enchantScrollGroup").ForEach(parseEnchantScrollGroup);
 		
 		// In case there is no accessories group set.
 		if (_maxAccessoryEnchant == 0)
@@ -153,8 +50,109 @@ public class EnchantItemGroupsData
 		_maxWeaponEnchant += 1;
 		_maxArmorEnchant += 1;
 		_maxAccessoryEnchant += 1;
+		
+		LOGGER.Info(GetType().Name + ": Loaded " + _itemGroups.size() + " item group templates.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _scrollGroups.size() + " scroll group templates.");
+		
+		if (Config.OVER_ENCHANT_PROTECTION)
+		{
+			LOGGER.Info(GetType().Name + ": Max weapon enchant is set to " + _maxWeaponEnchant + ".");
+			LOGGER.Info(GetType().Name + ": Max armor enchant is set to " + _maxArmorEnchant + ".");
+			LOGGER.Info(GetType().Name + ": Max accessory enchant is set to " + _maxAccessoryEnchant + ".");
+		}
 	}
-	
+
+	private void parseEnchantRateGroup(XElement element)
+	{
+		string name = element.Attribute("name").GetString();
+		EnchantItemGroup group = new EnchantItemGroup(name);
+		
+		element.Elements("current").ForEach(currentElement =>
+		{
+			string range = currentElement.Attribute("enchant").GetString();
+			double chance = currentElement.Attribute("chance").GetDouble();
+			int min = -1;
+			int max = 0;
+			if (range.contains("-"))
+			{
+				String[] split = range.Split("-");
+				if ((split.Length == 2) && Util.isDigit(split[0]) && Util.isDigit(split[1]))
+				{
+					min = int.Parse(split[0]);
+					max = int.Parse(split[1]);
+				}
+			}
+			else if (Util.isDigit(range))
+			{
+				min = int.Parse(range);
+				max = min;
+			}
+
+			if ((min > -1) && (max > -1))
+			{
+				group.addChance(new RangeChanceHolder(min, max, chance));
+			}
+
+			// Try to get a generic max value.
+			if (chance > 0)
+			{
+				if (name.contains("WEAPON"))
+				{
+					if (_maxWeaponEnchant < max)
+					{
+						_maxWeaponEnchant = max;
+					}
+				}
+				else if (name.contains("ACCESSORIES") || name.contains("RING") || name.contains("EARRING") ||
+				         name.contains("NECK"))
+				{
+					if (_maxAccessoryEnchant < max)
+					{
+						_maxAccessoryEnchant = max;
+					}
+				}
+				else if (_maxArmorEnchant < max)
+				{
+					_maxArmorEnchant = max;
+				}
+			}
+		});
+
+		_itemGroups.put(name, group);
+	}
+
+	private void parseEnchantScrollGroup(XElement element)
+	{
+		int id = element.Attribute("id").GetInt32();
+		EnchantScrollGroup group = new EnchantScrollGroup(id);
+		
+		element.Elements("enchantRate").ForEach(enchantElement =>
+		{
+			string name = enchantElement.Attribute("group").GetString();
+			EnchantRateItem rateGroup = new EnchantRateItem(name);
+			
+			enchantElement.Elements("item").ForEach(itemElement =>
+			{
+				if (itemElement.Attribute("slot") != null)
+				{
+					rateGroup.addSlot(ItemData.SLOTS.get(itemElement.Attribute("slot").GetString()));
+				}
+				if (itemElement.Attribute("magicWeapon") != null)
+				{
+					rateGroup.setMagicWeapon(itemElement.Attribute("magicWeapon").GetBoolean());
+				}
+				if (itemElement.Attribute("itemId") != null)
+				{
+					rateGroup.addItemId(itemElement.Attribute("itemId").GetInt32());
+				}
+			});
+
+			group.addRateGroup(rateGroup);
+		});
+
+		_scrollGroups.put(id, group);
+	}
+
 	public EnchantItemGroup getItemGroup(ItemTemplate item, int scrollGroup)
 	{
 		EnchantScrollGroup group = _scrollGroups.get(scrollGroup);

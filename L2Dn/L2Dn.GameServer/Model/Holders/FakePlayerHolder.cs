@@ -1,4 +1,6 @@
-using L2Dn.GameServer.Enums;
+using System.Xml.Linq;
+using L2Dn.GameServer.Db;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Holders;
 
@@ -7,7 +9,7 @@ namespace L2Dn.GameServer.Model.Holders;
  */
 public class FakePlayerHolder
 {
-	private readonly ClassId _classId;
+	private readonly CharacterClass _classId;
 	private readonly int _hair;
 	private readonly int _hairColor;
 	private readonly int _face;
@@ -36,39 +38,39 @@ public class FakePlayerHolder
 	private readonly int _clanId;
 	private readonly int _pledgeStatus;
 
-	public FakePlayerHolder(StatSet set)
+	public FakePlayerHolder(XElement element)
 	{
-		_classId = ClassId.getClassId(set.getInt("classId", 1));
-		_hair = set.getInt("hair", 1);
-		_hairColor = set.getInt("hairColor", 1);
-		_face = set.getInt("face", 1);
-		_nameColor = set.getInt("nameColor", 0xFFFFFF);
-		_titleColor = set.getInt("titleColor", 0xECF9A2);
-		_equipHead = set.getInt("equipHead", 0);
-		_equipRHand = set.getInt("equipRHand", 0); // or dual hand
-		_equipLHand = set.getInt("equipLHand", 0);
-		_equipGloves = set.getInt("equipGloves", 0);
-		_equipChest = set.getInt("equipChest", 0);
-		_equipLegs = set.getInt("equipLegs", 0);
-		_equipFeet = set.getInt("equipFeet", 0);
-		_equipCloak = set.getInt("equipCloak", 0);
-		_equipHair = set.getInt("equipHair", 0);
-		_equipHair2 = set.getInt("equipHair2", 0);
-		_agathionId = set.getInt("agathionId", 0);
-		_weaponEnchantLevel = set.getInt("weaponEnchantLevel", 0);
-		_armorEnchantLevel = set.getInt("armorEnchantLevel", 0);
-		_fishing = set.getBoolean("fishing", false);
-		_baitLocationX = set.getInt("baitLocationX", 0);
-		_baitLocationY = set.getInt("baitLocationY", 0);
-		_baitLocationZ = set.getInt("baitLocationZ", 0);
-		_recommends = set.getInt("recommends", 0);
-		_nobleLevel = set.getInt("nobleLevel", 0);
-		_hero = set.getBoolean("hero", false);
-		_clanId = set.getInt("clanId", 0);
-		_pledgeStatus = set.getInt("pledgeStatus", 0);
+		_classId = (CharacterClass)element.Attribute("classId").GetInt32(1);
+		_hair = element.Attribute("hair").GetInt32(1);
+		_hairColor = element.Attribute("hairColor").GetInt32(1);
+		_face = element.Attribute("face").GetInt32(1);
+		_nameColor = element.Attribute("nameColor").GetInt32(0xFFFFFF);
+		_titleColor = element.Attribute("titleColor").GetInt32(0xECF9A2);
+		_equipHead = element.Attribute("equipHead").GetInt32(0);
+		_equipRHand = element.Attribute("equipRHand").GetInt32(0); // or dual hand
+		_equipLHand = element.Attribute("equipLHand").GetInt32(0);
+		_equipGloves = element.Attribute("equipGloves").GetInt32(0);
+		_equipChest = element.Attribute("equipChest").GetInt32(0);
+		_equipLegs = element.Attribute("equipLegs").GetInt32(0);
+		_equipFeet = element.Attribute("equipFeet").GetInt32(0);
+		_equipCloak = element.Attribute("equipCloak").GetInt32(0);
+		_equipHair = element.Attribute("equipHair").GetInt32(0);
+		_equipHair2 = element.Attribute("equipHair2").GetInt32(0);
+		_agathionId = element.Attribute("agathionId").GetInt32(0);
+		_weaponEnchantLevel = element.Attribute("weaponEnchantLevel").GetInt32(0);
+		_armorEnchantLevel = element.Attribute("armorEnchantLevel").GetInt32(0);
+		_fishing = element.Attribute("fishing").GetBoolean(false);
+		_baitLocationX = element.Attribute("baitLocationX").GetInt32(0);
+		_baitLocationY = element.Attribute("baitLocationY").GetInt32(0);
+		_baitLocationZ = element.Attribute("baitLocationZ").GetInt32(0);
+		_recommends = element.Attribute("recommends").GetInt32(0);
+		_nobleLevel = element.Attribute("nobleLevel").GetInt32(0);
+		_hero = element.Attribute("hero").GetBoolean(false);
+		_clanId = element.Attribute("clanId").GetInt32(0);
+		_pledgeStatus = element.Attribute("pledgeStatus").GetInt32(0);
 	}
 
-	public ClassId getClassId()
+	public CharacterClass getClassId()
 	{
 		return _classId;
 	}

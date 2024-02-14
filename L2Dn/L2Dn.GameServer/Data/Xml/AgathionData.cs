@@ -29,7 +29,7 @@ public class AgathionData
 		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/AgathionData.xml");
 		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 		XDocument document = XDocument.Load(stream);
-		document.Root?.Elements("agathion").ForEach(loadElement);
+		document.Elements("list").Elements("agathion").ForEach(loadElement);
 		LOGGER.Info(GetType().Name + ": Loaded " + AGATHION_SKILLS.size() + " agathion data.");
 	}
 

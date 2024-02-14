@@ -85,10 +85,10 @@ public class BuyListData
 		int buyListId = int.Parse(Path.GetFileNameWithoutExtension(filePath)); // TODO: is it required somewhere to be a number?
 		ProductList buyList = new ProductList(buyListId);
 
-		document.Root?.Elements("npcs").ForEach(node =>
-			node.Elements("npc").Select(n => (int)n).ForEach(x => buyList.addAllowedNpc(x)));
+		document.Elements("list").Elements("npcs").Elements("npc").Select(n => (int)n)
+			.ForEach(x => buyList.addAllowedNpc(x));
 
-		document.Root?.Elements("item").ForEach(node =>
+		document.Elements("list").Elements("item").ForEach(node =>
 		{
 			int itemId = node.Attribute("id").GetInt32();
 			ItemTemplate item = ItemData.getInstance().getTemplate(itemId);

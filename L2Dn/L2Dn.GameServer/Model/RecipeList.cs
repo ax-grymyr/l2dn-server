@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model;
 
@@ -8,13 +9,13 @@ namespace L2Dn.GameServer.Model;
 public class RecipeList
 {
 	/** The table containing all RecipeHolder (1 line of the recipe : Item-Quantity needed) of the RecipeList */
-	private RecipeHolder[] _recipes;
+	private List<RecipeHolder> _recipes = new();
 	
 	/** The table containing all RecipeStatHolder for the statUse parameter of the RecipeList */
-	private RecipeStatHolder[] _statUse;
+	private List<RecipeStatHolder> _statUse = new();
 	
 	/** The table containing all RecipeStatHolder for the altStatChange parameter of the RecipeList */
-	private RecipeStatHolder[] _altStatChange;
+	private List<RecipeStatHolder> _altStatChange = new();
 	
 	/** The Identifier of the Instance */
 	private readonly int _id;
@@ -31,61 +32,40 @@ public class RecipeList
 	/** The crafting success rate when using the RecipeList */
 	private readonly int _successRate;
 	
-	/** The Identifier of the Item crafted with this RecipeList */
-	private readonly int _itemId;
+	/** The Identifier and the quantity of the Item crafted with this RecipeList */
+	private readonly RecipeHolder _production;
 	
-	/** The quantity of Item crafted when using this RecipeList */
-	private readonly int _count;
-	
-	/** The Identifier of the Rare Item crafted with this RecipeList */
-	private int _rareItemId;
-	
-	/** The quantity of Rare Item crafted when using this RecipeList */
-	private int _rareCount;
-	
-	/** The chance of Rare Item crafted when using this RecipeList */
-	private int _rarity;
-	
+	/** The Identifier, the quantity and the chance of the Rare Item crafted with this RecipeList */
+	private readonly RecipeRareHolder? _rareProduction;
+		
 	/** If this a common or a dwarven recipe */
 	private readonly bool _isDwarvenRecipe;
-	
+
 	/**
 	 * Constructor of RecipeList (create a new Recipe).
 	 * @param set
 	 * @param haveRare
 	 */
-	public RecipeList(StatSet set, bool haveRare)
+	public RecipeList(int id, int craftLevel, int recipeId, string recipeName, int successRate, bool isDwarvenRecipe,
+		RecipeHolder production, RecipeRareHolder? rareProduction)
 	{
-		_recipes = new RecipeHolder[0];
-		_statUse = new RecipeStatHolder[0];
-		_altStatChange = new RecipeStatHolder[0];
-		_id = set.getInt("id");
-		_level = set.getInt("craftLevel");
-		_recipeId = set.getInt("recipeId");
-		_recipeName = set.getString("recipeName");
-		_successRate = set.getInt("successRate");
-		_itemId = set.getInt("itemId");
-		_count = set.getInt("count");
-		if (haveRare)
-		{
-			_rareItemId = set.getInt("rareItemId");
-			_rareCount = set.getInt("rareCount");
-			_rarity = set.getInt("rarity");
-		}
-		_isDwarvenRecipe = set.getBoolean("isDwarvenRecipe");
+		_id = id;
+		_level = craftLevel;
+		_recipeId = recipeId;
+		_recipeName = recipeName;
+		_successRate = successRate;
+		_production = production;
+		_rareProduction = rareProduction;
+		_isDwarvenRecipe = isDwarvenRecipe;
 	}
-	
+
 	/**
 	 * Add a RecipeHolder to the RecipeList (add a line Item-Quantity needed to the Recipe).
 	 * @param recipe
 	 */
 	public void addRecipe(RecipeHolder recipe)
 	{
-		int len = _recipes.Length;
-		RecipeHolder[] tmp = new RecipeHolder[len + 1];
-		System.arraycopy(_recipes, 0, tmp, 0, len);
-		tmp[len] = recipe;
-		_recipes = tmp;
+		_recipes.Add(recipe);
 	}
 	
 	/**
@@ -94,11 +74,7 @@ public class RecipeList
 	 */
 	public void addStatUse(RecipeStatHolder statUse)
 	{
-		int len = _statUse.Length;
-		RecipeStatHolder[] tmp = new RecipeStatHolder[len + 1];
-		System.arraycopy(_statUse, 0, tmp, 0, len);
-		tmp[len] = statUse;
-		_statUse = tmp;
+		_statUse.add(statUse);
 	}
 	
 	/**
@@ -107,11 +83,7 @@ public class RecipeList
 	 */
 	public void addAltStatChange(RecipeStatHolder statChange)
 	{
-		int len = _altStatChange.Length;
-		RecipeStatHolder[] tmp = new RecipeStatHolder[len + 1];
-		System.arraycopy(_altStatChange, 0, tmp, 0, len);
-		tmp[len] = statChange;
-		_altStatChange = tmp;
+		_altStatChange.add(statChange);
 	}
 	
 	/**
@@ -159,7 +131,7 @@ public class RecipeList
 	 */
 	public int getItemId()
 	{
-		return _itemId;
+		return _production.getItemId();
 	}
 	
 	/**
@@ -167,7 +139,7 @@ public class RecipeList
 	 */
 	public int getCount()
 	{
-		return _count;
+		return _production.getQuantity();
 	}
 	
 	/**
@@ -175,7 +147,7 @@ public class RecipeList
 	 */
 	public int getRareItemId()
 	{
-		return _rareItemId;
+		return _rareProduction?.getItemId() ?? 0;
 	}
 	
 	/**
@@ -183,7 +155,7 @@ public class RecipeList
 	 */
 	public int getRareCount()
 	{
-		return _rareCount;
+		return _rareProduction?.getQuantity() ?? 0;
 	}
 	
 	/**
@@ -191,7 +163,7 @@ public class RecipeList
 	 */
 	public int getRarity()
 	{
-		return _rarity;
+		return _rareProduction?.getRarity() ?? 0;
 	}
 	
 	/**
@@ -205,7 +177,7 @@ public class RecipeList
 	/**
 	 * @return the table containing all RecipeHolder (1 line of the recipe : Item-Quantity needed) of the RecipeList.
 	 */
-	public RecipeHolder[] getRecipes()
+	public List<RecipeHolder> getRecipes()
 	{
 		return _recipes;
 	}
@@ -213,7 +185,7 @@ public class RecipeList
 	/**
 	 * @return the table containing all RecipeStatHolder of the statUse parameter of the RecipeList.
 	 */
-	public RecipeStatHolder[] getStatUse()
+	public List<RecipeStatHolder> getStatUse()
 	{
 		return _statUse;
 	}
@@ -221,7 +193,7 @@ public class RecipeList
 	/**
 	 * @return the table containing all RecipeStatHolder of the AltStatChange parameter of the RecipeList.
 	 */
-	public RecipeStatHolder[] getAltStatChange()
+	public List<RecipeStatHolder> getAltStatChange()
 	{
 		return _altStatChange;
 	}

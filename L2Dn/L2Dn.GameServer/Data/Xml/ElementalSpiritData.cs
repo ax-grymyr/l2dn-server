@@ -1,5 +1,8 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -31,51 +34,46 @@ public class ElementalSpiritData
 	
 	public void load()
 	{
-		parseDatapackFile("data/ElementalSpiritData.xml");
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/ElementalSpiritData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("spirit").ForEach(parseSpirit);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + SPIRIT_DATA.size() + " elemental spirit templates.");
 	}
 	
-	public void parseDocument(Document doc, File f)
+	private void parseSpirit(XElement spiritNode)
 	{
-		forEach(doc, "list", list => forEach(list, "spirit", this::parseSpirit));
-	}
-	
-	private void parseSpirit(Node spiritNode)
-	{
-		NamedNodeMap attributes = spiritNode.getAttributes();
-		byte type = parseByte(attributes, "type");
-		byte stage = parseByte(attributes, "stage");
-		int npcId = parseInteger(attributes, "npcId");
-		int extractItem = parseInteger(attributes, "extractItem");
-		int maxCharacteristics = parseInteger(attributes, "maxCharacteristics");
+		byte type = spiritNode.Attribute("type").GetByte();
+		byte stage = spiritNode.Attribute("stage").GetByte();
+		int npcId = spiritNode.Attribute("npcId").GetInt32();
+		int extractItem = spiritNode.Attribute("extractItem").GetInt32();
+		int maxCharacteristics = spiritNode.Attribute("maxCharacteristics").GetInt32();
 		ElementalSpiritTemplateHolder template = new ElementalSpiritTemplateHolder(type, stage, npcId, extractItem, maxCharacteristics);
-		SPIRIT_DATA.computeIfAbsent(type, HashMap::new).put(stage, template);
-		
-		forEach(spiritNode, "level", levelNode =>
+		SPIRIT_DATA.computeIfAbsent(type, x => new()).put(stage, template);
+
+		spiritNode.Elements("level").ForEach(levelNode =>
 		{
-			NamedNodeMap levelInfo = levelNode.getAttributes();
-			int level = parseInteger(levelInfo, "id");
-			int attack = parseInteger(levelInfo, "atk");
-			int defense = parseInteger(levelInfo, "def");
-			int criticalRate = parseInteger(levelInfo, "critRate");
-			int criticalDamage = parseInteger(levelInfo, "critDam");
-			long maxExperience = Parse(levelInfo, "maxExp");
+			int level = levelNode.Attribute("id").GetInt32();
+			int attack = levelNode.Attribute("atk").GetInt32();
+			int defense = levelNode.Attribute("def").GetInt32();
+			int criticalRate = levelNode.Attribute("critRate").GetInt32();
+			int criticalDamage = levelNode.Attribute("critDam").GetInt32();
+			long maxExperience = levelNode.Attribute("maxExp").GetInt64();
 			template.addLevelInfo(level, attack, defense, criticalRate, criticalDamage, maxExperience);
 		});
 		
-		forEach(spiritNode, "itemToEvolve", itemNode =>
+		spiritNode.Elements("itemToEvolve").ForEach(itemNode =>
 		{
-			NamedNodeMap itemInfo = itemNode.getAttributes();
-			int itemId = parseInteger(itemInfo, "id");
-			int count = parseInteger(itemInfo, "count", 1);
+			int itemId = itemNode.Attribute("id").GetInt32();
+			int count = itemNode.Attribute("count").GetInt32(1);
 			template.addItemToEvolve(itemId, count);
 		});
 		
-		forEach(spiritNode, "absorbItem", absorbItemNode =>
+		spiritNode.Elements("absorbItem").ForEach(absorbItemNode =>
 		{
-			NamedNodeMap absorbInfo = absorbItemNode.getAttributes();
-			int itemId = parseInteger(absorbInfo, "id");
-			int experience = parseInteger(absorbInfo, "experience");
+			int itemId = absorbItemNode.Attribute("id").GetInt32();
+			int experience = absorbItemNode.Attribute("experience").GetInt32();
 			template.addAbsorbItem(itemId, experience);
 		});
 	}

@@ -1,6 +1,9 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -23,7 +26,13 @@ public class MissionLevel
 	public void load()
 	{
 		_template.clear();
-		parseDatapackFile("data/MissionLevel.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/MissionLevel.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("current").ForEach(el => _currentSeason = el.Attribute("season").GetInt32());
+		document.Elements("list").Elements("missionLevel").ForEach(parseElement);
+		
 		if (_currentSeason > 0)
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + _template.size() + " seasons.");
@@ -33,59 +42,66 @@ public class MissionLevel
 			_template.clear();
 		}
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		forEach(doc, "list", listNode =>
+		int season = element.Attribute("season").GetInt32();
+		int maxLevel = element.Attribute("maxLevel").GetInt32();
+		bool bonusRewardIsAvailable = element.Attribute("bonusRewardIsAvailable").GetBoolean();
+		bool bonusRewardByLevelUP = element.Attribute("bonusRewardByLevelUP").GetBoolean();
+
+		Map<int, ItemHolder> keyReward = new();
+		Map<int, ItemHolder> normalReward = new();
+		Map<int, int> xpForLevel = new();
+		ItemHolder specialReward = null;
+		ItemHolder bonusReward = null;
+
+		element.Elements("expTable").Elements("exp").ForEach(el =>
 		{
-			forEach(listNode, "current", current => _currentSeason = parseInteger(current.getAttributes(), "season"));
-			forEach(listNode, "missionLevel", missionNode =>
-			{
-				StatSet missionSet = new StatSet(parseAttributes(missionNode));
-				AtomicInteger season = new AtomicInteger(missionSet.getInt("season"));
-				AtomicInteger maxLevel = new AtomicInteger(missionSet.getInt("maxLevel"));
-				AtomicBoolean bonusRewardIsAvailable = new AtomicBoolean(missionSet.getBoolean("bonusRewardIsAvailable"));
-				AtomicBoolean bonusRewardByLevelUp = new AtomicBoolean(missionSet.getBoolean("bonusRewardByLevelUP"));
-				AtomicReference<Map<int, ItemHolder>> keyReward = new AtomicReference<>(new());
-				AtomicReference<Map<int, ItemHolder>> normalReward = new AtomicReference<>(new());
-				AtomicReference<Map<int, int>> xpForLevel = new AtomicReference<>(new());
-				AtomicReference<ItemHolder> specialReward = new AtomicReference<>();
-				AtomicReference<ItemHolder> bonusReward = new AtomicReference<>();
-				forEach(missionNode, "expTable", expListNode => forEach(expListNode, "exp", expNode =>
-				{
-					StatSet expSet = new StatSet(parseAttributes(expNode));
-					xpForLevel.get().put(expSet.getInt("level"), expSet.getInt("amount"));
-				}));
-				forEach(missionNode, "baseRewards", baseRewardsNode => forEach(baseRewardsNode, "baseReward", rewards =>
-				{
-					StatSet rewardsSet = new StatSet(parseAttributes(rewards));
-					normalReward.get().put(rewardsSet.getInt("level"), new ItemHolder(rewardsSet.getInt("itemId"), rewardsSet.getLong("itemCount")));
-				}));
-				forEach(missionNode, "keyRewards", keyRewardsNode => forEach(keyRewardsNode, "keyReward", rewards =>
-				{
-					StatSet rewardsSet = new StatSet(parseAttributes(rewards));
-					keyReward.get().put(rewardsSet.getInt("level"), new ItemHolder(rewardsSet.getInt("itemId"), rewardsSet.getLong("itemCount")));
-				}));
-				forEach(missionNode, "specialReward", specialRewardNode =>
-				{
-					StatSet specialRewardSet = new StatSet(parseAttributes(specialRewardNode));
-					specialReward.set(new ItemHolder(specialRewardSet.getInt("itemId"), specialRewardSet.getLong("itemCount")));
-				});
-				forEach(missionNode, "bonusReward", bonusRewardNode =>
-				{
-					StatSet bonusRewardSet = new StatSet(parseAttributes(bonusRewardNode));
-					bonusReward.set(new ItemHolder(bonusRewardSet.getInt("itemId"), bonusRewardSet.getLong("itemCount")));
-				});
-				int bonusLevel = normalReward.get().keySet().stream().max(int::compare).orElse(maxLevel.get());
-				if (bonusLevel == maxLevel.get())
-				{
-					bonusLevel = bonusLevel - 1;
-				}
-				_template.put(season.get(), new MissionLevelHolder(maxLevel.get(), bonusLevel + 1, xpForLevel.get(), normalReward.get(), keyReward.get(), specialReward.get(), bonusReward.get(), bonusRewardByLevelUp.get(), bonusRewardIsAvailable.get()));
-			});
+			int level = el.Attribute("level").GetInt32();
+			int amount = el.Attribute("amount").GetInt32();
+			xpForLevel.put(level, amount);
 		});
+
+		element.Elements("baseRewards").Elements("baseReward").ForEach(el =>
+		{
+			int level = el.Attribute("level").GetInt32();
+			int itemId = el.Attribute("itemId").GetInt32();
+			long itemCount = el.Attribute("itemCount").GetInt64();
+			normalReward.put(level, new ItemHolder(itemId, itemCount));
+		});
+
+		element.Elements("keyRewards").Elements("keyReward").ForEach(el =>
+		{
+			int level = el.Attribute("level").GetInt32();
+			int itemId = el.Attribute("itemId").GetInt32();
+			long itemCount = el.Attribute("itemCount").GetInt64();
+			keyReward.put(level, new ItemHolder(itemId, itemCount));
+		});
+
+		element.Elements("specialReward").ForEach(el =>
+		{
+			int itemId = el.Attribute("itemId").GetInt32();
+			long itemCount = el.Attribute("itemCount").GetInt64();
+			specialReward = new ItemHolder(itemId, itemCount);
+		});
+
+		element.Elements("bonusReward").ForEach(el =>
+		{
+			int itemId = el.Attribute("itemId").GetInt32();
+			long itemCount = el.Attribute("itemCount").GetInt64();
+			bonusReward = new ItemHolder(itemId, itemCount);
+		});
+
+		int bonusLevel = normalReward.Count == 0 ? maxLevel : normalReward.Keys.Max();
+		if (bonusLevel == maxLevel)
+			bonusLevel--;
+
+		_template.put(season,
+			new MissionLevelHolder(maxLevel, bonusLevel + 1, xpForLevel, normalReward, keyReward, specialReward,
+				bonusReward, bonusRewardByLevelUP, bonusRewardIsAvailable));
 	}
-	
+
 	public int getCurrentSeason()
 	{
 		return _currentSeason;

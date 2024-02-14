@@ -24,6 +24,8 @@ public class EnsoulData
 	public void load()
 	{
 		parseDatapackDirectory("data/stats/ensoul", true);
+		
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _ensoulFees.size() + " fees.");
 		LOGGER.Info(GetType().Name + ": Loaded " + _ensoulOptions.size() + " options.");
 		LOGGER.Info(GetType().Name + ": Loaded " + _ensoulStones.size() + " stones.");

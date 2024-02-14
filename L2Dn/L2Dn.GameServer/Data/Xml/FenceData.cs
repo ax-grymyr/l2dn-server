@@ -1,8 +1,11 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -31,13 +34,12 @@ public class FenceData
 			_fences.values().forEach(x => removeFence(x));
 		}
 		
-		parseDatapackFile("data/FenceData.xml");
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/FenceData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("fence").ForEach(spawnFence);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _fences.size() + " fences.");
-	}
-	
-	public void parseDocument(Document doc, File f)
-	{
-		forEach(doc, "list", listNode => forEach(listNode, "fence", this::spawnFence));
 	}
 	
 	public int getLoadedElementsCount()
@@ -45,10 +47,17 @@ public class FenceData
 		return _fences.size();
 	}
 	
-	private void spawnFence(Node fenceNode)
+	private void spawnFence(XElement fenceNode)
 	{
-		StatSet set = new StatSet(parseAttributes(fenceNode));
-		spawnFence(set.getInt("x"), set.getInt("y"), set.getInt("z"), set.getString("name"), set.getInt("width"), set.getInt("length"), set.getInt("height"), 0, set.getEnum("state", FenceState.class, FenceState.CLOSED));
+		int x = fenceNode.Attribute("x").GetInt32();
+		int y = fenceNode.Attribute("y").GetInt32();
+		int z = fenceNode.Attribute("z").GetInt32();
+		string name = fenceNode.Attribute("name").GetString();
+		int width = fenceNode.Attribute("width").GetInt32();
+		int length = fenceNode.Attribute("length").GetInt32();
+		int height = fenceNode.Attribute("height").GetInt32();
+		FenceState state = fenceNode.Attribute("state").GetEnum(FenceState.CLOSED);
+		spawnFence(x, y, z, name, width, length, height, 0, state);
 	}
 	
 	public Fence spawnFence(int x, int y, int z, int width, int length, int height, int instanceId, FenceState state)

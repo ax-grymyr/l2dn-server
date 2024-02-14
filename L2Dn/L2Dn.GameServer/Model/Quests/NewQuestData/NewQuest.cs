@@ -1,7 +1,12 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Quests.NewQuestData;
@@ -24,56 +29,50 @@ public class NewQuest
 	private readonly NewQuestGoal _goal;
 	private readonly NewQuestReward _rewards;
 
-	public NewQuest(StatSet set)
+	public NewQuest(XElement element)
 	{
-		_id = set.getInt("id", -1);
-		_questType = set.getInt("type", -1);
-		_name = set.getString("name", "");
-		_startNpcId = set.getInt("startNpcId", -1);
-		_endNpcId = set.getInt("endNpcId", -1);
-		_startItemId = set.getInt("startItemId", -1);
-		_location = new NewQuestLocation(set.getInt("startLocationId", 0), set.getInt("endLocationId", 0));
+		_id = element.Attribute("id").GetInt32(-1);
+		_questType = element.Attribute("type").GetInt32(-1);
+		_name = element.Attribute("name").GetString("");
+		_startNpcId = element.Attribute("startNpcId").GetInt32(-1);
+		_endNpcId = element.Attribute("endNpcId").GetInt32(-1);
+		_startItemId = element.Attribute("startItemId").GetInt32(-1);
 
-		String classIds = set.getString("classIds", "");
-		List<ClassId> classRestriction = classIds.isEmpty()
-			? new()
-			: classIds.Split(";").Select(it => (ClassId)(int.Parse(it))).ToList();
-		String preQuestId = set.getString("preQuestId", "");
-		List<int> preQuestIds =
-			preQuestId.isEmpty() ? new() : preQuestId.Split(";").Select(it => int.Parse(it)).ToList();
-		_conditions = new NewQuestCondition(set.getInt("minLevel", -1),
-			set.getInt("maxLevel", ExperienceData.getInstance().getMaxLevel()), preQuestIds, classRestriction,
-			set.getBoolean("oneOfPreQuests", false), set.getBoolean("specificStart", false));
+		XElement? locationElement = element.Elements("locations").SingleOrDefault();
+		_location = new NewQuestLocation((locationElement?.Attribute("startLocationId")).GetInt32(0),
+			(locationElement?.Attribute("endLocationId")).GetInt32(0));
 
-		int goalItemId = set.getInt("goalItemId", -1);
-		int goalCount = set.getInt("goalCount", -1);
-		if (goalItemId > 0)
+		XElement? conditionElement = element.Elements("conditions").SingleOrDefault();
+		_conditions = new NewQuestCondition(conditionElement);
+		
+		XElement? goalsElement = element.Elements("goals").SingleOrDefault();
+		_goal = new NewQuestGoal(goalsElement);
+		
+		if (_goal.getItemId() > 0)
 		{
-			ItemTemplate template = ItemData.getInstance().getTemplate(goalItemId);
+			ItemTemplate template = ItemData.getInstance().getTemplate(_goal.getItemId());
 			if (template == null)
 			{
-				LOGGER.Warn(GetType().Name + _id + ": Could not find goal item template with id " + goalItemId);
+				LOGGER.Error(GetType().Name + _id + ": Could not find goal item template with id " + _goal.getItemId());
 			}
 			else
 			{
 				if (!template.isStackable())
 				{
-					LOGGER.Warn(
-						GetType().Name + _id + ": Item template with id " + goalItemId + " should be stackable.");
+					LOGGER.Error(
+						GetType().Name + _id + ": Item template with id " + _goal.getItemId() + " should be stackable.");
 				}
 
 				if (!template.isQuestItem())
 				{
-					LOGGER.Warn(GetType().Name + _id + ": Item template with id " + goalItemId +
+					LOGGER.Error(GetType().Name + _id + ": Item template with id " + _goal.getItemId() +
 					            " should be quest item.");
 				}
 			}
 		}
 
-		_goal = new NewQuestGoal(goalItemId, goalCount, set.getString("goalString", ""));
-
-		_rewards = new NewQuestReward(set.getLong("rewardExp", -1), set.getLong("rewardSp", -1),
-			set.getInt("rewardLevel", -1), set.getList<ItemHolder>("rewardItems"));
+		XElement? rewardsElement = element.Elements("rewards").SingleOrDefault();
+		_rewards = new NewQuestReward(rewardsElement);
 	}
 
 	public int getId()

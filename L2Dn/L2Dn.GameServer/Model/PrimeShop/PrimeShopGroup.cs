@@ -1,4 +1,7 @@
-﻿namespace L2Dn.GameServer.Model.PrimeShop;
+﻿using System.Xml.Linq;
+using L2Dn.Utilities;
+
+namespace L2Dn.GameServer.Model.PrimeShop;
 
 public class PrimeShopGroup
 {
@@ -28,32 +31,32 @@ public class PrimeShopGroup
 	private readonly int _vipTier;
 	private readonly List<PrimeShopItem> _items;
 
-	public PrimeShopGroup(StatSet set, List<PrimeShopItem> items)
+	public PrimeShopGroup(XElement element, List<PrimeShopItem> items)
 	{
-		_brId = set.getInt("id");
-		_category = set.getInt("cat", 0);
-		_paymentType = set.getInt("paymentType", 0);
-		_price = set.getInt("price");
-		_panelType = set.getInt("panelType", 0);
-		_recommended = set.getInt("recommended", 0);
-		_start = set.getInt("startSale", 0);
-		_end = set.getInt("endSale", 0);
-		_daysOfWeek = set.getInt("daysOfWeek", 127);
-		_startHour = set.getInt("startHour", 0);
-		_startMinute = set.getInt("startMinute", 0);
-		_stopHour = set.getInt("stopHour", 0);
-		_stopMinute = set.getInt("stopMinute", 0);
-		_stock = set.getInt("stock", 0);
-		_maxStock = set.getInt("maxStock", -1);
-		_salePercent = set.getInt("salePercent", 0);
-		_minLevel = set.getInt("minLevel", 0);
-		_maxLevel = set.getInt("maxLevel", 0);
-		_minBirthday = set.getInt("minBirthday", 0);
-		_maxBirthday = set.getInt("maxBirthday", 0);
-		_accountDailyLimit = set.getInt("accountDailyLimit", 0);
-		_accountBuyLimit = set.getInt("accountBuyLimit", 0);
-		_isVipGift = set.getBoolean("isVipGift", false);
-		_vipTier = set.getInt("vipTier", 0);
+		_brId = element.Attribute("id").GetInt32();
+		_category = element.Attribute("cat").GetInt32(0);
+		_paymentType = element.Attribute("paymentType").GetInt32(0);
+		_price = element.Attribute("price").GetInt32();
+		_panelType = element.Attribute("panelType").GetInt32(0);
+		_recommended = element.Attribute("recommended").GetInt32(0);
+		_start = element.Attribute("startSale").GetInt32(0);
+		_end = element.Attribute("endSale").GetInt32(0);
+		_daysOfWeek = element.Attribute("daysOfWeek").GetInt32(127);
+		_startHour = element.Attribute("startHour").GetInt32(0);
+		_startMinute = element.Attribute("startMinute").GetInt32(0);
+		_stopHour = element.Attribute("stopHour").GetInt32(0);
+		_stopMinute = element.Attribute("stopMinute").GetInt32(0);
+		_stock = element.Attribute("stock").GetInt32(0);
+		_maxStock = element.Attribute("maxStock").GetInt32(-1);
+		_salePercent = element.Attribute("salePercent").GetInt32(0);
+		_minLevel = element.Attribute("minLevel").GetInt32(0);
+		_maxLevel = element.Attribute("maxLevel").GetInt32(0);
+		_minBirthday = element.Attribute("minBirthday").GetInt32(0);
+		_maxBirthday = element.Attribute("maxBirthday").GetInt32(0);
+		_accountDailyLimit = element.Attribute("accountDailyLimit").GetInt32(0);
+		_accountBuyLimit = element.Attribute("accountBuyLimit").GetInt32(0);
+		_isVipGift = element.Attribute("isVipGift").GetBoolean(false);
+		_vipTier = element.Attribute("vipTier").GetInt32(0);
 
 		_items = items;
 	}

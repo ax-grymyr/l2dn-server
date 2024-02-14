@@ -10,12 +10,12 @@ public class EnchantStarHolder
 	private readonly int _expOnFail;
 	private readonly long _feeAdena;
 
-	public EnchantStarHolder(StatSet set)
+	public EnchantStarHolder(int level, int expMax, int expOnFail, long feeAdena)
 	{
-		_level = set.getInt("level");
-		_expMax = set.getInt("expMax");
-		_expOnFail = set.getInt("expOnFail");
-		_feeAdena = set.getLong("feeAdena");
+		_level = level;
+		_expMax = expMax;
+		_expOnFail = expOnFail;
+		_feeAdena = feeAdena;
 	}
 
 	public int getLevel()

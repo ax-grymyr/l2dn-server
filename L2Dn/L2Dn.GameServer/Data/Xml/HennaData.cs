@@ -1,8 +1,11 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Henna;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -33,110 +36,71 @@ public class HennaData
 	{
 		_hennaItemIdList.clear();
 		_hennaDyeIdList.clear();
-		parseDatapackFile("data/stats/hennaList.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/hennaList.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("henna").ForEach(parseElement);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _hennaDyeIdList.size() + " henna data.");
-	}
-	
-	public void parseDocument(Document doc, File f)
-	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
-		{
-			if ("list".equals(n.getNodeName()))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("henna".equals(d.getNodeName()))
-					{
-						parseHenna(d);
-					}
-				}
-			}
-		}
 	}
 	
 	/**
 	 * Parses the henna.
 	 * @param d the node
 	 */
-	private void parseHenna(Node d)
+	private void parseElement(XElement element)
 	{
-		StatSet set = new StatSet();
 		List<int> wearClassIds = new();
 		List<Skill> skills = new();
-		NamedNodeMap attrs = d.getAttributes();
-		Node attr;
-		for (int i = 0; i < attrs.getLength(); i++)
-		{
-			attr = attrs.item(i);
-			set.set(attr.getNodeName(), attr.getNodeValue());
-		}
+		StatSet set = new();
+
+		foreach (XAttribute attribute in element.Attributes())
+			set.set(attribute.Name.LocalName, attribute.Value);
+
+		element.Elements("stats").Attributes().ForEach(a => set.set(a.Name.LocalName, a.Value));
 		
-		for (Node c = d.getFirstChild(); c != null; c = c.getNextSibling())
+		element.Elements("wear").ForEach(e =>
 		{
-			String name = c.getNodeName();
-			attrs = c.getAttributes();
-			switch (name)
-			{
-				case "stats":
-				{
-					for (int i = 0; i < attrs.getLength(); i++)
-					{
-						attr = attrs.item(i);
-						set.set(attr.getNodeName(), attr.getNodeValue());
-					}
-					break;
-				}
-				case "wear":
-				{
-					attr = attrs.getNamedItem("count");
-					set.set("wear_count", attr.getNodeValue());
-					attr = attrs.getNamedItem("fee");
-					set.set("wear_fee", attr.getNodeValue());
+			int count = e.Attribute("count").GetInt32();
+			set.set("wear_count", count);
+			int fee = e.Attribute("fee").GetInt32();
+			set.set("wear_fee", fee);
 					
-					attr = attrs.getNamedItem("l2coinfee");
-					if (attr != null)
-					{
-						set.set("l2coin_fee", attr.getNodeValue());
-					}
+			fee = e.Attribute("l2coinfee").GetInt32(0);
+			set.set("l2coin_fee", fee);
+		});
+		
+		element.Elements("cancel").ForEach(e =>
+		{
+			int count = e.Attribute("count").GetInt32();
+			set.set("cancel_count", count);
+			int fee = e.Attribute("fee").GetInt32();
+			set.set("cancel_fee", fee);
 					
-					break;
-				}
-				case "cancel":
-				{
-					attr = attrs.getNamedItem("count");
-					set.set("cancel_count", attr.getNodeValue());
-					attr = attrs.getNamedItem("fee");
-					set.set("cancel_fee", attr.getNodeValue());
-					
-					attr = attrs.getNamedItem("l2coinfee_cancel");
-					if (attr != null)
-					{
-						set.set("cancel_l2coin_fee", attr.getNodeValue());
-					}
-					
-					break;
-				}
-				case "duration":
-				{
-					attr = attrs.getNamedItem("time"); // in minutes
-					set.set("duration", attr.getNodeValue());
-					break;
-				}
-				case "skill":
-				{
-					skills.add(SkillData.getInstance().getSkill(parseInteger(attrs, "id"), parseInteger(attrs, "level")));
-					break;
-				}
-				case "classId":
-				{
-					foreach (String s in c.getTextContent().split(","))
-					{
-						wearClassIds.add(int.Parse(s));
-					}
-					break;
-				}
-			}
-		}
+			fee = e.Attribute("l2coinfee_cancel").GetInt32(0);
+			set.set("cancel_l2coin_fee", fee);
+		});
+		
+		element.Elements("duration").ForEach(e =>
+		{
+			int duration = e.Attribute("time").GetInt32(-1); // in minutes
+			set.set("duration", duration);
+		});
+		
+		element.Elements("skill").ForEach(e =>
+		{
+			int id = e.Attribute("id").GetInt32();
+			int level = e.Attribute("level").GetInt32();
+			skills.add(SkillData.getInstance().getSkill(id, level));
+		});
+		
+		element.Elements("classId").ForEach(e =>
+		{
+			string[] ids = ((string)e).Split(",");
+			foreach (string s in ids)
+				wearClassIds.add(int.Parse(s));
+		});
 		
 		Henna henna = new Henna(set);
 		henna.setSkills(skills);

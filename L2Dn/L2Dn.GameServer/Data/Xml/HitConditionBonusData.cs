@@ -1,6 +1,9 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.TaskManagers;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -31,54 +34,21 @@ public class HitConditionBonusData
 	
 	public void load()
 	{
-		parseDatapackFile("data/stats/hitConditionBonus.xml");
-		LOGGER.Info(GetType().Name + ": Loaded hit condition bonuses.");
-	}
-	
-	public void parseDocument(Document doc, File f)
-	{
-		for (Node d = doc.getFirstChild().getFirstChild(); d != null; d = d.getNextSibling())
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/hitConditionBonus.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("hitConditionBonus").ForEach(element =>
 		{
-			NamedNodeMap attrs = d.getAttributes();
-			switch (d.getNodeName())
-			{
-				case "front":
-				{
-					frontBonus = parseInteger(attrs, "val");
-					break;
-				}
-				case "side":
-				{
-					sideBonus = parseInteger(attrs, "val");
-					break;
-				}
-				case "back":
-				{
-					backBonus = parseInteger(attrs, "val");
-					break;
-				}
-				case "high":
-				{
-					highBonus = parseInteger(attrs, "val");
-					break;
-				}
-				case "low":
-				{
-					lowBonus = parseInteger(attrs, "val");
-					break;
-				}
-				case "dark":
-				{
-					darkBonus = parseInteger(attrs, "val");
-					break;
-				}
-				case "rain":
-				{
-					rainBonus = parseInteger(attrs, "val");
-					break;
-				}
-			}
-		}
+			frontBonus = (element.Element("front")?.Attribute("val")).GetInt32(0);
+			sideBonus = (element.Element("side")?.Attribute("val")).GetInt32(0);
+			backBonus = (element.Element("back")?.Attribute("val")).GetInt32(0);
+			highBonus = (element.Element("high")?.Attribute("val")).GetInt32(0);
+			lowBonus = (element.Element("low")?.Attribute("val")).GetInt32(0);
+			darkBonus = (element.Element("dark")?.Attribute("val")).GetInt32(0);
+			rainBonus = (element.Element("rain")?.Attribute("val")).GetInt32(0);
+		});
+		
+		LOGGER.Info(GetType().Name + ": Loaded hit condition bonuses.");
 	}
 	
 	/**
@@ -111,12 +81,12 @@ public class HitConditionBonusData
 		// Get side bonus
 		switch (Position.getPosition(attacker, target))
 		{
-			case SIDE:
+			case Position.SIDE:
 			{
 				mod += sideBonus;
 				break;
 			}
-			case BACK:
+			case Position.BACK:
 			{
 				mod += backBonus;
 				break;

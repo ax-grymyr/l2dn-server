@@ -1,6 +1,9 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -22,33 +25,41 @@ public class TeleportListData
 	public void load()
 	{
 		_teleports.clear();
-		parseDatapackFile("data/TeleportListData.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/TeleportListData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("teleport").ForEach(parseElement);
+		
 		_teleportCount = _teleports.size();
 		LOGGER.Info(GetType().Name + ": Loaded " + _teleportCount + " teleports.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		forEach(doc, "list", listNode => forEach(listNode, "teleport", teleportNode =>
+		int tpId = element.Attribute("id").GetInt32();
+		int tpPrice = element.Attribute("price").GetInt32();
+		bool special = element.Attribute("special").GetBoolean(false);
+		List<Location> locations = new();
+		element.Elements("location").ForEach(el =>
 		{
-			StatSet set = new StatSet(parseAttributes(teleportNode));
-			int tpId = set.getInt("id");
-			int tpPrice = set.getInt("price");
-			bool special = set.getBoolean("special", false);
-			List<Location> locations = new();
-			forEach(teleportNode, "location", locationsNode =>
-			{
-				StatSet locationSet = new StatSet(parseAttributes(locationsNode));
-				locations.add(new Location(locationSet.getInt("x"), locationSet.getInt("y"), locationSet.getInt("z")));
-			});
-			if (locations.isEmpty())
-			{
-				locations.add(new Location(set.getInt("x"), set.getInt("y"), set.getInt("z")));
-			}
-			_teleports.put(tpId, new TeleportListHolder(tpId, locations, tpPrice, special));
-		}));
+			int x = el.Attribute("x").GetInt32();
+			int y = el.Attribute("y").GetInt32();
+			int z = el.Attribute("z").GetInt32();
+			locations.add(new Location(x, y, z));
+		});
+
+		if (locations.isEmpty())
+		{
+			int x = element.Attribute("x").GetInt32();
+			int y = element.Attribute("y").GetInt32();
+			int z = element.Attribute("z").GetInt32();
+			locations.add(new Location(x, y, z));
+		}
+
+		_teleports.put(tpId, new TeleportListHolder(tpId, locations, tpPrice, special));
 	}
-	
+
 	public TeleportListHolder getTeleport(int teleportId)
 	{
 		return _teleports.get(teleportId);

@@ -28,7 +28,7 @@ public class BeautyShopData
 		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/BeautyShop.xml");
 		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 		XDocument document = XDocument.Load(stream);
-		document.Root?.Elements("race").ForEach(loadElement);
+		document.Elements("list").Elements("race").ForEach(loadElement);
 	}
 	
 	private void loadElement(XElement element)

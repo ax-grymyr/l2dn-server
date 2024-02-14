@@ -30,7 +30,7 @@ public class CollectionData
 		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/CollectionData.xml");
 		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 		XDocument document = XDocument.Load(stream);
-		document.Root?.Elements("collection").ForEach(loadElement);
+		document.Elements("list").Elements("collection").ForEach(loadElement);
 		
 		if (!_collections.isEmpty())
 		{

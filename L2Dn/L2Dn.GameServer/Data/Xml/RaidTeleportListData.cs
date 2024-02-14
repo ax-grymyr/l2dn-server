@@ -1,6 +1,8 @@
-using L2Dn.GameServer.Model;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -22,24 +24,25 @@ public class RaidTeleportListData
 	public void load()
 	{
 		_teleports.clear();
-		parseDatapackFile("data/RaidTeleportListData.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/RaidTeleportListData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("teleport").ForEach(parseElement);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _teleports.size() + " teleports.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		forEach(doc, "list", listNode => forEach(listNode, "teleport", teleportNode =>
-		{
-			StatSet set = new StatSet(parseAttributes(teleportNode));
-			int tpId = set.getInt("id");
-			int x = set.getInt("x");
-			int y = set.getInt("y");
-			int z = set.getInt("z");
-			int tpPrice = set.getInt("price");
-			_teleports.put(tpId, new TeleportListHolder(tpId, x, y, z, tpPrice, false));
-		}));
+		int tpId = element.Attribute("id").GetInt32();
+		int x = element.Attribute("x").GetInt32();
+		int y = element.Attribute("y").GetInt32();
+		int z = element.Attribute("z").GetInt32();
+		int tpPrice = element.Attribute("price").GetInt32();
+		_teleports.put(tpId, new TeleportListHolder(tpId, x, y, z, tpPrice, false));
 	}
-	
+
 	public TeleportListHolder getTeleport(int teleportId)
 	{
 		return _teleports.get(teleportId);

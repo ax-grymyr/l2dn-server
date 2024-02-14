@@ -1,6 +1,9 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -21,45 +24,38 @@ public class PetSkillData
 	public void load()
 	{
 		_skillTrees.clear();
-		parseDatapackFile("data/PetSkillData.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/PetSkillData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("skill").ForEach(parseElement);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _skillTrees.size() + " skills.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		int npcId = element.Attribute("npcId").GetInt32();
+		int skillId = element.Attribute("skillId").GetInt32();
+		int skillLevel = element.Attribute("skillLevel").GetInt32();
+		Map<long, SkillHolder> skillTree = _skillTrees.get(npcId);
+		if (skillTree == null)
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("skill".equalsIgnoreCase(d.getNodeName()))
-					{
-						NamedNodeMap attrs = d.getAttributes();
-						int npcId = parseInteger(attrs, "npcId");
-						int skillId = parseInteger(attrs, "skillId");
-						int skillLevel = parseInteger(attrs, "skillLevel");
-						Map<long, SkillHolder> skillTree = _skillTrees.get(npcId);
-						if (skillTree == null)
-						{
-							skillTree = new();
-							_skillTrees.put(npcId, skillTree);
-						}
-						
-						if (SkillData.getInstance().getSkill(skillId, skillLevel == 0 ? 1 : skillLevel) != null)
-						{
-							skillTree.put(SkillData.getSkillHashCode(skillId, skillLevel + 1), new SkillHolder(skillId, skillLevel));
-						}
-						else
-						{
-							LOGGER.Info(GetType().Name + ": Could not find skill with id " + skillId + ", level " + skillLevel + " for NPC " + npcId + ".");
-						}
-					}
-				}
-			}
+			skillTree = new();
+			_skillTrees.put(npcId, skillTree);
+		}
+
+		if (SkillData.getInstance().getSkill(skillId, skillLevel == 0 ? 1 : skillLevel) != null)
+		{
+			skillTree.put(SkillData.getSkillHashCode(skillId, skillLevel + 1), new SkillHolder(skillId, skillLevel));
+		}
+		else
+		{
+			LOGGER.Error(GetType().Name + ": Could not find skill with id " + skillId + ", level " + skillLevel +
+			             " for NPC " + npcId + ".");
 		}
 	}
-	
+
 	public int getAvailableLevel(Summon pet, int skillId)
 	{
 		int level = 0;

@@ -39,7 +39,7 @@ public abstract class AbstractDailyMissionHandler: ListenersContainer
 	
 	public abstract void init();
 	
-	public int getStatus(Player player)
+	public DailyMissionStatus getStatus(Player player)
 	{
 		DailyMissionPlayerEntry entry = getPlayerEntry(player.getObjectId(), false);
 		return entry != null ? entry.getStatus() : DailyMissionStatus.NOT_AVAILABLE;

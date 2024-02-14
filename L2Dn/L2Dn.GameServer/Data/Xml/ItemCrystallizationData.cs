@@ -1,3 +1,5 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -7,6 +9,7 @@ using L2Dn.GameServer.Model.Items.Enchant;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -21,8 +24,8 @@ public class ItemCrystallizationData
 	private readonly Map<CrystalType, Map<CrystallizationType, List<ItemChanceHolder>>> _crystallizationTemplates = new();
 	private readonly Map<int, CrystallizationDataHolder> _items = new();
 	
-	private RewardItemsOnFailure _weaponDestroyGroup = new RewardItemsOnFailure();
-	private RewardItemsOnFailure _armorDestroyGroup = new RewardItemsOnFailure();
+	private RewardItemsOnFailure _weaponDestroyGroup = new();
+	private RewardItemsOnFailure _armorDestroyGroup = new();
 	
 	protected ItemCrystallizationData()
 	{
@@ -33,15 +36,23 @@ public class ItemCrystallizationData
 	{
 		_crystallizationTemplates.clear();
 		foreach (CrystalType crystalType in Enum.GetValues<CrystalType>())
-		{
 			_crystallizationTemplates.put(crystalType, new());
-		}
+		
 		_items.clear();
 		
 		_weaponDestroyGroup = new RewardItemsOnFailure();
 		_armorDestroyGroup = new RewardItemsOnFailure();
 		
-		parseDatapackFile("data/CrystallizableItems.xml");
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/CrystallizableItems.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("templates").Elements("crystallizable_template").ForEach(parseTemplate);
+		document.Elements("list").Elements("items").Elements("crystallizable_item").ForEach(parseItem);
+		document.Elements("list").Elements("itemsOnEnchantFailure").ForEach(el =>
+		{
+			el.Elements("armor").ForEach(e => _armorDestroyGroup = getFormedHolder(e));
+			el.Elements("weapon").ForEach(e => _weaponDestroyGroup = getFormedHolder(e));
+		});
 		
 		if (_crystallizationTemplates.size() > 0)
 		{
@@ -64,80 +75,39 @@ public class ItemCrystallizationData
 			LOGGER.Info(GetType().Name + ": Loaded " + _armorDestroyGroup.size() + " armor enchant failure rewards.");
 		}
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseTemplate(XElement element)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		CrystalType crystalType = element.Attribute("crystalType").GetEnum<CrystalType>();
+		CrystallizationType crystallizationType =
+			element.Attribute("crystallizationType").GetEnum<CrystallizationType>();
+		List<ItemChanceHolder> crystallizeRewards = new();
+
+		element.Elements("item").ForEach(el =>
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
-			{
-				for (Node o = n.getFirstChild(); o != null; o = o.getNextSibling())
-				{
-					if ("templates".equalsIgnoreCase(o.getNodeName()))
-					{
-						for (Node d = o.getFirstChild(); d != null; d = d.getNextSibling())
-						{
-							if ("crystallizable_template".equalsIgnoreCase(d.getNodeName()))
-							{
-								CrystalType crystalType = parseEnum(d.getAttributes(), CrystalType.class, "crystalType");
-								CrystallizationType crystallizationType = parseEnum(d.getAttributes(), CrystallizationType.class, "crystallizationType");
-								List<ItemChanceHolder> crystallizeRewards = new();
-								for (Node c = d.getFirstChild(); c != null; c = c.getNextSibling())
-								{
-									if ("item".equalsIgnoreCase(c.getNodeName()))
-									{
-										NamedNodeMap attrs = c.getAttributes();
-										int itemId = parseInteger(attrs, "id");
-										long itemCount = Parse(attrs, "count");
-										double itemChance = parseDouble(attrs, "chance");
-										crystallizeRewards.add(new ItemChanceHolder(itemId, itemChance, itemCount));
-									}
-								}
-								
-								_crystallizationTemplates.get(crystalType).put(crystallizationType, crystallizeRewards);
-							}
-						}
-					}
-					else if ("items".equalsIgnoreCase(o.getNodeName()))
-					{
-						for (Node d = o.getFirstChild(); d != null; d = d.getNextSibling())
-						{
-							if ("crystallizable_item".equalsIgnoreCase(d.getNodeName()))
-							{
-								int id = parseInteger(d.getAttributes(), "id");
-								List<ItemChanceHolder> crystallizeRewards = new();
-								for (Node c = d.getFirstChild(); c != null; c = c.getNextSibling())
-								{
-									if ("item".equalsIgnoreCase(c.getNodeName()))
-									{
-										NamedNodeMap attrs = c.getAttributes();
-										int itemId = parseInteger(attrs, "id");
-										long itemCount = Parse(attrs, "count");
-										double itemChance = parseDouble(attrs, "chance");
-										crystallizeRewards.add(new ItemChanceHolder(itemId, itemChance, itemCount));
-									}
-								}
-								_items.put(id, new CrystallizationDataHolder(id, crystallizeRewards));
-							}
-						}
-					}
-					else if ("itemsOnEnchantFailure".equals(o.getNodeName()))
-					{
-						for (Node d = o.getFirstChild(); d != null; d = d.getNextSibling())
-						{
-							if ("armor".equalsIgnoreCase(d.getNodeName()))
-							{
-								_armorDestroyGroup = getFormedHolder(d);
-							}
-							else if ("weapon".equalsIgnoreCase(d.getNodeName()))
-							{
-								_weaponDestroyGroup = getFormedHolder(d);
-							}
-						}
-					}
-				}
-			}
-		}
+			int itemId = el.Attribute("id").GetInt32();
+			long itemCount = el.Attribute("count").GetInt64();
+			double itemChance = el.Attribute("chance").GetDouble();
+			crystallizeRewards.add(new ItemChanceHolder(itemId, itemChance, itemCount));
+		});
+
+		_crystallizationTemplates.get(crystalType).put(crystallizationType, crystallizeRewards);
+	}
+
+	private void parseItem(XElement element)
+	{
+		int id = element.Attribute("id").GetInt32();
+		List<ItemChanceHolder> crystallizeRewards = new();
+		
+		element.Elements("item").ForEach(el =>
+		{
+			int itemId = el.Attribute("id").GetInt32();
+			long itemCount = el.Attribute("count").GetInt64();
+			double itemChance = el.Attribute("chance").GetDouble();
+			crystallizeRewards.add(new ItemChanceHolder(itemId, itemChance, itemCount));
+		});
+
+		_items.put(id, new CrystallizationDataHolder(id, crystallizeRewards));
 	}
 	
 	public int getLoadedCrystallizationTemplateCount()
@@ -159,9 +129,9 @@ public class ItemCrystallizationData
 			long count = reward.getCount();
 			if (chance > 100.0)
 			{
-				double countMul = Math.ceil(chance / 100.0);
+				double countMul = Math.Ceiling(chance / 100.0);
 				chance /= countMul;
-				count *= countMul;
+				count = (long)(count * countMul);
 			}
 			
 			rewards.add(new ItemChanceHolder(reward.getId(), chance, count));
@@ -235,7 +205,7 @@ public class ItemCrystallizationData
 				result.add(new ItemChanceHolder(crystalItemId, 100, item.getCrystalCount()));
 			}
 			
-			result.addAll(items);
+			result.AddRange(items);
 		}
 		else
 		{
@@ -246,29 +216,24 @@ public class ItemCrystallizationData
 		return result;
 	}
 	
-	private RewardItemsOnFailure getFormedHolder(Node node)
+	private RewardItemsOnFailure getFormedHolder(XElement element)
 	{
 		RewardItemsOnFailure holder = new RewardItemsOnFailure();
-		for (Node z = node.getFirstChild(); z != null; z = z.getNextSibling())
+		element.Elements("item").ForEach(el =>
 		{
-			if ("item".equals(z.getNodeName()))
+			int itemId = el.Attribute("id").GetInt32();
+			int enchantLevel = el.Attribute("enchant").GetInt32();
+			double chance = el.Attribute("chance").GetDouble();
+			foreach (CrystalType grade in Enum.GetValues<CrystalType>())
 			{
-				StatSet failItems = new StatSet(parseAttributes(z));
-				int itemId = failItems.getInt("id");
-				int enchantLevel = failItems.getInt("enchant");
-				double chance = failItems.getDouble("chance");
-				foreach (CrystalType grade in Enum.GetValues<CrystalType>())
-				{
-					long count = failItems.getLong("amount" + grade.name(), int.MinValue);
-					if (count == int.MinValue)
-					{
-						continue;
-					}
+				long count = el.Attribute("amount" + grade).GetInt64(-1);
+				if (count <= 0)
+					continue;
 					
-					holder.addItemToHolder(itemId, grade, enchantLevel, count, chance);
-				}
+				holder.addItemToHolder(itemId, grade, enchantLevel, count, chance);
 			}
-		}
+		});
+
 		return holder;
 	}
 	

@@ -1,8 +1,11 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Options;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -12,7 +15,7 @@ namespace L2Dn.GameServer.Data.Xml;
  */
 public class VariationData
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(VariationData.class.getSimpleName());
+	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(VariationData));
 	
 	private readonly Map<int, Set<int>> _itemGroups = new();
 	private readonly Map<int, List<Variation>> _variations = new();
@@ -28,163 +31,166 @@ public class VariationData
 		_itemGroups.clear();
 		_variations.clear();
 		_fees.clear();
-		parseDatapackFile("data/stats/augmentation/Variations.xml");
+
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/augmentation/Variations.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("variations").Elements("variation").ForEach(parseVariationElement);
+		document.Elements("list").Elements("itemGroups").Elements("itemGroup").ForEach(parseItemGroupElement);
+		document.Elements("list").Elements("fees").Elements("fee").ForEach(parseFeeElement);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _itemGroups.size() + " item groups.");
 		LOGGER.Info(GetType().Name + ": Loaded " + _variations.size() + " variations.");
 		LOGGER.Info(GetType().Name + ": Loaded " + _fees.size() + " fees.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseVariationElement(XElement element)
 	{
-		forEach(doc, "list", listNode =>
+		int mineralId = element.Attribute("mineralId").GetInt32();
+		int itemGroup = element.Attribute("itemGroup").GetInt32(-1);
+		if (ItemData.getInstance().getTemplate(mineralId) == null)
 		{
-			forEach(listNode, "variations", variationsNode => forEach(variationsNode, "variation", variationNode =>
+			LOGGER.Error(GetType().Name + ": Mineral with item id " + mineralId + " was not found.");
+		}
+
+		Variation variation = new Variation(mineralId, itemGroup);
+
+		element.Elements("optionGroup").ForEach(el =>
+		{
+			int order = el.Attribute("order").GetInt32();
+			List<OptionDataCategory> sets = new();
+			el.Elements("optionCategory").ForEach(e =>
 			{
-				int mineralId = parseInteger(variationNode.getAttributes(), "mineralId");
-				int itemGroup = parseInteger(variationNode.getAttributes(), "itemGroup", -1);
-				if (ItemData.getInstance().getTemplate(mineralId) == null)
+				double chance = e.Attribute("chance").GetDouble();
+				Map<Options, Double> options = new();
+				e.Elements("option").ForEach(optEl =>
 				{
-					LOGGER.Warn(GetType().Name + ": Mineral with item id " + mineralId + " was not found.");
-				}
-				Variation variation = new Variation(mineralId, itemGroup);
-				
-				forEach(variationNode, "optionGroup", groupNode =>
-				{
-					int order = parseInteger(groupNode.getAttributes(), "order");
-					List<OptionDataCategory> sets = new();
-					forEach(groupNode, "optionCategory", categoryNode =>
+					double optionChance = optEl.Attribute("chance").GetDouble();
+					int optionId = optEl.Attribute("id").GetInt32();
+					Options opt = OptionData.getInstance().getOptions(optionId);
+					if (opt == null)
 					{
-						double chance = parseDouble(categoryNode.getAttributes(), "chance");
-						Map<Options, Double> options = new();
-						forEach(categoryNode, "option", optionNode =>
-						{
-							double optionChance = parseDouble(optionNode.getAttributes(), "chance");
-							int optionId = parseInteger(optionNode.getAttributes(), "id");
-							Options opt = OptionData.getInstance().getOptions(optionId);
-							if (opt == null)
-							{
-								LOGGER.Warn(GetType().Name + ": Null option for id " + optionId + " mineral " + mineralId);
-								return;
-							}
-							options.put(opt, optionChance);
-						});
-						forEach(categoryNode, "optionRange", optionNode =>
-						{
-							double optionChance = parseDouble(optionNode.getAttributes(), "chance");
-							int fromId = parseInteger(optionNode.getAttributes(), "from");
-							int toId = parseInteger(optionNode.getAttributes(), "to");
-							for (int id = fromId; id <= toId; id++)
-							{
-								Options op = OptionData.getInstance().getOptions(id);
-								if (op == null)
-								{
-									LOGGER.Warn(GetType().Name + ": Null option for id " + id + " mineral " + mineralId);
-									return;
-								}
-								options.put(op, optionChance);
-							}
-						});
-						
-						// Support for specific item ids.
-						Set<int> itemIds = new();
-						forEach(categoryNode, "item", optionNode =>
-						{
-							int itemId = parseInteger(optionNode.getAttributes(), "id");
-							itemIds.add(itemId);
-						});
-						forEach(categoryNode, "items", optionNode =>
-						{
-							int fromId = parseInteger(optionNode.getAttributes(), "from");
-							int toId = parseInteger(optionNode.getAttributes(), "to");
-							for (int id = fromId; id <= toId; id++)
-							{
-								itemIds.add(id);
-							}
-						});
-						
-						sets.add(new OptionDataCategory(options, itemIds, chance));
-					});
-					
-					variation.setEffectGroup(order, new OptionDataGroup(sets));
-				});
-				
-				List<Variation> list = _variations.get(mineralId);
-				if (list == null)
-				{
-					list = new();
-				}
-				list.add(variation);
-				
-				_variations.put(mineralId, list);
-				((EtcItem) ItemData.getInstance().getTemplate(mineralId)).setMineral();
-			}));
-			
-			forEach(listNode, "itemGroups", variationsNode => forEach(variationsNode, "itemGroup", variationNode =>
-			{
-				int id = parseInteger(variationNode.getAttributes(), "id");
-				Set<int> items = new();
-				forEach(variationNode, "item", itemNode =>
-				{
-					int itemId = parseInteger(itemNode.getAttributes(), "id");
-					if (ItemData.getInstance().getTemplate(itemId) == null)
-					{
-						LOGGER.Warn(GetType().Name + ": Item with id " + itemId + " was not found.");
+						LOGGER.Error(GetType().Name + ": Null option for id " + optionId + " mineral " + mineralId);
+						return;
 					}
-					items.add(itemId);
+
+					options.put(opt, optionChance);
 				});
-				
-				if (_itemGroups.containsKey(id))
+
+				e.Elements("optionRange").ForEach(optEl =>
 				{
-					_itemGroups.get(id).addAll(items);
-				}
-				else
-				{
-					_itemGroups.put(id, items);
-				}
-			}));
-			
-			forEach(listNode, "fees", variationNode => forEach(variationNode, "fee", feeNode =>
-			{
-				int itemGroupId = parseInteger(feeNode.getAttributes(), "itemGroup");
-				Set<int> itemGroup = _itemGroups.get(itemGroupId);
-				int itemId = parseInteger(feeNode.getAttributes(), "itemId", 0);
-				long itemCount = Parse(feeNode.getAttributes(), "itemCount", 0L);
-				long adenaFee = Parse(feeNode.getAttributes(), "adenaFee", 0L);
-				long cancelFee = Parse(feeNode.getAttributes(), "cancelFee", 0L);
-				if ((itemId != 0) && (ItemData.getInstance().getTemplate(itemId) == null))
-				{
-					LOGGER.Warn(GetType().Name + ": Item with id " + itemId + " was not found.");
-				}
-				
-				VariationFee fee = new VariationFee(itemId, itemCount, adenaFee, cancelFee);
-				Map<int, VariationFee> feeByMinerals = new();
-				forEach(feeNode, "mineral", mineralNode =>
-				{
-					int mId = parseInteger(mineralNode.getAttributes(), "id");
-					feeByMinerals.put(mId, fee);
-				});
-				forEach(feeNode, "mineralRange", mineralNode =>
-				{
-					int fromId = parseInteger(mineralNode.getAttributes(), "from");
-					int toId = parseInteger(mineralNode.getAttributes(), "to");
+					double optionChance = optEl.Attribute("chance").GetDouble();
+					int fromId = optEl.Attribute("from").GetInt32();
+					int toId = optEl.Attribute("to").GetInt32();
 					for (int id = fromId; id <= toId; id++)
 					{
-						feeByMinerals.put(id, fee);
+						Options op = OptionData.getInstance().getOptions(id);
+						if (op == null)
+						{
+							LOGGER.Error(GetType().Name + ": Null option for id " + id + " mineral " + mineralId);
+							return;
+						}
+
+						options.put(op, optionChance);
 					}
 				});
-				
-				foreach (int item in itemGroup)
+
+				// Support for specific item ids.
+				Set<int> itemIds = new();
+				e.Elements("item").ForEach(itemEl =>
 				{
-					Map<int, VariationFee> fees = _fees.get(item);
-					if (fees == null)
-					{
-						fees = new();
-					}
-					fees.putAll(feeByMinerals);
-					_fees.put(item, fees);
-				}
-			}));
+					int itemId = itemEl.Attribute("id").GetInt32();
+					itemIds.add(itemId);
+				});
+
+				e.Elements("items").ForEach(itemEl =>
+				{
+					int fromId = itemEl.Attribute("from").GetInt32();
+					int toId = itemEl.Attribute("to").GetInt32();
+					for (int id = fromId; id <= toId; id++)
+						itemIds.add(id);
+				});
+
+				sets.add(new OptionDataCategory(options, itemIds, chance));
+			});
+
+			variation.setEffectGroup(order, new OptionDataGroup(sets));
 		});
+
+		List<Variation> list = _variations.get(mineralId);
+		if (list == null)
+		{
+			list = new();
+		}
+
+		list.add(variation);
+
+		_variations.put(mineralId, list);
+		((EtcItem)ItemData.getInstance().getTemplate(mineralId)).setMineral();
+	}
+
+	private void parseItemGroupElement(XElement element)
+	{
+		int id = element.Attribute("id").GetInt32();
+		Set<int> items = new();
+		element.Elements("item").ForEach(el =>
+		{
+			int itemId = el.Attribute("id").GetInt32();
+			if (ItemData.getInstance().getTemplate(itemId) == null)
+				LOGGER.Error(GetType().Name + ": Item with id " + itemId + " was not found.");
+			
+			items.add(itemId);
+		});
+				
+		if (_itemGroups.containsKey(id))
+		{
+			_itemGroups.get(id).addAll(items);
+		}
+		else
+		{
+			_itemGroups.put(id, items);
+		}
+	}
+
+	private void parseFeeElement(XElement element)
+	{
+		int itemGroupId = element.Attribute("itemGroup").GetInt32();
+		Set<int> itemGroup = _itemGroups.get(itemGroupId);
+		int itemId = element.Attribute("itemId").GetInt32(0);
+		long itemCount = element.Attribute("itemCount").GetInt64(0);
+		long adenaFee = element.Attribute("adenaFee").GetInt64(0);
+		long cancelFee = element.Attribute("cancelFee").GetInt64(0);
+		if (itemId != 0 && (ItemData.getInstance().getTemplate(itemId) == null))
+		{
+			LOGGER.Error(GetType().Name + ": Item with id " + itemId + " was not found.");
+		}
+				
+		VariationFee fee = new VariationFee(itemId, itemCount, adenaFee, cancelFee);
+		Map<int, VariationFee> feeByMinerals = new();
+		element.Elements("mineral").ForEach(el =>
+		{
+			int mId = el.Attribute("id").GetInt32();
+			feeByMinerals.put(mId, fee);
+		});
+
+		element.Elements("mineralRange").ForEach(el =>
+		{
+			int fromId = el.Attribute("from").GetInt32();
+			int toId = el.Attribute("to").GetInt32();
+			for (int id = fromId; id <= toId; id++)
+				feeByMinerals.put(id, fee);
+		});
+
+		foreach (int item in itemGroup)
+		{
+			Map<int, VariationFee> fees = _fees.get(item);
+			if (fees == null)
+			{
+				fees = new();
+			}
+			fees.putAll(feeByMinerals);
+			_fees.put(item, fees);
+		}
 	}
 	
 	public int getVariationCount()
@@ -250,20 +256,16 @@ public class VariationData
 	{
 		Map<int, VariationFee> fees = _fees.get(itemId);
 		if (fees == null)
-		{
 			return -1;
-		}
 		
 		VariationFee fee = fees.get(mineralId);
 		if (fee == null)
 		{
 			// FIXME This will happen when the data is pre-rework or when augments were manually given, but still that's a cheap solution
 			LOGGER.Warn(GetType().Name + ": Cancellation fee not found for item [" + itemId + "] and mineral [" + mineralId + "]");
-			fee = fees.values().iterator().next();
+			fee = fees.values().FirstOrDefault();
 			if (fee == null)
-			{
 				return -1;
-			}
 		}
 		
 		return fee.getCancelFee();

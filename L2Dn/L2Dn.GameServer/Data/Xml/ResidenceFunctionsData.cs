@@ -1,7 +1,11 @@
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -24,37 +28,34 @@ public class ResidenceFunctionsData
 	public void load()
 	{
 		_functions.clear();
-		parseDatapackFile("data/ResidenceFunctions.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/ResidenceFunctions.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("function").ForEach(parseElement);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _functions.size() + " functions.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		forEach(doc, "list", list => forEach(list, "function", func =>
+		int id = element.Attribute("id").GetInt32();
+		ResidenceFunctionType type = element.Attribute("type").GetEnum<ResidenceFunctionType>();
+
+		element.Elements("function").ForEach(el =>
 		{
-			NamedNodeMap attrs = func.getAttributes();
-			StatSet set = new StatSet(HashMap::new);
-			for (int i = 0; i < attrs.getLength(); i++)
-			{
-				Node node = attrs.item(i);
-				set.set(node.getNodeName(), node.getNodeValue());
-			}
-			forEach(func, "function", levelNode =>
-			{
-				NamedNodeMap levelAttrs = levelNode.getAttributes();
-				StatSet levelSet = new StatSet(HashMap::new);
-				levelSet.merge(set);
-				for (int i = 0; i < levelAttrs.getLength(); i++)
-				{
-					Node node = levelAttrs.item(i);
-					levelSet.set(node.getNodeName(), node.getNodeValue());
-				}
-				ResidenceFunctionTemplate template = new ResidenceFunctionTemplate(levelSet);
-				_functions.computeIfAbsent(template.getId(), key => new()).add(template);
-			});
-		}));
+			int level = el.Attribute("level").GetInt32();
+			int costId = el.Attribute("costId").GetInt32();
+			long costCount = el.Attribute("costCount").GetInt64();
+			TimeSpan duration = el.Attribute("duration").GetTimeSpan();
+			double value = el.Attribute("value").GetDouble(0);
+
+			ItemHolder cost = new ItemHolder(costId, costCount);
+			ResidenceFunctionTemplate template = new ResidenceFunctionTemplate(id, level, type, cost, duration, value);
+			_functions.computeIfAbsent(template.getId(), key => new()).add(template);
+		});
 	}
-	
+
 	/**
 	 * @param id
 	 * @param level

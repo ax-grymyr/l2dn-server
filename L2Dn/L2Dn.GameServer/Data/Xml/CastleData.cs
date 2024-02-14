@@ -30,7 +30,7 @@ public class CastleData
 		{
 			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 			XDocument document = XDocument.Load(stream);
-			document.Root?.Elements("castle").ForEach(x => loadElement(filePath, x));
+			document.Elements("list").Elements("castle").ForEach(x => loadElement(filePath, x));
 		});
 	}
 

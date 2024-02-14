@@ -1,6 +1,8 @@
-using L2Dn.GameServer.Model;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -22,7 +24,11 @@ public class PetAcquireList
 	public void load()
 	{
 		_skills.clear();
-		parseDatapackFile("data/PetAcquireList.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/PetAcquireList.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("pet").ForEach(parseElement);
 		
 		if (!_skills.isEmpty())
 		{
@@ -33,44 +39,29 @@ public class PetAcquireList
 			LOGGER.Info(GetType().Name + ": System is disabled.");
 		}
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		int type = element.Attribute("type").GetInt32();
+
+		List<PetSkillAcquireHolder> list = new();
+		element.Elements("skill").ForEach(el =>
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("pet".equalsIgnoreCase(d.getNodeName()))
-					{
-						NamedNodeMap attrs = d.getAttributes();
-						Node att;
-						StatSet set = new StatSet();
-						for (int i = 0; i < attrs.getLength(); i++)
-						{
-							att = attrs.item(i);
-							set.set(att.getNodeName(), att.getNodeValue());
-						}
-						
-						int type = parseInteger(attrs, "type");
-						List<PetSkillAcquireHolder> list = new();
-						for (Node b = d.getFirstChild(); b != null; b = b.getNextSibling())
-						{
-							attrs = b.getAttributes();
-							if ("skill".equalsIgnoreCase(b.getNodeName()))
-							{
-								list.add(new PetSkillAcquireHolder(parseInteger(attrs, "id"), parseInteger(attrs, "lvl"), parseInteger(attrs, "reqLvl"), parseInteger(attrs, "evolve"), parseInteger(attrs, "item") == null ? null : new ItemHolder(parseInteger(attrs, "item"), Parse(attrs, "itemAmount"))));
-							}
-						}
-						
-						_skills.put(type, list);
-					}
-				}
-			}
-		}
+			int id = el.Attribute("id").GetInt32();
+			int lvl = el.Attribute("lvl").GetInt32();
+			int reqLvl = el.Attribute("reqLvl").GetInt32();
+			int evolve = el.Attribute("evolve").GetInt32();
+			int item = el.Attribute("item").GetInt32(-1);
+			long itemAmount = el.Attribute("itemAmount").GetInt64(-1);
+
+			list.add(new PetSkillAcquireHolder(id, lvl, reqLvl, evolve, item < 0
+				? null
+				: new ItemHolder(item, itemAmount)));
+		});
+
+		_skills.put(type, list);
 	}
-	
+
 	public List<PetSkillAcquireHolder> getSkills(int type)
 	{
 		return _skills.get(type);

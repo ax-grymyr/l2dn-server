@@ -12,9 +12,9 @@ public class PlayerItemTemplate: ItemHolder
 	/**
 	 * @param set the set containing the values for this object
 	 */
-	public PlayerItemTemplate(StatSet set): base(set.getInt("id"), set.getInt("count"))
+	public PlayerItemTemplate(int id, long count, bool equipped): base(id, count)
 	{
-		_equipped = set.getBoolean("equipped", false);
+		_equipped = equipped;
 	}
 
 	/**

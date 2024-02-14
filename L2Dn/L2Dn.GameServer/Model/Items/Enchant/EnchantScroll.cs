@@ -1,7 +1,9 @@
+using System.Xml.Linq;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Items.Enchant;
 
@@ -19,9 +21,9 @@ public class EnchantScroll: AbstractEnchantItem
 	private readonly int _scrollGroupId;
 	private readonly Map<int, int> _items = new();
 	
-	public EnchantScroll(StatSet set): base(set)
+	public EnchantScroll(XElement element): base(element)
 	{
-		_scrollGroupId = set.getInt("scrollGroupId", 0);
+		_scrollGroupId = element.Attribute("scrollGroupId").GetInt32(0);
 		
 		ItemType type = getItem().getItemType();
 		_isWeapon = (type == EtcItemType.ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP) || (type == EtcItemType.BLESS_ENCHT_WP) || (type == EtcItemType.ENCHT_WP) || ((type == EtcItemType.GIANT_ENCHT_WP) || (type == EtcItemType.CURSED_ENCHT_WP));

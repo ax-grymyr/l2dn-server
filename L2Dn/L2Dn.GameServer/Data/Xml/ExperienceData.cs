@@ -1,4 +1,7 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -29,42 +32,43 @@ public class ExperienceData
 	{
 		_expTable.clear();
 		_traningRateTable.clear();
-		parseDatapackFile("data/stats/experience.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/experience.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("table").ForEach(el =>
+		{
+			MAX_LEVEL = el.Attribute("maxLevel").GetInt32() + 1;
+			MAX_PET_LEVEL = el.Attribute("maxPetLevel").GetInt32() + 1;
+			if (MAX_LEVEL > Config.PLAYER_MAXIMUM_LEVEL)
+			{
+				MAX_LEVEL = Config.PLAYER_MAXIMUM_LEVEL;
+			}
+			if (MAX_PET_LEVEL > (MAX_LEVEL + 1))
+			{
+				MAX_PET_LEVEL = MAX_LEVEL + 1; // Pet level should not exceed owner level.
+			}
+			
+			el.Elements("experience").ForEach(parseElement);
+		});
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _expTable.size() + " levels.");
 		LOGGER.Info(GetType().Name + ": Max Player Level is " + (MAX_LEVEL - 1) + ".");
 		LOGGER.Info(GetType().Name + ": Max Pet Level is " + (MAX_PET_LEVEL - 1) + ".");
 	}
 	
-	public void parseDocument(Document doc, File f)
+	private void parseElement(XElement element)
 	{
-		Node table = doc.getFirstChild();
-		NamedNodeMap tableAttr = table.getAttributes();
-		MAX_LEVEL = int.Parse(tableAttr.getNamedItem("maxLevel").getNodeValue()) + 1;
-		MAX_PET_LEVEL = int.Parse(tableAttr.getNamedItem("maxPetLevel").getNodeValue()) + 1;
-		if (MAX_LEVEL > Config.PLAYER_MAXIMUM_LEVEL)
+		int maxLevel = element.Attribute("level").GetInt32();
+		if (maxLevel > Config.PLAYER_MAXIMUM_LEVEL)
 		{
-			MAX_LEVEL = Config.PLAYER_MAXIMUM_LEVEL;
+			return;
 		}
-		if (MAX_PET_LEVEL > (MAX_LEVEL + 1))
-		{
-			MAX_PET_LEVEL = MAX_LEVEL + 1; // Pet level should not exceed owner level.
-		}
-		
-		int maxLevel = 0;
-		for (Node n = table.getFirstChild(); n != null; n = n.getNextSibling())
-		{
-			if ("experience".equals(n.getNodeName()))
-			{
-				NamedNodeMap attrs = n.getAttributes();
-				maxLevel = parseInteger(attrs, "level");
-				if (maxLevel > Config.PLAYER_MAXIMUM_LEVEL)
-				{
-					break;
-				}
-				_expTable.put(maxLevel, Parse(attrs, "tolevel"));
-				_traningRateTable.put(maxLevel, parseDouble(attrs, "trainingRate"));
-			}
-		}
+
+		long toLevel = element.Attribute("tolevel").GetInt64();
+		double trainingRate = element.Attribute("trainingRate").GetDouble();
+		_expTable.put(maxLevel, toLevel);
+		_traningRateTable.put(maxLevel, trainingRate);
 	}
 	
 	/**

@@ -1,8 +1,12 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
 
@@ -11,6 +15,7 @@ namespace L2Dn.GameServer.Data.Xml;
  */
 public class ElementalAttributeData
 {
+	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ElementalAttributeData));
 	private static readonly Map<int, ElementalItemHolder> ELEMENTAL_ITEMS = new();
 	
 	public const int FIRST_WEAPON_BONUS = 20;
@@ -75,27 +80,32 @@ public class ElementalAttributeData
 	public void load()
 	{
 		ELEMENTAL_ITEMS.clear();
-		parseDatapackFile("data/ElementalAttributeData.xml");
+
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/ElementalAttributeData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("item").ForEach(parseElement);
+
 		LOGGER.Info(GetType().Name + ": Loaded " + ELEMENTAL_ITEMS.size() + " elemental attribute items.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		forEach(doc, "list", listNode => forEach(listNode, "item", itemNode =>
+		int id = element.Attribute("id").GetInt32();
+		if (ItemData.getInstance().getTemplate(id) == null)
 		{
-			StatSet set = new StatSet(parseAttributes(itemNode));
-			
-			int id = set.getInt("id");
-			if (ItemData.getInstance().getTemplate(id) == null)
-			{
-				LOGGER.Info(GetType().Name + ": Could not find item with id " + id + ".");
-				return;
-			}
-			
-			ELEMENTAL_ITEMS.put(id, new ElementalItemHolder(id, set.getEnum("elemental", AttributeType.class), set.getEnum("type", ElementalItemType.class), set.getInt("power", 0)));
-		}));
+			LOGGER.Info(GetType().Name + ": Could not find item with id " + id + ".");
+			return;
+		}
+
+		AttributeType attributeType = element.Attribute("elemental").GetEnum<AttributeType>();
+		ElementalItemType elementalItemType = element.Attribute("type").GetEnum<ElementalItemType>();
+		int power = element.Attribute("power").GetInt32(0);
+		
+		ElementalItemHolder holder = new ElementalItemHolder(id, attributeType, elementalItemType, power);
+		ELEMENTAL_ITEMS.put(id, holder);
 	}
-	
+
 	public AttributeType getItemElement(int itemId)
 	{
 		ElementalItemHolder item = ELEMENTAL_ITEMS.get(itemId);

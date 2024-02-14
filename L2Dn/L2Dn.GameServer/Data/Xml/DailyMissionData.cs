@@ -30,7 +30,7 @@ public class DailyMissionData
 		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/DailyMission.xml");
 		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 		XDocument document = XDocument.Load(stream);
-		document.Root?.Elements("reward").ForEach(loadElement);
+		document.Elements("list").Elements("reward").ForEach(loadElement);
 		
 		_dailyMissionData.Clear();
 		foreach (List<DailyMissionDataHolder> missionList in _dailyMissionRewards.values())

@@ -1,10 +1,10 @@
 ﻿using System.Runtime.CompilerServices;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Cache;
-using L2Dn.GameServer.CommunityBbs.BB;
 using L2Dn.GameServer.CommunityBbs.Managers;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Handlers;
@@ -52,7 +52,12 @@ using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using ClanWar = L2Dn.GameServer.Model.Clans.ClanWar;
 using FortManager = L2Dn.GameServer.Model.Actor.Instances.FortManager;
+using Forum = L2Dn.GameServer.CommunityBbs.BB.Forum;
+using Pet = L2Dn.GameServer.Model.Actor.Instances.Pet;
+using Sex = L2Dn.GameServer.Enums.Sex;
 using ThreadPool = System.Threading.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor;
@@ -2232,7 +2237,7 @@ public class Player: Playable
 	/**
 	 * @return the ClassId object of the Player contained in PlayerTemplate.
 	 */
-	public ClassId getClassId()
+	public CharacterClass getClassId()
 	{
 		return getTemplate().getClassId();
 	}

@@ -1,7 +1,9 @@
-using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -15,9 +17,7 @@ public class InitialEquipmentData
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(InitialEquipmentData));
 	
-	private readonly Map<ClassId, List<PlayerItemTemplate>> _initialEquipmentList = new();
-	private const string NORMAL = "data/stats/initialEquipment.xml";
-	private const string EVENT = "data/stats/initialEquipmentEvent.xml";
+	private readonly Map<CharacterClass, List<PlayerItemTemplate>> _initialEquipmentList = new();
 	
 	/**
 	 * Instantiates a new initial equipment data.
@@ -26,54 +26,38 @@ public class InitialEquipmentData
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_initialEquipmentList.clear();
-		parseDatapackFile(Config.INITIAL_EQUIPMENT_EVENT ? EVENT : NORMAL);
+
+		const string NORMAL = "data/stats/initialEquipment.xml";
+		const string EVENT = "data/stats/initialEquipmentEvent.xml";
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, Config.INITIAL_EQUIPMENT_EVENT ? EVENT : NORMAL);
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("equipment").ForEach(parseEquipment);
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _initialEquipmentList.size() + " initial equipment data.");
-	}
-	
-	public void parseDocument(Document doc, File f)
-	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
-		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("equipment".equalsIgnoreCase(d.getNodeName()))
-					{
-						parseEquipment(d);
-					}
-				}
-			}
-		}
 	}
 	
 	/**
 	 * Parses the equipment.
 	 * @param d parse an initial equipment and add it to {@link #_initialEquipmentList}
 	 */
-	private void parseEquipment(Node d)
+	private void parseEquipment(XElement element)
 	{
-		NamedNodeMap attrs = d.getAttributes();
-		ClassId classId = ClassId.getClassId(int.Parse(attrs.getNamedItem("classId").getNodeValue()));
+		CharacterClass classId = (CharacterClass)element.Attribute("classId").GetInt32();
 		List<PlayerItemTemplate> equipList = new();
-		for (Node c = d.getFirstChild(); c != null; c = c.getNextSibling())
+		
+		element.Elements("item").ForEach(el =>
 		{
-			if ("item".equalsIgnoreCase(c.getNodeName()))
-			{
-				StatSet set = new StatSet();
-				attrs = c.getAttributes();
-				for (int i = 0; i < attrs.getLength(); i++)
-				{
-					Node attr = attrs.item(i);
-					set.set(attr.getNodeName(), attr.getNodeValue());
-				}
-				equipList.add(new PlayerItemTemplate(set));
-			}
-		}
+			int id = el.Attribute("id").GetInt32();
+			long count = el.Attribute("count").GetInt64(1);
+			bool equipped = el.Attribute("equipped").GetBoolean(false); 
+			equipList.add(new PlayerItemTemplate(id, count, equipped));
+		});
+		
 		_initialEquipmentList.put(classId, equipList);
 	}
 	
@@ -82,19 +66,9 @@ public class InitialEquipmentData
 	 * @param cId the class Id for the required initial equipment.
 	 * @return the initial equipment for the given class Id.
 	 */
-	public List<PlayerItemTemplate> getEquipmentList(ClassId cId)
+	public List<PlayerItemTemplate> getEquipmentList(CharacterClass cId)
 	{
 		return _initialEquipmentList.get(cId);
-	}
-	
-	/**
-	 * Gets the equipment list.
-	 * @param cId the class Id for the required initial equipment.
-	 * @return the initial equipment for the given class Id.
-	 */
-	public List<PlayerItemTemplate> getEquipmentList(int cId)
-	{
-		return _initialEquipmentList.get(ClassId.getClassId(cId));
 	}
 	
 	/**

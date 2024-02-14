@@ -9,11 +9,11 @@ public class SkillEnchantHolder
 	private readonly int _starLevel;
 	private readonly int _maxEnchantLevel;
 
-	public SkillEnchantHolder(StatSet set)
+	public SkillEnchantHolder(int id, int starLevel, int maxEnchantLevel)
 	{
-		_id = set.getInt("id");
-		_starLevel = set.getInt("starLevel");
-		_maxEnchantLevel = set.getInt("maxEnchantLevel");
+		_id = id;
+		_starLevel = starLevel;
+		_maxEnchantLevel = maxEnchantLevel;
 	}
 
 	public int getId()

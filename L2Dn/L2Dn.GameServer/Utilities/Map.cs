@@ -105,4 +105,9 @@ public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
 
         return default;
     }
+
+    public void compute(TKey key, Func<TKey, TValue, TValue> func)
+    {
+        
+    }
 }

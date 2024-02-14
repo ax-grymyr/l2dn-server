@@ -5,6 +5,8 @@ namespace L2Dn.Utilities;
 
 public static class XmlUtil
 {
+    public static byte GetByte(this XAttribute? attribute) => GetValue<byte>(attribute);
+    public static byte GetByte(this XAttribute? attribute, byte defaultValue) => GetValue(attribute, defaultValue);
     public static int GetInt32(this XAttribute? attribute) => GetValue<int>(attribute);
     public static int GetInt32(this XAttribute? attribute, int defaultValue) => GetValue(attribute, defaultValue);
     public static long GetInt64(this XAttribute? attribute) => GetValue<long>(attribute);

@@ -1,3 +1,4 @@
+using System.Xml.Linq;
 using L2Dn.GameServer.Model.Items.Types;
 
 namespace L2Dn.GameServer.Model.Items.Enchant;
@@ -12,7 +13,7 @@ public class EnchantSupportItem: AbstractEnchantItem
 	private readonly bool _isGiant;
 	private readonly ItemType type;
 
-	public EnchantSupportItem(StatSet set): base(set)
+	public EnchantSupportItem(XElement element): base(element)
 	{
 		type = getItem().getItemType();
 		_isWeapon = (type == EtcItemType.ENCHT_ATTR_INC_PROP_ENCHT_WP) ||

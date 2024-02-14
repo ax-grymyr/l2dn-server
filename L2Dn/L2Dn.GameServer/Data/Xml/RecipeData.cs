@@ -1,7 +1,10 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -27,153 +30,80 @@ public class RecipeData
 	public void load()
 	{
 		_recipes.clear();
-		parseDatapackFile("data/Recipes.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/Recipes.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("item").ForEach(parseElement);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _recipes.size() + " recipes.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
 		// TODO: Cleanup checks enforced by XSD.
 		List<RecipeHolder> recipePartList = new();
 		List<RecipeStatHolder> recipeStatUseList = new();
 		List<RecipeStatHolder> recipeAltStatChangeList = new();
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+
+		int id = element.Attribute("id").GetInt32();
+		int recipeId = element.Attribute("recipeId").GetInt32();
+		string name = element.Attribute("name").GetString();
+		int craftLevel = element.Attribute("craftLevel").GetInt32();
+		bool isDwarvenRecipe = element.Attribute("type").GetString() == "dwarven";
+		int successRate = element.Attribute("successRate").GetInt32(100);
+
+		element.Elements("statUse").ForEach(el =>
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
-			{
-				RECIPES_FILE: for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("item".equalsIgnoreCase(d.getNodeName()))
-					{
-						recipePartList.Clear();
-						recipeStatUseList.Clear();
-						recipeAltStatChangeList.Clear();
-						NamedNodeMap attrs = d.getAttributes();
-						Node att;
-						int id = -1;
-						bool haveRare = false;
-						StatSet set = new StatSet();
-						
-						att = attrs.getNamedItem("id");
-						if (att == null)
-						{
-							LOGGER.Error(GetType().Name + ": Missing id for recipe item, skipping");
-							continue;
-						}
-						id = int.Parse(att.getNodeValue());
-						set.set("id", id);
-						
-						att = attrs.getNamedItem("recipeId");
-						if (att == null)
-						{
-							LOGGER.Error(GetType().Name + ": Missing recipeId for recipe item id: " + id + ", skipping");
-							continue;
-						}
-						set.set("recipeId", int.Parse(att.getNodeValue()));
-						
-						att = attrs.getNamedItem("name");
-						if (att == null)
-						{
-							LOGGER.Error(GetType().Name + ": Missing name for recipe item id: " + id + ", skipping");
-							continue;
-						}
-						set.set("recipeName", att.getNodeValue());
-						
-						att = attrs.getNamedItem("craftLevel");
-						if (att == null)
-						{
-							LOGGER.Error(GetType().Name + ": Missing level for recipe item id: " + id + ", skipping");
-							continue;
-						}
-						set.set("craftLevel", int.Parse(att.getNodeValue()));
-						
-						att = attrs.getNamedItem("type");
-						if (att == null)
-						{
-							LOGGER.Error(GetType().Name + ": Missing type for recipe item id: " + id + ", skipping");
-							continue;
-						}
-						set.set("isDwarvenRecipe", att.getNodeValue().equalsIgnoreCase("dwarven"));
-						
-						att = attrs.getNamedItem("successRate");
-						if (att == null)
-						{
-							LOGGER.Error(GetType().Name + ": Missing successRate for recipe item id: " + id + ", skipping");
-							continue;
-						}
-						set.set("successRate", int.Parse(att.getNodeValue()));
-						
-						for (Node c = d.getFirstChild(); c != null; c = c.getNextSibling())
-						{
-							if ("statUse".equalsIgnoreCase(c.getNodeName()))
-							{
-								String statName = c.getAttributes().getNamedItem("name").getNodeValue();
-								int value = int.Parse(c.getAttributes().getNamedItem("value").getNodeValue());
-								try
-								{
-									recipeStatUseList.add(new RecipeStatHolder(statName, value));
-								}
-								catch (Exception e)
-								{
-									LOGGER.Error(GetType().Name + ": Error in StatUse parameter for recipe item id: " + id + ", skipping");
-									continue RECIPES_FILE;
-								}
-							}
-							else if ("altStatChange".equalsIgnoreCase(c.getNodeName()))
-							{
-								String statName = c.getAttributes().getNamedItem("name").getNodeValue();
-								int value = int.Parse(c.getAttributes().getNamedItem("value").getNodeValue());
-								try
-								{
-									recipeAltStatChangeList.add(new RecipeStatHolder(statName, value));
-								}
-								catch (Exception e)
-								{
-									LOGGER.Error(GetType().Name + ": Error in AltStatChange parameter for recipe item id: " + id + ", skipping");
-									continue RECIPES_FILE;
-								}
-							}
-							else if ("ingredient".equalsIgnoreCase(c.getNodeName()))
-							{
-								int ingId = int.Parse(c.getAttributes().getNamedItem("id").getNodeValue());
-								int ingCount = int.Parse(c.getAttributes().getNamedItem("count").getNodeValue());
-								recipePartList.add(new RecipeHolder(ingId, ingCount));
-							}
-							else if ("production".equalsIgnoreCase(c.getNodeName()))
-							{
-								set.set("itemId", int.Parse(c.getAttributes().getNamedItem("id").getNodeValue()));
-								set.set("count", int.Parse(c.getAttributes().getNamedItem("count").getNodeValue()));
-							}
-							else if ("productionRare".equalsIgnoreCase(c.getNodeName()))
-							{
-								set.set("rareItemId", int.Parse(c.getAttributes().getNamedItem("id").getNodeValue()));
-								set.set("rareCount", int.Parse(c.getAttributes().getNamedItem("count").getNodeValue()));
-								set.set("rarity", int.Parse(c.getAttributes().getNamedItem("rarity").getNodeValue()));
-								haveRare = true;
-							}
-						}
-						
-						RecipeList recipeList = new RecipeList(set, haveRare);
-						foreach (RecipeHolder recipePart in recipePartList)
-						{
-							recipeList.addRecipe(recipePart);
-						}
-						foreach (RecipeStatHolder recipeStatUse in recipeStatUseList)
-						{
-							recipeList.addStatUse(recipeStatUse);
-						}
-						foreach (RecipeStatHolder recipeAltStatChange in recipeAltStatChangeList)
-						{
-							recipeList.addAltStatChange(recipeAltStatChange);
-						}
-						
-						_recipes.put(id, recipeList);
-					}
-				}
-			}
+			string statName = el.Attribute("name").GetString();
+			int value = el.Attribute("value").GetInt32();
+			recipeStatUseList.add(new RecipeStatHolder(statName, value));
+		});
+
+		element.Elements("altStatChange").ForEach(el =>
+		{
+			string statName = el.Attribute("name").GetString();
+			int value = el.Attribute("value").GetInt32();
+			recipeAltStatChangeList.add(new RecipeStatHolder(statName, value));
+		});
+
+		element.Elements("ingredient").ForEach(el =>
+		{
+			int ingId = el.Attribute("id").GetInt32();
+			int ingCount = el.Attribute("count").GetInt32();
+			recipePartList.add(new RecipeHolder(ingId, ingCount));
+		});
+
+		XElement prodElem = element.Elements("production").Single();
+		int prodId = prodElem.Attribute("id").GetInt32();
+		int prodCount = prodElem.Attribute("count").GetInt32();
+		RecipeHolder production = new RecipeHolder(prodId, prodCount);
+
+		RecipeRareHolder? rareProduction = null;
+		XElement? prodRareElem = element.Elements("productionRare").SingleOrDefault();
+		if (prodRareElem != null)
+		{
+			prodId = prodRareElem.Attribute("id").GetInt32();
+			prodCount = prodRareElem.Attribute("count").GetInt32();
+			int rarity = prodRareElem.Attribute("rarity").GetInt32();
+			rareProduction = new RecipeRareHolder(prodId, prodCount, rarity);
 		}
+
+		RecipeList recipeList = new RecipeList(id, recipeId, recipeId, name, successRate,
+			isDwarvenRecipe, production, rareProduction);
+
+		foreach (RecipeHolder recipePart in recipePartList)
+			recipeList.addRecipe(recipePart);
+
+		foreach (RecipeStatHolder recipeStatUse in recipeStatUseList)
+			recipeList.addStatUse(recipeStatUse);
+
+		foreach (RecipeStatHolder recipeAltStatChange in recipeAltStatChangeList)
+			recipeList.addAltStatChange(recipeAltStatChange);
+
+		_recipes.put(id, recipeList);
 	}
-	
+
 	/**
 	 * Gets the recipe list.
 	 * @param listId the list id
@@ -225,7 +155,7 @@ public class RecipeData
 	public RecipeList getValidRecipeList(Player player, int id)
 	{
 		RecipeList recipeList = _recipes.get(id);
-		if ((recipeList == null) || (recipeList.getRecipes().Length == 0))
+		if ((recipeList == null) || (recipeList.getRecipes().Count == 0))
 		{
 			player.sendMessage("No recipe for: " + id);
 			player.setCrafting(false);

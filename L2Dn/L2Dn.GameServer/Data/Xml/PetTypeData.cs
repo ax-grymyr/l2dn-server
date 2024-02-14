@@ -1,6 +1,8 @@
-using L2Dn.GameServer.Model;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -23,28 +25,32 @@ public class PetTypeData
 	public void load()
 	{
 		_skills.clear();
-		parseDatapackFile("data/PetTypes.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/PetTypes.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("pet").ForEach(parseElement);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _skills.size() + " pet types.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		forEach(doc, "list", listNode => forEach(listNode, "pet", petNode =>
-		{
-			StatSet set = new StatSet(parseAttributes(petNode));
-			int id = set.getInt("id");
-			_skills.put(id, new SkillHolder(set.getInt("skillId", 0), set.getInt("skillLvl", 0)));
-			_names.put(id, set.getString("name"));
-		}));
+		int id = element.Attribute("id").GetInt32();
+		int skillId = element.Attribute("skillId").GetInt32(0);
+		int skillLvl = element.Attribute("skillLvl").GetInt32(0);
+		string name = element.Attribute("name").GetString();
+		_skills.put(id, new SkillHolder(skillId, skillLvl));
+		_names.put(id, name);
 	}
-	
+
 	public SkillHolder getSkillByName(String name)
 	{
-		foreach (Entry<int, String> entry in _names.entrySet())
+		foreach (var entry in _names)
 		{
-			if (name.startsWith(entry.getValue()))
+			if (name.startsWith(entry.Value))
 			{
-				return _skills.get(entry.getKey());
+				return _skills.get(entry.Key);
 			}
 		}
 		return null;
@@ -52,11 +58,11 @@ public class PetTypeData
 	
 	public int getIdByName(String name)
 	{
-		foreach (Entry<int, String> entry in _names.entrySet())
+		foreach (var entry in _names)
 		{
-			if (name.endsWith(entry.getValue()))
+			if (name.endsWith(entry.Value))
 			{
-				return entry.getKey();
+				return entry.Key;
 			}
 		}
 		return 0;
@@ -69,17 +75,17 @@ public class PetTypeData
 	
 	public String getRandomName()
 	{
-		return _names.entrySet().stream().filter(e => e.getKey() > 100).findAny().get().getValue();
+		return _names.Where(e => e.Key > 100).First().Value;
 	}
 	
-	public Entry<int, SkillHolder> getRandomSkill()
+	public KeyValuePair<int, SkillHolder> getRandomSkill()
 	{
-		return _skills.entrySet().stream().filter(e => e.getValue().getSkillId() > 0).findAny().get();
+		return _skills.Where(e => e.Value.getSkillId() > 0).First();
 	}
 	
 	public static PetTypeData getInstance()
 	{
-		return PetTypeData.SingletonHolder.INSTANCE;
+		return SingletonHolder.INSTANCE;
 	}
 	
 	private static class SingletonHolder

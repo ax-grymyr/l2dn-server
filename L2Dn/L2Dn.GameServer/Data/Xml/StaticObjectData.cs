@@ -1,7 +1,10 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -27,45 +30,32 @@ public class StaticObjectData
 	public void load()
 	{
 		_staticObjects.clear();
-		parseDatapackFile("data/StaticObjects.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/StaticObjects.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("object").ForEach(parseElement);
+        
 		LOGGER.Info(GetType().Name + ": Loaded " + _staticObjects.size() + " static object templates.");
 	}
 	
-	public void parseDocument(Document doc, File f)
+	private void parseElement(XElement element)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
-		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("object".equalsIgnoreCase(d.getNodeName()))
-					{
-						NamedNodeMap attrs = d.getAttributes();
-						StatSet set = new StatSet();
-						for (int i = 0; i < attrs.getLength(); i++)
-						{
-							Node att = attrs.item(i);
-							set.set(att.getNodeName(), att.getNodeValue());
-						}
-						addObject(set);
-					}
-				}
-			}
-		}
-	}
-	
-	/**
-	 * Initialize an static object based on the stats set and add it to the map.
-	 * @param set the stats set to add.
-	 */
-	private void addObject(StatSet set)
-	{
-		StaticObject obj = new StaticObject(new CreatureTemplate(new StatSet()), set.getInt("id"));
-		obj.setType(set.getInt("type", 0));
-		obj.setName(set.getString("name"));
-		obj.setMap(set.getString("texture", "none"), set.getInt("map_x", 0), set.getInt("map_y", 0));
-		obj.spawnMe(set.getInt("x"), set.getInt("y"), set.getInt("z"));
+		int id = element.Attribute("id").GetInt32();
+		int type = element.Attribute("type").GetInt32(0);
+		string name = element.Attribute("name").GetString();
+		string texture = element.Attribute("texture").GetString("none");
+		int mapX = element.Attribute("map_x").GetInt32(0);
+		int mapY = element.Attribute("map_y").GetInt32(0);
+		int x = element.Attribute("x").GetInt32();
+		int y = element.Attribute("y").GetInt32();
+		int z = element.Attribute("z").GetInt32();
+				
+		StaticObject obj = new StaticObject(new CreatureTemplate(new StatSet()), id);
+		obj.setType(type);
+		obj.setName(name);
+		obj.setMap(texture, mapX, mapY);
+		obj.spawnMe(x, y, z);
 		_staticObjects.put(obj.getObjectId(), obj);
 	}
 	

@@ -13,10 +13,10 @@ public class LuckyGameDataHolder
 	private int _minModifyRewardGame;
 	private int _maxModifyRewardGame;
 
-	public LuckyGameDataHolder(StatSet @params)
+	public LuckyGameDataHolder(int index, int turningPoints)
 	{
-		_index = @params.getInt("index");
-		_turningPoints = @params.getInt("turning_point");
+		_index = index;
+		_turningPoints = turningPoints;
 	}
 
 	public void addCommonReward(ItemChanceHolder item)

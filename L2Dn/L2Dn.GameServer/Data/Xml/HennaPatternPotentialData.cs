@@ -1,8 +1,11 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Henna;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -33,150 +36,88 @@ public class HennaPatternPotentialData
 		_potenExpTable.clear();
 		_potentials.clear();
 		_enchancedReset.Clear();
-		parseDatapackFile("data/stats/hennaPatternPotential.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/hennaPatternPotential.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").ForEach(element =>
+		{
+			element.Elements("enchantFees").Elements("fee").ForEach(parseFeeElement);
+			element.Elements("resetCount").Elements("reset").ForEach(parseResetElement);
+			element.Elements("experiencePoints").Elements("hiddenPower").ForEach(parseHiddenPowerElement);
+			element.Elements("hiddenPotentials").Elements("poten").ForEach(parseHiddenPotenElement);
+		});
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _potenFees.size() + " dye pattern fee data.");
 		
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseFeeElement(XElement element)
 	{
-		for (Node m = doc.getFirstChild(); m != null; m = m.getNextSibling())
+		int step = element.Attribute("step").GetInt32();
+		int dailyCount = 0;
+		Map<int, double> enchantExp = new();
+		List<ItemHolder> items = new();
+		
+		element.Elements("requiredItem").ForEach(el =>
 		{
-			if ("list".equals(m.getNodeName()))
-			{
-				for (Node k = m.getFirstChild(); k != null; k = k.getNextSibling())
-				{
-					switch (k.getNodeName())
-					{
-						case "enchantFees":
-						{
-							for (Node n = k.getFirstChild(); n != null; n = n.getNextSibling())
-							{
-								if ("fee".equals(n.getNodeName()))
-								{
-									NamedNodeMap attrs = n.getAttributes();
-									Node att;
-									StatSet set = new StatSet();
-									for (int i = 0; i < attrs.getLength(); i++)
-									{
-										att = attrs.item(i);
-										set.set(att.getNodeName(), att.getNodeValue());
-									}
-									
-									int step = parseInteger(attrs, "step");
-									int itemId = 0;
-									long itemCount = 0;
-									int dailyCount = 0;
-									Map<int, Double> enchantExp = new();
-									List<ItemHolder> items = new();
-									for (Node b = n.getFirstChild(); b != null; b = b.getNextSibling())
-									{
-										attrs = b.getAttributes();
-										switch (b.getNodeName())
-										{
-											case "requiredItem":
-											{
-												itemId = parseInteger(attrs, "id");
-												itemCount = Parse(attrs, "count", 1L);
-												items.add(new ItemHolder(itemId, itemCount));
-												break;
-											}
-											case "dailyCount":
-											{
-												dailyCount = int.Parse(b.getTextContent());
-												break;
-											}
-											case "enchantExp":
-											{
-												enchantExp.put(parseInteger(attrs, "count"), parseDouble(attrs, "chance"));
-												break;
-											}
-										}
-									}
-									_potenFees.put(step, new DyePotentialFee(step, items, dailyCount, enchantExp));
-								}
-							}
-							break;
-						}
-						case "resetCount":
-						{
-							for (Node n = k.getFirstChild(); n != null; n = n.getNextSibling())
-							{
-								if ("reset".equalsIgnoreCase(n.getNodeName()))
-								{
-									StatSet set = new StatSet(parseAttributes(n));
-									int itemId = set.getInt("itemid");
-									int itemCount = set.getInt("count");
-									if (ItemData.getInstance().getTemplate(itemId) == null)
-									{
-										LOGGER.Info(GetType().Name + ": Item with id " + itemId + " does not exist.");
-									}
-									else
-									{
-										_enchancedReset.add(new ItemHolder(itemId, itemCount));
-									}
-								}
-							}
-							break;
-						}
-						case "experiencePoints":
-						{
-							for (Node n = k.getFirstChild(); n != null; n = n.getNextSibling())
-							{
-								if ("hiddenPower".equals(n.getNodeName()))
-								{
-									NamedNodeMap attrs = n.getAttributes();
-									Node att;
-									StatSet set = new StatSet();
-									for (int i = 0; i < attrs.getLength(); i++)
-									{
-										att = attrs.item(i);
-										set.set(att.getNodeName(), att.getNodeValue());
-									}
-									
-									int level = parseInteger(attrs, "level");
-									int exp = parseInteger(attrs, "exp");
-									_potenExpTable.put(level, exp);
-									if (MAX_POTEN_LEVEL < level)
-									{
-										MAX_POTEN_LEVEL = level;
-									}
-									if (MAX_POTEN_EXP < exp)
-									{
-										MAX_POTEN_EXP = exp;
-									}
-								}
-							}
-							break;
-						}
-						case "hiddenPotentials":
-						{
-							for (Node n = k.getFirstChild(); n != null; n = n.getNextSibling())
-							{
-								if ("poten".equals(n.getNodeName()))
-								{
-									NamedNodeMap attrs = n.getAttributes();
-									Node att;
-									StatSet set = new StatSet();
-									for (int i = 0; i < attrs.getLength(); i++)
-									{
-										att = attrs.item(i);
-										set.set(att.getNodeName(), att.getNodeValue());
-									}
-									
-									int id = parseInteger(attrs, "id");
-									int slotId = parseInteger(attrs, "slotId");
-									int maxSkillLevel = parseInteger(attrs, "maxSkillLevel");
-									int skillId = parseInteger(attrs, "skillId");
-									_potentials.put(id, new DyePotential(id, slotId, skillId, maxSkillLevel));
-								}
-							}
-							break;
-						}
-					}
-				}
-			}
+			int itemId = el.Attribute("id").GetInt32();
+			long itemCount = el.Attribute("count").GetInt64(1);
+			items.add(new ItemHolder(itemId, itemCount));
+		});
+		
+		element.Elements("dailyCount").ForEach(el =>
+		{
+			int value = (int)el;
+			dailyCount = value;
+		});
+		
+		element.Elements("enchantExp").ForEach(el =>
+		{
+			int count = el.Attribute("count").GetInt32();
+			double chance = el.Attribute("chance").GetDouble();
+			enchantExp.put(count, chance);
+		});
+
+		_potenFees.put(step, new DyePotentialFee(step, items, dailyCount, enchantExp));
+	}
+
+	private void parseResetElement(XElement element)
+	{
+		int itemId = element.Attribute("itemid").GetInt32();
+		int itemCount = element.Attribute("count").GetInt32();
+		if (ItemData.getInstance().getTemplate(itemId) == null)
+		{
+			LOGGER.Error(GetType().Name + ": Item with id " + itemId + " does not exist.");
 		}
+		else
+		{
+			_enchancedReset.add(new ItemHolder(itemId, itemCount));
+		}
+	}
+
+	private void parseHiddenPowerElement(XElement element)
+	{
+		int level = element.Attribute("level").GetInt32();
+		int exp = element.Attribute("exp").GetInt32();
+		_potenExpTable.put(level, exp);
+		if (MAX_POTEN_LEVEL < level)
+		{
+			MAX_POTEN_LEVEL = level;
+		}
+		if (MAX_POTEN_EXP < exp)
+		{
+			MAX_POTEN_EXP = exp;
+		}
+	}
+
+	private void parseHiddenPotenElement(XElement element)
+	{
+		int id = element.Attribute("id").GetInt32();
+		int slotId = element.Attribute("slotId").GetInt32();
+		int maxSkillLevel = element.Attribute("maxSkillLevel").GetInt32();
+		int skillId = element.Attribute("skillId").GetInt32();
+		_potentials.put(id, new DyePotential(id, slotId, skillId, maxSkillLevel));
 	}
 	
 	public DyePotentialFee getFee(int step)

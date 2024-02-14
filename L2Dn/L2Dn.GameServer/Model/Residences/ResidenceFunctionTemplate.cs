@@ -14,14 +14,14 @@ public class ResidenceFunctionTemplate
 	private readonly TimeSpan _duration;
 	private readonly double _value;
 	
-	public ResidenceFunctionTemplate(StatSet set)
+	public ResidenceFunctionTemplate(int id, int level, ResidenceFunctionType type, ItemHolder cost, TimeSpan duration, double value)
 	{
-		_id = set.getInt("id");
-		_level = set.getInt("level");
-		_type = set.getEnum("type", ResidenceFunctionType.NONE);
-		_cost = new ItemHolder(set.getInt("costId"), set.getLong("costCount"));
-		_duration = set.getDuration("duration");
-		_value = set.getDouble("value", 0);
+		_id = id;
+		_level = level;
+		_type = type;
+		_cost = cost;
+		_duration = duration;
+		_value = value;
 	}
 	
 	/**

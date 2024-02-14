@@ -1,5 +1,8 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -20,45 +23,36 @@ public class SayuneData
 	
 	public void load()
 	{
-		parseDatapackFile("data/SayuneData.xml");
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/SayuneData.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("map").ForEach(parseElement);
+		
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _maps.size() + " maps.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
-		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("map".equalsIgnoreCase(d.getNodeName()))
-					{
-						int id = parseInteger(d.getAttributes(), "id");
-						SayuneEntry map = new SayuneEntry(id);
-						parseEntries(map, d);
-						_maps.put(map.getId(), map);
-					}
-				}
-			}
-		}
+		int id = element.Attribute("id").GetInt32();
+		SayuneEntry map = new SayuneEntry(id);
+		parseEntries(map, element);
+		_maps.put(map.getId(), map);
 	}
-	
-	private void parseEntries(SayuneEntry lastEntry, Node n)
+
+	private void parseEntries(SayuneEntry lastEntry, XElement element)
 	{
-		NamedNodeMap attrs;
-		for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+		element.Elements().ForEach(el =>
 		{
-			if ("selector".equals(d.getNodeName()) || "choice".equals(d.getNodeName()) || "loc".equals(d.getNodeName()))
+			if (el.Name.LocalName == "selector" || el.Name.LocalName == "choice" || el.Name.LocalName == "loc")
 			{
-				attrs = d.getAttributes();
-				int id = parseInteger(attrs, "id");
-				int x = parseInteger(attrs, "x");
-				int y = parseInteger(attrs, "y");
-				int z = parseInteger(attrs, "z");
-				parseEntries(lastEntry.addInnerEntry(new SayuneEntry("selector".equals(d.getNodeName()), id, x, y, z)), d);
+				int id = el.Attribute("id").GetInt32();
+				int x = el.Attribute("x").GetInt32();
+				int y = el.Attribute("y").GetInt32();
+				int z = el.Attribute("z").GetInt32();
+				parseEntries(lastEntry.addInnerEntry(new SayuneEntry(el.Name.LocalName == "selector", id, x, y, z)), el);
 			}
-		}
+		});
 	}
 	
 	public SayuneEntry getMap(int id)

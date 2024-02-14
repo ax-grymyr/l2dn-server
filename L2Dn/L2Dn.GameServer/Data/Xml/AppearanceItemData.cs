@@ -29,7 +29,7 @@ public class AppearanceItemData
 		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/AppearanceStones.xml");
 		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 		XDocument document = XDocument.Load(stream);
-		document.Root?.Elements("appearance_stone").ForEach(loadElement);
+		document.Elements("list").Elements("appearance_stone").ForEach(loadElement);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _stoneMap.size() + " stones.");
 		

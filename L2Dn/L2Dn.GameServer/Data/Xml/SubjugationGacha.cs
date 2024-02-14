@@ -1,5 +1,7 @@
-using L2Dn.GameServer.Model;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -21,28 +23,29 @@ public class SubjugationGacha
 	public void load()
 	{
 		_subjugations.clear();
-		parseDatapackFile("data/SubjugationGacha.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/SubjugationGacha.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("purge").ForEach(parseElement);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _subjugations.size() + " data.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		forEach(doc, "list", listNode => forEach(listNode, "purge", purgeNode =>
+		int category = element.Attribute("category").GetInt32();
+		Map<int, Double> items = new();
+		element.Elements("item").ForEach(el =>
 		{
-			StatSet set = new StatSet(parseAttributes(purgeNode));
-			int category = set.getInt("category");
-			Map<int, Double> items = new();
-			forEach(purgeNode, "item", npcNode =>
-			{
-				StatSet stats = new StatSet(parseAttributes(npcNode));
-				int itemId = stats.getInt("id");
-				double rate = stats.getDouble("rate");
-				items.put(itemId, rate);
-			});
-			_subjugations.put(category, items);
-		}));
+			int itemId = el.Attribute("id").GetInt32();
+			double rate = el.Attribute("rate").GetDouble();
+			items.put(itemId, rate);
+		});
+
+		_subjugations.put(category, items);
 	}
-	
+
 	public Map<int, Double> getSubjugation(int category)
 	{
 		return _subjugations.get(category);

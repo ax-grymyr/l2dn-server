@@ -1,5 +1,7 @@
+using System.Xml.Linq;
 using L2Dn.GameServer.Model.Items.Combination;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Items.Henna;
 
@@ -17,15 +19,15 @@ public class CombinationHenna
 	private readonly float _chance;
 	private readonly Map<CombinationItemType, CombinationHennaReward> _rewards = new();
 
-	public CombinationHenna(StatSet set)
+	public CombinationHenna(XElement element)
 	{
-		_henna = set.getInt("dyeId");
-		_itemOne = set.getInt("itemOne", -1);
-		_countOne = set.getLong("countOne", 1);
-		_itemTwo = set.getInt("itemTwo", -1);
-		_countTwo = set.getLong("countTwo", 1);
-		_commission = set.getLong("commission", 0);
-		_chance = set.getFloat("chance", 33);
+		_henna = element.Attribute("dyeId").GetInt32();
+		_itemOne = element.Attribute("itemOne").GetInt32(-1);
+		_countOne = element.Attribute("countOne").GetInt64(1);
+		_itemTwo = element.Attribute("itemTwo").GetInt32(-1);
+		_countTwo = element.Attribute("countTwo").GetInt64(1);
+		_commission = element.Attribute("commission").GetInt64(0);
+		_chance = element.Attribute("chance").GetFloat(33);
 	}
 
 	public int getHenna()

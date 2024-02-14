@@ -1,7 +1,10 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -26,35 +29,28 @@ public class EnchantItemHPBonusData
 		load();
 	}
 	
-	public void parseDocument(Document doc, File f)
+	private void parseEnchant(XElement element)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		List<int> bonuses = new();
+		
+		element.Elements("bonus").ForEach(bonusElement =>
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("enchantHP".equalsIgnoreCase(d.getNodeName()))
-					{
-						List<int> bonuses = new ArrayList<>(12);
-						for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
-						{
-							if ("bonus".equalsIgnoreCase(e.getNodeName()))
-							{
-								bonuses.add(int.Parse(e.getTextContent()));
-							}
-						}
-						_armorHPBonuses.put(parseEnum(d.getAttributes(), CrystalType.class, "grade"), bonuses);
-					}
-				}
-			}
-		}
+			bonuses.add((int)bonusElement);
+		});
+
+		CrystalType grade = element.Attribute("grade").GetEnum<CrystalType>();
+		_armorHPBonuses.put(grade, bonuses);
 	}
 	
 	public void load()
 	{
 		_armorHPBonuses.clear();
-		parseDatapackFile("data/stats/enchantHPBonus.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/enchantHPBonus.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").Elements("enchantHP").ForEach(parseEnchant);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _armorHPBonuses.size() + " enchant HP bonuses.");
 	}
 	

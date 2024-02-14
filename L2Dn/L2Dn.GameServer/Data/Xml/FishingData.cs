@@ -1,5 +1,8 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Fishings;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -31,109 +34,87 @@ public class FishingData
 	public void load()
 	{
 		_baitData.clear();
-		parseDatapackFile("data/Fishing.xml");
+		
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/Fishing.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+		document.Elements("list").ForEach(el =>
+		{
+			el.Elements("baitDistance").ForEach(element =>
+			{
+				_baitDistanceMin = element.Attribute("min").GetInt32();
+				_baitDistanceMax = element.Attribute("max").GetInt32();
+			});
+
+			el.Elements("xpRate").ForEach(element =>
+			{
+				_expRateMin = element.Attribute("min").GetDouble();
+				_expRateMax = element.Attribute("max").GetDouble();
+			});
+
+			el.Elements("spRate").ForEach(element =>
+			{
+				_spRateMin = element.Attribute("min").GetDouble();
+				_spRateMax = element.Attribute("max").GetDouble();
+			});
+
+			el.Elements("baits").Elements("bait").ForEach(parseBaitElement);
+			el.Elements("rods").Elements("rod").ForEach(parseRodElement);
+		});
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _baitData.size() + " bait and " + _rodData.size() + " rod data.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseBaitElement(XElement element)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		int itemId = element.Attribute("itemId").GetInt32();
+		int level = element.Attribute("level").GetInt32(1);
+		int minPlayerLevel = element.Attribute("minPlayerLevel").GetInt32();
+		int maxPlayerLevel = element.Attribute("maxPlayerLevel").GetInt32(Config.PLAYER_MAXIMUM_LEVEL);
+		double chance = element.Attribute("chance").GetDouble();
+		int timeMin = element.Attribute("timeMin").GetInt32();
+		int timeMax = element.Attribute("timeMax").GetInt32(timeMin);
+		int waitMin = element.Attribute("waitMin").GetInt32();
+		int waitMax = element.Attribute("waitMax").GetInt32(waitMin);
+		bool isPremiumOnly = element.Attribute("isPremiumOnly").GetBoolean(false);
+		if (ItemData.getInstance().getTemplate(itemId) == null)
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
-			{
-				for (Node listItem = n.getFirstChild(); listItem != null; listItem = listItem.getNextSibling())
-				{
-					switch (listItem.getNodeName())
-					{
-						case "baitDistance":
-						{
-							_baitDistanceMin = parseInteger(listItem.getAttributes(), "min");
-							_baitDistanceMax = parseInteger(listItem.getAttributes(), "max");
-							break;
-						}
-						case "xpRate":
-						{
-							_expRateMin = parseDouble(listItem.getAttributes(), "min");
-							_expRateMax = parseDouble(listItem.getAttributes(), "max");
-							break;
-						}
-						case "spRate":
-						{
-							_spRateMin = parseDouble(listItem.getAttributes(), "min");
-							_spRateMax = parseDouble(listItem.getAttributes(), "max");
-							break;
-						}
-						case "baits":
-						{
-							for (Node bait = listItem.getFirstChild(); bait != null; bait = bait.getNextSibling())
-							{
-								if ("bait".equalsIgnoreCase(bait.getNodeName()))
-								{
-									NamedNodeMap attrs = bait.getAttributes();
-									int itemId = parseInteger(attrs, "itemId");
-									int level = parseInteger(attrs, "level", 1);
-									int minPlayerLevel = parseInteger(attrs, "minPlayerLevel");
-									int maxPlayerLevel = parseInteger(attrs, "maxPlayerLevel", Config.PLAYER_MAXIMUM_LEVEL);
-									double chance = parseDouble(attrs, "chance");
-									int timeMin = parseInteger(attrs, "timeMin");
-									int timeMax = parseInteger(attrs, "timeMax", timeMin);
-									int waitMin = parseInteger(attrs, "waitMin");
-									int waitMax = parseInteger(attrs, "waitMax", waitMin);
-									bool isPremiumOnly = parseBoolean(attrs, "isPremiumOnly", false);
-									if (ItemData.getInstance().getTemplate(itemId) == null)
-									{
-										LOGGER.Info(GetType().Name + ": Could not find item with id " + itemId);
-										continue;
-									}
-									
-									FishingBait baitData = new FishingBait(itemId, level, minPlayerLevel, maxPlayerLevel, chance, timeMin, timeMax, waitMin, waitMax, isPremiumOnly);
-									for (Node c = bait.getFirstChild(); c != null; c = c.getNextSibling())
-									{
-										if ("catch".equalsIgnoreCase(c.getNodeName()))
-										{
-											NamedNodeMap cAttrs = c.getAttributes();
-											int cId = parseInteger(cAttrs, "itemId");
-											float cChance = parseFloat(cAttrs, "chance");
-											float cMultiplier = parseFloat(cAttrs, "multiplier", 1f);
-											if (ItemData.getInstance().getTemplate(cId) == null)
-											{
-												LOGGER.Info(GetType().Name + ": Could not find item with id " + itemId);
-												continue;
-											}
-											
-											baitData.addReward(new FishingCatch(cId, cChance, cMultiplier));
-										}
-									}
-									_baitData.put(baitData.getItemId(), baitData);
-								}
-							}
-							break;
-						}
-						case "rods":
-						{
-							for (Node rod = listItem.getFirstChild(); rod != null; rod = rod.getNextSibling())
-							{
-								if ("rod".equalsIgnoreCase(rod.getNodeName()))
-								{
-									NamedNodeMap attrs = rod.getAttributes();
-									int itemId = parseInteger(attrs, "itemId");
-									int reduceFishingTime = parseInteger(attrs, "reduceFishingTime", 0);
-									float xpMultiplier = parseFloat(attrs, "xpMultiplier", 1f);
-									float spMultiplier = parseFloat(attrs, "spMultiplier", 1f);
-									if (ItemData.getInstance().getTemplate(itemId) == null)
-									{
-										LOGGER.Info(GetType().Name + ": Could not find item with id " + itemId);
-										continue;
-									}
-									
-									_rodData.put(itemId, new FishingRod(itemId, reduceFishingTime, xpMultiplier, spMultiplier));
-								}
-							}
-						}
-					}
-				}
-			}
+			LOGGER.Error(GetType().Name + ": Could not find item with id " + itemId);
+			return;
 		}
+									
+		FishingBait baitData = new FishingBait(itemId, level, minPlayerLevel, maxPlayerLevel, chance, timeMin, timeMax, waitMin, waitMax, isPremiumOnly);
+		
+		element.Elements("catch").ForEach(el =>
+		{
+			int cId = el.Attribute("itemId").GetInt32();
+			float cChance = el.Attribute("chance").GetFloat();
+			float cMultiplier = el.Attribute("multiplier").GetFloat(1f);
+			if (ItemData.getInstance().getTemplate(cId) == null)
+			{
+				LOGGER.Error(GetType().Name + ": Could not find item with id " + itemId);
+				return;
+			}
+											
+			baitData.addReward(new FishingCatch(cId, cChance, cMultiplier));
+		});
+		
+		_baitData.put(baitData.getItemId(), baitData);
+	}
+	
+	private void parseRodElement(XElement element)
+	{
+		int itemId = element.Attribute("itemId").GetInt32();
+		int reduceFishingTime = element.Attribute("reduceFishingTime").GetInt32(0);
+		float xpMultiplier = element.Attribute("xpMultiplier").GetFloat(1f);
+		float spMultiplier = element.Attribute("spMultiplier").GetFloat(1f);
+		if (ItemData.getInstance().getTemplate(itemId) == null)
+		{
+			LOGGER.Error(GetType().Name + ": Could not find item with id " + itemId);
+			return;
+		}
+									
+		_rodData.put(itemId, new FishingRod(itemId, reduceFishingTime, xpMultiplier, spMultiplier));
 	}
 	
 	public FishingBait getBaitData(int baitItemId)
