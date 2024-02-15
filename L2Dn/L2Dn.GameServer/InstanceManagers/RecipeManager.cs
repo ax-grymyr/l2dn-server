@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -8,9 +9,11 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -49,7 +52,7 @@ public class RecipeManager
 			return;
 		}
 		
-		if (!manufacturer.getDwarvenRecipeBook().contains(recipeList) && !manufacturer.getCommonRecipeBook().contains(recipeList))
+		if (!manufacturer.getDwarvenRecipeBook().Contains(recipeList) && !manufacturer.getCommonRecipeBook().Contains(recipeList))
 		{
 			Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false recipe id.", Config.DEFAULT_PUNISH);
 			return;
@@ -92,7 +95,7 @@ public class RecipeManager
 			return;
 		}
 		
-		if (!player.getDwarvenRecipeBook().contains(recipeList) && !player.getCommonRecipeBook().contains(recipeList))
+		if (!player.getDwarvenRecipeBook().Contains(recipeList) && !player.getCommonRecipeBook().Contains(recipeList))
 		{
 			Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false recipe id.", Config.DEFAULT_PUNISH);
 			return;
@@ -101,7 +104,7 @@ public class RecipeManager
 		// Check if player is busy (possible if alt game creation is enabled)
 		if (Config.ALT_GAME_CREATION && _activeMakers.containsKey(player.getObjectId()))
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.S2_S1);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S2_S1);
 			sm.addItemName(recipeList.getItemId());
 			sm.addString("You are busy creating.");
 			player.sendPacket(sm);
@@ -123,7 +126,7 @@ public class RecipeManager
 		}
 	}
 	
-	private class RecipeItemMaker: Runnable
+	protected class RecipeItemMaker: Runnable
 	{
 		private static readonly Logger LOGGER = LogManager.GetLogger(nameof(RecipeItemMaker));
 		protected bool _isValid;
@@ -148,43 +151,43 @@ public class RecipeManager
 			_target = pTarget;
 			_recipeList = pRecipeList;
 			_isValid = false;
-			_skillId = _recipeList.isDwarvenRecipe() ? CommonSkill.CREATE_DWARVEN.getId() : CommonSkill.CREATE_COMMON.getId();
+			_skillId = _recipeList.isDwarvenRecipe() ? (int)CommonSkill.CREATE_DWARVEN : (int)CommonSkill.CREATE_COMMON;
 			_skillLevel = _player.getSkillLevel(_skillId);
 			_skill = _player.getKnownSkill(_skillId);
 			_player.setCrafting(true);
 			
 			if (_player.isAlikeDead())
 			{
-				_player.sendPacket(ActionFailed.STATIC_PACKET);
+				_player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				abort();
 				return;
 			}
 			
 			if (_target.isAlikeDead())
 			{
-				_target.sendPacket(ActionFailed.STATIC_PACKET);
+				_target.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				abort();
 				return;
 			}
 			
 			if (_target.isProcessingTransaction())
 			{
-				_target.sendPacket(ActionFailed.STATIC_PACKET);
+				_target.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				abort();
 				return;
 			}
 			
 			if (_player.isProcessingTransaction())
 			{
-				_player.sendPacket(ActionFailed.STATIC_PACKET);
+				_player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				abort();
 				return;
 			}
 			
 			// validate recipe list
-			if (_recipeList.getRecipes().Length == 0)
+			if (_recipeList.getRecipes().Count == 0)
 			{
-				_player.sendPacket(ActionFailed.STATIC_PACKET);
+				_player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				abort();
 				return;
 			}
@@ -192,7 +195,7 @@ public class RecipeManager
 			// validate skill level
 			if (_recipeList.getLevel() > _skillLevel)
 			{
-				_player.sendPacket(ActionFailed.STATIC_PACKET);
+				_player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				abort();
 				return;
 			}
@@ -301,20 +304,20 @@ public class RecipeManager
 					_delay = (int) (Config.ALT_GAME_CREATION_SPEED * _player.getStat().getReuseTime(_skill) * GameTimeTaskManager.TICKS_PER_SECOND * GameTimeTaskManager.MILLIS_IN_TICK);
 					
 					// TODO: Fix this packet to show crafting animation?
-					MagicSkillUse msk = new MagicSkillUse(_player, _skillId, _skillLevel, _delay, 0);
+					MagicSkillUsePacket msk = new MagicSkillUsePacket(_player, _skillId, _skillLevel, _delay, 0);
 					_player.broadcastPacket(msk);
 					
-					_player.sendPacket(new SetupGauge(_player.getObjectId(), 0, _delay));
+					_player.sendPacket(new SetupGaugePacket(_player.getObjectId(), 0, _delay));
 					ThreadPool.schedule(this, 100 + _delay);
 				}
 				else
 				{
 					// for alt mode, sleep delay msec before finishing
-					_player.sendPacket(new SetupGauge(_player.getObjectId(), 0, _delay));
+					_player.sendPacket(new SetupGaugePacket(_player.getObjectId(), 0, _delay));
 					
 					try
 					{
-						Thread.sleep(_delay);
+						Thread.Sleep(_delay); // milliseconds // TODO: why?
 					}
 					catch (Exception e)
 					{
@@ -367,13 +370,13 @@ public class RecipeManager
 			{
 				if (_target != _player)
 				{
-					SystemMessage msg = new SystemMessage(SystemMessageId.YOU_FAILED_TO_CREATE_S2_FOR_C1_AT_THE_PRICE_OF_S3_ADENA);
+					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_FAILED_TO_CREATE_S2_FOR_C1_AT_THE_PRICE_OF_S3_ADENA);
 					msg.addString(_target.getName());
 					msg.addItemName(_recipeList.getItemId());
 					msg.addLong(_price);
 					_player.sendPacket(msg);
 					
-					msg = new SystemMessage(SystemMessageId.C1_HAS_FAILED_TO_CREATE_S2_AT_THE_PRICE_OF_S3_ADENA);
+					msg = new SystemMessagePacket(SystemMessageId.C1_HAS_FAILED_TO_CREATE_S2_AT_THE_PRICE_OF_S3_ADENA);
 					msg.addString(_player.getName());
 					msg.addItemName(_recipeList.getItemId());
 					msg.addLong(_price);
@@ -441,7 +444,7 @@ public class RecipeManager
 				grabItems -= count;
 				if (_target == _player)
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.S1_S2_EQUIPPED); // you equipped ...
+					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_S2_EQUIPPED); // you equipped ...
 					sm.addLong(count);
 					sm.addItemName(item.getItemId());
 					_player.sendPacket(sm);
@@ -495,7 +498,7 @@ public class RecipeManager
 						// rest (wait for HP)
 						if (Config.ALT_GAME_CREATION && isWait)
 						{
-							_player.sendPacket(new SetupGauge(_player.getObjectId(), 0, _delay));
+							_player.sendPacket(new SetupGaugePacket(_player.getObjectId(), 0, _delay));
 							ThreadPool.schedule(this, 100 + _delay);
 						}
 						else
@@ -517,7 +520,7 @@ public class RecipeManager
 						// rest (wait for MP)
 						if (Config.ALT_GAME_CREATION && isWait)
 						{
-							_player.sendPacket(new SetupGauge(_player.getObjectId(), 0, _delay));
+							_player.sendPacket(new SetupGaugePacket(_player.getObjectId(), 0, _delay));
 							ThreadPool.schedule(this, 100 + _delay);
 						}
 						else
@@ -545,10 +548,10 @@ public class RecipeManager
 		
 		private List<TempItem> listItems(bool remove)
 		{
-			RecipeHolder[] recipes = _recipeList.getRecipes();
+			List<RecipeHolder> recipes = _recipeList.getRecipes();
 			Inventory inv = _target.getInventory();
 			List<TempItem> materials = new();
-			SystemMessage sm;
+			SystemMessagePacket sm;
 			foreach (RecipeHolder recipe in recipes)
 			{
 				if (recipe.getQuantity() > 0)
@@ -559,7 +562,7 @@ public class RecipeManager
 					// check materials
 					if (itemQuantityAmount < recipe.getQuantity())
 					{
-						sm = new SystemMessage(SystemMessageId.YOU_NEED_S2_MORE_S1_S);
+						sm = new SystemMessagePacket(SystemMessageId.YOU_NEED_S2_MORE_S1_S);
 						sm.addItemName(recipe.getItemId());
 						sm.addLong(recipe.getQuantity() - itemQuantityAmount);
 						_target.sendPacket(sm);
@@ -580,14 +583,14 @@ public class RecipeManager
 					inv.destroyItemByItemId("Manufacture", tmp.getItemId(), tmp.getQuantity(), _target, _player);
 					if (tmp.getQuantity() > 1)
 					{
-						sm = new SystemMessage(SystemMessageId.S1_X_S2_DISAPPEARED);
+						sm = new SystemMessagePacket(SystemMessageId.S1_X_S2_DISAPPEARED);
 						sm.addItemName(tmp.getItemId());
 						sm.addLong(tmp.getQuantity());
 						_target.sendPacket(sm);
 					}
 					else
 					{
-						sm = new SystemMessage(SystemMessageId.S1_DISAPPEARED);
+						sm = new SystemMessagePacket(SystemMessageId.S1_DISAPPEARED);
 						sm.addItemName(tmp.getItemId());
 						_target.sendPacket(sm);
 					}
@@ -627,19 +630,19 @@ public class RecipeManager
 			}
 			
 			// inform customer of earned item
-			SystemMessage sm = null;
+			SystemMessagePacket sm;
 			if (_target != _player)
 			{
 				// inform manufacturer of earned profit
 				if (itemCount == 1)
 				{
-					sm = new SystemMessage(SystemMessageId.S2_HAS_BEEN_CREATED_FOR_C1_AFTER_THE_PAYMENT_OF_S3_ADENA_WAS_RECEIVED);
+					sm = new SystemMessagePacket(SystemMessageId.S2_HAS_BEEN_CREATED_FOR_C1_AFTER_THE_PAYMENT_OF_S3_ADENA_WAS_RECEIVED);
 					sm.addString(_target.getName());
 					sm.addItemName(itemId);
 					sm.addLong(_price);
 					_player.sendPacket(sm);
 					
-					sm = new SystemMessage(SystemMessageId.C1_CREATED_S2_AFTER_RECEIVING_S3_ADENA);
+					sm = new SystemMessagePacket(SystemMessageId.C1_CREATED_S2_AFTER_RECEIVING_S3_ADENA);
 					sm.addString(_player.getName());
 					sm.addItemName(itemId);
 					sm.addLong(_price);
@@ -647,14 +650,14 @@ public class RecipeManager
 				}
 				else
 				{
-					sm = new SystemMessage(SystemMessageId.S3_S2_S_HAVE_BEEN_CREATED_FOR_C1_AT_THE_PRICE_OF_S4_ADENA);
+					sm = new SystemMessagePacket(SystemMessageId.S3_S2_S_HAVE_BEEN_CREATED_FOR_C1_AT_THE_PRICE_OF_S4_ADENA);
 					sm.addString(_target.getName());
 					sm.addInt(itemCount);
 					sm.addItemName(itemId);
 					sm.addLong(_price);
 					_player.sendPacket(sm);
 					
-					sm = new SystemMessage(SystemMessageId.C1_CREATED_S3_S2_S_AT_THE_PRICE_OF_S4_ADENA);
+					sm = new SystemMessagePacket(SystemMessageId.C1_CREATED_S3_S2_S_AT_THE_PRICE_OF_S4_ADENA);
 					sm.addString(_player.getName());
 					sm.addInt(itemCount);
 					sm.addItemName(itemId);
@@ -665,14 +668,14 @@ public class RecipeManager
 			
 			if (itemCount > 1)
 			{
-				sm = new SystemMessage(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
+				sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
 				sm.addItemName(itemId);
 				sm.addLong(itemCount);
 				_target.sendPacket(sm);
 			}
 			else
 			{
-				sm = new SystemMessage(SystemMessageId.YOU_HAVE_ACQUIRED_S1);
+				sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_ACQUIRED_S1);
 				sm.addItemName(itemId);
 				_target.sendPacket(sm);
 			}
@@ -691,8 +694,8 @@ public class RecipeManager
 				}
 				if (itemId == rareProdId)
 				{
-					_exp *= Config.ALT_GAME_CREATION_RARE_XPSP_RATE;
-					_sp *= Config.ALT_GAME_CREATION_RARE_XPSP_RATE;
+					_exp = (int)(_exp * Config.ALT_GAME_CREATION_RARE_XPSP_RATE);
+					_sp = (int)(_sp * Config.ALT_GAME_CREATION_RARE_XPSP_RATE);
 				}
 				
 				if (_exp < 0)

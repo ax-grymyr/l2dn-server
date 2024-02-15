@@ -1,9 +1,10 @@
 using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -75,7 +76,7 @@ public class ItemsOnGroundManager: Runnable
 				con.prepareStatement(
 					"SELECT object_id,item_id,count,enchant_level,x,y,z,drop_time,equipable FROM itemsonground");
 			int count = 0;
-			try
+			
 			{
 				ResultSet rs = ps.executeQuery();
 				Item item;
@@ -104,7 +105,9 @@ public class ItemsOnGroundManager: Runnable
 					_items.add(item);
 					count++;
 					// add to ItemsAutoDestroy only items not protected
-					if (!Config.LIST_PROTECTED_ITEMS.contains(item.getId()) && (dropTime > -1) && (((Config.AUTODESTROY_ITEM_AFTER > 0) && !item.getTemplate().hasExImmediateEffect()) || ((Config.HERB_AUTO_DESTROY_TIME > 0) && item.getTemplate().hasExImmediateEffect())))
+					if (!Config.LIST_PROTECTED_ITEMS.Contains(item.getId()) && (dropTime > -1) &&
+					    (((Config.AUTODESTROY_ITEM_AFTER > 0) && !item.getTemplate().hasExImmediateEffect()) ||
+					     ((Config.HERB_AUTO_DESTROY_TIME > 0) && item.getTemplate().hasExImmediateEffect())))
 					{
 						ItemsAutoDestroyTaskManager.getInstance().addItem(item);
 					}

@@ -1,8 +1,9 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -39,15 +40,15 @@ public class PcCafePointsManager
 			points = Rnd.get(points / 2, points);
 		}
 		
-		SystemMessage message = null;
+		SystemMessagePacket message;
 		if (Config.PC_CAFE_ENABLE_DOUBLE_POINTS && (Rnd.get(100) < Config.PC_CAFE_DOUBLE_POINTS_CHANCE))
 		{
 			points *= 2;
-			message = new SystemMessage(SystemMessageId.DOUBLE_POINTS_YOU_EARNED_S1_PA_POINT_S);
+			message = new SystemMessagePacket(SystemMessageId.DOUBLE_POINTS_YOU_EARNED_S1_PA_POINT_S);
 		}
 		else
 		{
-			message = new SystemMessage(SystemMessageId.YOU_EARNED_S1_PA_POINT_S);
+			message = new SystemMessagePacket(SystemMessageId.YOU_EARNED_S1_PA_POINT_S);
 		}
 		
 		if ((player.getPcCafePoints() + points) > Config.PC_CAFE_MAX_POINTS)
@@ -81,7 +82,7 @@ public class PcCafePointsManager
 		
 		if (player.getPcCafePoints() >= Config.PC_CAFE_MAX_POINTS)
 		{
-			SystemMessage message = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_THE_MAXIMUM_NUMBER_OF_PA_POINTS);
+			SystemMessagePacket message = new SystemMessagePacket(SystemMessageId.YOU_HAVE_EARNED_THE_MAXIMUM_NUMBER_OF_PA_POINTS);
 			player.sendPacket(message);
 			return;
 		}
@@ -102,15 +103,15 @@ public class PcCafePointsManager
 			return;
 		}
 		
-		SystemMessage message = null;
+		SystemMessagePacket message;
 		if (Config.PC_CAFE_ENABLE_DOUBLE_POINTS && (Rnd.get(100) < Config.PC_CAFE_DOUBLE_POINTS_CHANCE))
 		{
 			points *= 2;
-			message = new SystemMessage(SystemMessageId.DOUBLE_POINTS_YOU_EARNED_S1_PA_POINT_S);
+			message = new SystemMessagePacket(SystemMessageId.DOUBLE_POINTS_YOU_EARNED_S1_PA_POINT_S);
 		}
 		else
 		{
-			message = new SystemMessage(SystemMessageId.DOUBLE_POINTS_YOU_EARNED_S1_PA_POINT_S);
+			message = new SystemMessagePacket(SystemMessageId.DOUBLE_POINTS_YOU_EARNED_S1_PA_POINT_S);
 		}
 		if ((player.getPcCafePoints() + points) > Config.PC_CAFE_MAX_POINTS)
 		{

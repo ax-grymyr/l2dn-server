@@ -5,7 +5,7 @@ using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
 using L2Dn.GameServer.Model.Events.Listeners;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -39,7 +39,7 @@ public class PremiumManager
 	private readonly Map<String, long> _premiumData = new();
 	
 	// expireTasks
-	private readonly Map<String, ScheduledFuture<?>> _expiretasks = new();
+	private readonly Map<String, ScheduledFuture> _expiretasks = new();
 	
 	// Listeners
 	private readonly ListenersContainer _listenerContainer = Containers.Players();
@@ -87,7 +87,7 @@ public class PremiumManager
 	 */
 	private void stopExpireTask(Player player)
 	{
-		ScheduledFuture<?> task = _expiretasks.remove(player.getAccountName().ToLower());
+		ScheduledFuture task = _expiretasks.remove(player.getAccountName().ToLower());
 		if (task != null)
 		{
 			task.cancel(false);

@@ -38,9 +38,9 @@ public class WalkingManager: IXmlReader
 	private readonly Map<String, WalkRoute> _routes = new(); // all available routes
 	private readonly Map<int, WalkInfo> _activeRoutes = new(); // each record represents NPC, moving by predefined route from _routes, and moving progress
 	private readonly Map<int, NpcRoutesHolder> _routesToAttach = new(); // each record represents NPC and all available routes for it
-	private readonly Map<Npc, ScheduledFuture<?>> _startMoveTasks = new();
-	private readonly Map<Npc, ScheduledFuture<?>> _repeatMoveTasks = new();
-	private readonly Map<Npc, ScheduledFuture<?>> _arriveTasks = new();
+	private readonly Map<Npc, ScheduledFuture> _startMoveTasks = new();
+	private readonly Map<Npc, ScheduledFuture> _repeatMoveTasks = new();
+	private readonly Map<Npc, ScheduledFuture> _arriveTasks = new();
 	
 	protected WalkingManager()
 	{

@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
@@ -6,8 +7,9 @@ using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -21,7 +23,7 @@ public class RankingPowerManager
 	private static readonly SkillHolder LEADER_POWER = new SkillHolder(52018, 1);
 	
 	private Decoy _decoyInstance;
-	private ScheduledFuture<?> _decoyTask;
+	private ScheduledFuture _decoyTask;
 	
 	protected RankingPowerManager()
 	{
@@ -39,7 +41,7 @@ public class RankingPowerManager
 		GlobalVariablesManager.getInstance().set(GlobalVariablesManager.RANKING_POWER_COOLDOWN, System.currentTimeMillis() + COOLDOWN);
 		createClone(player);
 		cloneTask();
-		SystemMessage msg = new SystemMessage(SystemMessageId.A_RANKING_LEADER_C1_USED_LEADER_POWER_IN_S2);
+		SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.A_RANKING_LEADER_C1_USED_LEADER_POWER_IN_S2);
 		msg.addString(player.getName());
 		msg.addZoneName(location.getX(), location.getY(), location.getZ());
 		Broadcast.toAllOnlinePlayers(msg);
@@ -70,7 +72,7 @@ public class RankingPowerManager
 				BuffInfo info = nearby.getEffectList().getBuffInfoBySkillId(LEADER_POWER.getSkillId());
 				if ((info == null) || (info.getTime() < (LEADER_POWER.getSkill().getAbnormalTime() - 60)))
 				{
-					nearby.sendPacket(new MagicSkillUse(_decoyInstance, nearby, LEADER_POWER.getSkillId(), LEADER_POWER.getSkillLevel(), 0, 0));
+					nearby.sendPacket(new MagicSkillUsePacket(_decoyInstance, nearby, LEADER_POWER.getSkillId(), LEADER_POWER.getSkillLevel(), 0, 0));
 					LEADER_POWER.getSkill().applyEffects(_decoyInstance, nearby);
 				}
 			});

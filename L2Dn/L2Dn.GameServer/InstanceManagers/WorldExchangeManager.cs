@@ -30,7 +30,7 @@ public class WorldExchangeManager: IXmlReader
 	private readonly Map<String, Map<int, String>> _localItemNames = new();
 	private long _lastWorldExchangeId = 0;
 	
-	private ScheduledFuture<?> _checkStatus = null;
+	private ScheduledFuture _checkStatus = null;
 	
 	public WorldExchangeManager()
 	{

@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -24,7 +25,6 @@ public class CursedWeaponsManager: IXmlReader
 		load();
 	}
 	
-	@Override
 	public void load()
 	{
 		if (!Config.ALLOW_CURSED_WEAPONS)
@@ -38,7 +38,6 @@ public class CursedWeaponsManager: IXmlReader
 		LOGGER.Info(GetType().Name +": Loaded " + _cursedWeapons.size() + " cursed weapons.");
 	}
 	
-	@Override
 	public void parseDocument(Document doc, File f)
 	{
 		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
@@ -249,7 +248,7 @@ public class CursedWeaponsManager: IXmlReader
 		return cw.getLevel();
 	}
 	
-	public static void announce(SystemMessage sm)
+	public static void announce(SystemMessagePacket sm)
 	{
 		Broadcast.toAllOnlinePlayers(sm);
 	}
@@ -270,7 +269,7 @@ public class CursedWeaponsManager: IXmlReader
 				cw.giveSkill();
 				player.setCursedWeaponEquippedId(cw.getItemId());
 				
-				SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_S2_MIN_OF_USAGE_TIME_REMAINING);
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_HAS_S2_MIN_OF_USAGE_TIME_REMAINING);
 				sm.addString(cw.getName());
 				// sm.addItemName(cw.getItemId());
 				sm.addInt((int) ((cw.getEndTime() - System.currentTimeMillis()) / 60000));

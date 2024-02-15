@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Model.Quests;
+using L2Dn.GameServer.Scripting;
 using L2Dn.GameServer.Utilities;
 using NLog;
 

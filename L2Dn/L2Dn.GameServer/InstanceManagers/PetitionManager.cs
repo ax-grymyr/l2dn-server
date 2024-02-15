@@ -3,6 +3,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -56,15 +57,15 @@ public class PetitionManager
 		currPetition.setState(PetitionState.IN_PROCESS);
 		
 		// Petition application accepted. (Send to Petitioner)
-		currPetition.sendPetitionerPacket(new SystemMessage(SystemMessageId.YOUR_GLOBAL_SUPPORT_REQUEST_WAS_RECEIVED_2));
+		currPetition.sendPetitionerPacket(new SystemMessagePacket(SystemMessageId.YOUR_GLOBAL_SUPPORT_REQUEST_WAS_RECEIVED_2));
 		
 		// Petition application accepted. Reciept No. is <ID>
-		SystemMessage sm = new SystemMessage(SystemMessageId.YOUR_GLOBAL_SUPPORT_REQUEST_WAS_RECEIVED_REQUEST_NO_S1);
+		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOUR_GLOBAL_SUPPORT_REQUEST_WAS_RECEIVED_REQUEST_NO_S1);
 		sm.addInt(currPetition.getId());
 		currPetition.sendResponderPacket(sm);
 		
 		// Petition consultation with <Player> underway.
-		sm = new SystemMessage(SystemMessageId.A_GLOBAL_SUPPORT_CONSULTATION_C1_HAS_BEEN_STARTED);
+		sm = new SystemMessagePacket(SystemMessageId.A_GLOBAL_SUPPORT_CONSULTATION_C1_HAS_BEEN_STARTED);
 		sm.addString(currPetition.getPetitioner().getName());
 		currPetition.sendResponderPacket(sm);
 		
