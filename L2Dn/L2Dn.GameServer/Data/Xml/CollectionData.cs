@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Berezkin Nikolay
  */
-public class CollectionData
+public class CollectionData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CollectionData));
 	
@@ -27,9 +27,7 @@ public class CollectionData
 	{
 		_collections.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/CollectionData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "CollectionData.xml");
 		document.Elements("list").Elements("collection").ForEach(loadElement);
 		
 		if (!_collections.isEmpty())

@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Mobius, GustavoFonseca
  */
-public class LimitShopCraftData
+public class LimitShopCraftData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(LimitShopData));
 	
@@ -26,9 +26,7 @@ public class LimitShopCraftData
 	{
 		_products.Clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/LimitShopCraft.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "LimitShopCraft.xml");
 		document.Elements("list").Where(l => l.Attribute("enabled").GetBoolean(false)).Elements("product")
 			.ForEach(parseElement);
 		

@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Xml.Linq;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Utilities;
@@ -22,6 +23,13 @@ public class StatSet : IParserAdvUtils
 	
 	public StatSet(): this(new Map<string, object>())
 	{
+	}
+
+	public StatSet(XElement element)
+	{
+		_set = new();
+		foreach (XAttribute attribute in element.Attributes())
+			_set.put(attribute.Name.LocalName, attribute.Value);
 	}
 	
 	public StatSet(Func<Map<String, Object>> mapFactory): this(mapFactory())

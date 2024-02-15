@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices.JavaScript;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -21,7 +22,7 @@ public class DBSpawnManager
 	protected readonly Map<int, Npc> _npcs = new();
 	protected readonly Map<int, Spawn> _spawns = new();
 	protected readonly Map<int, StatSet> _storedInfo = new();
-	protected readonly Map<int, ScheduledFuture<?>> _schedules = new();
+	protected readonly Map<int, ScheduledFuture> _schedules = new();
 	
 	/**
 	 * Instantiates a new raid npc spawn manager.

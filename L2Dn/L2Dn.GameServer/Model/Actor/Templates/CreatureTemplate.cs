@@ -31,7 +31,7 @@ public class CreatureTemplate : ListenersContainer
 	
 	public CreatureTemplate(StatSet set)
 	{
-		set(set);
+		this.set(set);
 	}
 	
 	public void set(StatSet set)
@@ -126,7 +126,7 @@ public class CreatureTemplate : ListenersContainer
 	 */
 	public int getBaseSTR()
 	{
-		Double val = _baseValues.get(Stat.STAT_STR);
+		double val = _baseValues.get(Stat.STAT_STR);
 		return val != null ? val.intValue() : 0;
 	}
 	
@@ -340,7 +340,7 @@ public class CreatureTemplate : ListenersContainer
 	/**
 	 * @return the basePAtk
 	 */
-	public int getBasePAtk()
+	public virtual int getBasePAtk()
 	{
 		Double val = _baseValues.get(Stat.PHYSICAL_ATTACK);
 		return val != null ? val.intValue() : 0;
@@ -349,7 +349,7 @@ public class CreatureTemplate : ListenersContainer
 	/**
 	 * @return the baseMAtk
 	 */
-	public int getBaseMAtk()
+	public virtual int getBaseMAtk()
 	{
 		Double val = _baseValues.get(Stat.MAGIC_ATTACK);
 		return val != null ? val.intValue() : 0;

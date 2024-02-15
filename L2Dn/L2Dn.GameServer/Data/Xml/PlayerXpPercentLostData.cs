@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.Data.Xml;
  * This class holds the Player Xp Percent Lost Data for each level for players.
  * @author Zealar
  */
-public class PlayerXpPercentLostData
+public class PlayerXpPercentLostData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PlayerXpPercentLostData));
 	
@@ -27,9 +27,7 @@ public class PlayerXpPercentLostData
 	
 	private void load()
 	{
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/chars/playerXpPercentLost.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/chars/playerXpPercentLost.xml");
 		document.Elements("list").Elements("xpLost").ForEach(parseElement);
 	}
 

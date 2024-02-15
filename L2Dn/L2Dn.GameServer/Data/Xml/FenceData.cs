@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author HoridoJoho / FBIagent
  */
-public class FenceData
+public class FenceData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(FenceData));
 	
@@ -34,9 +34,7 @@ public class FenceData
 			_fences.values().forEach(x => removeFence(x));
 		}
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/FenceData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "FenceData.xml");
 		document.Elements("list").Elements("fence").ForEach(spawnFence);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _fences.size() + " fences.");
@@ -110,7 +108,8 @@ public class FenceData
 		foreach (Fence fence in fences)
 		{
 			// Check if fence is geodata enabled.
-			if (!fence.getState().isGeodataEnabled())
+			FenceState state = fence.getState(); 
+			if (!((state == FenceState.CLOSED_HIDDEN) || (state == FenceState.CLOSED)))
 			{
 				continue;
 			}

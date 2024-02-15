@@ -1,5 +1,7 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.ItemContainers;
+using L2Dn.GameServer.Model.Items.Instances;
 
 namespace L2Dn.GameServer.Model.Holders;
 
@@ -17,7 +19,7 @@ public class PreparedMultisellListHolder: MultisellListHolder
 	public PreparedMultisellListHolder(MultisellListHolder list, bool inventoryOnly, ItemContainer inventory, Npc npc,
 		double ingredientMultiplier, double productMultiplier)
 		: base(list.getId(), list.isChanceMultisell(), list.isApplyTaxes(), list.isMaintainEnchantment(),
-			list.getIngredientMultiplier(), list.getProductMultiplier(), list._entries, list._npcsAllowed)
+			list.getIngredientMultiplier(), list.getProductMultiplier(), list.getEntries(), list.getNpcsAllowed())
 	{
 		_inventoryOnly = inventoryOnly;
 		if (npc != null)
@@ -80,9 +82,9 @@ public class PreparedMultisellListHolder: MultisellListHolder
 	 */
 	public long getIngredientCount(ItemHolder ingredient)
 	{
-		return (ingredient.getId() == Inventory.ADENA_ID)
+		return (long)((ingredient.getId() == Inventory.ADENA_ID)
 			? Math.Round(ingredient.getCount() * getIngredientMultiplier() * (1 + getTaxRate()))
-			: Math.Round(ingredient.getCount() * getIngredientMultiplier());
+			: Math.Round(ingredient.getCount() * getIngredientMultiplier()));
 	}
 
 	/**
@@ -91,6 +93,6 @@ public class PreparedMultisellListHolder: MultisellListHolder
 	 */
 	public long getProductCount(ItemChanceHolder product)
 	{
-		return Math.Round(product.getCount() * getProductMultiplier());
+		return (long)Math.Round(product.getCount() * getProductMultiplier());
 	}
 }

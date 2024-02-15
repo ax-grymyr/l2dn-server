@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author NviX, Mobius
  */
-public class TeleportListData
+public class TeleportListData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(TeleportListData));
 	private readonly Map<int, TeleportListHolder> _teleports = new();
@@ -26,9 +26,7 @@ public class TeleportListData
 	{
 		_teleports.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/TeleportListData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "TeleportListData.xml");
 		document.Elements("list").Elements("teleport").ForEach(parseElement);
 		
 		_teleportCount = _teleports.size();

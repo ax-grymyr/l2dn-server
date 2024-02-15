@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Mode, Mobius
  */
-public class RandomCraftData
+public class RandomCraftData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(RandomCraftData));
 	private static readonly Map<int, RandomCraftExtractDataHolder> EXTRACT_DATA = new();
@@ -32,9 +32,7 @@ public class RandomCraftData
 		EXTRACT_DATA.clear();
 
 		{
-			string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/RandomCraftExtractData.xml");
-			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-			XDocument document = XDocument.Load(stream);
+			XDocument document = LoadXmlDocument(DataFileLocation.Data, "RandomCraftExtractData.xml");
 			document.Elements("list").Elements("extract").Elements("item").ForEach(parseExtractElement);
 		}
 

@@ -1,4 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Skills;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
@@ -7,9 +9,9 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public class ConditionUsingSlotType: Condition
 {
-	private readonly int _mask;
+	private readonly long _mask;
 	
-	public ConditionUsingSlotType(int mask)
+	public ConditionUsingSlotType(long mask)
 	{
 		_mask = mask;
 	}

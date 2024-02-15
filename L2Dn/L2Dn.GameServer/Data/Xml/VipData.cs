@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Gabriel Costa Souza
  */
-public class VipData
+public class VipData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(VipData));
 	
@@ -30,9 +30,7 @@ public class VipData
 		
 		_vipTiers.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/Vip.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "Vip.xml");
 		document.Elements("list").Elements("vip").ForEach(parseElement);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _vipTiers.size() + " vips.");

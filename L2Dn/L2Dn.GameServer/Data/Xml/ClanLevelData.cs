@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Mobius
  */
-public class ClanLevelData
+public class ClanLevelData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ClanLevelData));
 	
@@ -31,9 +31,7 @@ public class ClanLevelData
 		MAX_CLAN_LEVEL = 0;
 		MAX_CLAN_EXP = 0;
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/ClanLevelData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "ClanLevelData.xml");
 		document.Elements("list").Elements("clan").ForEach(element =>
 		{
 			int level = element.Attribute("level").GetInt32();

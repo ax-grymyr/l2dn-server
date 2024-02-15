@@ -1,4 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Skills;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
@@ -6,7 +8,7 @@ namespace L2Dn.GameServer.Model.Conditions;
  * The Class ConditionTargetAbnormal.
  * @author janiii
  */
-public class ConditionTargetAbnormalType : Condition
+public class ConditionTargetAbnormalType: Condition
 {
 	private readonly AbnormalType _abnormalType;
 	

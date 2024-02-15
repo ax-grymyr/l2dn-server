@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author UnAfraid
  */
-public class EnchantItemGroupsData
+public class EnchantItemGroupsData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EnchantItemGroupsData));
 	
@@ -34,9 +34,7 @@ public class EnchantItemGroupsData
 		_itemGroups.clear();
 		_scrollGroups.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/EnchantItemGroups.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "EnchantItemGroups.xml");
 		document.Elements("list").Elements("enchantRateGroup").ForEach(parseEnchantRateGroup);
 		document.Elements("list").Elements("enchantScrollGroup").ForEach(parseEnchantScrollGroup);
 		

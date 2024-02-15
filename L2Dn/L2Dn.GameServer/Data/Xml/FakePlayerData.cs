@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Mobius
  */
-public class FakePlayerData
+public class FakePlayerData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(FakePlayerData));
 	
@@ -35,9 +35,7 @@ public class FakePlayerData
 			_fakePlayerIds.clear();
 			_talkableFakePlayerNames.clear();
 			
-			string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/FakePlayerVisualData.xml");
-			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-			XDocument document = XDocument.Load(stream);
+			XDocument document = LoadXmlDocument(DataFileLocation.Data, "FakePlayerVisualData.xml");
 			document.Elements("list").Elements("fakePlayer").ForEach(parseElement);
 
 			LOGGER.Info(GetType().Name + ": Loaded " + _fakePlayerInfos.size() + " templates.");

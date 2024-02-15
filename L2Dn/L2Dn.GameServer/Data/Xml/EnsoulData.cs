@@ -1,7 +1,10 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Ensoul;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -9,7 +12,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author UnAfraid
  */
-public class EnsoulData
+public class EnsoulData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EnsoulData));
 	private readonly Map<int, EnsoulFee> _ensoulFees = new();
@@ -23,130 +26,78 @@ public class EnsoulData
 	
 	public void load()
 	{
-		parseDatapackDirectory("data/stats/ensoul", true);
-		
+		LoadXmlDocuments(DataFileLocation.Data, "stats/ensoul", true).ForEach(t =>
+		{
+			t.Document.Elements("list").ForEach(x => loadElement(t.FilePath, x));
+		});
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _ensoulFees.size() + " fees.");
 		LOGGER.Info(GetType().Name + ": Loaded " + _ensoulOptions.size() + " options.");
 		LOGGER.Info(GetType().Name + ": Loaded " + _ensoulStones.size() + " stones.");
 	}
 	
-	public void parseDocument(Document doc, File f)
+	private void loadElement(string filePath, XElement element)
 	{
-		forEach(doc, "list", listNode => forEach(listNode, IXmlReader::isNode, ensoulNode =>
-		{
-			switch (ensoulNode.getNodeName())
-			{
-				case "fee":
-				{
-					parseFees(ensoulNode);
-					break;
-				}
-				case "option":
-				{
-					parseOptions(ensoulNode);
-					break;
-				}
-				case "stone":
-				{
-					parseStones(ensoulNode);
-					break;
-				}
-			}
-		}));
+		element.Elements("fee").ForEach(parseFees);
+		element.Elements("option").ForEach(parseOptions);
+		element.Elements("stone").ForEach(parseStones);
 	}
 	
-	private void parseFees(Node ensoulNode)
+	private void parseFees(XElement element)
 	{
-		int stoneId = parseInteger(ensoulNode.getAttributes(), "stoneId");
+		int stoneId = element.Attribute("stoneId").GetInt32();
 		EnsoulFee fee = new EnsoulFee(stoneId);
-		forEach(ensoulNode, IXmlReader::isNode, feeNode =>
-		{
-			switch (feeNode.getNodeName())
-			{
-				case "first":
-				{
-					parseFee(feeNode, fee, 0);
-					break;
-				}
-				case "secondary":
-				{
-					parseFee(feeNode, fee, 1);
-					break;
-				}
-				case "third":
-				{
-					parseFee(feeNode, fee, 2);
-					break;
-				}
-				case "reNormal":
-				{
-					parseReFee(feeNode, fee, 0);
-					break;
-				}
-				case "reSecondary":
-				{
-					parseReFee(feeNode, fee, 1);
-					break;
-				}
-				case "reThird":
-				{
-					parseReFee(feeNode, fee, 2);
-					break;
-				}
-				case "remove":
-				{
-					parseRemove(feeNode, fee);
-					break;
-				}
-			}
-		});
+		
+		element.Elements("first").ForEach(e => parseFee(e, fee, 0));
+		element.Elements("secondary").ForEach(e => parseFee(e, fee, 1));
+		element.Elements("third").ForEach(e => parseFee(e, fee, 2));
+
+		element.Elements("reNormal").ForEach(e => parseReFee(e, fee, 0));
+		element.Elements("reSecondary").ForEach(e => parseReFee(e, fee, 0));
+		element.Elements("reThird").ForEach(e => parseReFee(e, fee, 0));
+		
+		element.Elements("remove").ForEach(e => parseRemove(e, fee));
 	}
 	
-	private void parseFee(Node ensoulNode, EnsoulFee fee, int index)
+	private void parseFee(XElement element, EnsoulFee fee, int index)
 	{
-		NamedNodeMap attrs = ensoulNode.getAttributes();
-		int id = parseInteger(attrs, "itemId");
-		int count = parseInteger(attrs, "count");
+		int id = element.Attribute("itemId").GetInt32();
+		int count = element.Attribute("count").GetInt32();
 		fee.setEnsoul(index, new ItemHolder(id, count));
 		_ensoulFees.put(fee.getStoneId(), fee);
 	}
 	
-	private void parseReFee(Node ensoulNode, EnsoulFee fee, int index)
+	private void parseReFee(XElement element, EnsoulFee fee, int index)
 	{
-		NamedNodeMap attrs = ensoulNode.getAttributes();
-		int id = parseInteger(attrs, "itemId");
-		int count = parseInteger(attrs, "count");
+		int id = element.Attribute("itemId").GetInt32();
+		int count = element.Attribute("count").GetInt32();
 		fee.setResoul(index, new ItemHolder(id, count));
 	}
 	
-	private void parseRemove(Node ensoulNode, EnsoulFee fee)
+	private void parseRemove(XElement element, EnsoulFee fee)
 	{
-		NamedNodeMap attrs = ensoulNode.getAttributes();
-		int id = parseInteger(attrs, "itemId");
-		int count = parseInteger(attrs, "count");
+		int id = element.Attribute("itemId").GetInt32();
+		int count = element.Attribute("count").GetInt32();
 		fee.addRemovalFee(new ItemHolder(id, count));
 	}
 	
-	private void parseOptions(Node ensoulNode)
+	private void parseOptions(XElement element)
 	{
-		NamedNodeMap attrs = ensoulNode.getAttributes();
-		int id = parseInteger(attrs, "id");
-		String name = parseString(attrs, "name");
-		String desc = parseString(attrs, "desc");
-		int skillId = parseInteger(attrs, "skillId");
-		int skillLevel = parseInteger(attrs, "skillLevel");
+		int id = element.Attribute("id").GetInt32();
+		string name = element.Attribute("name").GetString();
+		string desc = element.Attribute("desc").GetString();
+		int skillId = element.Attribute("skillId").GetInt32();
+		int skillLevel = element.Attribute("skillLevel").GetInt32();
 		EnsoulOption option = new EnsoulOption(id, name, desc, skillId, skillLevel);
 		_ensoulOptions.put(option.getId(), option);
 	}
 	
-	private void parseStones(Node ensoulNode)
+	private void parseStones(XElement element)
 	{
-		NamedNodeMap attrs = ensoulNode.getAttributes();
-		int id = parseInteger(attrs, "id");
-		int slotType = parseInteger(attrs, "slotType");
+		int id = element.Attribute("id").GetInt32();
+		int slotType = element.Attribute("slotType").GetInt32();
 		EnsoulStone stone = new EnsoulStone(id, slotType);
-		forEach(ensoulNode, "option", optionNode => stone.addOption(parseInteger(optionNode.getAttributes(), "id")));
+		element.Elements("option").ForEach(optionNode => stone.addOption(optionNode.Attribute("id").GetInt32()));
 		_ensoulStones.put(stone.getId(), stone);
 		((EtcItem) ItemData.getInstance().getTemplate(stone.getId())).setEnsoulStone();
 	}

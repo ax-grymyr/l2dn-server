@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Gustavo Fonseca
  */
-public class RaidTeleportListData
+public class RaidTeleportListData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(RaidTeleportListData));
 	
@@ -25,9 +25,7 @@ public class RaidTeleportListData
 	{
 		_teleports.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/RaidTeleportListData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "RaidTeleportListData.xml");
 		document.Elements("list").Elements("teleport").ForEach(parseElement);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _teleports.size() + " teleports.");

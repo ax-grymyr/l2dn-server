@@ -1,4 +1,6 @@
-﻿namespace L2Dn.GameServer.Model.Ensoul;
+﻿using L2Dn.GameServer.Model.Holders;
+
+namespace L2Dn.GameServer.Model.Ensoul;
 
 public class EnsoulFee
 {

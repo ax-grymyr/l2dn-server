@@ -5,6 +5,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 using NLog;
@@ -16,7 +17,7 @@ namespace L2Dn.GameServer.Data.Xml;
  * What shortcuts get each newly created character.
  * @author Zoey76
  */
-public class InitialShortcutData
+public class InitialShortcutData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(InitialShortcutData));
 	
@@ -37,9 +38,7 @@ public class InitialShortcutData
 		_initialShortcutData.clear();
 		_initialGlobalShortcutList.Clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/initialShortcuts.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/initialShortcuts.xml");
 		document.Elements("list").Elements("shortcuts").ForEach(parseShortcut);
 		document.Elements("list").Elements("macros").Elements("macro").ForEach(parseMacro);
 
@@ -214,7 +213,7 @@ public class InitialShortcutData
 			
 			// Register shortcut
 			Shortcut newShortcut = new Shortcut(shortcut.getSlot(), shortcut.getPage(), shortcut.getType(), shortcutId, shortcut.getLevel(), shortcut.getSubLevel(), shortcut.getCharacterType());
-			player.sendPacket(new ShortCutRegister(newShortcut, player));
+			player.sendPacket(new ShortCutRegisterPacket(newShortcut, player));
 			player.registerShortCut(newShortcut);
 		}
 		
@@ -257,7 +256,7 @@ public class InitialShortcutData
 				}
 				// Register shortcut
 				Shortcut newShortcut = new Shortcut(shortcut.getSlot(), shortcut.getPage(), shortcut.getType(), shortcutId, shortcut.getLevel(), shortcut.getSubLevel(), shortcut.getCharacterType());
-				player.sendPacket(new ShortCutRegister(newShortcut, player));
+				player.sendPacket(new ShortCutRegisterPacket(newShortcut, player));
 				player.registerShortCut(newShortcut);
 			}
 		}

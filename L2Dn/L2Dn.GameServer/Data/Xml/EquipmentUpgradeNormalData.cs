@@ -3,6 +3,7 @@ using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 using NLog;
@@ -12,7 +13,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Index
  */
-public class EquipmentUpgradeNormalData
+public class EquipmentUpgradeNormalData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EquipmentUpgradeNormalData));
 	private static readonly Map<int, EquipmentUpgradeNormalHolder> _upgrades = new();
@@ -28,8 +29,10 @@ public class EquipmentUpgradeNormalData
 	{
 		foreach (Player player in World.getInstance().getPlayers())
 		{
-			player.sendPacket(ExUpgradeSystemNormalResult.FAIL);
+			ExUpgradeSystemNormalResultPacket packet = default;
+			player.sendPacket(packet);
 		}
+		
 		load();
 	}
 	
@@ -39,9 +42,7 @@ public class EquipmentUpgradeNormalData
 		_discount.clear();
 		_upgrades.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/EquipmentUpgradeNormalData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "EquipmentUpgradeNormalData.xml");
 		document.Elements("list").Elements("params").ForEach(el => _commission = el.Attribute("commission").GetInt32());
 		if (_commission < 0)
 		{

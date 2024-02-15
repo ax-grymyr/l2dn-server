@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Effects;
@@ -522,7 +523,7 @@ public class SkillData
 		return values;
 	}
 	
-	Object parseValue(Node node, bool blockValue, bool parseAttributes, Map<String, Double> variables)
+	public Object parseValue(XElement element, bool blockValue, bool parseAttributes, Map<String, Double> variables)
 	{
 		Node n = node;
 		StatSet statSet = null;

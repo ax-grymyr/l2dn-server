@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Mobius
  */
-public class EquipmentUpgradeData
+public class EquipmentUpgradeData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EquipmentUpgradeData));
 	private static readonly Map<int, EquipmentUpgradeHolder> _upgrades = new();
@@ -24,9 +24,7 @@ public class EquipmentUpgradeData
 	{
 		_upgrades.clear();
 			
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/EquipmentUpgradeData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "EquipmentUpgradeData.xml");
 		document.Elements("list").Elements("upgrade").ForEach(parseElement);
 			
 		LOGGER.Info(GetType().Name + ": Loaded " + _upgrades.size() + " upgrade equipment data.");

@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Sdw
  */
-public class BeautyShopData
+public class BeautyShopData: DataReaderBase
 {
 	private readonly Map<Race, Map<Sex, BeautyData>> _beautyList = new();
 	
@@ -25,9 +25,7 @@ public class BeautyShopData
 	{
 		_beautyList.clear();
 
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/BeautyShop.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "BeautyShop.xml");
 		document.Elements("list").Elements("race").ForEach(loadElement);
 	}
 	

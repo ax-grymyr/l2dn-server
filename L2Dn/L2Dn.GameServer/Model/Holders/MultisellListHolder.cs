@@ -40,13 +40,18 @@ public class MultisellListHolder: IIdentifiable
 		_maintainEnchantment = set.getBoolean("maintainEnchantment", false);
 		_ingredientMultiplier = set.getDouble("ingredientMultiplier", 1.0);
 		_productMultiplier = set.getDouble("productMultiplier", 1.0);
-		_entries = Collections.unmodifiableList(set.getList<MultisellEntryHolder>("entries", Collections.emptyList()));
+		_entries = set.getList<MultisellEntryHolder>("entries", new());
 		_npcsAllowed = set.getObject<Set<int>>("allowNpc");
 	}
 
 	public List<MultisellEntryHolder> getEntries()
 	{
 		return _entries;
+	}
+
+	public Set<int> getNpcsAllowed()
+	{
+		return _npcsAllowed;
 	}
 
 	public int getId()
@@ -81,6 +86,6 @@ public class MultisellListHolder: IIdentifiable
 
 	public bool isNpcAllowed(int npcId)
 	{
-		return (_npcsAllowed != null) && _npcsAllowed.contains(npcId);
+		return (_npcsAllowed != null) && _npcsAllowed.Contains(npcId);
 	}
 }

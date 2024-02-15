@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Mobius
  */
-public class TimedHuntingZoneData
+public class TimedHuntingZoneData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(TimedHuntingZoneData));
 	
@@ -26,9 +26,7 @@ public class TimedHuntingZoneData
 	{
 		_timedHuntingZoneData.clear();
         
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/TimedHuntingZoneData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "TimedHuntingZoneData.xml");
 		document.Elements("list").Where(e => e.Attribute("enabled").GetBoolean(false)).Elements("zone")
 			.ForEach(parseElement);
 		

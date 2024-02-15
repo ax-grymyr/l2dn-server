@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author UnAfraid
  */
-public class ActionData
+public class ActionData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ActionData));
 	
@@ -27,9 +27,7 @@ public class ActionData
 		_actionData.clear();
 		_actionSkillsData.clear();
 
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/ActionData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "ActionData.xml");
 		document.Elements("list").Elements("action").ForEach(node =>
 		{
 			int id = node.Attribute("id").GetInt32();

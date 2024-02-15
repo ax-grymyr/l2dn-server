@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Pere, Mobius
  */
-public class VariationData
+public class VariationData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(VariationData));
 	
@@ -32,9 +32,7 @@ public class VariationData
 		_variations.clear();
 		_fees.clear();
 
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/augmentation/Variations.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/augmentation/Variations.xml");
 		document.Elements("list").Elements("variations").Elements("variation").ForEach(parseVariationElement);
 		document.Elements("list").Elements("itemGroups").Elements("itemGroup").ForEach(parseItemGroupElement);
 		document.Elements("list").Elements("fees").Elements("fee").ForEach(parseFeeElement);

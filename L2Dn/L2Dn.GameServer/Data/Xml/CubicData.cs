@@ -1,7 +1,11 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Cubics;
 using L2Dn.GameServer.Model.Cubics.Conditions;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -9,7 +13,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author UnAfraid
  */
-public class CubicData
+public class CubicData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CubicData));
 	
@@ -23,37 +27,29 @@ public class CubicData
 	public void load()
 	{
 		_cubics.clear();
-		parseDatapackDirectory("data/stats/cubics", true);
+		
+		LoadXmlDocuments(DataFileLocation.Data, "stats/cubics", true).ForEach(t =>
+		{
+			t.Document.Elements("list").Elements("cubic").ForEach(x => loadElement(t.FilePath, x));
+		});
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _cubics.size() + " cubics.");
 	}
 	
-	public void parseDocument(Document doc, File f)
+	private void loadElement(string filePath, XElement element)
 	{
-		forEach(doc, "list", listNode => forEach(listNode, "cubic", cubicNode => parseTemplate(cubicNode, new CubicTemplate(new StatSet(parseAttributes(cubicNode))))));
+		StatSet set = new StatSet(element);
+		parseTemplate(element, new CubicTemplate(set));
 	}
 	
 	/**
 	 * @param cubicNode
 	 * @param template
 	 */
-	private void parseTemplate(Node cubicNode, CubicTemplate template)
+	private void parseTemplate(XElement cubicNode, CubicTemplate template)
 	{
-		forEach(cubicNode, IXmlReader::isNode, innerNode =>
-		{
-			switch (innerNode.getNodeName())
-			{
-				case "conditions":
-				{
-					parseConditions(innerNode, template, template);
-					break;
-				}
-				case "skills":
-				{
-					parseSkills(innerNode, template);
-					break;
-				}
-			}
-		});
+		cubicNode.Elements("conditions").ForEach(e => parseConditions(e, template, template));
+		cubicNode.Elements("skills").ForEach(e => parseSkills(e, template));
 		_cubics.computeIfAbsent(template.getId(), key => new()).put(template.getLevel(), template);
 	}
 	
@@ -62,37 +58,31 @@ public class CubicData
 	 * @param template
 	 * @param holder
 	 */
-	private void parseConditions(Node cubicNode, CubicTemplate template, ICubicConditionHolder holder)
+	private void parseConditions(XElement element, CubicTemplate template, ICubicConditionHolder holder)
 	{
-		forEach(cubicNode, IXmlReader::isNode, conditionNode =>
+		element.Elements().ForEach(el =>
 		{
-			switch (conditionNode.getNodeName())
+			switch (el.Name.LocalName)
 			{
 				case "hp":
-				{
-					HpConditionType type = parseEnum(conditionNode.getAttributes(), HpCondition.HpConditionType.class, "type");
-					int hpPer = parseInteger(conditionNode.getAttributes(), "percent");
+					HpCondition.HpConditionType type = el.Attribute("type").GetEnum<HpCondition.HpConditionType>();
+					int hpPer = el.Attribute("percent").GetInt32();
 					holder.addCondition(new HpCondition(type, hpPer));
 					break;
-				}
 				case "range":
-				{
-					int range = parseInteger(conditionNode.getAttributes(), "value");
+					int range = el.Attribute("value").GetInt32();
 					holder.addCondition(new RangeCondition(range));
 					break;
-				}
 				case "healthPercent":
-				{
-					int min = parseInteger(conditionNode.getAttributes(), "min");
-					int max = parseInteger(conditionNode.getAttributes(), "max");
+					int min = el.Attribute("min").GetInt32();
+					int max = el.Attribute("max").GetInt32();
 					holder.addCondition(new HealthCondition(min, max));
 					break;
-				}
 				default:
-				{
-					LOGGER.Warn("Attempting to use not implemented condition: " + conditionNode.getNodeName() + " for cubic id: " + template.getId() + " level: " + template.getLevel());
+					LOGGER.Error("Attempting to use not implemented condition: " + el.Name.LocalName +
+					             " for cubic id: " + template.getId() + " level: " + template.getLevel());
+					
 					break;
-				}
 			}
 		});
 	}
@@ -101,12 +91,13 @@ public class CubicData
 	 * @param cubicNode
 	 * @param template
 	 */
-	private void parseSkills(Node cubicNode, CubicTemplate template)
+	private void parseSkills(XElement element, CubicTemplate template)
 	{
-		forEach(cubicNode, "skill", skillNode =>
+		element.Elements("skill").ForEach(el =>
 		{
-			CubicSkill skill = new CubicSkill(new StatSet(parseAttributes(skillNode)));
-			forEach(cubicNode, "conditions", conditionNode => parseConditions(cubicNode, template, skill));
+			StatSet set = new StatSet(element);
+			CubicSkill skill = new CubicSkill(set);
+			el.Elements("conditions").ForEach(e => parseConditions(e, template, skill));
 			template.getCubicSkills().add(skill);
 		});
 	}

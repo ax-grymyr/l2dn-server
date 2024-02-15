@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Sdw, Mobius
  */
-public class DailyMissionData
+public class DailyMissionData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(DailyMissionData));
 	
@@ -27,9 +27,7 @@ public class DailyMissionData
 	{
 		_dailyMissionRewards.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/DailyMission.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "DailyMission.xml");
 		document.Elements("list").Elements("reward").ForEach(loadElement);
 		
 		_dailyMissionData.Clear();

@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Data.Xml;
  * This class holds the Enchant Groups information.
  * @author Micr0
  */
-public class EnchantSkillGroupsData
+public class EnchantSkillGroupsData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EnchantSkillGroupsData));
 	
@@ -34,9 +34,7 @@ public class EnchantSkillGroupsData
 	{
 		_enchantSkillHolders.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/EnchantSkillGroups.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "EnchantSkillGroups.xml");
 		document.Elements("list").Elements("enchant").ForEach(parseEnchant);
 		
 		MAX_ENCHANT_LEVEL = _enchantSkillHolders.size();

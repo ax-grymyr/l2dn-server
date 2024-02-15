@@ -16,8 +16,8 @@ public class ClanEntryManager
 	private static readonly Map<int, PledgeRecruitInfo> _clanList = new();
 	private static readonly Map<int, Map<int, PledgeApplicantInfo>> _applicantList = new();
 	
-	private static readonly Map<int, ScheduledFuture<?>> _clanLocked = new();
-	private static readonly Map<int, ScheduledFuture<?>> _playerLocked = new();
+	private static readonly Map<int, ScheduledFuture> _clanLocked = new();
+	private static readonly Map<int, ScheduledFuture> _playerLocked = new();
 	
 	private const string INSERT_APPLICANT = "REPLACE INTO pledge_applicant VALUES (?, ?, ?, ?)";
 	private const string DELETE_APPLICANT = "DELETE FROM pledge_applicant WHERE charId = ? AND clanId = ?";

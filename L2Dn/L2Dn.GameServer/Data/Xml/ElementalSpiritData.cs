@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author JoeAlisson
  */
-public class ElementalSpiritData
+public class ElementalSpiritData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ElementalSpiritData));
 	
@@ -34,9 +34,7 @@ public class ElementalSpiritData
 	
 	public void load()
 	{
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/ElementalSpiritData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "ElementalSpiritData.xml");
 		document.Elements("list").Elements("spirit").ForEach(parseSpirit);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + SPIRIT_DATA.size() + " elemental spirit templates.");

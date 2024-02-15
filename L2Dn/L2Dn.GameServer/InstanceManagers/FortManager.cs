@@ -1,8 +1,9 @@
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
-using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
 namespace L2Dn.GameServer.InstanceManagers;
 

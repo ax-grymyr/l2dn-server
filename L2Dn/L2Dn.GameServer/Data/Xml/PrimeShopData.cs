@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Gnacik, UnAfraid
  */
-public class PrimeShopData
+public class PrimeShopData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PrimeShopData));
 	
@@ -28,9 +28,7 @@ public class PrimeShopData
 	{
 		_primeItems.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/PrimeShop.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "PrimeShop.xml");
 		document.Elements("list").Where(el => el.Attribute("enabled").GetBoolean(false)).Elements("item")
 			.ForEach(parseElement);
 		

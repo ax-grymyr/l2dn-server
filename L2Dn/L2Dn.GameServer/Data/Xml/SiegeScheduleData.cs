@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author UnAfraid
  */
-public class SiegeScheduleData
+public class SiegeScheduleData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SiegeScheduleData));
 	
@@ -25,9 +25,7 @@ public class SiegeScheduleData
 	[MethodImpl(MethodImplOptions.Synchronized)] 
 	public void load()
 	{
-		string filePath = "config/SiegeSchedule.xml";
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Config, "SiegeSchedule.xml");
 		document.Elements("list").Elements("schedule").ForEach(parseElement);
 
 		LOGGER.Info(GetType().Name + ": Loaded " + _scheduleData.size() + " siege schedulers.");

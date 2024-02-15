@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Serenitty
  */
-public class MagicLampData
+public class MagicLampData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(MagicLampData));
 	private static readonly List<MagicLampDataHolder> LAMPS = new();
@@ -25,9 +25,7 @@ public class MagicLampData
 	{
 		LAMPS.Clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/MagicLampData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "MagicLampData.xml");
 		document.Elements("list").Elements("levelRange").ForEach(parseElement);
 		
 		LOGGER.Info("MagicLampData: Loaded " + LAMPS.size() + " magic lamps exp types.");

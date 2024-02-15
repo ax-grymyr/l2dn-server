@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author UnAfraid, Mobius
  */
-public class EnchantItemOptionsData
+public class EnchantItemOptionsData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EnchantItemOptionsData));
 	
@@ -29,9 +29,7 @@ public class EnchantItemOptionsData
 	{
 		_data.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/EnchantItemOptions.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "EnchantItemOptions.xml");
 		document.Elements("list").Elements("item").ForEach(parseItem);
 
 		int optionCount = _data.values().SelectMany(v => v.values()).Count();

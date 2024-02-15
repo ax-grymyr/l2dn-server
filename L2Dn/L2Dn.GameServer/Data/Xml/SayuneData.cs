@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author UnAfraid
  */
-public class SayuneData
+public class SayuneData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SayuneData));
 	
@@ -23,9 +23,7 @@ public class SayuneData
 	
 	public void load()
 	{
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/SayuneData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "SayuneData.xml");
 		document.Elements("list").Elements("map").ForEach(parseElement);
 		
 		

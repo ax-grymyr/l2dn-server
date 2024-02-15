@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Data.Xml;
  * Loads administrator access levels and commands.
  * @author UnAfraid
  */
-public class AdminData
+public class AdminData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminData));
 	
@@ -28,48 +28,38 @@ public class AdminData
 	{
 		load();
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void load()
-	{ 
+	{
 		// TODO: load data into temp collection and then replace collections at once
 		_accessLevels.clear();
 		_adminCommandAccessRights.clear();
 
+		XDocument document = LoadXmlDocument(DataFileLocation.Config, "AccessLevels.xml");
+		document.Elements("list").Elements("access").ForEach(node =>
 		{
-			using FileStream stream =
-				new FileStream("config/AccessLevels.xml", FileMode.Open, FileAccess.Read, FileShare.Read);
-
-			XDocument doc = XDocument.Load(stream);
-			doc.Elements("list").Elements("access").ForEach(node =>
+			AccessLevel level = new AccessLevel(node);
+			if (level.getLevel() > _highestLevel)
 			{
-				AccessLevel level = new AccessLevel(node);
-				if (level.getLevel() > _highestLevel)
-				{
-					_highestLevel = level.getLevel();
-				}
+				_highestLevel = level.getLevel();
+			}
 
-				_accessLevels.put(level.getLevel(), level);
-			});
+			_accessLevels.put(level.getLevel(), level);
+		});
 
-			LOGGER.Info(GetType().Name + ": Loaded " + _accessLevels.size() + " access levels.");
-		}
+		LOGGER.Info(GetType().Name + ": Loaded " + _accessLevels.size() + " access levels.");
 
+		document = LoadXmlDocument(DataFileLocation.Config, "AdminCommands.xml");
+		document.Elements("list").Elements("admin").ForEach(node =>
 		{
-			using FileStream stream =
-				new FileStream("config/AdminCommands.xml", FileMode.Open, FileAccess.Read, FileShare.Read);
+			AdminCommandAccessRight command = new AdminCommandAccessRight(node);
+			_adminCommandAccessRights.put(command.getAdminCommand(), command);
+		});
 
-			XDocument doc = XDocument.Load(stream);
-			doc.Elements("list").Elements("admin").ForEach(node =>
-			{
-				AdminCommandAccessRight command = new AdminCommandAccessRight(node);
-				_adminCommandAccessRights.put(command.getAdminCommand(), command);
-			});
-
-			LOGGER.Info(GetType().Name + ": Loaded " + _adminCommandAccessRights.size() + " access commands.");
-		}
+		LOGGER.Info(GetType().Name + ": Loaded " + _adminCommandAccessRights.size() + " access commands.");
 	}
-	
+
 	/**
 	 * Returns the access level by characterAccessLevel.
 	 * @param accessLevelNum as int

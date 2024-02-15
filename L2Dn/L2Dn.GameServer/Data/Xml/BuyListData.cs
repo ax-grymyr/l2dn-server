@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Data.Xml;
  * Loads buy lists for NPCs.
  * @author NosBit
  */
-public class BuyListData
+public class BuyListData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(BuyListData));
 	
@@ -30,15 +30,12 @@ public class BuyListData
 	{
 		_buyLists.clear();
 
-		string dirPath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/buylists");
-		Directory.EnumerateFiles(dirPath, "*.xml", SearchOption.TopDirectoryOnly).ForEach(loadFile);
-		
+		LoadXmlDocuments(DataFileLocation.Data, "buylists").ForEach(t => loadFile(t.FilePath, t.Document));
 		if (Config.CUSTOM_BUYLIST_LOAD)
 		{
-			string customDirPath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/buylists/custom");
-			Directory.EnumerateFiles(customDirPath, "*.xml", SearchOption.TopDirectoryOnly).ForEach(loadFile);
+			LoadXmlDocuments(DataFileLocation.Data, "buylists/custom").ForEach(t => loadFile(t.FilePath, t.Document));
 		}
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _buyLists.size() + " buyLists.");
 		
 		try 
@@ -76,11 +73,8 @@ public class BuyListData
 		}
 	}
 
-	private void loadFile(string filePath)
+	private void loadFile(string filePath, XDocument document)
 	{
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
-		
 		//int defaultBaseTax = parseInteger(list.getAttributes(), "baseTax", 0);
 		int buyListId = int.Parse(Path.GetFileNameWithoutExtension(filePath)); // TODO: is it required somewhere to be a number?
 		ProductList buyList = new ProductList(buyListId);

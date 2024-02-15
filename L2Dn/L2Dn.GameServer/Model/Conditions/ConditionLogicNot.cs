@@ -1,36 +1,17 @@
-/*
- * This file is part of the L2J Mobius project.
- * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
-package org.l2jmobius.gameserver.model.conditions;
+using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Skills;
 
-import org.l2jmobius.gameserver.model.actor.Creature;
-import org.l2jmobius.gameserver.model.item.ItemTemplate;
-import org.l2jmobius.gameserver.model.skill.Skill;
+namespace L2Dn.GameServer.Model.Conditions;
 
-namespace L2Dn.GameServer.Model.Conditions
-{
-	/**
+/**
  * The Class ConditionLogicNot.
  * @author mkizub
  */
-	public class ConditionLogicNot
-} extends Condition
+public class ConditionLogicNot: Condition
 {
-	private final Condition _condition;
-	
+	private readonly Condition _condition;
+
 	/**
 	 * Instantiates a new condition logic not.
 	 * @param condition the condition
@@ -43,9 +24,8 @@ namespace L2Dn.GameServer.Model.Conditions
 			_condition.setListener(this);
 		}
 	}
-	
-	@Override
-	void setListener(ConditionListener listener)
+
+	public override void setListener(ConditionListener listener)
 	{
 		if (listener != null)
 		{
@@ -55,11 +35,11 @@ namespace L2Dn.GameServer.Model.Conditions
 		{
 			_condition.setListener(null);
 		}
-		super.setListener(listener);
+
+		base.setListener(listener);
 	}
-	
-	@Override
-	public boolean testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
+
+	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
 	{
 		return !_condition.test(effector, effected, skill, item);
 	}

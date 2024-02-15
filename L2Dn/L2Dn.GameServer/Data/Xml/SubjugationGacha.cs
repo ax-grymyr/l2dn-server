@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Berezkin Nikolay
  */
-public class SubjugationGacha
+public class SubjugationGacha: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SubjugationGacha));
 	
@@ -24,9 +24,7 @@ public class SubjugationGacha
 	{
 		_subjugations.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/SubjugationGacha.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "SubjugationGacha.xml");
 		document.Elements("list").Elements("purge").ForEach(parseElement);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _subjugations.size() + " data.");

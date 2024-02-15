@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Index
  */
-public class HennaCombinationData
+public class HennaCombinationData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(HennaCombinationData));
 	
@@ -28,9 +28,7 @@ public class HennaCombinationData
 	{
 		_henna.Clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/hennaCombinations.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/hennaCombinations.xml");
 		document.Elements("list").Elements("henna").ForEach(parseElement);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _henna.size() + " henna combinations.");

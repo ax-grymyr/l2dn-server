@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Index
  */
-public class MissionLevel
+public class MissionLevel: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(MissionLevel));
 	
@@ -27,9 +27,7 @@ public class MissionLevel
 	{
 		_template.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/MissionLevel.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "MissionLevel.xml");
 		document.Elements("list").Elements("current").ForEach(el => _currentSeason = el.Attribute("season").GetInt32());
 		document.Elements("list").Elements("missionLevel").ForEach(parseElement);
 		

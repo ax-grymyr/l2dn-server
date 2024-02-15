@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author MacuK
  */
-public class RaidDropAnnounceData
+public class RaidDropAnnounceData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(RaidDropAnnounceData));
 	
@@ -26,9 +26,7 @@ public class RaidDropAnnounceData
 	{
 		_itemIds.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/RaidDropAnnounceData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "RaidDropAnnounceData.xml");
 		document.Elements("list").Elements("item").ForEach(parseElement);
 		
 		if (!_itemIds.isEmpty())

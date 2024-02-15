@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Mobius
  */
-public class PetTypeData
+public class PetTypeData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PetTypeData));
 	
@@ -26,9 +26,7 @@ public class PetTypeData
 	{
 		_skills.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/PetTypes.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "PetTypes.xml");
 		document.Elements("list").Elements("pet").ForEach(parseElement);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _skills.size() + " pet types.");

@@ -17,7 +17,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author UnAfraid, Index
  */
-public class ItemCrystallizationData
+public class ItemCrystallizationData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ItemCrystallizationData));
 	
@@ -43,9 +43,7 @@ public class ItemCrystallizationData
 		_weaponDestroyGroup = new RewardItemsOnFailure();
 		_armorDestroyGroup = new RewardItemsOnFailure();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/CrystallizableItems.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "CrystallizableItems.xml");
 		document.Elements("list").Elements("templates").Elements("crystallizable_template").ForEach(parseTemplate);
 		document.Elements("list").Elements("items").Elements("crystallizable_item").ForEach(parseItem);
 		document.Elements("list").Elements("itemsOnEnchantFailure").ForEach(el =>

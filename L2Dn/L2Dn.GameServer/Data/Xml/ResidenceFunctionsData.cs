@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Data.Xml;
  * The residence functions data
  * @author UnAfraid
  */
-public class ResidenceFunctionsData
+public class ResidenceFunctionsData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ResidenceFunctionsData));
 	private readonly Map<int, List<ResidenceFunctionTemplate>> _functions = new();
@@ -29,9 +29,7 @@ public class ResidenceFunctionsData
 	{
 		_functions.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/ResidenceFunctions.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "ResidenceFunctions.xml");
 		document.Elements("list").Elements("function").ForEach(parseElement);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _functions.size() + " functions.");

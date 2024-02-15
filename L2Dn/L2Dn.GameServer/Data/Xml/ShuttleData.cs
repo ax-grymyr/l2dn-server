@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author UnAfraid
  */
-public class ShuttleData
+public class ShuttleData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ShuttleData));
 	
@@ -38,9 +38,7 @@ public class ShuttleData
 			_shuttleInstances.clear();
 		}
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/ShuttleData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "ShuttleData.xml");
 		document.Elements("list").Elements("shuttle").ForEach(parseElement);
 		
 		init();

@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Data.Xml;
  * What items get each newly created character and if this item is equipped upon creation (<b>Requires the item to be equippable</b>).
  * @author Zoey76
  */
-public class InitialEquipmentData
+public class InitialEquipmentData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(InitialEquipmentData));
 	
@@ -31,11 +31,9 @@ public class InitialEquipmentData
 	{
 		_initialEquipmentList.clear();
 
-		const string NORMAL = "data/stats/initialEquipment.xml";
-		const string EVENT = "data/stats/initialEquipmentEvent.xml";
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, Config.INITIAL_EQUIPMENT_EVENT ? EVENT : NORMAL);
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		const string normal = "stats/initialEquipment.xml";
+		const string @event = "stats/initialEquipmentEvent.xml";
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, Config.INITIAL_EQUIPMENT_EVENT ? @event : normal);
 		document.Elements("list").Elements("equipment").ForEach(parseEquipment);
 
 		LOGGER.Info(GetType().Name + ": Loaded " + _initialEquipmentList.size() + " initial equipment data.");

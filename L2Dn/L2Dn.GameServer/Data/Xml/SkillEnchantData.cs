@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Serenitty
  */
-public class SkillEnchantData
+public class SkillEnchantData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SkillEnchantData));
 	
@@ -29,9 +29,7 @@ public class SkillEnchantData
 	
 	public void load()
 	{
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/SkillEnchantData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "SkillEnchantData.xml");
 		document.Elements("list").Elements("skills").Elements("skill").ForEach(parseSkillElement);
 		document.Elements("list").Elements("stars").Elements("star").ForEach(parseStarElement);
 		document.Elements("list").Elements("chances").Elements("chance").ForEach(parseChanceElement);

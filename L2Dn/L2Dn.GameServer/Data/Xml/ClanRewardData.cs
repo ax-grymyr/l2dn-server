@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author UnAfraid
  */
-public class ClanRewardData
+public class ClanRewardData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ClanRewardData));
 	private readonly Map<ClanRewardType, List<ClanRewardBonus>> _clanRewards = new();
@@ -24,9 +24,7 @@ public class ClanRewardData
 	
 	public void load()
 	{
-		const string filePath = "config/ClanReward.xml";
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Config, "ClanReward.xml");
 		document.Elements("list").Elements("membersOnline").ForEach(parseMembersOnline);
 		document.Elements("list").Elements("huntingBonus").ForEach(parseHuntingBonus);
 

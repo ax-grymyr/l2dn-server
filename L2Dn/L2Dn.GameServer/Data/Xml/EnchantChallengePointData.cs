@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Serenitty
  */
-public class EnchantChallengePointData
+public class EnchantChallengePointData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EnchantChallengePointData));
 	
@@ -41,10 +41,7 @@ public class EnchantChallengePointData
 		_fees.clear();
 		_items.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/EnchantChallengePoints.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
-		
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "EnchantChallengePoints.xml");
 		document.Elements("list").Elements("maxPoints").ForEach(element => _maxPoints = (int)element);
 		document.Elements("list").Elements("maxTicketCharge").ForEach(element => _maxTicketCharge = (int)element);
 		document.Elements("list").Elements("fees").Elements("option").ForEach(element =>

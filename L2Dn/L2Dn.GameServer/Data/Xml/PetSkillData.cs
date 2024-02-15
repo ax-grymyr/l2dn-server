@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Mobius
  */
-public class PetSkillData
+public class PetSkillData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PetSkillData));
 	private readonly Map<int, Map<long, SkillHolder>> _skillTrees = new();
@@ -25,9 +25,7 @@ public class PetSkillData
 	{
 		_skillTrees.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/PetSkillData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "PetSkillData.xml");
 		document.Elements("list").Elements("skill").ForEach(parseElement);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _skillTrees.size() + " skills.");

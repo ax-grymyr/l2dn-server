@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Data.Xml;
  * Loads armor set bonuses.
  * @author godson, Luno, UnAfraid
  */
-public class ArmorSetData
+public class ArmorSetData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ArmorSetData));
 	
@@ -30,12 +30,9 @@ public class ArmorSetData
 	
 	public void load()
 	{
-		string dirPath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/armorsets");
-		Directory.EnumerateFiles(dirPath, "*.xml", SearchOption.AllDirectories).ForEach(filePath =>
+		LoadXmlDocuments(DataFileLocation.Data, "stats/armorsets", true).ForEach(t =>
 		{
-			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-			XDocument document = XDocument.Load(stream);
-			document.Elements("list").Elements("set").ForEach(x => loadElement(filePath, x));
+			t.Document.Elements("list").Elements("set").ForEach(x => loadElement(t.FilePath, x));
 		});
 
 		int count = _armorSetMap.Keys.Max() + 1;

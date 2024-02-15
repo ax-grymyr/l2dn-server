@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Data.Xml;
  * This class loads and hold info about doors.
  * @author JIV, GodKratos, UnAfraid
  */
-public class DoorData
+public class DoorData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(DoorData));
 	
@@ -33,9 +33,7 @@ public class DoorData
 		_doors.clear();
 		_groups.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/DoorData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "DoorData.xml");
 		document.Elements("list").Elements("door").ForEach(element => spawnDoor(parseDoor(element)));
 		LOGGER.Info(GetType().Name + ": Loaded " + _doors.size() + " doors.");
 	}

@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Geremy
  */
-public class PetExtractData
+public class PetExtractData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PetExtractData));
 	// <Pet_Id, <Pet_Level, Cost>>
@@ -25,9 +25,7 @@ public class PetExtractData
 	{
 		_extractionData.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/PetExtractData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "PetExtractData.xml");
 		document.Elements("list").Elements("extraction").ForEach(parseElement);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _extractionData.size() + " pet extraction data.");

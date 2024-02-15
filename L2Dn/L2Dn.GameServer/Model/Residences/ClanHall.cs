@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
+using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Residences;
 
@@ -29,12 +30,30 @@ public class ClanHall: AbstractResidence
 	// Dynamic parameters
 	Clan _owner = null;
 	long _paidUntil = 0;
-	protected ScheduledFuture<?> _checkPaymentTask = null;
+	protected ScheduledFuture _checkPaymentTask = null;
 	// Other
 	private const String INSERT_CLANHALL = "INSERT INTO clanhall (id, ownerId, paidUntil) VALUES (?,?,?)";
 	private const String LOAD_CLANHALL = "SELECT * FROM clanhall WHERE id=?";
 	private const String UPDATE_CLANHALL = "UPDATE clanhall SET ownerId=?,paidUntil=? WHERE id=?";
-	
+
+	public ClanHall(int id, ClanHallGrade grade, ClanHallType type, int minBid, int lease, int deposit,
+		Location ownerLocation, Location banishLocation)
+		: base(id)
+	{
+		_grade = grade;
+		_type = type;
+		_minBid = minBid;
+		_lease = lease;
+		_deposit = deposit;
+		_ownerLocation = ownerLocation;
+		_banishLocation = banishLocation;
+		
+		load();
+		// Init Clan Hall zone and Functions
+		initResidenceZone();
+		initFunctions();
+	}
+
 	public ClanHall(StatSet @params): base(@params.getInt("id"))
 	{
 		// Set static parameters

@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Data.Xml;
  * This class loads and holds all static object data.
  * @author UnAfraid
  */
-public class StaticObjectData
+public class StaticObjectData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(StaticObjectData));
 	
@@ -31,9 +31,7 @@ public class StaticObjectData
 	{
 		_staticObjects.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/StaticObjects.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "StaticObjects.xml");
 		document.Elements("list").Elements("object").ForEach(parseElement);
         
 		LOGGER.Info(GetType().Name + ": Loaded " + _staticObjects.size() + " static object templates.");

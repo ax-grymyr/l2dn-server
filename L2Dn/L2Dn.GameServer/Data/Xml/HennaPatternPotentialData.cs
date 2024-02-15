@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Serenitty
  */
-public class HennaPatternPotentialData
+public class HennaPatternPotentialData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(HennaPatternPotentialData));
 	
@@ -37,9 +37,7 @@ public class HennaPatternPotentialData
 		_potentials.clear();
 		_enchancedReset.Clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/hennaPatternPotential.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/hennaPatternPotential.xml");
 		document.Elements("list").ForEach(element =>
 		{
 			element.Elements("enchantFees").Elements("fee").ForEach(parseFeeElement);

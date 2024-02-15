@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Data.Xml;
  * This class load, holds and calculates the hit condition bonuses.
  * @author Nik
  */
-public class HitConditionBonusData
+public class HitConditionBonusData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(HitConditionBonusData));
 	
@@ -34,9 +34,7 @@ public class HitConditionBonusData
 	
 	public void load()
 	{
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/hitConditionBonus.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/hitConditionBonus.xml");
 		document.Elements("hitConditionBonus").ForEach(element =>
 		{
 			frontBonus = (element.Element("front")?.Attribute("val")).GetInt32(0);
@@ -79,7 +77,7 @@ public class HitConditionBonusData
 		}
 		
 		// Get side bonus
-		switch (Position.getPosition(attacker, target))
+		switch (PositionUtil.getPosition(attacker, target))
 		{
 			case Position.SIDE:
 			{

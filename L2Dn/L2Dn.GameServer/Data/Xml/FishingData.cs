@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Data.Xml;
  * This class holds the Fishing information.
  * @author bit
  */
-public class FishingData
+public class FishingData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(FishingData));
 	private readonly Map<int, FishingBait> _baitData = new();
@@ -35,9 +35,7 @@ public class FishingData
 	{
 		_baitData.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/Fishing.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "Fishing.xml");
 		document.Elements("list").ForEach(el =>
 		{
 			el.Elements("baitDistance").ForEach(element =>

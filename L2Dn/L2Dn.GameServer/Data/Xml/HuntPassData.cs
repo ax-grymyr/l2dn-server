@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Serenitty
  */
-public class HuntPassData
+public class HuntPassData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(HuntPassData));
 	private readonly List<ItemHolder> _rewards = new();
@@ -30,9 +30,7 @@ public class HuntPassData
 		{
 			_rewards.Clear();
 			
-			string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/HuntPass.xml");
-			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-			XDocument document = XDocument.Load(stream);
+			XDocument document = LoadXmlDocument(DataFileLocation.Data, "HuntPass.xml");
 			document.Elements("hitConditionBonus").Elements("item").ForEach(parseElement);
 			
 			_rewardCount = _rewards.size();

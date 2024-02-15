@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Mobius
  */
-public class ElementalAttributeData
+public class ElementalAttributeData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ElementalAttributeData));
 	private static readonly Map<int, ElementalItemHolder> ELEMENTAL_ITEMS = new();
@@ -81,9 +81,7 @@ public class ElementalAttributeData
 	{
 		ELEMENTAL_ITEMS.clear();
 
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/ElementalAttributeData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "ElementalAttributeData.xml");
 		document.Elements("list").Elements("item").ForEach(parseElement);
 
 		LOGGER.Info(GetType().Name + ": Loaded " + ELEMENTAL_ITEMS.size() + " elemental attribute items.");
@@ -126,7 +124,7 @@ public class ElementalAttributeData
 		ElementalItemHolder item = ELEMENTAL_ITEMS.get(itemId);
 		if (item != null)
 		{
-			return item.getType().getMaxLevel();
+			return item.getType().GetMaxLevel();
 		}
 		return -1;
 	}

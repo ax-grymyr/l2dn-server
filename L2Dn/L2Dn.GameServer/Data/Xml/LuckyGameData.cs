@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Sdw
  */
-public class LuckyGameData
+public class LuckyGameData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(LuckyGameData));
 	private readonly Map<int, LuckyGameDataHolder> _luckyGame = new();
@@ -25,9 +25,7 @@ public class LuckyGameData
 	{
 		_luckyGame.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/LuckyGameData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "LuckyGameData.xml");
 		document.Elements("list").Elements("luckygame").ForEach(parseElement);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _luckyGame.size() + " lucky game data.");

@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -114,7 +115,7 @@ public abstract class AbstractDailyMissionHandler: ListenersContainer
 					{
 						int expAmount = (int) holder.getCount();
 						clan.addExp(player.getObjectId(), expAmount);
-						player.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2).addItemName(MISSION_LEVEL_POINTS).addLong(expAmount));
+						player.sendPacket(new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2).addItemName(MISSION_LEVEL_POINTS).addLong(expAmount));
 					}
 					break;
 				}
@@ -124,7 +125,7 @@ public abstract class AbstractDailyMissionHandler: ListenersContainer
 					MissionLevelPlayerDataHolder info = player.getMissionLevelProgress();
 					info.calculateEXP(levelPoints);
 					info.storeInfoInVariable(player);
-					player.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2).addItemName(MISSION_LEVEL_POINTS).addLong(levelPoints));
+					player.sendPacket(new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2).addItemName(MISSION_LEVEL_POINTS).addLong(levelPoints));
 					break;
 				}
 				default:

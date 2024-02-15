@@ -15,4 +15,5 @@ public sealed class GameSession(byte[]? encryptionKey): Session
     //public List<Character> Characters { get; } = new();
     //public Character? SelectedCharacter { get; set; }
     public Player? Player { get; set; }
+    public bool IsDetached { get; set; }
 }

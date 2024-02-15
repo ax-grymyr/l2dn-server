@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Cubics.Conditions;
 
 namespace L2Dn.GameServer.Model.Cubics;
 

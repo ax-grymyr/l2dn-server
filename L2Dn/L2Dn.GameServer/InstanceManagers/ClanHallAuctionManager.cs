@@ -14,7 +14,7 @@ public class ClanHallAuctionManager
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ClanHallAuctionManager));
 	
 	private static readonly Map<int, ClanHallAuction> AUCTIONS = new();
-	private static ScheduledFuture<?> _endTask;
+	private static ScheduledFuture _endTask;
 	
 	protected ClanHallAuctionManager()
 	{

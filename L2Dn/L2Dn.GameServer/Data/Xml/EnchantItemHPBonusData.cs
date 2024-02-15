@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Data.Xml;
  * This class holds the Enchant HP Bonus Data.
  * @author MrPoke, Zoey76
  */
-public class EnchantItemHPBonusData
+public class EnchantItemHPBonusData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EnchantItemHPBonusData));
 	
@@ -46,9 +46,7 @@ public class EnchantItemHPBonusData
 	{
 		_armorHPBonuses.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/enchantHPBonus.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/enchantHPBonus.xml");
 		document.Elements("list").Elements("enchantHP").ForEach(parseEnchant);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _armorHPBonuses.size() + " enchant HP bonuses.");

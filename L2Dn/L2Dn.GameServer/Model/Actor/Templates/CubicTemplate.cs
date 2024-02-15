@@ -1,4 +1,7 @@
-﻿namespace L2Dn.GameServer.Model.Actor.Templates;
+﻿using L2Dn.GameServer.Model.Cubics;
+using L2Dn.GameServer.Model.Cubics.Conditions;
+
+namespace L2Dn.GameServer.Model.Actor.Templates;
 
 public class CubicTemplate : CreatureTemplate , ICubicConditionHolder
 {
@@ -82,7 +85,7 @@ public class CubicTemplate : CreatureTemplate , ICubicConditionHolder
 		return (int) _power;
 	}
 	
-	public override bool validateConditions(Cubic cubic, Creature owner, WorldObject target)
+	public bool validateConditions(Cubic cubic, Creature owner, WorldObject target)
 	{
 		if (_conditions.Count == 0)
 		{
@@ -100,13 +103,15 @@ public class CubicTemplate : CreatureTemplate , ICubicConditionHolder
 		return true;
 	}
 	
-	public override void addCondition(ICubicCondition condition)
+	public void addCondition(ICubicCondition condition)
 	{
 		_conditions.Add(condition);
 	}
-	
+
 	public override String ToString()
 	{
-		return "Cubic id: " + _id + " level: " + _level + " slot: " + _slot + " duration: " + _duration + " delay: " + _delay + " maxCount: " + _maxCount + " useUp: " + _useUp + " power: " + _power + Config.EOL + "skills: " + _skills + Config.EOL + "conditions:" + _conditions + Config.EOL;
+		return "Cubic id: " + _id + " level: " + _level + " slot: " + _slot + " duration: " + _duration + " delay: " +
+		       _delay + " maxCount: " + _maxCount + " useUp: " + _useUp + " power: " + _power + Environment.NewLine +
+		       "skills: " + _skills + Environment.NewLine + "conditions:" + _conditions + Environment.NewLine;
 	}
 }

@@ -4,20 +4,30 @@ public struct StringTokenizer
 {
     private readonly string _input;
     private readonly string _delimiters;
+    private readonly string[] _tokens;
+    private int _index = 0;
 
     public StringTokenizer(string input, string delimiters)
     {
         _input = input;
         _delimiters = delimiters;
+        _tokens = input.Split(delimiters.ToCharArray());
+        if (_tokens.Length == 1 && string.IsNullOrEmpty(_tokens[0]))
+            _tokens = Array.Empty<string>();
     }
 
     public string nextToken()
     {
-        throw new NotImplementedException();
+        return _index < _tokens.Length ? _tokens[_index++] : string.Empty;
     }
 
     public bool hasMoreTokens()
     {
-        throw new NotImplementedException();
+        return _index < _tokens.Length;
+    }
+
+    public int countTokens()
+    {
+        return _tokens.Length;
     }
 }

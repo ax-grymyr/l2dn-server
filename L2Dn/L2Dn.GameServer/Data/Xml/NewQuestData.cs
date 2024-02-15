@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Magik
  */
-public class NewQuestData
+public class NewQuestData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(NewQuestData));
 	
@@ -27,9 +27,7 @@ public class NewQuestData
 	{
 		_newQuestData.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/NewQuestData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "NewQuestData.xml");
 		document.Elements("list").Elements("quest").ForEach(parseElement);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _newQuestData.size() + " new quest data.");

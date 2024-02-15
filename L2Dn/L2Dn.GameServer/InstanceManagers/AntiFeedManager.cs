@@ -57,7 +57,7 @@ internal class AntiFeedManager
 		}
 		
 		// Players in offline mode should't be valid targets.
-		if (targetPlayer.getClient().isDetached())
+		if (targetPlayer.getClient().IsDetached)
 		{
 			return false;
 		}
@@ -76,10 +76,10 @@ internal class AntiFeedManager
 				return false;
 			}
 			
-			Connection<GameSession>? targetClient = targetPlayer.getClient();
-			Connection<GameSession>? attackerClient = attackerPlayer.getClient();
+			GameSession? targetClient = targetPlayer.getClient();
+			GameSession? attackerClient = attackerPlayer.getClient();
 			if ((targetClient == null) || (attackerClient == null) || 
-			    targetClient.isDetached() || attackerClient.isDetached())
+			    targetClient.IsDetached || attackerClient.IsDetached)
 			{
 				// unable to check ip address
 				return !Config.ANTIFEED_DISCONNECTED_AS_DUALBOX;

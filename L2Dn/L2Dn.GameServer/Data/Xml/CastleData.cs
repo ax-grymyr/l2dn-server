@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author St3eT
  */
-public class CastleData
+public class CastleData: DataReaderBase
 {
 	private readonly Map<int, List<CastleSpawnHolder>> _spawns = new();
 	private static readonly Map<int, List<SiegeGuardHolder>> _siegeGuards = new();
@@ -25,12 +25,9 @@ public class CastleData
 		_spawns.clear();
 		_siegeGuards.clear();
 		
-		string dirPath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/residences/castles");
-		Directory.EnumerateFiles(dirPath, "*.xml", SearchOption.AllDirectories).ForEach(filePath =>
+		LoadXmlDocuments(DataFileLocation.Data, "residences/castles", true).ForEach(t =>
 		{
-			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-			XDocument document = XDocument.Load(stream);
-			document.Elements("list").Elements("castle").ForEach(x => loadElement(filePath, x));
+			t.Document.Elements("list").Elements("castle").ForEach(x => loadElement(t.FilePath, x));
 		});
 	}
 

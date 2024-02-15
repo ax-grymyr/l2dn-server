@@ -1,7 +1,6 @@
 using System.Xml.Linq;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Db;
-using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
@@ -13,7 +12,7 @@ namespace L2Dn.GameServer.Data.Xml;
  * Loads the the list of classes and it's info.
  * @author Zoey76
  */
-public class ClassListData
+public class ClassListData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ClassListData));
 	
@@ -31,9 +30,7 @@ public class ClassListData
 	{
 		_classData.clear();
 
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/chars/classList.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/chars/classList.xml");
 		document.Elements("list").Elements("class").ForEach(loadElement);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _classData.size() + " class data.");

@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Data.Xml;
  * This class holds the Experience points for each level for players and pets.
  * @author mrTJO
  */
-public class ExperienceData
+public class ExperienceData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ExperienceData));
 	
@@ -33,9 +33,7 @@ public class ExperienceData
 		_expTable.clear();
 		_traningRateTable.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/stats/experience.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/experience.xml");
 		document.Elements("table").ForEach(el =>
 		{
 			MAX_LEVEL = el.Attribute("maxLevel").GetInt32() + 1;

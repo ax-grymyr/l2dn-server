@@ -40,7 +40,7 @@ public class DuelManager
 			bool playerInPvP = false;
 			foreach (Player temp in playerA.getParty().getMembers())
 			{
-				if (temp.getPvpFlag() != 0)
+				if (temp.getPvpFlag())
 				{
 					playerInPvP = true;
 					break;
@@ -50,7 +50,7 @@ public class DuelManager
 			{
 				foreach (Player temp in playerB.getParty().getMembers())
 				{
-					if (temp.getPvpFlag() != 0)
+					if (temp.getPvpFlag())
 					{
 						playerInPvP = true;
 						break;
@@ -71,7 +71,7 @@ public class DuelManager
 				return;
 			}
 		}
-		else if ((playerA.getPvpFlag() != 0) || (playerB.getPvpFlag() != 0))
+		else if ((playerA.getPvpFlag()) || (playerB.getPvpFlag()))
 		{
 			playerA.sendMessage(engagedInPvP);
 			playerB.sendMessage(engagedInPvP);

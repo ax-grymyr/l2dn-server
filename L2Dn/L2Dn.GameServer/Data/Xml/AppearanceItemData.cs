@@ -1,7 +1,6 @@
 using System.Xml.Linq;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Appearance;
 using L2Dn.GameServer.Model.Items.Types;
@@ -13,7 +12,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author UnAfraid
  */
-public class AppearanceItemData
+public class AppearanceItemData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AppearanceItemData));
 	
@@ -26,9 +25,7 @@ public class AppearanceItemData
 	
 	public void load()
 	{
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/AppearanceStones.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "AppearanceStones.xml");
 		document.Elements("list").Elements("appearance_stone").ForEach(loadElement);
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _stoneMap.size() + " stones.");

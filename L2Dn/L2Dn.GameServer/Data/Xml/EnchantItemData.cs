@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Data.Xml;
  * Loads item enchant data.
  * @author UnAfraid
  */
-public class EnchantItemData
+public class EnchantItemData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EnchantItemData));
 	
@@ -36,9 +36,7 @@ public class EnchantItemData
 		_scrolls.clear();
 		_supports.clear();
 		
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/EnchantItemData.xml");
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		XDocument document = XDocument.Load(stream);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "EnchantItemData.xml");
 		document.Elements("list").Elements("enchant").ForEach(parseEnchant);
 		document.Elements("list").Elements("support").ForEach(parseSupport);
 		
