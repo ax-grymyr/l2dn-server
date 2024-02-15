@@ -108,6 +108,12 @@ public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
 
     public void compute(TKey key, Func<TKey, TValue, TValue> func)
     {
-        
+        if (TryGetValue(key, out TValue? value))
+            this[key] = func(key, value);
+    }
+
+    public TValue merge(TKey key, TValue newValue, Func<TValue, TValue, TValue> func)
+    {
+        return AddOrUpdate(key, newValue, (_, value) => func(newValue, value));
     }
 }

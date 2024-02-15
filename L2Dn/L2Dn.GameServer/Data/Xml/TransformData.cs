@@ -1,8 +1,11 @@
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor.Transforms;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -11,7 +14,7 @@ namespace L2Dn.GameServer.Data.Xml;
  * Transformation data.
  * @author UnAfraid
  */
-public class TransformData
+public class TransformData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(TransformData));
 	
@@ -26,170 +29,140 @@ public class TransformData
 	public void load()
 	{
 		_transformData.clear();
-		parseDatapackDirectory("data/stats/transformations", false);
+		
+		LoadXmlDocuments(DataFileLocation.Data, "stats/transformations").ForEach(t =>
+		{
+			t.Document.Elements("list").Elements("transform").ForEach(x => loadElement(t.FilePath, x));
+		});
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _transformData.size() + " transform templates.");
 	}
 	
-	public void parseDocument(Document doc, File f)
+	private void loadElement(string filePath, XElement element)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		StatSet set = new StatSet(element);
+		Transform transform = new Transform(set);
+
+		XElement maleElement = element.Elements("Male").Single();
+		XElement femaleElement = element.Elements("Female").Single();
+
+		transform.setTemplate(true, loadTemplate(maleElement));
+		transform.setTemplate(false, loadTemplate(femaleElement));
+		
+		_transformData.put(transform.getId(), transform);
+	}
+
+	private TransformTemplate loadTemplate(XElement element)
+	{
+		TransformTemplate templateData = null;
+		StatSet set = new();
+		
+		foreach (XElement z in element.Elements())
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
+			switch (z.Name.LocalName)
 			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+				case "common":
 				{
-					if ("transform".equalsIgnoreCase(d.getNodeName()))
+					foreach (XElement s in z.Elements())
 					{
-						NamedNodeMap attrs = d.getAttributes();
-						StatSet set = new StatSet();
-						for (int i = 0; i < attrs.getLength(); i++)
+						switch (s.Name.LocalName)
 						{
-							Node att = attrs.item(i);
-							set.set(att.getNodeName(), att.getNodeValue());
-						}
-						Transform transform = new Transform(set);
-						for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
-						{
-							bool isMale = "Male".equalsIgnoreCase(cd.getNodeName());
-							if ("Male".equalsIgnoreCase(cd.getNodeName()) || "Female".equalsIgnoreCase(cd.getNodeName()))
+							case "base":
+							case "stats":
+							case "defense":
+							case "magicDefense":
+							case "collision":
+							case "moving":
 							{
-								TransformTemplate templateData = null;
-								for (Node z = cd.getFirstChild(); z != null; z = z.getNextSibling())
-								{
-									switch (z.getNodeName())
-									{
-										case "common":
-										{
-											for (Node s = z.getFirstChild(); s != null; s = s.getNextSibling())
-											{
-												switch (s.getNodeName())
-												{
-													case "base":
-													case "stats":
-													case "defense":
-													case "magicDefense":
-													case "collision":
-													case "moving":
-													{
-														attrs = s.getAttributes();
-														for (int i = 0; i < attrs.getLength(); i++)
-														{
-															Node att = attrs.item(i);
-															set.set(att.getNodeName(), att.getNodeValue());
-														}
-														break;
-													}
-												}
-											}
-											templateData = new TransformTemplate(set);
-											transform.setTemplate(isMale, templateData);
-											break;
-										}
-										case "skills":
-										{
-											if (templateData == null)
-											{
-												templateData = new TransformTemplate(set);
-												transform.setTemplate(isMale, templateData);
-											}
-											for (Node s = z.getFirstChild(); s != null; s = s.getNextSibling())
-											{
-												if ("skill".equals(s.getNodeName()))
-												{
-													attrs = s.getAttributes();
-													int skillId = parseInteger(attrs, "id");
-													int skillLevel = parseInteger(attrs, "level");
-													templateData.addSkill(new SkillHolder(skillId, skillLevel));
-												}
-											}
-											break;
-										}
-										case "actions":
-										{
-											if (templateData == null)
-											{
-												templateData = new TransformTemplate(set);
-												transform.setTemplate(isMale, templateData);
-											}
-											set.set("actions", z.getTextContent());
-											int[] actions = set.getIntArray("actions", " ");
-											templateData.setBasicActionList(actions);
-											break;
-										}
-										case "additionalSkills":
-										{
-											if (templateData == null)
-											{
-												templateData = new TransformTemplate(set);
-												transform.setTemplate(isMale, templateData);
-											}
-											for (Node s = z.getFirstChild(); s != null; s = s.getNextSibling())
-											{
-												if ("skill".equals(s.getNodeName()))
-												{
-													attrs = s.getAttributes();
-													int skillId = parseInteger(attrs, "id");
-													int skillLevel = parseInteger(attrs, "level");
-													int minLevel = parseInteger(attrs, "minLevel");
-													templateData.addAdditionalSkill(new AdditionalSkillHolder(skillId, skillLevel, minLevel));
-												}
-											}
-											break;
-										}
-										case "items":
-										{
-											if (templateData == null)
-											{
-												templateData = new TransformTemplate(set);
-												transform.setTemplate(isMale, templateData);
-											}
-											for (Node s = z.getFirstChild(); s != null; s = s.getNextSibling())
-											{
-												if ("item".equals(s.getNodeName()))
-												{
-													attrs = s.getAttributes();
-													int itemId = parseInteger(attrs, "id");
-													bool allowed = parseBoolean(attrs, "allowed");
-													templateData.addAdditionalItem(new AdditionalItemHolder(itemId, allowed));
-												}
-											}
-											break;
-										}
-										case "levels":
-										{
-											if (templateData == null)
-											{
-												templateData = new TransformTemplate(set);
-												transform.setTemplate(isMale, templateData);
-											}
-											
-											StatSet levelsSet = new StatSet();
-											for (Node s = z.getFirstChild(); s != null; s = s.getNextSibling())
-											{
-												if ("level".equals(s.getNodeName()))
-												{
-													attrs = s.getAttributes();
-													for (int i = 0; i < attrs.getLength(); i++)
-													{
-														Node att = attrs.item(i);
-														levelsSet.set(att.getNodeName(), att.getNodeValue());
-													}
-												}
-											}
-											templateData.addLevelData(new TransformLevelData(levelsSet));
-											break;
-										}
-									}
-								}
+								foreach (XAttribute attribute in s.Attributes())
+									set.set(attribute.Name.LocalName, attribute.Value);
+
+								break;
 							}
 						}
-						_transformData.put(transform.getId(), transform);
 					}
+
+					templateData = new TransformTemplate(set);
+					break;
+				}
+				case "skills":
+				{
+					if (templateData == null)
+						templateData = new TransformTemplate(set);
+
+					z.Elements("skill").ForEach(s =>
+					{
+						int skillId = s.Attribute("id").GetInt32();
+						int skillLevel = s.Attribute("level").GetInt32();
+						templateData.addSkill(new SkillHolder(skillId, skillLevel));
+					});
+
+					break;
+				}
+				case "actions":
+				{
+					if (templateData == null)
+						templateData = new TransformTemplate(set);
+
+					set.set("actions", z.Value);
+					int[] actions = set.getIntArray("actions", " ");
+					templateData.setBasicActionList(actions);
+					break;
+				}
+				case "additionalSkills":
+				{
+					if (templateData == null)
+						templateData = new TransformTemplate(set);
+
+					z.Elements("skill").ForEach(s =>
+					{
+						int skillId = s.Attribute("id").GetInt32();
+						int skillLevel = s.Attribute("level").GetInt32();
+						int minLevel = s.Attribute("minLevel").GetInt32();
+						templateData.addAdditionalSkill(new AdditionalSkillHolder(skillId, skillLevel, minLevel));
+					});
+
+					break;
+				}
+				case "items":
+				{
+					if (templateData == null)
+						templateData = new TransformTemplate(set);
+
+					z.Elements("item").ForEach(s =>
+					{
+						int itemId = s.Attribute("id").GetInt32();
+						bool allowed = s.Attribute("allowed").GetBoolean();
+						templateData.addAdditionalItem(new AdditionalItemHolder(itemId, allowed));
+					});
+
+					break;
+				}
+				case "levels":
+				{
+					if (templateData == null)
+						templateData = new TransformTemplate(set);
+
+					StatSet levelsSet = new StatSet();
+
+					z.Elements("level").Attributes().ForEach(a =>
+					{
+						levelsSet.set(a.Name.LocalName, a.Value);
+					});
+
+					templateData.addLevelData(new TransformLevelData(levelsSet));
+					break;
 				}
 			}
 		}
+
+		if (templateData is null)
+			throw new InvalidOperationException("Invalid transformation data");
+		
+		return templateData;
 	}
-	
+
+
 	public Transform getTransform(int id)
 	{
 		return _transformData.get(id);

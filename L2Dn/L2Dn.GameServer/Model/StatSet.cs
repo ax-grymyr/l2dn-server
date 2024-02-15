@@ -937,6 +937,11 @@ public class StatSet : IParserAdvUtils
 		return _set.ContainsKey(name);
 	}
 	
+	public bool contains(String name)
+	{
+		return _set.ContainsKey(name);
+	}
+	
 	public override string ToString()
 	{
 		return "StatSet{_set=" + _set + '}';

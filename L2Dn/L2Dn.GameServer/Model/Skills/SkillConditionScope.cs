@@ -22,4 +22,15 @@ public static class SkillConditionScopeUtil
 			_ => throw new ArgumentOutOfRangeException()
 		};
 	}
+
+	public static SkillConditionScope? FindByXmlName(string name)
+	{
+		foreach (SkillConditionScope value in Enum.GetValues<SkillConditionScope>())
+		{
+			if (GetName(value) == name)
+				return value;
+		}
+
+		return null;
+	}  
 }

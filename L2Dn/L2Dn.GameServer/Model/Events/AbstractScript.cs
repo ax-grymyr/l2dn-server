@@ -1,7 +1,9 @@
 ﻿using System.Collections.Concurrent;
 using System.Reflection;
 using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
@@ -26,11 +28,17 @@ using L2Dn.GameServer.Model.Items.Enchant.Attributes;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Olympiads;
+using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.Model.Zones;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Scripting;
+using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using FortManager = L2Dn.GameServer.Model.Actor.Instances.FortManager;
 
 namespace L2Dn.GameServer.Model.Events;
 
@@ -3381,7 +3389,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	public void playMovie(Set<Player> players, Movie movie)
 	{
-		new MovieHolder(players.Keys.ToList(), movie);
+		new MovieHolder(players.ToList(), movie);
 	}
 	
 	/**
@@ -3393,7 +3401,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	{
 		if (instance != null)
 		{
-			foreach (Player player in instance.getPlayers().Keys)
+			foreach (Player player in instance.getPlayers())
 			{
 				if ((player != null) && (player.getInstanceWorld() == instance))
 				{

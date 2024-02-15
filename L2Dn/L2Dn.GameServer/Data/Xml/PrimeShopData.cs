@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.PrimeShop;
+using L2Dn.GameServer.Network.OutgoingPackets.PrimeShop;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 using NLog;
@@ -72,7 +73,7 @@ public class PrimeShopData: DataReaderBase
 			return;
 		}
 		
-		player.sendPacket(new ExBRProductInfo(item, player));
+		player.sendPacket(new ExBRProductInfoPacket(item, player));
 	}
 	
 	public PrimeShopGroup getItem(int brId)

@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Utilities;
+﻿using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Interfaces;
 

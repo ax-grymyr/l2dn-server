@@ -1,4 +1,6 @@
-﻿namespace L2Dn.GameServer.Model.Interfaces;
+﻿using L2Dn.GameServer.Model.Zones.Types;
+
+namespace L2Dn.GameServer.Model.Interfaces;
 
 public interface ITerritorized
 {

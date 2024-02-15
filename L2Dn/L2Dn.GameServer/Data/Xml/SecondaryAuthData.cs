@@ -1,4 +1,6 @@
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -7,7 +9,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author NosBit
  */
-public class SecondaryAuthData
+public class SecondaryAuthData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SecondaryAuthData));
 	
@@ -26,56 +28,22 @@ public class SecondaryAuthData
 	public void load()
 	{
 		_forbiddenPasswords.clear();
-		parseFile(new File("config/SecondaryAuth.xml"));
+		XDocument document = LoadXmlDocument(DataFileLocation.Config, "SecondaryAuth.xml");
+		document.Elements("list").ForEach(parseElement);
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _forbiddenPasswords.size() + " forbidden passwords.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		try
-		{
-			for (Node node = doc.getFirstChild(); node != null; node = node.getNextSibling())
-			{
-				if ("list".equalsIgnoreCase(node.getNodeName()))
-				{
-					for (Node list_node = node.getFirstChild(); list_node != null; list_node = list_node.getNextSibling())
-					{
-						if ("enabled".equalsIgnoreCase(list_node.getNodeName()))
-						{
-							_enabled = Boolean.parseBoolean(list_node.getTextContent());
-						}
-						else if ("maxAttempts".equalsIgnoreCase(list_node.getNodeName()))
-						{
-							_maxAttempts = int.Parse(list_node.getTextContent());
-						}
-						else if ("banTime".equalsIgnoreCase(list_node.getNodeName()))
-						{
-							_banTime = int.Parse(list_node.getTextContent());
-						}
-						else if ("recoveryLink".equalsIgnoreCase(list_node.getNodeName()))
-						{
-							_recoveryLink = list_node.getTextContent();
-						}
-						else if ("forbiddenPasswords".equalsIgnoreCase(list_node.getNodeName()))
-						{
-							for (Node forbiddenPasswords_node = list_node.getFirstChild(); forbiddenPasswords_node != null; forbiddenPasswords_node = forbiddenPasswords_node.getNextSibling())
-							{
-								if ("password".equalsIgnoreCase(forbiddenPasswords_node.getNodeName()))
-								{
-									_forbiddenPasswords.add(forbiddenPasswords_node.getTextContent());
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		catch (Exception e)
-		{
-			LOGGER.Warn("Failed to load secondary auth data from xml.", e);
-		}
+		_enabled = (bool)element.Elements("enabled").Single();
+		_maxAttempts = (int)element.Elements("maxAttempts").Single();
+		_banTime = (int)element.Elements("banTime").Single();
+		_recoveryLink = (string)element.Elements("recoveryLink").Single();
+
+		_forbiddenPasswords.addAll(element.Elements("forbiddenPasswords").Elements("password").Select(x => (string)x));
 	}
-	
+
 	public bool isEnabled()
 	{
 		return _enabled;

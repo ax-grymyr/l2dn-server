@@ -1,7 +1,10 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Teleporters;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -9,7 +12,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author UnAfraid
  */
-public class TeleporterData
+public class TeleporterData: DataReaderBase
 {
 	// Logger instance
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(TeleporterData));
@@ -24,50 +27,46 @@ public class TeleporterData
 	public void load()
 	{
 		_teleporters.clear();
-		parseDatapackDirectory("data/teleporters", true);
+		
+		LoadXmlDocuments(DataFileLocation.Data, "teleporters", true).ForEach(t =>
+		{
+			t.Document.Elements("list").Elements("npc").ForEach(x => loadElement(t.FilePath, x));
+		});
+		
 		LOGGER.Info(GetType().Name + ": Loaded " + _teleporters.size() + " npc teleporters.");
 	}
 	
-	public void parseDocument(Document doc, File f)
+	private void loadElement(string filePath, XElement element)
 	{
-		forEach(doc, "list", list => forEach(list, "npc", npc =>
-		{
 			Map<String, TeleportHolder> teleList = new();
+
 			// Parse npc node child
-			int npcId = parseInteger(npc.getAttributes(), "id");
-			forEach(npc, node =>
+			int npcId = element.Attribute("id").GetInt32();
+
+			element.Elements("npcs").Elements("npc").Select(e => e.Attribute("id").GetInt32())
+				.ForEach(npcId => registerTeleportList(npcId, teleList));
+			
+			element.Elements("teleport").ForEach(el =>
 			{
-				switch (node.getNodeName())
+				TeleportType type = el.Attribute("type").GetEnum<TeleportType>();
+				string name = el.Attribute("name").GetString(type.ToString());
+
+				// Parse locations
+				TeleportHolder holder = new TeleportHolder(name, type);
+				
+				el.Elements("location").ForEach(e =>
 				{
-					case "teleport":
-					{
-						NamedNodeMap nodeAttrs = node.getAttributes();
-						// Parse attributes
-						TeleportType type = parseEnum(nodeAttrs, TeleportType.class, "type");
-						String name = parseString(nodeAttrs, "name", type.name());
-						// Parse locations
-						TeleportHolder holder = new TeleportHolder(name, type);
-						forEach(node, "location", location => holder.registerLocation(new StatSet(parseAttributes(location))));
-						// Register holder
-						if (teleList.putIfAbsent(name, holder) != null)
-						{
-							LOGGER.Warn("Duplicate teleport list (" + name + ") has been found for NPC: " + npcId);
-						}
-						break;
-					}
-					case "npcs":
-					{
-						forEach(node, "npc", npcNode =>
-						{
-							int id = parseInteger(npcNode.getAttributes(), "id");
-							registerTeleportList(id, teleList);
-						});
-						break;
-					}
+					holder.registerLocation(new StatSet(e));
+				});
+
+				// Register holder
+				if (teleList.putIfAbsent(name, holder) != null)
+				{
+					LOGGER.Error("Duplicate teleport list (" + name + ") has been found for NPC: " + npcId);
 				}
 			});
+
 			registerTeleportList(npcId, teleList);
-		}));
 	}
 	
 	public int getTeleporterCount()

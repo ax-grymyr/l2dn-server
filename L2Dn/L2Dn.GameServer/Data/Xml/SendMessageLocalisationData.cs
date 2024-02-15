@@ -1,6 +1,8 @@
-using L2Dn.GameServer.Model;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -8,7 +10,7 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Mobius
  */
-public class SendMessageLocalisationData
+public class SendMessageLocalisationData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SendMessageLocalisationData));
 	
@@ -29,16 +31,24 @@ public class SendMessageLocalisationData
 		{
 			foreach (String lang in Config.MULTILANG_ALLOWED)
 			{
-				File file = new File("data/lang/" + lang + "/SendMessageLocalisation.xml");
-				if (!file.isFile())
-				{
+				string filePath = GetFullPath(DataFileLocation.Data, "lang/" + lang + "/SendMessageLocalisation.xml");
+				if (!File.Exists(filePath))
 					continue;
-				}
 				
-				SEND_MESSAGE_LOCALISATIONS.put(lang, new ConcurrentHashMap<String[], String[]>());
+				SEND_MESSAGE_LOCALISATIONS.put(lang, new());
 				_lang = lang;
-				parseDatapackFile("data/lang/" + lang + "/SendMessageLocalisation.xml");
-				int count = SEND_MESSAGE_LOCALISATIONS.get(lang).values().size();
+				
+				XDocument document =
+					LoadXmlDocument(DataFileLocation.Data, "lang/" + lang + "/SendMessageLocalisation.xml");
+
+				document.Elements("list").Elements("localisation").ForEach(el =>
+				{
+					string[] message = el.Attribute("message").GetString().Split(SPLIT_STRING);
+					string[] translation = el.Attribute("translation").GetString().Split(SPLIT_STRING);
+					SEND_MESSAGE_LOCALISATIONS.get(_lang).put(message, translation);
+				});
+				
+				int count = SEND_MESSAGE_LOCALISATIONS.get(lang).Count;
 				if (count == 0)
 				{
 					SEND_MESSAGE_LOCALISATIONS.remove(lang);
@@ -49,15 +59,6 @@ public class SendMessageLocalisationData
 				}
 			}
 		}
-	}
-	
-	public void parseDocument(Document doc, File f)
-	{
-		forEach(doc, "list", listNode => forEach(listNode, "localisation", localisationNode =>
-		{
-			StatSet set = new StatSet(parseAttributes(localisationNode));
-			SEND_MESSAGE_LOCALISATIONS.get(_lang).put(set.getString("message").Split(SPLIT_STRING), set.getString("translation").Split(SPLIT_STRING));
-		}));
 	}
 	
 	public static String getLocalisation(Player player, String message)
@@ -73,10 +74,10 @@ public class SendMessageLocalisationData
 				String[] replacementMessage;
 				String localisation = message;
 				bool found;
-				foreach (Entry<String[], String[]> entry in localisations.entrySet())
+				foreach (var entry in localisations)
 				{
-					searchMessage = entry.getKey();
-					replacementMessage = entry.getValue();
+					searchMessage = entry.Key;
+					replacementMessage = entry.Value;
 					
 					// Exact match.
 					if (searchMessage.Length == 1)

@@ -1,13 +1,17 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
 namespace L2Dn.GameServer.Data.Xml;
 
@@ -32,16 +36,16 @@ namespace L2Dn.GameServer.Data.Xml;
  * For XML schema please refer to skillTrees.xsd in datapack in xsd folder and for parameters documentation refer to documentation.txt in skillTrees folder.<br>
  * @author Zoey76
  */
-public class SkillTreeData
+public class SkillTreeData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SkillTreeData));
 	
 	// ClassId, Map of Skill Hash Code, SkillLearn
-	private static readonly Map<ClassId, Map<long, SkillLearn>> _classSkillTrees = new();
-	private static readonly Map<ClassId, Map<long, SkillLearn>> _transferSkillTrees = new();
+	private static readonly Map<CharacterClass, Map<long, SkillLearn>> _classSkillTrees = new();
+	private static readonly Map<CharacterClass, Map<long, SkillLearn>> _transferSkillTrees = new();
 	private static readonly Map<Race, Map<long, SkillLearn>> _raceSkillTree = new();
 	private static readonly Map<SubclassType, Map<long, SkillLearn>> _revelationSkillTree = new();
-	private static readonly Map<ClassId, Set<int>> _awakeningSaveSkillTree = new();
+	private static readonly Map<CharacterClass, Set<int>> _awakeningSaveSkillTree = new();
 	// Skill Hash Code, SkillLearn
 	private static readonly Map<long, SkillLearn> _collectSkillTree = new();
 	private static readonly Map<long, SkillLearn> _fishingSkillTree = new();
@@ -59,15 +63,15 @@ public class SkillTreeData
 	private static readonly Map<long, SkillLearn> _gameMasterSkillTree = new();
 	private static readonly Map<long, SkillLearn> _gameMasterAuraSkillTree = new();
 	// Remove skill tree
-	private static readonly Map<ClassId, Set<int>> _removeSkillCache = new();
+	private static readonly Map<CharacterClass, Set<int>> _removeSkillCache = new();
 	
 	// Checker, sorted arrays of hash codes
-	private Map<int, long[]> _skillsByClassIdHashCodes; // Occupation skills
-	private Map<int, long[]> _skillsByRaceHashCodes; // Race-specific Transformations
+	private Map<CharacterClass, long[]> _skillsByClassIdHashCodes; // Occupation skills
+	private Map<Race, long[]> _skillsByRaceHashCodes; // Race-specific Transformations
 	private long[] _allSkillsHashCodes; // Fishing, Collection, Transformations, Common Skills.
 	
 	/** Parent class Ids are read from XML and stored in this map, to allow easy customization. */
-	private static readonly Map<ClassId, ClassId> _parentClassMap = new();
+	private static readonly Map<CharacterClass, CharacterClass> _parentClassMap = new();
 	
 	private bool _loading = true;
 	
@@ -103,7 +107,10 @@ public class SkillTreeData
 		_awakeningSaveSkillTree.clear();
 		
 		// Load files.
-		parseDatapackDirectory("data/skillTrees/", true);
+		LoadXmlDocuments(DataFileLocation.Data, "skillTrees", true).ForEach(t =>
+		{
+			t.Document.Elements("list").Elements("skillTree").ForEach(x => loadElement(t.FilePath, x));
+		});
 		
 		// Generate check arrays.
 		generateCheckArrays();
@@ -113,285 +120,236 @@ public class SkillTreeData
 		
 		_loading = false;
 	}
-	
+
 	/**
 	 * Parse a skill tree file and store it into the correct skill tree.
 	 */
-	public void parseDocument(Document doc, File f)
+	private void loadElement(string filePath, XElement element)
 	{
-		NamedNodeMap attrs;
-		Node attr;
-		String type = null;
-		Race race = null;
-		SubclassType subType = null;
-		int cId = -1;
-		int parentClassId = -1;
-		ClassId classId = null;
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		Map<long, SkillLearn> classSkillTree = new();
+		Map<long, SkillLearn> transferSkillTree = new();
+		Map<long, SkillLearn> raceSkillTree = new();
+		Map<long, SkillLearn> revelationSkillTree = new();
+
+		string type = element.Attribute("type").GetString();
+		CharacterClass? classId = (CharacterClass?)element.Attribute("classId")?.GetInt32();
+		CharacterClass? parentClassId = (CharacterClass?)element.Attribute("parentClassId")?.GetInt32();
+		SubclassType? subType = element.Attribute("subType")?.GetEnum<SubclassType>();
+		Race? race = element.Attribute("race")?.GetEnum<Race>();
+
+		if (classId != null && parentClassId != null && !_parentClassMap.containsKey(classId.Value))
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
+			_parentClassMap.put(classId.Value, parentClassId.Value);
+		}
+
+		foreach (XElement c in element.Elements("skill"))
+		{
+			StatSet learnSkillSet = new StatSet(c);
+			SkillLearn skillLearn = new SkillLearn(learnSkillSet);
+
+			// test if skill exists
+			SkillData.getInstance().getSkill(skillLearn.getSkillId(), skillLearn.getSkillLevel());
+			foreach (XElement b in c.Elements())
 			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+				switch (b.Name.LocalName)
 				{
-					if ("skillTree".equalsIgnoreCase(d.getNodeName()))
+					case "item":
 					{
-						Map<long, SkillLearn> classSkillTree = new();
-						Map<long, SkillLearn> transferSkillTree = new();
-						Map<long, SkillLearn> raceSkillTree = new();
-						Map<long, SkillLearn> revelationSkillTree = new();
-						type = d.getAttributes().getNamedItem("type").getNodeValue();
-						attr = d.getAttributes().getNamedItem("classId");
-						if (attr != null)
+						List<ItemHolder> itemList = new();
+						int count = b.Attribute("count").GetInt32();
+						foreach (string id in b.Attribute("id").GetString().Split(","))
+							itemList.add(new ItemHolder(int.Parse(id), count));
+
+						skillLearn.addRequiredItem(itemList);
+						break;
+					}
+					case "preRequisiteSkill":
+					{
+						skillLearn.addPreReqSkill(new SkillHolder(b.Attribute("id").GetInt32(),
+							b.Attribute("lvl").GetInt32()));
+						break;
+					}
+					case "race":
+					{
+						skillLearn.addRace(Enum.Parse<Race>(b.Value));
+						break;
+					}
+					case "residenceId":
+					{
+						skillLearn.addResidenceId((int)b);
+						break;
+					}
+					case "socialClass":
+					{
+						skillLearn.setSocialClass(Enum.Parse<SocialClass>(b.Value));
+						break;
+					}
+					case "removeSkill":
+					{
+						int removeSkillId = b.Attribute("id").GetInt32();
+						skillLearn.addRemoveSkills(removeSkillId);
+						if (!b.Attribute("onlyReplaceByLearn").GetBoolean(false))
 						{
-							cId = int.Parse(attr.getNodeValue());
-							classId = ClassId.getClassId(cId);
+							_removeSkillCache.computeIfAbsent(classId.Value, k => new()).add(removeSkillId);
 						}
-						else
-						{
-							cId = -1;
-						}
-						
-						attr = d.getAttributes().getNamedItem("race");
-						if (attr != null)
-						{
-							race = parseEnum(attr, Race.class);
-						}
-						
-						attr = d.getAttributes().getNamedItem("subType");
-						if (attr != null)
-						{
-							subType = parseEnum(attr, SubclassType.class);
-						}
-						
-						attr = d.getAttributes().getNamedItem("parentClassId");
-						if (attr != null)
-						{
-							parentClassId = int.Parse(attr.getNodeValue());
-							if ((cId > -1) && (cId != parentClassId) && (parentClassId > -1) && !_parentClassMap.containsKey(classId))
-							{
-								_parentClassMap.put(classId, ClassId.getClassId(parentClassId));
-							}
-						}
-						
-						for (Node c = d.getFirstChild(); c != null; c = c.getNextSibling())
-						{
-							if ("skill".equalsIgnoreCase(c.getNodeName()))
-							{
-								StatSet learnSkillSet = new StatSet();
-								attrs = c.getAttributes();
-								for (int i = 0; i < attrs.getLength(); i++)
-								{
-									attr = attrs.item(i);
-									learnSkillSet.set(attr.getNodeName(), attr.getNodeValue());
-								}
-								
-								SkillLearn skillLearn = new SkillLearn(learnSkillSet);
-								
-								// test if skill exists
-								SkillData.getInstance().getSkill(skillLearn.getSkillId(), skillLearn.getSkillLevel());
-								for (Node b = c.getFirstChild(); b != null; b = b.getNextSibling())
-								{
-									attrs = b.getAttributes();
-									switch (b.getNodeName())
-									{
-										case "item":
-										{
-											List<ItemHolder> itemList = new ArrayList<>(1);
-											int count = parseInteger(attrs, "count");
-											foreach (String id in parseString(attrs, "id").split(","))
-											{
-												itemList.add(new ItemHolder(int.Parse(id), count));
-											}
-											skillLearn.addRequiredItem(itemList);
-											break;
-										}
-										case "preRequisiteSkill":
-										{
-											skillLearn.addPreReqSkill(new SkillHolder(parseInteger(attrs, "id"), parseInteger(attrs, "lvl")));
-											break;
-										}
-										case "race":
-										{
-											skillLearn.addRace(Race.valueOf(b.getTextContent()));
-											break;
-										}
-										case "residenceId":
-										{
-											skillLearn.addResidenceId(int.Parse(b.getTextContent()));
-											break;
-										}
-										case "socialClass":
-										{
-											skillLearn.setSocialClass(Enum.valueOf(SocialClass.class, b.getTextContent()));
-											break;
-										}
-										case "removeSkill":
-										{
-											int removeSkillId = parseInteger(attrs, "id");
-											skillLearn.addRemoveSkills(removeSkillId);
-											if (!parseBoolean(attrs, "onlyReplaceByLearn", false).booleanValue())
-											{
-												_removeSkillCache.computeIfAbsent(classId, k => new HashSet<>()).add(removeSkillId);
-											}
-											break;
-										}
-									}
-								}
-								
-								long skillHashCode = SkillData.getSkillHashCode(skillLearn.getSkillId(), skillLearn.getSkillLevel());
-								switch (type)
-								{
-									case "classSkillTree":
-									{
-										if (cId != -1)
-										{
-											classSkillTree.put(skillHashCode, skillLearn);
-										}
-										else
-										{
-											_commonSkillTree.put(skillHashCode, skillLearn);
-										}
-										break;
-									}
-									case "transferSkillTree":
-									{
-										transferSkillTree.put(skillHashCode, skillLearn);
-										break;
-									}
-									case "collectSkillTree":
-									{
-										_collectSkillTree.put(skillHashCode, skillLearn);
-										break;
-									}
-									case "raceSkillTree":
-									{
-										raceSkillTree.put(skillHashCode, skillLearn);
-										break;
-									}
-									case "revelationSkillTree":
-									{
-										revelationSkillTree.put(skillHashCode, skillLearn);
-										break;
-									}
-									case "fishingSkillTree":
-									{
-										_fishingSkillTree.put(skillHashCode, skillLearn);
-										break;
-									}
-									case "pledgeSkillTree":
-									{
-										_pledgeSkillTree.put(skillHashCode, skillLearn);
-										break;
-									}
-									case "subClassSkillTree":
-									{
-										_subClassSkillTree.put(skillHashCode, skillLearn);
-										break;
-									}
-									case "subPledgeSkillTree":
-									{
-										_subPledgeSkillTree.put(skillHashCode, skillLearn);
-										break;
-									}
-									case "transformSkillTree":
-									{
-										_transformSkillTree.put(skillHashCode, skillLearn);
-										break;
-									}
-									case "nobleSkillTree":
-									{
-										_nobleSkillTree.put(skillHashCode, skillLearn);
-										break;
-									}
-									case "abilitySkillTree":
-									{
-										_abilitySkillTree.put(skillHashCode, skillLearn);
-										break;
-									}
-									case "alchemySkillTree":
-									{
-										_alchemySkillTree.put(skillHashCode, skillLearn);
-										break;
-									}
-									case "heroSkillTree":
-									{
-										_heroSkillTree.put(skillHashCode, skillLearn);
-										break;
-									}
-									case "gameMasterSkillTree":
-									{
-										_gameMasterSkillTree.put(skillHashCode, skillLearn);
-										break;
-									}
-									case "gameMasterAuraSkillTree":
-									{
-										_gameMasterAuraSkillTree.put(skillHashCode, skillLearn);
-										break;
-									}
-									case "dualClassSkillTree":
-									{
-										_dualClassSkillTree.put(skillHashCode, skillLearn);
-										break;
-									}
-									case "awakeningSaveSkillTree":
-									{
-										_awakeningSaveSkillTree.computeIfAbsent(classId, k => new HashSet<>()).add(skillLearn.getSkillId());
-										break;
-									}
-									default:
-									{
-										LOGGER.Warn(GetType().Name + ": Unknown Skill Tree type: " + type + "!");
-									}
-								}
-							}
-						}
-						
-						if (type.equals("transferSkillTree"))
-						{
-							_transferSkillTrees.put(classId, transferSkillTree);
-						}
-						else if (type.equals("classSkillTree") && (cId > -1))
-						{
-							Map<long, SkillLearn> classSkillTrees = _classSkillTrees.get(classId);
-							if (classSkillTrees == null)
-							{
-								_classSkillTrees.put(classId, classSkillTree);
-							}
-							else
-							{
-								classSkillTrees.putAll(classSkillTree);
-							}
-						}
-						else if (type.equals("raceSkillTree") && (race != null))
-						{
-							Map<long, SkillLearn> raceSkillTrees = _raceSkillTree.get(race);
-							if (raceSkillTrees == null)
-							{
-								_raceSkillTree.put(race, raceSkillTree);
-							}
-							else
-							{
-								raceSkillTrees.putAll(raceSkillTree);
-							}
-						}
-						else if (type.equals("revelationSkillTree") && (subType != null))
-						{
-							Map<long, SkillLearn> revelationSkillTrees = _revelationSkillTree.get(subType);
-							if (revelationSkillTrees == null)
-							{
-								_revelationSkillTree.put(subType, revelationSkillTree);
-							}
-							else
-							{
-								revelationSkillTrees.putAll(revelationSkillTree);
-							}
-						}
+
+						break;
 					}
 				}
 			}
+
+			long skillHashCode = SkillData.getSkillHashCode(skillLearn.getSkillId(), skillLearn.getSkillLevel());
+			switch (type)
+			{
+				case "classSkillTree":
+				{
+					if (classId is not null)
+					{
+						classSkillTree.put(skillHashCode, skillLearn);
+					}
+					else
+					{
+						_commonSkillTree.put(skillHashCode, skillLearn);
+					}
+
+					break;
+				}
+				case "transferSkillTree":
+				{
+					transferSkillTree.put(skillHashCode, skillLearn);
+					break;
+				}
+				case "collectSkillTree":
+				{
+					_collectSkillTree.put(skillHashCode, skillLearn);
+					break;
+				}
+				case "raceSkillTree":
+				{
+					raceSkillTree.put(skillHashCode, skillLearn);
+					break;
+				}
+				case "revelationSkillTree":
+				{
+					revelationSkillTree.put(skillHashCode, skillLearn);
+					break;
+				}
+				case "fishingSkillTree":
+				{
+					_fishingSkillTree.put(skillHashCode, skillLearn);
+					break;
+				}
+				case "pledgeSkillTree":
+				{
+					_pledgeSkillTree.put(skillHashCode, skillLearn);
+					break;
+				}
+				case "subClassSkillTree":
+				{
+					_subClassSkillTree.put(skillHashCode, skillLearn);
+					break;
+				}
+				case "subPledgeSkillTree":
+				{
+					_subPledgeSkillTree.put(skillHashCode, skillLearn);
+					break;
+				}
+				case "transformSkillTree":
+				{
+					_transformSkillTree.put(skillHashCode, skillLearn);
+					break;
+				}
+				case "nobleSkillTree":
+				{
+					_nobleSkillTree.put(skillHashCode, skillLearn);
+					break;
+				}
+				case "abilitySkillTree":
+				{
+					_abilitySkillTree.put(skillHashCode, skillLearn);
+					break;
+				}
+				case "alchemySkillTree":
+				{
+					_alchemySkillTree.put(skillHashCode, skillLearn);
+					break;
+				}
+				case "heroSkillTree":
+				{
+					_heroSkillTree.put(skillHashCode, skillLearn);
+					break;
+				}
+				case "gameMasterSkillTree":
+				{
+					_gameMasterSkillTree.put(skillHashCode, skillLearn);
+					break;
+				}
+				case "gameMasterAuraSkillTree":
+				{
+					_gameMasterAuraSkillTree.put(skillHashCode, skillLearn);
+					break;
+				}
+				case "dualClassSkillTree":
+				{
+					_dualClassSkillTree.put(skillHashCode, skillLearn);
+					break;
+				}
+				case "awakeningSaveSkillTree":
+				{
+					_awakeningSaveSkillTree.computeIfAbsent(classId.Value, k => new())
+						.add(skillLearn.getSkillId());
+					break;
+				}
+				default:
+				{
+					LOGGER.Warn(GetType().Name + ": Unknown Skill Tree type: " + type + "!");
+					break;
+				}
+			}
+		}
+
+		if (type.equals("transferSkillTree"))
+		{
+			_transferSkillTrees.put(classId.Value, transferSkillTree);
+		}
+		else if (type.equals("classSkillTree") && (classId is not null))
+		{
+			Map<long, SkillLearn> classSkillTrees = _classSkillTrees.get(classId.Value);
+			if (classSkillTrees == null)
+			{
+				_classSkillTrees.put(classId.Value, classSkillTree);
+			}
+			else
+			{
+				classSkillTrees.putAll(classSkillTree);
+			}
+		}
+		else if (type.equals("raceSkillTree") && (race != null))
+		{
+			Map<long, SkillLearn> raceSkillTrees = _raceSkillTree.get(race.Value);
+			if (raceSkillTrees == null)
+			{
+				_raceSkillTree.put(race.Value, raceSkillTree);
+			}
+			else
+			{
+				raceSkillTrees.putAll(raceSkillTree);
+			}
+		}
+		else if (type.equals("revelationSkillTree") && (subType != null))
+		{
+			Map<long, SkillLearn> revelationSkillTrees = _revelationSkillTree.get(subType.Value);
+			if (revelationSkillTrees == null)
+			{
+				_revelationSkillTree.put(subType.Value, revelationSkillTree);
+			}
+			else
+			{
+				revelationSkillTrees.putAll(revelationSkillTree);
+			}
 		}
 	}
-	
+
 	/**
 	 * Method to get the complete skill tree for a given class id.<br>
 	 * Include all skills common to all classes.<br>
@@ -399,12 +357,12 @@ public class SkillTreeData
 	 * @param classId the class skill tree Id
 	 * @return the complete Class Skill Tree including skill trees from parent class for a given {@code classId}
 	 */
-	public Map<long, SkillLearn> getCompleteClassSkillTree(ClassId classId)
+	public Map<long, SkillLearn> getCompleteClassSkillTree(CharacterClass classId)
 	{
 		Map<long, SkillLearn> skillTree = new();
 		// Add all skills that belong to all classes.
 		skillTree.putAll(_commonSkillTree);
-		ClassId currentClassId = classId;
+		CharacterClass currentClassId = classId;
 		while ((currentClassId != null) && (_classSkillTrees.get(currentClassId) != null))
 		{
 			skillTree.putAll(_classSkillTrees.get(currentClassId));
@@ -419,7 +377,7 @@ public class SkillTreeData
 	 * @param classId the transfer skill tree Id
 	 * @return the complete Transfer Skill Tree for a given {@code classId}
 	 */
-	public Map<long, SkillLearn> getTransferSkillTree(ClassId classId)
+	public Map<long, SkillLearn> getTransferSkillTree(CharacterClass classId)
 	{
 		return _transferSkillTrees.get(classId);
 	}
@@ -587,21 +545,23 @@ public class SkillTreeData
 		}
 		return result;
 	}
-	
+
 	/**
 	 * @param player
 	 * @param classId
 	 * @return {@code true} if player is able to learn new skills on his current level, {@code false} otherwise.
 	 */
-	public bool hasAvailableSkills(Player player, ClassId classId)
+	public bool hasAvailableSkills(Player player, CharacterClass classId)
 	{
 		Map<long, SkillLearn> skills = getCompleteClassSkillTree(classId);
 		foreach (SkillLearn skill in skills.values())
 		{
-			if ((skill.getSkillId() == CommonSkill.DIVINE_INSPIRATION.getId()) || skill.isAutoGet() || skill.isLearnedByFS() || (skill.getGetLevel() > player.getLevel()))
+			if ((skill.getSkillId() == (int)CommonSkill.DIVINE_INSPIRATION) || skill.isAutoGet() ||
+			    skill.isLearnedByFS() || (skill.getGetLevel() > player.getLevel()))
 			{
 				continue;
 			}
+
 			Skill oldSkill = player.getKnownSkill(skill.getSkillId());
 			if ((oldSkill != null) && (oldSkill.getLevel() == (skill.getSkillLevel() - 1)))
 			{
@@ -612,9 +572,10 @@ public class SkillTreeData
 				return true;
 			}
 		}
+
 		return false;
 	}
-	
+
 	/**
 	 * Gets the available skills.
 	 * @param player the learning skill player
@@ -623,7 +584,7 @@ public class SkillTreeData
 	 * @param includeAutoGet if {@code true} Auto-Get skills will be included
 	 * @return all available skills for a given {@code player}, {@code classId}, {@code includeByFs} and {@code includeAutoGet}
 	 */
-	public ICollection<SkillLearn> getAvailableSkills(Player player, ClassId classId, bool includeByFs, bool includeAutoGet)
+	public ICollection<SkillLearn> getAvailableSkills(Player player, CharacterClass classId, bool includeByFs, bool includeAutoGet)
 	{
 		return getAvailableSkills(player, classId, includeByFs, includeAutoGet, true, player);
 	}
@@ -638,7 +599,7 @@ public class SkillTreeData
 	 * @param holder
 	 * @return all available skills for a given {@code player}, {@code classId}, {@code includeByFs} and {@code includeAutoGet}
 	 */
-	private ICollection<SkillLearn> getAvailableSkills(Player player, ClassId classId, bool includeByFs, bool includeAutoGet, bool includeRequiredItems, ISkillsHolder holder)
+	private ICollection<SkillLearn> getAvailableSkills(Player player, CharacterClass classId, bool includeByFs, bool includeAutoGet, bool includeRequiredItems, ISkillsHolder holder)
 	{
 		Set<SkillLearn> result = new();
 		Map<long, SkillLearn> skills = getCompleteClassSkillTree(classId);
@@ -649,14 +610,17 @@ public class SkillTreeData
 			return result;
 		}
 		
-		foreach (Entry<long, SkillLearn> entry in skills.entrySet())
+		foreach (var entry in skills)
 		{
-			SkillLearn skill = entry.getValue();
-			if (((skill.getSkillId() == CommonSkill.DIVINE_INSPIRATION.getId()) && (!Config.AUTO_LEARN_DIVINE_INSPIRATION && includeAutoGet) && !player.isGM()) || (!includeAutoGet && skill.isAutoGet()) || (!includeByFs && skill.isLearnedByFS()) || isRemoveSkill(classId, skill.getSkillId()))
+			SkillLearn skill = entry.Value;
+			if (((skill.getSkillId() == (int)CommonSkill.DIVINE_INSPIRATION) &&
+			     (!Config.AUTO_LEARN_DIVINE_INSPIRATION && includeAutoGet) && !player.isGM()) ||
+			    (!includeAutoGet && skill.isAutoGet()) || (!includeByFs && skill.isLearnedByFS()) ||
+			    isRemoveSkill(classId, skill.getSkillId()))
 			{
 				continue;
 			}
-			
+
 			// Forgotten Scroll requirements checked above.
 			if (!includeRequiredItems && !skill.getRequiredItems().isEmpty() && !skill.isLearnedByFS())
 			{
@@ -721,12 +685,12 @@ public class SkillTreeData
 			
 			foreach (int removeId in removeSkills)
 			{
-				SEARCH: foreach (SkillLearn knownLearn in result)
+				foreach (SkillLearn knownLearn in result)
 				{
 					if (knownLearn.getSkillId() == removeId)
 					{
 						result.remove(knownLearn);
-						break SEARCH;
+						break;
 					}
 				}
 			}
@@ -743,12 +707,12 @@ public class SkillTreeData
 				{
 					foreach (int removeId in removeSkills)
 					{
-						SEARCH: foreach (SkillLearn knownLearn in result)
+						foreach (SkillLearn knownLearn in result)
 						{
 							if (knownLearn.getSkillId() == removeId)
 							{
 								result.remove(knownLearn);
-								break SEARCH;
+								break;
 							}
 						}
 					}
@@ -768,7 +732,7 @@ public class SkillTreeData
 	 * @param includeRequiredItems if {@code true} skills that have required items will be added
 	 * @return a list of auto learnable skills for the player.
 	 */
-	public ICollection<Skill> getAllAvailableSkills(Player player, ClassId classId, bool includeByFs, bool includeAutoGet, bool includeRequiredItems)
+	public ICollection<Skill> getAllAvailableSkills(Player player, CharacterClass classId, bool includeByFs, bool includeAutoGet, bool includeRequiredItems)
 	{
 		PlayerSkillHolder holder = new PlayerSkillHolder(player);
 		Set<int> removed = new();
@@ -860,7 +824,7 @@ public class SkillTreeData
 				continue;
 			}
 			
-			if (!skill.getRaces().isEmpty() && !skill.getRaces().contains(race))
+			if (!skill.getRaces().isEmpty() && !skill.getRaces().Contains(race))
 			{
 				continue;
 			}
@@ -940,7 +904,7 @@ public class SkillTreeData
 		foreach (SkillLearn skill  in  _fishingSkillTree.values())
 		{
 			// If skill is Race specific and the player's race isn't allowed, skip it.
-			if (!skill.getRaces().isEmpty() && !skill.getRaces().contains(playerRace))
+			if (!skill.getRaces().isEmpty() && !skill.getRaces().Contains(playerRace))
 			{
 				continue;
 			}
@@ -1048,7 +1012,7 @@ public class SkillTreeData
 	public List<SkillLearn> getAvailableTransferSkills(Player player)
 	{
 		List<SkillLearn> result = new();
-		ClassId classId = player.getClassId();
+		CharacterClass classId = player.getClassId();
 		if (!_transferSkillTrees.containsKey(classId))
 		{
 			return result;
@@ -1076,7 +1040,7 @@ public class SkillTreeData
 		Race race = player.getRace();
 		foreach (SkillLearn skill  in  _transformSkillTree.values())
 		{
-			if ((player.getLevel() >= skill.getGetLevel()) && (skill.getRaces().isEmpty() || skill.getRaces().contains(race)))
+			if ((player.getLevel() >= skill.getGetLevel()) && (skill.getRaces().isEmpty() || skill.getRaces().Contains(race)))
 			{
 				Skill oldSkill = player.getSkills().get(skill.getSkillId());
 				if (oldSkill != null)
@@ -1215,7 +1179,8 @@ public class SkillTreeData
 				result.add(skill);
 			}
 		}
-		result.sort(Comparator.comparing(SkillLearn::getSkillId));
+
+		result.Sort((s, s1) => s.getSkillId().CompareTo(s1.getSkillId()));
 		return result;
 	}
 	
@@ -1229,7 +1194,7 @@ public class SkillTreeData
 		List<SkillLearn> result = new();
 		foreach (SkillLearn skill  in  _pledgeSkillTree.values())
 		{
-			if (skill.isResidencialSkill() && skill.getResidenceIds().contains(residenceId))
+			if (skill.isResidencialSkill() && skill.getResidenceIds().Contains(residenceId))
 			{
 				result.add(skill);
 			}
@@ -1354,7 +1319,7 @@ public class SkillTreeData
 	 * @param classId the class skill tree Id
 	 * @return the class skill from the Class Skill Trees for a given {@code classId}, {@code id} and {@code lvl}
 	 */
-	public SkillLearn getClassSkill(int id, int lvl, ClassId classId)
+	public SkillLearn getClassSkill(int id, int lvl, CharacterClass classId)
 	{
 		return getCompleteClassSkillTree(classId).get(SkillData.getSkillHashCode(id, lvl));
 	}
@@ -1399,7 +1364,7 @@ public class SkillTreeData
 	 * @param classId the transfer skill tree Id
 	 * @return the transfer skill from the Transfer Skill Trees for a given {@code classId}, {@code id} and {@code lvl}
 	 */
-	private SkillLearn getTransferSkill(int id, int lvl, ClassId classId)
+	private SkillLearn getTransferSkill(int id, int lvl, CharacterClass classId)
 	{
 		if (_transferSkillTrees.get(classId) != null)
 		{
@@ -1509,7 +1474,7 @@ public class SkillTreeData
 		return minLevel;
 	}
 	
-	public ICollection<SkillLearn> getNextAvailableSkills(Player player, ClassId classId, bool includeByFs, bool includeAutoGet)
+	public ICollection<SkillLearn> getNextAvailableSkills(Player player, CharacterClass classId, bool includeByFs, bool includeAutoGet)
 	{
 		Map<long, SkillLearn> completeClassSkillTree = getCompleteClassSkillTree(classId);
 		Set<SkillLearn> result = new();
@@ -1602,7 +1567,7 @@ public class SkillTreeData
 	
 	public void cleanSkillUponChangeClass(Player player)
 	{
-		ClassId currentClass = player.getClassId();
+		CharacterClass currentClass = player.getClassId();
 		foreach (Skill skill  in  player.getAllSkills())
 		{
 			int maxLevel = SkillData.getInstance().getMaxLevel(skill.getId());
@@ -1611,19 +1576,24 @@ public class SkillTreeData
 			{
 				// Do not remove equipped item skills.
 				bool isItemSkill = false;
-				SEARCH: foreach (Item item  in  player.getInventory().getItems())
+				foreach (Item item  in  player.getInventory().getItems())
 				{
 					List<ItemSkillHolder> itemSkills = item.getTemplate().getAllSkills();
 					if (itemSkills != null)
 					{
+						bool breakOuter = false;
 						foreach (ItemSkillHolder itemSkillHolder  in  itemSkills)
 						{
 							if (itemSkillHolder.getSkillId() == skill.getId())
 							{
 								isItemSkill = true;
-								break SEARCH;
+								breakOuter = true;
+								break;
 							}
 						}
+
+						if (breakOuter)
+							break;
 					}
 				}
 				if (!isItemSkill)
@@ -1634,7 +1604,7 @@ public class SkillTreeData
 		}
 		
 		// Check previous classes as well, in case classes where skipped.
-		while (currentClass.getParent() != null)
+		while (CharacterClassInfo.GetClassInfo(currentClass).getParent() != null)
 		{
 			Set<int> removedList = _removeSkillCache.get(currentClass);
 			if (removedList != null)
@@ -1648,7 +1618,8 @@ public class SkillTreeData
 					}
 				}
 			}
-			currentClass = currentClass.getParent();
+			
+			currentClass = CharacterClassInfo.GetClassInfo(currentClass).getParent().getId();
 		}
 	}
 	
@@ -1692,19 +1663,19 @@ public class SkillTreeData
 		return _pledgeSkillTree.containsKey(hashCode) || _subPledgeSkillTree.containsKey(hashCode);
 	}
 	
-	public bool isRemoveSkill(ClassId classId, int skillId)
+	public bool isRemoveSkill(CharacterClass classId, int skillId)
 	{
-		return _removeSkillCache.getOrDefault(classId, Collections.emptySet()).Contains(skillId);
+		return _removeSkillCache.getOrDefault(classId, new()).Contains(skillId);
 	}
 	
-	public bool isCurrentClassSkillNoParent(ClassId classId, long hashCode)
+	public bool isCurrentClassSkillNoParent(CharacterClass classId, long hashCode)
 	{
-		return _classSkillTrees.getOrDefault(classId, Collections.emptyMap()).containsKey(hashCode);
+		return _classSkillTrees.getOrDefault(classId, new()).containsKey(hashCode);
 	}
 	
-	public bool isAwakenSaveSkill(ClassId classId, int skillId)
+	public bool isAwakenSaveSkill(CharacterClass classId, int skillId)
 	{
-		return _awakeningSaveSkillTree.getOrDefault(classId, Collections.emptySet()).Contains(skillId);
+		return _awakeningSaveSkillTree.getOrDefault(classId, new()).Contains(skillId);
 	}
 	
 	/**
@@ -1732,30 +1703,29 @@ public class SkillTreeData
 		
 		// Class specific skills:
 		Map<long, SkillLearn> tempMap;
-		Set<ClassId> keySet = _classSkillTrees.keySet();
 		_skillsByClassIdHashCodes = new();
-		foreach (ClassId cls  in  keySet)
+		foreach (CharacterClass cls  in  _classSkillTrees.Keys)
 		{
 			i = 0;
 			tempMap = getCompleteClassSkillTree(cls);
 			array = new long[tempMap.size()];
-			foreach (long h  in  tempMap.keySet())
+			foreach (long h  in  tempMap.Keys)
 			{
 				array[i++] = h;
 			}
 			tempMap.clear();
-			Arrays.sort(array);
-			_skillsByClassIdHashCodes.put(cls.getId(), array);
+			Array.Sort(array);
+			_skillsByClassIdHashCodes.put(cls, array);
 		}
 		
 		// Race specific skills from Fishing and Transformation skill trees.
 		List<long> list = new();
-		_skillsByRaceHashCodes = new HashMap<>(Race.values().length);
-		foreach (Race r  in  Race.values())
+		_skillsByRaceHashCodes = new();
+		foreach (Race r  in  Enum.GetValues<Race>())
 		{
-			foreach (SkillLearn s  in  _fishingSkillTree.values())
+			foreach (SkillLearn s in  _fishingSkillTree.values())
 			{
-				if (s.getRaces().contains(r))
+				if (s.getRaces().Contains(r))
 				{
 					list.add(SkillData.getSkillHashCode(s.getSkillId(), s.getSkillLevel()));
 				}
@@ -1763,7 +1733,7 @@ public class SkillTreeData
 			
 			foreach (SkillLearn s  in  _transformSkillTree.values())
 			{
-				if (s.getRaces().contains(r))
+				if (s.getRaces().Contains(r))
 				{
 					list.add(SkillData.getSkillHashCode(s.getSkillId(), s.getSkillLevel()));
 				}
@@ -1775,9 +1745,10 @@ public class SkillTreeData
 			{
 				array[i++] = s;
 			}
-			Arrays.sort(array);
-			_skillsByRaceHashCodes.put(r.ordinal(), array);
-			list.clear();
+			
+			Array.Sort(array);
+			_skillsByRaceHashCodes.put(r, array);
+			list.Clear();
 		}
 		
 		// Skills available for all classes and races
@@ -1826,7 +1797,7 @@ public class SkillTreeData
 		{
 			_allSkillsHashCodes[j++] = hashcode;
 		}
-		Arrays.sort(_allSkillsHashCodes);
+		Array.Sort(_allSkillsHashCodes);
 	}
 	
 	/**
@@ -1856,17 +1827,17 @@ public class SkillTreeData
 		
 		int maxLevel = SkillData.getInstance().getMaxLevel(skill.getId());
 		long hashCode = SkillData.getSkillHashCode(skill.getId(), Math.Min(skill.getLevel(), maxLevel));
-		if (Arrays.binarySearch(_skillsByClassIdHashCodes.get(player.getClassId().getId()), hashCode) >= 0)
+		if (Array.BinarySearch(_skillsByClassIdHashCodes.get(player.getClassId()), hashCode) >= 0)
 		{
 			return true;
 		}
 		
-		if (Arrays.binarySearch(_skillsByRaceHashCodes.get(player.getRace().ordinal()), hashCode) >= 0)
+		if (Array.BinarySearch(_skillsByRaceHashCodes.get(player.getRace()), hashCode) >= 0)
 		{
 			return true;
 		}
 		
-		if (Arrays.binarySearch(_allSkillsHashCodes, hashCode) >= 0)
+		if (Array.BinarySearch(_allSkillsHashCodes, hashCode) >= 0)
 		{
 			return true;
 		}
@@ -1918,7 +1889,7 @@ public class SkillTreeData
 		int dwarvenOnlyFishingSkillCount = 0;
 		foreach (SkillLearn fishSkill  in  _fishingSkillTree.values())
 		{
-			if (fishSkill.getRaces().contains(Race.DWARF))
+			if (fishSkill.getRaces().Contains(Race.DWARF))
 			{
 				dwarvenOnlyFishingSkillCount++;
 			}

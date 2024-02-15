@@ -21,8 +21,8 @@ public class TransformTemplate
 	
 	public TransformTemplate(StatSet set)
 	{
-		_collisionRadius = set.contains("radius") ? set.getFloat("radius") : null;
-		_collisionHeight = set.contains("height") ? set.getFloat("height") : null;
+		_collisionRadius = set.Contains("radius") ? set.getFloat("radius") : null;
+		_collisionHeight = set.Contains("height") ? set.getFloat("height") : null;
 		_baseAttackType = set.getEnum<WeaponType>("attackType", null);
 		if (set.contains("range"))
 		{
@@ -187,7 +187,7 @@ public class TransformTemplate
 	 */
 	public double getStats(Stat stat, double defaultValue)
 	{
-		return _baseStats == null ? defaultValue : _baseStats.getOrDefault(stat.ordinal(), defaultValue);
+		return _baseStats == null ? defaultValue : _baseStats.getOrDefault(stat, defaultValue);
 	}
 	
 	/**

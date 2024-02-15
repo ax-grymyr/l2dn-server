@@ -1,6 +1,8 @@
-﻿using L2Dn.GameServer.Model.InstanceZones;
+﻿using L2Dn.GameServer.InstanceManagers;
+using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Quests;
+using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Spawns;
@@ -10,22 +12,23 @@ public class SpawnTemplate: ITerritorized, IParameterized<StatSet>
 	private readonly String _name;
 	private readonly String _ai;
 	private readonly bool _spawnByDefault;
-	private readonly File _file;
+	private readonly string _filePath;
 	private List<SpawnTerritory> _territories;
 	private List<BannedSpawnTerritory> _bannedTerritories;
 	private readonly List<SpawnGroup> _groups = new();
 	private StatSet _parameters;
-	
-	public SpawnTemplate(StatSet set, File file): this(set.getString("name", null), set.getString("ai", null), set.getBoolean("spawnByDefault", true), file)
+
+	public SpawnTemplate(StatSet set, string filePath)
+		: this(set.getString("name", null), set.getString("ai", null), set.getBoolean("spawnByDefault", true), filePath)
 	{
 	}
-	
-	private SpawnTemplate(String name, String ai, bool spawnByDefault, File file)
+
+	private SpawnTemplate(String name, String ai, bool spawnByDefault, string filePath)
 	{
 		_name = name;
 		_ai = ai;
 		_spawnByDefault = spawnByDefault;
-		_file = file;
+		_filePath = filePath;
 	}
 	
 	public String getName()
@@ -43,9 +46,9 @@ public class SpawnTemplate: ITerritorized, IParameterized<StatSet>
 		return _spawnByDefault;
 	}
 	
-	public File getFile()
+	public string getFile()
 	{
-		return _file;
+		return _filePath;
 	}
 	
 	public void addTerritory(SpawnTerritory territory)
@@ -172,7 +175,7 @@ public class SpawnTemplate: ITerritorized, IParameterized<StatSet>
 	
 	public SpawnTemplate clone()
 	{
-		SpawnTemplate template = new SpawnTemplate(_name, _ai, _spawnByDefault, _file);
+		SpawnTemplate template = new SpawnTemplate(_name, _ai, _spawnByDefault, _filePath);
 		
 		// Clone parameters
 		template.setParameters(_parameters);

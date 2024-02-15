@@ -31,4 +31,15 @@ public static class EffectScopeUtil
 			_ => throw new ArgumentOutOfRangeException()
 		};
 	}
+
+	public static EffectScope? FindByName(string name)
+	{
+		foreach (EffectScope effectScope in Enum.GetValues<EffectScope>())
+		{
+			if (string.Equals(name, effectScope.GetName()))
+				return effectScope;
+		}
+
+		return null;
+	}
 }

@@ -1,7 +1,8 @@
 namespace L2Dn.GameServer.Model.Skills;
 
 /**
- * An Enum to hold some important references to commonly used skills
+ * An Enum to hold some important references to commonly used skills.
+ * Values correspond to client IDs.
  * @author DrHouse
  */
 public enum CommonSkill

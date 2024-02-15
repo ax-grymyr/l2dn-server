@@ -1,7 +1,11 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -10,7 +14,7 @@ namespace L2Dn.GameServer.Data.Xml;
  * This class parse and hold all pet parameters.<br>
  * @author Zoey76 (rework)
  */
-public class PetDataTable
+public class PetDataTable: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PetDataTable));
 	
@@ -28,21 +32,23 @@ public class PetDataTable
 	public void load()
 	{
 		_pets.clear();
-		parseDatapackDirectory("data/stats/pets", false);
 		
-		try 
+		LoadXmlDocuments(DataFileLocation.Data, "stats/pets").ForEach(t =>
 		{
-			Connection conn = DatabaseFactory.getConnection();
-			PreparedStatement ps = conn.prepareStatement("SELECT * FROM pets");
-			ResultSet rs = ps.executeQuery();
-			while (rs.next())
+			t.Document.Elements("pets").Elements("pet").ForEach(x => loadElement(t.FilePath, x));
+		});
+		
+		try
+		{
+			using GameServerDbContext ctx = new();
+			var pets = ctx.Pets.Select(pet => new { pet.ItemObjectId, pet.Name });
+			foreach (var pet in pets)
 			{
-				String name = rs.getString("name");
-				if (name == null)
-				{
+				string? name = pet.Name;
+				if (string.IsNullOrEmpty(name))
 					name = "No name";
-				}
-				_petNames.put(rs.getInt("item_obj_id"), name);
+
+				_petNames.put(pet.ItemObjectId, name);
 			}
 		}
 		catch (Exception e)
@@ -52,117 +58,93 @@ public class PetDataTable
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _pets.size() + " pets.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void loadElement(string filePath, XElement element)
 	{
-		NamedNodeMap attrs;
-		Node n = doc.getFirstChild();
-		for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+		int npcId = element.Attribute("id").GetInt32();
+		int itemId = element.Attribute("itemId").GetInt32();
+		int index = element.Attribute("index").GetInt32(0);
+		int defaultPetType = element.Attribute("defaultPetType").GetInt32(0);
+		EvolveLevel evolveLevel = element.Attribute("evolveLevel").GetEnum<EvolveLevel>();
+		int petType = element.Attribute("type").GetInt32(0);
+
+		// index ignored for now
+		PetData data = new PetData(npcId, itemId, defaultPetType, evolveLevel, index, petType);
+
+		element.Elements("set").ForEach(el =>
 		{
-			if (d.getNodeName().equals("pet"))
+			el.Elements("food").ForEach(e =>
 			{
-				int npcId = parseInteger(d.getAttributes(), "id");
-				int itemId = parseInteger(d.getAttributes(), "itemId");
-				int index = parseInteger(d.getAttributes(), "index");
-				int defaultPetType = parseInteger(d.getAttributes(), "defaultPetType");
-				EvolveLevel evolveLevel = parseEnum(d.getAttributes(), EvolveLevel.class, "evolveLevel");
-				int petType = parseInteger(d.getAttributes(), "type");
-				if (defaultPetType == null)
+				string[] val = e.Attribute("val").GetString().Split(";");
+				foreach (string foodId in val)
+					data.addFood(int.Parse(foodId));
+			});
+
+			el.Elements("load").ForEach(e =>
+			{
+				int val = e.Attribute("val").GetInt32();
+				data.setLoad(val);
+			});
+
+			el.Elements("hungry_limit").ForEach(e =>
+			{
+				int val = e.Attribute("val").GetInt32();
+				data.setHungryLimit(val);
+			});
+
+			el.Elements("sync_level").ForEach(e =>
+			{
+				int val = e.Attribute("val").GetInt32();
+				data.setSyncLevel(val == 1);
+			});
+
+			// evolve ignored
+		});
+
+		element.Elements("skills").Elements("skill").ForEach(el =>
+		{
+			int skillId = el.Attribute("skillId").GetInt32();
+			int skillLevel = el.Attribute("skillLevel").GetInt32();
+			int minLevel = el.Attribute("minLevel").GetInt32();
+			data.addNewSkill(skillId, skillLevel, minLevel);
+		});
+
+		element.Elements("stats").Elements("stat").ForEach(el =>
+		{
+			int level = el.Attribute("level").GetInt32();
+			StatSet set = new StatSet();
+			el.Elements("set").ForEach(e =>
+			{
+				string name = e.Attribute("name").GetString();
+				string val = e.Attribute("val").GetString();
+				if (name == "speed_on_ride")
 				{
-					defaultPetType = 0;
-				}
-				if (index == null)
-				{
-					index = 0;
-				}
-				if (petType == null)
-				{
-					petType = 0;
-				}
-				// index ignored for now
-				PetData data = new PetData(npcId, itemId, defaultPetType, evolveLevel, index, petType);
-				for (Node p = d.getFirstChild(); p != null; p = p.getNextSibling())
-				{
-					if (p.getNodeName().equals("set"))
+					set.set("walkSpeedOnRide", e.Attribute("walk").GetString());
+					set.set("runSpeedOnRide", e.Attribute("run").GetString());
+					set.set("slowSwimSpeedOnRide", e.Attribute("slowSwim").GetString());
+					set.set("fastSwimSpeedOnRide", e.Attribute("fastSwim").GetString());
+					if (e.Attribute("slowFly") != null)
 					{
-						attrs = p.getAttributes();
-						String type = attrs.getNamedItem("name").getNodeValue();
-						if ("food".equals(type))
-						{
-							foreach (String foodId in attrs.getNamedItem("val").getNodeValue().split(";"))
-							{
-								data.addFood(int.Parse(foodId));
-							}
-						}
-						else if ("load".equals(type))
-						{
-							data.setLoad(parseInteger(attrs, "val"));
-						}
-						else if ("hungry_limit".equals(type))
-						{
-							data.setHungryLimit(parseInteger(attrs, "val"));
-						}
-						else if ("sync_level".equals(type))
-						{
-							data.setSyncLevel(parseInteger(attrs, "val") == 1);
-						}
-						// evolve ignored
+						set.set("slowFlySpeedOnRide", e.Attribute("slowFly").GetString());
 					}
-					else if (p.getNodeName().equals("skills"))
+
+					if (e.Attribute("fastFly") != null)
 					{
-						for (Node s = p.getFirstChild(); s != null; s = s.getNextSibling())
-						{
-							if (s.getNodeName().equals("skill"))
-							{
-								attrs = s.getAttributes();
-								data.addNewSkill(parseInteger(attrs, "skillId"), parseInteger(attrs, "skillLevel"), parseInteger(attrs, "minLevel"));
-							}
-						}
-					}
-					else if (p.getNodeName().equals("stats"))
-					{
-						for (Node s = p.getFirstChild(); s != null; s = s.getNextSibling())
-						{
-							if (s.getNodeName().equals("stat"))
-							{
-								int level = int.Parse(s.getAttributes().getNamedItem("level").getNodeValue());
-								StatSet set = new StatSet();
-								for (Node bean = s.getFirstChild(); bean != null; bean = bean.getNextSibling())
-								{
-									if (bean.getNodeName().equals("set"))
-									{
-										attrs = bean.getAttributes();
-										if (attrs.getNamedItem("name").getNodeValue().equals("speed_on_ride"))
-										{
-											set.set("walkSpeedOnRide", attrs.getNamedItem("walk").getNodeValue());
-											set.set("runSpeedOnRide", attrs.getNamedItem("run").getNodeValue());
-											set.set("slowSwimSpeedOnRide", attrs.getNamedItem("slowSwim").getNodeValue());
-											set.set("fastSwimSpeedOnRide", attrs.getNamedItem("fastSwim").getNodeValue());
-											if (attrs.getNamedItem("slowFly") != null)
-											{
-												set.set("slowFlySpeedOnRide", attrs.getNamedItem("slowFly").getNodeValue());
-											}
-											if (attrs.getNamedItem("fastFly") != null)
-											{
-												set.set("fastFlySpeedOnRide", attrs.getNamedItem("fastFly").getNodeValue());
-											}
-										}
-										else
-										{
-											set.set(attrs.getNamedItem("name").getNodeValue(), attrs.getNamedItem("val").getNodeValue());
-										}
-									}
-								}
-								data.addNewStat(level, new PetLevelData(set));
-							}
-						}
+						set.set("fastFlySpeedOnRide", e.Attribute("fastFly").GetString());
 					}
 				}
-				_pets.put(npcId, data);
-			}
-		}
+				else
+				{
+					set.set(name, val);
+				}
+			});
+
+			data.addNewStat(level, new PetLevelData(set));
+		});
+
+		_pets.put(npcId, data);
 	}
-	
+
 	/**
 	 * @param itemId
 	 * @return
@@ -240,30 +222,33 @@ public class PetDataTable
 	 */
 	public static bool isMountable(int npcId)
 	{
-		return MountType.findByNpcId(npcId) != MountType.NONE;
+		return MountTypeUtil.findByNpcId(npcId) != MountType.NONE;
 	}
 	
 	public int getTypeByIndex(int index)
 	{
-		Entry<int, PetData> first = _pets.entrySet().stream().filter(it => it.getValue().getIndex() == index).findFirst().orElse(null);
-		return first == null ? 0 : first.getValue().getType();
+		var first = _pets.FirstOrDefault(it => it.Value.getIndex() == index);
+		return first.Value == null ? 0 : first.Value.getType();
 	}
-	
+
 	public PetData getPetDataByEvolve(int itemId, EvolveLevel evolveLevel, int index)
 	{
-		Optional<Entry<int, PetData>> firstByItem = _pets.entrySet().stream().filter(it => (it.getValue().getItemId() == itemId) && (it.getValue().getIndex() == index) && (it.getValue().getEvolveLevel() == evolveLevel)).findFirst();
-		return firstByItem.map(Entry::getValue).orElse(null);
+		var firstByItem = _pets.FirstOrDefault(it =>
+			(it.Value.getItemId() == itemId) && (it.Value.getIndex() == index) &&
+			(it.Value.getEvolveLevel() == evolveLevel)).Value;
+		return firstByItem;
 	}
-	
+
 	public PetData getPetDataByEvolve(int itemId, EvolveLevel evolveLevel)
 	{
-		Optional<Entry<int, PetData>> firstByItem = _pets.entrySet().stream().filter(it => (it.getValue().getItemId() == itemId) && (it.getValue().getEvolveLevel() == evolveLevel)).findFirst();
-		return firstByItem.map(Entry::getValue).orElse(null);
+		var firstByItem = _pets
+			.FirstOrDefault(it => (it.Value.getItemId() == itemId) && (it.Value.getEvolveLevel() == evolveLevel)).Value;
+		return firstByItem;
 	}
-	
+
 	public List<PetData> getPetDatasByEvolve(int itemId, EvolveLevel evolveLevel)
 	{
-		return _pets.values().stream().filter(petData => (petData.getItemId() == itemId) && (petData.getEvolveLevel() == evolveLevel)).collect(Collectors.toList());
+		return _pets.values().Where(petData => (petData.getItemId() == itemId) && (petData.getEvolveLevel() == evolveLevel)).ToList();
 	}
 	
 	public void setPetName(int objectId, String name)

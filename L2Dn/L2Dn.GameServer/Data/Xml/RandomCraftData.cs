@@ -19,7 +19,7 @@ public class RandomCraftData: DataReaderBase
 	private static readonly Map<int, RandomCraftExtractDataHolder> EXTRACT_DATA = new();
 	private static readonly Map<int, RandomCraftRewardDataHolder> REWARD_DATA = new();
 	
-	private List<RandomCraftRewardDataHolder> _randomRewards = null;
+	private RandomCraftRewardDataHolder[] _randomRewards = Array.Empty<RandomCraftRewardDataHolder>();
 	private int _randomRewardIndex = 0;
 	
 	protected RandomCraftData()
@@ -101,17 +101,15 @@ public class RandomCraftData: DataReaderBase
 	[MethodImpl(MethodImplOptions.Synchronized)] 
 	public RandomCraftRewardItemHolder getNewReward()
 	{
-		RandomCraftRewardDataHolder reward = null;
 		double random = Rnd.get(100d);
-		while (!REWARD_DATA.isEmpty())
+		while (_randomRewards.Length > 0)
 		{
-			if (_randomRewardIndex == (REWARD_DATA.size() - 1))
-			{
+			if (_randomRewardIndex == _randomRewards.Length - 1)
 				randomizeRewards();
-			}
+
 			_randomRewardIndex++;
 			
-			reward = _randomRewards.get(_randomRewardIndex);
+			RandomCraftRewardDataHolder reward = _randomRewards[_randomRewardIndex];
 			if (random < reward.getChance())
 			{
 				return new RandomCraftRewardItemHolder(reward.getItemId(), reward.getCount(), false, 20);
@@ -123,8 +121,8 @@ public class RandomCraftData: DataReaderBase
 	private void randomizeRewards()
 	{
 		_randomRewardIndex = -1;
-		_randomRewards = new(REWARD_DATA.values());
-		Collections.shuffle(_randomRewards);
+		_randomRewards = REWARD_DATA.values().ToArray();
+		Random.Shared.Shuffle(_randomRewards);
 	}
 	
 	public bool isAnnounce(int id)
