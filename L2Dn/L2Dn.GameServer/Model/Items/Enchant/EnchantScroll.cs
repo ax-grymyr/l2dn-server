@@ -1,5 +1,7 @@
 using System.Xml.Linq;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Utilities;

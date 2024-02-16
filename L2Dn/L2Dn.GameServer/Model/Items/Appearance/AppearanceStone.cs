@@ -119,7 +119,7 @@ public class AppearanceStone
 		return _cost;
 	}
 
-	public long getLifeTime()
+	public TimeSpan getLifeTime()
 	{
 		return _lifeTime;
 	}

@@ -3,8 +3,10 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
 using L2Dn.GameServer.Model.Items.Types;
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Items;
@@ -285,8 +287,8 @@ public class Weapon: ItemTemplate
 				}
 				if (caster.isPlayer())
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_BEEN_ACTIVATED);
-					sm.addSkillName(skill);
+					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_HAS_BEEN_ACTIVATED);
+					sm.Params.addSkillName(skill);
 					caster.sendPacket(sm);
 				}
 			}

@@ -11,6 +11,8 @@ using L2Dn.GameServer.Model.Items.Enchant.Attributes;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Stats.Functions;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -156,14 +158,14 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 		_additionalName = set.getString("additionalName", null);
 		_icon = set.getString("icon", null);
 		_weight = set.getInt("weight", 0);
-		_materialType = set.getEnum("material", MaterialType.class, MaterialType.STEEL);
+		_materialType = set.getEnum("material", MaterialType.STEEL);
 		_equipReuseDelay = set.getInt("equip_reuse_delay", 0) * 1000;
 		_duration = set.getInt("duration", -1);
 		_time = set.getInt("time", -1);
 		_autoDestroyTime = set.getInt("auto_destroy_time", -1) * 1000;
 		_bodyPart = ItemData.SLOTS.get(set.getString("bodypart", "none"));
 		_referencePrice = set.getInt("price", 0);
-		_crystalType = set.getEnum("crystal_type", CrystalType.class, CrystalType.NONE);
+		_crystalType = set.getEnum("crystal_type", CrystalType.NONE);
 		_crystalCount = set.getInt("crystal_count", 0);
 		_stackable = set.getBoolean("is_stackable", false);
 		_sellable = set.getBoolean("is_sellable", true);
@@ -196,12 +198,12 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 		_artifactSlot = set.getInt("artifactSlot", 0);
 		_immediateEffect = set.getBoolean("immediate_effect", false);
 		_exImmediateEffect = set.getBoolean("ex_immediate_effect", false);
-		_defaultAction = set.getEnum("default_action", ActionType.class, ActionType.NONE);
+		_defaultAction = set.getEnum("default_action", ActionType.NONE);
 		_useSkillDisTime = set.getInt("useSkillDisTime", 0);
 		_defaultEnchantLevel = set.getInt("enchanted", 0);
 		_reuseDelay = set.getInt("reuse_delay", 0);
 		_sharedReuseGroup = set.getInt("shared_reuse_group", 0);
-		_commissionItemType = set.getEnum("commissionItemType", CommissionItemType.class, CommissionItemType.OTHER_ITEM);
+		_commissionItemType = set.getEnum("commissionItemType", CommissionItemType.OTHER_ITEM);
 		_common = ((_itemId >= 11605) && (_itemId <= 12361));
 		_heroItem = ((_itemId >= 6611) && (_itemId <= 6621)) || ((_itemId >= 9388) && (_itemId <= 9390)) || (_itemId == 6842);
 		_pvpItem = ((_itemId >= 10667) && (_itemId <= 10835)) || ((_itemId >= 12852) && (_itemId <= 12977)) || ((_itemId >= 14363) && (_itemId <= 14525)) || (_itemId == 14528) || (_itemId == 14529) || (_itemId == 14558) || ((_itemId >= 15913) && (_itemId <= 16024)) || ((_itemId >= 16134) && (_itemId <= 16147)) || (_itemId == 16149) || (_itemId == 16151) || (_itemId == 16153) || (_itemId == 16155) || (_itemId == 16157) || (_itemId == 16159) || ((_itemId >= 16168) && (_itemId <= 16176)) || ((_itemId >= 16179) && (_itemId <= 16220));
@@ -602,7 +604,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	 */
 	public bool isEnchantable()
 	{
-		return (Arrays.binarySearch(Config.ENCHANT_BLACKLIST, _itemId) < 0) && _enchantable;
+		return _enchantable && !Config.ENCHANT_BLACKLIST.Contains(_itemId);
 	}
 	
 	/**
@@ -688,38 +690,38 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	{
 		switch (template.getStat())
 		{
-			case FIRE_RES:
-			case FIRE_POWER:
+			case Stat.FIRE_RES:
+			case Stat.FIRE_POWER:
 			{
 				setAttributes(new AttributeHolder(AttributeType.FIRE, (int) template.getValue()));
 				break;
 			}
-			case WATER_RES:
-			case WATER_POWER:
+			case Stat.WATER_RES:
+			case Stat.WATER_POWER:
 			{
 				setAttributes(new AttributeHolder(AttributeType.WATER, (int) template.getValue()));
 				break;
 			}
-			case WIND_RES:
-			case WIND_POWER:
+			case Stat.WIND_RES:
+			case Stat.WIND_POWER:
 			{
 				setAttributes(new AttributeHolder(AttributeType.WIND, (int) template.getValue()));
 				break;
 			}
-			case EARTH_RES:
-			case EARTH_POWER:
+			case Stat.EARTH_RES:
+			case Stat.EARTH_POWER:
 			{
 				setAttributes(new AttributeHolder(AttributeType.EARTH, (int) template.getValue()));
 				break;
 			}
-			case HOLY_RES:
-			case HOLY_POWER:
+			case Stat.HOLY_RES:
+			case Stat.HOLY_POWER:
 			{
 				setAttributes(new AttributeHolder(AttributeType.HOLY, (int) template.getValue()));
 				break;
 			}
-			case DARK_RES:
-			case DARK_POWER:
+			case Stat.DARK_RES:
+			case Stat.DARK_POWER:
 			{
 				setAttributes(new AttributeHolder(AttributeType.DARK, (int) template.getValue()));
 				break;
@@ -894,17 +896,17 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 				if (sendMessage)
 				{
 					String msg = preCondition.getMessage();
-					int msgId = preCondition.getMessageId();
+					SystemMessageId msgId = preCondition.getMessageId();
 					if (msg != null)
 					{
 						creature.sendMessage(msg);
 					}
 					else if (msgId != 0)
 					{
-						SystemMessage sm = new SystemMessage(msgId);
+						SystemMessagePacket sm = new SystemMessagePacket(msgId);
 						if (preCondition.isAddName())
 						{
-							sm.addItemName(_itemId);
+							sm.Params.addItemName(_itemId);
 						}
 						creature.sendPacket(sm);
 					}

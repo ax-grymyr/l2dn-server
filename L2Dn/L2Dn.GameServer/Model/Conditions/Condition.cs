@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.Enums;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
@@ -12,7 +13,7 @@ public abstract class Condition: ConditionListener
 {
 	private ConditionListener _listener;
 	private String _msg;
-	private int _msgId;
+	private SystemMessageId _msgId;
 	private bool _addName = false;
 	private bool _result;
 	
@@ -38,7 +39,7 @@ public abstract class Condition: ConditionListener
 	 * Sets the message id.
 	 * @param msgId the new message id
 	 */
-	public void setMessageId(int msgId)
+	public void setMessageId(SystemMessageId msgId)
 	{
 		_msgId = msgId;
 	}
@@ -47,7 +48,7 @@ public abstract class Condition: ConditionListener
 	 * Gets the message id.
 	 * @return the message id
 	 */
-	public int getMessageId()
+	public SystemMessageId getMessageId()
 	{
 		return _msgId;
 	}

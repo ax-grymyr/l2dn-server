@@ -53,6 +53,8 @@ public struct CrystalTypeInfo(
 
 public static class CrystalTypeUtil
 {
+	public static CrystalType getlevel(this CrystalType crystalType) => CrystalTypeInfo.Get(crystalType).getLevel();
+    
 	public static ItemGrade GetItemGrade(this CrystalType crystalType) =>
 		crystalType switch
 		{

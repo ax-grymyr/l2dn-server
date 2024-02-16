@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
@@ -153,7 +154,7 @@ public class Henna
 	 */
 	public bool isAllowedClass(Player c)
 	{
-		return _wearClass.Contains(c.getClassId().level());
+		return _wearClass.Contains(c.getClassId().GetLevel());
 	}
 	
 	/**

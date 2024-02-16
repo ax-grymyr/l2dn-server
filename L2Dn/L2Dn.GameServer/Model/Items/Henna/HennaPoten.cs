@@ -1,3 +1,5 @@
+using L2Dn.GameServer.Data.Xml;
+
 namespace L2Dn.GameServer.Model.Items.Henna;
 
 /**
