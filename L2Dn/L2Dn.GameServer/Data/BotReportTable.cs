@@ -263,8 +263,8 @@ public class BotReportTable
 				if (reuse < TimeSpan.FromMilliseconds(Config.BOTREPORT_REPORT_DELAY))
 				{
 					sm = new SystemMessagePacket(SystemMessageId.YOU_CAN_MAKE_ANOTHER_REPORT_IN_S1_MIN_YOU_HAVE_S2_POINT_S_LEFT);
-					sm.addInt((int)reuse.TotalMinutes);
-					sm.addInt(rcdRep.getPointsLeft());
+					sm.Params.addInt((int)reuse.TotalMinutes);
+					sm.Params.addInt(rcdRep.getPointsLeft());
 					reporter.sendPacket(sm);
 					return false;
 				}
@@ -288,12 +288,12 @@ public class BotReportTable
 		}
 		
 		sm = new SystemMessagePacket(SystemMessageId.C1_WAS_REPORTED_AS_A_BOT);
-		sm.addString(bot.getName());
+		sm.Params.addString(bot.getName());
 		reporter.sendPacket(sm);
 		
 		sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_USED_A_REPORT_POINT_ON_C1_YOU_HAVE_S2_POINTS_REMAINING_ON_THIS_ACCOUNT);
-		sm.addString(bot.getName());
-		sm.addInt(rcdRep.getPointsLeft());
+		sm.Params.addString(bot.getName());
+		sm.Params.addInt(rcdRep.getPointsLeft());
 		reporter.sendPacket(sm);
 		
 		if (bot.isPlayer())

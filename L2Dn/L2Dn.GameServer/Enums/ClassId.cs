@@ -169,6 +169,15 @@ public enum ClassId
 }
 
 
+public static class CharacterClassUtil
+{
+	public static CharacterClassInfo GetClassInfo(this CharacterClass cId) => CharacterClassInfo.GetClassInfo(cId);
+	public static CharacterClass? GetParentClass(this CharacterClass cId) => CharacterClassInfo.GetClassInfo(cId).getParent()?.getId();
+	public static CharacterClass GetRootClass(this CharacterClass cId) => CharacterClassInfo.GetClassInfo(cId).getRootClassId().getId();
+	public static Race GetRace(this CharacterClass cId) => CharacterClassInfo.GetClassInfo(cId).getRace();
+	public static int GetLevel(this CharacterClass cId) => CharacterClassInfo.GetClassInfo(cId).level();
+}
+
 public class CharacterClassInfo
 {
 	public static readonly CharacterClassInfo FIGHTER = new(CharacterClass.FIGHTER, false, Race.HUMAN, null);

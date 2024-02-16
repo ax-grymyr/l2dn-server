@@ -225,7 +225,7 @@ public class AdminData: DataReaderBase
 			foreach (String name in getAllGmNames(player.isGM()))
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.GM_C1);
-				sm.addString(name);
+				sm.Params.addString(name);
 				player.sendPacket(sm);
 			}
 		}

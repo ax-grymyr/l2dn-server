@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Utilities;
 
@@ -18,14 +19,15 @@ public static class BuilderUtil
 	{
 		if (Config.GM_STARTUP_BUILDER_HIDE)
 		{
-			player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "SYS", SendMessageLocalisationData.getLocalisation(player, message)));
+			player.sendPacket(new CreatureSayPacket(null, ChatType.GENERAL, "SYS",
+				SendMessageLocalisationData.getLocalisation(player, message)));
 		}
 		else
 		{
 			player.sendMessage(message);
 		}
 	}
-	
+
 	/**
 	 * Sends builder html message to the player.
 	 * @param player
@@ -33,9 +35,9 @@ public static class BuilderUtil
 	 */
 	public static void sendHtmlMessage(Player player, String message)
 	{
-		player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "HTML", message));
+		player.sendPacket(new CreatureSayPacket(null, ChatType.GENERAL, "HTML", message));
 	}
-	
+
 	/**
 	 * Changes player's hiding state.
 	 * @param player
@@ -51,20 +53,20 @@ public static class BuilderUtil
 				// already hiding
 				return false;
 			}
-			
+
 			if (!player.isInvisible() && !hide)
 			{
 				// already visible
 				return false;
 			}
 		}
-		
+
 		player.setSilenceMode(hide);
 		player.setInvul(hide);
 		player.setInvisible(hide);
-		
+
 		player.broadcastUserInfo();
-		player.sendPacket(new ExUserInfoAbnormalVisualEffect(player));
+		player.sendPacket(new ExUserInfoAbnormalVisualEffectPacket(player));
 		return true;
 	}
 }

@@ -1,6 +1,10 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using System.Collections.Immutable;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.GameServer.Model.ItemContainers;
+using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Utilities;
@@ -105,7 +109,7 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 		_usingServerSideTitle = set.getBoolean("usingServerSideTitle", false);
 		setRace(set.getEnum("race", Race.NONE));
 		_sex = set.getEnum("sex", Sex.ETC);
-		_elementalType = set.getEnum("elementalType", ElementalType.class, ElementalType.NONE);
+		_elementalType = set.getEnum("elementalType", ElementalType.NONE);
 		_chestId = set.getInt("chestId", 0);
 		if ((_chestId > 0) && (ItemData.getInstance().getTemplate(_chestId) == null))
 		{
@@ -164,9 +168,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 		_collisionRadiusGrown = set.getFloat("collisionRadiusGrown", 0);
 		_collisionHeightGrown = set.getFloat("collisionHeightGrown", 0);
 		_mpRewardValue = set.getInt("mpRewardValue", 0);
-		_mpRewardType = set.getEnum("mpRewardType", MpRewardType.class, MpRewardType.DIFF);
+		_mpRewardType = set.getEnum("mpRewardType", MpRewardType.DIFF);
 		_mpRewardTicks = set.getInt("mpRewardTicks", 0);
-		_mpRewardAffectType = set.getEnum("mpRewardAffectType", MpRewardAffectType.class, MpRewardAffectType.SOLO);
+		_mpRewardAffectType = set.getEnum("mpRewardAffectType", MpRewardAffectType.SOLO);
 		if (Config.ENABLE_NPC_STAT_MULTIPLIERS) // Custom NPC Stat Multipliers
 		{
 			switch (_type)
@@ -179,8 +183,8 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 					_baseValues.put(Stat.MAGIC_ATTACK, getBaseMAtk() * Config.MONSTER_MATK_MULTIPLIER);
 					_baseValues.put(Stat.PHYSICAL_DEFENCE, getBasePDef() * Config.MONSTER_PDEF_MULTIPLIER);
 					_baseValues.put(Stat.MAGICAL_DEFENCE, getBaseMDef() * Config.MONSTER_MDEF_MULTIPLIER);
-					_aggroRange *= Config.MONSTER_AGRRO_RANGE_MULTIPLIER;
-					_clanHelpRange *= Config.MONSTER_CLAN_HELP_RANGE_MULTIPLIER;
+					_aggroRange = (int)(_aggroRange * Config.MONSTER_AGRRO_RANGE_MULTIPLIER);
+					_clanHelpRange = (int)(_clanHelpRange * Config.MONSTER_CLAN_HELP_RANGE_MULTIPLIER);
 					break;
 				}
 				case "RaidBoss":
@@ -192,8 +196,8 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 					_baseValues.put(Stat.MAGIC_ATTACK, getBaseMAtk() * Config.RAIDBOSS_MATK_MULTIPLIER);
 					_baseValues.put(Stat.PHYSICAL_DEFENCE, getBasePDef() * Config.RAIDBOSS_PDEF_MULTIPLIER);
 					_baseValues.put(Stat.MAGICAL_DEFENCE, getBaseMDef() * Config.RAIDBOSS_MDEF_MULTIPLIER);
-					_aggroRange *= Config.RAIDBOSS_AGRRO_RANGE_MULTIPLIER;
-					_clanHelpRange *= Config.RAIDBOSS_CLAN_HELP_RANGE_MULTIPLIER;
+					_aggroRange = (int)(_aggroRange * Config.RAIDBOSS_AGRRO_RANGE_MULTIPLIER);
+					_clanHelpRange = (int)(_clanHelpRange * Config.RAIDBOSS_CLAN_HELP_RANGE_MULTIPLIER);
 					break;
 				}
 				case "Guard":
@@ -204,8 +208,8 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 					_baseValues.put(Stat.MAGIC_ATTACK, getBaseMAtk() * Config.GUARD_MATK_MULTIPLIER);
 					_baseValues.put(Stat.PHYSICAL_DEFENCE, getBasePDef() * Config.GUARD_PDEF_MULTIPLIER);
 					_baseValues.put(Stat.MAGICAL_DEFENCE, getBaseMDef() * Config.GUARD_MDEF_MULTIPLIER);
-					_aggroRange *= Config.GUARD_AGRRO_RANGE_MULTIPLIER;
-					_clanHelpRange *= Config.GUARD_CLAN_HELP_RANGE_MULTIPLIER;
+					_aggroRange = (int)(_aggroRange * Config.GUARD_AGRRO_RANGE_MULTIPLIER);
+					_clanHelpRange = (int)(_clanHelpRange * Config.GUARD_CLAN_HELP_RANGE_MULTIPLIER);
 					break;
 				}
 				case "Defender":
@@ -216,8 +220,8 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 					_baseValues.put(Stat.MAGIC_ATTACK, getBaseMAtk() * Config.DEFENDER_MATK_MULTIPLIER);
 					_baseValues.put(Stat.PHYSICAL_DEFENCE, getBasePDef() * Config.DEFENDER_PDEF_MULTIPLIER);
 					_baseValues.put(Stat.MAGICAL_DEFENCE, getBaseMDef() * Config.DEFENDER_MDEF_MULTIPLIER);
-					_aggroRange *= Config.DEFENDER_AGRRO_RANGE_MULTIPLIER;
-					_clanHelpRange *= Config.DEFENDER_CLAN_HELP_RANGE_MULTIPLIER;
+					_aggroRange = (int)(_aggroRange * Config.DEFENDER_AGRRO_RANGE_MULTIPLIER);
+					_clanHelpRange = (int)(_clanHelpRange * Config.DEFENDER_CLAN_HELP_RANGE_MULTIPLIER);
 					break;
 				}
 			}
@@ -506,17 +510,17 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 	
 	public void setSkills(Map<int, Skill> skills)
 	{
-		_skills = skills != null ? Collections.unmodifiableMap(skills) : Collections.emptyMap();
+		_skills = skills != null ? skills : new();
 	}
 	
 	public List<Skill> getAISkills(AISkillScope aiSkillScope)
 	{
-		return _aiSkillLists.getOrDefault(aiSkillScope, Collections.emptyList());
+		return _aiSkillLists.getOrDefault(aiSkillScope, new());
 	}
 	
 	public void setAISkillLists(Map<AISkillScope, List<Skill>> aiSkillLists)
 	{
-		_aiSkillLists = aiSkillLists != null ? Collections.unmodifiableMap(aiSkillLists) : Collections.emptyMap();
+		_aiSkillLists = aiSkillLists != null ? aiSkillLists : new();
 	}
 	
 	public Set<int> getClans()
@@ -549,7 +553,7 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 	 */
 	public void setClans(Set<int> clans)
 	{
-		_clans = clans != null ? Collections.unmodifiableSet(clans) : null;
+		_clans = clans != null ? clans : null;
 	}
 	
 	/**
@@ -567,13 +571,13 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 		}
 		
 		int clanId = NpcData.getInstance().getClanId("ALL");
-		if (clans.contains(clanId))
+		if (clans.Contains(clanId))
 		{
 			return true;
 		}
 		
 		clanId = NpcData.getInstance().getClanId(clanName);
-		if (clans.contains(clanId))
+		if (clans.Contains(clanId))
 		{
 			return true;
 		}
@@ -581,7 +585,7 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 		foreach (String name in clanNames)
 		{
 			clanId = NpcData.getInstance().getClanId(name);
-			if (clans.contains(clanId))
+			if (clans.Contains(clanId))
 			{
 				return true;
 			}
@@ -603,14 +607,14 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 		}
 		
 		int clanId = NpcData.getInstance().getClanId("ALL");
-		if (clanSet.contains(clanId))
+		if (clanSet.Contains(clanId))
 		{
 			return true;
 		}
 		
-		foreach (int id in clans.Keys)
+		foreach (int id in clans)
 		{
-			if (clanSet.contains(id))
+			if (clanSet.Contains(id))
 			{
 				return true;
 			}
@@ -628,7 +632,7 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 	 */
 	public void setIgnoreClanNpcIds(Set<int> ignoreClanNpcIds)
 	{
-		_ignoreClanNpcIds = ignoreClanNpcIds != null ? Collections.unmodifiableSet(ignoreClanNpcIds) : null;
+		_ignoreClanNpcIds = ignoreClanNpcIds != null ? ignoreClanNpcIds : null;
 	}
 	
 	public void removeDropGroups()
@@ -764,9 +768,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 					
 					// chance
 					double rateChance = 1;
-					if (Config.RATE_DROP_CHANCE_BY_ID.get(itemId) != null)
+					if (Config.RATE_DROP_CHANCE_BY_ID.ContainsKey(itemId))
 					{
-						rateChance *= Config.RATE_DROP_CHANCE_BY_ID.get(itemId);
+						rateChance *= Config.RATE_DROP_CHANCE_BY_ID[itemId];
 						if (champion && (itemId == Inventory.ADENA_ID))
 						{
 							rateChance *= Config.CHAMPION_ADENAS_REWARDS_CHANCE;
@@ -790,9 +794,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 					{
 						if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 						{
-							if (Config.PREMIUM_RATE_DROP_CHANCE_BY_ID.get(itemId) != null)
+							if (Config.PREMIUM_RATE_DROP_CHANCE_BY_ID.ContainsKey(itemId))
 							{
-								rateChance *= Config.PREMIUM_RATE_DROP_CHANCE_BY_ID.get(itemId);
+								rateChance *= Config.PREMIUM_RATE_DROP_CHANCE_BY_ID[itemId];
 							}
 							else if (item.hasExImmediateEffect())
 							{
@@ -834,8 +838,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 						if ((rateChance == 1) && !randomDrops.isEmpty()) // custom rates break this logic because total chance is more than 100%
 						{
 							// remove highest chance item (temporarily if no other item replaces it)
-							cachedItem = randomDrops.remove(0);
-							calculatedDrops.remove(cachedItem);
+							cachedItem = randomDrops[0];
+							randomDrops.RemoveAt(0);
+							calculatedDrops.Remove(cachedItem);
 						}
 						dropOccurrenceCounter = 1;
 					}
@@ -864,7 +869,7 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 					}
 					
 					// finally
-					Float itemChance = Config.RATE_DROP_CHANCE_BY_ID.get(dropItem.getItemId());
+					float itemChance = Config.RATE_DROP_CHANCE_BY_ID[dropItem.getItemId()];
 					if (itemChance != null)
 					{
 						if ((groupItemChance * itemChance) < 100)
@@ -924,9 +929,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 					calculatedDrops = new();
 				}
 				
-				if (!calculatedDrops.containsAll(Config.CHAMPION_REWARD_ITEMS))
+				if (!calculatedDrops.All(holder => Config.CHAMPION_REWARD_ITEMS.ContainsKey(holder.getId())))
 				{
-					calculatedDrops.AddRange(Config.CHAMPION_REWARD_ITEMS);
+					calculatedDrops.AddRange(Config.CHAMPION_REWARD_ITEMS.Select(kvp => new ItemHolder(kvp.Key, kvp.Value)));
 				}
 			}
 		}
@@ -954,8 +959,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 				if ((dropOccurrenceCounter == 0) && (dropItem.getChance() < 100) && (randomDrops != null) && (calculatedDrops != null))
 				{
 					// remove highest chance item (temporarily if no other item replaces it)
-					cachedItem = randomDrops.remove(0);
-					calculatedDrops.remove(cachedItem);
+					cachedItem = randomDrops[0];
+					randomDrops.RemoveAt(0);
+					calculatedDrops.Remove(cachedItem);
 					dropOccurrenceCounter = 1;
 				}
 				
@@ -983,7 +989,7 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 				}
 				
 				// finally
-				float itemChance = Config.RATE_DROP_CHANCE_BY_ID.get(dropItem.getItemId());
+				float itemChance = Config.RATE_DROP_CHANCE_BY_ID[dropItem.getItemId()];
 				if (itemChance != null)
 				{
 					if ((dropItem.getChance() * itemChance) < 100)
@@ -1030,9 +1036,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 				calculatedDrops = new();
 			}
 			
-			if (!calculatedDrops.containsAll(Config.CHAMPION_REWARD_ITEMS))
+			if (!calculatedDrops.All(holder => Config.CHAMPION_REWARD_ITEMS.ContainsKey(holder.getId())))
 			{
-				calculatedDrops.AddRange(Config.CHAMPION_REWARD_ITEMS);
+				calculatedDrops.AddRange(Config.CHAMPION_REWARD_ITEMS.Select(kvp => new ItemHolder(kvp.Key, kvp.Value)));
 			}
 		}
 		
@@ -1058,9 +1064,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 		{
 			// amount is calculated after chance returned success
 			double rateAmount = 1;
-			if (Config.RATE_DROP_AMOUNT_BY_ID.get(itemId) != null)
+			if (Config.RATE_DROP_AMOUNT_BY_ID.ContainsKey(itemId))
 			{
-				rateAmount *= Config.RATE_DROP_AMOUNT_BY_ID.get(itemId);
+				rateAmount *= Config.RATE_DROP_AMOUNT_BY_ID[itemId];
 				if (champion && (itemId == Inventory.ADENA_ID))
 				{
 					rateAmount *= Config.CHAMPION_ADENAS_REWARDS_AMOUNT;
@@ -1085,9 +1091,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 			{
 				if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 				{
-					if (Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID.get(itemId) != null)
+					if (Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID.ContainsKey(itemId))
 					{
-						rateAmount *= Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID.get(itemId);
+						rateAmount *= Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID[itemId];
 					}
 					else if (item.hasExImmediateEffect())
 					{
@@ -1128,8 +1134,8 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 	{
 		switch (dropItem.getDropType())
 		{
-			case DROP:
-			case LUCKY:
+			case DropType.DROP:
+			case DropType.LUCKY:
 			{
 				int itemId = dropItem.getItemId();
 				ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
@@ -1137,9 +1143,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 				
 				// chance
 				double rateChance = 1;
-				if (Config.RATE_DROP_CHANCE_BY_ID.get(itemId) != null)
+				if (Config.RATE_DROP_CHANCE_BY_ID.ContainsKey(itemId))
 				{
-					rateChance *= Config.RATE_DROP_CHANCE_BY_ID.get(itemId);
+					rateChance *= Config.RATE_DROP_CHANCE_BY_ID[itemId];
 					if (champion && (itemId == Inventory.ADENA_ID))
 					{
 						rateChance *= Config.CHAMPION_ADENAS_REWARDS_CHANCE;
@@ -1164,9 +1170,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 				{
 					if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 					{
-						if (Config.PREMIUM_RATE_DROP_CHANCE_BY_ID.get(itemId) != null)
+						if (Config.PREMIUM_RATE_DROP_CHANCE_BY_ID.ContainsKey(itemId))
 						{
-							rateChance *= Config.PREMIUM_RATE_DROP_CHANCE_BY_ID.get(itemId);
+							rateChance *= Config.PREMIUM_RATE_DROP_CHANCE_BY_ID[itemId];
 						}
 						else if (item.hasExImmediateEffect())
 						{
@@ -1195,9 +1201,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 				{
 					// amount is calculated after chance returned success
 					double rateAmount = 1;
-					if (Config.RATE_DROP_AMOUNT_BY_ID.get(itemId) != null)
+					if (Config.RATE_DROP_AMOUNT_BY_ID.ContainsKey(itemId))
 					{
-						rateAmount *= Config.RATE_DROP_AMOUNT_BY_ID.get(itemId);
+						rateAmount *= Config.RATE_DROP_AMOUNT_BY_ID[itemId];
 						if (champion && (itemId == Inventory.ADENA_ID))
 						{
 							rateAmount *= Config.CHAMPION_ADENAS_REWARDS_AMOUNT;
@@ -1221,9 +1227,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 					{
 						if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 						{
-							if (Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID.get(itemId) != null)
+							if (Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID.ContainsKey(itemId))
 							{
-								rateAmount *= Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID.get(itemId);
+								rateAmount *= Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID[itemId];
 							}
 							else if (item.hasExImmediateEffect())
 							{
@@ -1252,7 +1258,7 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 				}
 				break;
 			}
-			case SPOIL:
+			case DropType.SPOIL:
 			{
 				// chance
 				double rateChance = Config.RATE_SPOIL_DROP_CHANCE_MULTIPLIER;
@@ -1298,46 +1304,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 	{
 		return _collisionHeightGrown;
 	}
-	
-	public static bool isAssignableTo(Class<?> subValue, Class<?> clazz)
+
+	public override Npc CreateInstance()
 	{
-		// If clazz represents an interface
-		if (clazz.isInterface())
-		{
-			// check if obj implements the clazz interface
-			for (Class<?> interface1 : subValue.getInterfaces())
-			{
-				if (clazz.getName().equals(interface1.getName()))
-				{
-					return true;
-				}
-			}
-		}
-		else
-		{
-			Class<?> sub = subValue;
-			do
-			{
-				if (sub.getName().equals(clazz.getName()))
-				{
-					return true;
-				}
-				sub = sub.getSuperclass();
-			}
-			while (sub != null);
-		}
-		return false;
-	}
-	
-	/**
-	 * Checks if obj can be assigned to the Class represented by clazz.<br>
-	 * This is true if, and only if, obj is the same class represented by clazz, or a subclass of it or obj implements the interface represented by clazz.
-	 * @param obj
-	 * @param clazz
-	 * @return {@code true} if the object can be assigned to the class, {@code false} otherwise
-	 */
-	public static bool isAssignableTo(Object obj, Class<?> clazz)
-	{
-		return isAssignableTo(obj.getClass(), clazz);
+		throw new NotImplementedException();
 	}
 }

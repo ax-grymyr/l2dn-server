@@ -8935,7 +8935,7 @@ public class Player: Playable
 		{
 			_abnormalVisualEffectTask = ThreadPool.schedule(() =>
 			{
-				sendPacket(new ExUserInfoAbnormalVisualEffect(this));
+				sendPacket(new ExUserInfoAbnormalVisualEffectPacket(this));
 				broadcastCharInfo();
 				_abnormalVisualEffectTask = null;
 			}, 50);
@@ -9703,7 +9703,7 @@ public class Player: Playable
 		broadcastUserInfo();
 		if ((Config.BLUE_TEAM_ABNORMAL_EFFECT != null) || (Config.RED_TEAM_ABNORMAL_EFFECT != null))
 		{
-			sendPacket(new ExUserInfoAbnormalVisualEffect(this));
+			sendPacket(new ExUserInfoAbnormalVisualEffectPacket(this));
 		}
 		if (_pet != null)
 		{
@@ -10201,7 +10201,7 @@ public class Player: Playable
 			getEffectList().stopAllToggles();
 			
 			// Update abnormal visual effects.
-			sendPacket(new ExUserInfoAbnormalVisualEffect(this));
+			sendPacket(new ExUserInfoAbnormalVisualEffectPacket(this));
 			stopCubics();
 			
 			restoreRecipeBook(false);

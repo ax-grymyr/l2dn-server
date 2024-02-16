@@ -1,3 +1,4 @@
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
@@ -6,6 +7,7 @@ using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -23,12 +25,12 @@ public class MonsterRace
 		RACE_END
 	}
 	
-	protected static readonly PlaySound SOUND_1 = new PlaySound(1, "S_Race", 0, 0, 0, 0, 0);
-	protected static readonly PlaySound SOUND_2 = new PlaySound("ItemSound2.race_start");
+	protected static readonly PlaySoundPacket SOUND_1 = new PlaySoundPacket(1, "S_Race", 0, 0, 0, 0, 0);
+	protected static readonly PlaySoundPacket SOUND_2 = new PlaySoundPacket("ItemSound2.race_start");
 
 	protected static readonly int[][] CODES = [[-1, 0], [0, 15322], [13765, -1]];
 	
-	protected readonly List<int> _npcTemplates = new(); // List holding npc templates, shuffled on a new race.
+	protected readonly int[] _npcTemplates; // List holding npc templates, shuffled on a new race.
 	protected readonly List<HistoryInfo> _history = new(); // List holding old race records.
 	protected readonly Map<int, long> _betsPerLane = new(); // Map holding all bets for each lane ; values setted to 0 after every race.
 	protected readonly List<Double> _odds = new(); // List holding sorted odds per lane ; cleared at new odds calculation.
@@ -37,10 +39,10 @@ public class MonsterRace
 	protected int _finalCountdown = 0;
 	protected RaceState _state = RaceState.RACE_END;
 	
-	protected MonRaceInfo _packet;
+	protected MonsterRaceInfoPacket _packet;
 	
 	private readonly Npc[] _monsters = new Npc[8];
-	private int[][] _speeds = new int[8][20];
+	private int[][] _speeds;
 	private readonly int[] _first = new int[2];
 	private readonly int[] _second = new int[2];
 	
@@ -50,20 +52,25 @@ public class MonsterRace
 		{
 			return;
 		}
+
+		_speeds = new int[8][];
+		for (int i = 0; i < _speeds.Length; i++)
+			_speeds[i] = new int[20];
 		
 		// Feed _history with previous race results.
 		loadHistory();
 		
-		// Feed _betsPerLane with stored informations on bets.
+		// Feed _betsPerLane with stored information on bets.
 		loadBets();
 		
 		// Feed _npcTemplates, we will only have to shuffle it when needed.
-		for (int i = 31003; i < 31027; i++)
-		{
-			_npcTemplates.add(i);
-		}
+		const int startNpcId = 31003;
+		const int endNpcId = 31027;
+		_npcTemplates = new int[endNpcId - startNpcId];
+		for (int i = startNpcId; i < endNpcId; i++)
+			_npcTemplates[i - startNpcId] = i;
 		
-		ThreadPool.scheduleAtFixedRate(new Announcement(), 0, 1000);
+		ThreadPool.scheduleAtFixedRate(new Announcement(this), 0, 1000);
 	}
 	
 	public class HistoryInfo
@@ -119,30 +126,33 @@ public class MonsterRace
 	
 	private class Announcement: Runnable
 	{
-		public Announcement()
+		private readonly MonsterRace _race;
+
+		public Announcement(MonsterRace race)
 		{
+			_race = race;
 		}
 		
 		public void run()
 		{
-			if (_finalCountdown > 1200)
+			if (_race._finalCountdown > 1200)
 			{
-				_finalCountdown = 0;
+				_race._finalCountdown = 0;
 			}
 			
-			switch (_finalCountdown)
+			switch (_race._finalCountdown)
 			{
 				case 0:
 				{
-					newRace();
-					newSpeeds();
+					_race.newRace();
+					_race.newSpeeds();
 					
-					_state = RaceState.ACCEPTING_BETS;
-					_packet = new MonRaceInfo(CODES[0][0], CODES[0][1], getMonsters(), getSpeeds());
+					_race._state = RaceState.ACCEPTING_BETS;
+					_race._packet = new MonsterRaceInfoPacket(CODES[0][0], CODES[0][1], _race.getMonsters(), _race.getSpeeds());
 					
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.TICKETS_ARE_NOW_AVAILABLE_FOR_MONSTER_RACE_S1);
-					msg.addInt(_raceNumber);
-					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>(_packet, msg);
+					msg.Params.addInt(_race._raceNumber);
+					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(_race._packet, msg);
 					break;
 				}
 				case 30: // 30 sec
@@ -173,72 +183,72 @@ public class MonsterRace
 				case 870: // 14 min 30 sec
 				{
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.TICKETS_ARE_NOW_AVAILABLE_FOR_MONSTER_RACE_S1);
-					msg.addInt(_raceNumber);
-					Broadcast.toAllPlayersInZoneType(DerbyTrackZone.class, msg);
+					msg.Params.addInt(_race._raceNumber);
+					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(msg);
 					break;
 				}
 				case 300: // 5 min
 				{
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.NOW_SELLING_TICKETS_FOR_MONSTER_RACE_S1);
-					msg.addInt(_raceNumber);
+					msg.Params.addInt(_race._raceNumber);
 					SystemMessagePacket msg2 = new SystemMessagePacket(SystemMessageId.TICKET_SALES_FOR_MONSTER_RACE_S1_ARE_CLOSED);
-					msg2.addInt(10);
-					Broadcast.toAllPlayersInZoneType(DerbyTrackZone.class, msg, msg2);
+					msg2.Params.addInt(10);
+					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(msg, msg2);
 					break;
 				}
 				case 600: // 10 min
 				{
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.NOW_SELLING_TICKETS_FOR_MONSTER_RACE_S1);
-					msg.addInt(_raceNumber);
+					msg.Params.addInt(_race._raceNumber);
 					SystemMessagePacket msg2 = new SystemMessagePacket(SystemMessageId.TICKET_SALES_FOR_MONSTER_RACE_S1_ARE_CLOSED);
-					msg2.addInt(5);
-					Broadcast.toAllPlayersInZoneType(DerbyTrackZone.class, msg, msg2);
+					msg2.Params.addInt(5);
+					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(msg, msg2);
 					break;
 				}
 				case 840: // 14 min
 				{
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.NOW_SELLING_TICKETS_FOR_MONSTER_RACE_S1);
-					msg.addInt(_raceNumber);
+					msg.Params.addInt(_race._raceNumber);
 					SystemMessagePacket msg2 = new SystemMessagePacket(SystemMessageId.TICKET_SALES_FOR_MONSTER_RACE_S1_ARE_CLOSED);
-					msg2.addInt(1);
-					Broadcast.toAllPlayersInZoneType(DerbyTrackZone.class, msg, msg2);
+					msg2.Params.addInt(1);
+					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(msg, msg2);
 					break;
 				}
 				case 900: // 15 min
 				{
-					_state = RaceState.WAITING;
+					_race._state = RaceState.WAITING;
 					
-					calculateOdds();
+					_race.calculateOdds();
 					
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.TICKETS_ARE_NOW_AVAILABLE_FOR_MONSTER_RACE_S1);
-					msg.addInt(_raceNumber);
+					msg.Params.addInt(_race._raceNumber);
 					SystemMessagePacket msg2 = new SystemMessagePacket(SystemMessageId.TICKETS_SALES_ARE_CLOSED_FOR_MONSTER_RACE_S1_YOU_CAN_SEE_THE_AMOUNT_OF_WIN);
-					msg2.addInt(_raceNumber);
-					Broadcast.toAllPlayersInZoneType(DerbyTrackZone.class, msg, msg2);
+					msg2.Params.addInt(_race._raceNumber);
+					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(msg, msg2);
 					break;
 				}
 				case 960: // 16 min
 				case 1020: // 17 min
 				{
-					int minutes = (_finalCountdown == 960) ? 2 : 1;
+					int minutes = (_race._finalCountdown == 960) ? 2 : 1;
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.MONSTER_RACE_S2_WILL_BEGIN_IN_S1_MIN);
-					msg.addInt(minutes);
-					msg.addInt(_raceNumber);
-					Broadcast.toAllPlayersInZoneType(DerbyTrackZone.class, msg);
+					msg.Params.addInt(minutes);
+					msg.Params.addInt(_race._raceNumber);
+					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(msg);
 					break;
 				}
 				case 1050: // 17 min 30 sec
 				{
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.MONSTER_RACE_S1_WILL_BEGIN_IN_30_SEC);
-					msg.addInt(_raceNumber);
-					Broadcast.toAllPlayersInZoneType(DerbyTrackZone.class, msg);
+					msg.Params.addInt(_race._raceNumber);
+					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(msg);
 					break;
 				}
 				case 1070: // 17 min 50 sec
 				{
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.MONSTER_RACE_S1_IS_ABOUT_TO_BEGIN_COUNTDOWN_IN_5_SEC);
-					msg.addInt(_raceNumber);
-					Broadcast.toAllPlayersInZoneType(DerbyTrackZone.class, msg);
+					msg.Params.addInt(_race._raceNumber);
+					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(msg);
 					break;
 				}
 				case 1075: // 17 min 55 sec
@@ -247,55 +257,61 @@ public class MonsterRace
 				case 1078: // 17 min 58 sec
 				case 1079: // 17 min 59 sec
 				{
-					int seconds = 1080 - _finalCountdown;
+					int seconds = 1080 - _race._finalCountdown;
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.THE_RACE_BEGINS_IN_S1_SEC);
-					msg.addInt(seconds);
-					Broadcast.toAllPlayersInZoneType(DerbyTrackZone.class, msg);
+					msg.Params.addInt(seconds);
+					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(msg);
 					break;
 				}
 				case 1080: // 18 min
 				{
-					_state = RaceState.STARTING_RACE;
-					_packet = new MonRaceInfo(CODES[1][0], CODES[1][1], getMonsters(), getSpeeds());
-					Broadcast.toAllPlayersInZoneType(DerbyTrackZone.class, new SystemMessagePacket(SystemMessageId.THEY_RE_OFF), SOUND_1, SOUND_2, _packet);
+					_race._state = RaceState.STARTING_RACE;
+					_race._packet = new MonsterRaceInfoPacket(CODES[1][0], CODES[1][1], _race.getMonsters(), _race.getSpeeds());
+					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(new SystemMessagePacket(SystemMessageId.THEY_RE_OFF), SOUND_1, SOUND_2, _race._packet);
 					break;
 				}
 				case 1085: // 18 min 5 sec
 				{
-					_packet = new MonRaceInfo(CODES[2][0], CODES[2][1], getMonsters(), getSpeeds());
+					_race._packet = new MonsterRaceInfoPacket(CODES[2][0], CODES[2][1], _race.getMonsters(), _race.getSpeeds());
 					
-					Broadcast.toAllPlayersInZoneType(DerbyTrackZone.class, _packet);
+					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(_race._packet);
 					break;
 				}
 				case 1115: // 18 min 35 sec
 				{
-					_state = RaceState.RACE_END;
+					_race._state = RaceState.RACE_END;
 					
 					// Populate history info with data, stores it in database.
-					HistoryInfo info = _history.get(_history.size() - 1);
-					info.setFirst(getFirstPlace());
-					info.setSecond(getSecondPlace());
-					info.setOddRate(_odds.get(getFirstPlace() - 1));
+					HistoryInfo info = _race._history.get(_race._history.size() - 1);
+					info.setFirst(_race.getFirstPlace());
+					info.setSecond(_race.getSecondPlace());
+					info.setOddRate(_race._odds.get(_race.getFirstPlace() - 1));
 					
-					saveHistory(info);
-					clearBets();
+					_race.saveHistory(info);
+					_race.clearBets();
 					
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.FIRST_PRIZE_GOES_TO_THE_PLAYER_IN_LANE_S1_SECOND_PRIZE_GOES_TO_THE_PLAYER_IN_LANE_S2);
-					msg.addInt(getFirstPlace());
-					msg.addInt(getSecondPlace());
+					msg.Params.addInt(_race.getFirstPlace());
+					msg.Params.addInt(_race.getSecondPlace());
 					SystemMessagePacket msg2 = new SystemMessagePacket(SystemMessageId.MONSTER_RACE_S1_IS_FINISHED);
-					msg2.addInt(_raceNumber);
-					Broadcast.toAllPlayersInZoneType(DerbyTrackZone.class, msg, msg2);
-					_raceNumber++;
+					msg2.Params.addInt(_race._raceNumber);
+					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(msg, msg2);
+					_race._raceNumber++;
 					break;
 				}
 				case 1140: // 19 min
 				{
-					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>(new DeleteObjectPacket(getMonsters()[0]), new DeleteObjectPacket(getMonsters()[1]), new DeleteObjectPacket(getMonsters()[2]), new DeleteObjectPacket(getMonsters()[3]), new DeleteObjectPacket(getMonsters()[4]), new DeleteObjectPacket(getMonsters()[5]), new DeleteObjectPacket(getMonsters()[6]), new DeleteObjectPacket(getMonsters()[7]));
+					Npc[] monsters = _race.getMonsters();
+					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(new DeleteObjectPacket(monsters[0].getObjectId()),
+						new DeleteObjectPacket(monsters[1].getObjectId()), new DeleteObjectPacket(monsters[2].getObjectId()),
+						new DeleteObjectPacket(monsters[3].getObjectId()), new DeleteObjectPacket(monsters[4].getObjectId()),
+						new DeleteObjectPacket(monsters[5].getObjectId()), new DeleteObjectPacket(monsters[6].getObjectId()),
+						new DeleteObjectPacket(monsters[7].getObjectId()));
 					break;
 				}
 			}
-			_finalCountdown += 1;
+			
+			_race._finalCountdown += 1;
 		}
 	}
 	
@@ -305,26 +321,25 @@ public class MonsterRace
 		_history.add(new HistoryInfo(_raceNumber, 0, 0, 0));
 		
 		// Randomize _npcTemplates.
-		Collections.shuffle(_npcTemplates);
+		Random.Shared.Shuffle(_npcTemplates);
 		
 		// Setup 8 new creatures ; pickup the first 8 from _npcTemplates.
 		for (int i = 0; i < 8; i++)
 		{
 			try
 			{
-				NpcTemplate template = NpcData.getInstance().getTemplate(_npcTemplates.get(i));
-				_monsters[i] = (Npc) Class.forName("org.l2jmobius.gameserver.model.actor.instance." + template.getType()).getConstructors()[0].newInstance(template);
+				NpcTemplate template = NpcData.getInstance().getTemplate(_npcTemplates[i]);
+				_monsters[i] = template.CreateInstance();
 			}
 			catch (Exception e)
 			{
-				LOGGER.Warn("", e);
+				LOGGER.Error(e);
 			}
 		}
 	}
 	
 	public void newSpeeds()
 	{
-		_speeds = new int[8][20];
 		int total = 0;
 		_first[1] = 0;
 		_second[1] = 0;
@@ -369,21 +384,18 @@ public class MonsterRace
 		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM mdt_history");
-			ResultSet rset = statement.executeQuery();
-			
-			while (rset.next())
+			var records = ctx.DerbyHistory;
+			foreach (MonsterDerbyHistory record in records)
 			{
-				_history.add(new HistoryInfo(rset.getInt("race_id"), rset.getInt("first"), rset.getInt("second"), rset.getDouble("odd_rate")));
+				_history.add(new HistoryInfo(record.RaceId, record.First, record.Second, record.OddRate));
 				_raceNumber++;
 			}
-			rset.close();
-			statement.close();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("MonsterRace: Can't load history: " + e);
+			LOGGER.Error("MonsterRace: Can't load history: " + e);
 		}
+		
 		LOGGER.Info("MonsterRace: loaded " + _history.size() + " records, currently on race #" + _raceNumber);
 	}
 	
@@ -396,17 +408,19 @@ public class MonsterRace
 		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement("REPLACE INTO mdt_history (race_id, first, second, odd_rate) VALUES (?,?,?,?)");
-			statement.setInt(1, history.getRaceId());
-			statement.setInt(2, history.getFirst());
-			statement.setInt(3, history.getSecond());
-			statement.setDouble(4, history.getOddRate());
-			statement.execute();
-			statement.close();
+			ctx.DerbyHistory.Add(new MonsterDerbyHistory()
+			{
+				RaceId = history.getRaceId(),
+				First = history.getFirst(),
+				Second = history.getSecond(),
+				OddRate = history.getOddRate(),
+			});
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("MonsterRace: Can't save history: " + e);
+			LOGGER.Error("MonsterRace: Can't save history: " + e);
 		}
 	}
 	
@@ -418,16 +432,7 @@ public class MonsterRace
 		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM mdt_bets");
-			ResultSet rset = statement.executeQuery();
-			
-			while (rset.next())
-			{
-				setBetOnLane(rset.getInt("lane_id"), rset.getLong("bet"), false);
-			}
-			
-			rset.close();
-			statement.close();
+			ctx.DerbyBets.ForEach(bet => setBetOnLane(bet.LaneId, bet.Bet, false));
 		}
 		catch (Exception e)
 		{
@@ -445,11 +450,16 @@ public class MonsterRace
 		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement("REPLACE INTO mdt_bets (lane_id, bet) VALUES (?,?)");
-			statement.setInt(1, lane);
-			statement.setLong(2, sum);
-			statement.execute();
-			statement.close();
+			MonsterDerbyBet? bet = ctx.DerbyBets.SingleOrDefault(b => b.LaneId == lane);
+			if (bet is null)
+			{
+				bet = new MonsterDerbyBet();
+				ctx.DerbyBets.Add(bet);
+				bet.LaneId = (byte)lane;
+			}
+
+			bet.Bet = sum;
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -462,7 +472,7 @@ public class MonsterRace
 	 */
 	protected void clearBets()
 	{
-		foreach (int key in _betsPerLane.keySet())
+		foreach (int key in _betsPerLane.Keys)
 		{
 			_betsPerLane.put(key, 0L);
 		}
@@ -470,9 +480,7 @@ public class MonsterRace
 		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement("UPDATE mdt_bets SET bet = 0");
-			statement.execute();
-			statement.close();
+			ctx.DerbyBets.ExecuteUpdate(s => s.SetProperty(bet => bet.Bet, 0));
 		}
 		catch (Exception e)
 		{
@@ -543,7 +551,7 @@ public class MonsterRace
 		return _second[0];
 	}
 	
-	public MonRaceInfo getRacePacket()
+	public MonsterRaceInfoPacket getRacePacket()
 	{
 		return _packet;
 	}

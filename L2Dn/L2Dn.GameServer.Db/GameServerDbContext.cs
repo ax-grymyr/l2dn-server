@@ -45,6 +45,7 @@ public class GameServerDbContext: DbContext
     public DbSet<CharacterSummon> CharacterSummons => Set<CharacterSummon>();
     public DbSet<CharacterOfflineTrade> CharacterOfflineTrades => Set<CharacterOfflineTrade>();
     public DbSet<CharacterOfflineTradeItem> CharacterOfflineTradeItems => Set<CharacterOfflineTradeItem>();
+    public DbSet<CharacterDailyReward> CharacterDailyRewards => Set<CharacterDailyReward>();
     public DbSet<Pet> Pets => Set<Pet>();
     public DbSet<DbItem> Items => Set<DbItem>();
      public DbSet<Clan> Clans => Set<Clan>();
@@ -65,4 +66,6 @@ public class GameServerDbContext: DbContext
     public DbSet<BotReport> BotReports => Set<BotReport>();
     public DbSet<BufferScheme> BufferSchemes => Set<BufferScheme>();
     public DbSet<BuyList> BuyLists => Set<BuyList>();
+    public DbSet<MonsterDerbyHistory> DerbyHistory => Set<MonsterDerbyHistory>();
+    public DbSet<MonsterDerbyBet> DerbyBets => Set<MonsterDerbyBet>();
 }

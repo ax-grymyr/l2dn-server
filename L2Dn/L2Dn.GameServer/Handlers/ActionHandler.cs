@@ -35,9 +35,9 @@ public class ActionHandler: IHandler<IActionHandler, InstanceType>
 	public IActionHandler getHandler(InstanceType iType)
 	{
 		IActionHandler result = null;
-		for (InstanceType t = iType; t != null; t = t.getParent())
+		for (InstanceType? t = iType; t != null; t = t.Value.GetParent())
 		{
-			result = _actions.get(t);
+			result = _actions.get(t.Value);
 			if (result != null)
 			{
 				break;

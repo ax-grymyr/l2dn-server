@@ -1,11 +1,14 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Templates;
 
 public class PlayerTemplate : CreatureTemplate
 {
-	private readonly ClassId _classId;
+	private readonly CharacterClass _classId;
 	
 	private readonly float[] _baseHp;
 	private readonly float[] _baseMp;
@@ -21,12 +24,12 @@ public class PlayerTemplate : CreatureTemplate
 	private readonly int _baseSafeFallHeight;
 	
 	private readonly List<Location> _creationPoints;
-	private readonly  Map<int, int> _baseSlotDef;
+	private readonly Map<int, int> _baseSlotDef;
 	
 	public PlayerTemplate(StatSet set, List<Location> creationPoints): base(set)
 	{
-		_classId = ClassId.getClassId(set.getInt("classId"));
-		setRace(_classId.getRace());
+		_classId = (CharacterClass)set.getInt("classId");
+		setRace(_classId.GetRace());
 		_baseHp = new float[ExperienceData.getInstance().getMaxLevel()];
 		_baseMp = new float[ExperienceData.getInstance().getMaxLevel()];
 		_baseCp = new float[ExperienceData.getInstance().getMaxLevel()];
@@ -57,7 +60,7 @@ public class PlayerTemplate : CreatureTemplate
 	/**
 	 * @return the template class Id.
 	 */
-	public ClassId getClassId()
+	public CharacterClass getClassId()
 	{
 		return _classId;
 	}

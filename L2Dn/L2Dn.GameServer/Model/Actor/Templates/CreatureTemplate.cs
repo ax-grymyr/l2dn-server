@@ -34,7 +34,7 @@ public class CreatureTemplate : ListenersContainer
 		this.set(set);
 	}
 	
-	public void set(StatSet set)
+	public virtual void set(StatSet set)
 	{
 		// Base stats
 		_baseValues.put(Stat.STAT_STR, set.getDouble("baseSTR", 0));
@@ -525,7 +525,7 @@ public class CreatureTemplate : ListenersContainer
 	 * Overridden in NpcTemplate
 	 * @return the characters skills
 	 */
-	public Map<int, Skill> getSkills()
+	public virtual Map<int, Skill> getSkills()
 	{
 		return Collections.emptyMap();
 	}
@@ -558,4 +558,9 @@ public class CreatureTemplate : ListenersContainer
 		Double val = _baseValues.get(stat);
 		return val != null ? val.doubleValue() : defaultValue;
 	}
+
+	public virtual Creature CreateInstance()
+	{
+		throw new NotImplementedException();
+	} 
 }

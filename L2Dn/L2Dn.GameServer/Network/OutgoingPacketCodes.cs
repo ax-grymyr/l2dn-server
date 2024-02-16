@@ -229,7 +229,7 @@ public static class OutgoingPacketCodes
     public const byte RECIPE_SHOP_ITEM_INFO = 0xE0;
     public const byte RECIPE_SHOP_MSG = 0xE1;
     public const byte SHOW_CALC = 0xE2;
-    public const byte MON_RACE_INFO = 0xE3;
+    public const byte MONSTER_RACE_INFO = 0xE3;
     public const byte HENNA_ITEM_INFO = 0xE4;
     public const byte HENNA_INFO = 0xE5;
     public const byte HENNA_UNEQUIP_LIST = 0xE6;

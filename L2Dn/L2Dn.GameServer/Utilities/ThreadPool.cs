@@ -22,6 +22,21 @@ public static class ThreadPool
         });
     }
 
+    public static void execute(Action action)
+    {
+        System.Threading.ThreadPool.QueueUserWorkItem(state =>
+        {
+            try
+            {
+                action();
+            }
+            catch (Exception e)
+            {
+                LOGGER.Error("Unhandled exception in task: " + e);
+            }
+        });
+    }
+
     public static ScheduledFuture scheduleAtFixedRate(Action action, int initialDelayInMs, int periodInMs)
     {
         return new ScheduledFuture(action, Validate(initialDelayInMs), Validate(periodInMs));

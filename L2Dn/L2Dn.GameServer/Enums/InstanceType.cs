@@ -1,4 +1,6 @@
-﻿namespace L2Dn.GameServer.Enums;
+﻿using System.Collections.Immutable;
+
+namespace L2Dn.GameServer.Enums;
 
 
 public enum InstanceType
@@ -80,6 +82,86 @@ public enum InstanceType
 	SchemeBuffer,
 	EventMob
 }
+
+public static class InstanceTypeUtil
+{
+	private static ImmutableSortedDictionary<InstanceType, InstanceType?> _parentInstanceTypes =
+		new (InstanceType, InstanceType?)[]
+		{
+			(InstanceType.WorldObject, null),
+			(InstanceType.Item, InstanceType.WorldObject),
+			(InstanceType.Creature, InstanceType.WorldObject),
+			(InstanceType.Npc, InstanceType.Creature),
+			(InstanceType.Playable, InstanceType.Creature),
+			(InstanceType.Summon, InstanceType.Playable),
+			(InstanceType.Player, InstanceType.Playable),
+			(InstanceType.Folk, InstanceType.Npc),
+			(InstanceType.Merchant, InstanceType.Folk),
+			(InstanceType.Warehouse, InstanceType.Folk),
+			(InstanceType.StaticObject, InstanceType.Creature),
+			(InstanceType.Door, InstanceType.Creature),
+			(InstanceType.TerrainObject, InstanceType.Npc),
+			(InstanceType.EffectPoint, InstanceType.Npc),
+			(InstanceType.CommissionManager, InstanceType.Npc),
+			// Summons, Pets, Decoys and Traps
+			(InstanceType.Servitor, InstanceType.Summon),
+			(InstanceType.Pet, InstanceType.Summon),
+			(InstanceType.Cubic, InstanceType.Creature),
+			(InstanceType.Decoy, InstanceType.Creature),
+			(InstanceType.Trap, InstanceType.Npc),
+			// Attackable
+			(InstanceType.Attackable, InstanceType.Npc),
+			(InstanceType.Guard, InstanceType.Attackable),
+			(InstanceType.Monster, InstanceType.Attackable),
+			(InstanceType.Chest, InstanceType.Monster),
+			(InstanceType.ControllableMob, InstanceType.Monster),
+			(InstanceType.FeedableBeast, InstanceType.Monster),
+			(InstanceType.TamedBeast, InstanceType.FeedableBeast),
+			(InstanceType.FriendlyMob, InstanceType.Attackable),
+			(InstanceType.RaidBoss, InstanceType.Monster),
+			(InstanceType.GrandBoss, InstanceType.RaidBoss),
+			(InstanceType.FriendlyNpc, InstanceType.Attackable),
+			// FlyMobs
+			(InstanceType.FlyTerrainObject, InstanceType.Npc),
+			// Vehicles
+			(InstanceType.Vehicle, InstanceType.Creature),
+			(InstanceType.Boat, InstanceType.Vehicle),
+			(InstanceType.AirShip, InstanceType.Vehicle),
+			(InstanceType.Shuttle, InstanceType.Vehicle),
+			(InstanceType.ControllableAirShip, InstanceType.AirShip),
+			// Siege
+			(InstanceType.Defender, InstanceType.Attackable),
+			(InstanceType.Artefact, InstanceType.Folk),
+			(InstanceType.ControlTower, InstanceType.Npc),
+			(InstanceType.FlameTower, InstanceType.Npc),
+			(InstanceType.SiegeFlag, InstanceType.Npc),
+			// Fort Siege
+			(InstanceType.FortCommander, InstanceType.Defender),
+			// Fort NPCs
+			(InstanceType.FortLogistics, InstanceType.Merchant),
+			(InstanceType.FortManager, InstanceType.Merchant),
+			// City NPCs
+			(InstanceType.BroadcastingTower, InstanceType.Npc),
+			(InstanceType.Fisherman, InstanceType.Merchant),
+			(InstanceType.OlympiadManager, InstanceType.Npc),
+			(InstanceType.PetManager, InstanceType.Merchant),
+			(InstanceType.Teleporter, InstanceType.Npc),
+			(InstanceType.VillageMaster, InstanceType.Folk),
+			// Doormens
+			(InstanceType.Doorman, InstanceType.Folk),
+			(InstanceType.FortDoorman, InstanceType.Doorman),
+			// Custom
+			(InstanceType.ClassMaster, InstanceType.Folk),
+			(InstanceType.SchemeBuffer, InstanceType.Npc),
+			(InstanceType.EventMob, InstanceType.Npc),
+		}.ToImmutableSortedDictionary(t => t.Item1, t => t.Item2);
+
+	public static InstanceType? GetParent(this InstanceType instanceType)
+	{
+		return CollectionExtensions.GetValueOrDefault(_parentInstanceTypes, instanceType);
+	}
+}
+
 //
 // public enum InstanceType
 // {

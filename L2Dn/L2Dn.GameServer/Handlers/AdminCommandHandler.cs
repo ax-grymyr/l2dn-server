@@ -3,7 +3,7 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -78,12 +78,13 @@ public class AdminCommandHandler: IHandler<IAdminCommandHandler, String>
 			LOGGER.Warn(player + " tried to use admin command '" + command + "', without proper access level!");
 			return;
 		}
-		
+
 		if (useConfirm && AdminData.getInstance().requireConfirm(command))
 		{
 			player.setAdminConfirmCmd(fullCommand);
-			ConfirmDlg dlg = new ConfirmDlg(SystemMessageId.S1_3);
-			dlg.getSystemMessage().addString("Are you sure you want execute command '" + commandNoPrefix + "' ?");
+			ConfirmDialogPacket dlg =
+				new ConfirmDialogPacket("Are you sure you want execute command '" + commandNoPrefix + "' ?");
+			
 			player.addAction(PlayerAction.ADMIN_COMMAND);
 			player.sendPacket(dlg);
 		}
@@ -98,7 +99,8 @@ public class AdminCommandHandler: IHandler<IAdminCommandHandler, String>
 					if (Config.GMAUDIT)
 					{
 						WorldObject target = player.getTarget();
-						GMAudit.auditGMAction(player.getName() + " [" + player.getObjectId() + "]", fullCommand, (target != null ? target.getName() : "no-target"));
+						// TODO: GMAudit 
+						//GMAudit.auditGMAction(player.getName() + " [" + player.getObjectId() + "]", fullCommand, (target != null ? target.getName() : "no-target"));
 					}
 					
 					handler.useAdminCommand(fullCommand, player);
@@ -113,7 +115,7 @@ public class AdminCommandHandler: IHandler<IAdminCommandHandler, String>
 					TimeSpan runtime = DateTime.Now - begin;
 					if (runtime > TimeSpan.FromSeconds(5))
 					{
-						player.sendMessage("The execution of '" + fullCommand + "' took " + TimeAmountInterpreter.consolidateMillis(runtime) + ".");
+						player.sendMessage("The execution of '" + fullCommand + "' took " + runtime + ".");
 					}
 				}
 			});

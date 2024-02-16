@@ -30,9 +30,9 @@ public class ActionShiftHandler: IHandler<IActionShiftHandler, InstanceType>
 	public IActionShiftHandler getHandler(InstanceType iType)
 	{
 		IActionShiftHandler result = null;
-		for (InstanceType t = iType; t != null; t = t.getParent())
+		for (InstanceType? t = iType; t != null; t = t.Value.GetParent())
 		{
-			result = _actionsShift.get(t);
+			result = _actionsShift.get(t.Value);
 			if (result != null)
 			{
 				break;

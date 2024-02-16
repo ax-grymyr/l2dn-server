@@ -149,7 +149,7 @@ public class ClanTable
 		{
 			// clan name is already taken
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_ALREADY_EXISTS);
-			sm.addString(clanName);
+			sm.Params.addString(clanName);
 			player.sendPacket(sm);
 			return null;
 		}

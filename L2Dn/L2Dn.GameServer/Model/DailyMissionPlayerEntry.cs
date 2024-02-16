@@ -1,4 +1,4 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Db;
 
 namespace L2Dn.GameServer.Model;
 
@@ -8,7 +8,7 @@ public class DailyMissionPlayerEntry
     private readonly int _rewardId;
     private DailyMissionStatus _status = DailyMissionStatus.NOT_AVAILABLE;
     private int _progress;
-    private long _lastCompleted;
+    private DateTime _lastCompleted;
     private bool _recentlyCompleted;
 	
     public DailyMissionPlayerEntry(int objectId, int rewardId)
@@ -17,7 +17,7 @@ public class DailyMissionPlayerEntry
         _rewardId = rewardId;
     }
 	
-    public DailyMissionPlayerEntry(int objectId, int rewardId, DailyMissionStatus status, int progress, long lastCompleted):this(objectId, rewardId)
+    public DailyMissionPlayerEntry(int objectId, int rewardId, DailyMissionStatus status, int progress, DateTime lastCompleted):this(objectId, rewardId)
     {
         _status = status;
         _progress = progress;
@@ -60,12 +60,12 @@ public class DailyMissionPlayerEntry
         return _progress;
     }
 	
-    public long getLastCompleted()
+    public DateTime getLastCompleted()
     {
         return _lastCompleted;
     }
 	
-    public void setLastCompleted(long lastCompleted)
+    public void setLastCompleted(DateTime lastCompleted)
     {
         _lastCompleted = lastCompleted;
     }

@@ -1,13 +1,75 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Ensoul;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Utilities;
 
 public static class PacketUtil
 {
-    public static void WriteItemAugment(this PacketBitWriter writer, ItemInfo? item)
+	public static void WriteSystemMessageParam(this PacketBitWriter writer, SystemMessageParam param)
+	{
+		switch (param.Type)
+		{
+			case SystemMessageParamType.TYPE_ELEMENT_NAME:
+			case SystemMessageParamType.TYPE_BYTE:
+			case SystemMessageParamType.TYPE_FACTION_NAME:
+			case SystemMessageParamType.TYPE_ELEMENTAL_SPIRIT:
+			{
+				writer.WriteByte((byte)(int)param.Value);
+				break;
+			}
+			case SystemMessageParamType.TYPE_CASTLE_NAME:
+			case SystemMessageParamType.TYPE_SYSTEM_STRING:
+			case SystemMessageParamType.TYPE_INSTANCE_NAME:
+			case SystemMessageParamType.TYPE_CLASS_ID:
+			{
+				writer.WriteInt16((short)(int)param.Value);
+				break;
+			}
+			case SystemMessageParamType.TYPE_ITEM_NAME:
+			case SystemMessageParamType.TYPE_INT_NUMBER:
+			case SystemMessageParamType.TYPE_NPC_NAME:
+			case SystemMessageParamType.TYPE_DOOR_NAME:
+			{
+				writer.WriteInt32((int)param.Value);
+				break;
+			}
+			case SystemMessageParamType.TYPE_LONG_NUMBER:
+			{
+				writer.WriteInt64((long)param.Value);
+				break;
+			}
+			case SystemMessageParamType.TYPE_TEXT:
+			case SystemMessageParamType.TYPE_PLAYER_NAME:
+			{
+				writer.WriteString((string)param.Value);
+				break;
+			}
+			case SystemMessageParamType.TYPE_SKILL_NAME:
+			{
+				int[] array = (int[])param.Value;
+				writer.WriteInt32(array[0]); // skill id
+				writer.WriteInt16((short)array[1]); // skill level
+				writer.WriteInt16((short)array[2]); // skill sub level
+				break;
+			}
+			case SystemMessageParamType.TYPE_POPUP_ID:
+			case SystemMessageParamType.TYPE_ZONE_NAME:
+			{
+				int[] array = (int[])param.Value;
+				writer.WriteInt32(array[0]); // x
+				writer.WriteInt32(array[1]); // y
+				writer.WriteInt32(array[2]); // z
+				break;
+			}
+			default:
+				throw new InvalidOperationException($"Invalid parameter type of SystemMessageParam: {param.Type}");
+		}
+	}
+
+	public static void WriteItemAugment(this PacketBitWriter writer, ItemInfo? item)
     {
         VariationInstance? augmentation = item?.getAugmentation(); 
         if (augmentation != null)
