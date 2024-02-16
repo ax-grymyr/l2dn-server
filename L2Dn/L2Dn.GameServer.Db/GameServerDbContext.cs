@@ -68,4 +68,8 @@ public class GameServerDbContext: DbContext
     public DbSet<BuyList> BuyLists => Set<BuyList>();
     public DbSet<MonsterDerbyHistory> DerbyHistory => Set<MonsterDerbyHistory>();
     public DbSet<MonsterDerbyBet> DerbyBets => Set<MonsterDerbyBet>();
+    public DbSet<DbAirShip> AirShips => Set<DbAirShip>();
+    public DbSet<DbCastle> Castles => Set<DbCastle>();
+    public DbSet<CastleManorProduction> CastleManorProduction => Set<CastleManorProduction>();
+    public DbSet<CastleManorProcure> CastleManorProcure => Set<CastleManorProcure>();
 }

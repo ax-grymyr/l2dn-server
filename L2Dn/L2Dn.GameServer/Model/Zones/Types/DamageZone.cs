@@ -1,9 +1,10 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
 
@@ -21,12 +22,10 @@ public class DamageZone : ZoneType
 	
 	private int _startTask;
 	private int _reuseTask;
-	protected volatile Future<?> _task;
+	protected volatile ScheduledFuture _task;
 	
-	public DamageZone(int id)
+	public DamageZone(int id): base(id)
 	{
-		base(id);
-		
 		// Setup default damage
 		_damageHPPerSec = 200;
 		_damageMPPerSec = 0;
@@ -72,7 +71,7 @@ public class DamageZone : ZoneType
 	
 	protected override void onEnter(Creature creature)
 	{
-		Future<?> task = _task;
+		ScheduledFuture task = _task;
 		if ((task == null) && ((_damageHPPerSec != 0) || (_damageMPPerSec != 0)))
 		{
 			Player player = creature.getActingPlayer();
@@ -90,7 +89,7 @@ public class DamageZone : ZoneType
 				task = _task;
 				if (task == null)
 				{
-					_task = task = ThreadPool.scheduleAtFixedRate(new ApplyDamage(), _startTask, _reuseTask);
+					_task = task = ThreadPool.scheduleAtFixedRate(new ApplyDamage(this), _startTask, _reuseTask);
 				}
 			}
 		}
@@ -126,24 +125,26 @@ public class DamageZone : ZoneType
 	
 	private class ApplyDamage: Runnable
 	{
+		private readonly DamageZone _damageZone;
 		private readonly Castle _castle;
 		
-		protected ApplyDamage()
+		public ApplyDamage(DamageZone damageZone)
 		{
-			_castle = getCastle();
+			_damageZone = damageZone;
+			_castle = damageZone.getCastle();
 		}
 		
 		public void run()
 		{
-			if (!isEnabled())
+			if (!_damageZone.isEnabled())
 			{
 				return;
 			}
 			
-			if (getCharactersInside().isEmpty())
+			if (_damageZone.getCharactersInside().isEmpty())
 			{
-				_task.cancel(false);
-				_task = null;
+				_damageZone._task.cancel(false);
+				_damageZone._task = null;
 				return;
 			}
 			
@@ -155,13 +156,13 @@ public class DamageZone : ZoneType
 				// castle zones active only during siege
 				if (!siege)
 				{
-					_task.cancel(false);
-					_task = null;
+					_damageZone._task.cancel(false);
+					_damageZone._task = null;
 					return;
 				}
 			}
 			
-			foreach (Creature character in getCharactersInside())
+			foreach (Creature character in _damageZone.getCharactersInside())
 			{
 				if ((character != null) && character.isPlayer() && !character.isDead())
 				{
@@ -176,13 +177,13 @@ public class DamageZone : ZoneType
 					}
 					
 					double multiplier = 1 + (character.getStat().getValue(Stat.DAMAGE_ZONE_VULN, 0) / 100);
-					if (getHPDamagePerSecond() != 0)
+					if (_damageZone.getHPDamagePerSecond() != 0)
 					{
-						character.reduceCurrentHp(getHPDamagePerSecond() * multiplier, character, null);
+						character.reduceCurrentHp(_damageZone.getHPDamagePerSecond() * multiplier, character, null);
 					}
-					if (getMPDamagePerSecond() != 0)
+					if (_damageZone.getMPDamagePerSecond() != 0)
 					{
-						character.reduceCurrentMp(getMPDamagePerSecond() * multiplier);
+						character.reduceCurrentMp(_damageZone.getMPDamagePerSecond() * multiplier);
 					}
 				}
 			}

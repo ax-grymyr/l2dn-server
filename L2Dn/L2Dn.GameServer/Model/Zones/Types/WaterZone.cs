@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
 
@@ -31,15 +32,15 @@ public class WaterZone : ZoneType
 			{
 				if (creature.isFakePlayer())
 				{
-					player.sendPacket(new FakePlayerInfo((Npc) creature));
+					player.sendPacket(new FakePlayerInfoPacket((Npc) creature));
 				}
 				else if (creature.getRunSpeed() == 0)
 				{
-					player.sendPacket(new ServerObjectInfo((Npc) creature, player));
+					player.sendPacket(new ServerObjectInfoPacket((Npc) creature, player));
 				}
 				else
 				{
-					player.sendPacket(new NpcInfo((Npc) creature));
+					player.sendPacket(new NpcInfoPacket((Npc) creature));
 				}
 			});
 		}
@@ -68,15 +69,15 @@ public class WaterZone : ZoneType
 			{
 				if (creature.isFakePlayer())
 				{
-					player.sendPacket(new FakePlayerInfo((Npc) creature));
+					player.sendPacket(new FakePlayerInfoPacket((Npc) creature));
 				}
 				else if (creature.getRunSpeed() == 0)
 				{
-					player.sendPacket(new ServerObjectInfo((Npc) creature, player));
+					player.sendPacket(new ServerObjectInfoPacket((Npc) creature, player));
 				}
 				else
 				{
-					player.sendPacket(new NpcInfo((Npc) creature));
+					player.sendPacket(new NpcInfoPacket((Npc) creature));
 				}
 			});
 		}

@@ -1,16 +1,13 @@
+using System.Net;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Network;
-using NLog;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
 internal class AntiFeedManager
 {
-	protected static readonly Logger LOGGER_ACCOUNTING = LogManager.GetLogger(nameof(AntiFeedManager));
-	
 	public const int GAME_ID = 0;
 	public const int OLYMPIAD_ID = 1;
 	public const int TVT_ID = 2;
@@ -63,7 +60,7 @@ internal class AntiFeedManager
 		}
 
 		if ((Config.ANTIFEED_INTERVAL > 0) && _lastDeathTimes.containsKey(targetPlayer.getObjectId()) &&
-		    ((DateTime.UtcNow - _lastDeathTimes.get(targetPlayer.getObjectId())) < Config.ANTIFEED_INTERVAL))
+		    (DateTime.UtcNow - _lastDeathTimes.get(targetPlayer.getObjectId())) < TimeSpan.FromMilliseconds(Config.ANTIFEED_INTERVAL))
 		{
 			return false;
 		}
@@ -85,7 +82,7 @@ internal class AntiFeedManager
 				return !Config.ANTIFEED_DISCONNECTED_AS_DUALBOX;
 			}
 			
-			return !targetClient.getIp().equals(attackerClient.getIp());
+			return !targetClient.IpAddress.Equals(attackerClient.IpAddress);
 		}
 		
 		return true;
@@ -127,7 +124,7 @@ internal class AntiFeedManager
 	 * @return If number of all simultaneous connections from player's IP address lower than max then increment connection count and return true.<br>
 	 *         False if number of all simultaneous connections from player's IP address higher than max.
 	 */
-	public bool tryAddClient(int eventId, GameClient client, int max)
+	public bool tryAddClient(int eventId, GameSession client, int max)
 	{
 		if (client == null)
 		{
@@ -140,7 +137,7 @@ internal class AntiFeedManager
 			return false; // no such event registered
 		}
 		
-		int addrHash = client.getIp().hashCode();
+		int addrHash = client.IpAddress.GetHashCode();
 		AtomicInteger connectionCount = @event.computeIfAbsent(addrHash, k => new AtomicInteger());
 		if ((connectionCount.get() + 1) <= (max + Config.DUALBOX_CHECK_WHITELIST.getOrDefault(addrHash, 0)))
 		{
@@ -168,7 +165,7 @@ internal class AntiFeedManager
 	 * @param client
 	 * @return true if success and false if any problem detected.
 	 */
-	public bool removeClient(int eventId, GameClient client)
+	public bool removeClient(int eventId, GameSession client)
 	{
 		if (client == null)
 		{
@@ -181,7 +178,7 @@ internal class AntiFeedManager
 			return false; // no such event registered
 		}
 		
-		int addrHash = client.getIp().hashCode();
+		int addrHash = client.IpAddress.GetHashCode();
 		return @event.computeIfPresent(addrHash, (k, v) =>
 		{
 			if ((v == null) || (v.decrementAndGet() == 0))
@@ -214,8 +211,8 @@ internal class AntiFeedManager
 			return;
 		}
 		
-		String clientIp = client.getIp();
-		if (clientIp == null)
+		IPAddress clientIp = client.IpAddress;
+		if (clientIp.Equals(IPAddress.Any))
 		{
 			return;
 		}
@@ -266,14 +263,14 @@ internal class AntiFeedManager
 	 * @param max
 	 * @return maximum number of allowed connections (whitelist + max)
 	 */
-	public int getLimit(GameClient client, int max)
+	public int getLimit(GameSession client, int max)
 	{
 		if (client == null)
 		{
 			return max;
 		}
 		
-		int addrHash = client.getIp().hashCode();
+		int addrHash = client.IpAddress.GetHashCode();
 		int limit = max;
 		if (Config.DUALBOX_CHECK_WHITELIST.containsKey(addrHash))
 		{

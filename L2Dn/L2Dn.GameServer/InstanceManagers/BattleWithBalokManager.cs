@@ -1,3 +1,4 @@
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
 
@@ -29,18 +30,19 @@ public class BattleWithBalokManager
 	
 	public Map<int, int> getTopPlayers(int count)
 	{
-		return _playerPoints.entrySet().stream().sorted(Entry.comparingByValue(Comparator.reverseOrder())).limit(count).collect(Collectors.toMap(Entry::getKey, Entry::getValue, (e1, e2) => e1, LinkedHashMap::new));
+		Map<int, int> result = new();
+		_playerPoints.OrderByDescending(kvp => kvp.Value).Take(count).ForEach(kvp => result.put(kvp.Key, kvp.Value));
+		return result;
 	}
 	
 	public int getPlayerRank(Player player)
 	{
-		if (!_playerPoints.containsKey(player.getObjectId()))
+		if (!_playerPoints.TryGetValue(player.getObjectId(), out int points))
 		{
 			return 0;
 		}
 		
-		Map<int, int> sorted = _playerPoints.entrySet().stream().sorted(Entry.comparingByValue(Comparator.reverseOrder())).collect(Collectors.toMap(Entry::getKey, Entry::getValue, (e1, e2) => e1, LinkedHashMap::new));
-		return sorted.Keys.stream().toList().indexOf(player.getObjectId()) + 1;
+		return _playerPoints.Values.Count(p => p > points) + 1; // TODO: when many players have the same amount of points 
 	}
 	
 	public int getMonsterPoints(Player player)

@@ -3,6 +3,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Packets;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -134,9 +135,10 @@ public class BoatManager
 	 * @param point2
 	 * @param packet
 	 */
-	public void broadcastPacket(VehiclePathPoint point1, VehiclePathPoint point2, ServerPacket packet)
+	public void broadcastPacket<TPacket>(VehiclePathPoint point1, VehiclePathPoint point2, TPacket packet)
+		where TPacket: IOutgoingPacket
 	{
-		broadcastPacketsToPlayers(point1, point2, packet);
+		broadcastPacketsToPlayers(point1, point2).SendPackets(packet);
 	}
 	
 	/**
@@ -145,24 +147,20 @@ public class BoatManager
 	 * @param point2
 	 * @param packets
 	 */
-	public void broadcastPackets(VehiclePathPoint point1, VehiclePathPoint point2, params ServerPacket[] packets)
+	public PacketSendUtil broadcastPackets(VehiclePathPoint point1, VehiclePathPoint point2)
 	{
-		broadcastPacketsToPlayers(point1, point2, packets);
+		return broadcastPacketsToPlayers(point1, point2);
 	}
 	
-	private void broadcastPacketsToPlayers(VehiclePathPoint point1, VehiclePathPoint point2, params ServerPacket[] packets)
+	private PacketSendUtil broadcastPacketsToPlayers(VehiclePathPoint point1, VehiclePathPoint point2)
 	{
-		foreach (Player player in World.getInstance().getPlayers())
-		{
-			if ((MathUtil.hypot(player.getX() - point1.getX(), player.getY() - point1.getY()) < Config.BOAT_BROADCAST_RADIUS) || //
-				(MathUtil.hypot(player.getX() - point2.getX(), player.getY() - point2.getY()) < Config.BOAT_BROADCAST_RADIUS))
-			{
-				foreach (ServerPacket p in packets)
-				{
-					player.sendPacket(p);
-				}
-			}
-		}
+		IEnumerable<Player> players = World.getInstance().getPlayers().Where(player =>
+			(MathUtil.hypot(player.getX() - point1.getX(), player.getY() - point1.getY()) <
+			 Config.BOAT_BROADCAST_RADIUS) || //
+			(MathUtil.hypot(player.getX() - point2.getX(), player.getY() - point2.getY()) <
+			 Config.BOAT_BROADCAST_RADIUS));
+
+		return new PacketSendUtil(players);
 	}
 	
 	private static class SingletonHolder

@@ -5,12 +5,12 @@ public class SeedProduction
     private readonly int _seedId;
     private readonly long _price;
     private readonly long _startAmount;
-    private readonly AtomicLong _amount;
+    private long _amount;
 	
     public SeedProduction(int id, long amount, long price, long startAmount)
     {
         _seedId = id;
-        _amount = new AtomicLong(amount);
+        _amount = amount;
         _price = price;
         _startAmount = startAmount;
     }
@@ -22,7 +22,7 @@ public class SeedProduction
 	
     public long getAmount()
     {
-        return _amount.get();
+        return Interlocked.Read(ref _amount);
     }
 	
     public long getPrice()
@@ -37,7 +37,7 @@ public class SeedProduction
 	
     public void setAmount(long amount)
     {
-        _amount.set(amount);
+        Interlocked.Exchange(ref _amount, amount);
     }
 	
     public bool decreaseAmount(long value)
@@ -46,14 +46,15 @@ public class SeedProduction
         long next;
         do
         {
-            current = _amount.get();
+            current = Interlocked.Read(ref _amount);
             next = current - value;
             if (next < 0)
             {
                 return false;
             }
         }
-        while (!_amount.compareAndSet(current, next));
+        while (Interlocked.CompareExchange(ref _amount, next, current) != current);
+        
         return true;
     }
 }

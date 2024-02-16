@@ -2,8 +2,9 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
 
@@ -20,7 +21,7 @@ public class EffectZone : ZoneType
 	private bool _isShowDangerIcon;
 	private bool _removeEffectsOnExit;
 	protected Map<int, int> _skills;
-	protected volatile Future<?> _task;
+	protected volatile ScheduledFuture _task;
 	
 	public EffectZone(int id):base(id)
 	{
@@ -104,6 +105,7 @@ public class EffectZone : ZoneType
 			default:
 			{
 				base.setParameter(name, value);
+				break;
 			}
 		}
 	}
@@ -112,7 +114,7 @@ public class EffectZone : ZoneType
 	{
 		if (_skills != null)
 		{
-			Future<?> task = _task;
+			ScheduledFuture task = _task;
 			if (task == null)
 			{
 				lock (this)
@@ -120,7 +122,7 @@ public class EffectZone : ZoneType
 					task = _task;
 					if (task == null)
 					{
-						_task = task = ThreadPool.scheduleAtFixedRate(new ApplySkill(), _initialDelay, _reuse);
+						_task = task = ThreadPool.scheduleAtFixedRate(new ApplySkill(this), _initialDelay, _reuse);
 					}
 				}
 			}
@@ -132,7 +134,7 @@ public class EffectZone : ZoneType
 			if (_isShowDangerIcon)
 			{
 				creature.setInsideZone(ZoneId.DANGER_AREA, true);
-				creature.sendPacket(new EtcStatusUpdate(creature.getActingPlayer()));
+				creature.sendPacket(new EtcStatusUpdatePacket(creature.getActingPlayer()));
 			}
 		}
 	}
@@ -147,7 +149,7 @@ public class EffectZone : ZoneType
 				creature.setInsideZone(ZoneId.DANGER_AREA, false);
 				if (!creature.isInsideZone(ZoneId.DANGER_AREA))
 				{
-					creature.sendPacket(new EtcStatusUpdate(creature.getActingPlayer()));
+					creature.sendPacket(new EtcStatusUpdatePacket(creature.getActingPlayer()));
 				}
 			}
 			if (_removeEffectsOnExit && (_skills != null))
@@ -223,9 +225,12 @@ public class EffectZone : ZoneType
 	
 	private class ApplySkill: Runnable
 	{
-		protected ApplySkill()
+		private readonly EffectZone _effectZone;
+		
+		public ApplySkill(EffectZone effectZone)
 		{
-			if (_skills == null)
+			_effectZone = effectZone;
+			if (effectZone._skills == null)
 			{
 				throw new InvalidOperationException("No skills defined.");
 			}
@@ -233,29 +238,29 @@ public class EffectZone : ZoneType
 		
 		public void run()
 		{
-			if (!isEnabled())
+			if (!_effectZone.isEnabled())
 			{
 				return;
 			}
 			
-			if (getCharactersInside().isEmpty())
+			if (_effectZone.getCharactersInside().isEmpty())
 			{
-				if (_task != null)
+				if (_effectZone._task != null)
 				{
-					_task.cancel(false);
-					_task = null;
+					_effectZone._task.cancel(false);
+					_effectZone._task = null;
 				}
 				return;
 			}
 			
-			foreach (Creature character in getCharactersInside())
+			foreach (Creature character in _effectZone.getCharactersInside())
 			{
-				if ((character != null) && character.isPlayer() && !character.isDead() && (Rnd.get(100) < _chance))
+				if ((character != null) && character.isPlayer() && !character.isDead() && (Rnd.get(100) < _effectZone._chance))
 				{
-					foreach (var e in _skills)
+					foreach (var e in _effectZone._skills)
 					{
 						Skill skill = SkillData.getInstance().getSkill(e.Key, e.Value);
-						if ((skill != null) && (_bypassConditions || skill.checkCondition(character, character, false)))
+						if ((skill != null) && (_effectZone._bypassConditions || skill.checkCondition(character, character, false)))
 						{
 							if (character.getAffectedSkillLevel(skill.getId()) < skill.getLevel())
 							{

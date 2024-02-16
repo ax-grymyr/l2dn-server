@@ -10439,7 +10439,7 @@ public class Player: Playable
 		}
 	}
 	
-	public long getLastAccess()
+	public DateTime getLastAccess()
 	{
 		return _lastAccess;
 	}

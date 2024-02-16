@@ -469,7 +469,7 @@ public abstract class ZoneType: ListenersContainer
 	
 	protected abstract void onExit(Creature creature);
 	
-	public void onDieInside(Creature creature)
+	public virtual void onDieInside(Creature creature)
 	{
 	}
 	
@@ -477,11 +477,11 @@ public abstract class ZoneType: ListenersContainer
 	{
 	}
 	
-	public void onPlayerLoginInside(Player player)
+	public virtual void onPlayerLoginInside(Player player)
 	{
 	}
 	
-	public void onPlayerLogoutInside(Player player)
+	public virtual void onPlayerLogoutInside(Player player)
 	{
 	}
 	

@@ -1,10 +1,13 @@
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -176,14 +179,12 @@ public class CastleManager
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				PreparedStatement ps = con.prepareStatement("DELETE FROM items WHERE owner_id = ? and item_id = ?");
-				ps.setInt(1, member.getObjectId());
-				ps.setInt(2, circletId);
-				ps.execute();
+				int ownerId = member.getObjectId(); 
+				ctx.Items.Where(item => item.OwnerId == ownerId && item.ItemId == circletId).ExecuteDelete();
 			}
 			catch (Exception e)
 			{
-				LOGGER.Warn(GetType().Name + ": Failed to remove castle circlets offline for player " + member.getName() + ": " + e);
+				LOGGER.Error(GetType().Name + ": Failed to remove castle circlets offline for player " + member.getName() + ": " + e);
 			}
 		}
 	}
@@ -193,13 +194,9 @@ public class CastleManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			Statement s = con.createStatement();
-			ResultSet rs = s.executeQuery("SELECT id FROM castle ORDER BY id");
-			while (rs.next())
-			{
-				int castleId = rs.getInt("id");
-				_castles.put(castleId, new Castle(castleId));
-			}
+			foreach (DbCastle castle in ctx.Castles.OrderBy(c => c.Id))
+				_castles.put(castle.Id, new Castle(castle.Id));
+
 			LOGGER.Info(GetType().Name +": Loaded " + _castles.values().Count + " castles.");
 		}
 		catch (Exception e)

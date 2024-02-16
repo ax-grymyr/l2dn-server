@@ -1,3 +1,4 @@
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
@@ -5,6 +6,8 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets.HuntingZones;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
 
@@ -51,7 +54,7 @@ public class TimedHuntingZone : ZoneType
 						player.setInsideZone(ZoneId.PVP, true);
 						if (player.hasServitors())
 						{
-							player.getServitors().values().forEach(s => s.setInsideZone(ZoneId.PVP, true));
+							player.getServitors().values().ForEach(s => s.setInsideZone(ZoneId.PVP, true));
 						}
 						if (player.hasPet())
 						{
@@ -63,7 +66,7 @@ public class TimedHuntingZone : ZoneType
 						player.setInsideZone(ZoneId.NO_PVP, true);
 						if (player.hasServitors())
 						{
-							player.getServitors().values().forEach(s => s.setInsideZone(ZoneId.NO_PVP, true));
+							player.getServitors().values().ForEach(s => s.setInsideZone(ZoneId.NO_PVP, true));
 						}
 						if (player.hasPet())
 						{
@@ -109,7 +112,7 @@ public class TimedHuntingZone : ZoneType
 					player.setInsideZone(ZoneId.PVP, false);
 					if (player.hasServitors())
 					{
-						player.getServitors().values().forEach(s => s.setInsideZone(ZoneId.PVP, false));
+						player.getServitors().values().ForEach(s => s.setInsideZone(ZoneId.PVP, false));
 					}
 					if (player.hasPet())
 					{
@@ -126,7 +129,7 @@ public class TimedHuntingZone : ZoneType
 					player.setInsideZone(ZoneId.NO_PVP, false);
 					if (player.hasServitors())
 					{
-						player.getServitors().values().forEach(s => s.setInsideZone(ZoneId.NO_PVP, false));
+						player.getServitors().values().ForEach(s => s.setInsideZone(ZoneId.NO_PVP, false));
 					}
 					if (player.hasPet())
 					{
@@ -145,7 +148,7 @@ public class TimedHuntingZone : ZoneType
 			{
 				if (!player.isInTimedHuntingZone())
 				{
-					player.sendPacket(new TimedHuntingZoneExit(lastHuntingZoneId));
+					player.sendPacket(new TimedHuntingZoneExitPacket(lastHuntingZoneId));
 				}
 			}, 1000);
 		}

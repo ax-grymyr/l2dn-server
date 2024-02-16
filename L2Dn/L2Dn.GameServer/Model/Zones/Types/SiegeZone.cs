@@ -6,7 +6,6 @@ using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
-using FortManager = L2Dn.GameServer.Model.Actor.Instances.FortManager;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
 
@@ -137,7 +136,7 @@ public class SiegeZone : ZoneType
 					player.dismount();
 				}
 				
-				if (!Config.ALLOW_MOUNTS_DURING_SIEGE && player.isTransformed() && player.getTransformation().get().isRiding())
+				if (!Config.ALLOW_MOUNTS_DURING_SIEGE && player.isTransformed() && player.getTransformation().isRiding())
 				{
 					player.untransform();
 				}
@@ -159,7 +158,7 @@ public class SiegeZone : ZoneType
 				player.exitedNoLanding();
 			}
 			// Set pvp flag
-			if (player.getPvpFlag() == 0)
+			if (!player.getPvpFlag())
 			{
 				player.startPvPFlag();
 			}

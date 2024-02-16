@@ -1,4 +1,6 @@
-﻿namespace L2Dn.GameServer.Enums;
+﻿using System.Collections.Immutable;
+
+namespace L2Dn.GameServer.Enums;
 
 public enum NpcInfoType
 {
@@ -45,6 +47,61 @@ public enum NpcInfoType
 	CLAN = 0x23,
 	ABNORMALS = 0x24,
 	VISUAL_STATE = 0x25
+}
+
+public static class NpcInfoTypeUtil
+{
+	private static readonly ImmutableSortedDictionary<NpcInfoType, int> _blockLengths = new[]
+	{
+		// 0
+		(NpcInfoType.ID, 4),
+		(NpcInfoType.ATTACKABLE, 1),
+		(NpcInfoType.RELATIONS, 8),
+		(NpcInfoType.NAME, 2),
+		(NpcInfoType.POSITION, (3 * 4)),
+		(NpcInfoType.HEADING, 4),
+		(NpcInfoType.VEHICLE_ID, 4),
+		(NpcInfoType.ATK_CAST_SPEED, (2 * 4)),
+
+		// 1
+		(NpcInfoType.SPEED_MULTIPLIER, (2 * 4)),
+		(NpcInfoType.EQUIPPED, (3 * 4)),
+		(NpcInfoType.STOP_MODE, 1),
+		(NpcInfoType.MOVE_MODE, 1),
+		(NpcInfoType.SWIM_OR_FLY, 1),
+		(NpcInfoType.TEAM, 1),
+
+		// 2
+		(NpcInfoType.ENCHANT, 4),
+		(NpcInfoType.FLYING, 4),
+		(NpcInfoType.CLONE, 4),
+		(NpcInfoType.PET_EVOLUTION_ID, 4),
+		(NpcInfoType.DISPLAY_EFFECT, 4),
+		(NpcInfoType.TRANSFORMATION, 4),
+
+		// 3
+		(NpcInfoType.CURRENT_HP, 4),
+		(NpcInfoType.CURRENT_MP, 4),
+		(NpcInfoType.MAX_HP, 4),
+		(NpcInfoType.MAX_MP, 4),
+		(NpcInfoType.SUMMONED, 1),
+		(NpcInfoType.FOLLOW_INFO, (2 * 4)),
+		(NpcInfoType.TITLE, 2),
+		(NpcInfoType.NAME_NPCSTRINGID, 4),
+
+		// 4
+		(NpcInfoType.TITLE_NPCSTRINGID, 4),
+		(NpcInfoType.PVP_FLAG, 1),
+		(NpcInfoType.REPUTATION, 4),
+		(NpcInfoType.CLAN, (5 * 4)),
+		(NpcInfoType.ABNORMALS, 0),
+		(NpcInfoType.VISUAL_STATE, 4),
+	}.ToImmutableSortedDictionary(t => t.Item1, t => t.Item2);
+
+	public static int GetBlockLength(this NpcInfoType type)
+	{
+		return _blockLengths[type];
+	}
 }
 
 // public enum NpcInfoType

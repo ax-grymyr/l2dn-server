@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
 
@@ -26,6 +27,7 @@ public class SayuneZone: ZoneType
 			default:
 			{
 				base.setParameter(name, value);
+				break;
 			}
 		}
 	}

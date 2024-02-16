@@ -1,8 +1,9 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Fishings;
+using L2Dn.GameServer.Network.OutgoingPackets.Fishing;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
 
@@ -12,7 +13,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  */
 public class FishingZone : ZoneType
 {
-	public FishingZone(int id):base(id)
+	public FishingZone(int id): base(id)
 	{
 	}
 	
@@ -34,7 +35,7 @@ public class FishingZone : ZoneType
 		if (creature.isPlayer())
 		{
 			creature.setInsideZone(ZoneId.FISHING, false);
-			creature.sendPacket(ExAutoFishAvailable.NO);
+			creature.sendPacket(ExAutoFishAvailablePacket.NO);
 		}
 	}
 	
@@ -67,18 +68,18 @@ public class FishingZone : ZoneType
 					{
 						if (fishing.isAtValidLocation())
 						{
-							player.sendPacket(ExAutoFishAvailable.YES);
+							player.sendPacket(ExAutoFishAvailablePacket.YES);
 						}
 						else
 						{
-							player.sendPacket(ExAutoFishAvailable.NO);
+							player.sendPacket(ExAutoFishAvailablePacket.NO);
 						}
 					}
 					ThreadPool.schedule(this, 1500);
 				}
 				else
 				{
-					player.sendPacket(ExAutoFishAvailable.NO);
+					player.sendPacket(ExAutoFishAvailablePacket.NO);
 				}
 			}
 		}

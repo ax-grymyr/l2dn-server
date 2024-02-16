@@ -1,3 +1,7 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Clans;
@@ -6,8 +10,11 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -15,7 +22,7 @@ namespace L2Dn.GameServer.InstanceManagers;
  * Castle manor system.
  * @author malyelfik
  */
-public class CastleManorManager: IXmlReader, IStorable
+public class CastleManorManager: DataReaderBase, IStorable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CastleManorManager));
 	
@@ -26,7 +33,7 @@ public class CastleManorManager: IXmlReader, IStorable
 	// Current manor status
 	private ManorMode _mode = ManorMode.APPROVED;
 	// Temporary date
-	private Calendar _nextModeChange = null;
+	private DateTime _nextModeChange = DateTime.MinValue;
 	// Seeds holder
 	private static readonly Map<int, Seed> _seeds = new();
 	// Manor period settings
@@ -43,9 +50,9 @@ public class CastleManorManager: IXmlReader, IStorable
 			loadDb(); // Load castle manor data (DB)
 			
 			// Set mode and start timer
-			Calendar currentTime = Calendar.getInstance();
-			int hour = currentTime.get(Calendar.HOUR_OF_DAY);
-			int min = currentTime.get(Calendar.MINUTE);
+			DateTime currentTime = DateTime.Now;
+			int hour = currentTime.Hour;
+			int min = currentTime.Minute;
 			int maintenanceMin = Config.ALT_MANOR_REFRESH_MIN + Config.ALT_MANOR_MAINTENANCE_MIN;
 			if (((hour >= Config.ALT_MANOR_REFRESH_TIME) && (min >= maintenanceMin)) || (hour < Config.ALT_MANOR_APPROVE_TIME) || ((hour == Config.ALT_MANOR_APPROVE_TIME) && (min <= Config.ALT_MANOR_APPROVE_MIN)))
 			{
@@ -62,7 +69,8 @@ public class CastleManorManager: IXmlReader, IStorable
 			// Schedule autosave
 			if (!Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 			{
-				ThreadPool.scheduleAtFixedRate(this::storeMe, Config.ALT_MANOR_SAVE_PERIOD_RATE * 60 * 60 * 1000, Config.ALT_MANOR_SAVE_PERIOD_RATE * 60 * 60 * 1000);
+				ThreadPool.scheduleAtFixedRate(() => storeMe(), Config.ALT_MANOR_SAVE_PERIOD_RATE * 60 * 60 * 1000,
+					Config.ALT_MANOR_SAVE_PERIOD_RATE * 60 * 60 * 1000);
 			}
 		}
 		else
@@ -74,120 +82,88 @@ public class CastleManorManager: IXmlReader, IStorable
 	
 	public void load()
 	{
-		parseDatapackFile("data/Seeds.xml");
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "Seeds.xml");
+		document.Elements("list").Elements("castle").ForEach(parseElement);
+		
 		LOGGER.Info(GetType().Name +": Loaded " + _seeds.size() + " seeds.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		StatSet set;
-		NamedNodeMap attrs;
-		Node att;
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		int castleId = element.Attribute("id").GetInt32();
+		element.Elements("crop").ForEach(el =>
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("castle".equalsIgnoreCase(d.getNodeName()))
-					{
-						int castleId = parseInteger(d.getAttributes(), "id");
-						for (Node c = d.getFirstChild(); c != null; c = c.getNextSibling())
-						{
-							if ("crop".equalsIgnoreCase(c.getNodeName()))
-							{
-								set = new StatSet();
-								set.set("castleId", castleId);
-								attrs = c.getAttributes();
-								for (int i = 0; i < attrs.getLength(); i++)
-								{
-									att = attrs.item(i);
-									set.set(att.getNodeName(), att.getNodeValue());
-								}
-								_seeds.put(set.getInt("seedId"), new Seed(set));
-							}
-						}
-					}
-				}
-			}
-		}
+			StatSet set = new StatSet(el);
+			set.set("castleId", castleId);
+			_seeds.put(set.getInt("seedId"), new Seed(set));
+		});
 	}
-	
+
 	private void loadDb()
 	{
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement stProduction = con.prepareStatement("SELECT * FROM castle_manor_production WHERE castle_id=?");
-			PreparedStatement stProcure = con.prepareStatement("SELECT * FROM castle_manor_procure WHERE castle_id=?");
+
 			foreach (Castle castle in CastleManager.getInstance().getCastles())
 			{
 				int castleId = castle.getResidenceId();
 				
-				// Clear params
-				stProduction.clearParameters();
-				stProcure.clearParameters();
-				
 				// Seed production
 				List<SeedProduction> pCurrent = new();
 				List<SeedProduction> pNext = new();
-				stProduction.setInt(1, castleId);
-
+				foreach(CastleManorProduction production in ctx.CastleManorProduction.Where(p => p.CastleId == castleId))
 				{
-					ResultSet rs = stProduction.executeQuery();
-					while (rs.next())
+					int seedId = production.SeedId;
+					if (_seeds.containsKey(seedId)) // Don't load unknown seeds
 					{
-						int seedId = rs.getInt("seed_id");
-						if (_seeds.containsKey(seedId)) // Don't load unknown seeds
+						SeedProduction sp = new SeedProduction(seedId, production.Amount, production.Price, production.StartAmount);
+						if (production.NextPeriod)
 						{
-							SeedProduction sp = new SeedProduction(seedId, rs.getLong("amount"), rs.getLong("price"), rs.getInt("start_amount"));
-							if (rs.getBoolean("next_period"))
-							{
-								pNext.add(sp);
-							}
-							else
-							{
-								pCurrent.add(sp);
-							}
+							pNext.add(sp);
 						}
 						else
 						{
-							LOGGER.Warn(GetType().Name + ": Unknown seed id: " + seedId + "!");
+							pCurrent.add(sp);
 						}
 					}
+					else
+					{
+						LOGGER.Warn(GetType().Name + ": Unknown seed id: " + seedId + "!");
+					}
 				}
+
 				_production.put(castleId, pCurrent);
 				_productionNext.put(castleId, pNext);
 				
 				// Seed procure
 				List<CropProcure> current = new();
 				List<CropProcure> next = new();
-				stProcure.setInt(1, castleId);
-				try
+
+				Set<int> cropIds = getCropIds();
+				foreach (CastleManorProcure procure in ctx.CastleManorProcure.Where(p => p.CastleId == castleId))
 				{
-					ResultSet rs = stProcure.executeQuery();
-					Set<int> cropIds = getCropIds();
-					while (rs.next())
+					int cropId = procure.CropId;
+					if (cropIds.Contains(cropId)) // Don't load unknown crops
 					{
-						int cropId = rs.getInt("crop_id");
-						if (cropIds.Contains(cropId)) // Don't load unknown crops
+						CropProcure cp = new CropProcure(cropId, procure.Amount, procure.RewardType,
+							procure.StartAmount, procure.Price);
+						
+						if (procure.NextPeriod)
 						{
-							CropProcure cp = new CropProcure(cropId, rs.getLong("amount"), rs.getInt("reward_type"), rs.getLong("start_amount"), rs.getLong("price"));
-							if (rs.getBoolean("next_period"))
-							{
-								next.add(cp);
-							}
-							else
-							{
-								current.add(cp);
-							}
+							next.add(cp);
 						}
 						else
 						{
-							LOGGER.Warn(GetType().Name + ": Unknown crop id: " + cropId + "!");
+							current.add(cp);
 						}
 					}
+					else
+					{
+						LOGGER.Warn(GetType().Name + ": Unknown crop id: " + cropId + "!");
+					}
 				}
+
 				_procure.put(castleId, current);
 				_procureNext.put(castleId, next);
 			}
@@ -205,35 +181,40 @@ public class CastleManorManager: IXmlReader, IStorable
 	private void scheduleModeChange()
 	{
 		// Calculate next mode change
-		_nextModeChange = Calendar.getInstance();
-		_nextModeChange.set(Calendar.SECOND, 0);
+		DateTime time = DateTime.Now;
+		time = new DateTime(time.Year, time.Month, time.Day, time.Hour, time.Minute, 0);
 		switch (_mode)
 		{
 			case ManorMode.MODIFIABLE:
 			{
-				_nextModeChange.set(Calendar.HOUR_OF_DAY, Config.ALT_MANOR_APPROVE_TIME);
-				_nextModeChange.set(Calendar.MINUTE, Config.ALT_MANOR_APPROVE_MIN);
-				if (_nextModeChange.before(Calendar.getInstance()))
-				{
-					_nextModeChange.add(Calendar.DATE, 1);
-				}
+				time = new DateTime(time.Year, time.Month, time.Day, Config.ALT_MANOR_APPROVE_TIME, Config.ALT_MANOR_APPROVE_MIN, 0);
+				if (time < DateTime.Now)
+					time = time.AddDays(1);
+				
 				break;
 			}
 			case ManorMode.MAINTENANCE:
 			{
-				_nextModeChange.set(Calendar.HOUR_OF_DAY, Config.ALT_MANOR_REFRESH_TIME);
-				_nextModeChange.set(Calendar.MINUTE, Config.ALT_MANOR_REFRESH_MIN + Config.ALT_MANOR_MAINTENANCE_MIN);
+				time = new DateTime(time.Year, time.Month, time.Day, Config.ALT_MANOR_REFRESH_TIME,
+					Config.ALT_MANOR_REFRESH_MIN + Config.ALT_MANOR_MAINTENANCE_MIN, 0);
+				
 				break;
 			}
 			case ManorMode.APPROVED:
 			{
-				_nextModeChange.set(Calendar.HOUR_OF_DAY, Config.ALT_MANOR_REFRESH_TIME);
-				_nextModeChange.set(Calendar.MINUTE, Config.ALT_MANOR_REFRESH_MIN);
+				time = new DateTime(time.Year, time.Month, time.Day, Config.ALT_MANOR_REFRESH_TIME, Config.ALT_MANOR_REFRESH_MIN, 0);
 				break;
 			}
 		}
+
+		_nextModeChange = time;
+
+		TimeSpan delay = time - DateTime.Now;
+		if (delay < TimeSpan.Zero)
+			delay = TimeSpan.Zero;
+		
 		// Schedule mode change
-		ThreadPool.schedule(this::changeMode, Math.Max(0, _nextModeChange.getTimeInMillis() - System.currentTimeMillis()));
+		ThreadPool.schedule(changeMode, delay);
 	}
 	
 	public void changeMode()
@@ -290,8 +271,8 @@ public class CastleManorManager: IXmlReader, IStorable
 					
 					if (castle.getTreasury() < getManorCost(castleId, false))
 					{
-						_productionNext.put(castleId, Collections.emptyList());
-						_procureNext.put(castleId, Collections.emptyList());
+						_productionNext.put(castleId, new());
+						_procureNext.put(castleId, new());
 					}
 					else
 					{
@@ -393,26 +374,24 @@ public class CastleManorManager: IXmlReader, IStorable
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				PreparedStatement dps = con.prepareStatement("DELETE FROM castle_manor_production WHERE castle_id = ? AND next_period = 1");
-				PreparedStatement ips = con.prepareStatement(INSERT_PRODUCT);
+
 				// Delete old data
-				dps.setInt(1, castleId);
-				dps.executeUpdate();
+				ctx.CastleManorProduction.Where(p => p.CastleId == castleId && p.NextPeriod).ExecuteDelete();
 				
 				// Insert new data
 				if (!list.isEmpty())
 				{
-					foreach (SeedProduction sp in list)
+					ctx.CastleManorProduction.AddRange(list.Select(sp => new CastleManorProduction()
 					{
-						ips.setInt(1, castleId);
-						ips.setInt(2, sp.getId());
-						ips.setLong(3, sp.getAmount());
-						ips.setLong(4, sp.getStartAmount());
-						ips.setLong(5, sp.getPrice());
-						ips.setBoolean(6, true);
-						ips.addBatch();
-					}
-					ips.executeBatch();
+						CastleId = (short)castleId,
+						SeedId = sp.getId(),
+						Amount = sp.getAmount(),
+						StartAmount = sp.getStartAmount(),
+						Price = sp.getPrice(),
+						NextPeriod = true
+					}));
+
+					ctx.SaveChanges();
 				}
 			}
 			catch (Exception e)
@@ -430,27 +409,25 @@ public class CastleManorManager: IXmlReader, IStorable
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				PreparedStatement dps = con.prepareStatement("DELETE FROM castle_manor_procure WHERE castle_id = ? AND next_period = 1");
-				PreparedStatement ips = con.prepareStatement(INSERT_CROP);
+				
 				// Delete old data
-				dps.setInt(1, castleId);
-				dps.executeUpdate();
+				ctx.CastleManorProcure.Where(p => p.CastleId == castleId && p.NextPeriod).ExecuteDelete();
 				
 				// Insert new data
 				if (!list.isEmpty())
 				{
-					foreach (CropProcure cp in list)
+					ctx.CastleManorProcure.AddRange(list.Select(cp => new CastleManorProcure()
 					{
-						ips.setInt(1, castleId);
-						ips.setInt(2, cp.getId());
-						ips.setLong(3, cp.getAmount());
-						ips.setLong(4, cp.getStartAmount());
-						ips.setLong(5, cp.getPrice());
-						ips.setInt(6, cp.getReward());
-						ips.setBoolean(7, true);
-						ips.addBatch();
-					}
-					ips.executeBatch();
+						CastleId = (short)castleId,
+						CropId = cp.getId(),
+						Amount = cp.getAmount(),
+						StartAmount = cp.getStartAmount(),
+						RewardType = cp.getReward(),
+						Price = cp.getPrice(),
+						NextPeriod = true
+					}));
+
+					ctx.SaveChanges();
 				}
 			}
 			catch (Exception e)
@@ -460,21 +437,18 @@ public class CastleManorManager: IXmlReader, IStorable
 		}
 	}
 	
-	public void updateCurrentProduction(int castleId, Collection<SeedProduction> items)
+	public void updateCurrentProduction(int castleId, ICollection<SeedProduction> items)
 	{
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(
-				"UPDATE castle_manor_production SET amount = ? WHERE castle_id = ? AND seed_id = ? AND next_period = 0");
 			foreach (SeedProduction sp in items)
 			{
-				ps.setLong(1, sp.getAmount());
-				ps.setInt(2, castleId);
-				ps.setInt(3, sp.getId());
-				ps.addBatch();
+				int seedId = sp.getId();
+				long amount = sp.getAmount();
+				ctx.CastleManorProduction.Where(p => p.CastleId == castleId && p.SeedId == seedId && !p.NextPeriod)
+					.ExecuteUpdate(s => s.SetProperty(p => p.Amount, amount));
 			}
-			ps.executeBatch();
 		}
 		catch (Exception e)
 		{
@@ -487,16 +461,13 @@ public class CastleManorManager: IXmlReader, IStorable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(
-				"UPDATE castle_manor_procure SET amount = ? WHERE castle_id = ? AND crop_id = ? AND next_period = 0");
 			foreach (CropProcure sp in items)
 			{
-				ps.setLong(1, sp.getAmount());
-				ps.setInt(2, castleId);
-				ps.setInt(3, sp.getId());
-				ps.addBatch();
+				int seedId = sp.getId();
+				long amount = sp.getAmount();
+				ctx.CastleManorProcure.Where(p => p.CastleId == castleId && p.CropId == seedId && !p.NextPeriod)
+					.ExecuteUpdate(s => s.SetProperty(p => p.Amount, amount));
 			}
-			ps.executeBatch();
 		}
 		catch (Exception e)
 		{
@@ -560,83 +531,56 @@ public class CastleManorManager: IXmlReader, IStorable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ds = con.prepareStatement("DELETE FROM castle_manor_production");
-			PreparedStatement is1 = con.prepareStatement(INSERT_PRODUCT);
-			PreparedStatement dp = con.prepareStatement("DELETE FROM castle_manor_procure");
-			PreparedStatement ip = con.prepareStatement(INSERT_CROP);
+
 			// Delete old seeds
-			ds.executeUpdate();
-			
-			// Current production
-			foreach (var entry in _production)
-			{
-				foreach (SeedProduction sp in entry.Value)
-				{
-					is1.setInt(1, entry.Key);
-					is1.setInt(2, sp.getId());
-					is1.setLong(3, sp.getAmount());
-					is1.setLong(4, sp.getStartAmount());
-					is1.setLong(5, sp.getPrice());
-					is1.setBoolean(6, false);
-					is1.addBatch();
-				}
-			}
-			
-			// Next production
-			foreach (var entry in _productionNext)
-			{
-				foreach (SeedProduction sp in entry.Value)
-				{
-					is1.setInt(1, entry.Key);
-					is1.setInt(2, sp.getId());
-					is1.setLong(3, sp.getAmount());
-					is1.setLong(4, sp.getStartAmount());
-					is1.setLong(5, sp.getPrice());
-					is1.setBoolean(6, true);
-					is1.addBatch();
-				}
-			}
-			
-			// Execute production batch
-			is1.executeBatch();
-			
+			ctx.CastleManorProduction.ExecuteDelete();
+
 			// Delete old procure
-			dp.executeUpdate();
+			ctx.CastleManorProcure.ExecuteDelete();
+
+			// Current production
+			IEnumerable<(int CastleId, bool NextPeriod, SeedProduction Production)> currentProduction =
+				_production.SelectMany(kvp =>
+					kvp.Value.Select(sp => (CastleId: kvp.Key, NextPeriod: false, Production: sp)));
+
+			// Next production
+			IEnumerable<(int CastleId, bool NextPeriod, SeedProduction Production)> nextProduction =
+				_productionNext.SelectMany(kvp =>
+					kvp.Value.Select(sp => (CastleId: kvp.Key, NextPeriod: true, Production: sp)));
+
+			ctx.CastleManorProduction.AddRange(currentProduction.Concat(nextProduction).Select(t => new CastleManorProduction
+			{
+				CastleId = (short)t.CastleId,
+				SeedId = t.Production.getId(),
+				Amount = t.Production.getAmount(),
+				StartAmount = t.Production.getStartAmount(),
+				Price = t.Production.getPrice(),
+				NextPeriod = t.NextPeriod
+			}));
 			
 			// Current procure
-			foreach (var entry in _procure)
-			{
-				foreach (CropProcure cp in entry.Value)
-				{
-					ip.setInt(1, entry.Key);
-					ip.setInt(2, cp.getId());
-					ip.setLong(3, cp.getAmount());
-					ip.setLong(4, cp.getStartAmount());
-					ip.setLong(5, cp.getPrice());
-					ip.setInt(6, cp.getReward());
-					ip.setBoolean(7, false);
-					ip.addBatch();
-				}
-			}
-			
+			IEnumerable<(int CastleId, bool NextPeriod, CropProcure Procure)> currentProcure =
+				_procure.SelectMany(kvp =>
+					kvp.Value.Select(sp => (CastleId: kvp.Key, NextPeriod: false, Procure: sp)));
+
 			// Next procure
-			foreach (var entry in _procureNext)
+			IEnumerable<(int CastleId, bool NextPeriod, CropProcure Procure)> nextProcure =
+				_procureNext.SelectMany(kvp =>
+					kvp.Value.Select(sp => (CastleId: kvp.Key, NextPeriod: true, Procure: sp)));
+
+			ctx.CastleManorProcure.AddRange(currentProcure.Concat(nextProcure).Select(t => new CastleManorProcure
 			{
-				foreach (CropProcure cp in entry.Value)
-				{
-					ip.setInt(1, entry.Key);
-					ip.setInt(2, cp.getId());
-					ip.setLong(3, cp.getAmount());
-					ip.setLong(4, cp.getStartAmount());
-					ip.setLong(5, cp.getPrice());
-					ip.setInt(6, cp.getReward());
-					ip.setBoolean(7, true);
-					ip.addBatch();
-				}
-			}
+				CastleId = (short)t.CastleId,
+				CropId = t.Procure.getId(),
+				Amount = t.Procure.getAmount(),
+				StartAmount = t.Procure.getStartAmount(),
+				Price = t.Procure.getPrice(),
+				RewardType = t.Procure.getReward(),
+				NextPeriod = t.NextPeriod
+			}));
 			
 			// Execute procure batch
-			ip.executeBatch();
+			ctx.SaveChanges();
 			
 			return true;
 		}
@@ -664,15 +608,12 @@ public class CastleManorManager: IXmlReader, IStorable
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				PreparedStatement ds = con.prepareStatement("DELETE FROM castle_manor_production WHERE castle_id = ?");
-				PreparedStatement dc = con.prepareStatement("DELETE FROM castle_manor_procure WHERE castle_id = ?");
+
 				// Delete seeds
-				ds.setInt(1, castleId);
-				ds.executeUpdate();
-				
+				ctx.CastleManorProduction.Where(p => p.CastleId == castleId).ExecuteDelete();
+
 				// Delete procure
-				dc.setInt(1, castleId);
-				dc.executeUpdate();
+				ctx.CastleManorProcure.Where(p => p.CastleId == castleId).ExecuteDelete();
 			}
 			catch (Exception e)
 			{
@@ -703,7 +644,7 @@ public class CastleManorManager: IXmlReader, IStorable
 	
 	public String getNextModeChange()
 	{
-		return new SimpleDateFormat("dd/MM HH:mm:ss").format(_nextModeChange.getTime());
+		return _nextModeChange.ToString("dd/MM HH:mm:ss");
 	}
 	
 	// -------------------------------------------------------
@@ -740,7 +681,9 @@ public class CastleManorManager: IXmlReader, IStorable
 	
 	public Set<int> getSeedIds()
 	{
-		return _seeds.Keys;
+		Set<int> set = new();
+		set.addAll(_seeds.Keys);
+		return set;
 	}
 	
 	public Set<int> getCropIds()

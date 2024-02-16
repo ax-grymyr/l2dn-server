@@ -1,11 +1,17 @@
+using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Zones;
+using L2Dn.GameServer.Model.Zones.Forms;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -14,19 +20,19 @@ namespace L2Dn.GameServer.InstanceManagers;
  * This class manages the zones
  * @author durgus
  */
-public class ZoneManager: IXmlReader
+public class ZoneManager: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ZoneManager));
 	
-	private static readonly Map<String, AbstractZoneSettings> SETTINGS = new();
+	private static readonly Map<string, AbstractZoneSettings> SETTINGS = new();
 	
 	private const int SHIFT_BY = 15;
 	private static readonly int OFFSET_X = Math.Abs(World.WORLD_X_MIN >> SHIFT_BY);
 	private static readonly int OFFSET_Y = Math.Abs(World.WORLD_Y_MIN >> SHIFT_BY);
 	
 	private readonly Map<Type, Map<int, ZoneType>> _classZones = new();
-	private readonly Map<String, SpawnTerritory> _spawnTerritories = new();
-	private readonly AtomicInteger _lastDynamicId = new AtomicInteger(300000);
+	private readonly Map<string, SpawnTerritory> _spawnTerritories = new();
+	private readonly AtomicInteger _lastDynamicId = new(300000);
 	private List<Item> _debugItems;
 	
 	private readonly ZoneRegion[][] _zoneRegions;
@@ -102,252 +108,198 @@ public class ZoneManager: IXmlReader
 		LOGGER.Info(GetType().Name +": Removed zones in " + count + " regions.");
 	}
 	
-	public void parseDocument(Document doc, File f)
+	private void parseElement(string filePath, XElement element)
 	{
-		NamedNodeMap attrs;
-		Node attribute;
-		String zoneName;
-		int[][] coords;
-		int zoneId;
-		int minZ;
-		int maxZ;
-		String zoneType;
-		String zoneShape;
-		List<int[]> rs = new();
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		string zoneType = element.Attribute("type").GetString();
+		int zoneId = element.Attribute("id").GetInt32(-1);
+		if (zoneId == -1)
+			zoneId = zoneType.equalsIgnoreCase("NpcSpawnTerritory") ? 0 : _lastDynamicId.incrementAndGet();
+
+		string? zoneName = element.Attribute("name")?.GetString(); 
+		
+		// Check zone name for NpcSpawnTerritory. Must exist and to be unique
+		if (zoneType.equalsIgnoreCase("NpcSpawnTerritory"))
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
+			if (zoneName == null)
 			{
-				attrs = n.getAttributes();
-				attribute = attrs.getNamedItem("enabled");
-				if ((attribute != null) && !Boolean.parseBoolean(attribute.getNodeValue()))
-				{
-					continue;
-				}
+				LOGGER.Error("ZoneData: Missing name for NpcSpawnTerritory in file: " + filePath + ", skipping zone");
+				return;
+			}
+			
+			if (_spawnTerritories.containsKey(zoneName))
+			{
+				LOGGER.Error("ZoneData: Name " + zoneName + " already used for another zone, check file: " + filePath + ". Skipping zone");
+				return;
+			}
+		}
+
+		Point2D[] coords;
+		
+		int minZ = element.Attribute("minZ").GetInt32();
+		int maxZ = element.Attribute("maxZ").GetInt32();
+		string zoneShape = element.Attribute("shape").GetString();
+						
+		// Get the zone shape from xml
+		ZoneForm zoneForm = null;
+		try
+		{
+			List<Point2D> rs = new();
+			element.Elements("node").ForEach(el =>
+			{
 				
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+				int x = el.Attribute("X").GetInt32();
+				int y = el.Attribute("Y").GetInt32();
+				rs.Add(new Point2D(x, y));
+			});
+
+			coords = rs.ToArray();
+			if (coords.Length == 0)
+			{
+				LOGGER.Error(GetType().Name + ": ZoneData: missing data for zone: " + zoneId + " XML file: " + filePath);
+				return;
+			}
+			
+			// Create this zone. Parsing for cuboids is a bit different than for other polygons cuboids need exactly 2 points to be defined.
+			// Other polygons need at least 3 (one per vertex)
+			if (zoneShape.equalsIgnoreCase("Cuboid"))
+			{
+				if (coords.Length == 2)
 				{
-					if ("zone".equalsIgnoreCase(d.getNodeName()))
+					zoneForm = new ZoneCuboid(coords[0].getX(), coords[1].getX(), coords[0].getY(), coords[1].getY(), minZ, maxZ);
+				}
+				else
+				{
+					LOGGER.Error(GetType().Name + ": ZoneData: Missing cuboid vertex data for zone: " + zoneId + " in file: " + filePath);
+					return;
+				}
+			}
+			else if (zoneShape.equalsIgnoreCase("NPoly"))
+			{
+				// nPoly needs to have at least 3 vertices
+				if (coords.Length > 2)
+				{
+					int[] aX = new int[coords.Length];
+					int[] aY = new int[coords.Length];
+					for (int i = 0; i < coords.Length; i++)
 					{
-						attrs = d.getAttributes();
-						attribute = attrs.getNamedItem("type");
-						if (attribute != null)
-						{
-							zoneType = attribute.getNodeValue();
-						}
-						else
-						{
-							LOGGER.Warn("ZoneData: Missing type for zone in file: " + f.getName());
-							continue;
-						}
-						
-						attribute = attrs.getNamedItem("id");
-						if (attribute != null)
-						{
-							zoneId = int.Parse(attribute.getNodeValue());
-						}
-						else
-						{
-							zoneId = zoneType.equalsIgnoreCase("NpcSpawnTerritory") ? 0 : _lastDynamicId.incrementAndGet();
-						}
-						
-						attribute = attrs.getNamedItem("name");
-						if (attribute != null)
-						{
-							zoneName = attribute.getNodeValue();
-						}
-						else
-						{
-							zoneName = null;
-						}
-						
-						// Check zone name for NpcSpawnTerritory. Must exist and to be unique
-						if (zoneType.equalsIgnoreCase("NpcSpawnTerritory"))
-						{
-							if (zoneName == null)
-							{
-								LOGGER.Warn("ZoneData: Missing name for NpcSpawnTerritory in file: " + f.getName() + ", skipping zone");
-								continue;
-							}
-							else if (_spawnTerritories.containsKey(zoneName))
-							{
-								LOGGER.Warn("ZoneData: Name " + zoneName + " already used for another zone, check file: " + f.getName() + ". Skipping zone");
-								continue;
-							}
-						}
-						
-						minZ = parseInteger(attrs, "minZ");
-						maxZ = parseInteger(attrs, "maxZ");
-						zoneType = parseString(attrs, "type");
-						zoneShape = parseString(attrs, "shape");
-						
-						// Get the zone shape from xml
-						ZoneForm zoneForm = null;
-						try
-						{
-							for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
-							{
-								if ("node".equalsIgnoreCase(cd.getNodeName()))
-								{
-									attrs = cd.getAttributes();
-									int[] point = new int[2];
-									point[0] = parseInteger(attrs, "X");
-									point[1] = parseInteger(attrs, "Y");
-									rs.add(point);
-								}
-							}
-							
-							coords = rs.toArray(new int[rs.size()][2]);
-							rs.clear();
-							
-							if ((coords == null) || (coords.length == 0))
-							{
-								LOGGER.Warn(GetType().Name + ": ZoneData: missing data for zone: " + zoneId + " XML file: " + f.getName());
-								continue;
-							}
-							
-							// Create this zone. Parsing for cuboids is a bit different than for other polygons cuboids need exactly 2 points to be defined.
-							// Other polygons need at least 3 (one per vertex)
-							if (zoneShape.equalsIgnoreCase("Cuboid"))
-							{
-								if (coords.length == 2)
-								{
-									zoneForm = new ZoneCuboid(coords[0][0], coords[1][0], coords[0][1], coords[1][1], minZ, maxZ);
-								}
-								else
-								{
-									LOGGER.Warn(GetType().Name + ": ZoneData: Missing cuboid vertex data for zone: " + zoneId + " in file: " + f.getName());
-									continue;
-								}
-							}
-							else if (zoneShape.equalsIgnoreCase("NPoly"))
-							{
-								// nPoly needs to have at least 3 vertices
-								if (coords.length > 2)
-								{
-									int[] aX = new int[coords.length];
-									int[] aY = new int[coords.length];
-									for (int i = 0; i < coords.length; i++)
-									{
-										aX[i] = coords[i][0];
-										aY[i] = coords[i][1];
-									}
-									zoneForm = new ZoneNPoly(aX, aY, minZ, maxZ);
-								}
-								else
-								{
-									LOGGER.Warn(GetType().Name + ": ZoneData: Bad data for zone: " + zoneId + " in file: " + f.getName());
-									continue;
-								}
-							}
-							else if (zoneShape.equalsIgnoreCase("Cylinder"))
-							{
-								// A Cylinder zone requires a center point
-								// at x,y and a radius
-								attrs = d.getAttributes();
-								int zoneRad = int.Parse(attrs.getNamedItem("rad").getNodeValue());
-								if ((coords.length == 1) && (zoneRad > 0))
-								{
-									zoneForm = new ZoneCylinder(coords[0][0], coords[0][1], minZ, maxZ, zoneRad);
-								}
-								else
-								{
-									LOGGER.Warn(GetType().Name + ": ZoneData: Bad data for zone: " + zoneId + " in file: " + f.getName());
-									continue;
-								}
-							}
-							else
-							{
-								LOGGER.Warn(GetType().Name + ": ZoneData: Unknown shape: \"" + zoneShape + "\"  for zone: " + zoneId + " in file: " + f.getName());
-								continue;
-							}
-						}
-						catch (Exception e)
-						{
-							LOGGER.Warn(GetType().Name + ": ZoneData: Failed to load zone " + zoneId + " coordinates: " + e.getMessage(), e);
-						}
-						
-						// No further parameters needed, if NpcSpawnTerritory is loading
-						if (zoneType.equalsIgnoreCase("NpcSpawnTerritory"))
-						{
-							_spawnTerritories.put(zoneName, new SpawnTerritory(zoneName, zoneForm));
-							continue;
-						}
-						
-						// Create the zone
-						Class<?> newZone = null;
-						Constructor<?> zoneConstructor = null;
-						ZoneType temp;
-						try
-						{
-							newZone = Class.forName("org.l2jmobius.gameserver.model.zone.type." + zoneType);
-							zoneConstructor = newZone.getConstructor(int));
-							temp = (ZoneType) zoneConstructor.newInstance(zoneId);
-							temp.setZone(zoneForm);
-						}
-						catch (Exception e)
-						{
-							LOGGER.Warn(GetType().Name + ": ZoneData: No such zone type: " + zoneType + " in file: " + f.getName());
-							continue;
-						}
-						
-						// Check for additional parameters
-						for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
-						{
-							if ("stat".equalsIgnoreCase(cd.getNodeName()))
-							{
-								attrs = cd.getAttributes();
-								String name = attrs.getNamedItem("name").getNodeValue();
-								String val = attrs.getNamedItem("val").getNodeValue();
-								temp.setParameter(name, val);
-							}
-							else if ("spawn".equalsIgnoreCase(cd.getNodeName()) && (temp instanceof ZoneRespawn))
-							{
-								attrs = cd.getAttributes();
-								int spawnX = int.Parse(attrs.getNamedItem("X").getNodeValue());
-								int spawnY = int.Parse(attrs.getNamedItem("Y").getNodeValue());
-								int spawnZ = int.Parse(attrs.getNamedItem("Z").getNodeValue());
-								Node val = attrs.getNamedItem("type");
-								((ZoneRespawn) temp).parseLoc(spawnX, spawnY, spawnZ, val == null ? null : val.getNodeValue());
-							}
-							else if ("race".equalsIgnoreCase(cd.getNodeName()) && (temp instanceof RespawnZone))
-							{
-								attrs = cd.getAttributes();
-								String race = attrs.getNamedItem("name").getNodeValue();
-								String point = attrs.getNamedItem("point").getNodeValue();
-								((RespawnZone) temp).addRaceRespawnPoint(race, point);
-							}
-						}
-						if (checkId(zoneId))
-						{
-							LOGGER.config(getClass().getSimpleName() + ": Caution: Zone (" + zoneId + ") from file: " + f.getName() + " overrides previous definition.");
-						}
-						
-						if ((zoneName != null) && !zoneName.isEmpty())
-						{
-							temp.setName(zoneName);
-						}
-						
-						addZone(zoneId, temp);
-						
-						// Register the zone into any world region it
-						// intersects with...
-						// currently 11136 test for each zone :>
-						for (int x = 0; x < _zoneRegions.length; x++)
-						{
-							for (int y = 0; y < _zoneRegions[x].length; y++)
-							{
-								int ax = (x - OFFSET_X) << SHIFT_BY;
-								int bx = ((x + 1) - OFFSET_X) << SHIFT_BY;
-								int ay = (y - OFFSET_Y) << SHIFT_BY;
-								int by = ((y + 1) - OFFSET_Y) << SHIFT_BY;
-								if (temp.getZone().intersectsRectangle(ax, bx, ay, by))
-								{
-									_zoneRegions[x][y].getZones().put(temp.getId(), temp);
-								}
-							}
-						}
+						aX[i] = coords[i].getX();
+						aY[i] = coords[i].getY();
 					}
+					zoneForm = new ZoneNPoly(aX, aY, minZ, maxZ);
+				}
+				else
+				{
+					LOGGER.Error(GetType().Name + ": ZoneData: Bad data for zone: " + zoneId + " in file: " + filePath);
+					return;
+				}
+			}
+			else if (zoneShape.equalsIgnoreCase("Cylinder"))
+			{
+				// A Cylinder zone requires a center point
+				// at x,y and a radius
+				int zoneRad = element.Attribute("rad").GetInt32();
+				if ((coords.Length == 1) && (zoneRad > 0))
+				{
+					zoneForm = new ZoneCylinder(coords[0].getX(), coords[0].getY(), minZ, maxZ, zoneRad);
+				}
+				else
+				{
+					LOGGER.Error(GetType().Name + ": ZoneData: Bad data for zone: " + zoneId + " in file: " + filePath);
+					return;
+				}
+			}
+			else
+			{
+				LOGGER.Error(GetType().Name + ": ZoneData: Unknown shape: \"" + zoneShape + "\"  for zone: " + zoneId + " in file: " + filePath);
+				return;
+			}
+		}
+		catch (Exception e)
+		{
+			LOGGER.Error(GetType().Name + ": ZoneData: Failed to load zone " + zoneId + " coordinates: " + e);
+			return;
+		}
+		
+		// No further parameters needed, if NpcSpawnTerritory is loading
+		if (zoneType.equalsIgnoreCase("NpcSpawnTerritory"))
+		{
+			_spawnTerritories.put(zoneName, new SpawnTerritory(zoneName, zoneForm));
+			return;
+		}
+		
+		// Create the zone
+		ZoneType temp;
+		try
+		{
+			// TODO: create factory
+			string ns = typeof(ArenaZone).Namespace; 
+			string typeName = ns + "." + zoneType;
+			Type zoneClass = Assembly.GetExecutingAssembly().GetType(typeName);
+			temp = (ZoneType)Activator.CreateInstance(zoneClass, zoneId);
+			temp.setZone(zoneForm);
+		}
+		catch (Exception e)
+		{
+			LOGGER.Error(GetType().Name + ": ZoneData: No such zone type: " + zoneType + " in file: " + filePath);
+			return;
+		}
+		
+		// Check for additional parameters
+		element.Elements("stat").ForEach(el =>
+		{
+			string name = el.Attribute("name").GetString();
+			string val = el.Attribute("val").GetString();
+			temp.setParameter(name, val);
+		});
+
+		if (temp is ZoneRespawn zoneRespawn)
+		{
+			element.Elements("spawn").ForEach(el =>
+			{
+				int spawnX = el.Attribute("X").GetInt32();
+				int spawnY = el.Attribute("Y").GetInt32();
+				int spawnZ = el.Attribute("Z").GetInt32();
+				string? val = el.Attribute("type")?.GetString();
+				zoneRespawn.parseLoc(spawnX, spawnY, spawnZ, val);
+			});
+		}
+
+		if (temp is RespawnZone respawnZone)
+		{
+			element.Elements("race").ForEach(el =>
+			{
+				string race = el.Attribute("name").GetString();
+				string point = el.Attribute("point").GetString();
+				respawnZone.addRaceRespawnPoint(race, point);
+			});
+		}
+
+		if (checkId(zoneId))
+		{
+			LOGGER.Warn(GetType().Name + ": Caution: Zone (" + zoneId + ") from file: " + filePath + " overrides previous definition.");
+		}
+		
+		if ((zoneName != null) && !zoneName.isEmpty())
+		{
+			temp.setName(zoneName);
+		}
+		
+		addZone(zoneId, temp);
+		
+		// Register the zone into any world region it
+		// intersects with...
+		// currently 11136 test for each zone :>
+		for (int x = 0; x < _zoneRegions.Length; x++)
+		{
+			for (int y = 0; y < _zoneRegions[x].Length; y++)
+			{
+				int ax = (x - OFFSET_X) << SHIFT_BY;
+				int bx = ((x + 1) - OFFSET_X) << SHIFT_BY;
+				int ay = (y - OFFSET_Y) << SHIFT_BY;
+				int by = ((y + 1) - OFFSET_Y) << SHIFT_BY;
+				if (temp.getZone().intersectsRectangle(ax, bx, ay, by))
+				{
+					_zoneRegions[x][y].getZones().put(temp.getId(), temp);
 				}
 			}
 		}
@@ -389,11 +341,18 @@ public class ZoneManager: IXmlReader
 		_classZones.put(typeof(TimedHuntingZone), new());
 		_classZones.put(typeof(UndyingZone), new());
 		_classZones.put(typeof(WaterZone), new());
+		
 		_spawnTerritories.clear();
-		parseDatapackDirectory("data/zones", false);
+		
+		LoadXmlDocuments(DataFileLocation.Data, "zones").ForEach(t =>
+		{
+			t.Document.Elements("list").Where(e => e.Attribute("enabled").GetBoolean(true)).Elements("zone")
+				.ForEach(e => parseElement(t.FilePath, e));
+		});
+		
 		LOGGER.Info(GetType().Name +": Loaded " + _classZones.size() + " zone classes and " + getSize() + " zones.");
-		OptionalInt maxId = _classZones.values().stream().flatMap(map => map.keySet().stream()).mapToInt(int)::cast).filter(value => value < 300000).max();
-		LOGGER.Info(GetType().Name +": Last static id " + maxId.getAsInt() + ".");
+		int maxId = _classZones.values().SelectMany(map => map.Keys).Where(value => value < 300000).Max();
+		LOGGER.Info(GetType().Name +": Last static id " + maxId + ".");
 	}
 	
 	/**

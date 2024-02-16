@@ -1,4 +1,4 @@
-using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Db;
 
 namespace L2Dn.GameServer.Model.Holders;
 

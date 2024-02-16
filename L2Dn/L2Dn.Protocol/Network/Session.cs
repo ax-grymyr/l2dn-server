@@ -1,4 +1,6 @@
-﻿namespace L2Dn.Network;
+﻿using System.Net;
+
+namespace L2Dn.Network;
 
 public abstract class Session
 {
@@ -12,6 +14,7 @@ public abstract class Session
     public int Id { get; }
 
     public Connection? Connection { get; internal set; }
+    public IPAddress IpAddress { get; internal set; } = IPAddress.Any;
 
     protected internal virtual long GetState() => 0;
 }

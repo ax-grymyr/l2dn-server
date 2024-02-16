@@ -8,10 +8,10 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A simple no restart zone
  * @author GKR
  */
-public class NoRestartZone : ZoneType
+public class NoRestartZone: ZoneType
 {
-	private int _restartAllowedTime = 0;
-	private int _restartTime = 0;
+	private TimeSpan _restartAllowedTime;
+	private TimeSpan _restartTime;
 	
 	public NoRestartZone(int id):base(id)
 	{
@@ -26,11 +26,11 @@ public class NoRestartZone : ZoneType
 		}
 		else if (name.equalsIgnoreCase("restartAllowedTime"))
 		{
-			_restartAllowedTime = int.Parse(value) * 1000;
+			_restartAllowedTime = TimeSpan.FromSeconds(int.Parse(value));
 		}
 		else if (name.equalsIgnoreCase("restartTime"))
 		{
-			_restartTime = int.Parse(value) * 1000;
+			_restartTime = TimeSpan.FromSeconds(int.Parse(value));
 		}
 		else if (name.equalsIgnoreCase("instanceId"))
 		{
@@ -75,28 +75,29 @@ public class NoRestartZone : ZoneType
 			return;
 		}
 		
-		if (((System.currentTimeMillis() - player.getLastAccess()) > _restartTime) && ((System.currentTimeMillis() - GameServer.dateTimeServerStarted.getTimeInMillis()) > _restartAllowedTime))
+		if (DateTime.UtcNow - player.getLastAccess() > _restartTime && 
+		    DateTime.UtcNow - GameServer.dateTimeServerStarted.getTimeInMillis() > _restartAllowedTime)
 		{
 			player.teleToLocation(TeleportWhereType.TOWN);
 		}
 	}
 	
-	public int getRestartAllowedTime()
+	public TimeSpan getRestartAllowedTime()
 	{
 		return _restartAllowedTime;
 	}
 	
-	public void setRestartAllowedTime(int time)
+	public void setRestartAllowedTime(TimeSpan time)
 	{
 		_restartAllowedTime = time;
 	}
 	
-	public int getRestartTime()
+	public TimeSpan getRestartTime()
 	{
 		return _restartTime;
 	}
 	
-	public void setRestartTime(int time)
+	public void setRestartTime(TimeSpan time)
 	{
 		_restartTime = time;
 	}

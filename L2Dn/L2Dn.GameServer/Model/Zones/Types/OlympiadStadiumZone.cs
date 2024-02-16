@@ -3,8 +3,10 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Olympiads;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
 
@@ -42,7 +44,7 @@ public class OlympiadStadiumZone: ZoneRespawn
 			return _task;
 		}
 
-		protected void setTask(OlympiadGameTask task)
+		public void setTask(OlympiadGameTask task)
 		{
 			_task = task;
 		}
@@ -119,7 +121,7 @@ public class OlympiadStadiumZone: ZoneRespawn
 			if (creature.isPlayer())
 			{
 				creature.sendPacket(SystemMessageId.YOU_HAVE_LEFT_A_COMBAT_ZONE);
-				creature.sendPacket(ExOlympiadMatchEnd.STATIC_PACKET);
+				creature.sendPacket(default(ExOlympiadMatchEndPacket));
 			}
 		}
 	}

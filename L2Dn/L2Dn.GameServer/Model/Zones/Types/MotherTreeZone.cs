@@ -1,4 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
@@ -9,8 +11,8 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  */
 public class MotherTreeZone : ZoneType
 {
-	private int _enterMsg;
-	private int _leaveMsg;
+	private SystemMessageId _enterMsg;
+	private SystemMessageId _leaveMsg;
 	private int _mpRegen;
 	private int _hpRegen;
 	
@@ -22,11 +24,11 @@ public class MotherTreeZone : ZoneType
 	{
 		if (name.equals("enterMsgId"))
 		{
-			_enterMsg = int.Parse(value);
+			_enterMsg = (SystemMessageId)int.Parse(value);
 		}
 		else if (name.equals("leaveMsgId"))
 		{
-			_leaveMsg = int.Parse(value);
+			_leaveMsg = (SystemMessageId)int.Parse(value);
 		}
 		else if (name.equals("MpRegenBonus"))
 		{
@@ -50,7 +52,7 @@ public class MotherTreeZone : ZoneType
 			creature.setInsideZone(ZoneId.MOTHER_TREE, true);
 			if (_enterMsg != 0)
 			{
-				player.sendPacket(new SystemMessage(_enterMsg));
+				player.sendPacket(new SystemMessagePacket(_enterMsg));
 			}
 		}
 	}
@@ -63,7 +65,7 @@ public class MotherTreeZone : ZoneType
 			player.setInsideZone(ZoneId.MOTHER_TREE, false);
 			if (_leaveMsg != 0)
 			{
-				player.sendPacket(new SystemMessage(_leaveMsg));
+				player.sendPacket(new SystemMessagePacket(_leaveMsg));
 			}
 		}
 	}

@@ -1,6 +1,7 @@
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Sieges;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
@@ -81,7 +82,7 @@ public class SwampZone : ZoneType
 		{
 			if (_eventId > 0)
 			{
-				creature.sendPacket(new OnEventTrigger(_eventId, true));
+				creature.sendPacket(new OnEventTriggerPacket(_eventId, true));
 			}
 			creature.getActingPlayer().broadcastUserInfo();
 		}
@@ -97,7 +98,7 @@ public class SwampZone : ZoneType
 			{
 				if (_eventId > 0)
 				{
-					creature.sendPacket(new OnEventTrigger(_eventId, false));
+					creature.sendPacket(new OnEventTriggerPacket(_eventId, false));
 				}
 				if (!creature.isTeleporting())
 				{

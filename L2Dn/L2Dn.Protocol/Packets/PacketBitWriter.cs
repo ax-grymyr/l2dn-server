@@ -54,6 +54,9 @@ public readonly ref struct PacketBitWriter
     public void WriteUInt64(ulong value) => WriteValue(value);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public void WriteFloat(float value) => WriteValue(value);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void WriteDouble(double value) => WriteValue(value);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]

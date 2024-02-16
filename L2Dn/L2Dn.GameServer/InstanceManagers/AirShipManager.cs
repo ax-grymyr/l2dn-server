@@ -1,8 +1,12 @@
+using L2Dn.Extensions;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -10,10 +14,6 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class AirShipManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AirShipManager));
-	
-	private const string LOAD_DB = "SELECT * FROM airships";
-	private const string ADD_DB = "INSERT INTO airships (owner_id,fuel) VALUES (?,?)";
-	private const string UPDATE_DB = "UPDATE airships SET fuel=? WHERE owner_id=?";
 	
 	private CreatureTemplate _airShipTemplate = null;
 	private readonly Map<int, StatSet> _airShipsInfo = new();
@@ -137,18 +137,17 @@ public class AirShipManager
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				PreparedStatement ps = con.prepareStatement(ADD_DB);
-				ps.setInt(1, ownerId);
-				ps.setInt(2, info.getInt("fuel"));
-				ps.executeUpdate();
+				ctx.AirShips.Add(new DbAirShip()
+				{
+					OwnerId = ownerId,
+					Fuel = info.getInt("fuel")
+				});
+
+				ctx.SaveChanges();
 			}
 			catch (Exception e)
 			{
-				LOGGER.Warn(GetType().Name + ": Could not add new airship license: " + e);
-			}
-			catch (Exception e)
-			{
-				LOGGER.Warn(GetType().Name + ": Error while initializing: " + e);
+				LOGGER.Error(GetType().Name + ": Could not add new airship license: " + e);
 			}
 		}
 	}
@@ -189,7 +188,7 @@ public class AirShipManager
 		}
 		
 		AirShipTeleportList all = _teleports.get(dockId);
-		player.sendPacket(new ExAirShipTeleportList(all.getLocation(), all.getRoute(), all.getFuel()));
+		player.sendPacket(new ExAirShipTeleportListPacket(all.getLocation(), all.getRoute(), all.getFuel()));
 	}
 	
 	public VehiclePathPoint[] getTeleportDestination(int dockId, int index)
@@ -229,24 +228,18 @@ public class AirShipManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			Statement s = con.createStatement();
-			ResultSet rs = s.executeQuery(LOAD_DB);
-			StatSet info;
-			while (rs.next())
+			ctx.AirShips.ForEach(ship =>
 			{
-				info = new StatSet();
-				info.set("fuel", rs.getInt("fuel"));
-				_airShipsInfo.put(rs.getInt("owner_id"), info);
-			}
+				StatSet info = new();
+				info.set("fuel", ship.Fuel);
+				_airShipsInfo.put(ship.OwnerId, info);
+			});
 		}
 		catch (Exception e)
 		{
 			LOGGER.Warn(GetType().Name + ": Could not load airships table: " + e);
 		}
-		catch (Exception e)
-		{
-			LOGGER.Warn(GetType().Name + ": Error while initializing: " + e);
-		}
+
 		LOGGER.Info(GetType().Name +": Loaded " + _airShipsInfo.size() + " private airships");
 	}
 	
@@ -257,22 +250,16 @@ public class AirShipManager
 		{
 			return;
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(UPDATE_DB);
-			ps.setInt(1, info.getInt("fuel"));
-			ps.setInt(2, ownerId);
-			ps.executeUpdate();
+			ctx.AirShips.Where(ship => ship.OwnerId == ownerId)
+				.ExecuteUpdate(s => s.SetProperty(ship => ship.Fuel, info.getInt("fuel")));
 		}
 		catch (Exception e)
 		{
 			LOGGER.Warn(GetType().Name + ": Could not update airships table: " + e);
-		}
-		catch (Exception e)
-		{
-			LOGGER.Warn(GetType().Name + ": Error while save: " + e);
 		}
 	}
 	

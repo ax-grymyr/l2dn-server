@@ -1,5 +1,6 @@
 using System.Xml.Linq;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;

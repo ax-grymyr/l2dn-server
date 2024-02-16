@@ -329,6 +329,10 @@ internal sealed class Connection<TSession>: Connection
         : base(callback, client, session.Id, packetEncoder)
     {
         session.Connection = this;
+        
+        if (client.Client.RemoteEndPoint is IPEndPoint ipEndPoint)
+            session.IpAddress = ipEndPoint.Address;
+        
         _session = session;
         _packetHandler = packetHandler;
 
