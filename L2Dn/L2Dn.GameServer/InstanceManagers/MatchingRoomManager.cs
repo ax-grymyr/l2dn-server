@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Matching;
@@ -41,7 +42,7 @@ public class MatchingRoomManager
 		return _waitingList == null ? new() : _waitingList;
 	}
 	
-	public List<Player> getPlayerInWaitingList(int minLevel, int maxLevel, List<ClassId> classIds, String query)
+	public List<Player> getPlayerInWaitingList(int minLevel, int maxLevel, List<CharacterClass> classIds, String query)
 	{
 		if (_waitingList == null)
 		{

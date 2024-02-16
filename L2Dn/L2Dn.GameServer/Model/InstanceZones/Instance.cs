@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
@@ -800,7 +801,8 @@ public class Instance : IIdentifiable, INamable
 	 * Destroy current instance world.<br>
 	 * <b><font color=red>Use this method to destroy instance world properly.</font></b>
 	 */
-	public synchronized void destroy()
+	[MethodImpl(MethodImplOptions.Synchronized)]
+	public void destroy()
 	{
 		if (_cleanUpTask != null)
 		{

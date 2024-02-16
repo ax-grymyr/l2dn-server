@@ -1,9 +1,22 @@
 ﻿using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.GameServer.Model.Clans;
+using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.InstanceZones;
+using L2Dn.GameServer.Model.ItemContainers;
+using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Packets;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model;
 
@@ -20,20 +33,20 @@ public class Party : AbstractPlayerGroup
 		1.0, 1.6, 1.65, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2
 	};
 	
-	private static readonly Duration PARTY_POSITION_BROADCAST_INTERVAL = Duration.ofSeconds(12);
-	private static readonly Duration PARTY_DISTRIBUTION_TYPE_REQUEST_TIMEOUT = Duration.ofSeconds(15);
+	private static readonly TimeSpan PARTY_POSITION_BROADCAST_INTERVAL = TimeSpan.FromSeconds(12);
+	private static readonly TimeSpan PARTY_DISTRIBUTION_TYPE_REQUEST_TIMEOUT = TimeSpan.FromSeconds(15);
 	
 	private readonly List<Player> _members = new(); // TODO: CopyOnWriteArrayList
 	private bool _pendingInvitation = false;
 	private long _pendingInviteTimeout;
 	private int _partyLvl = 0;
 	private PartyDistributionType _distributionType = PartyDistributionType.FINDERS_KEEPERS;
-	private PartyDistributionType _changeRequestDistributionType;
-	private Future<?> _changeDistributionTypeRequestTask = null;
+	private PartyDistributionType? _changeRequestDistributionType;
+	private ScheduledFuture _changeDistributionTypeRequestTask = null;
 	private Set<int> _changeDistributionTypeAnswers = null;
 	private int _itemLastLoot = 0;
 	private CommandChannel _commandChannel = null;
-	private Future<?> _positionBroadcastTask = null;
+	private ScheduledFuture _positionBroadcastTask = null;
 	protected PartyMemberPosition _positionPacket;
 	private bool _disbanding = false;
 	private Map<int, Creature> _tacticalSigns = null;
@@ -203,7 +216,8 @@ public class Party : AbstractPlayerGroup
 	 * @param player
 	 * @param packet
 	 */
-	public void broadcastToPartyMembers(Player player, ServerPacket packet)
+	public void broadcastToPartyMembers<TPacket>(Player player, TPacket packet)
+		where TPacket: IOutgoingPacket
 	{
 		foreach (Player member in _members)
 		{
@@ -251,11 +265,11 @@ public class Party : AbstractPlayerGroup
 			}
 		}
 		
-		SystemMessage msg = new SystemMessage(SystemMessageId.YOU_HAVE_JOINED_A_PARTY);
+		SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_JOINED_A_PARTY);
 		player.sendPacket(msg);
 		
-		msg = new SystemMessage(SystemMessageId.C1_HAS_JOINED_THE_PARTY);
-		msg.addString(player.getName());
+		msg = new SystemMessagePacket(SystemMessageId.C1_HAS_JOINED_THE_PARTY);
+		msg.Params.addString(player.getName());
 		broadcastPacket(msg);
 		
 		foreach (Player member in _members)
@@ -278,7 +292,7 @@ public class Party : AbstractPlayerGroup
 			broadcastPacket(new ExPartyPetWindowAdd(pet));
 		}
 		
-		player.getServitors().values().forEach(s -> broadcastPacket(new ExPartyPetWindowAdd(s)));
+		player.getServitors().values().forEach(s => broadcastPacket(new ExPartyPetWindowAdd(s)));
 		
 		// adjust party level
 		if (player.getLevel() > _partyLvl)
@@ -474,19 +488,19 @@ public class Party : AbstractPlayerGroup
 				LOGGER.Warn(e);
 			}
 			
-			SystemMessage msg;
+			SystemMessagePacket msg;
 			if (type == PartyMessageType.EXPELLED)
 			{
 				player.sendPacket(SystemMessageId.YOU_ARE_DISMISSED_FROM_THE_PARTY);
-				msg = new SystemMessage(SystemMessageId.C1_IS_DISMISSED_FROM_THE_PARTY);
-				msg.addString(player.getName());
+				msg = new SystemMessagePacket(SystemMessageId.C1_IS_DISMISSED_FROM_THE_PARTY);
+				msg.Params.addString(player.getName());
 				broadcastPacket(msg);
 			}
 			else if ((type == PartyMessageType.LEFT) || (type == PartyMessageType.DISCONNECTED))
 			{
 				player.sendPacket(SystemMessageId.YOU_HAVE_LEFT_THE_PARTY);
-				msg = new SystemMessage(SystemMessageId.C1_HAS_LEFT_THE_PARTY);
-				msg.addString(player.getName());
+				msg = new SystemMessagePacket(SystemMessageId.C1_HAS_LEFT_THE_PARTY);
+				msg.Params.addString(player.getName());
 				broadcastPacket(msg);
 			}
 			
@@ -510,8 +524,8 @@ public class Party : AbstractPlayerGroup
 			}
 			if (isLeader && (_members.size() > 1) && (Config.ALT_LEAVE_PARTY_LEADER || (type == PartyMessageType.DISCONNECTED)))
 			{
-				msg = new SystemMessage(SystemMessageId.C1_HAS_BECOME_THE_PARTY_LEADER);
-				msg.addString(getLeader().getName());
+				msg = new SystemMessagePacket(SystemMessageId.C1_HAS_BECOME_THE_PARTY_LEADER);
+				msg.Params.addString(getLeader().getName());
 				broadcastPacket(msg);
 				broadcastToPartyMembersNewLeader();
 			}
@@ -564,7 +578,7 @@ public class Party : AbstractPlayerGroup
 	public void disbandParty()
 	{
 		_disbanding = true;
-		broadcastPacket(new SystemMessage(SystemMessageId.THE_PARTY_IS_DISBANDED));
+		broadcastPacket(new SystemMessagePacket(SystemMessageId.THE_PARTY_IS_DISBANDED));
 		foreach (Player member in _members)
 		{
 			if (member != null)
@@ -588,7 +602,7 @@ public class Party : AbstractPlayerGroup
 	{
 		if ((player != null) && !player.isInDuel())
 		{
-			if (_members.contains(player))
+			if (_members.Contains(player))
 			{
 				if (isLeader(player))
 				{
@@ -598,18 +612,18 @@ public class Party : AbstractPlayerGroup
 				{
 					// Swap party members
 					Player temp = getLeader();
-					int p1 = _members.indexOf(player);
+					int p1 = _members.IndexOf(player);
 					_members.set(0, player);
 					_members.set(p1, temp);
-					SystemMessage msg = new SystemMessage(SystemMessageId.C1_HAS_BECOME_THE_PARTY_LEADER);
-					msg.addString(getLeader().getName());
+					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.C1_HAS_BECOME_THE_PARTY_LEADER);
+					msg.Params.addString(getLeader().getName());
 					broadcastPacket(msg);
 					broadcastToPartyMembersNewLeader();
 					if (isInCommandChannel() && _commandChannel.isLeader(temp))
 					{
 						_commandChannel.setLeader(getLeader());
-						msg = new SystemMessage(SystemMessageId.COMMAND_CHANNEL_AUTHORITY_HAS_BEEN_TRANSFERRED_TO_C1);
-						msg.addString(_commandChannel.getLeader().getName());
+						msg = new SystemMessagePacket(SystemMessageId.COMMAND_CHANNEL_AUTHORITY_HAS_BEEN_TRANSFERRED_TO_C1);
+						msg.Params.addString(_commandChannel.getLeader().getName());
 						_commandChannel.broadcastPacket(msg);
 					}
 				}
@@ -658,17 +672,17 @@ public class Party : AbstractPlayerGroup
 		// Send messages to other party members about reward
 		if (item.getCount() > 1)
 		{
-			SystemMessage msg = new SystemMessage(SystemMessageId.C1_HAS_OBTAINED_S2_X_S3);
-			msg.addString(target.getName());
-			msg.addItemName(item);
-			msg.addLong(item.getCount());
+			SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.C1_HAS_OBTAINED_S2_X_S3);
+			msg.Params.addString(target.getName());
+			msg.Params.addItemName(item);
+			msg.Params.addLong(item.getCount());
 			broadcastToPartyMembers(target, msg);
 		}
 		else
 		{
-			SystemMessage msg = new SystemMessage(SystemMessageId.C1_HAS_OBTAINED_S2);
-			msg.addString(target.getName());
-			msg.addItemName(item);
+			SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.C1_HAS_OBTAINED_S2);
+			msg.Params.addString(target.getName());
+			msg.Params.addItemName(item);
 			broadcastToPartyMembers(target, msg);
 		}
 	}
@@ -695,17 +709,17 @@ public class Party : AbstractPlayerGroup
 		// Send messages to other party members about reward
 		if (itemCount > 1)
 		{
-			SystemMessage msg = spoil ? new SystemMessage(SystemMessageId.C1_HAS_OBTAINED_S3_S2_S_BY_USING_SWEEPER) : new SystemMessage(SystemMessageId.C1_HAS_OBTAINED_S2_X_S3);
-			msg.addString(looter.getName());
-			msg.addItemName(itemId);
-			msg.addLong(itemCount);
+			SystemMessagePacket msg = spoil ? new SystemMessagePacket(SystemMessageId.C1_HAS_OBTAINED_S3_S2_S_BY_USING_SWEEPER) : new SystemMessagePacket(SystemMessageId.C1_HAS_OBTAINED_S2_X_S3);
+			msg.Params.addString(looter.getName());
+			msg.Params.addItemName(itemId);
+			msg.Params.addLong(itemCount);
 			broadcastToPartyMembers(looter, msg);
 		}
 		else
 		{
-			SystemMessage msg = spoil ? new SystemMessage(SystemMessageId.C1_HAS_OBTAINED_S2_BY_USING_SWEEPER) : new SystemMessage(SystemMessageId.C1_HAS_OBTAINED_S2);
-			msg.addString(looter.getName());
-			msg.addItemName(itemId);
+			SystemMessagePacket msg = spoil ? new SystemMessagePacket(SystemMessageId.C1_HAS_OBTAINED_S2_BY_USING_SWEEPER) : new SystemMessagePacket(SystemMessageId.C1_HAS_OBTAINED_S2);
+			msg.Params.addString(looter.getName());
+			msg.Params.addItemName(itemId);
 			broadcastToPartyMembers(looter, msg);
 		}
 	}
@@ -849,8 +863,8 @@ public class Party : AbstractPlayerGroup
 	
 	private double calculateExpSpPartyCutoff(Player player, int topLvl, double addExpValue, double addSpValue, bool vit)
 	{
-		double addExp = addExpValue * Config.EXP_AMOUNT_MULTIPLIERS[player.getClassId().getId()];
-		double addSp = addSpValue * Config.SP_AMOUNT_MULTIPLIERS[player.getClassId().getId()];
+		double addExp = addExpValue * Config.EXP_AMOUNT_MULTIPLIERS[player.getClassId()];
+		double addSp = addSpValue * Config.SP_AMOUNT_MULTIPLIERS[player.getClassId()];
 		
 		// Premium rates
 		if (player.hasPremiumStatus())
@@ -865,9 +879,9 @@ public class Party : AbstractPlayerGroup
 		{
 			int i = 0;
 			int levelDiff = topLvl - player.getLevel();
-			foreach (int[] gap in Config.PARTY_XP_CUTOFF_GAPS)
+			foreach (Range<int> gap in Config.PARTY_XP_CUTOFF_GAPS)
 			{
-				if ((levelDiff >= gap[0]) && (levelDiff <= gap[1]))
+				if ((levelDiff >= gap.Left) && (levelDiff <= gap.Right))
 				{
 					xp = (addExp * Config.PARTY_XP_CUTOFF_GAP_PERCENTS[i]) / 100;
 					sp = (addSp * Config.PARTY_XP_CUTOFF_GAP_PERCENTS[i]) / 100;
@@ -894,7 +908,7 @@ public class Party : AbstractPlayerGroup
 		{
 			if (member == null)
 			{
-				_members.remove(member);
+				_members.Remove(member);
 				continue;
 			}
 			
@@ -951,13 +965,13 @@ public class Party : AbstractPlayerGroup
 				{
 					return members;
 				}
-				if (i >= BONUS_EXP_SP.length)
+				if (i >= BONUS_EXP_SP.Length)
 				{
-					i = BONUS_EXP_SP.length - 1;
+					i = BONUS_EXP_SP.Length - 1;
 				}
 				foreach (Player member in members)
 				{
-					final int sqLevel = member.getLevel() * member.getLevel();
+					int sqLevel = member.getLevel() * member.getLevel();
 					if (sqLevel >= (sqLevelSum / (members.size() * members.size())))
 					{
 						validMembers.add(member);
@@ -967,12 +981,12 @@ public class Party : AbstractPlayerGroup
 			}
 			case "highfive":
 			{
-				validMembers.addAll(members);
+				validMembers.AddRange(members);
 				break;
 			}
 			case "none":
 			{
-				validMembers.addAll(members);
+				validMembers.AddRange(members);
 				break;
 			}
 		}
@@ -1050,12 +1064,12 @@ public class Party : AbstractPlayerGroup
 			return;
 		}
 		_changeRequestDistributionType = partyDistributionType;
-		_changeDistributionTypeAnswers = new HashSet<>();
-		_changeDistributionTypeRequestTask = ThreadPool.schedule(() => finishLootRequest(false), PARTY_DISTRIBUTION_TYPE_REQUEST_TIMEOUT.toMillis());
+		_changeDistributionTypeAnswers = new();
+		_changeDistributionTypeRequestTask = ThreadPool.schedule(() => finishLootRequest(false), PARTY_DISTRIBUTION_TYPE_REQUEST_TIMEOUT);
 		broadcastToPartyMembers(getLeader(), new ExAskModifyPartyLooting(getLeader().getName(), partyDistributionType));
 		
-		SystemMessage sm = new SystemMessage(SystemMessageId.REQUESTING_APPROVAL_FOR_CHANGING_PARTY_LOOT_TO_S1);
-		sm.addSystemString(partyDistributionType.getSysStringId());
+		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.REQUESTING_APPROVAL_FOR_CHANGING_PARTY_LOOT_TO_S1);
+		sm.Params.addSystemString(partyDistributionType.getSysStringId());
 		getLeader().sendPacket(sm);
 	}
 	
@@ -1067,7 +1081,7 @@ public class Party : AbstractPlayerGroup
 			return;
 		}
 		
-		if (_changeDistributionTypeAnswers.contains(member.getObjectId()))
+		if (_changeDistributionTypeAnswers.Contains(member.getObjectId()))
 		{
 			return;
 		}
@@ -1100,16 +1114,17 @@ public class Party : AbstractPlayerGroup
 		if (success)
 		{
 			broadcastPacket(new ExSetPartyLooting(1, _changeRequestDistributionType));
-			_distributionType = _changeRequestDistributionType;
-			SystemMessage sm = new SystemMessage(SystemMessageId.PARTY_LOOTING_METHOD_WAS_CHANGED_TO_S1);
-			sm.addSystemString(_changeRequestDistributionType.getSysStringId());
+			_distributionType = _changeRequestDistributionType.Value;
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.PARTY_LOOTING_METHOD_WAS_CHANGED_TO_S1);
+			sm.Params.addSystemString(_changeRequestDistributionType.getSysStringId());
 			broadcastPacket(sm);
 		}
 		else
 		{
 			broadcastPacket(new ExSetPartyLooting(0, _distributionType));
-			broadcastPacket(new SystemMessage(SystemMessageId.PARTY_LOOT_CHANGE_WAS_CANCELLED));
+			broadcastPacket(new SystemMessagePacket(SystemMessageId.PARTY_LOOT_CHANGE_WAS_CANCELLED));
 		}
+
 		_changeRequestDistributionType = null;
 		_changeDistributionTypeAnswers = null;
 	}

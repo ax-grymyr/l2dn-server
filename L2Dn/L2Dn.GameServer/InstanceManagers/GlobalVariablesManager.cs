@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Variables;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -11,11 +12,6 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class GlobalVariablesManager: AbstractVariables
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(GlobalVariablesManager));
-	
-	// SQL Queries.
-	private const string SELECT_QUERY = "SELECT * FROM global_variables";
-	private const string DELETE_QUERY = "DELETE FROM global_variables";
-	private const string INSERT_QUERY = "INSERT INTO global_variables (var, value) VALUES (?, ?)";
 	
 	// Public variable names
 	public static readonly String DAILY_TASK_RESET = "DAILY_TASK_RESET";
@@ -36,16 +32,14 @@ public class GlobalVariablesManager: AbstractVariables
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			Statement st = con.createStatement();
-			ResultSet rset = st.executeQuery(SELECT_QUERY);
-			while (rset.next())
+			foreach (GlobalVariable record in ctx.GlobalVariables)
 			{
-				set(rset.getString("var"), rset.getString("value"));
+				set(record.Name, record.Value);
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn(GetType().Name + ": Couldn't restore global variables.");
+			LOGGER.Error(GetType().Name + ": Couldn't restore global variables.");
 			return false;
 		}
 		
@@ -58,19 +52,17 @@ public class GlobalVariablesManager: AbstractVariables
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			Statement del = con.createStatement();
-			PreparedStatement st = con.prepareStatement(INSERT_QUERY);
+
 			// Clear previous entries.
-			del.execute(DELETE_QUERY);
-			
-			// Insert all variables.
-			foreach (var entry in getSet())
+			ctx.GlobalVariables.ExecuteDelete();
+
+			ctx.GlobalVariables.AddRange(getSet().Select(pair => new GlobalVariable()
 			{
-				st.setString(1, entry.Key);
-				st.setString(2, entry.Value.ToString());
-				st.addBatch();
-			}
-			st.executeBatch();
+				Name = pair.Key,
+				Value = pair.Value?.ToString()
+			}));
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -87,8 +79,7 @@ public class GlobalVariablesManager: AbstractVariables
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			Statement del = con.createStatement();
-			del.execute(DELETE_QUERY);
+			ctx.GlobalVariables.ExecuteDelete();
 		}
 		catch (Exception e)
 		{

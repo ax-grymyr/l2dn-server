@@ -1,15 +1,16 @@
-using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using StringTokenizer = Microsoft.Extensions.Primitives.StringTokenizer;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -55,88 +56,88 @@ public class FortSiegeManager
 				switch (character.getClassId())
 				{
 					// Warrior
-					case ClassId.DUELIST:
-					case ClassId.DREADNOUGHT:
-					case ClassId.TITAN:
-					case ClassId.GRAND_KHAVATARI:
-					case ClassId.FORTUNE_SEEKER:
-					case ClassId.MAESTRO:
-					case ClassId.DOOMBRINGER:
-					case ClassId.SOUL_HOUND:
-					case ClassId.DEATH_KIGHT_HUMAN:
-					case ClassId.DEATH_KIGHT_ELF:
-					case ClassId.DEATH_KIGHT_DARK_ELF:
+					case CharacterClass.DUELIST:
+					case CharacterClass.DREADNOUGHT:
+					case CharacterClass.TITAN:
+					case CharacterClass.GRAND_KHAVATARI:
+					case CharacterClass.FORTUNE_SEEKER:
+					case CharacterClass.MAESTRO:
+					case CharacterClass.DOOMBRINGER:
+					case CharacterClass.SOUL_HOUND:
+					case CharacterClass.DEATH_KIGHT_HUMAN:
+					case CharacterClass.DEATH_KIGHT_ELF:
+					case CharacterClass.DEATH_KIGHT_DARK_ELF:
 					{
 						character.addSkill(CommonSkill.FLAG_POWER_WARRIOR.getSkill(), false);
 						break;
 					}
 					// Knight
-					case ClassId.PHOENIX_KNIGHT:
-					case ClassId.HELL_KNIGHT:
-					case ClassId.EVA_TEMPLAR:
-					case ClassId.SHILLIEN_TEMPLAR:
+					case CharacterClass.PHOENIX_KNIGHT:
+					case CharacterClass.HELL_KNIGHT:
+					case CharacterClass.EVA_TEMPLAR:
+					case CharacterClass.SHILLIEN_TEMPLAR:
 					{
 						character.addSkill(CommonSkill.FLAG_POWER_KNIGHT.getSkill(), false);
 						break;
 					}
 					// Rogue
-					case ClassId.ADVENTURER:
-					case ClassId.WIND_RIDER:
-					case ClassId.GHOST_HUNTER:
+					case CharacterClass.ADVENTURER:
+					case CharacterClass.WIND_RIDER:
+					case CharacterClass.GHOST_HUNTER:
 					{
 						character.addSkill(CommonSkill.FLAG_POWER_ROGUE.getSkill(), false);
 						break;
 					}
 					// Archer
-					case ClassId.SAGITTARIUS:
-					case ClassId.MOONLIGHT_SENTINEL:
-					case ClassId.GHOST_SENTINEL:
-					case ClassId.TRICKSTER:
+					case CharacterClass.SAGITTARIUS:
+					case CharacterClass.MOONLIGHT_SENTINEL:
+					case CharacterClass.GHOST_SENTINEL:
+					case CharacterClass.TRICKSTER:
 					{
 						character.addSkill(CommonSkill.FLAG_POWER_ARCHER.getSkill(), false);
 						break;
 					}
 					// Mage
-					case ClassId.ARCHMAGE:
-					case ClassId.SOULTAKER:
-					case ClassId.MYSTIC_MUSE:
-					case ClassId.STORM_SCREAMER:
+					case CharacterClass.ARCHMAGE:
+					case CharacterClass.SOULTAKER:
+					case CharacterClass.MYSTIC_MUSE:
+					case CharacterClass.STORM_SCREAMER:
 					{
 						character.addSkill(CommonSkill.FLAG_POWER_MAGE.getSkill(), false);
 						break;
 					}
 					// Summoner
-					case ClassId.ARCANA_LORD:
-					case ClassId.ELEMENTAL_MASTER:
-					case ClassId.SPECTRAL_MASTER:
+					case CharacterClass.ARCANA_LORD:
+					case CharacterClass.ELEMENTAL_MASTER:
+					case CharacterClass.SPECTRAL_MASTER:
 					{
 						character.addSkill(CommonSkill.FLAG_POWER_SUMMONER.getSkill(), false);
 						break;
 					}
 					// Healer
-					case ClassId.CARDINAL:
-					case ClassId.EVA_SAINT:
-					case ClassId.SHILLIEN_SAINT:
+					case CharacterClass.CARDINAL:
+					case CharacterClass.EVA_SAINT:
+					case CharacterClass.SHILLIEN_SAINT:
 					{
 						character.addSkill(CommonSkill.FLAG_POWER_HEALER.getSkill(), false);
 						break;
 					}
 					// Enchanter
-					case ClassId.HIEROPHANT:
+					case CharacterClass.HIEROPHANT:
 					{
 						character.addSkill(CommonSkill.FLAG_POWER_ENCHANTER.getSkill(), false);
 						break;
 					}
 					// Bard
-					case ClassId.SWORD_MUSE:
-					case ClassId.SPECTRAL_DANCER:
+					case CharacterClass.SWORD_MUSE:
+					case CharacterClass.SPECTRAL_DANCER:
 					{
 						character.addSkill(CommonSkill.FLAG_POWER_BARD.getSkill(), false);
 						break;
 					}
 					// Shaman
-					case ClassId.DOMINATOR:
-					case ClassId.DOOMCRYER:
+					case CharacterClass.DOMINATOR:
+					case CharacterClass.DOOMCRYER:
 					{
 						character.addSkill(CommonSkill.FLAG_POWER_SHAMAN.getSkill(), false);
 						break;
@@ -245,6 +246,7 @@ public class FortSiegeManager
 				{
 					break;
 				}
+				
 				StringTokenizer st = new StringTokenizer(_spawnParams.Trim(), ",");
 				
 				try
@@ -271,7 +273,7 @@ public class FortSiegeManager
 				{
 					break;
 				}
-				StringTokenizer st = new StringTokenizer(_spawnParams.trim(), ",");
+				StringTokenizer st = new StringTokenizer(_spawnParams.Trim(), ",");
 				
 				try
 				{
@@ -395,8 +397,8 @@ public class FortSiegeManager
 			player.setCombatFlagEquipped(true);
 			addCombatFlaglagSkills(player);
 			
-			SystemMessage sm = new SystemMessage(SystemMessageId.S1_EQUIPPED);
-			sm.addItemName(item);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_EQUIPPED);
+			sm.Params.addItemName(item);
 			player.sendPacket(sm);
 		}
 		
@@ -419,7 +421,9 @@ public class FortSiegeManager
 		
 		if (!fort.getSiege().isInProgress())
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_FORTRESS_BATTLE_OF_S1_HAS_FINISHED).addItemName(FortManager.ORC_FORTRESS_FLAG));
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_FORTRESS_BATTLE_OF_S1_HAS_FINISHED);
+			sm.Params.addItemName(FortManager.ORC_FORTRESS_FLAG);
+			player.sendPacket(sm);
 			return false;
 		}
 		

@@ -110,11 +110,8 @@ public class FortManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			Statement s = con.createStatement();
-			ResultSet rs = s.executeQuery("SELECT id FROM fort ORDER BY id");
-			while (rs.next())
+			foreach (int fortId in ctx.Forts.Select(f => f.Id).OrderBy(f => f))
 			{
-				int fortId = rs.getInt("id");
 				_forts.put(fortId, new Fort(fortId));
 			}
 			

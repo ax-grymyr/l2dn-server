@@ -1,13 +1,16 @@
 using System.Runtime.InteropServices.JavaScript;
+using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -58,18 +61,16 @@ public class DBSpawnManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM npc_respawns");
-			ResultSet rset = statement.executeQuery();
-			while (rset.next())
+			foreach (NpcRespawn record in ctx.NpcRespawns)
 			{
-				int id = rset.getInt("id");
+				int id = record.Id;
 				NpcTemplate template = getValidTemplate(id);
 				if (template != null)
 				{
 					Spawn spawn = new Spawn(template);
-					spawn.setXYZ(rset.getInt("x"), rset.getInt("y"), rset.getInt("z"));
+					spawn.setXYZ(record.X, record.Y, record.Z);
 					spawn.setAmount(1);
-					spawn.setHeading(rset.getInt("heading"));
+					spawn.setHeading(record.Heading);
 					
 					List<NpcSpawnTemplate> spawns = SpawnData.getInstance().getNpcSpawns(npc => (npc.getId() == template.getId()) && npc.hasDBSave());
 					if (spawns.isEmpty())
@@ -78,7 +79,8 @@ public class DBSpawnManager
 						deleteSpawn(spawn, true);
 						continue;
 					}
-					else if (spawns.size() > 1)
+					
+					if (spawns.size() > 1)
 					{
 						LOGGER.Warn(GetType().Name + ": Found multiple database spawns for npc: " + template.getId() + " - " + template.getName() + " " + spawns);
 						continue;
@@ -116,23 +118,20 @@ public class DBSpawnManager
 						continue;
 					}
 					
-					addNewSpawn(spawn, rset.getLong("respawnTime"), rset.getDouble("currentHp"), rset.getDouble("currentMp"), false);
+					addNewSpawn(spawn, record.RespawnTime, record.CurrentHp, record.CurrentMp, false);
 				}
 				else
 				{
-					LOGGER.Warn(GetType().Name + ": Could not load npc #" + rset.getInt("id") + " from DB");
+					LOGGER.Error(GetType().Name + ": Could not load npc #" + id + " from DB");
 					
 					// Remove non existent NPC respawn.
-					try 
+					try
 					{
-						Connection con2 = DatabaseFactory.getConnection();
-						PreparedStatement statement2 = con2.prepareStatement("DELETE FROM npc_respawns WHERE id=?");
-						statement2.setInt(1, id);
-						statement2.execute();
+						ctx.NpcRespawns.Where(r => r.Id == id).ExecuteDelete();
 					}
 					catch (Exception e)
 					{
-						LOGGER.Warn(GetType().Name + ": Could not remove npc #" + id + " from DB: " + e);
+						LOGGER.Error(GetType().Name + ": Could not remove npc #" + id + " from DB: " + e);
 					}
 				}
 			}
@@ -142,11 +141,7 @@ public class DBSpawnManager
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn(GetType().Name + ": Couldnt load npc_respawns table" + e);
-		}
-		catch (Exception e)
-		{
-			LOGGER.Warn(GetType().Name + ": Error while initializing DBSpawnManager: " + e);
+			LOGGER.Error(GetType().Name + ": Couldnt load npc_respawns table" + e);
 		}
 	}
 	
@@ -235,7 +230,7 @@ public class DBSpawnManager
 	 * @param currentMP the current mp
 	 * @param storeInDb the store in db
 	 */
-	public void addNewSpawn(Spawn spawn, long respawnTime, double currentHP, double currentMP, bool storeInDb)
+	public void addNewSpawn(Spawn spawn, DateTime? respawnTime, double currentHP, double currentMP, bool storeInDb)
 	{
 		if (spawn == null)
 		{
@@ -247,9 +242,9 @@ public class DBSpawnManager
 		}
 		
 		int npcId = spawn.getId();
-		long time = System.currentTimeMillis();
+		DateTime time = DateTime.UtcNow;
 		SpawnTable.getInstance().addNewSpawn(spawn, false);
-		if ((respawnTime == 0) || (time > respawnTime))
+		if ((respawnTime is null) || (time > respawnTime))
 		{
 			Npc npc = spawn.doSpawn();
 			if (npc != null)
@@ -269,7 +264,7 @@ public class DBSpawnManager
 		}
 		else
 		{
-			long spawnTime = respawnTime - System.currentTimeMillis();
+			TimeSpan spawnTime = respawnTime.Value - DateTime.UtcNow;
 			_schedules.put(npcId, ThreadPool.schedule(() => scheduleSpawn(npcId), spawnTime));
 		}
 		
@@ -280,17 +275,19 @@ public class DBSpawnManager
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				PreparedStatement statement = con.prepareStatement(
-					"INSERT INTO npc_respawns (id, x, y, z, heading, respawnTime, currentHp, currentMp) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
-				statement.setInt(1, spawn.getId());
-				statement.setInt(2, spawn.getX());
-				statement.setInt(3, spawn.getY());
-				statement.setInt(4, spawn.getZ());
-				statement.setInt(5, spawn.getHeading());
-				statement.setLong(6, respawnTime);
-				statement.setDouble(7, currentHP);
-				statement.setDouble(8, currentMP);
-				statement.execute();
+				ctx.NpcRespawns.Add(new NpcRespawn()
+				{
+					Id = spawn.getId(),
+					X = spawn.getX(),
+					Y = spawn.getY(),
+					Z = spawn.getZ(),
+					Heading = spawn.getHeading(),
+					RespawnTime = respawnTime,
+					CurrentHp = currentHP,
+					CurrentMp = currentMP,
+				});
+
+				ctx.SaveChanges();
 			}
 			catch (Exception e)
 			{
@@ -319,8 +316,9 @@ public class DBSpawnManager
 		Npc npc = spawn.doSpawn();
 		if (npc == null)
 		{
-			throw new NullPointerException();
+			throw new ArgumentException("Spawn npc is null");
 		}
+		
 		npc.setDBStatus(RaidBossStatus.ALIVE);
 		
 		StatSet info = new StatSet();
@@ -337,17 +335,16 @@ public class DBSpawnManager
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				PreparedStatement statement = con.prepareStatement(
-					"INSERT INTO npc_respawns (id, x, y, z, heading, respawnTime, currentHp, currentMp) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
-				statement.setInt(1, spawn.getId());
-				statement.setInt(2, spawn.getX());
-				statement.setInt(3, spawn.getY());
-				statement.setInt(4, spawn.getZ());
-				statement.setInt(5, spawn.getHeading());
-				statement.setLong(6, 0);
-				statement.setDouble(7, npc.getMaxHp());
-				statement.setDouble(8, npc.getMaxMp());
-				statement.execute();
+				ctx.NpcRespawns.Add(new NpcRespawn()
+				{
+					Id = spawn.getId(),
+					X = spawn.getX(),
+					Y = spawn.getY(),
+					Z = spawn.getZ(),
+					Heading = spawn.getHeading(),
+					CurrentHp = npc.getMaxHp(),
+					CurrentMp = npc.getMaxMp(),
+				});
 			}
 			catch (Exception e)
 			{
@@ -376,7 +373,7 @@ public class DBSpawnManager
 		_npcs.remove(npcId);
 		_storedInfo.remove(npcId);
 		
-		ScheduledFuture<?> task = _schedules.remove(npcId);
+		ScheduledFuture task = _schedules.remove(npcId);
 		if (task != null)
 		{
 			task.cancel(true);
@@ -387,9 +384,7 @@ public class DBSpawnManager
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				PreparedStatement ps = con.prepareStatement("DELETE FROM npc_respawns WHERE id = ?");
-				ps.setInt(1, npcId);
-				ps.execute();
+				ctx.NpcRespawns.Where(r => r.Id == npcId).ExecuteDelete();
 			}
 			catch (Exception e)
 			{
@@ -409,6 +404,7 @@ public class DBSpawnManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
+            
 			PreparedStatement statement =
 				con.prepareStatement(
 					"UPDATE npc_respawns SET respawnTime = ?, currentHP = ?, currentMP = ? WHERE id = ?");
@@ -474,7 +470,7 @@ public class DBSpawnManager
 		int index = 0;
 		foreach (Npc npc in _npcs.values())
 		{
-			msg[index++] = npc.getName() + ": " + npc.getDBStatus().name();
+			msg[index++] = npc.getName() + ": " + npc.getDBStatus();
 		}
 		
 		return msg;
@@ -497,7 +493,7 @@ public class DBSpawnManager
 		if (_npcs.containsKey(npcId))
 		{
 			Npc npc = _npcs.get(npcId);
-			msg += npc.getName() + ": " + npc.getDBStatus().name();
+			msg += npc.getName() + ": " + npc.getDBStatus();
 		}
 		
 		return msg;
@@ -606,9 +602,9 @@ public class DBSpawnManager
 		
 		_npcs.clear();
 		
-		foreach (ScheduledFuture<?> shedule in _schedules.values())
+		foreach (ScheduledFuture schedule in _schedules.values())
 		{
-			shedule.cancel(true);
+			schedule.cancel(true);
 		}
 		
 		_schedules.clear();

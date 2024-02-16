@@ -26,10 +26,6 @@ public class CastleManorManager: DataReaderBase, IStorable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CastleManorManager));
 	
-	// SQL queries
-	private const string INSERT_PRODUCT = "INSERT INTO castle_manor_production VALUES (?, ?, ?, ?, ?, ?)";
-	private const string INSERT_CROP = "INSERT INTO castle_manor_procure VALUES (?, ?, ?, ?, ?, ?, ?)";
-	
 	// Current manor status
 	private ManorMode _mode = ManorMode.APPROVED;
 	// Temporary date

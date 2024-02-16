@@ -7,7 +7,7 @@ using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
-internal struct CreatureSayPacket: IOutgoingPacket
+public struct CreatureSayPacket: IOutgoingPacket
 {
     private readonly Creature? _sender;
     private readonly ChatType _chatType;

@@ -1,20 +1,25 @@
 using System.Reflection.Metadata;
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Geo;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 using CollectionExtensions = L2Dn.GameServer.Utilities.CollectionExtensions;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
 /**
  * @author Mobius
  */
-public class FakePlayerChatManager: IXmlReader
+public class FakePlayerChatManager: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(FakePlayerChatManager));
 	List<FakePlayerChatHolder> MESSAGES = new();
@@ -31,7 +36,10 @@ public class FakePlayerChatManager: IXmlReader
 		if (Config.FAKE_PLAYERS_ENABLED && Config.FAKE_PLAYER_CHAT)
 		{
 			MESSAGES.Clear();
-			parseDatapackFile("data/FakePlayerChatData.xml");
+			
+			XDocument document = LoadXmlDocument(DataFileLocation.Data, "FakePlayerChatData.xml");
+			document.Elements("list").Elements("fakePlayerChat").ForEach(parseElement);
+			
 			LOGGER.Info(GetType().Name +": Loaded " + CollectionExtensions.size(MESSAGES) + " chat templates.");
 		}
 		else
@@ -39,16 +47,14 @@ public class FakePlayerChatManager: IXmlReader
 			LOGGER.Info(GetType().Name +": Disabled.");
 		}
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseElement(XElement element)
 	{
-		forEach(doc, "list", listNode => forEach(listNode, "fakePlayerChat", fakePlayerChatNode =>
-		{
-			StatSet set = new StatSet(parseAttributes(fakePlayerChatNode));
-			CollectionExtensions.add(MESSAGES, new FakePlayerChatHolder(set.getString("fpcName"), set.getString("searchMethod"), set.getString("searchText"), set.getString("answers")));
-		}));
+		StatSet set = new StatSet(element);
+		MESSAGES.add(new FakePlayerChatHolder(set.getString("fpcName"), set.getString("searchMethod"),
+				set.getString("searchText"), set.getString("answers")));
 	}
-	
+
 	public void manageChat(Player player, String fpcName, String message)
 	{
 		ThreadPool.schedule(() => manageResponce(player, fpcName, message), Rnd.get(MIN_DELAY, MAX_DELAY));
@@ -150,7 +156,7 @@ public class FakePlayerChatManager: IXmlReader
 			Npc npc = spawn.getLastSpawn();
 			if (npc != null)
 			{
-				player.sendPacket(new CreatureSay(npc, ChatType.WHISPER, fpcName, message));
+				player.sendPacket(new CreatureSayPacket(npc, ChatType.WHISPER, fpcName, message));
 			}
 		}
 	}

@@ -19,45 +19,45 @@ public class ClanHallAuctionManager
 	
 	protected ClanHallAuctionManager()
 	{
-		long currentTime = System.currentTimeMillis();
+		DateTime currentTime = DateTime.Now;
 		
 		// Schedule of the start, next Wednesday at 19:00.
-		Calendar start = Calendar.getInstance();
-		start.set(Calendar.DAY_OF_WEEK, Calendar.WEDNESDAY);
-		start.set(Calendar.HOUR_OF_DAY, 19);
-		start.set(Calendar.MINUTE, 0);
-		start.set(Calendar.SECOND, 0);
-		if (start.getTimeInMillis() < currentTime)
+		DateTime start = new DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 19, 0, 0);
+		while (start.DayOfWeek != DayOfWeek.Wednesday)
+			start = start.AddDays(1);
+		
+		if (start < currentTime)
 		{
-			start.add(Calendar.DAY_OF_YEAR, 1);
-			while (start.get(Calendar.DAY_OF_WEEK) != Calendar.WEDNESDAY)
-			{
-				start.add(Calendar.DAY_OF_YEAR, 1);
-			}
-		}
-		long startDelay = Math.Max(0, start.getTimeInMillis() - currentTime);
-		ThreadPool.scheduleAtFixedRate(this::onStart, startDelay, 604800000); // 604800000 = 1 week
-		if (startDelay > 0)
-		{
-			onStart();
+			start = start.AddDays(1);
+			while (start.DayOfWeek != DayOfWeek.Wednesday)
+				start = start.AddDays(1);
 		}
 		
+		TimeSpan startDelay = start - currentTime;
+		if (startDelay < TimeSpan.Zero)
+			startDelay = TimeSpan.Zero;
+		
+		ThreadPool.scheduleAtFixedRate(onStart, startDelay, TimeSpan.FromDays(7));
+		if (startDelay > TimeSpan.Zero)
+			onStart();
+		
 		// Schedule of the end, next Wednesday at 11:00.
-		Calendar end = Calendar.getInstance();
-		end.set(Calendar.DAY_OF_WEEK, Calendar.WEDNESDAY);
-		end.set(Calendar.HOUR_OF_DAY, 11);
-		end.set(Calendar.MINUTE, 0);
-		end.set(Calendar.SECOND, 0);
-		if (end.getTimeInMillis() < currentTime)
+		DateTime end = new DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 11, 0, 0);
+		while (end.DayOfWeek != DayOfWeek.Wednesday)
+			end = end.AddDays(1);
+
+		if (end < currentTime)
 		{
-			end.add(Calendar.DAY_OF_YEAR, 1);
-			while (end.get(Calendar.DAY_OF_WEEK) != Calendar.WEDNESDAY)
-			{
-				end.add(Calendar.DAY_OF_YEAR, 1);
-			}
+			end = end.AddDays(1);
+			while (end.DayOfWeek != DayOfWeek.Wednesday)
+				end = end.AddDays(1);
 		}
-		long endDelay = Math.Max(0, end.getTimeInMillis() - currentTime);
-		_endTask = ThreadPool.scheduleAtFixedRate(this::onEnd, endDelay, 604800000); // 604800000 = 1 week
+
+		TimeSpan endDelay = end - currentTime;
+		if (endDelay < TimeSpan.Zero)
+			endDelay = TimeSpan.Zero;
+		
+		_endTask = ThreadPool.scheduleAtFixedRate(onEnd, endDelay, TimeSpan.FromDays(7));
 	}
 	
 	private void onStart()
@@ -69,7 +69,7 @@ public class ClanHallAuctionManager
 	
 	private void onEnd()
 	{
-		AUCTIONS.values().forEach(ClanHallAuction::finalizeAuctions);
+		AUCTIONS.values().forEach(x => x.finalizeAuctions());
 		AUCTIONS.clear();
 		LOGGER.Info(GetType().Name +": Clan Hall Auction has ended!");
 	}

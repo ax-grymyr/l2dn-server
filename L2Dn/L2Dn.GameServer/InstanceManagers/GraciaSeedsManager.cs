@@ -1,5 +1,7 @@
+using L2Dn.GameServer.InstanceManagers.Tasks;
 using L2Dn.GameServer.Model.Quests;
 using NLog;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -7,20 +9,20 @@ public class GraciaSeedsManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(GraciaSeedsManager));
 	
-	public static readonly String ENERGY_SEEDS = "EnergySeeds";
+	public const String ENERGY_SEEDS = "EnergySeeds";
 	
-	private static readonly byte SOITYPE = 2;
-	private static readonly byte SOATYPE = 3;
+	private const byte SOITYPE = 2;
+	private const byte SOATYPE = 3;
 	
 	// Seed of Destruction
-	private static readonly byte SODTYPE = 1;
+	private const byte SODTYPE = 1;
 	private int _SoDTiatKilled = 0;
 	private int _SoDState = 1;
-	private readonly Calendar _SoDLastStateChangeDate;
+	private DateTime _SoDLastStateChangeDate;
 	
 	protected GraciaSeedsManager()
 	{
-		_SoDLastStateChangeDate = Calendar.getInstance();
+		_SoDLastStateChangeDate = DateTime.UtcNow;
 		loadData();
 		handleSodStages();
 	}
@@ -34,7 +36,7 @@ public class GraciaSeedsManager
 				// Seed of Destruction
 				GlobalVariablesManager.getInstance().set("SoDState", _SoDState);
 				GlobalVariablesManager.getInstance().set("SoDTiatKilled", _SoDTiatKilled);
-				GlobalVariablesManager.getInstance().set("SoDLSCDate", _SoDLastStateChangeDate.getTimeInMillis());
+				GlobalVariablesManager.getInstance().set("SoDLSCDate", _SoDLastStateChangeDate.Ticks);
 				break;
 			}
 			case SOITYPE:
@@ -62,7 +64,7 @@ public class GraciaSeedsManager
 		{
 			_SoDState = GlobalVariablesManager.getInstance().getInt("SoDState");
 			_SoDTiatKilled = GlobalVariablesManager.getInstance().getInt("SoDTiatKilled");
-			_SoDLastStateChangeDate.setTimeInMillis(GlobalVariablesManager.getInstance().getLong("SoDLSCDate"));
+			_SoDLastStateChangeDate = new DateTime(GlobalVariablesManager.getInstance().getLong("SoDLSCDate"));
 		}
 		else
 		{
@@ -83,15 +85,15 @@ public class GraciaSeedsManager
 			case 2:
 			{
 				// Conquest Complete state, if too much time is passed than change to defense state
-				long timePast = System.currentTimeMillis() - _SoDLastStateChangeDate.getTimeInMillis();
-				if (timePast >= Config.SOD_STAGE_2_LENGTH)
+				TimeSpan timePast = DateTime.UtcNow - _SoDLastStateChangeDate;
+				if (timePast >= TimeSpan.FromMilliseconds(Config.SOD_STAGE_2_LENGTH))
 				{
 					// change to Attack state because Defend statet is not implemented
 					setSoDState(1, true);
 				}
 				else
 				{
-					ThreadPool.schedule(new UpdateSoDStateTask(), Config.SOD_STAGE_2_LENGTH - timePast);
+					ThreadPool.schedule(new UpdateSoDStateTask(), TimeSpan.FromMilliseconds(Config.SOD_STAGE_2_LENGTH) - timePast);
 				}
 				break;
 			}
@@ -104,6 +106,7 @@ public class GraciaSeedsManager
 			default:
 			{
 				LOGGER.Warn(GetType().Name + ": Unknown Seed of Destruction state(" + _SoDState + ")! ");
+				break;
 			}
 		}
 	}
@@ -151,7 +154,7 @@ public class GraciaSeedsManager
 	public void setSoDState(int value, bool doSave)
 	{
 		LOGGER.Info(GetType().Name +": New Seed of Destruction state => " + value + ".");
-		_SoDLastStateChangeDate.setTimeInMillis(System.currentTimeMillis());
+		_SoDLastStateChangeDate = DateTime.UtcNow;
 		_SoDState = value;
 		// reset number of Tiat kills
 		if (_SoDState == 1)
@@ -167,32 +170,32 @@ public class GraciaSeedsManager
 		}
 	}
 	
-	public long getSoDTimeForNextStateChange()
+	public TimeSpan? getSoDTimeForNextStateChange()
 	{
 		switch (_SoDState)
 		{
 			case 1:
 			{
-				return -1;
+				return null;
 			}
 			case 2:
 			{
-				return ((_SoDLastStateChangeDate.getTimeInMillis() + Config.SOD_STAGE_2_LENGTH) - System.currentTimeMillis());
+				return ((_SoDLastStateChangeDate + TimeSpan.FromMilliseconds(Config.SOD_STAGE_2_LENGTH)) - DateTime.UtcNow);
 			}
 			case 3:
 			{
 				// not implemented yet
-				return -1;
+				return null;
 			}
 			default:
 			{
 				// this should not happen!
-				return -1;
+				return null;
 			}
 		}
 	}
 	
-	public Calendar getSoDLastStateChangeDate()
+	public DateTime getSoDLastStateChangeDate()
 	{
 		return _SoDLastStateChangeDate;
 	}

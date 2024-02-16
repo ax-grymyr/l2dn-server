@@ -1,4 +1,5 @@
 using System.Text;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -61,12 +62,12 @@ public class PetitionManager
 		
 		// Petition application accepted. Reciept No. is <ID>
 		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOUR_GLOBAL_SUPPORT_REQUEST_WAS_RECEIVED_REQUEST_NO_S1);
-		sm.addInt(currPetition.getId());
+		sm.Params.addInt(currPetition.getId());
 		currPetition.sendResponderPacket(sm);
 		
 		// Petition consultation with <Player> underway.
 		sm = new SystemMessagePacket(SystemMessageId.A_GLOBAL_SUPPORT_CONSULTATION_C1_HAS_BEEN_STARTED);
-		sm.addString(currPetition.getPetitioner().getName());
+		sm.Params.addString(currPetition.getPetitioner().getName());
 		currPetition.sendResponderPacket(sm);
 		
 		// Set responder name on petitioner instance
@@ -105,7 +106,7 @@ public class PetitionManager
 				
 				if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().getObjectId() == petitioner.getObjectId()))
 				{
-					foreach (CreatureSay logMessage in currPetition.getLogMessages())
+					foreach (CreatureSayPacket logMessage in currPetition.getLogMessages())
 					{
 						petitioner.sendPacket(logMessage);
 					}
@@ -298,7 +299,7 @@ public class PetitionManager
 	{
 		// if (!isPlayerInConsultation(player))
 		// return false;
-		CreatureSay cs;
+		CreatureSayPacket cs;
 		foreach (Petition currPetition in _pendingPetitions.values())
 		{
 			if (currPetition == null)
@@ -308,7 +309,7 @@ public class PetitionManager
 			
 			if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().getObjectId() == player.getObjectId()))
 			{
-				cs = new CreatureSay(player, ChatType.PETITION_PLAYER, player.getName(), messageText);
+				cs = new CreatureSayPacket(player, ChatType.PETITION_PLAYER, player.getName(), messageText);
 				currPetition.addLogMessage(cs);
 				
 				currPetition.sendResponderPacket(cs);
@@ -318,7 +319,7 @@ public class PetitionManager
 			
 			if ((currPetition.getResponder() != null) && (currPetition.getResponder().getObjectId() == player.getObjectId()))
 			{
-				cs = new CreatureSay(player, ChatType.PETITION_GM, player.getName(), messageText);
+				cs = new CreatureSayPacket(player, ChatType.PETITION_GM, player.getName(), messageText);
 				currPetition.addLogMessage(cs);
 				
 				currPetition.sendResponderPacket(cs);
@@ -391,7 +392,7 @@ public class PetitionManager
 		
 		// Notify all GMs that a new petition has been submitted.
 		String msgContent = petitioner.getName() + " has submitted a new petition."; // (ID: " + newPetitionId + ").";
-		AdminData.getInstance().broadcastToGMs(new CreatureSay(petitioner, ChatType.HERO_VOICE, "Petition System", msgContent));
+		AdminData.getInstance().broadcastToGMs(new CreatureSayPacket(petitioner, ChatType.HERO_VOICE, "Petition System", msgContent));
 		return newPetitionId;
 	}
 	

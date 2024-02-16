@@ -66,8 +66,8 @@ public class ArmorSet
 		_id = id;
 		_minimumPieces = minimumPieces;
 		_isVisual = isVisual;
-		_requiredItems = requiredItems.stream().mapToInt(x => x).toArray();
-		_optionalItems = optionalItems.stream().mapToInt(x => x).toArray();
+		_requiredItems = requiredItems.ToArray();
+		_optionalItems = optionalItems.ToArray();
 		_skills = skills;
 		_stats = stats;
 	}
@@ -133,7 +133,7 @@ public class ArmorSet
 	 */
 	public bool containOptionalItem(int shieldId)
 	{
-		return CommonUtil.contains(_optionalItems, shieldId);
+		return Array.IndexOf(_optionalItems, shieldId) >= 0;
 	}
 	
 	/**
@@ -153,7 +153,7 @@ public class ArmorSet
 		foreach (int armorSlot in ARMORSET_SLOTS)
 		{
 			Item itemPart = inv.getPaperdollItem(armorSlot);
-			if ((itemPart != null) && CommonUtil.contains(_requiredItems, itemPart.getId()) && (enchantLevel > itemPart.getEnchantLevel()))
+			if ((itemPart != null) && Array.IndexOf(_requiredItems, itemPart.getId()) >= 0 && (enchantLevel > itemPart.getEnchantLevel()))
 			{
 				enchantLevel = itemPart.getEnchantLevel();
 			}
@@ -182,7 +182,7 @@ public class ArmorSet
 				foreach (int artifactSlot in ARTIFACT_1_SLOTS)
 				{
 					Item itemPart = inv.getPaperdollItem(artifactSlot);
-					if ((itemPart != null) && CommonUtil.contains(_requiredItems, itemPart.getId()))
+					if ((itemPart != null) && Array.IndexOf(_requiredItems, itemPart.getId()) >= 0)
 					{
 						slotMask += artifactSlot;
 					}
@@ -194,7 +194,7 @@ public class ArmorSet
 				foreach (int artifactSlot in ARTIFACT_2_SLOTS)
 				{
 					Item itemPart = inv.getPaperdollItem(artifactSlot);
-					if ((itemPart != null) && CommonUtil.contains(_requiredItems, itemPart.getId()))
+					if ((itemPart != null) && Array.IndexOf(_requiredItems, itemPart.getId()) >= 0)
 					{
 						slotMask += artifactSlot;
 					}
@@ -206,7 +206,7 @@ public class ArmorSet
 				foreach (int artifactSlot in ARTIFACT_3_SLOTS)
 				{
 					Item itemPart = inv.getPaperdollItem(artifactSlot);
-					if ((itemPart != null) && CommonUtil.contains(_requiredItems, itemPart.getId()))
+					if ((itemPart != null) && Array.IndexOf(_requiredItems, itemPart.getId()) >= 0)
 					{
 						slotMask += artifactSlot;
 					}
@@ -221,7 +221,7 @@ public class ArmorSet
 	{
 		foreach (Item item in playable.getInventory().getPaperdollItems())
 		{
-			if (CommonUtil.contains(_optionalItems, idProvider(item)))
+			if (Array.IndexOf(_optionalItems, idProvider(item)) >= 0)
 			{
 				return true;
 			}
@@ -236,11 +236,11 @@ public class ArmorSet
 	 */
 	public long getPiecesCount(Playable playable, Func<Item, int> idProvider)
 	{
-		return playable.getInventory().getPaperdollItemCount(item => CommonUtil.contains(_requiredItems, idProvider(item)));
+		return playable.getInventory().getPaperdollItemCount(item => Array.IndexOf(_requiredItems, idProvider(item)) >= 0);
 	}
 	
 	public long getPiecesCountById(Playable playable)
 	{
-		return playable.getInventory().getPaperdollItemCount(item => CommonUtil.contains(_requiredItems, item.getId()));
+		return playable.getInventory().getPaperdollItemCount(item => Array.IndexOf(_requiredItems, item.getId()) >= 0);
 	}
 }

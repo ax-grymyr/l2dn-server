@@ -2,6 +2,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -35,7 +36,7 @@ public class HeavenlyRiftManager
 
 	public static void startEvent20Bomb(Player player)
 	{
-		ZONE.broadcastPacket(new ExShowScreenMessage(NpcStringId.SET_OFF_BOMBS_AND_GET_TREASURES, 2, 5000));
+		ZONE.broadcastPacket(new ExShowScreenMessagePacket(NpcStringId.SET_OFF_BOMBS_AND_GET_TREASURES, 2, 5000));
 		spawnMonster(18003, 113352, 12936, 10976, 1800000);
 		spawnMonster(18003, 113592, 13272, 10976, 1800000);
 		spawnMonster(18003, 113816, 13592, 10976, 1800000);
@@ -60,7 +61,7 @@ public class HeavenlyRiftManager
 
 	public static void startEventTower(Player player)
 	{
-		ZONE.broadcastPacket(new ExShowScreenMessage(NpcStringId.PROTECT_THE_CENTRAL_TOWER_FROM_DIVINE_ANGELS, 2,
+		ZONE.broadcastPacket(new ExShowScreenMessagePacket(NpcStringId.PROTECT_THE_CENTRAL_TOWER_FROM_DIVINE_ANGELS, 2,
 			5000));
 		spawnMonster(18004, 112648, 14072, 10976, 1800000);
 		ThreadPool.schedule(() =>
@@ -74,7 +75,7 @@ public class HeavenlyRiftManager
 
 	public static void startEvent40Angels(Player player)
 	{
-		ZONE.broadcastPacket(new ExShowScreenMessage(NpcStringId.DESTROY_WEAKENED_DIVINE_ANGELS, 2, 5000));
+		ZONE.broadcastPacket(new ExShowScreenMessagePacket(NpcStringId.DESTROY_WEAKENED_DIVINE_ANGELS, 2, 5000));
 		for (int i = 0; i < 40; ++i)
 		{
 			spawnMonster(20139, 112696, 13960, 10958, 1800000);

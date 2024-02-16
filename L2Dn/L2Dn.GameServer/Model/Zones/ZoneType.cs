@@ -1,10 +1,14 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Packets;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Zones;
@@ -28,7 +32,7 @@ public abstract class ZoneType: ListenersContainer
 	private int _minLevel;
 	private int _maxLevel;
 	private Race[] _race;
-	private int[] _class;
+	private CharacterClass[] _class;
 	private int _classType;
 	private InstanceType _target = InstanceType.Creature; // default all chars
 	private bool _allowStore;
@@ -88,18 +92,16 @@ public abstract class ZoneType: ListenersContainer
 			if (_race == null)
 			{
 				_race = new Race[1];
-				_race[0] = int.Parse(value);
+				_race[0] = (Race)int.Parse(value);
 			}
 			else
 			{
-				int[] temp = new int[_race.Length + 1];
+				Race[] temp = new Race[_race.Length + 1];
 				int i = 0;
 				for (; i < _race.Length; i++)
-				{
 					temp[i] = _race[i];
-				}
 				
-				temp[i] = int.Parse(value);
+				temp[i] = (Race)int.Parse(value);
 				_race = temp;
 			}
 		}
@@ -109,19 +111,17 @@ public abstract class ZoneType: ListenersContainer
 			// Create a new array holding the affected classIds
 			if (_class == null)
 			{
-				_class = new int[1];
-				_class[0] = int.Parse(value);
+				_class = new CharacterClass[1];
+				_class[0] = (CharacterClass)int.Parse(value);
 			}
 			else
 			{
-				int[] temp = new int[_class.Length + 1];
+				CharacterClass[] temp = new CharacterClass[_class.Length + 1];
 				int i = 0;
 				for (; i < _class.Length; i++)
-				{
 					temp[i] = _class[i];
-				}
 				
-				temp[i] = int.Parse(value);
+				temp[i] = (CharacterClass)int.Parse(value);
 				_class = temp;
 			}
 		}
@@ -188,8 +188,11 @@ public abstract class ZoneType: ListenersContainer
 		{
 			if (creature.isPlayer())
 			{
-				creature.getActingPlayer().sendPacket(new ExShowScreenMessage(SystemMessageId.YOU_CANNOT_ENTER_AS_YOUR_LEVEL_DOES_NOT_MEET_THE_REQUIREMENTS, ExShowScreenMessage.TOP_CENTER, 10000));
+				creature.getActingPlayer().sendPacket(new ExShowScreenMessagePacket(
+					SystemMessageId.YOU_CANNOT_ENTER_AS_YOUR_LEVEL_DOES_NOT_MEET_THE_REQUIREMENTS,
+					ExShowScreenMessagePacket.TOP_CENTER, 10000));
 			}
+			
 			return false;
 		}
 		
@@ -240,9 +243,9 @@ public abstract class ZoneType: ListenersContainer
 			if (_class != null)
 			{
 				bool ok = false;
-				foreach (int _clas in _class)
+				foreach (CharacterClass _clas in _class)
 				{
-					if (((Player) creature).getClassId().getId() == _clas)
+					if (((Player) creature).getClassId() == _clas)
 					{
 						ok = true;
 						break;
@@ -512,7 +515,8 @@ public abstract class ZoneType: ListenersContainer
 	 * Broadcasts packet to all players inside the zone
 	 * @param packet
 	 */
-	public void broadcastPacket(ServerPacket packet)
+	public void broadcastPacket<TPacket>(TPacket packet)
+		where TPacket: IOutgoingPacket
 	{
 		if (_characterList.isEmpty())
 		{

@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.InstanceZones;
@@ -7,9 +8,11 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Packets;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model;
 
@@ -23,7 +26,7 @@ public class Duel
 	public const int DUELSTATE_WINNER = 3;
 	public const int DUELSTATE_INTERRUPTED = 4;
 	
-	private static readonly PlaySound B04_S01 = new PlaySound(1, "B04_S01", 0, 0, 0, 0, 0);
+	private static readonly PlaySoundPacket B04_S01 = new PlaySoundPacket(1, "B04_S01", 0, 0, 0, 0, 0);
 	
 	private const int PARTY_DUEL_DURATION = 300;
 	private const int PLAYER_DUEL_DURATION = 120;
@@ -69,7 +72,7 @@ public class Duel
 		if (_partyDuel)
 		{
 			// inform players that they will be ported shortly
-			SystemMessage sm = new SystemMessage(SystemMessageId.IN_A_MOMENT_YOU_WILL_BE_TRANSPORTED_TO_THE_SITE_WHERE_THE_DUEL_WILL_TAKE_PLACE);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.IN_A_MOMENT_YOU_WILL_BE_TRANSPORTED_TO_THE_SITE_WHERE_THE_DUEL_WILL_TAKE_PLACE);
 			broadcastToTeam1(sm);
 			broadcastToTeam2(sm);
 		}
@@ -167,7 +170,7 @@ public class Duel
 			_duel = duel;
 		}
 		
-		public override void run()
+		public void run()
 		{
 			try
 			{
@@ -176,7 +179,7 @@ public class Duel
 					case DuelResult.CANCELED:
 					{
 						// do not schedule duel end if it was interrupted
-						setFinished(true);
+						_duel.setFinished(true);
 						_duel.endDuel(DuelResult.CANCELED);
 						break;
 					}
@@ -187,12 +190,12 @@ public class Duel
 					}
 					default:
 					{
-						setFinished(true);
-						playKneelAnimation();
+						_duel.setFinished(true);
+						_duel.playKneelAnimation();
 						ThreadPool.schedule(new ScheduleEndDuelTask(_duel, _duel.checkEndDuelCondition()), 5000);
-						if (_duelInstance != null)
+						if (_duel._duelInstance != null)
 						{
-							_duelInstance.destroy();
+							_duel._duelInstance.destroy();
 						}
 						break;
 					}
@@ -280,7 +283,7 @@ public class Duel
 	 */
 	private void stopFighting()
 	{
-		ActionFailed af = ActionFailed.STATIC_PACKET;
+		ActionFailedPacket af = ActionFailedPacket.STATIC_PACKET;
 		if (_partyDuel)
 		{
 			foreach (Player temp in _playerA.getParty().getMembers())
@@ -351,7 +354,7 @@ public class Duel
 			// Party duels take place in arenas - should be no other players there
 			return false;
 		}
-		else if ((_playerA.getPvpFlag() != 0) || (_playerB.getPvpFlag() != 0))
+		else if ((_playerA.getPvpFlag()) || (_playerB.getPvpFlag()))
 		{
 			if (sendMessage)
 			{
@@ -385,7 +388,7 @@ public class Duel
 				temp.setInDuel(_duelId);
 				temp.setTeam(Team.BLUE);
 				temp.broadcastUserInfo();
-				broadcastToTeam2(new ExDuelUpdateUserInfo(temp));
+				broadcastToTeam2(new ExDuelUpdateUserInfoPacket(temp));
 			}
 			foreach (Player temp in _playerB.getParty().getMembers())
 			{
@@ -393,14 +396,14 @@ public class Duel
 				temp.setInDuel(_duelId);
 				temp.setTeam(Team.RED);
 				temp.broadcastUserInfo();
-				broadcastToTeam1(new ExDuelUpdateUserInfo(temp));
+				broadcastToTeam1(new ExDuelUpdateUserInfoPacket(temp));
 			}
 			
 			// Send duel packets
-			broadcastToTeam1(ExDuelReady.PARTY_DUEL);
-			broadcastToTeam2(ExDuelReady.PARTY_DUEL);
-			broadcastToTeam1(ExDuelStart.PARTY_DUEL);
-			broadcastToTeam2(ExDuelStart.PARTY_DUEL);
+			broadcastToTeam1(ExDuelReadyPacket.PARTY_DUEL);
+			broadcastToTeam2(ExDuelReadyPacket.PARTY_DUEL);
+			broadcastToTeam1(ExDuelStartPacket.PARTY_DUEL);
+			broadcastToTeam2(ExDuelStartPacket.PARTY_DUEL);
 			
 			foreach (Door door in _duelInstance.getDoors())
 			{
@@ -419,13 +422,13 @@ public class Duel
 			_playerB.setTeam(Team.RED);
 			
 			// Send duel packets
-			broadcastToTeam1(ExDuelReady.PLAYER_DUEL);
-			broadcastToTeam2(ExDuelReady.PLAYER_DUEL);
-			broadcastToTeam1(ExDuelStart.PLAYER_DUEL);
-			broadcastToTeam2(ExDuelStart.PLAYER_DUEL);
+			broadcastToTeam1(ExDuelReadyPacket.PLAYER_DUEL);
+			broadcastToTeam2(ExDuelReadyPacket.PLAYER_DUEL);
+			broadcastToTeam1(ExDuelStartPacket.PLAYER_DUEL);
+			broadcastToTeam2(ExDuelStartPacket.PLAYER_DUEL);
 			
-			broadcastToTeam1(new ExDuelUpdateUserInfo(_playerB));
-			broadcastToTeam2(new ExDuelUpdateUserInfo(_playerA));
+			broadcastToTeam1(new ExDuelUpdateUserInfoPacket(_playerB));
+			broadcastToTeam2(new ExDuelUpdateUserInfoPacket(_playerA));
 			_playerA.broadcastUserInfo();
 			_playerB.broadcastUserInfo();
 		}
@@ -516,9 +519,9 @@ public class Duel
 	 * Returns the remaining time
 	 * @return remaining time
 	 */
-	public int getRemainingTime()
+	public TimeSpan getRemainingTime()
 	{
-		return (int) (_duelEndTime.getTimeInMillis() - System.currentTimeMillis());
+		return _duelEndTime - DateTime.UtcNow;
 	}
 	
 	/**
@@ -603,7 +606,8 @@ public class Duel
 	 * Broadcast a packet to the challenger team
 	 * @param packet
 	 */
-	public void broadcastToTeam1(ServerPacket packet)
+	public void broadcastToTeam1<TPacket>(TPacket packet)
+		where TPacket: IOutgoingPacket
 	{
 		if (_playerA == null)
 		{
@@ -627,7 +631,8 @@ public class Duel
 	 * Broadcast a packet to the challenged team
 	 * @param packet
 	 */
-	public void broadcastToTeam2(ServerPacket packet)
+	public void broadcastToTeam2<TPacket>(TPacket packet)
+		where TPacket: IOutgoingPacket
 	{
 		if (_playerB == null)
 		{
@@ -704,12 +709,12 @@ public class Duel
 		{
 			foreach (Player temp in looser.getParty().getMembers())
 			{
-				temp.broadcastPacket(new SocialAction(temp.getObjectId(), 7));
+				temp.broadcastPacket(new SocialActionPacket(temp.getObjectId(), 7));
 			}
 		}
 		else
 		{
-			looser.broadcastPacket(new SocialAction(looser.getObjectId(), 7));
+			looser.broadcastPacket(new SocialActionPacket(looser.getObjectId(), 7));
 		}
 	}
 	
@@ -727,15 +732,15 @@ public class Duel
 		}
 		
 		// Broadcast countdown to duelists
-		SystemMessage sm = null;
+		SystemMessagePacket sm;
 		if (_countdown > 0)
 		{
-			sm = new SystemMessage(SystemMessageId.THE_DUEL_STARTS_IN_S1_SEC);
-			sm.addInt(_countdown);
+			sm = new SystemMessagePacket(SystemMessageId.THE_DUEL_STARTS_IN_S1_SEC);
+			sm.Params.addInt(_countdown);
 		}
 		else
 		{
-			sm = new SystemMessage(SystemMessageId.LET_THE_DUEL_BEGIN);
+			sm = new SystemMessagePacket(SystemMessageId.LET_THE_DUEL_BEGIN);
 		}
 		
 		broadcastToTeam1(sm);
@@ -759,15 +764,15 @@ public class Duel
 		}
 		
 		// inform players of the result
-		SystemMessage sm = null;
+		SystemMessagePacket sm;
 		switch (result)
 		{
 			case DuelResult.TEAM_1_WIN:
 			case DuelResult.TEAM_2_SURRENDER:
 			{
 				restorePlayerConditions(false);
-				sm = _partyDuel ? new SystemMessage(SystemMessageId.C1_S_PARTY_HAS_WON_THE_DUEL) : new SystemMessage(SystemMessageId.C1_HAS_WON_THE_DUEL);
-				sm.addString(_playerA.getName());
+				sm = _partyDuel ? new SystemMessagePacket(SystemMessageId.C1_S_PARTY_HAS_WON_THE_DUEL) : new SystemMessagePacket(SystemMessageId.C1_HAS_WON_THE_DUEL);
+				sm.Params.addString(_playerA.getName());
 				
 				broadcastToTeam1(sm);
 				broadcastToTeam2(sm);
@@ -777,8 +782,8 @@ public class Duel
 			case DuelResult.TEAM_2_WIN:
 			{
 				restorePlayerConditions(false);
-				sm = _partyDuel ? new SystemMessage(SystemMessageId.C1_S_PARTY_HAS_WON_THE_DUEL) : new SystemMessage(SystemMessageId.C1_HAS_WON_THE_DUEL);
-				sm.addString(_playerB.getName());
+				sm = _partyDuel ? new SystemMessagePacket(SystemMessageId.C1_S_PARTY_HAS_WON_THE_DUEL) : new SystemMessagePacket(SystemMessageId.C1_HAS_WON_THE_DUEL);
+				sm.Params.addString(_playerB.getName());
 				
 				broadcastToTeam1(sm);
 				broadcastToTeam2(sm);
@@ -791,7 +796,7 @@ public class Duel
 				restorePlayerConditions(true);
 				// TODO: is there no other message for a canceled duel?
 				// send SystemMessage
-				sm = new SystemMessage(SystemMessageId.THE_DUEL_HAS_ENDED_IN_A_TIE);
+				sm = new SystemMessagePacket(SystemMessageId.THE_DUEL_HAS_ENDED_IN_A_TIE);
 				broadcastToTeam1(sm);
 				broadcastToTeam2(sm);
 				break;
@@ -802,7 +807,7 @@ public class Duel
 				// hp,mp,cp seem to be restored in a timeout too...
 				restorePlayerConditions(false);
 				// send SystemMessage
-				sm = new SystemMessage(SystemMessageId.THE_DUEL_HAS_ENDED_IN_A_TIE);
+				sm = new SystemMessagePacket(SystemMessageId.THE_DUEL_HAS_ENDED_IN_A_TIE);
 				broadcastToTeam1(sm);
 				broadcastToTeam2(sm);
 				break;
@@ -810,7 +815,7 @@ public class Duel
 		}
 		
 		// Send end duel packet
-		ExDuelEnd duelEnd = _partyDuel ? ExDuelEnd.PARTY_DUEL : ExDuelEnd.PLAYER_DUEL;
+		ExDuelEndPacket duelEnd = _partyDuel ? ExDuelEndPacket.PARTY_DUEL : ExDuelEndPacket.PLAYER_DUEL;
 		broadcastToTeam1(duelEnd);
 		broadcastToTeam2(duelEnd);
 		
@@ -837,7 +842,7 @@ public class Duel
 			return _surrenderRequest == 1 ? DuelResult.TEAM_1_SURRENDER : DuelResult.TEAM_2_SURRENDER;
 		}
 		// duel timed out
-		else if (getRemainingTime() <= 0)
+		else if (getRemainingTime() <= TimeSpan.Zero)
 		{
 			return DuelResult.TIMEOUT;
 		}
@@ -954,7 +959,7 @@ public class Duel
 		
 		if (_partyDuel)
 		{
-			bool teamdefeated = player.getParty().getMembers().stream().anyMatch(member => member.getDuelState() == DUELSTATE_DUELLING);
+			bool teamdefeated = player.getParty().getMembers().Any(member => member.getDuelState() == DUELSTATE_DUELLING);
 			if (teamdefeated)
 			{
 				Player winner = _playerA.getParty().getMembers().Contains(player) ? _playerB : _playerA;

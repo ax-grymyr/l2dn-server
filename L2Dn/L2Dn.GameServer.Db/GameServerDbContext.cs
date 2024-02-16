@@ -48,12 +48,17 @@ public class GameServerDbContext: DbContext
     public DbSet<CharacterDailyReward> CharacterDailyRewards => Set<CharacterDailyReward>();
     public DbSet<Pet> Pets => Set<Pet>();
     public DbSet<DbItem> Items => Set<DbItem>();
+    
      public DbSet<Clan> Clans => Set<Clan>();
     public DbSet<ClanPrivileges> ClanPrivileges => Set<ClanPrivileges>();
     public DbSet<ClanSkill> ClanSkills => Set<ClanSkill>();
     public DbSet<ClanSubPledge> ClanSubPledges => Set<ClanSubPledge>();
     public DbSet<ClanNotice> ClanNotices => Set<ClanNotice>();
     public DbSet<ClanWar> ClanWars => Set<ClanWar>();
+    public DbSet<PledgeApplicant> PledgeApplicants => Set<PledgeApplicant>();
+    public DbSet<PledgeRecruit> PledgeRecruits => Set<PledgeRecruit>();
+    public DbSet<PledgeWaitingList> PledgeWaitingLists => Set<PledgeWaitingList>();
+    
     public DbSet<Ally> Allys => Set<Ally>();
     public DbSet<Crest> Crests => Set<Crest>();
     
@@ -72,4 +77,10 @@ public class GameServerDbContext: DbContext
     public DbSet<DbCastle> Castles => Set<DbCastle>();
     public DbSet<CastleManorProduction> CastleManorProduction => Set<CastleManorProduction>();
     public DbSet<CastleManorProcure> CastleManorProcure => Set<CastleManorProcure>();
+    public DbSet<DbCursedWeapon> CursedWeapons => Set<DbCursedWeapon>();
+    public DbSet<DbCustomMail> CustomMails => Set<DbCustomMail>();
+    public DbSet<NpcRespawn> NpcRespawns => Set<NpcRespawn>();
+    public DbSet<DbFort> Forts => Set<DbFort>();
+
+    public DbSet<GlobalVariable> GlobalVariables => Set<GlobalVariable>();
 }

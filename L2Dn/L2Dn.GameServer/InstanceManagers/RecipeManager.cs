@@ -105,8 +105,8 @@ public class RecipeManager
 		if (Config.ALT_GAME_CREATION && _activeMakers.containsKey(player.getObjectId()))
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S2_S1);
-			sm.addItemName(recipeList.getItemId());
-			sm.addString("You are busy creating.");
+			sm.Params.addItemName(recipeList.getItemId());
+			sm.Params.addString("You are busy creating.");
 			player.sendPacket(sm);
 			return;
 		}
@@ -371,15 +371,15 @@ public class RecipeManager
 				if (_target != _player)
 				{
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_FAILED_TO_CREATE_S2_FOR_C1_AT_THE_PRICE_OF_S3_ADENA);
-					msg.addString(_target.getName());
-					msg.addItemName(_recipeList.getItemId());
-					msg.addLong(_price);
+					msg.Params.addString(_target.getName());
+					msg.Params.addItemName(_recipeList.getItemId());
+					msg.Params.addLong(_price);
 					_player.sendPacket(msg);
 					
 					msg = new SystemMessagePacket(SystemMessageId.C1_HAS_FAILED_TO_CREATE_S2_AT_THE_PRICE_OF_S3_ADENA);
-					msg.addString(_player.getName());
-					msg.addItemName(_recipeList.getItemId());
-					msg.addLong(_price);
+					msg.Params.addString(_player.getName());
+					msg.Params.addItemName(_recipeList.getItemId());
+					msg.Params.addLong(_price);
 					_target.sendPacket(msg);
 				}
 				else
@@ -445,8 +445,8 @@ public class RecipeManager
 				if (_target == _player)
 				{
 					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_S2_EQUIPPED); // you equipped ...
-					sm.addLong(count);
-					sm.addItemName(item.getItemId());
+					sm.Params.addLong(count);
+					sm.Params.addItemName(item.getItemId());
 					_player.sendPacket(sm);
 				}
 				else
@@ -563,8 +563,8 @@ public class RecipeManager
 					if (itemQuantityAmount < recipe.getQuantity())
 					{
 						sm = new SystemMessagePacket(SystemMessageId.YOU_NEED_S2_MORE_S1_S);
-						sm.addItemName(recipe.getItemId());
-						sm.addLong(recipe.getQuantity() - itemQuantityAmount);
+						sm.Params.addItemName(recipe.getItemId());
+						sm.Params.addLong(recipe.getQuantity() - itemQuantityAmount);
 						_target.sendPacket(sm);
 						
 						abort();
@@ -584,14 +584,14 @@ public class RecipeManager
 					if (tmp.getQuantity() > 1)
 					{
 						sm = new SystemMessagePacket(SystemMessageId.S1_X_S2_DISAPPEARED);
-						sm.addItemName(tmp.getItemId());
-						sm.addLong(tmp.getQuantity());
+						sm.Params.addItemName(tmp.getItemId());
+						sm.Params.addLong(tmp.getQuantity());
 						_target.sendPacket(sm);
 					}
 					else
 					{
 						sm = new SystemMessagePacket(SystemMessageId.S1_DISAPPEARED);
-						sm.addItemName(tmp.getItemId());
+						sm.Params.addItemName(tmp.getItemId());
 						_target.sendPacket(sm);
 					}
 				}
@@ -637,24 +637,24 @@ public class RecipeManager
 				if (itemCount == 1)
 				{
 					sm = new SystemMessagePacket(SystemMessageId.S2_HAS_BEEN_CREATED_FOR_C1_AFTER_THE_PAYMENT_OF_S3_ADENA_WAS_RECEIVED);
-					sm.addString(_target.getName());
-					sm.addItemName(itemId);
-					sm.addLong(_price);
+					sm.Params.addString(_target.getName());
+					sm.Params.addItemName(itemId);
+					sm.Params.addLong(_price);
 					_player.sendPacket(sm);
 					
 					sm = new SystemMessagePacket(SystemMessageId.C1_CREATED_S2_AFTER_RECEIVING_S3_ADENA);
-					sm.addString(_player.getName());
-					sm.addItemName(itemId);
-					sm.addLong(_price);
+					sm.Params.addString(_player.getName());
+					sm.Params.addItemName(itemId);
+					sm.Params.addLong(_price);
 					_target.sendPacket(sm);
 				}
 				else
 				{
 					sm = new SystemMessagePacket(SystemMessageId.S3_S2_S_HAVE_BEEN_CREATED_FOR_C1_AT_THE_PRICE_OF_S4_ADENA);
-					sm.addString(_target.getName());
-					sm.addInt(itemCount);
-					sm.addItemName(itemId);
-					sm.addLong(_price);
+					sm.Params.addString(_target.getName());
+					sm.Params.addInt(itemCount);
+					sm.Params.addItemName(itemId);
+					sm.Params.addLong(_price);
 					_player.sendPacket(sm);
 					
 					sm = new SystemMessagePacket(SystemMessageId.C1_CREATED_S3_S2_S_AT_THE_PRICE_OF_S4_ADENA);
@@ -669,14 +669,14 @@ public class RecipeManager
 			if (itemCount > 1)
 			{
 				sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
-				sm.addItemName(itemId);
-				sm.addLong(itemCount);
+				sm.Params.addItemName(itemId);
+				sm.Params.addLong(itemCount);
 				_target.sendPacket(sm);
 			}
 			else
 			{
 				sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_ACQUIRED_S1);
-				sm.addItemName(itemId);
+				sm.Params.addItemName(itemId);
 				_target.sendPacket(sm);
 			}
 			

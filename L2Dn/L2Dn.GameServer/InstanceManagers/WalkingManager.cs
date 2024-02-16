@@ -1,6 +1,8 @@
 using System.Runtime.CompilerServices;
 using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers.Tasks;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
@@ -8,9 +10,10 @@ using L2Dn.GameServer.Model.Actor.Tasks.NpcTasks.WalkerTasks;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -154,7 +157,7 @@ public class WalkingManager: IXmlReader
 								holder.addRoute(routeName, new Location(x, y, z));
 								_routesToAttach.put(npcId, holder);
 								
-								if (!_targetedNpcIds.contains(npcId))
+								if (!_targetedNpcIds.Contains(npcId))
 								{
 									_targetedNpcIds.add(npcId);
 								}
@@ -263,10 +266,10 @@ public class WalkingManager: IXmlReader
 					}
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, node);
 					
-					ScheduledFuture<?> task = _repeatMoveTasks.get(npc);
+					ScheduledFuture task = _repeatMoveTasks.get(npc);
 					if ((task == null) || task.isCancelled() || task.isDone())
 					{
-						ScheduledFuture<?> newTask = ThreadPool.scheduleAtFixedRate(new StartMovingTask(npc, routeName), 10000, 10000);
+						ScheduledFuture newTask = ThreadPool.scheduleAtFixedRate(new StartMovingTask(npc, routeName), 10000, 10000);
 						_repeatMoveTasks.put(npc, newTask);
 						walk.setWalkCheckTask(newTask); // start walk check task, for resuming walk after fight
 					}
@@ -276,7 +279,7 @@ public class WalkingManager: IXmlReader
 				}
 				else
 				{
-					ScheduledFuture<?> task = _startMoveTasks.get(npc);
+					ScheduledFuture task = _startMoveTasks.get(npc);
 					if ((task == null) || task.isCancelled() || task.isDone())
 					{
 						_startMoveTasks.put(npc, ThreadPool.schedule(new StartMovingTask(npc, routeName), 10000));
@@ -327,7 +330,7 @@ public class WalkingManager: IXmlReader
 		WalkInfo walk = _activeRoutes.remove(npc.getObjectId());
 		if (walk != null)
 		{
-			ScheduledFuture<?> task = walk.getWalkCheckTask();
+			ScheduledFuture task = walk.getWalkCheckTask();
 			if (task != null)
 			{
 				task.cancel(true);
@@ -422,7 +425,7 @@ public class WalkingManager: IXmlReader
 			npc.broadcastSay(ChatType.NPC_GENERAL, node.getChatText());
 		}
 		
-		ScheduledFuture<?> task = _arriveTasks.get(npc);
+		ScheduledFuture task = _arriveTasks.get(npc);
 		if ((task == null) || task.isCancelled() || task.isDone())
 		{
 			_arriveTasks.put(npc, ThreadPool.schedule(new ArrivedTask(npc, walk), 100 + (node.getDelay() * 1000)));

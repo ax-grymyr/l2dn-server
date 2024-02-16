@@ -56,10 +56,10 @@ public class PcCafePointsManager
 			points = Config.PC_CAFE_MAX_POINTS - player.getPcCafePoints();
 		}
 		
-		message.addLong(points);
+		message.Params.addLong(points);
 		player.sendPacket(message);
 		player.setPcCafePoints(player.getPcCafePoints() + points);
-		player.sendPacket(new ExPCCafePointInfo(player.getPcCafePoints(), points, 1));
+		player.sendPacket(new ExPcCafePointInfoPacket(player.getPcCafePoints(), points, 1));
 	}
 	
 	public void givePcCafePoint(Player player, double exp)
@@ -80,9 +80,10 @@ public class PcCafePointsManager
 			return;
 		}
 		
+		SystemMessagePacket message;
 		if (player.getPcCafePoints() >= Config.PC_CAFE_MAX_POINTS)
 		{
-			SystemMessagePacket message = new SystemMessagePacket(SystemMessageId.YOU_HAVE_EARNED_THE_MAXIMUM_NUMBER_OF_PA_POINTS);
+			message = new SystemMessagePacket(SystemMessageId.YOU_HAVE_EARNED_THE_MAXIMUM_NUMBER_OF_PA_POINTS);
 			player.sendPacket(message);
 			return;
 		}
@@ -103,7 +104,6 @@ public class PcCafePointsManager
 			return;
 		}
 		
-		SystemMessagePacket message;
 		if (Config.PC_CAFE_ENABLE_DOUBLE_POINTS && (Rnd.get(100) < Config.PC_CAFE_DOUBLE_POINTS_CHANCE))
 		{
 			points *= 2;
@@ -117,10 +117,11 @@ public class PcCafePointsManager
 		{
 			points = Config.PC_CAFE_MAX_POINTS - player.getPcCafePoints();
 		}
-		message.addLong(points);
+		
+		message.Params.addLong(points);
 		player.sendPacket(message);
 		player.setPcCafePoints(player.getPcCafePoints() + points);
-		player.sendPacket(new ExPCCafePointInfo(player.getPcCafePoints(), points, 1));
+		player.sendPacket(new ExPcCafePointInfoPacket(player.getPcCafePoints(), points, 1));
 	}
 	
 	/**

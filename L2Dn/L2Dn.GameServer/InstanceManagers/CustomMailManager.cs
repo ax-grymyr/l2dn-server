@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -17,10 +18,6 @@ public class CustomMailManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CustomMailManager));
 	
-	// SQL Statements
-	private const string READ_SQL = "SELECT * FROM custom_mail";
-	private const string DELETE_SQL = "DELETE FROM custom_mail WHERE date=? AND receiver=?";
-	
 	protected CustomMailManager()
 	{
 		ThreadPool.scheduleAtFixedRate(() =>
@@ -28,17 +25,15 @@ public class CustomMailManager
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				Statement ps = con.createStatement();
-				ResultSet rs = ps.executeQuery(READ_SQL);
-				while (rs.next())
+				foreach (DbCustomMail record in ctx.CustomMails)
 				{
-					int playerId = rs.getInt("receiver");
+					int playerId = record.ReceiverId;
 					Player player = World.getInstance().getPlayer(playerId);
 					if ((player != null) && player.isOnline())
 					{
 						// Create message.
-						String items = rs.getString("items");
-						Message msg = new Message(playerId, rs.getString("subject"), rs.getString("message"), items.Length > 0 ? MailType.PRIME_SHOP_GIFT : MailType.REGULAR);
+						String items = record.Items;
+						Message msg = new Message(playerId, record.Subject, record.Message, items.Length > 0 ? MailType.PRIME_SHOP_GIFT : MailType.REGULAR);
 						List<ItemHolder> itemHolders = new();
 						foreach (String str in items.Split(";"))
 						{
@@ -68,10 +63,11 @@ public class CustomMailManager
 						// Delete entry from database.
 						try
 						{
-							PreparedStatement stmt = con.prepareStatement(DELETE_SQL);
-							stmt.setString(1, rs.getString("date"));
-							stmt.setInt(2, playerId);
-							stmt.execute();
+							DateTime time = record.Time;
+
+							// TODO: deletion during querying, refactor this
+							ctx.CustomMails.Where(m => m.Time == time && m.ReceiverId == playerId).ExecuteDelete();
+							
 						}
 						catch (Exception e)
 						{

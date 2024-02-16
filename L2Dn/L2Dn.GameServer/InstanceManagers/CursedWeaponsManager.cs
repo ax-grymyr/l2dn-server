@@ -1,4 +1,8 @@
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
@@ -6,6 +10,8 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -14,7 +20,7 @@ namespace L2Dn.GameServer.InstanceManagers;
  * UnAfraid: TODO: Rewrite with DocumentParser
  * @author Micht
  */
-public class CursedWeaponsManager: IXmlReader
+public class CursedWeaponsManager: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CursedWeaponsManager));
 	
@@ -32,86 +38,72 @@ public class CursedWeaponsManager: IXmlReader
 			return;
 		}
 		
-		parseDatapackFile("data/CursedWeapons.xml");
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, "CursedWeapons.xml");
+		document.Elements("list").Elements("item").ForEach(parseElement);
+		
 		restore();
 		controlPlayers();
 		LOGGER.Info(GetType().Name +": Loaded " + _cursedWeapons.size() + " cursed weapons.");
 	}
 	
-	public void parseDocument(Document doc, File f)
+	private void parseElement(XElement element)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		int id = element.Attribute("id").GetInt32();
+		int skillId = element.Attribute("skillId").GetInt32();
+		string name = element.Attribute("name").GetString();
+		CursedWeapon cw = new CursedWeapon(id, skillId, name);
+		
+		int val;
+		foreach (XElement cd in element.Elements())
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
+			string nodeName = cd.Name.LocalName;
+			if ("dropRate".equalsIgnoreCase(nodeName))
 			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("item".equalsIgnoreCase(d.getNodeName()))
-					{
-						NamedNodeMap attrs = d.getAttributes();
-						int id = int.Parse(attrs.getNamedItem("id").getNodeValue());
-						int skillId = int.Parse(attrs.getNamedItem("skillId").getNodeValue());
-						String name = attrs.getNamedItem("name").getNodeValue();
-						CursedWeapon cw = new CursedWeapon(id, skillId, name);
-						int val;
-						for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
-						{
-							if ("dropRate".equalsIgnoreCase(cd.getNodeName()))
-							{
-								attrs = cd.getAttributes();
-								val = int.Parse(attrs.getNamedItem("val").getNodeValue());
-								cw.setDropRate(val);
-							}
-							else if ("duration".equalsIgnoreCase(cd.getNodeName()))
-							{
-								attrs = cd.getAttributes();
-								val = int.Parse(attrs.getNamedItem("val").getNodeValue());
-								cw.setDuration(val);
-							}
-							else if ("durationLost".equalsIgnoreCase(cd.getNodeName()))
-							{
-								attrs = cd.getAttributes();
-								val = int.Parse(attrs.getNamedItem("val").getNodeValue());
-								cw.setDurationLost(val);
-							}
-							else if ("disapearChance".equalsIgnoreCase(cd.getNodeName()))
-							{
-								attrs = cd.getAttributes();
-								val = int.Parse(attrs.getNamedItem("val").getNodeValue());
-								cw.setDisapearChance(val);
-							}
-							else if ("stageKills".equalsIgnoreCase(cd.getNodeName()))
-							{
-								attrs = cd.getAttributes();
-								val = int.Parse(attrs.getNamedItem("val").getNodeValue());
-								cw.setStageKills(val);
-							}
-						}
-						
-						// Store cursed weapon
-						_cursedWeapons.put(id, cw);
-					}
-				}
+				val = cd.Attribute("val").GetInt32();
+				cw.setDropRate(val);
+			}
+			else if ("duration".equalsIgnoreCase(nodeName))
+			{
+				val = cd.Attribute("val").GetInt32();
+				cw.setDuration(val);
+			}
+			else if ("durationLost".equalsIgnoreCase(nodeName))
+			{
+				val = cd.Attribute("val").GetInt32();
+				cw.setDurationLost(val);
+			}
+			else if ("disapearChance".equalsIgnoreCase(nodeName))
+			{
+				val = cd.Attribute("val").GetInt32();
+				cw.setDisapearChance(val);
+			}
+			else if ("stageKills".equalsIgnoreCase(nodeName))
+			{
+				val = cd.Attribute("val").GetInt32();
+				cw.setStageKills(val);
 			}
 		}
+		
+		// Store cursed weapon
+		_cursedWeapons.put(id, cw);
 	}
 	
 	private void restore()
 	{
-		try (using GameServerDbContext ctx = new();
-			Statement s = con.createStatement();
-			ResultSet rs = s.executeQuery("SELECT itemId, charId, playerReputation, playerPkKills, nbKills, endTime FROM cursed_weapons"))
+		try 
 		{
+			using GameServerDbContext ctx = new();
+
 			// Retrieve the Player from the characters table of the database
 			CursedWeapon cw;
-			while (rs.next())
+			foreach (DbCursedWeapon record in ctx.CursedWeapons)
 			{
-				cw = _cursedWeapons.get(rs.getInt("itemId"));
-				cw.setPlayerId(rs.getInt("charId"));
-				cw.setPlayerReputation(rs.getInt("playerReputation"));
-				cw.setPlayerPkKills(rs.getInt("playerPkKills"));
-				cw.setNbKills(rs.getInt("nbKills"));
-				cw.setEndTime(rs.getLong("endTime"));
+				cw = _cursedWeapons.get(record.ItemId);
+				cw.setPlayerId(record.CharacterId);
+				cw.setPlayerReputation(record.PlayerReputation);
+				cw.setPlayerPkKills(record.PlayerPkKills);
+				cw.setNbKills(record.NbKills);
+				cw.setEndTime(record.EndTime);
 				cw.reActivate();
 			}
 		}
@@ -123,16 +115,17 @@ public class CursedWeaponsManager: IXmlReader
 	
 	private void controlPlayers()
 	{
-		try (using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT owner_id FROM items WHERE item_id=?"))
+		try
 		{
+			using GameServerDbContext ctx = new();
+			
 			// TODO: See comments below...
 			// This entire for loop should NOT be necessary, since it is already handled by
 			// CursedWeapon.endOfLife(). However, if we indeed *need* to duplicate it for safety,
 			// then we'd better make sure that it FULLY cleans up inactive cursed weapons!
 			// Undesired effects result otherwise, such as player with no zariche but with karma
 			// or a lost-child entry in the cursed weapons table, without a corresponding one in items...
-			for (CursedWeapon cw : _cursedWeapons.values())
+			foreach (CursedWeapon cw in _cursedWeapons.values())
 			{
 				if (cw.isActivated())
 				{
@@ -141,46 +134,30 @@ public class CursedWeaponsManager: IXmlReader
 				
 				// Do an item check to be sure that the cursed weapon isn't hold by someone
 				int itemId = cw.getItemId();
-				ps.setInt(1, itemId);
-				try (ResultSet rset = ps.executeQuery())
+				int? ownerId = ctx.Items.Where(i => i.ItemId == itemId).Select(i => (int?)i.OwnerId).FirstOrDefault();
+				if (ownerId != null)
 				{
-					if (rset.next())
-					{
-						// A player has the cursed weapon in his inventory ...
-						int playerId = rset.getInt("owner_id");
-						LOGGER.Info("PROBLEM : Player " + playerId + " owns the cursed weapon " + itemId + " but he shouldn't.");
-						
-						// Delete the item
-						try (PreparedStatement delete = con.prepareStatement("DELETE FROM items WHERE owner_id=? AND item_id=?"))
-						{
-							delete.setInt(1, playerId);
-							delete.setInt(2, itemId);
-							if (delete.executeUpdate() != 1)
-							{
-								LOGGER.Warn("Error while deleting cursed weapon " + itemId + " from userId " + playerId);
-							}
-						}
-						
-						// Restore the player's old karma and pk count
-						try (PreparedStatement update = con.prepareStatement("UPDATE characters SET reputation=?, pkkills=? WHERE charId=?"))
-						{
-							update.setInt(1, cw.getPlayerReputation());
-							update.setInt(2, cw.getPlayerPkKills());
-							update.setInt(3, playerId);
-							if (update.executeUpdate() != 1)
-							{
-								LOGGER.Warn("Error while updating karma & pkkills for userId " + cw.getPlayerId());
-							}
-						}
-						// clean up the cursed weapons table.
-						removeFromDb(itemId);
-					}
+					// A player has the cursed weapon in his inventory ...
+					int playerId = ownerId.Value;
+					LOGGER.Info("PROBLEM : Player " + playerId + " owns the cursed weapon " + itemId + " but he shouldn't.");
+					
+					// Delete the item
+					ctx.Items.Where(i => i.ItemId == itemId && i.OwnerId == playerId).ExecuteDelete();
+					
+					// Restore the player's old karma and pk count
+					ctx.Characters.Where(c => c.Id == playerId)
+						.ExecuteUpdate(s =>
+							s.SetProperty(c => c.Reputation, cw.getPlayerReputation())
+								.SetProperty(c => c.PkKills, cw.getPlayerPkKills()));
+
+					// clean up the cursed weapons table.
+					removeFromDb(itemId);
 				}
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Could not check CursedWeapons data: " + e);
+			LOGGER.Error("Could not check CursedWeapons data: " + e);
 		}
 	}
 	
@@ -268,11 +245,13 @@ public class CursedWeaponsManager: IXmlReader
 				cw.setItem(player.getInventory().getItemByItemId(cw.getItemId()));
 				cw.giveSkill();
 				player.setCursedWeaponEquippedId(cw.getItemId());
+
+				int remainingMinutes = (int)((cw.getEndTime() - DateTime.Now).TotalMinutes);
 				
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_HAS_S2_MIN_OF_USAGE_TIME_REMAINING);
-				sm.addString(cw.getName());
+				sm.Params.addString(cw.getName());
 				// sm.addItemName(cw.getItemId());
-				sm.addInt((int) ((cw.getEndTime() - System.currentTimeMillis()) / 60000));
+				sm.Params.addInt(remainingMinutes);
 				player.sendPacket(sm);
 			}
 		}
@@ -295,9 +274,7 @@ public class CursedWeaponsManager: IXmlReader
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM cursed_weapons WHERE itemId = ?");
-			ps.setInt(1, itemId);
-			ps.executeUpdate();
+			ctx.CursedWeapons.Where(cw => cw.ItemId == itemId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{

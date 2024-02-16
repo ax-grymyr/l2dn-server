@@ -7,7 +7,7 @@ using StringTokenizer = Microsoft.Extensions.Primitives.StringTokenizer;
 
 namespace L2Dn.GameServer.Model;
 
-public class MacroList : IRestorable
+public class MacroList: IRestorable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(MacroList));
 	

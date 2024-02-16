@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
 
@@ -124,7 +125,7 @@ public abstract class AbstractPlayerGroup
 	 */
 	public void broadcastMessage(SystemMessageId message)
 	{
-		broadcastPacket(new SystemMessage(message));
+		broadcastPacket(new SystemMessagePacket(message));
 	}
 	
 	/**
@@ -133,10 +134,10 @@ public abstract class AbstractPlayerGroup
 	 */
 	public void broadcastString(String text)
 	{
-		broadcastPacket(new SystemMessage(text));
+		broadcastPacket(new SystemMessagePacket(text));
 	}
 	
-	public void broadcastCreatureSay(CreatureSay msg, Player broadcaster)
+	public void broadcastCreatureSay(CreatureSayPacket msg, Player broadcaster)
 	{
 		forEachMember(m =>
 		{

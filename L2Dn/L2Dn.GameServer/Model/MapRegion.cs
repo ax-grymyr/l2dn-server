@@ -176,9 +176,9 @@ public class MapRegion
 		return getSpawnLoc();
 	}
 	
-	public void addBannedRace(String race, String point)
+	public void addBannedRace(string race, string point)
 	{
-		_bannedRace.put(Race.valueOf(race), point);
+		_bannedRace.put(Enum.Parse<Race>(race), point);
 	}
 	
 	public Map<Race, string> getBannedRace()

@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -185,7 +186,7 @@ public class MapRegionManager: IXmlReader
 	 * @param teleportWhere
 	 * @return
 	 */
-	public Location getTeleToLocation(Creature creature, TeleportWhereType teleportWhere)
+	public ILocational getTeleToLocation(Creature creature, TeleportWhereType teleportWhere)
 	{
 		if (creature.isPlayer())
 		{
@@ -269,7 +270,7 @@ public class MapRegionManager: IXmlReader
 							if ((flags != null) && !flags.isEmpty())
 							{
 								// Spawn to flag - Need more work to get player to the nearest flag
-								return flags.stream().findAny().get().getLocation();
+								return flags.First().getLocation();
 							}
 						}
 					}
@@ -282,7 +283,7 @@ public class MapRegionManager: IXmlReader
 							if ((flags != null) && !flags.isEmpty())
 							{
 								// Spawn to flag - Need more work to get player to the nearest flag
-								return flags.stream().findAny().get().getLocation();
+								return flags.First().getLocation();
 							}
 						}
 					}
@@ -346,7 +347,7 @@ public class MapRegionManager: IXmlReader
 	{
 		try
 		{
-			RespawnZone zone = ZoneManager.getInstance().getZone(player, RespawnZone.class);
+			RespawnZone zone = ZoneManager.getInstance().getZone<RespawnZone>(player);
 			if (zone != null)
 			{
 				return getRestartRegion(player, zone.getRespawnPoint(player)).getChaoticSpawnLoc();
@@ -372,7 +373,7 @@ public class MapRegionManager: IXmlReader
 	{
 		try
 		{
-			RespawnZone zone = ZoneManager.getInstance().getZone(creature, RespawnZone.class);
+			RespawnZone zone = ZoneManager.getInstance().getZone<RespawnZone>(creature);
 			if (zone != null)
 			{
 				return getRestartRegion(creature, zone.getRespawnPoint((Player) creature)).getSpawnLoc();

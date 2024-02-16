@@ -2,6 +2,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Packets;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -153,7 +154,8 @@ public class DuelManager
 	 * @param player
 	 * @param packet
 	 */
-	public void broadcastToOppositTeam(Player player, ServerPacket packet)
+	public void broadcastToOppositTeam<TPacket>(Player player, TPacket packet)
+		where TPacket: IOutgoingPacket
 	{
 		if ((player == null) || !player.isInDuel())
 		{

@@ -1,10 +1,11 @@
 using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -41,7 +42,7 @@ public class RankManager
 	
 	protected RankManager()
 	{
-		ThreadPool.scheduleAtFixedRate(this::update, 0, 1800000);
+		ThreadPool.scheduleAtFixedRate(update, 0, 1800000);
 	}
 	
 	[MethodImpl(MethodImplOptions.Synchronized)]

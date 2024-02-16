@@ -1,7 +1,9 @@
 ﻿using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Utilities;
 using NLog;
+using ThreadPool = System.Threading.ThreadPool;
 
 namespace L2Dn.GameServer.Model;
 
@@ -23,7 +25,7 @@ public class HuntPass
 	private int _premiumRewardStep;
 	
 	private bool _toggleSayha = false;
-	private ScheduledFuture<?> _sayhasSustentionTask = null;
+	private ScheduledFuture _sayhasSustentionTask = null;
 	private int _toggleStartTime = 0;
 	private int _usedSayhaTime;
 	

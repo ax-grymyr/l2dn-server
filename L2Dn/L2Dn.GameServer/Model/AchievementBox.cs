@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
@@ -24,7 +25,7 @@ public class AchievementBox
 	private int _pvpEndDate;
 	private long _boxTimeForOpen;
 	private readonly List<AchievementBoxHolder> _achievementBox = new();
-	private ScheduledFuture<?> _boxOpenTask;
+	private ScheduledFuture _boxOpenTask;
 	
 	public AchievementBox(Player owner)
 	{

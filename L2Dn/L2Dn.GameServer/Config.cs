@@ -4,6 +4,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using L2Dn.Configuration;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
@@ -1164,113 +1165,113 @@ public class Config
 	public static string TITLE_FOR_PVP_AMOUNT5;
 	public static bool CHAT_ADMIN;
 
-	public static ImmutableDictionary<ClassId, double> PVE_MAGICAL_SKILL_DAMAGE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVE_MAGICAL_SKILL_DAMAGE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVP_MAGICAL_SKILL_DAMAGE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVP_MAGICAL_SKILL_DAMAGE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVE_MAGICAL_SKILL_DEFENCE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVE_MAGICAL_SKILL_DEFENCE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVP_MAGICAL_SKILL_DEFENCE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVP_MAGICAL_SKILL_DEFENCE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVE_MAGICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVE_MAGICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVP_MAGICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVP_MAGICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVE_MAGICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVE_MAGICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVP_MAGICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVP_MAGICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVE_PHYSICAL_SKILL_DAMAGE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVE_PHYSICAL_SKILL_DAMAGE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVP_PHYSICAL_SKILL_DAMAGE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVP_PHYSICAL_SKILL_DAMAGE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVE_PHYSICAL_SKILL_DEFENCE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVE_PHYSICAL_SKILL_DEFENCE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVP_PHYSICAL_SKILL_DEFENCE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVP_PHYSICAL_SKILL_DEFENCE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVE_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVE_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVP_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVP_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVE_PHYSICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVE_PHYSICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVP_PHYSICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVP_PHYSICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVE_PHYSICAL_ATTACK_DAMAGE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVE_PHYSICAL_ATTACK_DAMAGE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVP_PHYSICAL_ATTACK_DAMAGE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVP_PHYSICAL_ATTACK_DAMAGE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVE_PHYSICAL_ATTACK_DEFENCE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVE_PHYSICAL_ATTACK_DEFENCE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVP_PHYSICAL_ATTACK_DEFENCE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVP_PHYSICAL_ATTACK_DEFENCE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVE_PHYSICAL_ATTACK_CRITICAL_CHANCE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVE_PHYSICAL_ATTACK_CRITICAL_CHANCE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVP_PHYSICAL_ATTACK_CRITICAL_CHANCE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVP_PHYSICAL_ATTACK_CRITICAL_CHANCE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVE_PHYSICAL_ATTACK_CRITICAL_DAMAGE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVE_PHYSICAL_ATTACK_CRITICAL_DAMAGE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVP_PHYSICAL_ATTACK_CRITICAL_DAMAGE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVP_PHYSICAL_ATTACK_CRITICAL_DAMAGE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVE_BLOW_SKILL_DAMAGE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVE_BLOW_SKILL_DAMAGE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVP_BLOW_SKILL_DAMAGE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVP_BLOW_SKILL_DAMAGE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVE_BLOW_SKILL_DEFENCE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVE_BLOW_SKILL_DEFENCE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVP_BLOW_SKILL_DEFENCE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVP_BLOW_SKILL_DEFENCE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVE_ENERGY_SKILL_DAMAGE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVE_ENERGY_SKILL_DAMAGE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVP_ENERGY_SKILL_DAMAGE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVP_ENERGY_SKILL_DAMAGE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVE_ENERGY_SKILL_DEFENCE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVE_ENERGY_SKILL_DEFENCE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PVP_ENERGY_SKILL_DEFENCE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PVP_ENERGY_SKILL_DEFENCE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> PLAYER_HEALING_SKILL_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> PLAYER_HEALING_SKILL_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> SKILL_MASTERY_CHANCE_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> SKILL_MASTERY_CHANCE_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> EXP_AMOUNT_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> EXP_AMOUNT_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
-	public static ImmutableDictionary<ClassId, double> SP_AMOUNT_MULTIPLIERS =
-		ImmutableDictionary<ClassId, double>.Empty;
+	public static ImmutableDictionary<CharacterClass, double> SP_AMOUNT_MULTIPLIERS =
+		ImmutableDictionary<CharacterClass, double>.Empty;
 
 	public static bool MULTILANG_ENABLE;
 	public static ImmutableArray<string> MULTILANG_ALLOWED = ImmutableArray<string>.Empty;
@@ -3042,19 +3043,19 @@ public class Config
 		}, true).ToImmutableArray();
 	}
 
-	private static ImmutableDictionary<ClassId, double> GetMultipliers(ConfigurationParser parser, string key)
+	private static ImmutableDictionary<CharacterClass, double> GetMultipliers(ConfigurationParser parser, string key)
 	{
 		// Format:
 		// ELVEN_FIGHTER*2;PALUS_KNIGHT*2.5;...
 
-		var builder = ImmutableDictionary<ClassId, double>.Empty.ToBuilder();
+		var builder = ImmutableDictionary<CharacterClass, double>.Empty.ToBuilder();
 		parser.GetList(key, ';', s =>
 		{
 			string[] item = s.Split('*');
-			ClassId classId;
+			CharacterClass classId;
 			bool ok = double.TryParse(item[1], CultureInfo.InvariantCulture, out double rate);
 			if (int.TryParse(item[0], CultureInfo.InvariantCulture, out int classNum))
-				classId = (ClassId)classNum;
+				classId = (CharacterClass)classNum;
 			else if (!Enum.TryParse(item[0], false, out classId))
 				ok = false;
 

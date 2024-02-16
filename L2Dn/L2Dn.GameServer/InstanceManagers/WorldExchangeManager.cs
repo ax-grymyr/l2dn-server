@@ -10,7 +10,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -42,7 +42,7 @@ public class WorldExchangeManager: IXmlReader
 		firstLoad();
 		if (_checkStatus == null)
 		{
-			_checkStatus = ThreadPool.scheduleAtFixedRate(this::checkBidStatus, Config.WORLD_EXCHANGE_SAVE_INTERVAL, Config.WORLD_EXCHANGE_SAVE_INTERVAL);
+			_checkStatus = ThreadPool.scheduleAtFixedRate(checkBidStatus, Config.WORLD_EXCHANGE_SAVE_INTERVAL, Config.WORLD_EXCHANGE_SAVE_INTERVAL);
 		}
 	}
 	

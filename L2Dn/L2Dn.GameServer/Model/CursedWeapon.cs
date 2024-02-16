@@ -511,7 +511,7 @@ public class CursedWeapon : INamable
 		_isDropped = isDropped;
 	}
 	
-	public void setEndTime(long endTime)
+	public void setEndTime(DateTime endTime)
 	{
 		_endTime = endTime;
 	}

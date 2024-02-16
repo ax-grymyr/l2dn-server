@@ -3,7 +3,9 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Model;
 
@@ -13,29 +15,29 @@ namespace L2Dn.GameServer.Model;
  */
 public class Petition
 {
-	private readonly long _submitTime = System.currentTimeMillis();
+	private readonly DateTime _submitTime = DateTime.UtcNow;
 	private readonly  int _id;
 	private readonly  PetitionType _type;
 	private PetitionState _state = PetitionState.PENDING;
 	private readonly  String _content;
-	private readonly  Set<CreatureSay> _messageLog = new();
+	private readonly  Set<CreatureSayPacket> _messageLog = new();
 	private readonly  Player _petitioner;
 	private Player _responder;
 	
 	public Petition(Player petitioner, String petitionText, int petitionType)
 	{
 		_id = IdManager.getInstance().getNextId();
-		_type = PetitionType.values()[petitionType - 1];
+		_type = Enum.GetValues<PetitionType>()[petitionType - 1];
 		_content = petitionText;
 		_petitioner = petitioner;
 	}
 	
-	public bool addLogMessage(CreatureSay cs)
+	public bool addLogMessage(CreatureSayPacket cs)
 	{
 		return _messageLog.add(cs);
 	}
 	
-	public Collection<CreatureSay> getLogMessages()
+	public ICollection<CreatureSayPacket> getLogMessages()
 	{
 		return _messageLog;
 	}
@@ -53,15 +55,15 @@ public class Petition
 			else
 			{
 				// Ending petition consultation with <Player>.
-				SystemMessage sm = new SystemMessage(SystemMessageId.A_GLOBAL_SUPPORT_CONSULTATION_C1_HAS_BEEN_FINISHED);
-				sm.addString(_petitioner.getName());
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.A_GLOBAL_SUPPORT_CONSULTATION_C1_HAS_BEEN_FINISHED);
+				sm.Params.addString(_petitioner.getName());
 				_responder.sendPacket(sm);
 				
 				if (endState == PetitionState.PETITIONER_CANCEL)
 				{
 					// Receipt No. <ID> petition cancelled.
-					sm = new SystemMessage(SystemMessageId.REQUEST_NO_S1_TO_THE_GLOBAL_SUPPORT_WAS_CANCELLED);
-					sm.addInt(_id);
+					sm = new SystemMessagePacket(SystemMessageId.REQUEST_NO_S1_TO_THE_GLOBAL_SUPPORT_WAS_CANCELLED);
+					sm.Params.addInt(_id);
 					_responder.sendPacket(sm);
 				}
 			}
@@ -98,7 +100,7 @@ public class Petition
 		return _responder;
 	}
 	
-	public long getSubmitTime()
+	public DateTime getSubmitTime()
 	{
 		return _submitTime;
 	}
@@ -113,7 +115,8 @@ public class Petition
 		return _type.ToString().Replace("_", " ");
 	}
 	
-	public void sendPetitionerPacket(ServerPacket responsePacket)
+	public void sendPetitionerPacket<TPacket>(TPacket responsePacket)
+		where TPacket: IOutgoingPacket
 	{
 		if ((_petitioner == null) || !_petitioner.isOnline())
 		{
@@ -127,7 +130,8 @@ public class Petition
 		_petitioner.sendPacket(responsePacket);
 	}
 	
-	public void sendResponderPacket(ServerPacket responsePacket)
+	public void sendResponderPacket<TPacket>(TPacket responsePacket)
+	where TPacket: IOutgoingPacket
 	{
 		if ((_responder == null) || !_responder.isOnline())
 		{

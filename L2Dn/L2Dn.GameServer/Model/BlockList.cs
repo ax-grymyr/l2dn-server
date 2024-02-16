@@ -1,5 +1,7 @@
-﻿using L2Dn.GameServer.Model.Actor;
+﻿using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -100,12 +102,12 @@ public class BlockList
 	
 	public bool isInBlockList(Player target)
 	{
-		return _blockList.contains(target.getObjectId());
+		return _blockList.Contains(target.getObjectId());
 	}
 	
 	public bool isInBlockList(int targetId)
 	{
-		return _blockList.contains(targetId);
+		return _blockList.Contains(targetId);
 	}
 	
 	public bool isBlockAll()
@@ -143,13 +145,13 @@ public class BlockList
 		}
 		
 		String charName = CharInfoTable.getInstance().getNameById(targetId);
-		if (listOwner.getFriendList().contains(targetId))
+		if (listOwner.getFriendList().Contains(targetId))
 		{
 			listOwner.sendPacket(SystemMessageId.THIS_PLAYER_IS_ALREADY_REGISTERED_ON_YOUR_FRIENDS_LIST);
 			return;
 		}
 		
-		if (listOwner.getBlockList().getBlockList().contains(targetId))
+		if (listOwner.getBlockList().getBlockList().Contains(targetId))
 		{
 			listOwner.sendMessage("Already in ignore list.");
 			return;
@@ -157,15 +159,15 @@ public class BlockList
 		
 		listOwner.getBlockList().addToBlockList(targetId);
 		
-		SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_BEEN_ADDED_TO_YOUR_IGNORE_LIST);
-		sm.addString(charName);
+		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_HAS_BEEN_ADDED_TO_YOUR_IGNORE_LIST);
+		sm.Params.addString(charName);
 		listOwner.sendPacket(sm);
 		
 		Player player = World.getInstance().getPlayer(targetId);
 		if (player != null)
 		{
-			sm = new SystemMessage(SystemMessageId.C1_HAS_ADDED_YOU_TO_THEIR_IGNORE_LIST);
-			sm.addString(listOwner.getName());
+			sm = new SystemMessagePacket(SystemMessageId.C1_HAS_ADDED_YOU_TO_THEIR_IGNORE_LIST);
+			sm.Params.addString(listOwner.getName());
 			player.sendPacket(sm);
 		}
 	}
@@ -177,20 +179,20 @@ public class BlockList
 			return;
 		}
 		
-		SystemMessage sm;
+		SystemMessagePacket sm;
 		
 		String charName = CharInfoTable.getInstance().getNameById(targetId);
-		if (!listOwner.getBlockList().getBlockList().contains(targetId))
+		if (!listOwner.getBlockList().getBlockList().Contains(targetId))
 		{
-			sm = new SystemMessage(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+			sm = new SystemMessagePacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 			listOwner.sendPacket(sm);
 			return;
 		}
 		
 		listOwner.getBlockList().removeFromBlockList(targetId);
 		
-		sm = new SystemMessage(SystemMessageId.S1_HAS_BEEN_REMOVED_FROM_YOUR_IGNORE_LIST);
-		sm.addString(charName);
+		sm = new SystemMessagePacket(SystemMessageId.S1_HAS_BEEN_REMOVED_FROM_YOUR_IGNORE_LIST);
+		sm.Params.addString(charName);
 		listOwner.sendPacket(sm);
 	}
 	
@@ -230,6 +232,6 @@ public class BlockList
 		{
 			OFFLINE_LIST.put(ownerId, loadList(ownerId));
 		}
-		return OFFLINE_LIST.get(ownerId).contains(targetId);
+		return OFFLINE_LIST.get(ownerId).Contains(targetId);
 	}
 }

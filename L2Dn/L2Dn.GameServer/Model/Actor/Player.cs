@@ -10051,12 +10051,12 @@ public class Player: Playable
 		return getSubClasses().size();
 	}
 	
-	public int getBaseClass()
+	public CharacterClass getBaseClass()
 	{
 		return _baseClass;
 	}
 	
-	public int getActiveClass()
+	public CharacterClass getActiveClass()
 	{
 		return _activeClass;
 	}

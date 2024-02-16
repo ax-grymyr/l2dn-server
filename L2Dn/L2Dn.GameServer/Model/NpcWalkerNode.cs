@@ -1,4 +1,6 @@
-﻿namespace L2Dn.GameServer.Model;
+﻿using L2Dn.GameServer.Network.Enums;
+
+namespace L2Dn.GameServer.Model;
 
 /**
  * @author Rayan RPG, JIV

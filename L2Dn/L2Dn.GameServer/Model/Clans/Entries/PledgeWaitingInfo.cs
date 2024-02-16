@@ -1,16 +1,18 @@
-﻿using L2Dn.GameServer.Model.Actor;
+﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Clans.Entries;
 
 public class PledgeWaitingInfo
 {
     private int _playerId;
-    private int _playerClassId;
+    private CharacterClass _playerClassId;
     private int _playerLvl;
     private readonly int _karma;
     private String _playerName;
 
-    public PledgeWaitingInfo(int playerId, int playerLvl, int karma, int classId, String playerName)
+    public PledgeWaitingInfo(int playerId, int playerLvl, int karma, CharacterClass classId, String playerName)
     {
         _playerId = playerId;
         _playerClassId = classId;
@@ -29,11 +31,11 @@ public class PledgeWaitingInfo
         _playerId = playerId;
     }
 
-    public int getPlayerClassId()
+    public CharacterClass getPlayerClassId()
     {
         if (isOnline() && (getPlayer().getBaseClass() != _playerClassId))
         {
-            _playerClassId = getPlayer().getClassId().getId();
+            _playerClassId = getPlayer().getClassId();
         }
 
         return _playerClassId;
