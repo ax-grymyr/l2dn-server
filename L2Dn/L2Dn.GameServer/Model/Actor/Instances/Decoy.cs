@@ -8,24 +8,25 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
 public class Decoy : Creature
 {
 	private readonly Player _owner;
-	private Future<?> _decoyLifeTask;
-	private Future<?> _hateSpam;
-	private ScheduledFuture<?> _skillTask;
+	private ScheduledFuture _decoyLifeTask;
+	private ScheduledFuture _hateSpam;
+	private ScheduledFuture _skillTask;
 	
-	public Decoy(NpcTemplate template, Player owner, int totalLifeTime): this(template, owner, totalLifeTime, true)
+	public Decoy(NpcTemplate template, Player owner, TimeSpan totalLifeTime): this(template, owner, totalLifeTime, true)
 	{
 	}
 	
-	public Decoy(NpcTemplate template, Player owner, int totalLifeTime, bool aggressive): base(template)
+	public Decoy(NpcTemplate template, Player owner, TimeSpan totalLifeTime, bool aggressive): base(template)
 	{
 		setInstanceType(InstanceType.Decoy);
 		
@@ -33,7 +34,7 @@ public class Decoy : Creature
 		setXYZInvisible(owner.getX(), owner.getY(), owner.getZ());
 		setInvul(false);
 		
-		_decoyLifeTask = ThreadPool.schedule(this::unSummon, totalLifeTime);
+		_decoyLifeTask = ThreadPool.schedule(unSummon, totalLifeTime);
 		
 		if (aggressive)
 		{
@@ -88,13 +89,13 @@ public class Decoy : Creature
 		private readonly Decoy _player;
 		private readonly Skill _skill;
 		
-		HateSpam(Decoy player, Skill hate)
+		public HateSpam(Decoy player, Skill hate)
 		{
 			_player = player;
 			_skill = hate;
 		}
 		
-		public override void run()
+		public void run()
 		{
 			try
 			{
@@ -139,7 +140,7 @@ public class Decoy : Creature
 	public void onSpawn()
 	{
 		base.onSpawn();
-		sendPacket(new CharInfo(this, false));
+		sendPacket(new CharacterInfoPacket(this, false));
 	}
 	
 	public override void updateAbnormalVisualEffects()
@@ -148,7 +149,7 @@ public class Decoy : Creature
 		{
 			if (isVisibleFor(player))
 			{
-				player.sendPacket(new CharInfo(this, isInvisible() && player.canOverrideCond(PlayerCondOverride.SEE_ALL_PLAYERS)));
+				player.sendPacket(new CharacterInfoPacket(this, isInvisible() && player.canOverrideCond(PlayerCondOverride.SEE_ALL_PLAYERS)));
 			}
 		});
 	}
@@ -220,10 +221,10 @@ public class Decoy : Creature
 	
 	public override void sendInfo(Player player)
 	{
-		player.sendPacket(new CharInfo(this, isInvisible() && player.canOverrideCond(PlayerCondOverride.SEE_ALL_PLAYERS)));
+		player.sendPacket(new CharacterInfoPacket(this, isInvisible() && player.canOverrideCond(PlayerCondOverride.SEE_ALL_PLAYERS)));
 	}
 	
-	public override void sendPacket(ServerPacket packet)
+	public override void sendPacket<TPacket>(TPacket packet)
 	{
 		if (_owner != null)
 		{

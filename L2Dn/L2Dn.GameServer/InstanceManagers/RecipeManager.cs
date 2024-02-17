@@ -112,7 +112,7 @@ public class RecipeManager
 		}
 		
 		RecipeItemMaker maker = new RecipeItemMaker(player, recipeList, player);
-		if (maker._isValid)
+		if (maker.isValid())
 		{
 			if (Config.ALT_GAME_CREATION)
 			{
@@ -249,6 +249,8 @@ public class RecipeManager
 			_player.setCrafting(false);
 			_isValid = true;
 		}
+
+		public bool isValid() => _isValid;
 		
 		public void run()
 		{
@@ -415,7 +417,7 @@ public class RecipeManager
 		private void updateCurMp()
 		{
 			StatusUpdate su = new StatusUpdate(_target);
-			su.addUpdate(StatusUpdateType.CUR_MP, (int) _target.getCurrentMp());
+			su.addUpdate(StatusUpdateType.CUR_MP, (int)_target.getCurrentMp());
 			_target.sendPacket(su);
 		}
 		
@@ -658,10 +660,10 @@ public class RecipeManager
 					_player.sendPacket(sm);
 					
 					sm = new SystemMessagePacket(SystemMessageId.C1_CREATED_S3_S2_S_AT_THE_PRICE_OF_S4_ADENA);
-					sm.addString(_player.getName());
-					sm.addInt(itemCount);
-					sm.addItemName(itemId);
-					sm.addLong(_price);
+					sm.Params.addString(_player.getName());
+					sm.Params.addInt(itemCount);
+					sm.Params.addItemName(itemId);
+					sm.Params.addLong(_price);
 					_target.sendPacket(sm);
 				}
 			}

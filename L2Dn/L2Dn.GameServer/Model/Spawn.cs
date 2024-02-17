@@ -458,17 +458,17 @@ public class Spawn : Location, IIdentifiable, INamable
 	 * @param delay delay in seconds
 	 * @param randomInterval random interval in seconds
 	 */
-	public void setRespawnDelay(int delay, int randomInterval)
+	public void setRespawnDelay(TimeSpan delay, TimeSpan randomInterval)
 	{
-		if (delay != 0)
+		if (delay != TimeSpan.Zero)
 		{
-			if (delay < 0)
+			if (delay < TimeSpan.Zero)
 			{
-				LOGGER.Warn("respawn delay is negative for spawn:" + this);
+				LOGGER.Error("respawn delay is negative for spawn:" + this);
 			}
 			
-			int minDelay = delay - randomInterval;
-			int maxDelay = delay + randomInterval;
+			TimeSpan minDelay = delay - randomInterval;
+			TimeSpan maxDelay = delay + randomInterval;
 			
 			_respawnMinDelay = Math.Max(10, minDelay) * 1000;
 			_respawnMaxDelay = Math.Max(10, maxDelay) * 1000;
@@ -485,7 +485,7 @@ public class Spawn : Location, IIdentifiable, INamable
 		_respawnPattern = respawnPattern;
 	}
 	
-	public void setRespawnDelay(int delay)
+	public void setRespawnDelay(TimeSpan delay)
 	{
 		setRespawnDelay(delay, 0);
 	}

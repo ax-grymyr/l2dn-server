@@ -147,6 +147,7 @@ public class Player: Playable
 	private GameSession? _client;
 	private String _ip = "N/A";
 	
+	private readonly int _accountId;
 	private readonly String _accountName;
 	private long _deleteTimer;
 	private DateTime _createDate = DateTime.Now;
@@ -695,10 +696,10 @@ public class Player: Playable
 	 * @param app the player's appearance
 	 * @return The Player added to the database or null
 	 */
-	public static Player create(PlayerTemplate template, String accountName, String name, PlayerAppearance app)
+	public static Player create(PlayerTemplate template, int accoundId, String accountName, String name, PlayerAppearance app)
 	{
 		// Create a new Player with an account name
-		Player player = new Player(template, accountName, app);
+		Player player = new Player(template, accountId, accountName, app);
 		// Set the name of the Player
 		player.setName(name);
 		// Set access level
@@ -718,9 +719,14 @@ public class Player: Playable
 		return null;
 	}
 	
+	public int getAccountId()
+	{
+		return _client == null ? _accountId : _client.AccountId;
+	}
+	
 	public String getAccountName()
 	{
-		return _client == null ? _accountName : _client.getAccountName();
+		return _client == null ? _accountName : _client.AccountName;
 	}
 	
 	public String getAccountNamePlayer()
@@ -903,7 +909,7 @@ public class Player: Playable
 	 * @param accountName The name of the account including this Player
 	 * @param app
 	 */
-	private Player(int objectId, PlayerTemplate template, String accountName, PlayerAppearance app): base(objectId, template)
+	private Player(int objectId, PlayerTemplate template, int accountId, String accountName, PlayerAppearance app): base(objectId, template)
 	{
 		setInstanceType(InstanceType.Player);
 		base.initCharStatusUpdateValues();
@@ -915,6 +921,7 @@ public class Player: Playable
 		}
 		
 		_accountName = accountName;
+		_accountId = accountId;
 		app.setOwner(this);
 		_appearance = app;
 		

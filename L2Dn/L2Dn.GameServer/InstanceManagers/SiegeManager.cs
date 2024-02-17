@@ -1,12 +1,15 @@
+using L2Dn.Configuration;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.OutgoingPackets.CastleWar;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -23,7 +26,7 @@ public class SiegeManager
 	private int _defenderMaxClans = 500; // Max number of clans
 	private int _flagMaxCount = 1; // Changeable in siege.config
 	private int _siegeClanMinLevel = 5; // Changeable in siege.config
-	private int _siegeLength = 120; // Time in minute. Changeable in siege.config
+	private TimeSpan _siegeLength = TimeSpan.FromHours(2); // Changeable in siege.config
 	private int _bloodAllianceReward = 0; // Number of Blood Alliance items reward for successful castle defending
 
 	protected SiegeManager()
@@ -60,18 +63,9 @@ public class SiegeManager
 		bool register = false;
 		try
 		{
+			int clanId = clan.getId();
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement =
-				con.prepareStatement("SELECT clan_id FROM siege_clans where clan_id=? and castle_id=?");
-			statement.setInt(1, clan.getId());
-			statement.setInt(2, castleid);
-			{
-				ResultSet rs = statement.executeQuery();
-				if (rs.next())
-				{
-					register = true;
-				}
-			}
+			register = ctx.SiegeClans.Any(r => r.ClanId == clanId && r.CastleId == castleid);
 		}
 		catch (Exception e)
 		{
@@ -92,17 +86,18 @@ public class SiegeManager
 
 	private void load()
 	{
-		PropertiesParser siegeSettings = new PropertiesParser(Config.SIEGE_CONFIG_FILE);
+		ConfigurationParser parser = new ConfigurationParser();
+		parser.LoadConfig(Config.SIEGE_CONFIG_FILE);
 
 		// Siege setting
-		_siegeCycle = siegeSettings.getInt("SiegeCycle", 2);
-		_attackerMaxClans = siegeSettings.getInt("AttackerMaxClans", 500);
-		_attackerRespawnDelay = siegeSettings.getInt("AttackerRespawn", 0);
-		_defenderMaxClans = siegeSettings.getInt("DefenderMaxClans", 500);
-		_flagMaxCount = siegeSettings.getInt("MaxFlags", 1);
-		_siegeClanMinLevel = siegeSettings.getInt("SiegeClanMinLevel", 5);
-		_siegeLength = siegeSettings.getInt("SiegeLength", 120);
-		_bloodAllianceReward = siegeSettings.getInt("BloodAllianceReward", 1);
+		_siegeCycle = parser.getInt("SiegeCycle", 2);
+		_attackerMaxClans = parser.getInt("AttackerMaxClans", 500);
+		_attackerRespawnDelay = parser.getInt("AttackerRespawn", 0);
+		_defenderMaxClans = parser.getInt("DefenderMaxClans", 500);
+		_flagMaxCount = parser.getInt("MaxFlags", 1);
+		_siegeClanMinLevel = parser.getInt("SiegeClanMinLevel", 5);
+		_siegeLength = TimeSpan.FromMinutes(parser.getInt("SiegeLength", 120));
+		_bloodAllianceReward = parser.getInt("BloodAllianceReward", 1);
 
 		foreach (Castle castle in CastleManager.getInstance().getCastles())
 		{
@@ -110,12 +105,12 @@ public class SiegeManager
 			for (int i = 1; i < 0xFF; i++)
 			{
 				String settingsKeyName = castle.getName() + "ControlTower" + i;
-				if (!siegeSettings.containskey(settingsKeyName))
+				if (!parser.containsKey(settingsKeyName))
 				{
 					break;
 				}
 
-				StringTokenizer st = new StringTokenizer(siegeSettings.getString(settingsKeyName, ""), ",");
+				StringTokenizer st = new StringTokenizer(parser.getString(settingsKeyName, ""), ",");
 				try
 				{
 					int x = int.Parse(st.nextToken());
@@ -136,12 +131,12 @@ public class SiegeManager
 			for (int i = 1; i < 0xFF; i++)
 			{
 				String settingsKeyName = castle.getName() + "FlameTower" + i;
-				if (!siegeSettings.containskey(settingsKeyName))
+				if (!parser.containsKey(settingsKeyName))
 				{
 					break;
 				}
 
-				StringTokenizer st = new StringTokenizer(siegeSettings.getString(settingsKeyName, ""), ",");
+				StringTokenizer st = new StringTokenizer(parser.getString(settingsKeyName, ""), ",");
 				try
 				{
 					int x = int.Parse(st.nextToken());
@@ -237,7 +232,7 @@ public class SiegeManager
 		return _siegeClanMinLevel;
 	}
 
-	public int getSiegeLength()
+	public TimeSpan getSiegeLength()
 	{
 		return _siegeLength;
 	}
@@ -276,15 +271,9 @@ public class SiegeManager
 		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM castle_trapupgrade WHERE castleId=?");
-			ps.setInt(1, castleId);
-
+			foreach (CastleTrapUpgrade record in ctx.CastleTrapUpgrades.Where(c => c.CastleId == castleId))
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
-				{
-					_flameTowers.get(castleId).get(rs.getInt("towerIndex")).setUpgradeLevel(rs.getInt("level"));
-				}
+				_flameTowers.get(castleId).get(record.TowerIndex).setUpgradeLevel(record.Level);
 			}
 		}
 		catch (Exception e)
@@ -297,17 +286,17 @@ public class SiegeManager
 	{
 		foreach (Castle castle in CastleManager.getInstance().getCastles())
 		{
-			int diff = (int)(castle.getSiegeDate().getTimeInMillis() - System.currentTimeMillis());
+			int diff = (int)(castle.getSiegeDate() - DateTime.UtcNow).TotalMilliseconds;
 			if (((diff > 0) && (diff < 86400000)) || castle.getSiege().isInProgress())
 			{
-				player.sendPacket(new MercenaryCastleWarCastleSiegeHudInfo(castle.getResidenceId()));
+				player.sendPacket(new MercenaryCastleWarCastleSiegeHudInfoPacket(castle.getResidenceId()));
 			}
 		}
 	}
 
 	public void sendSiegeInfo(Player player, int castleId)
 	{
-		player.sendPacket(new MercenaryCastleWarCastleSiegeHudInfo(castleId));
+		player.sendPacket(new MercenaryCastleWarCastleSiegeHudInfoPacket(castleId));
 	}
 
 	public static SiegeManager getInstance()

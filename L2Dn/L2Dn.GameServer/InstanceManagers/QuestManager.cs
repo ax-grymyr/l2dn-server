@@ -183,7 +183,7 @@ public class QuestManager
 		if (Config.ALT_DEV_SHOW_QUESTS_LOAD_IN_LOGS)
 		{
 			String questName = quest.getName().Contains("_") ? quest.getName().Substring(quest.getName().IndexOf('_') + 1) : quest.getName();
-			LOGGER.Info("Loaded quest " + CommonUtil.splitWords(questName) + ".");
+			LOGGER.Info("Loaded quest " + questName + ".");
 		}
 	}
 	
@@ -242,7 +242,7 @@ public class QuestManager
 		
 		if (Config.ALT_DEV_SHOW_SCRIPTS_LOAD_IN_LOGS)
 		{
-			LOGGER.Info("Loaded script " + CommonUtil.splitWords(script.GetType().Name) + ".");
+			LOGGER.Info("Loaded script " + script.GetType().Name + ".");
 		}
 	}
 	

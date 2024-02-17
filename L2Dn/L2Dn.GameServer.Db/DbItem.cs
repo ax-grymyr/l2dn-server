@@ -15,7 +15,7 @@ public class DbItem
     public int ItemId { get; set; }
     public long Count { get; set; }
     public int EnchantLevel { get; set; }
-    public int Location { get; set; } // TODO: enum
+    public int Location { get; set; } // TODO: enum ItemLocation
     public int LocationData { get; set; }
     public int TimeOfUse { get; set; }
     public int CustomType1 { get; set; }

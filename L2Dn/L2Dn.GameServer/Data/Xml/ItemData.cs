@@ -1392,7 +1392,7 @@ public class ItemData: DataReaderBase
 			item.setCount(0);
 			item.setOwnerId(0);
 			item.setItemLocation(ItemLocation.VOID);
-			item.setLastChange(Item.REMOVED);
+			item.setLastChange(ItemChangeType.REMOVED);
 			
 			World.getInstance().removeObject(item);
 			IdManager.getInstance().releaseId(item.getObjectId());

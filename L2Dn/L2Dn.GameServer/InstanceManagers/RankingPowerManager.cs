@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -18,8 +19,8 @@ namespace L2Dn.GameServer.InstanceManagers;
  */
 public class RankingPowerManager
 {
-	private const int COOLDOWN = 43200000;
 	private const int LEADER_STATUE = 18485;
+	private static readonly TimeSpan COOLDOWN = TimeSpan.FromSeconds(43200);
 	private static readonly SkillHolder LEADER_POWER = new SkillHolder(52018, 1);
 	
 	private Decoy _decoyInstance;
@@ -32,24 +33,24 @@ public class RankingPowerManager
 	
 	public void activatePower(Player player)
 	{
-		Location location = player.getLocation();
+		ILocational location = player.getLocation();
 		List<int> array = new();
 		array.Add(location.getX());
 		array.Add(location.getY());
 		array.Add(location.getZ());
 		GlobalVariablesManager.getInstance().setIntegerList(GlobalVariablesManager.RANKING_POWER_LOCATION, array);
-		GlobalVariablesManager.getInstance().set(GlobalVariablesManager.RANKING_POWER_COOLDOWN, System.currentTimeMillis() + COOLDOWN);
+		GlobalVariablesManager.getInstance().set(GlobalVariablesManager.RANKING_POWER_COOLDOWN, DateTime.UtcNow + COOLDOWN);
 		createClone(player);
 		cloneTask();
 		SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.A_RANKING_LEADER_C1_USED_LEADER_POWER_IN_S2);
-		msg.addString(player.getName());
-		msg.addZoneName(location.getX(), location.getY(), location.getZ());
+		msg.Params.addString(player.getName());
+		msg.Params.addZoneName(location.getX(), location.getY(), location.getZ());
 		Broadcast.toAllOnlinePlayers(msg);
 	}
 	
 	private void createClone(Player player)
 	{
-		Location location = player.getLocation();
+		ILocational location = player.getLocation();
 		
 		NpcTemplate template = NpcData.getInstance().getTemplate(LEADER_STATUE);
 		_decoyInstance = new Decoy(template, player, COOLDOWN, false);
@@ -67,7 +68,7 @@ public class RankingPowerManager
 	{
 		_decoyTask = ThreadPool.scheduleAtFixedRate(() =>
 		{
-			World.getInstance().forEachVisibleObjectInRange(_decoyInstance, Player.class, 300, nearby =>
+			World.getInstance().forEachVisibleObjectInRange<Player>(_decoyInstance, 300, nearby =>
 			{
 				BuffInfo info = nearby.getEffectList().getBuffInfoBySkillId(LEADER_POWER.getSkillId());
 				if ((info == null) || (info.getTime() < (LEADER_POWER.getSkill().getAbnormalTime() - 60)))
@@ -82,7 +83,7 @@ public class RankingPowerManager
 			}
 		}, 1000, 10000);
 		
-		ThreadPool.schedule(this::reset, COOLDOWN);
+		ThreadPool.schedule(reset, COOLDOWN);
 	}
 	
 	public void reset()

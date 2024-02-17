@@ -40,6 +40,7 @@ public class GameServerDbContext: DbContext
     }
 
     public DbSet<AccountRef> AccountRefs => Set<AccountRef>();
+    public DbSet<AccountPremium> AccountPremiums => Set<AccountPremium>();
     public DbSet<AccountVariable> AccountVariables => Set<AccountVariable>();
 
     public DbSet<Character> Characters => Set<Character>();
@@ -53,6 +54,9 @@ public class GameServerDbContext: DbContext
     public DbSet<CharacterItemReuse> CharacterItemReuses => Set<CharacterItemReuse>();
     public DbSet<CharacterRecoBonus> CharacterRecoBonuses => Set<CharacterRecoBonus>();
     public DbSet<CharacterInstance> CharacterInstances => Set<CharacterInstance>();
+    public DbSet<CharacterMentee> CharacterMentees => Set<CharacterMentee>();
+    public DbSet<CharacterPurge> CharacterPurges => Set<CharacterPurge>();
+    public DbSet<CharacterRevenge> CharacterRevenges => Set<CharacterRevenge>();
     public DbSet<CharacterVariable> CharacterVariables => Set<CharacterVariable>();
     
     public DbSet<Pet> Pets => Set<Pet>();
@@ -62,6 +66,8 @@ public class GameServerDbContext: DbContext
     public DbSet<ItemAuctionBid> ItemAuctionBids => Set<ItemAuctionBid>();
     public DbSet<ItemOnGround> ItemsOnGround => Set<ItemOnGround>();
     public DbSet<DbCommissionItem> CommissionItems => Set<DbCommissionItem>();
+    public DbSet<ItemTransactionHistory> ItemTransactionHistory => Set<ItemTransactionHistory>();
+    public DbSet<WorldExchangeItem> WorldExchangeItems => Set<WorldExchangeItem>();
     
      public DbSet<Clan> Clans => Set<Clan>();
     public DbSet<ClanPrivileges> ClanPrivileges => Set<ClanPrivileges>();
@@ -96,8 +102,12 @@ public class GameServerDbContext: DbContext
     public DbSet<NpcRespawn> NpcRespawns => Set<NpcRespawn>();
     public DbSet<DbFort> Forts => Set<DbFort>();
     public DbSet<FortSiegeClan> FortSiegeClans => Set<FortSiegeClan>();
+    public DbSet<SiegeClan> SiegeClans => Set<SiegeClan>();
+    public DbSet<CastleTrapUpgrade> CastleTrapUpgrades => Set<CastleTrapUpgrade>();
+    public DbSet<CastleSiegeGuard> CastleSiegeGuards => Set<CastleSiegeGuard>();
     public DbSet<HuntPass> HuntPasses => Set<HuntPass>();
     public DbSet<DbGrandBoss> GrandBosses => Set<DbGrandBoss>();
     public DbSet<DbMailMessage> MailMessages => Set<DbMailMessage>();
+    public DbSet<DbPunishment> Punishments => Set<DbPunishment>();
     public DbSet<GlobalVariable> GlobalVariables => Set<GlobalVariable>();
 }

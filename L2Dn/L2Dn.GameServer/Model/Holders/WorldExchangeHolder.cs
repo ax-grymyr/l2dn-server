@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Model.Items.Instances;
 
 namespace L2Dn.GameServer.Model.Holders;
 
@@ -7,19 +8,19 @@ namespace L2Dn.GameServer.Model.Holders;
  */
 public class WorldExchangeHolder
 {
-	private readonly long _worldExchangeId;
+	private readonly int _worldExchangeId;
 	private readonly Item _itemInstance;
 	private readonly ItemInfo _itemInfo;
 	private readonly long _price;
 	private readonly int _oldOwnerId;
 	private WorldExchangeItemStatusType _storeType;
 	private readonly WorldExchangeItemSubType _category;
-	private readonly long _startTime;
-	private long _endTime;
+	private readonly DateTime _startTime;
+	private DateTime _endTime;
 	private bool _hasChanges;
 
-	public WorldExchangeHolder(long worldExchangeId, Item itemInstance, ItemInfo itemInfo, long price, int oldOwnerId,
-		WorldExchangeItemStatusType storeType, WorldExchangeItemSubType category, long startTime, long endTime,
+	public WorldExchangeHolder(int worldExchangeId, Item itemInstance, ItemInfo itemInfo, long price, int oldOwnerId,
+		WorldExchangeItemStatusType storeType, WorldExchangeItemSubType category, DateTime startTime, DateTime endTime,
 		bool hasChanges)
 	{
 		_worldExchangeId = worldExchangeId;
@@ -34,7 +35,7 @@ public class WorldExchangeHolder
 		_hasChanges = hasChanges;
 	}
 
-	public long getWorldExchangeId()
+	public int getWorldExchangeId()
 	{
 		return _worldExchangeId;
 	}
@@ -74,17 +75,17 @@ public class WorldExchangeHolder
 		return _category;
 	}
 
-	public long getStartTime()
+	public DateTime getStartTime()
 	{
 		return _startTime;
 	}
 
-	public long getEndTime()
+	public DateTime getEndTime()
 	{
 		return _endTime;
 	}
 
-	public void setEndTime(long endTime)
+	public void setEndTime(DateTime endTime)
 	{
 		_endTime = endTime;
 	}

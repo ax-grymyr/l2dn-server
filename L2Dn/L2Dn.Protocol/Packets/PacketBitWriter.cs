@@ -36,6 +36,9 @@ public readonly ref struct PacketBitWriter
     public void WriteInt16(short value) => WriteValue(value);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public void WriteInt16(bool value) => WriteValue(value ? (short)1: (short)0);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void WriteUInt16(ushort value) => WriteValue(value);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]

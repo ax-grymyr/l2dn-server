@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -6,7 +7,9 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets.Revenge;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -19,10 +22,8 @@ public class RevengeHistoryManager
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(RevengeHistoryManager));
 	
 	private static readonly Map<int, List<RevengeHistoryHolder>> REVENGE_HISTORY = new();
-	private const string DELETE_REVENGE_HISTORY = "TRUNCATE TABLE character_revenge_history";
-	private const string INSERT_REVENGE_HISTORY = "INSERT INTO character_revenge_history (charId, type, killer_name, killer_clan, killer_level, killer_race, killer_class, victim_name, victim_clan, victim_level, victim_race, victim_class, shared, show_location_remaining, teleport_remaining, shared_teleport_remaining, kill_time, share_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	private static readonly SkillHolder HIDE_SKILL = new SkillHolder(922, 1);
-	private static readonly long REVENGE_DURATION = 21600000; // Six hours.
+	private static readonly TimeSpan REVENGE_DURATION = TimeSpan.FromHours(6); // Six hours.
 	private static readonly int[] LOCATION_PRICE =
 	{
 		0,
@@ -45,25 +46,30 @@ public class RevengeHistoryManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM character_revenge_history");
-			ResultSet rs = ps.executeQuery();
-			while (rs.next())
+			foreach (CharacterRevenge record in ctx.CharacterRevenges)
 			{
-				int charId = rs.getInt("charId");
+				int charId = record.CharacterId;
 				List<RevengeHistoryHolder> history = REVENGE_HISTORY.containsKey(charId) ? REVENGE_HISTORY.get(charId) : new();
+				
 				StatSet killer = new StatSet();
-				killer.set("name", rs.getString("killer_name"));
-				killer.set("clan", rs.getString("killer_clan"));
-				killer.set("level", rs.getInt("killer_level"));
-				killer.set("race", rs.getInt("killer_race"));
-				killer.set("class", rs.getInt("killer_class"));
+				killer.set("name", record.KillerName);
+				killer.set("clan", record.KillerClan);
+				killer.set("level", record.KillerLevel);
+				killer.set("race", (int)((CharacterClass)record.KillerClass).GetRace());
+				killer.set("class", record.KillerClass);
+				
 				StatSet victim = new StatSet();
-				victim.set("name", rs.getString("victim_name"));
-				victim.set("clan", rs.getString("victim_clan"));
-				victim.set("level", rs.getInt("victim_level"));
-				victim.set("race", rs.getInt("victim_race"));
-				victim.set("class", rs.getInt("victim_class"));
-				history.add(new RevengeHistoryHolder(killer, victim, RevengeType.values()[rs.getInt("type")], rs.getBoolean("shared"), rs.getInt("show_location_remaining"), rs.getInt("teleport_remaining"), rs.getInt("shared_teleport_remaining"), rs.getLong("kill_time"), rs.getLong("share_time")));
+				victim.set("name", record.VictimName);
+				victim.set("clan", record.VictimClan);
+				victim.set("level", record.VictimLevel);
+				victim.set("race", (int)((CharacterClass)record.VictimClass).GetRace());
+				victim.set("class", record.VictimClass);
+
+				history.add(new RevengeHistoryHolder(killer, victim, (RevengeType)record.Type,
+					record.Shared, record.ShowLocationRemaining,
+					record.TeleportRemaining, record.SharedTeleportRemaining,
+					record.KillTime, record.ShareTime));
+
 				REVENGE_HISTORY.put(charId, history);
 			}
 		}
@@ -80,12 +86,12 @@ public class RevengeHistoryManager
 			List<RevengeHistoryHolder> history = entry.Value;
 			if (history != null)
 			{
-				long currentTime = System.currentTimeMillis();
+				DateTime currentTime = DateTime.UtcNow;
 				List<RevengeHistoryHolder> removals = new();
 				foreach (RevengeHistoryHolder holder in history)
 				{
-					if (((holder.getKillTime() != 0) && ((holder.getKillTime() + REVENGE_DURATION) < currentTime)) || //
-						((holder.getShareTime() != 0) && ((holder.getShareTime() + REVENGE_DURATION) < currentTime)))
+					if (((holder.getKillTime() != DateTime.MinValue) && ((holder.getKillTime() + REVENGE_DURATION) < currentTime)) || //
+						((holder.getShareTime() != DateTime.MinValue) && ((holder.getShareTime() + REVENGE_DURATION) < currentTime)))
 					{
 						removals.add(holder);
 					}
@@ -100,9 +106,7 @@ public class RevengeHistoryManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps1 = con.prepareStatement(DELETE_REVENGE_HISTORY);
-			PreparedStatement ps2 = con.prepareStatement(INSERT_REVENGE_HISTORY);
-			ps1.execute();
+			ctx.CharacterRevenges.ExecuteDelete(); // TODO: delete everything and insert the data again is not a good idea
 			
 			foreach (var entry in REVENGE_HISTORY)
 			{
@@ -114,33 +118,33 @@ public class RevengeHistoryManager
 				
 				foreach (RevengeHistoryHolder holder in history)
 				{
-					ps2.clearParameters();
-					ps2.setInt(1, entry.Key);
-					ps2.setInt(2, holder.getType().ordinal());
-					ps2.setString(3, holder.getKillerName());
-					ps2.setString(4, holder.getKillerClanName());
-					ps2.setInt(5, holder.getKillerLevel());
-					ps2.setInt(6, holder.getKillerRaceId());
-					ps2.setInt(7, holder.getKillerClassId());
-					ps2.setString(8, holder.getVictimName());
-					ps2.setString(9, holder.getVictimClanName());
-					ps2.setInt(10, holder.getVictimLevel());
-					ps2.setInt(11, holder.getVictimRaceId());
-					ps2.setInt(12, holder.getVictimClassId());
-					ps2.setBoolean(13, holder.wasShared());
-					ps2.setInt(14, holder.getShowLocationRemaining());
-					ps2.setInt(15, holder.getTeleportRemaining());
-					ps2.setInt(16, holder.getSharedTeleportRemaining());
-					ps2.setLong(17, holder.getKillTime());
-					ps2.setLong(18, holder.getShareTime());
-					ps2.addBatch();
+					ctx.CharacterRevenges.Add(new CharacterRevenge()
+					{
+						CharacterId = entry.Key,
+						Type = (int)holder.getType(),
+						KillerName = holder.getKillerName(),
+						KillerClan = holder.getKillerClanName(),
+						KillerLevel = holder.getKillerLevel(),
+						KillerClass = holder.getKillerClass(),
+						VictimName = holder.getVictimName(),
+						VictimClan = holder.getVictimClanName(),
+						VictimLevel = holder.getVictimLevel(),
+						VictimClass = holder.getVictimClass(),
+						Shared = holder.wasShared(),
+						ShowLocationRemaining = holder.getShowLocationRemaining(),
+						TeleportRemaining = holder.getTeleportRemaining(),
+						SharedTeleportRemaining = holder.getSharedTeleportRemaining(),
+						KillTime = holder.getKillTime(),
+						ShareTime = holder.getShareTime()
+					});
 				}
 			}
-			ps2.executeBatch();
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn(GetType().Name + " Error while saving revenge history. " + e);
+			LOGGER.Error(GetType().Name + " Error while saving revenge history. " + e);
 		}
 	}
 	
@@ -150,13 +154,13 @@ public class RevengeHistoryManager
 		{
 			bool found = false;
 			int victimObjectId = victim.getObjectId();
-			long currentTime = System.currentTimeMillis();
+			DateTime currentTime = DateTime.UtcNow;
 			List<RevengeHistoryHolder> removals = new();
 			List<RevengeHistoryHolder> history = REVENGE_HISTORY.containsKey(victimObjectId) ? REVENGE_HISTORY.get(victimObjectId) : new();
 			foreach (RevengeHistoryHolder holder in history)
 			{
-				if (((holder.getKillTime() != 0) && ((holder.getKillTime() + REVENGE_DURATION) < currentTime)) || //
-					((holder.getShareTime() != 0) && ((holder.getShareTime() + REVENGE_DURATION) < currentTime)))
+				if (((holder.getKillTime() != DateTime.MinValue) && ((holder.getKillTime() + REVENGE_DURATION) < currentTime)) || //
+					((holder.getShareTime() != DateTime.MinValue) && ((holder.getShareTime() + REVENGE_DURATION) < currentTime)))
 				{
 					removals.add(holder);
 				}
@@ -165,15 +169,16 @@ public class RevengeHistoryManager
 					found = true;
 				}
 			}
-			
-			history.removeAll(removals);
+
+			foreach (RevengeHistoryHolder holder in removals)
+				history.Remove(holder);
 			
 			if (!found)
 			{
 				history.add(new RevengeHistoryHolder(killer, victim, RevengeType.REVENGE));
 				REVENGE_HISTORY.put(victimObjectId, history);
-				victim.sendPacket(new ExPvpBookShareRevengeNewRevengeInfo(victim.getName(), killer.getName(), RevengeType.REVENGE));
-				victim.sendPacket(new ExPvpBookShareRevengeList(victim));
+				victim.sendPacket(new ExPvpBookShareRevengeNewRevengeInfoPacket(victim.getName(), killer.getName(), RevengeType.REVENGE));
+				victim.sendPacket(new ExPvpBookShareRevengeListPacket(victim));
 			}
 		}
 		catch (Exception e)
@@ -225,8 +230,8 @@ public class RevengeHistoryManager
 			if (player.reduceAdena("Revenge find location", price, player, true))
 			{
 				revenge.setShowLocationRemaining(revenge.getShowLocationRemaining() - 1);
-				player.sendPacket(new ExPvpBookShareRevengeKillerLocation(killer));
-				player.sendPacket(new ExPvpBookShareRevengeList(player));
+				player.sendPacket(new ExPvpBookShareRevengeKillerLocationPacket(killer));
+				player.sendPacket(new ExPvpBookShareRevengeListPacket(player));
 			}
 		}
 	}
@@ -399,7 +404,7 @@ public class RevengeHistoryManager
 		
 		if (player.reduceAdena("Revenge request help", 100000, player, true))
 		{
-			long currentTime = System.currentTimeMillis();
+			DateTime currentTime = DateTime.UtcNow;
 			revenge.setShared(true);
 			revenge.setType(RevengeType.OWN_HELP_REQUEST);
 			revenge.setShareTime(currentTime);
@@ -448,14 +453,15 @@ public class RevengeHistoryManager
 				int targetObjectId = target.getObjectId();
 				saveToRevengeHistory(player, killer, revenge, currentTime, targetObjectId);
 				
-				target.sendPacket(new ExPvpBookShareRevengeNewRevengeInfo(player.getName(), killer.getName(), RevengeType.HELP_REQUEST));
-				target.sendPacket(new ExPvpBookShareRevengeList(target));
+				target.sendPacket(new ExPvpBookShareRevengeNewRevengeInfoPacket(player.getName(), killer.getName(), RevengeType.HELP_REQUEST));
+				target.sendPacket(new ExPvpBookShareRevengeListPacket(target));
 			}
 		}
-		player.sendPacket(new ExPvpBookShareRevengeList(player));
+		
+		player.sendPacket(new ExPvpBookShareRevengeListPacket(player));
 	}
 	
-	private void saveToRevengeHistory(Player player, Player killer, RevengeHistoryHolder revenge, long currentTime, int objectId)
+	private void saveToRevengeHistory(Player player, Player killer, RevengeHistoryHolder revenge, DateTime currentTime, int objectId)
 	{
 		List<RevengeHistoryHolder> targetHistory = REVENGE_HISTORY.containsKey(objectId) ? REVENGE_HISTORY.get(objectId) : new();
 		foreach (RevengeHistoryHolder holder in targetHistory)
@@ -471,7 +477,7 @@ public class RevengeHistoryManager
 		REVENGE_HISTORY.put(objectId, targetHistory);
 	}
 	
-	public ICollection<RevengeHistoryHolder> getHistory(Player player)
+	public List<RevengeHistoryHolder> getHistory(Player player)
 	{
 		return REVENGE_HISTORY.get(player.getObjectId());
 	}

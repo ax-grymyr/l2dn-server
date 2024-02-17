@@ -58,6 +58,8 @@ public class ConfigurationParser
         return Path.Combine(Directory.GetCurrentDirectory(), path);
     }
 
+    public bool containsKey(string key) => _values.ContainsKey(key);
+
     public byte getByte(string key, byte defaultValue = default) => GetValue(key, defaultValue, "integer in range 0-255");
     public int getInt(string key, int defaultValue = default) => GetValue(key, defaultValue, "integer");
     public long getLong(string key, long defaultValue = default) => GetValue(key, defaultValue, "64-bit integer");

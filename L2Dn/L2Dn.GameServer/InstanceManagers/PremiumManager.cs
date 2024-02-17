@@ -1,9 +1,11 @@
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
 using L2Dn.GameServer.Model.Events.Listeners;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -16,70 +18,62 @@ public class PremiumManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PremiumManager));
 	
-	private const string LOAD_SQL = "SELECT account_name,enddate FROM account_premium WHERE account_name = ?";
-	private const string UPDATE_SQL = "REPLACE INTO account_premium (account_name,enddate) VALUE (?,?)";
-	private const string DELETE_SQL = "DELETE FROM account_premium WHERE account_name = ?";
-	
-	class PremiumExpireTask: Runnable
+	private class PremiumExpireTask(Player player): Runnable
 	{
-		Player _player;
-		
-		PremiumExpireTask(Player player)
-		{
-			_player = player;
-		}
-		
 		public void run()
 		{
-			_player.setPremiumStatus(false);
+			player.setPremiumStatus(false);
 		}
 	}
 	
 	// Data Cache
-	private readonly Map<String, long> _premiumData = new();
+	private readonly Map<int, DateTime> _premiumData = new();
 	
 	// expireTasks
-	private readonly Map<String, ScheduledFuture> _expiretasks = new();
+	private readonly Map<int, ScheduledFuture> _expiretasks = new();
 	
 	// Listeners
 	private readonly ListenersContainer _listenerContainer = Containers.Players();
 	
-	private readonly Action<OnPlayerLogin> _playerLoginEvent = @event =>
-	{
-		Player player = @event.getPlayer();
-		String accountName = player.getAccountName();
-		loadPremiumData(accountName);
-		long now = System.currentTimeMillis();
-		long premiumExpiration = getPremiumExpiration(accountName);
-		player.setPremiumStatus(premiumExpiration > now);
-		if (player.hasPremiumStatus())
-		{
-			startExpireTask(player, premiumExpiration - now);
-		}
-		else if (premiumExpiration > 0)
-		{
-			removePremiumStatus(accountName, false);
-		}
-	};
-	
-	private readonly Action<OnPlayerLogout> _playerLogoutEvent = @event =>
-	{
-		stopExpireTask(@event.getPlayer());
-	};
-	
 	protected PremiumManager()
 	{
-		_listenerContainer.addListener(new ConsumerEventListener(_listenerContainer, EventType.ON_PLAYER_LOGIN, _playerLoginEvent, this));
-		_listenerContainer.addListener(new ConsumerEventListener(_listenerContainer, EventType.ON_PLAYER_LOGOUT, _playerLogoutEvent, this));
+		Action<OnPlayerLogin> playerLoginEvent = @event =>
+		{
+			Player player = @event.getPlayer();
+			int accountId = player.getAccountId();
+			loadPremiumData(accountId);
+			DateTime now = DateTime.UtcNow;
+			DateTime premiumExpiration = getPremiumExpiration(accountId);
+			player.setPremiumStatus(premiumExpiration > now);
+			if (player.hasPremiumStatus())
+			{
+				startExpireTask(player, premiumExpiration - now);
+			}
+			else
+			{
+				removePremiumStatus(accountId, false);
+			}
+		};
+	
+		Action<OnPlayerLogout> playerLogoutEvent = @event =>
+		{
+			stopExpireTask(@event.getPlayer());
+		};
+
+		_listenerContainer.addListener(new ConsumerEventListener(_listenerContainer, EventType.ON_PLAYER_LOGIN,
+			ev => playerLoginEvent((OnPlayerLogin)ev), this));
+
+		_listenerContainer.addListener(new ConsumerEventListener(_listenerContainer, EventType.ON_PLAYER_LOGOUT,
+			ev => playerLogoutEvent((OnPlayerLogout)ev), this));
 	}
 	
 	/**
 	 * @param player
 	 * @param delay
 	 */
-	private void startExpireTask(Player player, long delay)
+	private void startExpireTask(Player player, TimeSpan delay)
 	{
-		_expiretasks.put(player.getAccountName().ToLower(), ThreadPool.schedule(new PremiumExpireTask(player), delay));
+		_expiretasks.put(player.getAccountId(), ThreadPool.schedule(new PremiumExpireTask(player), delay));
 	}
 	
 	/**
@@ -87,7 +81,7 @@ public class PremiumManager
 	 */
 	private void stopExpireTask(Player player)
 	{
-		ScheduledFuture task = _expiretasks.remove(player.getAccountName().ToLower());
+		ScheduledFuture task = _expiretasks.remove(player.getAccountId());
 		if (task != null)
 		{
 			task.cancel(false);
@@ -95,19 +89,14 @@ public class PremiumManager
 		}
 	}
 	
-	private void loadPremiumData(String accountName)
+	private void loadPremiumData(int accountId)
 	{
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement stmt = con.prepareStatement(LOAD_SQL);
-			stmt.setString(1, accountName.toLowerCase());
-			try (ResultSet rset = stmt.executeQuery())
+			foreach (AccountPremium? record in ctx.AccountPremiums.Where(r => r.AccountId == accountId))
 			{
-				while (rset.next())
-				{
-					_premiumData.put(rset.getString(1).toLowerCase(), rset.getLong(2));
-				}
+				_premiumData.put(record.AccountId, record.EndTime);
 			}
 		}
 		catch (Exception e)
@@ -116,27 +105,27 @@ public class PremiumManager
 		}
 	}
 	
-	public long getPremiumExpiration(String accountName)
+	public DateTime getPremiumExpiration(int accountId)
 	{
-		return _premiumData.getOrDefault(accountName.ToLower(), 0L);
+		return _premiumData.getOrDefault(accountId, DateTime.MinValue);
 	}
 	
-	public void addPremiumTime(String accountName, int timeValue, TimeUnit timeUnit)
+	public void addPremiumTime(int accountId, TimeSpan value)
 	{
-		long addTime = timeUnit.toMillis(timeValue);
-		long now = System.currentTimeMillis();
 		// new premium task at least from now
-		long oldPremiumExpiration = Math.Max(now, getPremiumExpiration(accountName));
-		long newPremiumExpiration = oldPremiumExpiration + addTime;
+		DateTime oldPremiumExpiration = getPremiumExpiration(accountId);
+		DateTime now = DateTime.UtcNow;
+		if (oldPremiumExpiration < now)
+			oldPremiumExpiration = now;
+		
+		DateTime newPremiumExpiration = oldPremiumExpiration + value;
 		
 		// UPDATE DATABASE
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement stmt = con.prepareStatement(UPDATE_SQL);
-			stmt.setString(1, accountName.toLowerCase());
-			stmt.setLong(2, newPremiumExpiration);
-			stmt.execute();
+			ctx.AccountPremiums.Where(r => r.AccountId == accountId)
+				.ExecuteUpdate(s => s.SetProperty(r => r.EndTime, newPremiumExpiration));
 		}
 		catch (Exception e)
 		{
@@ -144,12 +133,12 @@ public class PremiumManager
 		}
 		
 		// UPDATE CACHE
-		_premiumData.put(accountName.ToLower(), newPremiumExpiration);
+		_premiumData.put(accountId, newPremiumExpiration);
 		
-		// UPDATE PlAYER PREMIUMSTATUS
+		// UPDATE PLAYER PREMIUM STATUS
 		foreach (Player player in World.getInstance().getPlayers())
 		{
-			if (accountName.equalsIgnoreCase(player.getAccountName()))
+			if (player.getAccountId() == accountId)
 			{
 				stopExpireTask(player);
 				startExpireTask(player, newPremiumExpiration - now);
@@ -162,13 +151,13 @@ public class PremiumManager
 		}
 	}
 	
-	public void removePremiumStatus(String accountName, bool checkOnline)
+	public void removePremiumStatus(int accountId, bool checkOnline)
 	{
 		if (checkOnline)
 		{
 			foreach (Player player in World.getInstance().getPlayers())
 			{
-				if (accountName.equalsIgnoreCase(player.getAccountName()) && player.hasPremiumStatus())
+				if (player.getAccountId() == accountId && player.hasPremiumStatus())
 				{
 					player.setPremiumStatus(false);
 					stopExpireTask(player);
@@ -178,15 +167,13 @@ public class PremiumManager
 		}
 		
 		// UPDATE CACHE
-		_premiumData.remove(accountName.ToLower());
+		_premiumData.remove(accountId);
 		
 		// UPDATE DATABASE
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement stmt = con.prepareStatement(DELETE_SQL);
-			stmt.setString(1, accountName.ToLower());
-			stmt.execute();
+			ctx.AccountPremiums.Where(r => r.AccountId == accountId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{

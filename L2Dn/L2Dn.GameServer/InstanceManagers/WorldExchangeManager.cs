@@ -1,6 +1,8 @@
 using System.Globalization;
 using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -8,6 +10,8 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Network.OutgoingPackets.WorldExchange;
 using L2Dn.GameServer.Utilities;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -17,18 +21,13 @@ namespace L2Dn.GameServer.InstanceManagers;
 /**
  * @author Index
  */
-public class WorldExchangeManager: IXmlReader
+public class WorldExchangeManager: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(WorldExchangeManager));
-	
-	private const string SELECT_ALL_ITEMS = "SELECT * FROM `items` WHERE `loc`=?";
-	private const string RESTORE_INFO = "SELECT * FROM world_exchange_items";
-	private const string INSERT_WORLD_EXCHANGE = "REPLACE INTO world_exchange_items (`world_exchange_id`, `item_object_id`, `item_status`, `category_id`, `price`, `old_owner_id`, `start_time`, `end_time`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-	
 	private readonly Map<long, WorldExchangeHolder> _itemBids = new();
 	private readonly Map<int, WorldExchangeItemSubType> _itemCategories = new();
 	private readonly Map<String, Map<int, String>> _localItemNames = new();
-	private long _lastWorldExchangeId = 0;
+	private int _lastWorldExchangeId;
 	
 	private ScheduledFuture _checkStatus = null;
 	
@@ -42,60 +41,61 @@ public class WorldExchangeManager: IXmlReader
 		firstLoad();
 		if (_checkStatus == null)
 		{
-			_checkStatus = ThreadPool.scheduleAtFixedRate(checkBidStatus, Config.WORLD_EXCHANGE_SAVE_INTERVAL, Config.WORLD_EXCHANGE_SAVE_INTERVAL);
+			TimeSpan interval = TimeSpan.FromMilliseconds(Config.WORLD_EXCHANGE_SAVE_INTERVAL);
+			_checkStatus = ThreadPool.scheduleAtFixedRate(checkBidStatus, interval, interval);
 		}
 	}
 	
 	public void load()
 	{
-		if (Config.MULTILANG_ENABLE)
-		{
-			_localItemNames.clear();
-			foreach (String lang in Config.MULTILANG_ALLOWED)
-			{
-				File file = new File("data/lang/" + lang + "/ItemNameLocalisation.xml");
-				if (!file.isFile())
-				{
-					continue;
-				}
-				
-				parseDatapackFile("data/lang/" + lang + "/ItemNameLocalisation.xml");
-				int size = _localItemNames.get(lang).size();
-				if (size == 0)
-				{
-					_localItemNames.remove(lang);
-				}
-				else
-				{
-					LOGGER.Info(GetType().Name + ": Loaded ItemName localisations for [" + lang + "].");
-				}
-			}
-		}
-		
-		if (!Config.MULTILANG_DEFAULT.equals(Config.WORLD_EXCHANGE_DEFAULT_LANG) && !_localItemNames.containsKey(Config.WORLD_EXCHANGE_DEFAULT_LANG))
-		{
-			parseDatapackFile("data/lang/" + Config.WORLD_EXCHANGE_DEFAULT_LANG + "/ItemNameLocalisation.xml");
-		}
+		// if (Config.MULTILANG_ENABLE)
+		// {
+		// 	_localItemNames.clear();
+		// 	foreach (String lang in Config.MULTILANG_ALLOWED)
+		// 	{
+		// 		File file = new File("data/lang/" + lang + "/ItemNameLocalisation.xml");
+		// 		if (!file.isFile())
+		// 		{
+		// 			continue;
+		// 		}
+		// 		
+		// 		parseDatapackFile("data/lang/" + lang + "/ItemNameLocalisation.xml");
+		// 		int size = _localItemNames.get(lang).size();
+		// 		if (size == 0)
+		// 		{
+		// 			_localItemNames.remove(lang);
+		// 		}
+		// 		else
+		// 		{
+		// 			LOGGER.Info(GetType().Name + ": Loaded ItemName localisations for [" + lang + "].");
+		// 		}
+		// 	}
+		// }
+		//
+		// if (!Config.MULTILANG_DEFAULT.equals(Config.WORLD_EXCHANGE_DEFAULT_LANG) && !_localItemNames.containsKey(Config.WORLD_EXCHANGE_DEFAULT_LANG))
+		// {
+		// 	parseDatapackFile("data/lang/" + Config.WORLD_EXCHANGE_DEFAULT_LANG + "/ItemNameLocalisation.xml");
+		// }
 	}
 	
-	public void parseDocument(Document doc, File f)
-	{
-		Map<int, String> local = new();
-		forEach(doc, "list", listNode =>
-		{
-			forEach(listNode, "blessed", itemNode =>
-			{
-				StatSet itemSet = new StatSet(parseAttributes(itemNode));
-				local.put(-1, itemSet.getString("name"));
-			});
-			forEach(listNode, "item", itemNode =>
-			{
-				StatSet itemSet = new StatSet(parseAttributes(itemNode));
-				local.put(itemSet.getInt("id"), itemSet.getString("name"));
-			});
-		});
-		_localItemNames.put(doc.getDocumentURI().split("data/lang/")[1].split("/")[0], local);
-	}
+	// public void parseDocument(Document doc, File f)
+	// {
+	// 	Map<int, String> local = new();
+	// 	forEach(doc, "list", listNode =>
+	// 	{
+	// 		forEach(listNode, "blessed", itemNode =>
+	// 		{
+	// 			StatSet itemSet = new StatSet(parseAttributes(itemNode));
+	// 			local.put(-1, itemSet.getString("name"));
+	// 		});
+	// 		forEach(listNode, "item", itemNode =>
+	// 		{
+	// 			StatSet itemSet = new StatSet(parseAttributes(itemNode));
+	// 			local.put(itemSet.getInt("id"), itemSet.getString("name"));
+	// 		});
+	// 	});
+	// 	_localItemNames.put(doc.getDocumentURI().split("data/lang/")[1].split("/")[0], local);
+	// }
 	
 	public Map<int, String> getItemLocalByLang(String lang)
 	{
@@ -123,8 +123,8 @@ public class WorldExchangeManager: IXmlReader
 		foreach (var entry in _itemBids)
 		{
 			WorldExchangeHolder holder = entry.Value;
-			long currentTime = System.currentTimeMillis();
-			long endTime = holder.getEndTime();
+			DateTime currentTime = DateTime.UtcNow;
+			DateTime endTime = holder.getEndTime();
 			if (endTime > currentTime)
 			{
 				continue;
@@ -175,12 +175,9 @@ public class WorldExchangeManager: IXmlReader
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(SELECT_ALL_ITEMS);
-			ps.setString(1, ItemLocation.EXCHANGE.name());
-			ResultSet rs = ps.executeQuery();
-			while (rs.next())
+			foreach (DbItem record in ctx.Items.Where(i => i.Location == (int)ItemLocation.EXCHANGE))
 			{
-				Item itemInstance = new Item(rs);
+				Item itemInstance = new Item(record);
 				itemInstances.put(itemInstance.getObjectId(), itemInstance);
 			}
 		}
@@ -207,15 +204,13 @@ public class WorldExchangeManager: IXmlReader
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(RESTORE_INFO);
-			ResultSet rs = ps.executeQuery();
-			while (rs.next())
+			foreach (WorldExchangeItem record in ctx.WorldExchangeItems)
 			{
 				bool needChange = false;
-				long worldExchangeId = rs.getLong("world_exchange_id");
-				_lastWorldExchangeId = Math.max(worldExchangeId, _lastWorldExchangeId);
-				Item itemInstance = itemInstances.get(rs.getInt("item_object_id"));
-				WorldExchangeItemStatusType storeType = WorldExchangeItemStatusType.getWorldExchangeItemStatusType(rs.getInt("item_status"));
+				int worldExchangeId = record.Id;
+				_lastWorldExchangeId = Math.Max(worldExchangeId, _lastWorldExchangeId);
+				Item itemInstance = itemInstances.get(record.ItemObjectId);
+				WorldExchangeItemStatusType storeType = (WorldExchangeItemStatusType)record.ItemStatus;
 				
 				if (storeType == WorldExchangeItemStatusType.WORLD_EXCHANGE_NONE)
 				{
@@ -228,19 +223,21 @@ public class WorldExchangeManager: IXmlReader
 					continue;
 				}
 				
-				WorldExchangeItemSubType categoryId = WorldExchangeItemSubType.getWorldExchangeItemSubType(rs.getInt("category_id"));
-				long price = rs.getLong("price");
-				int bidPlayerObjectId = rs.getInt("old_owner_id");
-				long startTime = rs.getLong("start_time");
-				long endTime = rs.getLong("end_time");
-				if (endTime < System.currentTimeMillis())
+				WorldExchangeItemSubType categoryId = (WorldExchangeItemSubType)record.CategoryId;
+				long price = record.Price;
+				int bidPlayerObjectId = record.OldOwnerId;
+				DateTime startTime = record.StartTime;
+				DateTime endTime = record.EndTime;
+				if (endTime < DateTime.UtcNow)
 				{
-					if ((storeType == WorldExchangeItemStatusType.WORLD_EXCHANGE_OUT_TIME) || (storeType == WorldExchangeItemStatusType.WORLD_EXCHANGE_SOLD))
+					if ((storeType == WorldExchangeItemStatusType.WORLD_EXCHANGE_OUT_TIME) ||
+					    (storeType == WorldExchangeItemStatusType.WORLD_EXCHANGE_SOLD))
 					{
 						itemInstance.setItemLocation(ItemLocation.VOID);
 						itemInstance.updateDatabase(true);
 						continue;
 					}
+
 					endTime = calculateDate(Config.WORLD_EXCHANGE_ITEM_BACK_PERIOD);
 					storeType = WorldExchangeItemStatusType.WORLD_EXCHANGE_OUT_TIME;
 					needChange = true;
@@ -261,7 +258,7 @@ public class WorldExchangeManager: IXmlReader
 		{
 			return priceForEach * 100L;
 		}
-		return Math.Round(priceForEach * (itemToRemove.getId() == Inventory.ADENA_ID ? 1 : amount) * Config.WORLD_EXCHANGE_ADENA_FEE);
+		return (long)(priceForEach * (itemToRemove.getId() == Inventory.ADENA_ID ? 1 : amount) * Config.WORLD_EXCHANGE_ADENA_FEE);
 	}
 	
 	/**
@@ -282,20 +279,20 @@ public class WorldExchangeManager: IXmlReader
 		Map<WorldExchangeItemStatusType, List<WorldExchangeHolder>> playerBids = getPlayerBids(player.getObjectId());
 		if (playerBids.size() >= 10)
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.NO_SLOTS_AVAILABLE));
-			player.sendPacket(WorldExchangeRegisterItem.FAIL);
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.NO_SLOTS_AVAILABLE));
+			player.sendPacket(WorldExchangeRegisterItemPacket.FAIL);
 			return;
 		}
 		if (player.getInventory().getItemByObjectId(itemObjectId) == null)
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
-			player.sendPacket(WorldExchangeRegisterItem.FAIL);
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
+			player.sendPacket(WorldExchangeRegisterItemPacket.FAIL);
 			return;
 		}
 		if ((amount < 1) || (priceForEach < 1) || ((amount * priceForEach) < 1))
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_ITEM_COUNT_2));
-			player.sendPacket(WorldExchangeRegisterItem.FAIL);
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.INCORRECT_ITEM_COUNT_2));
+			player.sendPacket(WorldExchangeRegisterItemPacket.FAIL);
 			return;
 		}
 		
@@ -307,66 +304,67 @@ public class WorldExchangeManager: IXmlReader
 		}
 		if (feePrice > player.getAdena())
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.NOT_ENOUGH_ADENA));
-			player.sendPacket(WorldExchangeRegisterItem.FAIL);
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.NOT_ENOUGH_ADENA));
+			player.sendPacket(WorldExchangeRegisterItemPacket.FAIL);
 			return;
 		}
 		if (feePrice < 1)
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_ITEM_COUNT_2));
-			player.sendPacket(WorldExchangeRegisterItem.FAIL);
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.INCORRECT_ITEM_COUNT_2));
+			player.sendPacket(WorldExchangeRegisterItemPacket.FAIL);
 			return;
 		}
 		
-		long freeId = getNextId();
-		InventoryUpdate iu = new InventoryUpdate();
+		int freeId = getNextId();
+		InventoryUpdatePacket iu;
 		if (item.isStackable() && (player.getInventory().getInventoryItemCount(item.getId(), -1) > amount))
 		{
-			iu.addModifiedItem(item);
+			iu = new InventoryUpdatePacket(new ItemInfo(item, ItemChangeType.MODIFIED));
 		}
 		else
 		{
-			iu.addRemovedItem(item);
+			iu = new InventoryUpdatePacket(new ItemInfo(item, ItemChangeType.REMOVED));
 		}
 		
 		Item itemInstance = player.getInventory().detachItem("World Exchange Registration", item, amount, ItemLocation.EXCHANGE, player, null);
 		if (itemInstance == null)
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
-			player.sendPacket(WorldExchangeRegisterItem.FAIL);
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
+			player.sendPacket(WorldExchangeRegisterItemPacket.FAIL);
 			return;
 		}
 		
 		WorldExchangeItemSubType category = _itemCategories.get(itemInstance.getId());
 		if (category == null)
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_ITEM_YOU_REGISTERED_HAS_BEEN_SOLD));
-			player.sendPacket(WorldExchangeRegisterItem.FAIL);
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_YOU_REGISTERED_HAS_BEEN_SOLD));
+			player.sendPacket(WorldExchangeRegisterItemPacket.FAIL);
 			return;
 		}
 		
 		player.sendPacket(iu);
 		player.getInventory().reduceAdena("World Exchange Registration", feePrice, player, null);
-		long endTime = calculateDate(Config.WORLD_EXCHANGE_ITEM_SELL_PERIOD);
-		_itemBids.put(freeId, new WorldExchangeHolder(freeId, itemInstance, new ItemInfo(itemInstance), priceForEach, player.getObjectId(), WorldExchangeItemStatusType.WORLD_EXCHANGE_REGISTERED, category, System.currentTimeMillis(), endTime, true));
-		player.sendPacket(new WorldExchangeRegisterItem(itemObjectId, amount, (byte) 1));
+		DateTime endTime = calculateDate(Config.WORLD_EXCHANGE_ITEM_SELL_PERIOD);
+		_itemBids.put(freeId,
+			new WorldExchangeHolder(freeId, itemInstance, new ItemInfo(itemInstance), priceForEach,
+				player.getObjectId(), WorldExchangeItemStatusType.WORLD_EXCHANGE_REGISTERED, category,
+				DateTime.UtcNow, endTime, true));
+		
+		player.sendPacket(new WorldExchangeRegisterItemPacket(itemObjectId, amount, 1));
 		if (!Config.WORLD_EXCHANGE_LAZY_UPDATE)
 		{
 			insert(freeId, false);
 		}
 	}
 	
-	[MethodImpl(MethodImplOptions.Synchronized)]
-	private long getNextId()
+	private int getNextId()
 	{
-		return _lastWorldExchangeId++;
+		return Interlocked.Increment(ref _lastWorldExchangeId);
 	}
 	
-	private long calculateDate(int days)
+	private DateTime calculateDate(int days)
 	{
-		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.DATE, days);
-		return calendar.getTimeInMillis();
+		return DateTime.UtcNow.AddDays(days);
 	}
 	
 	/**
@@ -384,25 +382,25 @@ public class WorldExchangeManager: IXmlReader
 		WorldExchangeHolder worldExchangeItem = _itemBids.get(worldExchangeIndex);
 		if (worldExchangeItem == null)
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
-			player.sendPacket(WorldExchangeSettleRecvResult.FAIL);
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
+			player.sendPacket(WorldExchangeSettleRecvResultPacket.FAIL);
 			return;
 		}
 		
 		WorldExchangeItemStatusType storeType = worldExchangeItem.getStoreType();
 		switch (storeType)
 		{
-			case WORLD_EXCHANGE_REGISTERED:
+			case WorldExchangeItemStatusType.WORLD_EXCHANGE_REGISTERED:
 			{
 				cancelBid(player, worldExchangeItem);
 				break;
 			}
-			case WORLD_EXCHANGE_SOLD:
+			case WorldExchangeItemStatusType.WORLD_EXCHANGE_SOLD:
 			{
 				takeBidMoney(player, worldExchangeItem);
 				break;
 			}
-			case WORLD_EXCHANGE_OUT_TIME:
+			case WorldExchangeItemStatusType.WORLD_EXCHANGE_OUT_TIME:
 			{
 				returnItem(player, worldExchangeItem);
 				break;
@@ -424,44 +422,44 @@ public class WorldExchangeManager: IXmlReader
 		
 		if (worldExchangeItem.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_NONE)
 		{
-			player.sendPacket(new WorldExchangeSettleList(player));
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
-			player.sendPacket(WorldExchangeSettleRecvResult.FAIL);
+			player.sendPacket(new WorldExchangeSettleListPacket(player));
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
+			player.sendPacket(WorldExchangeSettleRecvResultPacket.FAIL);
 			return;
 		}
 		
 		if (!_itemBids.containsKey(worldExchangeItem.getWorldExchangeId()))
 		{
-			player.sendPacket(new WorldExchangeSettleList(player));
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
-			player.sendPacket(WorldExchangeSettleRecvResult.FAIL);
+			player.sendPacket(new WorldExchangeSettleListPacket(player));
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
+			player.sendPacket(WorldExchangeSettleRecvResultPacket.FAIL);
 			return;
 		}
 		
 		if (_itemBids.get(worldExchangeItem.getWorldExchangeId()) != worldExchangeItem)
 		{
-			player.sendPacket(new WorldExchangeSettleList(player));
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
-			player.sendPacket(WorldExchangeSettleRecvResult.FAIL);
+			player.sendPacket(new WorldExchangeSettleListPacket(player));
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
+			player.sendPacket(WorldExchangeSettleRecvResultPacket.FAIL);
 			return;
 		}
 		
 		if (player.getObjectId() != worldExchangeItem.getOldOwnerId())
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.ITEM_OUT_OF_STOCK));
-			player.sendPacket(WorldExchangeSettleRecvResult.FAIL);
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.ITEM_OUT_OF_STOCK));
+			player.sendPacket(WorldExchangeSettleRecvResultPacket.FAIL);
 			return;
 		}
 		
 		if (worldExchangeItem.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_SOLD)
 		{
-			player.sendPacket(new WorldExchangeSettleList(player));
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_ITEM_YOU_REGISTERED_HAS_BEEN_SOLD));
-			player.sendPacket(WorldExchangeSettleRecvResult.FAIL);
+			player.sendPacket(new WorldExchangeSettleListPacket(player));
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_YOU_REGISTERED_HAS_BEEN_SOLD));
+			player.sendPacket(WorldExchangeSettleRecvResultPacket.FAIL);
 			return;
 		}
 		
-		player.sendPacket(new WorldExchangeSettleRecvResult(worldExchangeItem.getItemInstance().getObjectId(), worldExchangeItem.getItemInstance().getCount(), (byte) 1));
+		player.sendPacket(new WorldExchangeSettleRecvResultPacket(worldExchangeItem.getItemInstance().getObjectId(), worldExchangeItem.getItemInstance().getCount(), (byte) 1));
 		player.getInventory().addItem("World Exchange Cancellation", worldExchangeItem.getItemInstance(), player, player);
 		worldExchangeItem.setStoreType(WorldExchangeItemStatusType.WORLD_EXCHANGE_NONE);
 		worldExchangeItem.setHasChanges(true);
@@ -486,54 +484,54 @@ public class WorldExchangeManager: IXmlReader
 		
 		if (worldExchangeItem.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_NONE)
 		{
-			player.sendPacket(new WorldExchangeSettleList(player));
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
-			player.sendPacket(WorldExchangeSettleRecvResult.FAIL);
+			player.sendPacket(new WorldExchangeSettleListPacket(player));
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
+			player.sendPacket(WorldExchangeSettleRecvResultPacket.FAIL);
 			return;
 		}
 		
 		if (!_itemBids.containsKey(worldExchangeItem.getWorldExchangeId()))
 		{
-			player.sendPacket(new WorldExchangeSettleList(player));
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
-			player.sendPacket(WorldExchangeSettleRecvResult.FAIL);
+			player.sendPacket(new WorldExchangeSettleListPacket(player));
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
+			player.sendPacket(WorldExchangeSettleRecvResultPacket.FAIL);
 			return;
 		}
 		
 		if (_itemBids.get(worldExchangeItem.getWorldExchangeId()) != worldExchangeItem)
 		{
-			player.sendPacket(new WorldExchangeSettleList(player));
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
-			player.sendPacket(WorldExchangeSettleRecvResult.FAIL);
+			player.sendPacket(new WorldExchangeSettleListPacket(player));
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
+			player.sendPacket(WorldExchangeSettleRecvResultPacket.FAIL);
 			return;
 		}
 		
 		if (player.getObjectId() != worldExchangeItem.getOldOwnerId())
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
-			player.sendPacket(WorldExchangeSettleRecvResult.FAIL);
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
+			player.sendPacket(WorldExchangeSettleRecvResultPacket.FAIL);
 			return;
 		}
 		
 		if (worldExchangeItem.getStoreType() != WorldExchangeItemStatusType.WORLD_EXCHANGE_SOLD)
 		{
-			player.sendPacket(new WorldExchangeSettleList(player));
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_ITEM_YOU_REGISTERED_HAS_BEEN_SOLD));
-			player.sendPacket(WorldExchangeSettleRecvResult.FAIL);
+			player.sendPacket(new WorldExchangeSettleListPacket(player));
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_YOU_REGISTERED_HAS_BEEN_SOLD));
+			player.sendPacket(WorldExchangeSettleRecvResultPacket.FAIL);
 			return;
 		}
 		
-		if (worldExchangeItem.getEndTime() < System.currentTimeMillis())
+		if (worldExchangeItem.getEndTime() < DateTime.UtcNow)
 		{
-			player.sendPacket(new WorldExchangeSettleList(player));
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_REGISTRATION_PERIOD_FOR_THE_ITEM_YOU_REGISTERED_HAS_EXPIRED));
-			player.sendPacket(WorldExchangeSettleRecvResult.FAIL);
+			player.sendPacket(new WorldExchangeSettleListPacket(player));
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_REGISTRATION_PERIOD_FOR_THE_ITEM_YOU_REGISTERED_HAS_EXPIRED));
+			player.sendPacket(WorldExchangeSettleRecvResultPacket.FAIL);
 			return;
 		}
 		
-		player.sendPacket(new WorldExchangeSettleRecvResult(worldExchangeItem.getItemInstance().getObjectId(), worldExchangeItem.getItemInstance().getCount(), (byte) 1));
-		long fee = Math.Round(((worldExchangeItem.getPrice() * Config.WORLD_EXCHANGE_LCOIN_TAX) * 100) / 100);
-		long returnPrice = worldExchangeItem.getPrice() - Math.Min(fee, (Config.WORLD_EXCHANGE_MAX_LCOIN_TAX != -1 ? Config.WORLD_EXCHANGE_MAX_LCOIN_TAX : long.MAX_VALUE)); // floating-point accuracy workaround :D
+		player.sendPacket(new WorldExchangeSettleRecvResultPacket(worldExchangeItem.getItemInstance().getObjectId(), worldExchangeItem.getItemInstance().getCount(), (byte) 1));
+		long fee = (long)(worldExchangeItem.getPrice() * Config.WORLD_EXCHANGE_LCOIN_TAX * 100 / 100);
+		long returnPrice = worldExchangeItem.getPrice() - Math.Min(fee, (Config.WORLD_EXCHANGE_MAX_LCOIN_TAX != -1 ? Config.WORLD_EXCHANGE_MAX_LCOIN_TAX : long.MaxValue)); // floating-point accuracy workaround :D
 		player.getInventory().addItem("World Exchange Took Money", Inventory.LCOIN_ID, (returnPrice), player, null);
 		worldExchangeItem.setStoreType(WorldExchangeItemStatusType.WORLD_EXCHANGE_NONE);
 		Item item = worldExchangeItem.getItemInstance();
@@ -561,52 +559,52 @@ public class WorldExchangeManager: IXmlReader
 		
 		if (worldExchangeItem.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_NONE)
 		{
-			player.sendPacket(new WorldExchangeSettleList(player));
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
-			player.sendPacket(WorldExchangeSettleRecvResult.FAIL);
+			player.sendPacket(new WorldExchangeSettleListPacket(player));
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
+			player.sendPacket(WorldExchangeSettleRecvResultPacket.FAIL);
 			return;
 		}
 		
 		if (!_itemBids.containsKey(worldExchangeItem.getWorldExchangeId()))
 		{
-			player.sendPacket(new WorldExchangeSettleList(player));
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
-			player.sendPacket(WorldExchangeSettleRecvResult.FAIL);
+			player.sendPacket(new WorldExchangeSettleListPacket(player));
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
+			player.sendPacket(WorldExchangeSettleRecvResultPacket.FAIL);
 			return;
 		}
 		
 		if (_itemBids.get(worldExchangeItem.getWorldExchangeId()) != worldExchangeItem)
 		{
-			player.sendPacket(new WorldExchangeSettleList(player));
-			player.sendPacket(new SystemMessage(SystemMessageId.ITEM_OUT_OF_STOCK));
-			player.sendPacket(WorldExchangeSettleRecvResult.FAIL);
+			player.sendPacket(new WorldExchangeSettleListPacket(player));
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.ITEM_OUT_OF_STOCK));
+			player.sendPacket(WorldExchangeSettleRecvResultPacket.FAIL);
 			return;
 		}
 		
 		if (player.getObjectId() != worldExchangeItem.getOldOwnerId())
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.ITEM_TO_BE_TRADED_DOES_NOT_EXIST));
-			player.sendPacket(WorldExchangeSettleRecvResult.FAIL);
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.ITEM_TO_BE_TRADED_DOES_NOT_EXIST));
+			player.sendPacket(WorldExchangeSettleRecvResultPacket.FAIL);
 			return;
 		}
 		
 		if (worldExchangeItem.getStoreType() != WorldExchangeItemStatusType.WORLD_EXCHANGE_OUT_TIME)
 		{
-			player.sendPacket(new WorldExchangeSettleList(player));
-			player.sendPacket(new SystemMessage(SystemMessageId.ITEM_OUT_OF_STOCK));
-			player.sendPacket(WorldExchangeSettleRecvResult.FAIL);
+			player.sendPacket(new WorldExchangeSettleListPacket(player));
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.ITEM_OUT_OF_STOCK));
+			player.sendPacket(WorldExchangeSettleRecvResultPacket.FAIL);
 			return;
 		}
 		
-		if (worldExchangeItem.getEndTime() < System.currentTimeMillis())
+		if (worldExchangeItem.getEndTime() < DateTime.UtcNow)
 		{
-			player.sendPacket(new WorldExchangeSettleList(player));
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_REGISTRATION_PERIOD_FOR_THE_ITEM_YOU_REGISTERED_HAS_EXPIRED));
-			player.sendPacket(WorldExchangeSettleRecvResult.FAIL);
+			player.sendPacket(new WorldExchangeSettleListPacket(player));
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_REGISTRATION_PERIOD_FOR_THE_ITEM_YOU_REGISTERED_HAS_EXPIRED));
+			player.sendPacket(WorldExchangeSettleRecvResultPacket.FAIL);
 			return;
 		}
 		
-		player.sendPacket(new WorldExchangeSettleRecvResult(worldExchangeItem.getItemInstance().getObjectId(), worldExchangeItem.getItemInstance().getCount(), (byte) 1));
+		player.sendPacket(new WorldExchangeSettleRecvResultPacket(worldExchangeItem.getItemInstance().getObjectId(), worldExchangeItem.getItemInstance().getCount(), (byte) 1));
 		player.getInventory().addItem("World Exchange Took Out Time Item Back", worldExchangeItem.getItemInstance(), player, null);
 		worldExchangeItem.setStoreType(WorldExchangeItemStatusType.WORLD_EXCHANGE_NONE);
 		worldExchangeItem.setHasChanges(true);
@@ -622,7 +620,7 @@ public class WorldExchangeManager: IXmlReader
 	 * @param player
 	 * @param worldExchangeId
 	 */
-	public void buyItem(Player player, long worldExchangeId)
+	public void buyItem(Player player, int worldExchangeId)
 	{
 		if (!Config.ENABLE_WORLD_EXCHANGE)
 		{
@@ -631,37 +629,37 @@ public class WorldExchangeManager: IXmlReader
 		
 		if (!_itemBids.containsKey(worldExchangeId))
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
-			player.sendPacket(WorldExchangeBuyItem.FAIL);
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
+			player.sendPacket(WorldExchangeBuyItemPacket.FAIL);
 			return;
 		}
 		
 		WorldExchangeHolder worldExchangeItem = _itemBids.get(worldExchangeId);
 		if (worldExchangeItem.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_NONE)
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
-			player.sendPacket(WorldExchangeBuyItem.FAIL);
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
+			player.sendPacket(WorldExchangeBuyItemPacket.FAIL);
 			return;
 		}
 		
 		if (worldExchangeItem.getStoreType() != WorldExchangeItemStatusType.WORLD_EXCHANGE_REGISTERED)
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.ITEM_OUT_OF_STOCK));
-			player.sendPacket(WorldExchangeBuyItem.FAIL);
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.ITEM_OUT_OF_STOCK));
+			player.sendPacket(WorldExchangeBuyItemPacket.FAIL);
 			return;
 		}
 		
 		Item lcoin = player.getInventory().getItemByItemId(Inventory.LCOIN_ID);
 		if ((lcoin == null) || (lcoin.getCount() < worldExchangeItem.getPrice()))
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_L2_COINS_ADD_MORE_L2_COINS_AND_TRY_AGAIN));
-			player.sendPacket(WorldExchangeBuyItem.FAIL);
+			player.sendPacket(new SystemMessagePacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_L2_COINS_ADD_MORE_L2_COINS_AND_TRY_AGAIN));
+			player.sendPacket(WorldExchangeBuyItemPacket.FAIL);
 			return;
 		}
 		
 		player.getInventory().destroyItem("World Exchange Buying", lcoin, worldExchangeItem.getPrice(), player, null);
 		Item newItem = createItem(worldExchangeItem.getItemInstance(), player);
-		long destroyTime = calculateDate(Config.WORLD_EXCHANGE_PAYMENT_TAKE_PERIOD);
+		DateTime destroyTime = calculateDate(Config.WORLD_EXCHANGE_PAYMENT_TAKE_PERIOD);
 		WorldExchangeHolder newHolder = new WorldExchangeHolder(worldExchangeId, newItem, new ItemInfo(newItem), worldExchangeItem.getPrice(), worldExchangeItem.getOldOwnerId(), WorldExchangeItemStatusType.WORLD_EXCHANGE_SOLD, worldExchangeItem.getCategory(), worldExchangeItem.getStartTime(), destroyTime, true);
 		_itemBids.replace(worldExchangeId, worldExchangeItem, newHolder);
 		if (!Config.WORLD_EXCHANGE_LAZY_UPDATE)
@@ -669,29 +667,29 @@ public class WorldExchangeManager: IXmlReader
 			insert(worldExchangeItem.getWorldExchangeId(), false);
 		}
 		Item receivedItem = player.getInventory().addItem("World Exchange Buying", worldExchangeItem.getItemInstance(), player, null);
-		player.sendPacket(new WorldExchangeBuyItem(receivedItem.getObjectId(), receivedItem.getCount(), (byte) 1));
-		SystemMessage sm;
+		player.sendPacket(new WorldExchangeBuyItemPacket(receivedItem.getObjectId(), receivedItem.getCount(), (byte) 1));
+		SystemMessagePacket sm;
 		if (receivedItem.getEnchantLevel() > 0)
 		{
 			if (receivedItem.getCount() < 2)
 			{
-				sm = new SystemMessage(SystemMessageId.YOU_VE_OBTAINED_S1_S2_4);
-				sm.addByte(receivedItem.getEnchantLevel());
-				sm.addItemName(receivedItem);
+				sm = new SystemMessagePacket(SystemMessageId.YOU_VE_OBTAINED_S1_S2_4);
+				sm.Params.addByte(receivedItem.getEnchantLevel());
+				sm.Params.addItemName(receivedItem);
 			}
 			else
 			{
-				sm = new SystemMessage(SystemMessageId.YOU_VE_OBTAINED_S1_S2_X_S3);
-				sm.addItemName(receivedItem);
-				sm.addLong(receivedItem.getCount());
-				sm.addByte(receivedItem.getEnchantLevel());
+				sm = new SystemMessagePacket(SystemMessageId.YOU_VE_OBTAINED_S1_S2_X_S3);
+				sm.Params.addItemName(receivedItem);
+				sm.Params.addLong(receivedItem.getCount());
+				sm.Params.addByte(receivedItem.getEnchantLevel());
 			}
 		}
 		else
 		{
-			sm = new SystemMessage(SystemMessageId.YOU_VE_OBTAINED_S1_X_S2);
-			sm.addItemName(receivedItem);
-			sm.addLong(receivedItem.getCount());
+			sm = new SystemMessagePacket(SystemMessageId.YOU_VE_OBTAINED_S1_X_S2);
+			sm.Params.addItemName(receivedItem);
+			sm.Params.addLong(receivedItem.getCount());
 		}
 		
 		player.sendPacket(sm);
@@ -699,7 +697,7 @@ public class WorldExchangeManager: IXmlReader
 		{
 			if (oldOwner.getObjectId() == newHolder.getOldOwnerId())
 			{
-				oldOwner.sendPacket(new WorldExchangeSellCompleteAlarm(newItem.getId(), newItem.getCount()));
+				oldOwner.sendPacket(new WorldExchangeSellCompleteAlarmPacket(newItem.getId(), newItem.getCount()));
 				break;
 			}
 		}
@@ -727,8 +725,8 @@ public class WorldExchangeManager: IXmlReader
 		{
 			newItem.setAugmentation(vi, true);
 		}
-		InventoryUpdate iu = new InventoryUpdate();
-		iu.addRemovedItem(newItem);
+		
+		InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(newItem, ItemChangeType.REMOVED));
 		requestor.sendInventoryUpdate(iu);
 		return newItem;
 	}
@@ -812,24 +810,29 @@ public class WorldExchangeManager: IXmlReader
 		{
 			case WorldExchangeSortType.PRICE_ASCE:
 			{
-				Collections.sort(sortedList, Comparator.comparing(WorldExchangeHolder::getPrice));
+				sortedList.Sort((a, b) => a.getPrice().CompareTo(b.getPrice()));
 				break;
 			}
 			case WorldExchangeSortType.PRICE_DESC:
 			{
-				Collections.sort(sortedList, Comparator.comparing(WorldExchangeHolder::getPrice));
-				Collections.reverse(sortedList);
+				sortedList.Sort((a, b) => -a.getPrice().CompareTo(b.getPrice()));
 				break;
 			}
 			case WorldExchangeSortType.ITEM_NAME_ASCE:
 			{
 				if ((lang == null) || (!lang.equals("en") && _localItemNames.containsKey(lang)))
 				{
-					Collections.sort(sortedList, Comparator.comparing(o => getItemName(lang, o.getItemInstance().getId(), o.getItemInstance().isBlessed())));
+					// TODO extract to comparer classes
+					sortedList.Sort((a, b) =>
+						getItemName(lang, a.getItemInstance().getId(), a.getItemInstance().isBlessed())
+							.CompareTo(getItemName(lang, b.getItemInstance().getId(),
+								b.getItemInstance().isBlessed())));
 				}
 				else
 				{
-					Collections.sort(sortedList, Comparator.comparing(o => (o.getItemInstance().isBlessed() ? "Blessed " : "") + o.getItemInstance().getItemName()));
+					sortedList.Sort((a, b) => 
+						((a.getItemInstance().isBlessed() ? "Blessed " : "") + a.getItemInstance().getItemName()).CompareTo(
+							((b.getItemInstance().isBlessed() ? "Blessed " : "") + b.getItemInstance().getItemName())));
 				}
 				break;
 			}
@@ -837,30 +840,35 @@ public class WorldExchangeManager: IXmlReader
 			{
 				if ((lang == null) || (!lang.equals("en") && _localItemNames.containsKey(lang)))
 				{
-					Collections.sort(sortedList, Comparator.comparing(o => getItemName(lang, o.getItemInstance().getId(), o.getItemInstance().isBlessed())));
+					// TODO extract to comparer classes
+					sortedList.Sort((a, b) =>
+						-getItemName(lang, a.getItemInstance().getId(), a.getItemInstance().isBlessed())
+							.CompareTo(getItemName(lang, b.getItemInstance().getId(),
+								b.getItemInstance().isBlessed())));
 				}
 				else
 				{
-					Collections.sort(sortedList, Comparator.comparing(o => (o.getItemInstance().isBlessed() ? "Blessed " : "") + o.getItemInstance().getItemName()));
+					sortedList.Sort((a, b) => 
+						-((a.getItemInstance().isBlessed() ? "Blessed " : "") + a.getItemInstance().getItemName()).CompareTo(
+							((b.getItemInstance().isBlessed() ? "Blessed " : "") + b.getItemInstance().getItemName())));
 				}
-				Collections.reverse(sortedList);
 				break;
 			}
 			case WorldExchangeSortType.PRICE_PER_PIECE_ASCE:
 			{
-				Collections.sort(sortedList, Comparator.comparingLong(WorldExchangeHolder::getPrice));
+				sortedList.Sort((a, b) => a.getPrice().CompareTo(b.getPrice()));
 				break;
 			}
 			case WorldExchangeSortType.PRICE_PER_PIECE_DESC:
 			{
-				Collections.sort(sortedList, Comparator.comparingLong(WorldExchangeHolder::getPrice).reversed());
+				sortedList.Sort((a, b) => -a.getPrice().CompareTo(b.getPrice()));
 				break;
 			}
 		}
 		
 		if (sortedList.size() > 399)
 		{
-			return sortedList.subList(0, 399);
+			return sortedList[..399];
 		}
 		
 		return sortedList;
@@ -950,7 +958,7 @@ public class WorldExchangeManager: IXmlReader
 		
 		foreach (int itemId in itemIds)
 		{
-			_itemCategories.putIfAbsent(itemId, WorldExchangeItemSubType.getWorldExchangeItemSubType(category));
+			_itemCategories.putIfAbsent(itemId, (WorldExchangeItemSubType)category);
 		}
 	}
 	
@@ -969,7 +977,7 @@ public class WorldExchangeManager: IXmlReader
 		{
 			if ((holder.getOldOwnerId() == player.getObjectId()) && ((holder.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_SOLD) || (holder.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_OUT_TIME)))
 			{
-				player.sendPacket(new WorldExchangeSellCompleteAlarm(holder.getItemInstance().getId(), holder.getItemInstance().getCount()));
+				player.sendPacket(new WorldExchangeSellCompleteAlarmPacket(holder.getItemInstance().getId(), holder.getItemInstance().getCount()));
 				break;
 			}
 		}
@@ -985,7 +993,6 @@ public class WorldExchangeManager: IXmlReader
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(INSERT_WORLD_EXCHANGE);
 			foreach (WorldExchangeHolder holder in _itemBids.values())
 			{
 				if (!holder.hasChanges())
@@ -993,18 +1000,21 @@ public class WorldExchangeManager: IXmlReader
 					continue;
 				}
 				
-				statement.setLong(1, holder.getWorldExchangeId());
-				statement.setLong(2, holder.getItemInstance().getObjectId());
-				statement.setInt(3, holder.getStoreType().getId());
-				statement.setInt(4, holder.getCategory().getId());
-				statement.setLong(5, holder.getPrice());
-				statement.setInt(6, holder.getOldOwnerId());
-				statement.setLong(7, holder.getStartTime());
-				statement.setLong(8, holder.getEndTime());
-				statement.addBatch();
+				ctx.WorldExchangeItems.Add(new WorldExchangeItem() // TODO: it was REPLACE statement
+				{
+					Id = holder.getWorldExchangeId(),
+					ItemObjectId = holder.getItemInstance().getObjectId(),
+					ItemStatus = (int)holder.getStoreType(),
+					CategoryId = (int)holder.getCategory(),
+					Price = holder.getPrice(),
+					OldOwnerId = holder.getOldOwnerId(),
+					StartTime = holder.getStartTime(),
+					EndTime = holder.getEndTime()
+				});
+
 			}
-			statement.executeBatch();
-			statement.closeOnCompletion();
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -1021,18 +1031,23 @@ public class WorldExchangeManager: IXmlReader
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(INSERT_WORLD_EXCHANGE);
 			WorldExchangeHolder holder = _itemBids.get(worldExchangeId);
-			statement.setLong(1, holder.getWorldExchangeId());
-			statement.setLong(2, holder.getItemInstance().getObjectId());
-			statement.setInt(3, holder.getStoreType().getId());
-			statement.setInt(4, holder.getCategory().getId());
-			statement.setLong(5, holder.getPrice());
-			statement.setInt(6, holder.getOldOwnerId());
-			statement.setString(7, String.valueOf(holder.getStartTime()));
-			statement.setString(8, String.valueOf(holder.getEndTime()));
-			statement.execute();
+
+			using GameServerDbContext ctx = new();
+			ctx.WorldExchangeItems.Add(new WorldExchangeItem() // TODO: it was REPLACE statement
+			{
+				Id = holder.getWorldExchangeId(),
+				ItemObjectId = holder.getItemInstance().getObjectId(),
+				ItemStatus = (int)holder.getStoreType(),
+				CategoryId = (int)holder.getCategory(),
+				Price = holder.getPrice(),
+				OldOwnerId = holder.getOldOwnerId(),
+				StartTime = holder.getStartTime(),
+				EndTime = holder.getEndTime()
+			});
+
+			ctx.SaveChanges();
+
 			if (remove)
 			{
 				_itemBids.remove(worldExchangeId);
@@ -1068,7 +1083,7 @@ public class WorldExchangeManager: IXmlReader
 	
 	public static WorldExchangeManager getInstance()
 	{
-		return WorldExchangeManager.SingletonHolder.INSTANCE;
+		return SingletonHolder.INSTANCE;
 	}
 	
 	private static class SingletonHolder

@@ -1,6 +1,6 @@
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -11,44 +11,35 @@ public class ServerRestartManager
 {
 	static readonly Logger LOGGER = LogManager.GetLogger(nameof(ServerRestartManager));
 	
-	private String nextRestartTime = "unknown";
+	private DateTime? nextRestartTime;
 	
 	protected ServerRestartManager()
 	{
 		try
 		{
-			Calendar currentTime = Calendar.getInstance();
-			Calendar restartTime = Calendar.getInstance();
-			Calendar lastRestart = null;
-			long delay = 0;
-			long lastDelay = 0;
+			DateTime currentTime = DateTime.UtcNow;
+			DateTime? lastRestart = null;
+			TimeSpan lastDelay = TimeSpan.Zero;
 			
-			foreach (String scheduledTime in Config.SERVER_RESTART_SCHEDULE)
+			foreach (TimeOnly scheduledTime in Config.SERVER_RESTART_SCHEDULE)
 			{
-				String[] splitTime = scheduledTime.Trim().Split(":");
-				restartTime.set(Calendar.HOUR_OF_DAY, int.Parse(splitTime[0]));
-				restartTime.set(Calendar.MINUTE, int.Parse(splitTime[1]));
-				restartTime.set(Calendar.SECOND, 00);
-				
-				if (restartTime.getTimeInMillis() < currentTime.getTimeInMillis())
-				{
-					restartTime.add(Calendar.DAY_OF_WEEK, 1);
-				}
+				DateTime restartTime = new DateTime(DateOnly.FromDateTime(currentTime), scheduledTime);
+				if (restartTime < currentTime)
+					restartTime = restartTime.AddDays(1);
 				
 				if (!Config.SERVER_RESTART_DAYS.isEmpty())
 				{
-					while (!Config.SERVER_RESTART_DAYS.Contains(restartTime.get(Calendar.DAY_OF_WEEK)))
-					{
-						restartTime.add(Calendar.DAY_OF_WEEK, 1);
-					}
+					while (!Config.SERVER_RESTART_DAYS.Contains(restartTime.DayOfWeek))
+						restartTime = restartTime.AddDays(1);
 				}
 				
-				delay = restartTime.getTimeInMillis() - currentTime.getTimeInMillis();
-				if (lastDelay == 0)
+				TimeSpan delay = restartTime - currentTime;
+				if (lastDelay == TimeSpan.Zero)
 				{
 					lastDelay = delay;
 					lastRestart = restartTime;
 				}
+				
 				if (delay < lastDelay)
 				{
 					lastDelay = delay;
@@ -58,52 +49,19 @@ public class ServerRestartManager
 			
 			if (lastRestart != null)
 			{
-				if (Config.SERVER_RESTART_DAYS.isEmpty() || (Config.SERVER_RESTART_DAYS.Length == 7))
-				{
-					nextRestartTime = new SimpleDateFormat("HH:mm").format(lastRestart.getTime());
-				}
-				else
-				{
-					nextRestartTime = new SimpleDateFormat("MMMM d'" + getDayNumberSuffix(lastRestart.get(Calendar.DAY_OF_MONTH)) + "' HH:mm", Locale.UK).format(lastRestart.getTime());
-				}
-				ThreadPool.schedule(new ServerRestartTask(), lastDelay - (Config.SERVER_RESTART_SCHEDULE_COUNTDOWN * 1000));
-				LOGGER.Info("Scheduled server restart at " + lastRestart.getTime() + ".");
+				nextRestartTime = lastRestart;
+				
+				ThreadPool.schedule(new ServerRestartTask(), lastDelay - TimeSpan.FromSeconds(Config.SERVER_RESTART_SCHEDULE_COUNTDOWN));
+				LOGGER.Info("Scheduled server restart at " + lastRestart + ".");
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Info("The scheduled server restart config is not set properly, please correct it!");
+			LOGGER.Error("The scheduled server restart config is not set properly, please correct it!");
 		}
 	}
 	
-	private String getDayNumberSuffix(int day)
-	{
-		switch (day)
-		{
-			case 1:
-			case 21:
-			case 31:
-			{
-				return "st";
-			}
-			case 2:
-			case 22:
-			{
-				return "nd";
-			}
-			case 3:
-			case 23:
-			{
-				return "rd";
-			}
-			default:
-			{
-				return "th";
-			}
-		}
-	}
-	
-	public String getNextRestartTime()
+	public DateTime? getNextRestartTime()
 	{
 		return nextRestartTime;
 	}

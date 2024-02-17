@@ -1,3 +1,6 @@
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
@@ -9,6 +12,7 @@ using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -17,7 +21,7 @@ namespace L2Dn.GameServer.InstanceManagers;
  * Map Region Manager.
  * @author Nyaran
  */
-public class MapRegionManager: IXmlReader
+public class MapRegionManager: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(MapRegionManager));
 	
@@ -32,74 +36,61 @@ public class MapRegionManager: IXmlReader
 	public void load()
 	{
 		REGIONS.clear();
-		parseDatapackDirectory("data/mapregion", false);
+		
+		LoadXmlDocuments(DataFileLocation.Data, "mapregion").ForEach(t =>
+		{
+			t.Document.Elements("").ForEach(el => parseElement(t.FilePath, el));
+		});
+		
 		LOGGER.Info(GetType().Name +": Loaded " + REGIONS.size() + " map regions.");
 	}
 	
-	public void parseDocument(Document doc, File f)
+	private void parseElement(string filePath, XElement element)
 	{
-		NamedNodeMap attrs;
-		String name;
-		String town;
-		int locId;
-		int bbs;
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
-		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("region".equalsIgnoreCase(d.getNodeName()))
-					{
-						attrs = d.getAttributes();
-						name = attrs.getNamedItem("name").getNodeValue();
-						town = attrs.getNamedItem("town").getNodeValue();
-						locId = parseInteger(attrs, "locId");
-						bbs = parseInteger(attrs, "bbs");
+		string name = element.Attribute("name").GetString();
+		string town = element.Attribute("town").GetString();
+		int locId = element.Attribute("locId").GetInt32();
+		int bbs = element.Attribute("bbs").GetInt32();
 						
-						MapRegion region = new MapRegion(name, town, locId, bbs);
-						for (Node c = d.getFirstChild(); c != null; c = c.getNextSibling())
-						{
-							attrs = c.getAttributes();
-							if ("respawnPoint".equalsIgnoreCase(c.getNodeName()))
-							{
-								int spawnX = parseInteger(attrs, "X");
-								int spawnY = parseInteger(attrs, "Y");
-								int spawnZ = parseInteger(attrs, "Z");
-								bool other = parseBoolean(attrs, "isOther", false);
-								bool chaotic = parseBoolean(attrs, "isChaotic", false);
-								bool banish = parseBoolean(attrs, "isBanish", false);
-								if (other)
-								{
-									region.addOtherSpawn(spawnX, spawnY, spawnZ);
-								}
-								else if (chaotic)
-								{
-									region.addChaoticSpawn(spawnX, spawnY, spawnZ);
-								}
-								else if (banish)
-								{
-									region.addBanishSpawn(spawnX, spawnY, spawnZ);
-								}
-								else
-								{
-									region.addSpawn(spawnX, spawnY, spawnZ);
-								}
-							}
-							else if ("map".equalsIgnoreCase(c.getNodeName()))
-							{
-								region.addMap(parseInteger(attrs, "X"), parseInteger(attrs, "Y"));
-							}
-							else if ("banned".equalsIgnoreCase(c.getNodeName()))
-							{
-								region.addBannedRace(attrs.getNamedItem("race").getNodeValue(), attrs.getNamedItem("point").getNodeValue());
-							}
-						}
-						REGIONS.put(name, region);
-					}
+		MapRegion region = new MapRegion(name, town, locId, bbs);
+		foreach (XElement c in element.Elements())
+		{
+			string nodeName = c.Name.LocalName;
+			if ("respawnPoint".equalsIgnoreCase(nodeName))
+			{
+				int spawnX = c.Attribute("X").GetInt32();
+				int spawnY = c.Attribute("Y").GetInt32();
+				int spawnZ = c.Attribute("Z").GetInt32();
+				bool other = c.Attribute("isOther").GetBoolean(false);
+				bool chaotic = c.Attribute("isChaotic").GetBoolean(false);
+				bool banish = c.Attribute("isBanish").GetBoolean(false);
+				if (other)
+				{
+					region.addOtherSpawn(spawnX, spawnY, spawnZ);
+				}
+				else if (chaotic)
+				{
+					region.addChaoticSpawn(spawnX, spawnY, spawnZ);
+				}
+				else if (banish)
+				{
+					region.addBanishSpawn(spawnX, spawnY, spawnZ);
+				}
+				else
+				{
+					region.addSpawn(spawnX, spawnY, spawnZ);
 				}
 			}
+			else if ("map".equalsIgnoreCase(nodeName))
+			{
+				region.addMap(c.Attribute("X").GetInt32(), c.Attribute("Y").GetInt32());
+			}
+			else if ("banned".equalsIgnoreCase(nodeName))
+			{
+				region.addBannedRace(c.Attribute("race").GetString(), c.Attribute("point").GetString());
+			}
 		}
+		REGIONS.put(name, region);
 	}
 	
 	/**

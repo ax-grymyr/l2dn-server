@@ -1,3 +1,5 @@
+using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -6,7 +8,9 @@ using L2Dn.GameServer.Model.Events.Impl.Items;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Network.OutgoingPackets.Subjugation;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -18,31 +22,34 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class PurgeRankingManager
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(PurgeRankingManager));
-	
 	private static readonly Map<int, Map<int, StatSet>> _ranking = new();
-	private const string RESTORE_SUBJUGATION = "SELECT *, `points` + `keys` * 1000000 as `total` FROM `character_purge` WHERE `category`=? ORDER BY `total` DESC";
-	private const string DELETE_SUBJUGATION = "DELETE FROM character_purge WHERE charId=? and category=?";
 	
 	public PurgeRankingManager()
 	{
 		updateRankingFromDB();
-		
-		int nextDate = Calendar.getInstance().get(Calendar.MINUTE);
+
+		DateTime time = DateTime.UtcNow;
+		int nextDate = time.Minute;
 		while ((nextDate % 5) != 0)
 		{
 			nextDate = nextDate + 1;
 		}
-		
-		ThreadPool.scheduleAtFixedRate(this::updateRankingFromDB, (nextDate - Calendar.getInstance().get(Calendar.MINUTE)) > 0 ? (long) (nextDate - Calendar.getInstance().get(Calendar.MINUTE)) * 60 * 1000 : (long) ((nextDate + 60) - Calendar.getInstance().get(Calendar.MINUTE)) * 60 * 1000, 300000);
+
+		TimeSpan delay = nextDate - time.Minute > 0
+			? TimeSpan.FromMinutes(nextDate - time.Minute)
+			: TimeSpan.FromMinutes(60 + nextDate - time.Minute);
+
+		ThreadPool.scheduleAtFixedRate(updateRankingFromDB, delay, TimeSpan.FromSeconds(300));
 	}
 	
 	private void updateRankingFromDB()
 	{
 		// Weekly rewards.
-		long lastPurgeRewards = GlobalVariablesManager.getInstance().getLong(GlobalVariablesManager.PURGE_REWARD_TIME, 0);
-		if ((Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) && ((System.currentTimeMillis() - lastPurgeRewards) > (604800000 /* 1 week */ - 600000 /* task delay x2 */)))
+		DateTime now = DateTime.UtcNow;
+		DateTime lastPurgeRewards = GlobalVariablesManager.getInstance().getDateTime(GlobalVariablesManager.PURGE_REWARD_TIME, DateTime.MinValue);
+		if ((now.DayOfWeek == DayOfWeek.Sunday) && ((now - lastPurgeRewards) > TimeSpan.FromSeconds(604800 /* 1 week */ - 600 /* task delay x2 */)))
 		{
-			GlobalVariablesManager.getInstance().set(GlobalVariablesManager.PURGE_REWARD_TIME, System.currentTimeMillis());
+			GlobalVariablesManager.getInstance().set(GlobalVariablesManager.PURGE_REWARD_TIME, now);
 			for (int category = 1; category <= 9; category++)
 			{
 				if (getTop5(category) != null)
@@ -50,8 +57,9 @@ public class PurgeRankingManager
 					int counter = 0;
 					foreach (var purgeData in getTop5(category))
 					{
-						int charId = CharInfoTable.getInstance().getIdByName(purgeData.getKey());
-						Message msg = new Message(charId, Config.SUBJUGATION_TOPIC_HEADER, Config.SUBJUGATION_TOPIC_BODY, MailType.PURGE_REWARD);
+						int charId = CharInfoTable.getInstance().getIdByName(purgeData.Key);
+						Message msg = new Message(charId, Config.SUBJUGATION_TOPIC_HEADER,
+							Config.SUBJUGATION_TOPIC_BODY, MailType.PURGE_REWARD);
 						Mail attachment = msg.createAttachments();
 						int reward;
 						switch (category)
@@ -103,12 +111,13 @@ public class PurgeRankingManager
 							}
 							default:
 							{
-								throw new IllegalStateException("Unexpected value: " + category);
+								throw new InvalidOperationException("Unexpected value: " + category);
 							}
 						}
+
 						attachment.addItem("Purge reward", reward, 5 - counter, null, null);
 						MailManager.getInstance().sendMessage(msg);
-						
+
 						// Notify to scripts.
 						Player player = World.getInstance().getPlayer(charId);
 						Item item = attachment.getItemByItemId(reward);
@@ -119,36 +128,32 @@ public class PurgeRankingManager
 								EventDispatcher.getInstance().notifyEventAsync(new OnItemPurgeReward(player, item));
 							}
 						}
-						
+
 						try
 						{
 							using GameServerDbContext ctx = new();
-
-							{
-								PreparedStatement st = con.prepareStatement(DELETE_SUBJUGATION);
-								st.setInt(1, charId);
-								st.setInt(2, category);
-								st.execute();
-							}
+							ctx.CharacterPurges.Where(c => c.CharacterId == charId && c.Category == category)
+								.ExecuteDelete();
 						}
 						catch (Exception e)
 						{
 							LOGGER.Error("Failed to delete character subjugation info " + charId, e);
 						}
-						
+
 						Player onlinePlayer = World.getInstance().getPlayer(charId);
 						if (onlinePlayer != null)
 						{
 							onlinePlayer.getPurgePoints().clear();
-							onlinePlayer.sendPacket(new ExSubjugationSidebar(null, new PurgePlayerHolder(0, 0, 0)));
+							onlinePlayer.sendPacket(
+								new ExSubjugationSidebarPacket(null, new PurgePlayerHolder(0, 0, 0)));
 						}
-						
+
 						counter++;
 					}
 				}
 			}
 		}
-		
+
 		// Clear ranking.
 		_ranking.clear();
 		
@@ -164,24 +169,20 @@ public class PurgeRankingManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(RESTORE_SUBJUGATION);
-			statement.setInt(1, category);
 
+			int rank = 1;
+			Map<int, StatSet> rankingInCategory = new();
+			foreach (CharacterPurge record in ctx.CharacterPurges.Where(r => r.Category == category)
+				         .OrderByDescending(r => r.Points + r.Keys * 1000000))
 			{
-				ResultSet rset = statement.executeQuery();
-				int rank = 1;
-				Map<int, StatSet> rankingInCategory = new();
-				while (rset.next())
-				{
-					StatSet set = new StatSet();
-					set.set("charId", rset.getInt("charId"));
-					set.set("points", rset.getInt("total"));
-					rankingInCategory.put(rank, set);
-					rank++;
-				}
-				_ranking.put(category, rankingInCategory);
+				StatSet set = new StatSet();
+				set.set("charId", record.CharacterId);
+				set.set("points", record.Points + record.Keys * 1000000);
+				rankingInCategory.put(rank, set);
+				rank++;
 			}
-			// LOGGER.Info(GetType().Name +": Loaded " + _ranking.get(category).size() + " records for category " + category + ".");
+
+			_ranking.put(category, rankingInCategory);
 		}
 		catch (Exception e)
 		{
@@ -211,31 +212,28 @@ public class PurgeRankingManager
 				int points = ss.getInt("points");
 				top5.put(charName, points);
 			}
-			catch (IndexOutOfBoundsException ignored)
+			catch (Exception e)
 			{
+				LOGGER.Error(e);
 			}
 		}
-		return top5.entrySet().stream().sorted(Entry.<String, int> comparingByValue().reversed()).collect(Collectors.toMap(Entry::getKey, Entry::getValue, (e1, e2) => e2, LinkedHashMap::new));
+		
+		//return top5.sorted(Entry.<String, int> comparingByValue().reversed()).collect(Collectors.toMap(Entry::getKey, Entry::getValue, (e1, e2) => e2, LinkedHashMap::new));
+		return top5; // TODO: figure out the sort order
 	}
 	
-	public SimpleEntry<int, int> getPlayerRating(int category, int charId)
+	public (int, int) getPlayerRating(int category, int charId)
 	{
 		if (_ranking.get(category) == null)
 		{
-			return new SimpleEntry<>(0, 0);
+			return (0, 0);
 		}
 		
-		Optional<Entry<int, StatSet>> player = _ranking.get(category).entrySet().stream().filter(it => it.getValue().getInt("charId") == charId).findFirst();
-		if (player.isPresent())
-		{
-			if (player.get().getValue() == null)
-			{
-				return new SimpleEntry<>(0, 0);
-			}
-			return new SimpleEntry<>(player.get().getKey(), player.get().getValue().getInt("points"));
-		}
+		var kvp = _ranking.get(category).FirstOrDefault(it => it.Value.getInt("charId") == charId);
+		if (kvp.Value is null)
+			return (0, 0);
 		
-		return new SimpleEntry<>(0, 0);
+		return (kvp.Key, kvp.Value.getInt("points"));
 	}
 	
 	public static PurgeRankingManager getInstance()

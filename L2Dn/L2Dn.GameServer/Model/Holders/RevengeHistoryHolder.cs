@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 
@@ -11,17 +12,17 @@ public class RevengeHistoryHolder
 	private readonly String _killerName;
 	private readonly String _killerClanName;
 	private readonly int _killerLevel;
-	private readonly int _killerRaceId;
-	private readonly int _killerClassId;
-	private readonly long _killTime;
+	private readonly Race _killerRaceId;
+	private readonly CharacterClass _killerClassId;
+	private readonly DateTime _killTime;
 	private readonly String _victimName;
 	private readonly String _victimClanName;
 	private readonly int _victimLevel;
-	private readonly int _victimRaceId;
-	private readonly int _victimClassId;
+	private readonly Race _victimRaceId;
+	private readonly CharacterClass _victimClassId;
 	private RevengeType _type;
 	private bool _wasShared;
-	private long _shareTime;
+	private DateTime _shareTime;
 	private int _showLocationRemaining;
 	private int _teleportRemaining;
 	private int _sharedTeleportRemaining;
@@ -33,30 +34,30 @@ public class RevengeHistoryHolder
 		_killerName = killer.getName();
 		_killerClanName = killer.getClan() == null ? "" : killer.getClan().getName();
 		_killerLevel = killer.getLevel();
-		_killerRaceId = killer.getRace().ordinal();
-		_killerClassId = killer.getClassId().getId();
-		_killTime = System.currentTimeMillis();
-		_shareTime = 0;
+		_killerRaceId = killer.getRace();
+		_killerClassId = killer.getClassId();
+		_killTime = DateTime.UtcNow;
+		_shareTime = default;
 		_showLocationRemaining = 5;
 		_teleportRemaining = 5;
 		_sharedTeleportRemaining = 1;
 		_victimName = victim.getName();
 		_victimClanName = victim.getClan() == null ? "" : victim.getClan().getName();
 		_victimLevel = victim.getLevel();
-		_victimRaceId = victim.getRace().ordinal();
-		_victimClassId = victim.getClassId().getId();
+		_victimRaceId = victim.getRace();
+		_victimClassId = victim.getClassId();
 	}
 
 	public RevengeHistoryHolder(Player killer, Player victim, RevengeType type, int sharedTeleportRemaining,
-		long killTime, long shareTime)
+		DateTime killTime, DateTime shareTime)
 	{
 		_type = type;
 		_wasShared = true;
 		_killerName = killer.getName();
 		_killerClanName = killer.getClan() == null ? "" : killer.getClan().getName();
 		_killerLevel = killer.getLevel();
-		_killerRaceId = killer.getRace().ordinal();
-		_killerClassId = killer.getClassId().getId();
+		_killerRaceId = killer.getRace();
+		_killerClassId = killer.getClassId();
 		_killTime = killTime;
 		_shareTime = shareTime;
 		_showLocationRemaining = 0;
@@ -65,12 +66,12 @@ public class RevengeHistoryHolder
 		_victimName = victim.getName();
 		_victimClanName = victim.getClan() == null ? "" : victim.getClan().getName();
 		_victimLevel = victim.getLevel();
-		_victimRaceId = victim.getRace().ordinal();
-		_victimClassId = victim.getClassId().getId();
+		_victimRaceId = victim.getRace();
+		_victimClassId = victim.getClassId();
 	}
 
 	public RevengeHistoryHolder(StatSet killer, StatSet victim, RevengeType type, bool wasShared,
-		int showLocationRemaining, int teleportRemaining, int sharedTeleportRemaining, long killTime, long shareTime)
+		int showLocationRemaining, int teleportRemaining, int sharedTeleportRemaining, DateTime killTime, DateTime shareTime)
 	{
 		_type = type;
 		_wasShared = wasShared;
@@ -126,27 +127,27 @@ public class RevengeHistoryHolder
 		return _killerLevel;
 	}
 
-	public int getKillerRaceId()
+	public Race getKillerRace()
 	{
 		return _killerRaceId;
 	}
 
-	public int getKillerClassId()
+	public CharacterClass getKillerClass()
 	{
 		return _killerClassId;
 	}
 
-	public long getKillTime()
+	public DateTime getKillTime()
 	{
 		return _killTime;
 	}
 
-	public long getShareTime()
+	public DateTime getShareTime()
 	{
 		return _shareTime;
 	}
 
-	public void setShareTime(long shareTime)
+	public void setShareTime(DateTime shareTime)
 	{
 		_shareTime = shareTime;
 	}
@@ -196,12 +197,12 @@ public class RevengeHistoryHolder
 		return _victimLevel;
 	}
 
-	public int getVictimRaceId()
+	public Race getVictimRace()
 	{
 		return _victimRaceId;
 	}
 
-	public int getVictimClassId()
+	public CharacterClass getVictimClass()
 	{
 		return _victimClassId;
 	}

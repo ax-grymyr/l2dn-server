@@ -2613,7 +2613,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	/**
 	 * Updates the visual abnormal state of this character.
 	 */
-	public void updateAbnormalVisualEffects()
+	public virtual void updateAbnormalVisualEffects()
 	{
 		// overridden
 	}

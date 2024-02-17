@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Holders;
@@ -17,7 +18,7 @@ public class PunishmentHolder
 	{
 		if (!task.isExpired())
 		{
-			_holder.computeIfAbsent(String.valueOf(task.getKey()), k => new ConcurrentHashMap<>()).put(task.getType(), task);
+			_holder.computeIfAbsent(task.getKey(), k => new()).put(task.getType(), task);
 		}
 	}
 	
@@ -27,7 +28,7 @@ public class PunishmentHolder
 	 */
 	public void stopPunishment(PunishmentTask task)
 	{
-		String key = String.valueOf(task.getKey());
+		String key = task.getKey();
 		if (_holder.containsKey(key))
 		{
 			task.stopPunishment();
@@ -49,7 +50,7 @@ public class PunishmentHolder
 				if (task.getType() == type)
 				{
 					task.stopPunishment();
-					String key = String.valueOf(task.getKey());
+					String key = task.getKey();
 					punishments.remove(task.getType());
 					if (punishments.isEmpty())
 					{

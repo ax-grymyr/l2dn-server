@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Model;
 public class WalkInfo
 {
 	private readonly String _routeName;
-	private ScheduledFuture<?> _walkCheckTask;
+	private ScheduledFuture _walkCheckTask;
 	private bool _blocked = false;
 	private bool _suspended = false;
 	private bool _stoppedByAttack = false;
@@ -193,7 +193,7 @@ public class WalkInfo
 	/**
 	 * @return walking check task.
 	 */
-	public ScheduledFuture<?> getWalkCheckTask()
+	public ScheduledFuture getWalkCheckTask()
 	{
 		return _walkCheckTask;
 	}
@@ -201,12 +201,12 @@ public class WalkInfo
 	/**
 	 * @param task walking check task.
 	 */
-	public void setWalkCheckTask(ScheduledFuture<?> task)
+	public void setWalkCheckTask(ScheduledFuture task)
 	{
 		_walkCheckTask = task;
 	}
 	
-	public override string toString()
+	public override string ToString()
 	{
 		return "WalkInfo [_routeName=" + _routeName + ", _walkCheckTask=" + _walkCheckTask + ", _blocked=" + _blocked +
 		       ", _suspended=" + _suspended + ", _stoppedByAttack=" + _stoppedByAttack + ", _currentNode=" +

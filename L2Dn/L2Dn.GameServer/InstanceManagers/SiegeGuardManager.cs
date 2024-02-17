@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -9,6 +10,7 @@ using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -31,23 +33,22 @@ public class SiegeGuardManager
 	
 	private void load()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = new();
-			ResultSet rs = con.createStatement().executeQuery("SELECT * FROM castle_siege_guards Where isHired = 1");
-			while (rs.next())
+			foreach (CastleSiegeGuard record in ctx.CastleSiegeGuards.Where(r => r.IsHired))
 			{
-				int npcId = rs.getInt("npcId");
-				int x = rs.getInt("x");
-				int y = rs.getInt("y");
-				int z = rs.getInt("z");
+				int npcId = record.NpcId;
+				int x = record.X;
+				int y = record.Y;
+				int z = record.Z;
 				Castle castle = CastleManager.getInstance().getCastle(x, y, z);
 				if (castle == null)
 				{
-					LOGGER.Warn("Siege guard ticket cannot be placed! Castle is null at X: " + x + ", Y: " + y + ", Z: " + z);
+					LOGGER.Error($"Siege guard ticket cannot be placed! Castle is null at X: {x}, Y: {y}, Z: {z}");
 					continue;
 				}
-				
+
 				SiegeGuardHolder holder = getSiegeGuardByNpc(castle.getResidenceId(), npcId);
 				if ((holder != null) && !castle.getSiege().isInProgress())
 				{
@@ -58,7 +59,8 @@ public class SiegeGuardManager
 					_droppedTickets.add(dropticket);
 				}
 			}
-			LOGGER.Info(GetType().Name +": Loaded " + _droppedTickets.Count + " siege guards tickets.");
+
+			LOGGER.Info(GetType().Name + ": Loaded " + _droppedTickets.Count + " siege guards tickets.");
 		}
 		catch (Exception e)
 		{
@@ -163,17 +165,19 @@ public class SiegeGuardManager
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				PreparedStatement statement = con.prepareStatement(
-					"Insert Into castle_siege_guards (castleId, npcId, x, y, z, heading, respawnDelay, isHired) Values (?, ?, ?, ?, ?, ?, ?, ?)");
-				statement.setInt(1, castle.getResidenceId());
-				statement.setInt(2, holder.getNpcId());
-				statement.setInt(3, player.getX());
-				statement.setInt(4, player.getY());
-				statement.setInt(5, player.getZ());
-				statement.setInt(6, player.getHeading());
-				statement.setInt(7, 0);
-				statement.setInt(8, 1);
-				statement.execute();
+				ctx.CastleSiegeGuards.Add(new CastleSiegeGuard()
+				{
+					CastleId = (short)castle.getResidenceId(),
+					NpcId = holder.getNpcId(),
+					X = player.getX(),
+					Y = player.getY(),
+					Z = player.getZ(),
+					Heading = player.getHeading(),
+					RespawnDelay = TimeSpan.Zero,
+					IsHired = true
+				});
+
+				ctx.SaveChanges();
 			}
 			catch (Exception e)
 			{
@@ -255,26 +259,21 @@ public class SiegeGuardManager
 	{
 		try 
 		{
+			int castleId = castle.getResidenceId();
+			bool isHired = castle.getOwnerId() > 0;
+
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement("SELECT * FROM castle_siege_guards Where castleId = ? And isHired = ?");
-			ps.setInt(1, castle.getResidenceId());
-			ps.setInt(2, castle.getOwnerId() > 0 ? 1 : 0);
-
-
+			foreach (CastleSiegeGuard record in ctx.CastleSiegeGuards.Where(r =>
+				         r.CastleId == castleId && r.IsHired == isHired))
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
-				{
-					Spawn spawn = new Spawn(rs.getInt("npcId"));
-					spawn.setAmount(1);
-					spawn.setXYZ(rs.getInt("x"), rs.getInt("y"), rs.getInt("z"));
-					spawn.setHeading(rs.getInt("heading"));
-					spawn.setRespawnDelay(rs.getInt("respawnDelay"));
-					spawn.setLocationId(0);
-					
-					getSpawnedGuards(castle.getResidenceId()).add(spawn);
-				}
+				Spawn spawn = new Spawn(record.NpcId);
+				spawn.setAmount(1);
+				spawn.setXYZ(record.X, record.Y, record.Z);
+				spawn.setHeading(record.Heading);
+				spawn.setRespawnDelay(record.RespawnDelay);
+				spawn.setLocationId(0);
+
+				getSpawnedGuards(castle.getResidenceId()).add(spawn);
 			}
 		}
 		catch (Exception e)
@@ -290,16 +289,14 @@ public class SiegeGuardManager
 	 */
 	public void removeSiegeGuard(int npcId, IPositionable pos)
 	{
-		try 
+		try
 		{
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(
-				"Delete From castle_siege_guards Where npcId = ? And x = ? AND y = ? AND z = ? AND isHired = 1");
-			ps.setInt(1, npcId);
-			ps.setInt(2, pos.getX());
-			ps.setInt(3, pos.getY());
-			ps.setInt(4, pos.getZ());
-			ps.execute();
+			ctx.CastleSiegeGuards.Where(r => r.NpcId == npcId && r.X == x && r.Y == y && r.Z == z).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -313,13 +310,11 @@ public class SiegeGuardManager
 	 */
 	public void removeSiegeGuards(Castle castle)
 	{
-		try 
+		try
 		{
+			int castleId = castle.getResidenceId();
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement("Delete From castle_siege_guards Where castleId = ? And isHired = 1");
-			ps.setInt(1, castle.getResidenceId());
-			ps.execute();
+			ctx.CastleSiegeGuards.Where(r => r.CastleId == castleId && r.IsHired).ExecuteDelete();
 		}
 		catch (Exception e)
 		{

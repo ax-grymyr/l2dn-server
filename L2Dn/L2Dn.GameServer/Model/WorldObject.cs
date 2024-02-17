@@ -227,7 +227,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	{
 	}
 	
-	public Player getActingPlayer()
+	public virtual Player getActingPlayer()
 	{
 		return null;
 	}

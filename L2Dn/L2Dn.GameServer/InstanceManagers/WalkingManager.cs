@@ -1,5 +1,8 @@
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers.Tasks;
@@ -12,6 +15,7 @@ using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -21,7 +25,7 @@ namespace L2Dn.GameServer.InstanceManagers;
  * This class manages walking monsters.
  * @author GKR
  */
-public class WalkingManager: IXmlReader
+public class WalkingManager: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(WalkingManager));
 	
@@ -31,7 +35,7 @@ public class WalkingManager: IXmlReader
 	// 1 - go to first point (circle style)
 	// 2 - teleport to first point (conveyor style)
 	// 3 - random walking between points.
-	public const byte NO_REPEAT = 255;
+	public const byte NO_REPEAT = 255; // TODO: enum
 	public const byte REPEAT_GO_BACK = 0;
 	public const byte REPEAT_GO_FIRST = 1;
 	public const byte REPEAT_TELE_FIRST = 2;
@@ -52,132 +56,107 @@ public class WalkingManager: IXmlReader
 	
 	public void load()
 	{
-		parseDatapackFile("data/Routes.xml");
+		LoadXmlDocument(DataFileLocation.Data, "Routes.xml").Elements("routes").Elements("route").ForEach(parseRoute);
 		LOGGER.Info(GetType().Name +": Loaded " + _routes.size() + " walking routes.");
 	}
-	
-	public void parseDocument(Document doc, File f)
+
+	private void parseRoute(XElement element)
 	{
-		for (Node d = doc.getFirstChild().getFirstChild(); d != null; d = d.getNextSibling())
+		string routeName = element.Attribute("name").GetString();
+		bool repeat = element.Attribute("repeat").GetBoolean();
+		string repeatStyle = element.Attribute("repeatStyle").GetString().ToLower();
+		byte repeatType;
+		switch (repeatStyle)
 		{
-			if (d.getNodeName().equals("route"))
+			case "back":
 			{
-				String routeName = parseString(d.getAttributes(), "name");
-				bool repeat = parseBoolean(d.getAttributes(), "repeat");
-				String repeatStyle = d.getAttributes().getNamedItem("repeatStyle").getNodeValue().toLowerCase();
-				byte repeatType;
-				switch (repeatStyle)
-				{
-					case "back":
-					{
-						repeatType = REPEAT_GO_BACK;
-						break;
-					}
-					case "cycle":
-					{
-						repeatType = REPEAT_GO_FIRST;
-						break;
-					}
-					case "conveyor":
-					{
-						repeatType = REPEAT_TELE_FIRST;
-						break;
-					}
-					case "random":
-					{
-						repeatType = REPEAT_RANDOM;
-						break;
-					}
-					default:
-					{
-						repeatType = NO_REPEAT;
-						break;
-					}
-				}
-				
-				List<NpcWalkerNode> list = new();
-				for (Node r = d.getFirstChild(); r != null; r = r.getNextSibling())
-				{
-					if (r.getNodeName().equals("point"))
-					{
-						NamedNodeMap attrs = r.getAttributes();
-						int x = parseInteger(attrs, "X");
-						int y = parseInteger(attrs, "Y");
-						int z = parseInteger(attrs, "Z");
-						int delay = parseInteger(attrs, "delay");
-						bool run = parseBoolean(attrs, "run");
-						NpcStringId npcString = null;
-						String chatString = null;
-						Node node = attrs.getNamedItem("string");
-						if (node != null)
-						{
-							chatString = node.getNodeValue();
-						}
-						else
-						{
-							node = attrs.getNamedItem("npcString");
-							if (node != null)
-							{
-								npcString = NpcStringId.getNpcStringId(node.getNodeValue());
-								if (npcString == null)
-								{
-									LOGGER.Warn(GetType().Name + ": Unknown npcString '" + node.getNodeValue() + "' for route '" + routeName + "'");
-									continue;
-								}
-							}
-							else
-							{
-								node = attrs.getNamedItem("npcStringId");
-								if (node != null)
-								{
-									npcString = NpcStringId.getNpcStringId(int.Parse(node.getNodeValue()));
-									if (npcString == null)
-									{
-										LOGGER.Warn(GetType().Name + ": Unknown npcString '" + node.getNodeValue() + "' for route '" + routeName + "'");
-										continue;
-									}
-								}
-							}
-						}
-						list.add(new NpcWalkerNode(x, y, z, delay, run, npcString, chatString));
-					}
-					
-					else if (r.getNodeName().equals("target"))
-					{
-						NamedNodeMap attrs = r.getAttributes();
-						try
-						{
-							int npcId = int.Parse(attrs.getNamedItem("id").getNodeValue());
-							int x = int.Parse(attrs.getNamedItem("spawnX").getNodeValue());
-							int y = int.Parse(attrs.getNamedItem("spawnY").getNodeValue());
-							int z = int.Parse(attrs.getNamedItem("spawnZ").getNodeValue());
-							if (NpcData.getInstance().getTemplate(npcId) != null)
-							{
-								NpcRoutesHolder holder = _routesToAttach.containsKey(npcId) ? _routesToAttach.get(npcId) : new NpcRoutesHolder();
-								holder.addRoute(routeName, new Location(x, y, z));
-								_routesToAttach.put(npcId, holder);
-								
-								if (!_targetedNpcIds.Contains(npcId))
-								{
-									_targetedNpcIds.add(npcId);
-								}
-							}
-							else
-							{
-								LOGGER.Warn(GetType().Name + ": NPC with id " + npcId + " for route '" + routeName + "' does not exist.");
-							}
-						}
-						catch (Exception e)
-						{
-							LOGGER.Warn(GetType().Name + ": Error in target definition for route '" + routeName + "'");
-						}
-					}
-				}
-				_routes.put(routeName, new WalkRoute(routeName, list, repeat, repeatType));
+				repeatType = REPEAT_GO_BACK;
+				break;
+			}
+			case "cycle":
+			{
+				repeatType = REPEAT_GO_FIRST;
+				break;
+			}
+			case "conveyor":
+			{
+				repeatType = REPEAT_TELE_FIRST;
+				break;
+			}
+			case "random":
+			{
+				repeatType = REPEAT_RANDOM;
+				break;
+			}
+			default:
+			{
+				repeatType = NO_REPEAT;
+				break;
 			}
 		}
+
+		List<NpcWalkerNode> list = new();
+		foreach (XElement r in element.Elements())
+		{
+			if (r.Name.LocalName.equals("point"))
+			{
+				int x = r.Attribute("X").GetInt32();
+				int y = r.Attribute("Y").GetInt32();
+				int z = r.Attribute("Z").GetInt32();
+				int delay = r.Attribute("delay").GetInt32();
+				bool run = r.Attribute("run").GetBoolean();
+				string? chatString = r.Attribute("string")?.GetString();
+				NpcStringId? npcString = (NpcStringId?)r.Attribute("npcString")?.GetInt32();
+				if (npcString is null)
+					npcString = (NpcStringId?)r.Attribute("npcStringId")?.GetInt32();
+
+				if (npcString is not null && !Enum.IsDefined(npcString.Value))
+				{
+					LOGGER.Error(GetType().Name + ": Unknown npcString '" + (int)npcString.Value + "' for route '" +
+					             routeName + "'");
+					continue;
+				}
+
+				list.add(new NpcWalkerNode(x, y, z, delay, run, npcString ?? 0, chatString));
+			}
+			else if (r.Name.LocalName.equals("target"))
+			{
+				try
+				{
+					int npcId = r.Attribute("id").GetInt32();
+					int x = r.Attribute("spawnX").GetInt32();
+					int y = r.Attribute("spawnY").GetInt32();
+					int z = r.Attribute("spawnZ").GetInt32();
+					if (NpcData.getInstance().getTemplate(npcId) != null)
+					{
+						NpcRoutesHolder holder = _routesToAttach.containsKey(npcId)
+							? _routesToAttach.get(npcId)
+							: new NpcRoutesHolder();
+						
+						holder.addRoute(routeName, new Location(x, y, z));
+						_routesToAttach.put(npcId, holder);
+
+						if (!_targetedNpcIds.Contains(npcId))
+						{
+							_targetedNpcIds.add(npcId);
+						}
+					}
+					else
+					{
+						LOGGER.Warn(GetType().Name + ": NPC with id " + npcId + " for route '" + routeName +
+						            "' does not exist.");
+					}
+				}
+				catch (Exception e)
+				{
+					LOGGER.Error(GetType().Name + ": Error in target definition for route '" + routeName + "': " + e);
+				}
+			}
+		}
+
+		_routes.put(routeName, new WalkRoute(routeName, list, repeat, repeatType));
 	}
-	
+
 	/**
 	 * @param npc NPC to check
 	 * @return {@code true} if given NPC, or its leader is controlled by Walking Manager and moves currently.

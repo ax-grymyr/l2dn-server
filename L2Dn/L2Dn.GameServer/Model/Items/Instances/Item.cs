@@ -92,7 +92,7 @@ public class Item: WorldObject
 	public static readonly int[] DEFAULT_ENCHANT_OPTIONS = { 0, 0, 0 };
 	//@formatter:on
 	
-	private int _lastChange = 2; // 1 ??, 2 modified, 3 removed
+	private ItemChangeType _lastChange = ItemChangeType.MODIFIED; // 1 added, 2 modified, 3 removed
 	private bool _existsInDb; // if a record exists in DB.
 	private bool _storedInDb; // if DB data is up-to-date.
 	
@@ -729,7 +729,7 @@ public class Item: WorldObject
 	/**
 	 * @return the last change of the item
 	 */
-	public int getLastChange()
+	public ItemChangeType getLastChange()
 	{
 		return _lastChange;
 	}
@@ -738,7 +738,7 @@ public class Item: WorldObject
 	 * Sets the last change of the item
 	 * @param lastChange : int
 	 */
-	public void setLastChange(int lastChange)
+	public void setLastChange(ItemChangeType lastChange)
 	{
 		_lastChange = lastChange;
 	}

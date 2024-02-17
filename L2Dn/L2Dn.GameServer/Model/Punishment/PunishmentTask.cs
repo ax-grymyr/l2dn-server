@@ -19,23 +19,22 @@ public class PunishmentTask: Runnable
 	private readonly String _key;
 	private readonly PunishmentAffect _affect;
 	private readonly PunishmentType _type;
-	private readonly long _expirationTime;
+	private readonly DateTime _expirationTime;
 	private readonly String _reason;
 	private readonly String _punishedBy;
 	private bool _isStored;
-	private ScheduledFuture<?> _task = null;
+	private ScheduledFuture _task = null;
 
-	public PunishmentTask(Object key, PunishmentAffect affect, PunishmentType type, long expirationTime, String reason,
-		String punishedBy)
+	public PunishmentTask(string key, PunishmentAffect affect, PunishmentType type, DateTime expirationTime, String reason,
+		String punishedBy): this(0, key, affect, type, expirationTime, reason, punishedBy, false)
 	{
-		this(0, key, affect, type, expirationTime, reason, punishedBy, false);
 	}
 
-	public PunishmentTask(int id, Object key, PunishmentAffect affect, PunishmentType type, long expirationTime,
+	public PunishmentTask(int id, string key, PunishmentAffect affect, PunishmentType type, DateTime expirationTime,
 		String reason, String punishedBy, bool isStored)
 	{
 		_id = id;
-		_key = String.valueOf(key);
+		_key = key;
 		_affect = affect;
 		_type = type;
 		_expirationTime = expirationTime;
@@ -48,7 +47,7 @@ public class PunishmentTask: Runnable
 	/**
 	 * @return affection value charId, account, ip, etc..
 	 */
-	public Object getKey()
+	public string getKey()
 	{
 		return _key;
 	}
@@ -72,7 +71,7 @@ public class PunishmentTask: Runnable
 	/**
 	 * @return milliseconds to the end of the current punishment, -1 for infinity.
 	 */
-	public long getExpirationTime()
+	public DateTime getExpirationTime()
 	{
 		return _expirationTime;
 	}
@@ -106,7 +105,7 @@ public class PunishmentTask: Runnable
 	 */
 	public bool isExpired()
 	{
-		return (_expirationTime > 0) && (System.currentTimeMillis() > _expirationTime);
+		return DateTime.UtcNow > _expirationTime;
 	}
 
 	/**

@@ -495,6 +495,27 @@ public class StatSet : IParserAdvUtils
 		}
 	}
 	
+	public DateTime getDateTime(String key, DateTime defaultValue)
+	{
+		Object val = _set.get(key);
+		if (val == null)
+		{
+			return defaultValue;
+		}
+		if (val is DateTime)
+		{
+			return ((DateTime) val);
+		}
+		try
+		{
+			return DateTime.Parse((String) val);
+		}
+		catch (Exception e)
+		{
+			throw new InvalidCastException("DateTime value required, but found: " + val);
+		}
+	}
+	
 	public long getLong(String key, long defaultValue)
 	{
 		Object val = _set.get(key);

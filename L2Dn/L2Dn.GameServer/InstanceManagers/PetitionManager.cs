@@ -1,4 +1,5 @@
 using System.Text;
+using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
@@ -330,13 +331,21 @@ public class PetitionManager
 		
 		return false;
 	}
-	
+
 	public void sendPendingPetitionList(Player player)
 	{
 		StringBuilder htmlContent = new StringBuilder(600 + (_pendingPetitions.size() * 300));
-		htmlContent.Append("<html><body><center><table width=270><tr><td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center>Petition Menu</center></td><td width=45><button value=\"Back\" action=\"bypass -h admin_admin7\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br><table width=\"270\"><tr><td><table width=\"270\"><tr><td><button value=\"Reset\" action=\"bypass -h admin_reset_petitions\" width=\"80\" height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td align=right><button value=\"Refresh\" action=\"bypass -h admin_view_petitions\" width=\"80\" height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br></td></tr>");
-		
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		htmlContent.Append(
+			"<html><body><center><table width=270><tr><td width=45><button value=\"Main\" action=\"bypass -h " +
+			"admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">" +
+			"</td><td width=180><center>Petition Menu</center></td><td width=45><button value=\"Back\" " +
+			"action=\"bypass -h admin_admin7\" width=45 height=21 back=\"L2UI_ct1.button_df\" " +
+			"fore=\"L2UI_ct1.button_df\"></td></tr></table><br><table width=\"270\"><tr><td>" +
+			"<table width=\"270\"><tr><td><button value=\"Reset\" action=\"bypass -h admin_reset_petitions\" " +
+			"width=\"80\" height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" +
+			"<td align=right><button value=\"Refresh\" action=\"bypass -h admin_view_petitions\" width=\"80\" " +
+			"height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br></td></tr>");
+
 		if (_pendingPetitions.isEmpty())
 		{
 			htmlContent.Append("<tr><td>There are no currently pending petitions.</td></tr>");
@@ -345,7 +354,7 @@ public class PetitionManager
 		{
 			htmlContent.Append("<tr><td><font color=\"LEVEL\">Current Petitions:</font><br></td></tr>");
 		}
-		
+
 		bool color = true;
 		int petcount = 0;
 		foreach (Petition currPetition in _pendingPetitions.values())
@@ -354,35 +363,48 @@ public class PetitionManager
 			{
 				continue;
 			}
-			
-			htmlContent.Append("<tr><td width=\"270\"><table width=\"270\" cellpadding=\"2\" bgcolor=" + (color ? "131210" : "444444") + "><tr><td width=\"130\">" + dateFormat.format(new Date(currPetition.getSubmitTime())));
-			htmlContent.Append("</td><td width=\"140\" align=right><font color=\"" + (currPetition.getPetitioner().isOnline() ? "00FF00" : "999999") + "\">" + currPetition.getPetitioner().getName() + "</font></td></tr>");
+
+			htmlContent.Append("<tr><td width=\"270\"><table width=\"270\" cellpadding=\"2\" bgcolor=" +
+			                   (color ? "131210" : "444444") + "><tr><td width=\"130\">" +
+			                   currPetition.getSubmitTime().ToString("yyyy-MM-dd HH:mm"));
+			htmlContent.Append("</td><td width=\"140\" align=right><font color=\"" +
+			                   (currPetition.getPetitioner().isOnline() ? "00FF00" : "999999") + "\">" +
+			                   currPetition.getPetitioner().getName() + "</font></td></tr>");
 			htmlContent.Append("<tr><td width=\"130\">");
 			if (currPetition.getState() != PetitionState.IN_PROCESS)
 			{
-				htmlContent.Append("<table width=\"130\" cellpadding=\"2\"><tr><td><button value=\"View\" action=\"bypass -h admin_view_petition " + currPetition.getId() + "\" width=\"50\" height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><button value=\"Reject\" action=\"bypass -h admin_reject_petition " + currPetition.getId() + "\" width=\"50\" height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table>");
+				htmlContent.Append(
+					"<table width=\"130\" cellpadding=\"2\"><tr><td><button value=\"View\" action=\"bypass -h " +
+					"admin_view_petition " + currPetition.getId() +
+					"\" width=\"50\" height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td>" +
+					"<button value=\"Reject\" action=\"bypass -h admin_reject_petition " + currPetition.getId() +
+					"\" width=\"50\" height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">" +
+					"</td></tr></table>");
 			}
 			else
 			{
-				htmlContent.Append("<font color=\"" + (currPetition.getResponder().isOnline() ? "00FF00" : "999999") + "\">" + currPetition.getResponder().getName() + "</font>");
+				htmlContent.Append("<font color=\"" + (currPetition.getResponder().isOnline() ? "00FF00" : "999999") +
+				                   "\">" + currPetition.getResponder().getName() + "</font>");
 			}
-			htmlContent.Append("</td>" + currPetition.getTypeAsString() + "<td width=\"140\" align=right>" + currPetition.getTypeAsString() + "</td></tr></table></td></tr>");
+
+			htmlContent.Append("</td>" + currPetition.getTypeAsString() + "<td width=\"140\" align=right>" +
+			                   currPetition.getTypeAsString() + "</td></tr></table></td></tr>");
 			color = !color;
 			petcount++;
 			if (petcount > 10)
 			{
-				htmlContent.Append("<tr><td><font color=\"LEVEL\">There is more pending petition...</font><br></td></tr>");
+				htmlContent.Append(
+					"<tr><td><font color=\"LEVEL\">There is more pending petition...</font><br></td></tr>");
 				break;
 			}
 		}
-		
+
 		htmlContent.Append("</table></center></body></html>");
-		
-		NpcHtmlMessage htmlMsg = new NpcHtmlMessage();
-		htmlMsg.setHtml(htmlContent.ToString());
+
+		NpcHtmlMessagePacket htmlMsg = new NpcHtmlMessagePacket(htmlContent.ToString());
 		player.sendPacket(htmlMsg);
 	}
-	
+
 	public int submitPetition(Player petitioner, String petitionText, int petitionType)
 	{
 		// Create a new petition instance and add it to the list of pending petitions.
@@ -409,15 +431,15 @@ public class PetitionManager
 		}
 		
 		Petition currPetition = _pendingPetitions.get(petitionId);
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-		NpcHtmlMessage html = new NpcHtmlMessage();
-		html.setFile(player, "data/html/admin/petition.htm");
-		html.replace("%petition%", String.valueOf(currPetition.getId()));
-		html.replace("%time%", dateFormat.format(new Date(currPetition.getSubmitTime())));
-		html.replace("%type%", currPetition.getTypeAsString());
-		html.replace("%petitioner%", currPetition.getPetitioner().getName());
-		html.replace("%online%", (currPetition.getPetitioner().isOnline() ? "00FF00" : "999999"));
-		html.replace("%text%", currPetition.getContent());
+
+		HtmlPacketHelper htmlPacketHelper = new(DataFileLocation.Data, "html/admin/petition.htm");
+		htmlPacketHelper.Replace("%petition%", currPetition.getId().ToString());
+		htmlPacketHelper.Replace("%time%", currPetition.getSubmitTime().ToString("yyyy-MM-dd HH:mm"));
+		htmlPacketHelper.Replace("%type%", currPetition.getTypeAsString());
+		htmlPacketHelper.Replace("%petitioner%", currPetition.getPetitioner().getName());
+		htmlPacketHelper.Replace("%online%", currPetition.getPetitioner().isOnline() ? "00FF00" : "999999");
+		htmlPacketHelper.Replace("%text%", currPetition.getContent());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(htmlPacketHelper);
 		player.sendPacket(html);
 	}
 	

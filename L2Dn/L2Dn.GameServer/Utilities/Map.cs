@@ -116,4 +116,16 @@ public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
     {
         return AddOrUpdate(key, newValue, (_, value) => func(newValue, value));
     }
+
+    public void replace(TKey key, TValue newValue)
+    {
+        if (containsKey(key))
+            this[key] = newValue;
+    }
+
+    public void replace(TKey key, TValue oldValue, TValue newValue)
+    {
+        if (TryGetValue(key, out TValue? value) && value.Equals(oldValue))
+            this[key] = newValue;
+    }
 }

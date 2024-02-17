@@ -1,5 +1,7 @@
 using System.Text;
+using System.Xml.Linq;
 using L2Dn.GameServer.Cache;
+using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
@@ -9,6 +11,7 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -18,7 +21,7 @@ namespace L2Dn.GameServer.InstanceManagers;
  * Sell Buffs Manager
  * @author St3eT
  */
-public class SellBuffsManager: IXmlReader
+public class SellBuffsManager: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SellBuffsManager));
 	private static readonly Set<int> ALLOWED_BUFFS = new();
@@ -34,19 +37,11 @@ public class SellBuffsManager: IXmlReader
 		if (Config.SELLBUFF_ENABLED)
 		{
 			ALLOWED_BUFFS.clear();
-			parseDatapackFile("data/SellBuffData.xml");
+
+			ALLOWED_BUFFS.addAll(LoadXmlDocument(DataFileLocation.Data, "SellBuffData.xml").Elements("list")
+				.Elements("skill").Attributes("id").Select(a => (int)a));
+			
 			LOGGER.Info(GetType().Name +": Loaded " + ALLOWED_BUFFS.Count + " allowed buffs.");
-		}
-	}
-	
-	public void parseDocument(Document doc, File f)
-	{
-		NodeList node = doc.getDocumentElement().getElementsByTagName("skill");
-		for (int i = 0; i < node.getLength(); ++i)
-		{
-			Element elem = (Element) node.item(i);
-			int skillId = int.Parse(elem.getAttribute("id"));
-			ALLOWED_BUFFS.add(skillId);
 		}
 	}
 	
@@ -59,14 +54,14 @@ public class SellBuffsManager: IXmlReader
 	public void sendBuffChoiceMenu(Player player, int index)
 	{
 		String html = HtmCache.getInstance().getHtm(player, HTML_FOLDER + "BuffChoice.html");
-		html = html.replace("%list%", buildSkillMenu(player, index));
+		html = html.Replace("%list%", buildSkillMenu(player, index));
 		CommunityBoardHandler.separateAndSend(html, player);
 	}
 	
 	public void sendBuffEditMenu(Player player)
 	{
 		String html = HtmCache.getInstance().getHtm(player, HTML_FOLDER + "BuffChoice.html");
-		html = html.replace("%list%", buildEditMenu(player));
+		html = html.Replace("%list%", buildEditMenu(player));
 		CommunityBoardHandler.separateAndSend(html, player);
 	}
 	
@@ -78,7 +73,7 @@ public class SellBuffsManager: IXmlReader
 		}
 		
 		String html = HtmCache.getInstance().getHtm(player, HTML_FOLDER + "BuffBuyMenu.html");
-		html = html.replace("%list%", buildBuffMenu(seller, index));
+		html = html.Replace("%list%", buildBuffMenu(seller, index));
 		CommunityBoardHandler.separateAndSend(html, player);
 	}
 	
@@ -90,7 +85,7 @@ public class SellBuffsManager: IXmlReader
 		player.getSellList().setTitle(title);
 		player.getSellList().setPackaged(true);
 		player.broadcastUserInfo();
-		player.broadcastPacket(new ExPrivateStoreSetWholeMsg(player));
+		player.broadcastPacket(new ExPrivateStoreSetWholeMsgPacket(player));
 		sendSellMenu(player);
 	}
 	

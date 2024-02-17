@@ -39,7 +39,7 @@ public class ItemInfo
 	private int _equipped;
 	
 	/** The action to do clientside (1=ADD, 2=MODIFY, 3=REMOVE) */
-	private int _change;
+	private ItemChangeType _change;
 	
 	/** The mana of this item */
 	private int _mana;
@@ -141,9 +141,8 @@ public class ItemInfo
 		_owner = item.getActingPlayer();
 	}
 	
-	public ItemInfo(Item item, int change)
+	public ItemInfo(Item item, ItemChangeType change): this(item)
 	{
-		this(item);
 		_change = change;
 		_visualExpiration = item.getVisualLifeTime() > 0 ? (item.getVisualLifeTime() - System.currentTimeMillis()) / 1000 : 0;
 	}

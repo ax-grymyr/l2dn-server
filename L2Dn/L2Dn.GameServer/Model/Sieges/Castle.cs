@@ -1,14 +1,21 @@
 using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
-using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Model.Zones.Types;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using FortManager = L2Dn.GameServer.Model.Actor.Instances.FortManager;
 using ThreadPool = System.Threading.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Sieges;
@@ -21,9 +28,9 @@ public class Castle: AbstractResidence
 	private readonly List<Npc> _sideNpcs = new();
 	int _ownerId = 0;
 	private Siege _siege = null;
-	private Calendar _siegeDate;
+	private DateTime _siegeDate;
 	private bool _isTimeRegistrationOver = true; // true if Castle Lords set the time, or 24h is elapsed after the siege
-	private Calendar _siegeTimeRegistrationEndDate; // last siege end date + 1 day
+	private DateTime _siegeTimeRegistrationEndDate; // last siege end date + 1 day
 	private CastleSide _castleSide = null;
 	private long _treasury = 0;
 	private bool _showNpcCrest = false;
@@ -837,7 +844,7 @@ public class Castle: AbstractResidence
 			{
 				clan.setCastleId(getResidenceId()); // Set has castle flag for new owner
 				clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
-				clan.broadcastToOnlineMembers(new PlaySound(1, "Siege_Victory", 0, 0, 0, 0, 0));
+				clan.broadcastToOnlineMembers(new PlaySoundPacket(1, "Siege_Victory", 0, 0, 0, 0, 0));
 			}
 		}
 		catch (Exception e)
@@ -904,7 +911,7 @@ public class Castle: AbstractResidence
 		return _siege;
 	}
 	
-	public Calendar getSiegeDate()
+	public DateTime getSiegeDate()
 	{
 		return _siegeDate;
 	}
@@ -919,12 +926,13 @@ public class Castle: AbstractResidence
 		_isTimeRegistrationOver = value;
 	}
 	
-	public Calendar getTimeRegistrationOverDate()
+	public DateTime getTimeRegistrationOverDate()
 	{
 		if (_siegeTimeRegistrationEndDate == null)
 		{
-			_siegeTimeRegistrationEndDate = Calendar.getInstance();
+			_siegeTimeRegistrationEndDate = DateTime.UtcNow;
 		}
+		
 		return _siegeTimeRegistrationEndDate;
 	}
 	

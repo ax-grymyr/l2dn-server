@@ -1,8 +1,10 @@
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -27,11 +29,9 @@ public class MentorManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			Statement statement = con.createStatement();
-			ResultSet rset = statement.executeQuery("SELECT * FROM character_mentees");
-			while (rset.next())
+			foreach (CharacterMentee mentee in ctx.CharacterMentees)
 			{
-				addMentor(rset.getInt("mentorId"), rset.getInt("charId"));
+				addMentor(mentee.MentorId, mentee.CharacterId);
 			}
 		}
 		catch (Exception e)
@@ -50,11 +50,7 @@ public class MentorManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement =
-				con.prepareStatement("DELETE FROM character_mentees WHERE mentorId = ? AND charId = ?");
-			statement.setInt(1, mentorId);
-			statement.setInt(2, menteeId);
-			statement.execute();
+			ctx.CharacterMentees.Where(r => r.MentorId == mentorId && r.CharacterId == menteeId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -71,11 +67,7 @@ public class MentorManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement =
-				con.prepareStatement("DELETE FROM character_mentees WHERE mentorId = ? AND charId = ?");
-			statement.setInt(1, mentorId);
-			statement.setInt(2, menteeId);
-			statement.execute();
+			ctx.CharacterMentees.Where(r => r.MentorId == mentorId && r.CharacterId == menteeId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -125,18 +117,18 @@ public class MentorManager
 		}
 	}
 	
-	public void setPenalty(int mentorId, long penalty)
+	public void setPenalty(int mentorId, TimeSpan penalty)
 	{
 		Player player = World.getInstance().getPlayer(mentorId);
 		PlayerVariables vars = player != null ? player.getVariables() : new PlayerVariables(mentorId);
-		vars.set("Mentor-Penalty-" + mentorId, String.valueOf(System.currentTimeMillis() + penalty));
+		vars.set("Mentor-Penalty-" + mentorId, DateTime.UtcNow + penalty);
 	}
 	
-	public long getMentorPenalty(int mentorId)
+	public DateTime getMentorPenalty(int mentorId)
 	{
 		Player player = World.getInstance().getPlayer(mentorId);
 		PlayerVariables vars = player != null ? player.getVariables() : new PlayerVariables(mentorId);
-		return vars.getLong("Mentor-Penalty-" + mentorId, 0);
+		return vars.getDateTime("Mentor-Penalty-" + mentorId, DateTime.MinValue);
 	}
 	
 	/**

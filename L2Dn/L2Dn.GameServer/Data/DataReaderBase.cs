@@ -31,7 +31,7 @@ public abstract class DataReaderBase
         return document;
     }
 
-    protected static string GetFullPath(DataFileLocation location, string relativePath) =>
+    public static string GetFullPath(DataFileLocation location, string relativePath) =>
         Path.Combine(location == DataFileLocation.Data ? Config.DATAPACK_ROOT_PATH : "config", relativePath);
 
     protected static Location parseLocation(XElement element)

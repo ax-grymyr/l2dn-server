@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Utilities;
@@ -34,28 +35,23 @@ public class PunishmentManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			Statement st = con.createStatement();
-			ResultSet rset = st.executeQuery("SELECT * FROM punishments");
-			while (rset.next())
+			foreach (DbPunishment record in ctx.Punishments)
 			{
-				int id = rset.getInt("id");
-				String key = rset.getString("key");
-				PunishmentAffect affect = PunishmentAffect.getByName(rset.getString("affect"));
-				PunishmentType type = PunishmentType.getByName(rset.getString("type"));
-				long expirationTime = rset.getLong("expiration");
-				String reason = rset.getString("reason");
-				String punishedBy = rset.getString("punishedBy");
-				if ((type != null) && (affect != null))
+				int id = record.Id;
+				String key = record.Key;
+				PunishmentAffect affect = (PunishmentAffect)record.Affect;
+				PunishmentType type = (PunishmentType)record.Type;
+				DateTime expirationTime = record.ExpirationTime;
+				String reason = record.Reason;
+				String punishedBy = record.PunishedBy;
+				if (DateTime.UtcNow > expirationTime) // expired task.
 				{
-					if ((expirationTime > 0) && (System.currentTimeMillis() > expirationTime)) // expired task.
-					{
-						expired++;
-					}
-					else
-					{
-						initiated++;
-						_tasks.get(affect).addPunishment(new PunishmentTask(id, key, affect, type, expirationTime, reason, punishedBy, true));
-					}
+					expired++;
+				}
+				else
+				{
+					initiated++;
+					_tasks.get(affect).addPunishment(new PunishmentTask(id, key, affect, type, expirationTime, reason, punishedBy, true));
 				}
 			}
 		}
@@ -81,7 +77,7 @@ public class PunishmentManager
 		}
 	}
 	
-	public void stopPunishment(Object key, PunishmentAffect affect, PunishmentType type)
+	public void stopPunishment(string key, PunishmentAffect affect, PunishmentType type)
 	{
 		PunishmentTask task = getPunishment(key, affect, type);
 		if (task != null)
@@ -90,21 +86,21 @@ public class PunishmentManager
 		}
 	}
 	
-	public bool hasPunishment(Object key, PunishmentAffect affect, PunishmentType type)
+	public bool hasPunishment(string key, PunishmentAffect affect, PunishmentType type)
 	{
 		PunishmentHolder holder = _tasks.get(affect);
-		return holder.hasPunishment(String.valueOf(key), type);
+		return holder.hasPunishment(key, type);
 	}
 	
-	public long getPunishmentExpiration(Object key, PunishmentAffect affect, PunishmentType type)
+	public DateTime? getPunishmentExpiration(string key, PunishmentAffect affect, PunishmentType type)
 	{
 		PunishmentTask p = getPunishment(key, affect, type);
-		return p != null ? p.getExpirationTime() : 0;
+		return p != null ? p.getExpirationTime() : null;
 	}
 	
-	private PunishmentTask getPunishment(Object key, PunishmentAffect affect, PunishmentType type)
+	private PunishmentTask getPunishment(string key, PunishmentAffect affect, PunishmentType type)
 	{
-		return _tasks.get(affect).getPunishment(String.valueOf(key), type);
+		return _tasks.get(affect).getPunishment(key, type);
 	}
 	
 	/**
