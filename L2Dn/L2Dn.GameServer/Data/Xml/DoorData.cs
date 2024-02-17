@@ -38,7 +38,7 @@ public class DoorData: DataReaderBase
 		LOGGER.Info(GetType().Name + ": Loaded " + _doors.size() + " doors.");
 	}
 	
-	private StatSet parseDoor(XElement doorNode)
+	public static StatSet parseDoor(XElement doorNode)
 	{
 		StatSet stat = new StatSet();
 		foreach (XAttribute attribute in doorNode.Attributes())
@@ -68,7 +68,7 @@ public class DoorData: DataReaderBase
 	/**
 	 * @param set
 	 */
-	private void applyCollisions(StatSet set)
+	private static void applyCollisions(StatSet set)
 	{
 		// Insert Collision data
 		if (set.Contains("nodeX_0") && set.Contains("nodeY_0") && set.Contains("nodeX_1") && set.Contains("nodeY_1"))

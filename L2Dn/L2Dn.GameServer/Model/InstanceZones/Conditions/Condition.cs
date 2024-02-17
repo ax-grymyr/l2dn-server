@@ -1,4 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Model.InstanceZones.Conditions;
 
@@ -12,8 +14,8 @@ public abstract class Condition
 	private readonly StatSet _parameters;
 	private readonly bool _leaderOnly;
 	private readonly bool _showMessageAndHtml;
-	private SystemMessageId _systemMsg = null;
-	private Action<SystemMessage, Player> _systemMsgParams = null;
+	private SystemMessageId? _systemMsg;
+	private Action<SystemMessagePacket, Player> _systemMsgParams;
 
 	/**
 	 * Create new condition
@@ -114,7 +116,7 @@ public abstract class Condition
 		// Send system message if condition has any
 		if (_systemMsg != null)
 		{
-			SystemMessage msg = new SystemMessage(_systemMsg);
+			SystemMessagePacket msg = new SystemMessagePacket(_systemMsg.Value);
 			if (_systemMsgParams != null)
 			{
 				_systemMsgParams(msg, member);
@@ -163,7 +165,7 @@ public abstract class Condition
 	 * @param msg identification code of system message
 	 * @param params function which set parameters to system message
 	 */
-	protected void setSystemMessage(SystemMessageId msg, Action<SystemMessage, Player> @params)
+	protected void setSystemMessage(SystemMessageId msg, Action<SystemMessagePacket, Player> @params)
 	{
 		setSystemMessage(msg);
 		_systemMsgParams = @params;

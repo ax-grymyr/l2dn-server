@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -7,9 +8,11 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets.Commission;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -26,21 +29,8 @@ public class ItemCommissionManager
 	private static readonly long MIN_REGISTRATION_AND_SALE_FEE = 1000;
 	private static readonly double REGISTRATION_FEE_PER_DAY = 0.0001;
 	private static readonly double SALE_FEE_PER_DAY = 0.005;
-	private static readonly int[] DURATION =
-	{
-		1,
-		3,
-		5,
-		7,
-		15,
-		30
-	};
-	
-	private const string SELECT_ALL_ITEMS = "SELECT * FROM `items` WHERE `loc` = ?";
-	private const string SELECT_ALL_COMMISSION_ITEMS = "SELECT * FROM `commission_items`";
-	private const string INSERT_COMMISSION_ITEM = "INSERT INTO `commission_items`(`item_object_id`, `price_per_unit`, `start_time`, `duration_in_days`, `discount_in_percentage`) VALUES (?, ?, ?, ?, ?)";
-	private const string DELETE_COMMISSION_ITEM = "DELETE FROM `commission_items` WHERE `commission_id` = ?";
-	
+	private static readonly int[] DURATION = [1, 3, 5, 7, 15, 30];
+
 	private readonly Map<long, CommissionItem> _commissionItems = new();
 	
 	protected ItemCommissionManager()
@@ -49,50 +39,43 @@ public class ItemCommissionManager
 		try
 		{
 			using GameServerDbContext ctx = new();
-			
+			foreach (DbItem item in ctx.Items.Where(r => r.Location == (int)ItemLocation.COMMISSION))
 			{
-				PreparedStatement ps = con.prepareStatement(SELECT_ALL_ITEMS)
-				ps.setString(1, ItemLocation.COMMISSION.name());
-
-				{
-					ResultSet rs = ps.executeQuery();
-					while (rs.next())
-					{
-						Item itemInstance = new Item(rs);
-						itemInstances.put(itemInstance.getObjectId(), itemInstance);
-					}
-				}
+				Item itemInstance = new Item(item);
+				itemInstances.put(itemInstance.getObjectId(), itemInstance);
 			}
-			
-			try
+
+			foreach (DbCommissionItem item in ctx.CommissionItems)
 			{
-				Statement st = con.createStatement();
-				ResultSet rs = st.executeQuery(SELECT_ALL_COMMISSION_ITEMS);
-				while (rs.next())
+				int commissionId = item.Id;
+				Item itemInstance = itemInstances.get(item.ItemObjectId);
+				if (itemInstance == null)
 				{
-					long commissionId = rs.getLong("commission_id");
-					Item itemInstance = itemInstances.get(rs.getInt("item_object_id"));
-					if (itemInstance == null)
-					{
-						LOGGER.Warn(GetType().Name + ": Failed loading commission item with commission id " + commissionId + " because item instance does not exist or failed to load.");
-						continue;
-					}
-					CommissionItem commissionItem = new CommissionItem(commissionId, itemInstance, rs.getLong("price_per_unit"), rs.getTimestamp("start_time").toInstant(), rs.getByte("duration_in_days"), rs.getByte("discount_in_percentage"));
-					_commissionItems.put(commissionItem.getCommissionId(), commissionItem);
-					if (commissionItem.getEndTime().isBefore(Instant.now()))
-					{
-						expireSale(commissionItem);
-					}
-					else
-					{
-						commissionItem.setSaleEndTask(ThreadPool.schedule(() => expireSale(commissionItem), Duration.between(Instant.now(), commissionItem.getEndTime()).toMillis()));
-					}
+					LOGGER.Error(GetType().Name + ": Failed loading commission item with commission id " + commissionId + " because item instance does not exist or failed to load.");
+					continue;
+				}
+
+				CommissionItem commissionItem = new CommissionItem(commissionId, itemInstance, item.PricePerUnit,
+					item.StartTime, item.DurationInDays, item.DiscountInPercentage);
+				
+				_commissionItems.put(commissionItem.getCommissionId(), commissionItem);
+				if (commissionItem.getEndTime() < DateTime.UtcNow)
+				{
+					expireSale(commissionItem);
+				}
+				else
+				{
+					TimeSpan delay = commissionItem.getEndTime() - DateTime.UtcNow;
+					if (delay < TimeSpan.Zero)
+						delay = TimeSpan.Zero;
+					
+					commissionItem.setSaleEndTask(ThreadPool.schedule(() => expireSale(commissionItem), delay));
 				}
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn(GetType().Name + ": Failed loading commission items." + e);
+			LOGGER.Error(GetType().Name + ": Failed loading commission items." + e);
 		}
 	}
 	
@@ -118,19 +101,20 @@ public class ItemCommissionManager
 		
 		if (commissionItems.isEmpty())
 		{
-			player.sendPacket(new ExResponseCommissionList(CommissionListReplyType.ITEM_DOES_NOT_EXIST));
+			player.sendPacket(new ExResponseCommissionListPacket(CommissionListReplyType.ITEM_DOES_NOT_EXIST));
 			return;
 		}
 		
-		int chunks = commissionItems.size() / ExResponseCommissionList.MAX_CHUNK_SIZE;
-		if (commissionItems.size() > (chunks * ExResponseCommissionList.MAX_CHUNK_SIZE))
+		int chunks = commissionItems.size() / ExResponseCommissionListPacket.MAX_CHUNK_SIZE;
+		if (commissionItems.size() > (chunks * ExResponseCommissionListPacket.MAX_CHUNK_SIZE))
 		{
 			chunks++;
 		}
 		
 		for (int i = chunks - 1; i >= 0; i--)
 		{
-			player.sendPacket(new ExResponseCommissionList(CommissionListReplyType.AUCTIONS, commissionItems, i, i * ExResponseCommissionList.MAX_CHUNK_SIZE));
+			player.sendPacket(new ExResponseCommissionListPacket(CommissionListReplyType.AUCTIONS, commissionItems, i,
+				i * ExResponseCommissionListPacket.MAX_CHUNK_SIZE));
 		}
 	}
 	
@@ -155,11 +139,11 @@ public class ItemCommissionManager
 		
 		if (!commissionItems.isEmpty())
 		{
-			player.sendPacket(new ExResponseCommissionList(CommissionListReplyType.PLAYER_AUCTIONS, commissionItems));
+			player.sendPacket(new ExResponseCommissionListPacket(CommissionListReplyType.PLAYER_AUCTIONS, commissionItems));
 		}
 		else
 		{
-			player.sendPacket(new ExResponseCommissionList(CommissionListReplyType.PLAYER_AUCTIONS_EMPTY));
+			player.sendPacket(new ExResponseCommissionListPacket(CommissionListReplyType.PLAYER_AUCTIONS_EMPTY));
 		}
 	}
 	
@@ -177,7 +161,7 @@ public class ItemCommissionManager
 		if (itemCount < 1)
 		{
 			player.sendPacket(SystemMessageId.THE_ITEM_HAS_FAILED_TO_BE_REGISTERED);
-			player.sendPacket(ExResponseCommissionRegister.FAILED);
+			player.sendPacket(ExResponseCommissionRegisterPacket.FAILED);
 			return;
 		}
 		
@@ -185,7 +169,7 @@ public class ItemCommissionManager
 		if (totalPrice <= MIN_REGISTRATION_AND_SALE_FEE)
 		{
 			player.sendPacket(SystemMessageId.THE_ITEM_CANNOT_BE_REGISTERED_BECAUSE_REQUIREMENTS_ARE_NOT_MET);
-			player.sendPacket(ExResponseCommissionRegister.FAILED);
+			player.sendPacket(ExResponseCommissionRegisterPacket.FAILED);
 			return;
 		}
 		
@@ -193,12 +177,12 @@ public class ItemCommissionManager
 		if ((itemInstance == null) || !itemInstance.isAvailable(player, false, false) || (itemInstance.getCount() < itemCount))
 		{
 			player.sendPacket(SystemMessageId.THE_ITEM_HAS_FAILED_TO_BE_REGISTERED);
-			player.sendPacket(ExResponseCommissionRegister.FAILED);
+			player.sendPacket(ExResponseCommissionRegisterPacket.FAILED);
 			return;
 		}
 		
 		byte durationInDays = (byte) DURATION[durationType];
-		
+
 		lock (this)
 		{
 			long playerRegisteredItems = 0;
@@ -209,31 +193,33 @@ public class ItemCommissionManager
 					playerRegisteredItems++;
 				}
 			}
-			
+
 			if (playerRegisteredItems >= MAX_ITEMS_REGISTRED_PER_PLAYER)
 			{
 				player.sendPacket(SystemMessageId.THE_MAXIMUM_NUMBER_OF_AUCTION_HOUSE_ITEMS_FOR_REGISTRATION_IS_10);
-				player.sendPacket(ExResponseCommissionRegister.FAILED);
+				player.sendPacket(ExResponseCommissionRegisterPacket.FAILED);
 				return;
 			}
-			
-			long registrationFee = (long) Math.Max(MIN_REGISTRATION_AND_SALE_FEE, (totalPrice * REGISTRATION_FEE_PER_DAY) * Math.Min(durationInDays, 7));
+
+			long registrationFee = (long)Math.Max(MIN_REGISTRATION_AND_SALE_FEE,
+				(totalPrice * REGISTRATION_FEE_PER_DAY) * Math.Min(durationInDays, (short)7));
 			if (!player.getInventory().reduceAdena("Commission Registration Fee", registrationFee, player, null))
 			{
 				player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA_TO_REGISTER_THE_ITEM);
-				player.sendPacket(ExResponseCommissionRegister.FAILED);
+				player.sendPacket(ExResponseCommissionRegisterPacket.FAILED);
 				return;
 			}
-			
-			itemInstance = player.getInventory().detachItem("Commission Registration", itemInstance, itemCount, ItemLocation.COMMISSION, player, null);
+
+			itemInstance = player.getInventory().detachItem("Commission Registration", itemInstance, itemCount,
+				ItemLocation.COMMISSION, player, null);
 			if (itemInstance == null)
 			{
 				player.getInventory().addAdena("Commission error refund", registrationFee, player, null);
 				player.sendPacket(SystemMessageId.THE_ITEM_HAS_FAILED_TO_BE_REGISTERED);
-				player.sendPacket(ExResponseCommissionRegister.FAILED);
+				player.sendPacket(ExResponseCommissionRegisterPacket.FAILED);
 				return;
 			}
-			
+
 			switch (Math.Max(durationType, discountInPercentage))
 			{
 				case 4:
@@ -257,39 +243,47 @@ public class ItemCommissionManager
 					break;
 				}
 			}
-			
-			try 
-			{
-				using GameServerDbContext ctx = new();
-				PreparedStatement ps = con.prepareStatement(INSERT_COMMISSION_ITEM, Statement.RETURN_GENERATED_KEYS);
-				Instant startTime = Instant.now();
-				ps.setInt(1, itemInstance.getObjectId());
-				ps.setLong(2, pricePerUnit);
-				ps.setTimestamp(3, Timestamp.from(startTime));
-				ps.setByte(4, durationInDays);
-				ps.setByte(5, discountInPercentage);
-				ps.executeUpdate();
 
+			try
+			{
+				DateTime startTime = DateTime.UtcNow;
+				using GameServerDbContext ctx = new();
+				DbCommissionItem dbCommissionItem = new DbCommissionItem()
 				{
-					ResultSet rs = ps.getGeneratedKeys();
-					if (rs.next())
-					{
-						CommissionItem commissionItem = new CommissionItem(rs.getLong(1), itemInstance, pricePerUnit, startTime, durationInDays, discountInPercentage);
-						ScheduledFuture<?> saleEndTask = ThreadPool.schedule(() => expireSale(commissionItem), Duration.between(Instant.now(), commissionItem.getEndTime()).toMillis());
-						commissionItem.setSaleEndTask(saleEndTask);
-						_commissionItems.put(commissionItem.getCommissionId(), commissionItem);
-						player.getLastCommissionInfos().put(itemInstance.getId(), new ExResponseCommissionInfo(itemInstance.getId(), pricePerUnit, itemCount, (byte) ((durationInDays - 1) / 2)));
-						player.sendPacket(SystemMessageId.THE_ITEM_HAS_BEEN_REGISTERED);
-						player.sendPacket(ExResponseCommissionRegister.SUCCEED);
-						
-					}
-				}
+					ItemObjectId = itemInstance.getObjectId(),
+					PricePerUnit = pricePerUnit,
+					StartTime = startTime,
+					DurationInDays = durationInDays,
+					DiscountInPercentage = discountInPercentage
+				};
+
+				ctx.CommissionItems.Add(dbCommissionItem);
+
+				ctx.SaveChanges();
+
+				int commissionId = dbCommissionItem.Id;
+
+				CommissionItem commissionItem = new CommissionItem(commissionId, itemInstance, pricePerUnit, startTime,
+					durationInDays, discountInPercentage);
+				
+				TimeSpan delay = commissionItem.getEndTime() - DateTime.UtcNow;
+				if (delay < TimeSpan.Zero)
+					delay = TimeSpan.Zero;
+
+				ScheduledFuture saleEndTask = ThreadPool.schedule(() => expireSale(commissionItem), delay);
+				commissionItem.setSaleEndTask(saleEndTask);
+				_commissionItems.put(commissionItem.getCommissionId(), commissionItem);
+				player.getLastCommissionInfos().put(itemInstance.getId(),
+					new ExResponseCommissionInfoPacket(itemInstance.getId(), pricePerUnit, itemCount,
+						(byte)((durationInDays - 1) / 2)));
+				player.sendPacket(SystemMessageId.THE_ITEM_HAS_BEEN_REGISTERED);
+				player.sendPacket(ExResponseCommissionRegisterPacket.SUCCEED);
 			}
 			catch (Exception e)
 			{
 				LOGGER.Warn(GetType().Name + ": Failed inserting commission item. ItemInstance: " + itemInstance, e);
 				player.sendPacket(SystemMessageId.THE_ITEM_HAS_FAILED_TO_BE_REGISTERED);
-				player.sendPacket(ExResponseCommissionRegister.FAILED);
+				player.sendPacket(ExResponseCommissionRegisterPacket.FAILED);
 			}
 		}
 	}
@@ -305,13 +299,13 @@ public class ItemCommissionManager
 		if (commissionItem == null)
 		{
 			player.sendPacket(SystemMessageId.FAILED_TO_CANCEL_THE_SALE);
-			player.sendPacket(ExResponseCommissionDelete.FAILED);
+			player.sendPacket(ExResponseCommissionDeletePacket.FAILED);
 			return;
 		}
 		
 		if (commissionItem.getItemInstance().getOwnerId() != player.getObjectId())
 		{
-			player.sendPacket(ExResponseCommissionDelete.FAILED);
+			player.sendPacket(ExResponseCommissionDeletePacket.FAILED);
 			return;
 		}
 		
@@ -319,14 +313,14 @@ public class ItemCommissionManager
 		{
 			player.sendPacket(SystemMessageId.TO_BUY_CANCEL_YOU_NEED_TO_FREE_20_OF_WEIGHT_AND_10_OF_SLOTS_IN_YOUR_INVENTORY);
 			player.sendPacket(SystemMessageId.FAILED_TO_CANCEL_THE_SALE);
-			player.sendPacket(ExResponseCommissionDelete.FAILED);
+			player.sendPacket(ExResponseCommissionDeletePacket.FAILED);
 			return;
 		}
 		
 		if ((_commissionItems.remove(commissionId) == null) || !commissionItem.getSaleEndTask().cancel(false))
 		{
 			player.sendPacket(SystemMessageId.FAILED_TO_CANCEL_THE_SALE);
-			player.sendPacket(ExResponseCommissionDelete.FAILED);
+			player.sendPacket(ExResponseCommissionDeletePacket.FAILED);
 			return;
 		}
 		
@@ -334,12 +328,12 @@ public class ItemCommissionManager
 		{
 			player.getInventory().addItem("Commission Cancellation", commissionItem.getItemInstance(), player, null);
 			player.sendPacket(SystemMessageId.THE_SALE_IS_CANCELLED);
-			player.sendPacket(ExResponseCommissionDelete.SUCCEED);
+			player.sendPacket(ExResponseCommissionDeletePacket.SUCCEED);
 		}
 		else
 		{
 			player.sendPacket(SystemMessageId.FAILED_TO_CANCEL_THE_SALE);
-			player.sendPacket(ExResponseCommissionDelete.FAILED);
+			player.sendPacket(ExResponseCommissionDeletePacket.FAILED);
 		}
 	}
 	
@@ -354,7 +348,7 @@ public class ItemCommissionManager
 		if (commissionItem == null)
 		{
 			player.sendPacket(SystemMessageId.ITEM_PURCHASE_HAS_FAILED);
-			player.sendPacket(ExResponseCommissionBuyItem.FAILED);
+			player.sendPacket(ExResponseCommissionBuyItemPacket.FAILED);
 			return;
 		}
 		
@@ -362,14 +356,14 @@ public class ItemCommissionManager
 		if (itemInstance.getOwnerId() == player.getObjectId())
 		{
 			player.sendPacket(SystemMessageId.ITEM_PURCHASE_HAS_FAILED);
-			player.sendPacket(ExResponseCommissionBuyItem.FAILED);
+			player.sendPacket(ExResponseCommissionBuyItemPacket.FAILED);
 			return;
 		}
 		
 		if (!player.isInventoryUnder80(false) || (player.getWeightPenalty() >= 3))
 		{
 			player.sendPacket(SystemMessageId.TO_BUY_CANCEL_YOU_NEED_TO_FREE_20_OF_WEIGHT_AND_10_OF_SLOTS_IN_YOUR_INVENTORY);
-			player.sendPacket(ExResponseCommissionBuyItem.FAILED);
+			player.sendPacket(ExResponseCommissionBuyItemPacket.FAILED);
 			return;
 		}
 		
@@ -377,7 +371,7 @@ public class ItemCommissionManager
 		if (!player.getInventory().reduceAdena("Commission Registration Fee", totalPrice, player, null))
 		{
 			player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA);
-			player.sendPacket(ExResponseCommissionBuyItem.FAILED);
+			player.sendPacket(ExResponseCommissionBuyItemPacket.FAILED);
 			return;
 		}
 		
@@ -385,7 +379,7 @@ public class ItemCommissionManager
 		{
 			player.getInventory().addAdena("Commission error refund", totalPrice, player, null);
 			player.sendPacket(SystemMessageId.ITEM_PURCHASE_HAS_FAILED);
-			player.sendPacket(ExResponseCommissionBuyItem.FAILED);
+			player.sendPacket(ExResponseCommissionBuyItemPacket.FAILED);
 			return;
 		}
 		
@@ -400,13 +394,13 @@ public class ItemCommissionManager
 			attachement.addItem("Commission Item Sold", Inventory.ADENA_ID, (totalPrice - saleFee) + addDiscount, player, null);
 			MailManager.getInstance().sendMessage(mail);
 			
-			player.sendPacket(new ExResponseCommissionBuyItem(commissionItem));
+			player.sendPacket(new ExResponseCommissionBuyItemPacket(commissionItem));
 			player.getInventory().addItem("Commission Buy Item", commissionItem.getItemInstance(), player, null);
 		}
 		else
 		{
 			player.getInventory().addAdena("Commission error refund", totalPrice, player, null);
-			player.sendPacket(ExResponseCommissionBuyItem.FAILED);
+			player.sendPacket(ExResponseCommissionBuyItemPacket.FAILED);
 		}
 	}
 	
@@ -420,9 +414,8 @@ public class ItemCommissionManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(DELETE_COMMISSION_ITEM);
-			ps.setLong(1, commissionId);
-			if (ps.executeUpdate() > 0)
+			int deleted = ctx.CommissionItems.Where(c => c.Id == commissionId).ExecuteDelete();				
+			if (deleted > 0)
 			{
 				return true;
 			}

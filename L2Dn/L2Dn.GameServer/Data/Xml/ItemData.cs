@@ -18,6 +18,7 @@ using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Stats.Functions;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
@@ -210,7 +211,7 @@ public class ItemData: DataReaderBase
 						condition.setMessage(msg);
 					else if (condition != null && msgId != null)
 					{
-						condition.setMessageId(int.Parse(msgId));
+						condition.setMessageId((SystemMessageId)int.Parse(msgId));
 						string? addName = conditionEl.Attribute("addName").GetString();
 						if ((addName != null) && (int.Parse(msgId) > 0))
 							condition.addName();

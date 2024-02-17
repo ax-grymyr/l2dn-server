@@ -37,11 +37,15 @@ public class ScheduledFuture
         }
     }
 
-    public void cancel(bool mayInterruptIfRunning)
+    public bool cancel(bool mayInterruptIfRunning)
     {
+        if (_cancelled || _done)
+            return false;
+        
         _timer.Change(Timeout.Infinite, Timeout.Infinite);
         _timer.Dispose();
         _cancelled = true;
+        return true;
     }
 
     public bool isCancelled()
@@ -52,5 +56,10 @@ public class ScheduledFuture
     public bool isDone()
     {
         return _done;
+    }
+
+    public TimeSpan getDelay()
+    {
+        throw new NotImplementedException();
     }
 }

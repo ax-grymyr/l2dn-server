@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network.Enums;
 
 namespace L2Dn.GameServer.Model.InstanceZones.Conditions;
 
@@ -15,7 +16,7 @@ public class ConditionCommandChannel: Condition
 			.YOU_CANNOT_ENTER_BECAUSE_YOU_ARE_NOT_ASSOCIATED_WITH_THE_CURRENT_COMMAND_CHANNEL);
 	}
 
-	public override bool test(Player player, Npc npc)
+	protected override bool test(Player player, Npc npc)
 	{
 		return player.isInCommandChannel();
 	}

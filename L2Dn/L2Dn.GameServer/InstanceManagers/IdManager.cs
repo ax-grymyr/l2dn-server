@@ -1,8 +1,10 @@
 using System.Runtime.CompilerServices;
 using System.Text;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -13,7 +15,6 @@ public class IdManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(IdManager));
 	
-	//@formatter:off
 	private static readonly string[][] ID_EXTRACTS =
 	{
 		["characters","charId"],
@@ -22,7 +23,6 @@ public class IdManager
 		["itemsonground","object_id"],
 		["messages","messageId"]
 	};
-	//@formatter:on
 	
 	private static readonly string[] TIMESTAMPS_CLEAN =
 	{
@@ -59,8 +59,8 @@ public class IdManager
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				Statement statement = con.createStatement();
-				long cleanupStart = System.currentTimeMillis();
+
+				DateTime cleanupStart = DateTime.UtcNow;
 				int cleanCount = 0;
 				
 				// Characters
@@ -134,7 +134,7 @@ public class IdManager
 				statement.executeUpdate("UPDATE characters SET clanid=0, clan_privs=0, wantspeace=0, subpledge=0, lvl_joined_academy=0, apprentice=0, sponsor=0, clan_join_expiry_time=0, clan_create_expiry_time=0 WHERE characters.clanid > 0 AND characters.clanid NOT IN (SELECT clan_id FROM clan_data);");
 				statement.executeUpdate("UPDATE fort SET owner=0 WHERE owner NOT IN (SELECT clan_id FROM clan_data);");
 				
-				LOGGER.Info("IdManager: Cleaned " + cleanCount + " elements from database in " + ((System.currentTimeMillis() - cleanupStart) / 1000) + " seconds.");
+				LOGGER.Info("IdManager: Cleaned " + cleanCount + " elements from database in " + ((DateTime.UtcNow - cleanupStart) / 1000) + " seconds.");
 			}
 			catch (Exception e)
 			{
@@ -263,7 +263,7 @@ public class IdManager
 			}
 			else
 			{
-				throw new NullPointerException("IdManager: Ran out of valid ids.");
+				throw new InvalidOperationException("IdManager: Ran out of valid ids.");
 			}
 		}
 		_nextFreeId.set(nextFree);

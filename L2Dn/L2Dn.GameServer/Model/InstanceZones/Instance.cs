@@ -1,14 +1,23 @@
 using System.Runtime.CompilerServices;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Instances;
+using L2Dn.GameServer.Model.Events.Returns;
 using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.GameServer.Model.Spawns;
+using L2Dn.GameServer.Model.Variables;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.InstanceZones;
 
@@ -18,13 +27,13 @@ namespace L2Dn.GameServer.Model.InstanceZones;
  */
 public class Instance : IIdentifiable, INamable
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Instance)));
+	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Instance));
 	
 	// Basic instance parameters
 	private readonly int _id;
 	private readonly InstanceTemplate _template;
-	private readonly long _startTime;
-	private long _endTime;
+	private readonly DateTime _startTime;
+	private DateTime? _endTime;
 	// Advanced instance parameters
 	private readonly Set<int> _allowed = new(); // Player ids which can enter to instance
 	private readonly Set<Player> _players = new(); // Players inside instance
@@ -32,9 +41,9 @@ public class Instance : IIdentifiable, INamable
 	private readonly Map<int, Door> _doors = new(); // Spawned doors inside instance
 	private readonly StatSet _parameters = new StatSet();
 	// Timers
-	private readonly Map<int, ScheduledFuture<?>> _ejectDeadTasks = new();
-	private ScheduledFuture<?> _cleanUpTask = null;
-	private ScheduledFuture<?> _emptyDestroyTask = null;
+	private readonly Map<int, ScheduledFuture> _ejectDeadTasks = new();
+	private ScheduledFuture _cleanUpTask = null;
+	private ScheduledFuture _emptyDestroyTask = null;
 	private readonly List<SpawnTemplate> _spawns;
 	
 	/**
@@ -48,7 +57,7 @@ public class Instance : IIdentifiable, INamable
 		// Set basic instance info
 		_id = id;
 		_template = template;
-		_startTime = System.currentTimeMillis();
+		_startTime = DateTime.UtcNow;
 		_spawns = new(template.getSpawns().size());
 		
 		// Clone and add the spawn templates
@@ -124,7 +133,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public void setParameter(String key, bool value)
 	{
-		_parameters.set(key, value ? Boolean.TRUE : Boolean.FALSE);
+		_parameters.set(key, value);
 	}
 	
 	/**
@@ -186,7 +195,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public void addAllowed(Player player)
 	{
-		if (!_allowed.contains(player.getObjectId()))
+		if (!_allowed.Contains(player.getObjectId()))
 		{
 			_allowed.add(player.getObjectId());
 		}
@@ -199,7 +208,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public bool isAllowed(Player player)
 	{
-		return _allowed.contains(player.getObjectId());
+		return _allowed.Contains(player.getObjectId());
 	}
 	
 	/**
@@ -243,14 +252,14 @@ public class Instance : IIdentifiable, INamable
 		_players.remove(player);
 		if (_players.isEmpty())
 		{
-			long emptyTime = _template.getEmptyDestroyTime();
-			if ((_template.getDuration() == 0) || (emptyTime == 0))
+			TimeSpan emptyTime = _template.getEmptyDestroyTime();
+			if ((_template.getDuration() == TimeSpan.Zero) || (emptyTime == TimeSpan.Zero))
 			{
 				destroy();
 			}
-			else if ((emptyTime >= 0) && (_emptyDestroyTask == null) && (getRemainingTime() < emptyTime))
+			else if ((emptyTime >= TimeSpan.Zero) && (_emptyDestroyTask == null) && (getRemainingTime() < emptyTime))
 			{
-				_emptyDestroyTask = ThreadPool.schedule(this::destroy, emptyTime);
+				_emptyDestroyTask = ThreadPool.schedule(destroy, emptyTime);
 			}
 		}
 	}
@@ -262,7 +271,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public bool containsPlayer(Player player)
 	{
-		return _players.contains(player);
+		return _players.Contains(player);
 	}
 	
 	/**
@@ -322,7 +331,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public List<Player> getPlayersInsideRadius(ILocational @object, int radius)
 	{
-		List<Player> result = new LinkedList<>();
+		List<Player> result = new();
 		foreach (Player player in _players)
 		{
 			if (player.isInsideRadius3D(@object, radius))
@@ -508,7 +517,7 @@ public class Instance : IIdentifiable, INamable
 		if (spawns == null)
 		{
 			LOGGER.Warn("Spawn group " + name + " doesn't exist for instance " + _template.getName() + " (" + _id + ")!");
-			return Collections.emptyList();
+			return new();
 		}
 		
 		List<Npc> npcs = new();
@@ -517,7 +526,7 @@ public class Instance : IIdentifiable, INamable
 			foreach (SpawnGroup holder in spawns)
 			{
 				holder.spawnAll(this);
-				holder.getSpawns().forEach(spawn -> npcs.addAll(spawn.getSpawnedNpcs()));
+				holder.getSpawns().forEach(spawn => npcs.AddRange(spawn.getSpawnedNpcs()));
 			}
 		}
 		catch (Exception e)
@@ -567,9 +576,9 @@ public class Instance : IIdentifiable, INamable
 	public List<Npc> getNpcs(params int[] id)
 	{
 		List<Npc> result = new();
-		foreach (Npc npc in _npcs.Keys)
+		foreach (Npc npc in _npcs)
 		{
-			if (CommonUtil.contains(id, npc.getId()))
+			if (Array.IndexOf(id, npc.getId()) >= 0)
 			{
 				result.Add(npc);
 			}
@@ -588,11 +597,11 @@ public class Instance : IIdentifiable, INamable
 		where T: Npc
 	{
 		List<T> result = new();
-		foreach (Npc npc in _npcs.Keys)
+		foreach (Npc npc in _npcs)
 		{
-			if (((ids.Length == 0) || CommonUtil.contains(ids, npc.getId())) && (npc is T))
+			if ((ids.Length == 0 || Array.IndexOf(ids, npc.getId()) >= 0) && npc is T npc1)
 			{
-				result.Add((T) npc);
+				result.Add(npc1);
 			}
 		}
 		return result;
@@ -605,7 +614,7 @@ public class Instance : IIdentifiable, INamable
 	public List<Npc> getAliveNpcs()
 	{
 		List<Npc> result = new();
-		foreach (Npc npc in _npcs.Keys)
+		foreach (Npc npc in _npcs)
 		{
 			if (npc.getCurrentHp() > 0)
 			{
@@ -623,9 +632,9 @@ public class Instance : IIdentifiable, INamable
 	public List<Npc> getAliveNpcs(params int[] id)
 	{
 		List<Npc> result = new();
-		foreach (Npc npc in _npcs.Keys)
+		foreach (Npc npc in _npcs)
 		{
-			if ((npc.getCurrentHp() > 0) && CommonUtil.contains(id, npc.getId()))
+			if ((npc.getCurrentHp() > 0) && Array.IndexOf(id, npc.getId()) >= 0)
 			{
 				result.Add(npc);
 			}
@@ -644,11 +653,11 @@ public class Instance : IIdentifiable, INamable
 		where T: Npc
 	{
 		List<T> result = new();
-		foreach (Npc npc in _npcs.Keys)
+		foreach (Npc npc in _npcs)
 		{
-			if ((((ids.Length == 0) || CommonUtil.contains(ids, npc.getId())) && (npc.getCurrentHp() > 0)) && (npc is T))
+			if ((ids.Length == 0 || Array.IndexOf(ids, npc.getId()) >= 0) && npc.getCurrentHp() > 0 && npc is T npc1)
 			{
-				result.Add((T) npc);
+				result.Add(npc1);
 			}
 		}
 		return result;
@@ -661,7 +670,7 @@ public class Instance : IIdentifiable, INamable
 	public int getAliveNpcCount()
 	{
 		int count = 0;
-		foreach (Npc npc in _npcs.Keys)
+		foreach (Npc npc in _npcs)
 		{
 			if (npc.getCurrentHp() > 0)
 			{
@@ -679,9 +688,9 @@ public class Instance : IIdentifiable, INamable
 	public int getAliveNpcCount(params int[] id)
 	{
 		int count = 0;
-		foreach (Npc npc in _npcs.Keys)
+		foreach (Npc npc in _npcs)
 		{
-			if ((npc.getCurrentHp() > 0) && CommonUtil.contains(id, npc.getId()))
+			if ((npc.getCurrentHp() > 0) && Array.IndexOf(id, npc.getId()) >= 0)
 			{
 				count++;
 			}
@@ -696,7 +705,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public Npc getNpc(int id)
 	{
-		foreach (Npc npc in _npcs.Keys)
+		foreach (Npc npc in _npcs)
 		{
 			if (npc.getId() == id)
 			{
@@ -721,7 +730,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	private void removePlayers()
 	{
-		_players.ForEach(this::ejectPlayer);
+		_players.ForEach(ejectPlayer);
 		_players.clear();
 	}
 	
@@ -746,7 +755,7 @@ public class Instance : IIdentifiable, INamable
 	public void removeNpcs()
 	{
 		_spawns.ForEach(x => x.despawnAll());
-		_npcs.ForEach(Npc::deleteMe);
+		_npcs.ForEach(x => x.deleteMe());
 		_npcs.clear();
 	}
 	
@@ -754,45 +763,44 @@ public class Instance : IIdentifiable, INamable
 	 * Change instance duration.
 	 * @param minutes remaining time to destroy instance
 	 */
-	public void setDuration(int minutes)
+	public void setDuration(TimeSpan? duration)
 	{
 		// Instance never ends
-		if (minutes < 0)
+		if (duration is null)
 		{
-			_endTime = -1;
+			_endTime = null;
 			return;
 		}
 		
 		// Stop running tasks
-		long millis = TimeUnit.MINUTES.toMillis(minutes);
 		if (_cleanUpTask != null)
 		{
 			_cleanUpTask.cancel(true);
 			_cleanUpTask = null;
 		}
 		
-		if ((_emptyDestroyTask != null) && (millis < _emptyDestroyTask.getDelay(TimeUnit.MILLISECONDS)))
+		if ((_emptyDestroyTask != null) && (duration.Value < _emptyDestroyTask.getDelay()))
 		{
 			_emptyDestroyTask.cancel(true);
 			_emptyDestroyTask = null;
 		}
 		
 		// Set new cleanup task
-		_endTime = System.currentTimeMillis() + millis;
-		if (minutes < 1) // Destroy instance
+		_endTime = DateTime.UtcNow + duration.Value;
+		if (duration.Value <= TimeSpan.Zero) // Destroy instance
 		{
 			destroy();
 		}
 		else
 		{
-			sendWorldDestroyMessage(minutes);
-			if (minutes <= 5) // Message 1 minute before destroy
+			sendWorldDestroyMessage(duration.Value);
+			if (duration.Value <= TimeSpan.FromMinutes(5)) // Message 1 minute before destroy
 			{
-				_cleanUpTask = ThreadPool.schedule(this::cleanUp, millis - 60000);
+				_cleanUpTask = ThreadPool.schedule(cleanUp, duration.Value - TimeSpan.FromMinutes(1));
 			}
 			else // Message 5 minutes before destroy
 			{
-				_cleanUpTask = ThreadPool.schedule(this::cleanUp, millis - (5 * 60000));
+				_cleanUpTask = ThreadPool.schedule(cleanUp, duration.Value - TimeSpan.FromMinutes(5));
 			}
 		}
 	}
@@ -822,7 +830,7 @@ public class Instance : IIdentifiable, INamable
 		// Notify DP scripts
 		if (!isDynamic() && EventDispatcher.getInstance().hasListener(EventType.ON_INSTANCE_DESTROY, _template))
 		{
-			EventDispatcher.getInstance().notifyEvent(new OnInstanceDestroy(this), _template);
+			EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(new OnInstanceDestroy(this), _template);
 		}
 		
 		removePlayers();
@@ -839,7 +847,7 @@ public class Instance : IIdentifiable, INamable
 	public void ejectPlayer(Player player)
 	{
 		Instance world = player.getInstanceWorld();
-		if ((world != null) && world.equals(this))
+		if ((world != null) && world == this)
 		{
 			Location loc = _template.getExitLocation(player);
 			if (loc != null)
@@ -857,22 +865,16 @@ public class Instance : IIdentifiable, INamable
 	 * Send packet to each player from instance world.
 	 * @param packets packets to be send
 	 */
-	public void broadcastPacket(params ServerPacket[] packets)
+	public PacketSendUtil broadcastPacket()
 	{
-		foreach (Player player in _players.Keys)
-		{
-			foreach (ServerPacket packet in packets)
-			{
-				player.sendPacket(packet);
-			}
-		}
+		return new PacketSendUtil(_players);
 	}
 	
 	/**
 	 * Get instance creation time.
 	 * @return creation time in milliseconds
 	 */
-	public long getStartTime()
+	public DateTime getStartTime()
 	{
 		return _startTime;
 	}
@@ -881,25 +883,25 @@ public class Instance : IIdentifiable, INamable
 	 * Get elapsed time since instance create.
 	 * @return elapsed time in milliseconds
 	 */
-	public long getElapsedTime()
+	public TimeSpan getElapsedTime()
 	{
-		return System.currentTimeMillis() - _startTime;
+		return DateTime.UtcNow - _startTime;
 	}
 	
 	/**
 	 * Get remaining time before instance will be destroyed.
 	 * @return remaining time in milliseconds if duration is not equal to -1, otherwise -1
 	 */
-	public long getRemainingTime()
+	public TimeSpan? getRemainingTime()
 	{
-		return (_endTime == -1) ? -1 : (_endTime - System.currentTimeMillis());
+		return _endTime is null ? null : (_endTime.Value - DateTime.UtcNow);
 	}
 	
 	/**
 	 * Get instance destroy time.
 	 * @return destroy time in milliseconds if duration is not equal to -1, otherwise -1
 	 */
-	public long getEndTime()
+	public DateTime? getEndTime()
 	{
 		return _endTime;
 	}
@@ -917,10 +919,10 @@ public class Instance : IIdentifiable, INamable
 	 * Set reenter penalty for players associated with current instance.
 	 * @param time penalty time in milliseconds since January 1, 1970
 	 */
-	public void setReenterTime(long time)
+	public void setReenterTime(DateTime time)
 	{
 		// Cannot store reenter data for instance without template id.
-		if ((_template.getId() == -1) && (time > 0))
+		if (_template.getId() == -1)
 		{
 			return;
 		}
@@ -928,29 +930,31 @@ public class Instance : IIdentifiable, INamable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement(
-					"INSERT IGNORE INTO character_instance_time (charId,instanceId,time) VALUES (?,?,?)");
 			
 			// Save to database
 			foreach (int playerId in _allowed)
 			{
-				ps.setInt(1, playerId);
-				ps.setInt(2, _template.getId());
-				ps.setLong(3, time);
-				ps.addBatch();
+				ctx.CharacterInstances.Add(new CharacterInstance()
+				{
+					CharacterId = playerId,
+					InstanceId = _template.getId(),
+					Time = time
+				});
 			}
-			ps.executeBatch();
+
+			ctx.SaveChanges();
 			
 			// Save to memory and send message to player
-			SystemMessage msg = new SystemMessage(SystemMessageId.INSTANCE_ZONE_S1_S_ENTRY_HAS_BEEN_RESTRICTED_YOU_CAN_CHECK_THE_NEXT_POSSIBLE_ENTRY_TIME_WITH_INSTANCEZONE);
+			SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId
+				.INSTANCE_ZONE_S1_S_ENTRY_HAS_BEEN_RESTRICTED_YOU_CAN_CHECK_THE_NEXT_POSSIBLE_ENTRY_TIME_WITH_INSTANCEZONE);
+			
 			if (InstanceManager.getInstance().getInstanceName(getTemplateId()) != null)
 			{
-				msg.addInstanceName(_template.getId());
+				msg.Params.addInstanceName(_template.getId());
 			}
 			else
 			{
-				msg.addString(_template.getName());
+				msg.Params.addString(_template.getName());
 			}
 			_allowed.ForEach(playerId =>
 			{
@@ -974,7 +978,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public void finishInstance()
 	{
-		finishInstance(Config.INSTANCE_FINISH_TIME);
+		finishInstance(TimeSpan.FromMinutes(Config.INSTANCE_FINISH_TIME));
 	}
 	
 	/**
@@ -983,7 +987,7 @@ public class Instance : IIdentifiable, INamable
 	 * Change duration of instance and set empty destroy time to 0 (instant effect).
 	 * @param delay delay in minutes
 	 */
-	public void finishInstance(int delay)
+	public void finishInstance(TimeSpan delay)
 	{
 		// Set re-enter for players
 		if (_template.getReenterType() == InstanceReenterType.ON_FINISH)
@@ -1006,8 +1010,8 @@ public class Instance : IIdentifiable, INamable
 		if (!player.isOnEvent() && (_template.getEjectTime() > 0))
 		{
 			// Send message
-			SystemMessage sm = new SystemMessage(SystemMessageId.IF_YOU_ARE_NOT_RESURRECTED_IN_S1_MIN_YOU_WILL_BE_TELEPORTED_OUT_OF_THE_INSTANCE_ZONE);
-			sm.addInt(_template.getEjectTime());
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.IF_YOU_ARE_NOT_RESURRECTED_IN_S1_MIN_YOU_WILL_BE_TELEPORTED_OUT_OF_THE_INSTANCE_ZONE);
+			sm.Params.addInt(_template.getEjectTime());
 			player.sendPacket(sm);
 			
 			// Start eject task
@@ -1027,7 +1031,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public void doRevive(Player player)
 	{
-		ScheduledFuture<?> task = _ejectDeadTasks.remove(player.getObjectId());
+		ScheduledFuture task = _ejectDeadTasks.remove(player.getObjectId());
 		if (task != null)
 		{
 			task.cancel(true);
@@ -1238,15 +1242,15 @@ public class Instance : IIdentifiable, INamable
 	 */
 	private void cleanUp()
 	{
-		if (getRemainingTime() <= TimeUnit.MINUTES.toMillis(1))
+		if (getRemainingTime() <= TimeSpan.FromMinutes(1))
 		{
-			sendWorldDestroyMessage(1);
-			_cleanUpTask = ThreadPool.schedule(this::destroy, 60 * 1000); // 1 minute
+			sendWorldDestroyMessage(TimeSpan.FromMinutes(1));
+			_cleanUpTask = ThreadPool.schedule(destroy, TimeSpan.FromMinutes(1)); // 1 minute
 		}
 		else
 		{
-			sendWorldDestroyMessage(5);
-			_cleanUpTask = ThreadPool.schedule(this::cleanUp, 5 * 60 * 1000); // 5 minutes
+			sendWorldDestroyMessage(TimeSpan.FromMinutes(5));
+			_cleanUpTask = ThreadPool.schedule(cleanUp, TimeSpan.FromMinutes(5)); // 5 minutes
 		}
 	}
 	
@@ -1254,16 +1258,17 @@ public class Instance : IIdentifiable, INamable
 	 * Show instance destroy messages to players inside instance world.
 	 * @param delay time in minutes
 	 */
-	private void sendWorldDestroyMessage(int delay)
+	private void sendWorldDestroyMessage(TimeSpan delay)
 	{
 		// Dimensional wrap does not show timer after 5 minutes.
-		if (delay > 5)
+		if (delay > TimeSpan.FromMinutes(5))
 		{
 			return;
 		}
-		SystemMessage sm = new SystemMessage(SystemMessageId.THE_INSTANCE_ZONE_EXPIRES_IN_S1_MIN_AFTER_THAT_YOU_WILL_BE_TELEPORTED_OUTSIDE_2);
-		sm.addInt(delay);
-		broadcastPacket(sm);
+		
+		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_INSTANCE_ZONE_EXPIRES_IN_S1_MIN_AFTER_THAT_YOU_WILL_BE_TELEPORTED_OUTSIDE_2);
+		sm.Params.addInt((int)delay.TotalMinutes);
+		broadcastPacket().SendPackets(sm);
 	}
 	
 	public override bool Equals(Object? obj)

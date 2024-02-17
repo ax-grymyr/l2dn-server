@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network.Enums;
 
 namespace L2Dn.GameServer.Model.InstanceZones.Conditions;
 
@@ -21,7 +22,7 @@ public class ConditionItem: Condition
 		_take = parameters.getBoolean("take", false);
 		// Set message
 		setSystemMessage(SystemMessageId.C1_DOES_NOT_MEET_ITEM_REQUIREMENTS_AND_CANNOT_ENTER,
-			(msg, player) => msg.addString(player.getName()));
+			(msg, player) => msg.Params.addString(player.getName()));
 	}
 
 	protected override bool test(Player player, Npc npc)

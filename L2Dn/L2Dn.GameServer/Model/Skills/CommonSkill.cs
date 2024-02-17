@@ -1,3 +1,7 @@
+using System.Collections.Concurrent;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Model.Holders;
+
 namespace L2Dn.GameServer.Model.Skills;
 
 /**
@@ -72,4 +76,14 @@ public enum CommonSkill
 	EINHASAD_OVERSEEING = 60002,
 	TELEPORT = 60018,
 	BRUTALITY = 87366,
+}
+
+public static class CommonSkillUtil
+{
+	private static readonly ConcurrentDictionary<(CommonSkill, int), SkillHolder> _skills = new();
+
+	public static Skill getSkill(this CommonSkill commonSkill, int level = 1)
+	{
+		return _skills.GetOrAdd((commonSkill, level), cs => new((int)cs.Item1, cs.Item2)).getSkill();
+	}
 }

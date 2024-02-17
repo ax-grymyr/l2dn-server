@@ -1,3 +1,4 @@
+using L2Dn.Configuration;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
@@ -183,18 +184,8 @@ public class FortSiegeManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement("SELECT clan_id FROM fortsiege_clans where clan_id=? and fort_id=?");
-			ps.setInt(1, clan.getId());
-			ps.setInt(2, fortid);
-
-			{
-				ResultSet rs = ps.executeQuery();
-				if (rs.next())
-				{
-					register = true;
-				}
-			}
+			int clanId = clan.getId();
+			register = ctx.FortSiegeClans.Any(s => s.FortId == fortid && s.ClanId == clanId);
 		}
 		catch (Exception e)
 		{
@@ -211,26 +202,24 @@ public class FortSiegeManager
 	
 	private void load()
 	{
-		Properties siegeSettings = new Properties();
-		File file = new File(Config.FORTSIEGE_CONFIG_FILE);
+		ConfigurationParser parser = new ConfigurationParser();
 		try
 		{
-			InputStream is1  = new FileInputStream(file);
-			siegeSettings.load(is1);
+			parser.LoadConfig(Config.FORTSIEGE_CONFIG_FILE);
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Error while loading Fort Siege Manager settings!" + e);
+			LOGGER.Error("Error while loading Fort Siege Manager settings!" + e);
 		}
 		
 		// Siege setting
-		_justToTerritory = Boolean.parseBoolean(siegeSettings.getProperty("JustToTerritory", "true"));
-		_attackerMaxClans = int.decode(siegeSettings.getProperty("AttackerMaxClans", "500"));
-		_flagMaxCount = int.decode(siegeSettings.getProperty("MaxFlags", "1"));
-		_siegeClanMinLevel = int.decode(siegeSettings.getProperty("SiegeClanMinLevel", "4"));
-		_siegeLength = int.decode(siegeSettings.getProperty("SiegeLength", "60"));
-		_countDownLength = int.decode(siegeSettings.getProperty("CountDownLength", "10"));
-		_suspiciousMerchantRespawnDelay = int.decode(siegeSettings.getProperty("SuspiciousMerchantRespawnDelay", "180"));
+		_justToTerritory = parser.getBoolean("JustToTerritory", true);
+		_attackerMaxClans = parser.getInt("AttackerMaxClans", 500);
+		_flagMaxCount = parser.getInt("MaxFlags", 1);
+		_siegeClanMinLevel = parser.getInt("SiegeClanMinLevel", 4);
+		_siegeLength = parser.getInt("SiegeLength", 60);
+		_countDownLength = parser.getInt("CountDownLength", 10);
+		_suspiciousMerchantRespawnDelay = parser.getInt("SuspiciousMerchantRespawnDelay", 180);
 		
 		// Siege spawns settings
 		_commanderSpawnList = new();
@@ -241,13 +230,13 @@ public class FortSiegeManager
 			List<CombatFlag> flagSpawns = new();
 			for (int i = 1; i < 5; i++)
 			{
-				String _spawnParams = siegeSettings.getProperty(fort.getName().Replace(" ", "") + "Commander" + i, "");
-				if (_spawnParams.isEmpty())
+				string spawnParams = parser.getString(fort.getName().Replace(" ", "") + "Commander" + i);
+				if (spawnParams.isEmpty())
 				{
 					break;
 				}
 				
-				StringTokenizer st = new StringTokenizer(_spawnParams.Trim(), ",");
+				StringTokenizer st = new StringTokenizer(spawnParams.Trim(), ",");
 				
 				try
 				{
@@ -255,8 +244,8 @@ public class FortSiegeManager
 					int y = int.Parse(st.nextToken());
 					int z = int.Parse(st.nextToken());
 					int heading = int.Parse(st.nextToken());
-					int npc_id = int.Parse(st.nextToken());
-					commanderSpawns.add(new FortSiegeSpawn(fort.getResidenceId(), x, y, z, heading, npc_id, i));
+					int npcId = int.Parse(st.nextToken());
+					commanderSpawns.add(new FortSiegeSpawn(fort.getResidenceId(), x, y, z, heading, npcId, i));
 				}
 				catch (Exception e)
 				{
@@ -268,20 +257,20 @@ public class FortSiegeManager
 			
 			for (int i = 1; i < 4; i++)
 			{
-				String _spawnParams = siegeSettings.getProperty(fort.getName().Replace(" ", "") + "Flag" + i, "");
-				if (_spawnParams.isEmpty())
+				String spawnParams = parser.getString(fort.getName().Replace(" ", "") + "Flag" + i);
+				if (spawnParams.isEmpty())
 				{
 					break;
 				}
-				StringTokenizer st = new StringTokenizer(_spawnParams.Trim(), ",");
+				StringTokenizer st = new StringTokenizer(spawnParams.Trim(), ",");
 				
 				try
 				{
 					int x = int.Parse(st.nextToken());
 					int y = int.Parse(st.nextToken());
 					int z = int.Parse(st.nextToken());
-					int flag_id = int.Parse(st.nextToken());
-					flagSpawns.add(new CombatFlag(fort.getResidenceId(), x, y, z, 0, flag_id));
+					int flagId = int.Parse(st.nextToken());
+					flagSpawns.add(new CombatFlag(fort.getResidenceId(), x, y, z, 0, flagId));
 				}
 				catch (Exception e)
 				{
@@ -389,8 +378,7 @@ public class FortSiegeManager
 		{
 			player.getInventory().equipItem(item);
 			
-			InventoryUpdate iu = new InventoryUpdate();
-			iu.addItem(item);
+			InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(item));
 			player.sendInventoryUpdate(iu);
 			
 			player.broadcastUserInfo();
@@ -442,7 +430,7 @@ public class FortSiegeManager
 			player.destroyItem("CombatFlag", flag, null, true);
 			player.setCombatFlagEquipped(false);
 			player.broadcastUserInfo();
-			InventoryUpdate iu = new InventoryUpdate();
+			InventoryUpdatePacket iu = new InventoryUpdatePacket();
 			player.sendInventoryUpdate(iu);
 			SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName(flag.getVariables().getString(FortSiege.GREG_SPAWN_VAR, FortSiege.ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN)).forEach(holder =>
 			{

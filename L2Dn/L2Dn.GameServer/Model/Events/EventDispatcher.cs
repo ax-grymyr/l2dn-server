@@ -76,7 +76,7 @@ public class EventDispatcher
 	 * @return
 	 */
 	public T notifyEvent<T>(IBaseEvent @event, ListenersContainer container)
-		where T:AbstractEventReturn
+		where T: AbstractEventReturn
 	{
 		try
 		{
@@ -101,7 +101,7 @@ public class EventDispatcher
 			throw new ArgumentNullException(nameof(@event), "Event cannot be null!");
 		}
 		
-		ThreadPool.execute(() => notifyEventToSingleContainer<AbstractEventReturn>(@event, container));
+		Utilities.ThreadPool.execute(() => notifyEventToSingleContainer<AbstractEventReturn>(@event, container));
 	}
 	
 	/**
@@ -116,7 +116,7 @@ public class EventDispatcher
 			throw new ArgumentNullException(nameof(@event), "Event cannot be null!");
 		}
 		
-		ThreadPool.execute(() => notifyEventToMultipleContainers<AbstractEventReturn>(@event, containers));
+		Utilities.ThreadPool.execute(() => notifyEventToMultipleContainers<AbstractEventReturn>(@event, containers));
 	}
 	
 	/**

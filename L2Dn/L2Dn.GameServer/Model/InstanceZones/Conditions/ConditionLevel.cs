@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network.Enums;
 
 namespace L2Dn.GameServer.Model.InstanceZones.Conditions;
 
@@ -19,7 +20,7 @@ public class ConditionLevel: Condition
 		_max = Math.Min(Config.PLAYER_MAXIMUM_LEVEL, parameters.getInt("max", int.MaxValue));
 		// Set message
 		setSystemMessage(SystemMessageId.C1_DOES_NOT_MEET_LEVEL_REQUIREMENTS_AND_CANNOT_ENTER,
-			(msg, player) => msg.addString(player.getName()));
+			(msg, player) => msg.Params.addString(player.getName()));
 	}
 
 	protected override bool test(Player player, Npc npc)

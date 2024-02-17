@@ -49,6 +49,7 @@ using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Network.OutgoingPackets.Commission;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
@@ -14338,7 +14339,7 @@ public class Player: Playable
 	 * Gets the last commission infos.
 	 * @return the last commission infos
 	 */
-	public Map<int, ExResponseCommissionInfo> getLastCommissionInfos()
+	public Map<int, ExResponseCommissionInfoPacket> getLastCommissionInfos()
 	{
 		return _lastCommissionInfos;
 	}
@@ -14402,7 +14403,7 @@ public class Player: Playable
 		return _questZoneId;
 	}
 	
-	public void sendInventoryUpdate(InventoryUpdate iu)
+	public void sendInventoryUpdate(InventoryUpdatePacket iu)
 	{
 		sendPacket(iu);
 		sendPacket(new ExAdenaInvenCount(this));

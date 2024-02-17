@@ -1,5 +1,12 @@
+using System.Reflection.Metadata;
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.ItemAuction;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -7,12 +14,12 @@ namespace L2Dn.GameServer.InstanceManagers;
 /**
  * @author Forsaiken
  */
-public class ItemAuctionManager: IXmlReader
+public class ItemAuctionManager: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ItemAuctionManager));
 	
 	private readonly Map<int, ItemAuctionInstance> _managerInstances = new();
-	private readonly AtomicInteger _auctionIds = new AtomicInteger(1);
+	private int _auctionIds;
 	
 	protected ItemAuctionManager()
 	{
@@ -25,13 +32,7 @@ public class ItemAuctionManager: IXmlReader
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			Statement statement = con.createStatement();
-			ResultSet rset =
-				statement.executeQuery("SELECT auctionId FROM item_auction ORDER BY auctionId DESC LIMIT 0, 1");
-			if (rset.next())
-			{
-				_auctionIds.set(rset.getInt(1) + 1);
-			}
+			_auctionIds = ctx.ItemAuctions.Select(a => a.AuctionId).OrderByDescending(a => a).FirstOrDefault();
 		}
 		catch (Exception e)
 		{
@@ -44,35 +45,23 @@ public class ItemAuctionManager: IXmlReader
 	public void load()
 	{
 		_managerInstances.clear();
-		parseDatapackFile("data/ItemAuctions.xml");
+
+		LoadXmlDocument(DataFileLocation.Data, "ItemAuctions.xml").Elements("list").Elements("instance")
+			.ForEach(parseElement);
+
 		LOGGER.Info(GetType().Name +": Loaded " + _managerInstances.size() + " instances.");
 	}
 	
-	public void parseDocument(Document doc, File f)
+	private void parseElement(XElement element)
 	{
 		try
 		{
-			for (Node na = doc.getFirstChild(); na != null; na = na.getNextSibling())
-			{
-				if ("list".equalsIgnoreCase(na.getNodeName()))
-				{
-					for (Node nb = na.getFirstChild(); nb != null; nb = nb.getNextSibling())
-					{
-						if ("instance".equalsIgnoreCase(nb.getNodeName()))
-						{
-							NamedNodeMap nab = nb.getAttributes();
-							int instanceId = int.Parse(nab.getNamedItem("id").getNodeValue());
-							if (_managerInstances.containsKey(instanceId))
-							{
-								throw new Exception("Dublicated instanceId " + instanceId);
-							}
-							
-							ItemAuctionInstance instance = new ItemAuctionInstance(instanceId, _auctionIds, nb);
-							_managerInstances.put(instanceId, instance);
-						}
-					}
-				}
-			}
+			int instanceId = element.Attribute("id").GetInt32();
+			if (_managerInstances.containsKey(instanceId))
+				throw new Exception("Dublicated instanceId " + instanceId);
+			
+			ItemAuctionInstance instance = new ItemAuctionInstance(instanceId, ref _auctionIds, element);
+			_managerInstances.put(instanceId, instance);
 		}
 		catch (Exception e)
 		{
@@ -95,7 +84,7 @@ public class ItemAuctionManager: IXmlReader
 	
 	public int getNextAuctionId()
 	{
-		return _auctionIds.getAndIncrement();
+		return Interlocked.Increment(ref _auctionIds);
 	}
 	
 	public static void deleteAuction(int auctionId)
@@ -103,19 +92,8 @@ public class ItemAuctionManager: IXmlReader
 		try
 		{
 			using GameServerDbContext ctx = new();
-
-			{
-				PreparedStatement statement = con.prepareStatement("DELETE FROM item_auction WHERE auctionId=?");
-				statement.setInt(1, auctionId);
-				statement.execute();
-			}
-
-
-			{
-				PreparedStatement statement = con.prepareStatement("DELETE FROM item_auction_bid WHERE auctionId=?");
-				statement.setInt(1, auctionId);
-				statement.execute();
-			}
+			ctx.ItemAuctionBids.Where(a => a.AuctionId == auctionId).ExecuteDelete();
+			ctx.ItemAuctions.Where(a => a.AuctionId == auctionId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{

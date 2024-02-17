@@ -3,6 +3,8 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.Network.OutgoingPackets.MagicLamp;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -51,8 +53,8 @@ public class MagicLampManager
 			player.addExpAndSp(exp, sp);
 			
 			LampType lampType = lamp.getType();
-			player.sendPacket(new ExMagicLampResult(exp, lampType.getGrade()));
-			player.sendPacket(new ExMagicLampInfo(player));
+			player.sendPacket(new ExMagicLampResultPacket(exp, lampType));
+			player.sendPacket(new ExMagicLampInfoPacket(player));
 			manageSkill(player, lampType);
 		});
 	}
@@ -61,7 +63,10 @@ public class MagicLampManager
 	{
 		if (Config.ENABLE_MAGIC_LAMP)
 		{
-			int lampExp = (int) ((exp * player.getStat().getExpBonusMultiplier()) * (rateModifiers ? Config.MAGIC_LAMP_CHARGE_RATE * player.getStat().getMul(Stat.MAGIC_LAMP_EXP_RATE, 1) : 1));
+			int lampExp = (int)((exp * player.getStat().getExpBonusMultiplier()) * (rateModifiers
+				? Config.MAGIC_LAMP_CHARGE_RATE * player.getStat().getMul(Stat.MAGIC_LAMP_EXP_RATE, 1)
+				: 1));
+			
 			int calc = lampExp + player.getLampExp();
 			if (player.getLevel() < 64)
 			{
@@ -74,7 +79,7 @@ public class MagicLampManager
 				useMagicLamp(player);
 			}
 			player.setLampExp(calc);
-			player.sendPacket(new ExMagicLampInfo(player));
+			player.sendPacket(new ExMagicLampInfoPacket(player));
 		}
 	}
 	

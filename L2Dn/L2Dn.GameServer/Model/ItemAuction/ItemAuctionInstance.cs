@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using System.Xml.Linq;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Utilities;
@@ -23,16 +24,16 @@ public class ItemAuctionInstance
 	private const String SELECT_PLAYERS_ID_BY_AUCTION_ID = "SELECT playerObjId, playerBid FROM item_auction_bid WHERE auctionId = ?";
 	
 	private readonly int _instanceId;
-	private readonly AtomicInteger _auctionIds;
+	private ref int _auctionIds;
 	private readonly Map<int, ItemAuction> _auctions;
 	private readonly List<AuctionItem> _items;
 	private readonly AuctionDateGenerator _dateGenerator;
 	
 	private ItemAuction _currentAuction;
 	private ItemAuction _nextAuction;
-	private ScheduledFuture<?> _stateTask;
+	private ScheduledFuture _stateTask;
 	
-	public ItemAuctionInstance(int instanceId, AtomicInteger auctionIds, Node node)
+	public ItemAuctionInstance(int instanceId, ref int auctionIds, XElement element)
 	{
 		_instanceId = instanceId;
 		_auctionIds = auctionIds;

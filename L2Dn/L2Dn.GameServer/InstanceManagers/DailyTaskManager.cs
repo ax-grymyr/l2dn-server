@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Stats;
@@ -11,9 +12,12 @@ using L2Dn.GameServer.Model.PrimeShop;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Model.Vips;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -23,37 +27,27 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class DailyTaskManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(DailyTaskManager));
-	
-	private static readonly SimpleDateFormat SDF = new SimpleDateFormat("dd/MM HH:mm");
 	private static readonly Set<int> RESET_SKILLS = new();
-	static
+	public static readonly Set<int> RESET_ITEMS = new();
+
+	static DailyTaskManager()
 	{
 		RESET_SKILLS.add(39199); // Hero's Wondrous Cubic
-	}
-	public static readonly Set<int> RESET_ITEMS = new();
-	static
-	{
 		RESET_ITEMS.add(49782); // Balthus Knights' Supply Box
 	}
 	
 	protected DailyTaskManager()
 	{
 		// Schedule reset everyday at 6:30.
-		long currentTime = System.currentTimeMillis();
-		Calendar calendar = Calendar.getInstance();
-		calendar.set(Calendar.HOUR_OF_DAY, 6);
-		calendar.set(Calendar.MINUTE, 30);
-		calendar.set(Calendar.SECOND, 0);
-		if (calendar.getTimeInMillis() < currentTime)
-		{
-			calendar.add(Calendar.DAY_OF_YEAR, 1);
-		}
+		DateTime currentTime = DateTime.Now;
+		DateTime calendar = new DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 6, 30, 0, DateTimeKind.Local);
+		if (calendar < currentTime)
+			calendar = calendar.AddDays(1);
 		
 		// Check if 24 hours have passed since the last daily reset.
-		long calendarTime = calendar.getTimeInMillis();
-		if (GlobalVariablesManager.getInstance().getLong(GlobalVariablesManager.DAILY_TASK_RESET, 0) < calendarTime)
+		if (GlobalVariablesManager.getInstance().getLong(GlobalVariablesManager.DAILY_TASK_RESET, 0) < calendar.Ticks)
 		{
-			LOGGER.Info(GetType().Name +": Next schedule at " + SDF.format(new Date(calendarTime)) + ".");
+			LOGGER.Info(GetType().Name +": Next schedule at " + calendar.ToString("dd/MM HH:mm") + ".");
 		}
 		else
 		{
@@ -62,21 +56,24 @@ public class DailyTaskManager
 		}
 		
 		// Daily reset task.
-		long startDelay = Math.Max(0, calendarTime - currentTime);
-		ThreadPool.scheduleAtFixedRate(this::onReset, startDelay, 86400000); // 86400000 = 1 day
+		TimeSpan startDelay = calendar - currentTime;
+		if (startDelay < TimeSpan.Zero)
+			startDelay = TimeSpan.Zero;
+
+		ThreadPool.scheduleAtFixedRate(onReset, startDelay, TimeSpan.FromDays(1));
 		
 		// Global save task.
-		ThreadPool.scheduleAtFixedRate(this::onSave, 1800000, 1800000); // 1800000 = 30 minutes
+		ThreadPool.scheduleAtFixedRate(onSave, 1800000, 1800000); // 1800000 = 30 minutes
 	}
 	
 	private void onReset()
 	{
 		// Store last reset time.
-		GlobalVariablesManager.getInstance().set(GlobalVariablesManager.DAILY_TASK_RESET, System.currentTimeMillis());
+		GlobalVariablesManager.getInstance().set(GlobalVariablesManager.DAILY_TASK_RESET, DateTime.Now.Ticks);
 		
 		// Wednesday weekly tasks.
-		Calendar calendar = Calendar.getInstance();
-		if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY)
+		DateTime calendar = DateTime.Now;
+		if (calendar.DayOfWeek == DayOfWeek.Wednesday)
 		{
 			clanLeaderApply();
 			resetMonsterArenaWeekly();
@@ -89,12 +86,12 @@ public class DailyTaskManager
 			resetVitalityDaily();
 		}
 		
-		if (Config.ENABLE_HUNT_PASS && (calendar.get(Calendar.DAY_OF_MONTH) == Config.HUNT_PASS_PERIOD))
+		if (Config.ENABLE_HUNT_PASS && (calendar.Day == Config.HUNT_PASS_PERIOD))
 		{
 			resetHuntPass();
 		}
 		
-		if (calendar.get(Calendar.DAY_OF_MONTH) == 1)
+		if (calendar.Day == 1)
 		{
 			resetMontlyLimitShopData();
 		}
@@ -184,29 +181,25 @@ public class DailyTaskManager
 		
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 
-			{
-				PreparedStatement st = con.prepareStatement(
-					"UPDATE character_subclasses SET vitality_points = IF(vitality_points = ?, vitality_points, vitality_points + ?)");
-				st.setInt(1, PlayerStat.MAX_VITALITY_POINTS);
-				st.setInt(2, PlayerStat.MAX_VITALITY_POINTS / 4);
-				st.execute();
-			}
+			// TODO: possibly the expression was incorrect
+			
+			ctx.CharacterSubClasses.ExecuteUpdate(s => s.SetProperty(c => c.VitalityPoints,
+				c => c.VitalityPoints == PlayerStat.MAX_VITALITY_POINTS
+					? PlayerStat.MAX_VITALITY_POINTS
+					: c.VitalityPoints + PlayerStat.MAX_VITALITY_POINTS / 4));
 
-
-			{
-				PreparedStatement st = con.prepareStatement(
-					"UPDATE characters SET vitality_points = IF(vitality_points = ?, vitality_points, vitality_points + ?)");
-				st.setInt(1, PlayerStat.MAX_VITALITY_POINTS);
-				st.setInt(2, PlayerStat.MAX_VITALITY_POINTS / 4);
-				st.execute();
-			}
+			ctx.Characters.ExecuteUpdate(s => s.SetProperty(c => c.VitalityPoints,
+				c => c.VitalityPoints == PlayerStat.MAX_VITALITY_POINTS
+					? PlayerStat.MAX_VITALITY_POINTS
+					: c.VitalityPoints + PlayerStat.MAX_VITALITY_POINTS / 4));
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Error while updating vitality" + e);
+			LOGGER.Error("Error while updating vitality" + e);
 		}
+		
 		LOGGER.Info("Daily Vitality Added");
 	}
 	
@@ -228,25 +221,19 @@ public class DailyTaskManager
 		
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 
-			{
-				PreparedStatement st = con.prepareStatement("UPDATE character_subclasses SET vitality_points = ?");
-				st.setInt(1, PlayerStat.MAX_VITALITY_POINTS);
-				st.execute();
-			}
+			ctx.CharacterSubClasses.ExecuteUpdate(s =>
+				s.SetProperty(c => c.VitalityPoints, PlayerStat.MAX_VITALITY_POINTS));
 
-
-			{
-				PreparedStatement st = con.prepareStatement("UPDATE characters SET vitality_points = ?");
-				st.setInt(1, PlayerStat.MAX_VITALITY_POINTS);
-				st.execute();
-			}
+			ctx.Characters.ExecuteUpdate(s =>
+				s.SetProperty(c => c.VitalityPoints, PlayerStat.MAX_VITALITY_POINTS));
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Error while updating vitality" + e);
+			LOGGER.Error("Error while updating vitality" + e);
 		}
+		
 		LOGGER.Info("Vitality reset");
 	}
 	
@@ -260,7 +247,7 @@ public class DailyTaskManager
 	
 	private void resetClanBonus()
 	{
-		ClanTable.getInstance().getClans().forEach(Clan::resetClanBonus);
+		ClanTable.getInstance().getClans().forEach(x => x.resetClanBonus());
 		LOGGER.Info("Daily clan bonus has been reset.");
 	}
 	
@@ -269,16 +256,9 @@ public class DailyTaskManager
 		// Update data for offline players.
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			foreach (int skillId in RESET_SKILLS)
-			{
-
-				{
-					PreparedStatement ps = con.prepareStatement("DELETE FROM character_skills_save WHERE skill_id=?;");
-					ps.setInt(1, skillId);
-					ps.execute();
-				}
-			}
+				ctx.CharacterSkillReuses.Where(s => s.SkillId == skillId).ExecuteDelete(); // TODO: delete all at once
 		}
 		catch (Exception e)
 		{
@@ -315,15 +295,9 @@ public class DailyTaskManager
 		// Update data for offline players.
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
+			using GameServerDbContext ctx = new();
 			foreach (int itemId in RESET_ITEMS)
-			{
-				PreparedStatement ps = con.prepareStatement("DELETE FROM character_item_reuse_save WHERE itemId=?;");
-				{
-					ps.setInt(1, itemId);
-					ps.execute();
-				}
-			}
+				ctx.CharacterItemReuses.Where(r => r.ItemId == itemId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -357,12 +331,8 @@ public class DailyTaskManager
 		// Update data for offline players.
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var = ?");
-			{
-				ps.setString(1, PlayerVariables.CLAN_DONATION_POINTS);
-				ps.execute();
-			}
+			using GameServerDbContext ctx = new();
+			ctx.CharacterVariables.Where(v => v.Name == PlayerVariables.CLAN_DONATION_POINTS).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -387,24 +357,22 @@ public class DailyTaskManager
 		}
 		
 		// Update data for offline players.
-		try 
+		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("UPDATE character_variables SET val = ? WHERE var = ?");
-			ps.setInt(1, 0);
-			ps.setString(2, PlayerVariables.WORLD_CHAT_VARIABLE_NAME);
-			ps.executeUpdate();
+			ctx.CharacterVariables.Where(v => v.Name == PlayerVariables.WORLD_CHAT_VARIABLE_NAME)
+				.ExecuteUpdate(s => s.SetProperty(v => v.Value, "0"));
 		}
 		catch (Exception e)
 		{
 			LOGGER.Error("Could not reset daily world chat points: " + e);
 		}
-		
+
 		// Update data for online players.
 		foreach (Player player in World.getInstance().getPlayers())
 		{
 			player.setWorldChatUsed(0);
-			player.sendPacket(new ExWorldChatCnt(player));
+			player.sendPacket(new ExWorldCharCntPacket(player));
 			player.getVariables().storeMe();
 		}
 		
@@ -415,22 +383,10 @@ public class DailyTaskManager
 	{
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
-
-			{
-				PreparedStatement ps =
-					con.prepareStatement(
-						"UPDATE character_reco_bonus SET rec_left = ?, rec_have = 0 WHERE rec_have <= 20");
-				ps.setInt(1, 0); // Rec left = 0
-				ps.execute();
-			}
-
-			{
-				PreparedStatement ps = con.prepareStatement(
-					"UPDATE character_reco_bonus SET rec_left = ?, rec_have = GREATEST(rec_have - 20,0) WHERE rec_have > 20");
-				ps.setInt(1, 0); // Rec left = 0
-				ps.execute();
-			}
+			using GameServerDbContext ctx = new();
+			ctx.CharacterRecoBonuses.ExecuteUpdate(s =>
+				s.SetProperty(c => c.RecLeft, 0)
+					.SetProperty(c => c.RecHave, c => c.RecHave >= 20 ? c.RecHave - 20 : 0));
 		}
 		catch (Exception e)
 		{
@@ -441,7 +397,7 @@ public class DailyTaskManager
 		{
 			player.setRecomLeft(0);
 			player.setRecomHave(player.getRecomHave() - 20);
-			player.sendPacket(new ExVoteSystemInfo(player));
+			player.sendPacket(new ExVoteSystemInfoPacket(player));
 			player.broadcastUserInfo();
 		}
 	}
@@ -454,9 +410,7 @@ public class DailyTaskManager
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var = ?");
-				ps.setString(1, "TRAINING_CAMP_DURATION");
-				ps.executeUpdate();
+				ctx.AccountVariables.Where(v => v.Name == "TRAINING_CAMP_DURATION").ExecuteDelete();
 			}
 			catch (Exception e)
 			{
@@ -494,7 +448,7 @@ public class DailyTaskManager
 	
 	private void resetDailyMissionRewards()
 	{
-		DailyMissionData.getInstance().getDailyMissionData().forEach(DailyMissionDataHolder::reset);
+		DailyMissionData.getInstance().getDailyMissionData().forEach(x => x.reset());
 	}
 	
 	private void resetTimedHuntingZones()
@@ -509,12 +463,14 @@ public class DailyTaskManager
 			// Update data for offline players.
 			try 
 			{
+				// TODO: separate table
+				string name1 = PlayerVariables.HUNTING_ZONE_ENTRY + holder.getZoneId();
+				string name2 = PlayerVariables.HUNTING_ZONE_TIME + holder.getZoneId();
+				string name3 = PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.getZoneId();
+				
 				using GameServerDbContext ctx = new();
-				PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var IN (?, ?, ?)");
-				ps.setString(1, PlayerVariables.HUNTING_ZONE_ENTRY + holder.getZoneId());
-				ps.setString(2, PlayerVariables.HUNTING_ZONE_TIME + holder.getZoneId());
-				ps.setString(3, PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.getZoneId());
-				ps.executeUpdate();
+				ctx.CharacterVariables.Where(v => v.Name == name1 || v.Name == name2 || v.Name == name3)
+					.ExecuteDelete();
 			}
 			catch (Exception e)
 			{
@@ -546,12 +502,14 @@ public class DailyTaskManager
 			// Update data for offline players.
 			try 
 			{
+				// TODO: separate table
+				string name1 = PlayerVariables.HUNTING_ZONE_ENTRY + holder.getZoneId();
+				string name2 = PlayerVariables.HUNTING_ZONE_TIME + holder.getZoneId();
+				string name3 = PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.getZoneId();
+				
 				using GameServerDbContext ctx = new();
-				PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var IN (?, ?, ?)");
-				ps.setString(1, PlayerVariables.HUNTING_ZONE_ENTRY + holder.getZoneId());
-				ps.setString(2, PlayerVariables.HUNTING_ZONE_TIME + holder.getZoneId());
-				ps.setString(3, PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.getZoneId());
-				ps.executeUpdate();
+				ctx.CharacterVariables.Where(v => v.Name == name1 || v.Name == name2 || v.Name == name3)
+					.ExecuteDelete();
 			}
 			catch (Exception e)
 			{
@@ -578,12 +536,8 @@ public class DailyTaskManager
 			// Update data for offline players.
 			try
 			{
-				Connection con = DatabaseFactory.getConnection();
-				PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var=?");
-				{
-					ps.setString(1, "ATTENDANCE_DATE");
-					ps.execute();
-				}
+				using GameServerDbContext ctx = new();
+				ctx.AccountVariables.Where(v => v.Name == "ATTENDANCE_DATE").ExecuteDelete();
 			}
 			catch (Exception e)
 			{
@@ -604,12 +558,8 @@ public class DailyTaskManager
 			// Update data for offline players.
 			try
 			{
-				Connection con = DatabaseFactory.getConnection();
-				PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var=?");
-				{
-					ps.setString(1, PlayerVariables.ATTENDANCE_DATE);
-					ps.execute();
-				}
+				using GameServerDbContext ctx = new();
+				ctx.CharacterVariables.Where(v => v.Name == "ATTENDANCE_DATE").ExecuteDelete();
 			}
 			catch (Exception e)
 			{
@@ -632,12 +582,11 @@ public class DailyTaskManager
 		foreach (PrimeShopGroup holder in PrimeShopData.getInstance().getPrimeItems().values())
 		{
 			// Update data for offline players.
-			try 
+			try
 			{
+				string name = AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + holder.getBrId();
 				using GameServerDbContext ctx = new();
-				PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var=?");
-				ps.setString(1, AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + holder.getBrId());
-				ps.executeUpdate();
+				ctx.AccountVariables.Where(v => v.Name == name).ExecuteDelete();
 			}
 			catch (Exception e)
 			{
@@ -661,10 +610,9 @@ public class DailyTaskManager
 			// Update data for offline players.
 			try 
 			{
+				string name = AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + holder.getProductionId();
 				using GameServerDbContext ctx = new();
-				PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var=?");
-				ps.setString(1, AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + holder.getProductionId());
-				ps.executeUpdate();
+				ctx.AccountVariables.Where(v => v.Name == name).ExecuteDelete();
 			}
 			catch (Exception e)
 			{
@@ -686,12 +634,11 @@ public class DailyTaskManager
 		foreach (LimitShopProductHolder holder in LimitShopData.getInstance().getProducts())
 		{
 			// Update data for offline players.
-			try 
+			try
 			{
+				string name = AccountVariables.LCOIN_SHOP_PRODUCT_MONTLY_COUNT + holder.getProductionId();
 				using GameServerDbContext ctx = new();
-				PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var=?");
-				ps.setString(1, AccountVariables.LCOIN_SHOP_PRODUCT_MONTLY_COUNT + holder.getProductionId());
-				ps.executeUpdate();
+				ctx.AccountVariables.Where(v => v.Name == name).ExecuteDelete();
 			}
 			catch (Exception e)
 			{
@@ -713,8 +660,7 @@ public class DailyTaskManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement("DELETE FROM huntpass");
-			statement.execute();
+			ctx.HuntPasses.ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -734,12 +680,8 @@ public class DailyTaskManager
 		// Update data for offline players.
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var=?");
-			{
-				ps.setString(1, PlayerVariables.RESURRECT_BY_PAYMENT_COUNT);
-				ps.execute();
-			}
+			using GameServerDbContext ctx = new();
+			ctx.CharacterVariables.Where(v => v.Name == PlayerVariables.RESURRECT_BY_PAYMENT_COUNT).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -775,12 +717,8 @@ public class DailyTaskManager
 		// Update data for offline players.
 		try
 		{
-			Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var=?");
-			{
-				ps.setString(1, PlayerVariables.DYE_POTENTIAL_DAILY_COUNT);
-				ps.execute();
-			}
+			using GameServerDbContext ctx = new();
+			ctx.CharacterVariables.Where(v => v.Name == PlayerVariables.DYE_POTENTIAL_DAILY_COUNT).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -803,12 +741,7 @@ public class DailyTaskManager
 		try
 		{
 			using GameServerDbContext ctx = new();
-
-			{
-				PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var=?");
-				ps.setString(1, "MORGOS_MILITARY_FREE");
-				ps.execute();
-			}
+			ctx.CharacterVariables.Where(v => v.Name == "MORGOS_MILITARY_FREE").ExecuteDelete();
 		}
 		catch (Exception e)
 		{

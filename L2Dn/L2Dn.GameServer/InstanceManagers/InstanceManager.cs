@@ -1,10 +1,21 @@
+using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.InstanceZones;
+using L2Dn.GameServer.Model.InstanceZones.Conditions;
+using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -13,11 +24,9 @@ namespace L2Dn.GameServer.InstanceManagers;
  * Instance manager.
  * @author evill33t, GodKratos, malyelfik
  */
-public class InstanceManager: IXmlReader
+public class InstanceManager: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(InstanceManager));
-	// Database query
-	private const string DELETE_INSTANCE_TIME = "DELETE FROM character_instance_time WHERE charId=? AND instanceId=?";
 	
 	// Client instance names
 	private readonly Map<int, String> _instanceNames = new();
@@ -27,7 +36,7 @@ public class InstanceManager: IXmlReader
 	private int _currentInstanceId = 0;
 	private readonly Map<int, Instance> _instanceWorlds = new();
 	// Player reenter times
-	private readonly Map<int, Map<int, long>> _playerTimes = new();
+	private readonly Map<int, Map<int, DateTime>> _playerTimes = new();
 	
 	protected InstanceManager()
 	{
@@ -41,11 +50,24 @@ public class InstanceManager: IXmlReader
 	{
 		// Load instance names
 		_instanceNames.clear();
-		parseDatapackFile("data/InstanceNames.xml");
+		
+		LoadXmlDocument(DataFileLocation.Data, "InstanceNames.xml").Elements("list").Elements("instance").ForEach(el =>
+		{
+			int id = el.Attribute("id").GetInt32();
+			string name = el.Attribute("name").GetString();
+			_instanceNames.put(id, name);
+		});
+		
 		LOGGER.Info(GetType().Name +": Loaded " + _instanceNames.size() + " instance names.");
+		
 		// Load instance templates
 		_instanceTemplates.clear();
-		parseDatapackDirectory("data/instances", true);
+		
+		LoadXmlDocuments(DataFileLocation.Data, "instances", true).ForEach(t =>
+		{
+			t.Document.Elements("instance").ForEach(el => parseInstanceTemplate(t.FilePath, el));
+		});
+		
 		LOGGER.Info(GetType().Name +": Loaded " + _instanceTemplates.size() + " instance templates.");
 		// Load player's reenter data
 		_playerTimes.clear();
@@ -53,55 +75,22 @@ public class InstanceManager: IXmlReader
 		LOGGER.Info(GetType().Name +": Loaded instance reenter times for " + _playerTimes.size() + " players.");
 	}
 	
-	public void parseDocument(Document doc, File f)
-	{
-		forEach(doc, IXmlReader::isNode, listNode =>
-		{
-			switch (listNode.getNodeName())
-			{
-				case "list":
-				{
-					parseInstanceName(listNode);
-					break;
-				}
-				case "instance":
-				{
-					parseInstanceTemplate(listNode, f);
-					break;
-				}
-			}
-		});
-	}
-	
-	/**
-	 * Read instance names from XML file.
-	 * @param n starting XML tag
-	 */
-	private void parseInstanceName(Node n)
-	{
-		forEach(n, "instance", instanceNode =>
-		{
-			NamedNodeMap attrs = instanceNode.getAttributes();
-			_instanceNames.put(parseInteger(attrs, "id"), parseString(attrs, "name"));
-		});
-	}
-	
 	/**
 	 * Parse instance template from XML file.
 	 * @param instanceNode start XML tag
 	 * @param file currently parsed file
 	 */
-	private void parseInstanceTemplate(Node instanceNode, File file)
+	private void parseInstanceTemplate(string filePath, XElement element)
 	{
 		// Parse "instance" node
-		int id = parseInteger(instanceNode.getAttributes(), "id");
+		int id = element.Attribute("id").GetInt32();
 		if (_instanceTemplates.containsKey(id))
 		{
 			LOGGER.Warn(GetType().Name + ": Instance template with ID " + id + " already exists");
 			return;
 		}
 		
-		InstanceTemplate template = new InstanceTemplate(new StatSet(parseAttributes(instanceNode)));
+		InstanceTemplate template = new InstanceTemplate(new StatSet(element));
 		
 		// Update name if wasn't provided
 		if (template.getName() == null)
@@ -110,63 +99,61 @@ public class InstanceManager: IXmlReader
 		}
 		
 		// Parse "instance" node children
-		forEach(instanceNode, IXmlReader::isNode, innerNode =>
+		foreach (XElement innerNode in element.Elements())
 		{
-			switch (innerNode.getNodeName())
+			string nodeName = innerNode.Name.LocalName;
+			switch (nodeName)
 			{
 				case "time":
 				{
-					NamedNodeMap attrs = innerNode.getAttributes();
-					template.setDuration(parseInteger(attrs, "duration", -1));
-					template.setEmptyDestroyTime(parseInteger(attrs, "empty", -1));
-					template.setEjectTime(parseInteger(attrs, "eject", -1));
+					template.setDuration(innerNode.Attribute("duration").GetInt32(-1));
+					template.setEmptyDestroyTime(innerNode.Attribute("empty").GetInt32(-1));
+					template.setEjectTime(innerNode.Attribute("eject").GetInt32(-1));
 					break;
 				}
 				case "misc":
 				{
-					NamedNodeMap attrs = innerNode.getAttributes();
-					template.allowPlayerSummon(parseBoolean(attrs, "allowPlayerSummon", false));
-					template.setPvP(parseBoolean(attrs, "isPvP", false));
+					template.allowPlayerSummon(innerNode.Attribute("allowPlayerSummon").GetBoolean(false));
+					template.setPvP(innerNode.Attribute("isPvP").GetBoolean(false));
 					break;
 				}
 				case "rates":
 				{
-					NamedNodeMap attrs = innerNode.getAttributes();
-					template.setExpRate(parseFloat(attrs, "exp", Config.RATE_INSTANCE_XP));
-					template.setSPRate(parseFloat(attrs, "sp", Config.RATE_INSTANCE_SP));
-					template.setExpPartyRate(parseFloat(attrs, "partyExp", Config.RATE_INSTANCE_PARTY_XP));
-					template.setSPPartyRate(parseFloat(attrs, "partySp", Config.RATE_INSTANCE_PARTY_SP));
+					template.setExpRate(innerNode.Attribute("exp").GetFloat(Config.RATE_INSTANCE_XP));
+					template.setSPRate(innerNode.Attribute("sp").GetFloat(Config.RATE_INSTANCE_SP));
+					template.setExpPartyRate(innerNode.Attribute("partyExp").GetFloat(Config.RATE_INSTANCE_PARTY_XP));
+					template.setSPPartyRate(innerNode.Attribute("partySp").GetFloat(Config.RATE_INSTANCE_PARTY_SP));
 					break;
 				}
 				case "locations":
 				{
-					forEach(innerNode, IXmlReader::isNode, locationsNode =>
+					foreach (XElement locationsNode in innerNode.Elements())
 					{
-						switch (locationsNode.getNodeName())
+						switch (locationsNode.Name.LocalName)
 						{
 							case "enter":
 							{
-								InstanceTeleportType type = parseEnum(locationsNode.getAttributes(), InstanceTeleportType.class, "type");
+								InstanceTeleportType type = locationsNode.Attribute("type").GetEnum<InstanceTeleportType>();
 								List<Location> locations = new();
-								forEach(locationsNode, "location", locationNode => locations.add(parseLocation(locationNode)));
+								locationsNode.Elements("location").ForEach(locationNode => locations.add(parseLocation(locationNode)));
 								template.setEnterLocation(type, locations);
 								break;
 							}
 							case "exit":
 							{
-								InstanceTeleportType type = parseEnum(locationsNode.getAttributes(), InstanceTeleportType.class, "type");
-								if (type.equals(InstanceTeleportType.ORIGIN))
+								InstanceTeleportType type = locationsNode.Attribute("type").GetEnum<InstanceTeleportType>();
+								if (type == InstanceTeleportType.ORIGIN)
 								{
 									template.setExitLocation(type, null);
 								}
-								else if (type.equals(InstanceTeleportType.TOWN))
+								else if (type == InstanceTeleportType.TOWN)
 								{
 									template.setExitLocation(type, null);
 								}
 								else
 								{
 									List<Location> locations = new();
-									forEach(locationsNode, "location", locationNode => locations.add(parseLocation(locationNode)));
+									locationsNode.Elements("location").ForEach(locationNode => locations.add(parseLocation(locationNode)));
 									if (locations.isEmpty())
 									{
 										LOGGER.Warn(GetType().Name + ": Missing exit location data for instance " + template.getName() + " (" + template.getId() + ")!");
@@ -179,85 +166,76 @@ public class InstanceManager: IXmlReader
 								break;
 							}
 						}
-					});
+					}
+					
 					break;
 				}
 				case "spawnlist":
 				{
 					List<SpawnTemplate> spawns = new();
-					SpawnData.getInstance().parseSpawn(innerNode, file, spawns);
+					SpawnData.getInstance().parseSpawn(innerNode, filePath, spawns);
 					template.addSpawns(spawns);
 					break;
 				}
 				case "doorlist":
 				{
-					for (Node doorNode = innerNode.getFirstChild(); doorNode != null; doorNode = doorNode.getNextSibling())
+					foreach (XElement doorNode in innerNode.Elements("door"))
 					{
-						if (doorNode.getNodeName().equals("door"))
+						StatSet parsedSet = DoorData.parseDoor(doorNode);
+						StatSet mergedSet = new StatSet();
+						int doorId = parsedSet.getInt("id");
+						StatSet templateSet = DoorData.getInstance().getDoorTemplate(doorId);
+						if (templateSet != null)
 						{
-							StatSet parsedSet = DoorData.getInstance().parseDoor(doorNode);
-							StatSet mergedSet = new StatSet();
-							int doorId = parsedSet.getInt("id");
-							StatSet templateSet = DoorData.getInstance().getDoorTemplate(doorId);
-							if (templateSet != null)
-							{
-								mergedSet.merge(templateSet);
-							}
-							else
-							{
-								LOGGER.Warn(GetType().Name + ": Cannot find template for door: " + doorId + ", instance: " + template.getName() + " (" + template.getId() + ")");
-							}
-							mergedSet.merge(parsedSet);
-							
-							try
-							{
-								template.addDoor(doorId, new DoorTemplate(mergedSet));
-							}
-							catch (Exception e)
-							{
-								LOGGER.Warn(GetType().Name + ": Cannot initialize template for door: " + doorId + ", instance: " + template.getName() + " (" + template.getId() + ")" + e);
-							}
+							mergedSet.merge(templateSet);
+						}
+						else
+						{
+							LOGGER.Warn(GetType().Name + ": Cannot find template for door: " + doorId + ", instance: " + template.getName() + " (" + template.getId() + ")");
+						}
+						mergedSet.merge(parsedSet);
+						
+						try
+						{
+							template.addDoor(doorId, new DoorTemplate(mergedSet));
+						}
+						catch (Exception e)
+						{
+							LOGGER.Warn(GetType().Name + ": Cannot initialize template for door: " + doorId + ", instance: " + template.getName() + " (" + template.getId() + ")" + e);
 						}
 					}
 					break;
 				}
 				case "removeBuffs":
 				{
-					InstanceRemoveBuffType removeBuffType = parseEnum(innerNode.getAttributes(), InstanceRemoveBuffType.class, "type");
+					InstanceRemoveBuffType removeBuffType = innerNode.Attribute("type").GetEnum<InstanceRemoveBuffType>();
 					List<int> exceptionBuffList = new();
-					for (Node e = innerNode.getFirstChild(); e != null; e = e.getNextSibling())
-					{
-						if (e.getNodeName().equals("skill"))
-						{
-							exceptionBuffList.add(parseInteger(e.getAttributes(), "id"));
-						}
-					}
+					foreach (XElement e in innerNode.Elements("skill"))
+						exceptionBuffList.add(e.Attribute("id").GetInt32());
+					
 					template.setRemoveBuff(removeBuffType, exceptionBuffList);
 					break;
 				}
 				case "reenter":
 				{
-					InstanceReenterType type = parseEnum(innerNode.getAttributes(), InstanceReenterType.class, "apply", InstanceReenterType.NONE);
+					InstanceReenterType type = innerNode.Attribute("apply").GetEnum(InstanceReenterType.NONE);
 					List<InstanceReenterTimeHolder> data = new();
-					for (Node e = innerNode.getFirstChild(); e != null; e = e.getNextSibling())
+					foreach (XElement e in innerNode.Elements("reset"))
 					{
-						if (e.getNodeName().equals("reset"))
+						int time = e.Attribute("time").GetInt32(-1);
+						if (time > 0)
 						{
-							NamedNodeMap attrs = e.getAttributes();
-							int time = parseInteger(attrs, "time", -1);
-							if (time > 0)
-							{
-								data.add(new InstanceReenterTimeHolder(time));
-							}
-							else
-							{
-								DayOfWeek day = parseEnum(attrs, DayOfWeek.class, "day");
-								int hour = parseInteger(attrs, "hour", -1);
-								int minute = parseInteger(attrs, "minute", -1);
-								data.add(new InstanceReenterTimeHolder(day, hour, minute));
-							}
+							data.add(new InstanceReenterTimeHolder(time));
+						}
+						else
+						{
+							DayOfWeek day = e.Attribute("day").GetEnum<DayOfWeek>();
+							int hour = e.Attribute("hour").GetInt32(-1);
+							int minute = e.Attribute("minute").GetInt32(-1);
+							data.add(new InstanceReenterTimeHolder(day, hour, minute));
 						}
 					}
+
 					template.setReenterData(type, data);
 					break;
 				}
@@ -269,53 +247,38 @@ public class InstanceManager: IXmlReader
 				case "conditions":
 				{
 					List<Condition> conditions = new();
-					for (Node conditionNode = innerNode.getFirstChild(); conditionNode != null; conditionNode = conditionNode.getNextSibling())
+					foreach (XElement conditionNode in innerNode.Elements("condition"))
 					{
-						if (conditionNode.getNodeName().equals("condition"))
+						String type = conditionNode.Attribute("type").GetString();
+						bool onlyLeader = conditionNode.Attribute("onlyLeader").GetBoolean(false);
+						bool showMessageAndHtml = conditionNode.Attribute("showMessageAndHtml").GetBoolean(false);
+						// Load parameters
+						StatSet parameters = new();
+						foreach (XElement f in conditionNode.Elements("param"))
 						{
-							NamedNodeMap attrs = conditionNode.getAttributes();
-							String type = parseString(attrs, "type");
-							bool onlyLeader = parseBoolean(attrs, "onlyLeader", false);
-							bool showMessageAndHtml = parseBoolean(attrs, "showMessageAndHtml", false);
-							// Load parameters
-							StatSet params = null;
-							for (Node f = conditionNode.getFirstChild(); f != null; f = f.getNextSibling())
-							{
-								if (f.getNodeName().equals("param"))
-								{
-									if (params == null)
-									{
-										params = new StatSet();
-									}
-									
-									params.set(parseString(f.getAttributes(), "name"), parseString(f.getAttributes(), "value"));
-								}
-							}
-							
-							// If none parameters found then set empty StatSet
-							if (params == null)
-							{
-								params = StatSet.EMPTY_STATSET;
-							}
-							
-							// Now when everything is loaded register condition to template
-							try
-							{
-								Class<?> clazz = Class.forName("org.l2jmobius.gameserver.model.instancezone.conditions.Condition" + type);
-								Constructor<?> constructor = clazz.getConstructor(InstanceTemplate.class, StatSet.class, bool.class, bool.class);
-								conditions.add((Condition) constructor.newInstance(template, params, onlyLeader, showMessageAndHtml));
-							}
-							catch (Exception ex)
-							{
-								LOGGER.Warn(GetType().Name + ": Unknown condition type " + type + " for instance " + template.getName() + " (" + id + ")!");
-							}
+							parameters.set(f.Attribute("name").GetString(), f.Attribute("value").GetString());
+						}
+						
+						// Now when everything is loaded register condition to template
+						try
+						{
+							// TODO create factory
+							string typeFullName = typeof(Condition).Namespace + "." + type;
+							Type classType = Assembly.GetExecutingAssembly().GetType(typeFullName);
+							Condition condition = (Condition)Activator.CreateInstance(classType, parameters, onlyLeader, showMessageAndHtml);
+							conditions.add(condition);
+						}
+						catch (Exception ex)
+						{
+							LOGGER.Warn(GetType().Name + ": Unknown condition type " + type + " for instance " +
+							            template.getName() + " (" + id + ")!");
 						}
 					}
 					template.setConditions(conditions);
 					break;
 				}
 			}
-		});
+		}
 		
 		// Save template
 		_instanceTemplates.put(id, template);
@@ -471,17 +434,16 @@ public class InstanceManager: IXmlReader
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			Statement ps = con.createStatement();
-			ResultSet rs = ps.executeQuery("SELECT * FROM character_instance_time ORDER BY charId");
-			while (rs.next())
+			foreach (CharacterInstance record in ctx.CharacterInstances.OrderBy(r => r.CharacterId))
 			{
 				// Check if instance penalty passed
-				long time = rs.getLong("time");
-				if (time > System.currentTimeMillis())
+				DateTime time = record.Time;
+				if (time > DateTime.UtcNow)
 				{
 					// Load params
-					int charId = rs.getInt("charId");
-					int instanceId = rs.getInt("instanceId");
+					int charId = record.CharacterId;
+					int instanceId = record.InstanceId;
+					
 					// Set penalty
 					setReenterPenalty(charId, instanceId, time);
 				}
@@ -499,10 +461,10 @@ public class InstanceManager: IXmlReader
 	 * @param player instance of player who wants to get re-enter data
 	 * @return map in form templateId, penaltyEndTime
 	 */
-	public Map<int, long> getAllInstanceTimes(Player player)
+	public Map<int, DateTime> getAllInstanceTimes(Player player)
 	{
 		// When player don't have any instance penalty
-		Map<int, long> instanceTimes = _playerTimes.get(player.getObjectId());
+		Map<int, DateTime> instanceTimes = _playerTimes.get(player.getObjectId());
 		if ((instanceTimes == null) || instanceTimes.isEmpty())
 		{
 			return new();
@@ -512,7 +474,7 @@ public class InstanceManager: IXmlReader
 		List<int> invalidPenalty = new();
 		foreach (var entry in instanceTimes)
 		{
-			if (entry.Value <= System.currentTimeMillis())
+			if (entry.Value <= DateTime.UtcNow)
 			{
 				invalidPenalty.add(entry.Key);
 			}
@@ -523,16 +485,12 @@ public class InstanceManager: IXmlReader
 		{
 			try 
 			{
+				int playerId = player.getObjectId();
 				using GameServerDbContext ctx = new();
-				PreparedStatement ps = con.prepareStatement(DELETE_INSTANCE_TIME);
 				foreach (int id in invalidPenalty)
-				{
-					ps.setInt(1, player.getObjectId());
-					ps.setInt(2, id);
-					ps.addBatch();
-				}
-				ps.executeBatch();
-				invalidPenalty.forEach(instanceTimes::remove);
+					ctx.CharacterInstances.Where(r => r.CharacterId == playerId && r.InstanceId == id).ExecuteDelete();
+
+				invalidPenalty.forEach(x => instanceTimes.remove(x));
 			}
 			catch (Exception e)
 			{
@@ -549,7 +507,7 @@ public class InstanceManager: IXmlReader
 	 * @param id instance template id
 	 * @param time penalty time
 	 */
-	public void setReenterPenalty(int objectId, int id, long time)
+	public void setReenterPenalty(int objectId, int id, DateTime time)
 	{
 		_playerTimes.computeIfAbsent(objectId, k => new()).put(id, time);
 	}
@@ -561,21 +519,21 @@ public class InstanceManager: IXmlReader
 	 * @param id template ID of instance
 	 * @return penalty end time if penalty is found, otherwise -1
 	 */
-	public long getInstanceTime(Player player, int id)
+	public DateTime getInstanceTime(Player player, int id)
 	{
 		// Check if exists reenter data for player
-		Map<int, long> playerData = _playerTimes.get(player.getObjectId());
+		Map<int, DateTime> playerData = _playerTimes.get(player.getObjectId());
 		if ((playerData == null) || !playerData.containsKey(id))
 		{
-			return -1;
+			return DateTime.MinValue;
 		}
 		
 		// If reenter time is higher then current, delete it
-		long time = playerData.get(id);
-		if (time <= System.currentTimeMillis())
+		DateTime time = playerData.get(id);
+		if (time <= DateTime.UtcNow)
 		{
 			deleteInstanceTime(player, id);
-			return -1;
+			return DateTime.MinValue;
 		}
 		return time;
 	}
@@ -589,11 +547,9 @@ public class InstanceManager: IXmlReader
 	{
 		try 
 		{
+			int playerId = player.getObjectId();
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(DELETE_INSTANCE_TIME);
-			ps.setInt(1, player.getObjectId());
-			ps.setInt(2, id);
-			ps.execute();
+			ctx.CharacterInstances.Where(r => r.CharacterId == playerId && r.InstanceId == id).ExecuteDelete();
 			if (_playerTimes.get(player.getObjectId()) != null)
 			{
 				_playerTimes.get(player.getObjectId()).remove(id);

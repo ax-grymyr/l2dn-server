@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using System.Text;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
@@ -161,17 +162,17 @@ public class Item: WorldObject
 	 * @param rs
 	 * @throws SQLException
 	 */
-	public Item(ResultSet rs): this(rs.getInt("object_id"), ItemData.getInstance().getTemplate(rs.getInt("item_id")))
+	public Item(DbItem item): this(item.ObjectId, ItemData.getInstance().getTemplate(item.ItemId))
 	{
-		_count = rs.getLong("count");
-		_ownerId = rs.getInt("owner_id");
-		_loc = ItemLocation.valueOf(rs.getString("loc"));
-		_locData = rs.getInt("loc_data");
-		_enchantLevel = rs.getInt("enchant_level");
-		_type1 = rs.getInt("custom_type1");
-		_type2 = rs.getInt("custom_type2");
-		_mana = rs.getInt("mana_left");
-		_time = rs.getLong("time");
+		_count = item.Count;
+		_ownerId = item.OwnerId;
+		_loc = (ItemLocation)item.Location;
+		_locData = item.LocationData;
+		_enchantLevel = item.EnchantLevel;
+		_type1 = item.CustomType1;
+		_type2 = item.CustomType2;
+		_mana = item.ManaLeft;
+		_time = item.Time;
 		_existsInDb = true;
 		_storedInDb = true;
 		

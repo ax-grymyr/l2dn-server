@@ -453,6 +453,27 @@ public class StatSet : IParserAdvUtils
 		set(key, sb.ToString());
 	}
 	
+	public DateTime getDateTime(String key)
+	{
+		Object val = _set.get(key);
+		if (val == null)
+		{
+			throw new InvalidCastException("DateTime value required, but not specified");
+		}
+		if (val is DateTime)
+		{
+			return ((DateTime) val);
+		}
+		try
+		{
+			return DateTime.Parse((String) val);
+		}
+		catch (Exception e)
+		{
+			throw new InvalidCastException("DateTime value required, but found: " + val);
+		}
+	}
+	
 	public long getLong(String key)
 	{
 		Object val = _set.get(key);

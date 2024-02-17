@@ -1,4 +1,7 @@
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Quests;
+using L2Dn.GameServer.Network.Enums;
 
 namespace L2Dn.GameServer.Model.InstanceZones.Conditions;
 
@@ -13,7 +16,7 @@ public class ConditionQuest: Condition
 	{
 		// Set message
 		setSystemMessage(SystemMessageId.C1_DOES_NOT_MEET_QUEST_REQUIREMENTS_AND_CANNOT_ENTER,
-			(message, player) => message.addString(player.getName()));
+			(message, player) => message.Params.addString(player.getName()));
 	}
 
 	protected override bool test(Player player, Npc npc)

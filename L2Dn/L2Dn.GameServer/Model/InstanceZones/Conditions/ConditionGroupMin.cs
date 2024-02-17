@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network.Enums;
 
 namespace L2Dn.GameServer.Model.InstanceZones.Conditions;
 
@@ -12,7 +13,7 @@ public class ConditionGroupMin: Condition
 		base(template, parameters, true, showMessageAndHtml)
 	{
 		setSystemMessage(SystemMessageId.YOU_MUST_HAVE_A_MINIMUM_OF_S1_PEOPLE_TO_ENTER_THIS_INSTANCE_ZONE,
-			(msg, player) => msg.addInt(getLimit()));
+			(msg, player) => msg.Params.addInt(getLimit()));
 	}
 
 	protected override bool test(Player player, Npc npc, List<Player> group)

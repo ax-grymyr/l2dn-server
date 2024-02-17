@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network.Enums;
 
 namespace L2Dn.GameServer.Model.InstanceZones.Conditions;
 
@@ -10,7 +11,7 @@ public class ConditionDistance: Condition
 {
 	public ConditionDistance(InstanceTemplate template, StatSet parameters, bool onlyLeader, bool showMessageAndHtml):base(template, parameters, onlyLeader, showMessageAndHtml)
 	{
-		setSystemMessage(SystemMessageId.C1_IS_TOO_FAR_FROM_THE_INSTANCE_ZONE_ENTRANCE, (message, player) => message.addString(player.getName()));
+		setSystemMessage(SystemMessageId.C1_IS_TOO_FAR_FROM_THE_INSTANCE_ZONE_ENTRANCE, (message, player) => message.Params.addString(player.getName()));
 	}
 	
 	protected override bool test(Player player, Npc npc)

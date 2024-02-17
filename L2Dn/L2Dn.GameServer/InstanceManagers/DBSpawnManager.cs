@@ -404,10 +404,6 @@ public class DBSpawnManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-            
-			PreparedStatement statement =
-				con.prepareStatement(
-					"UPDATE npc_respawns SET respawnTime = ?, currentHP = ?, currentMP = ? WHERE id = ?");
 			foreach (var entry in _storedInfo)
 			{
 				int npcId = entry.Key;
@@ -435,16 +431,16 @@ public class DBSpawnManager
 				
 				try
 				{
-					statement.setLong(1, info.getLong("respawnTime"));
-					statement.setDouble(2, npc.isDead() ? npc.getMaxHp() : info.getDouble("currentHP"));
-					statement.setDouble(3, npc.isDead() ? npc.getMaxMp() : info.getDouble("currentMP"));
-					statement.setInt(4, npcId);
-					statement.executeUpdate();
-					statement.clearParameters();
+					DateTime? respawnTime = info.getLong("respawnTime");
+					double currentHp = npc.isDead() ? npc.getMaxHp() : info.getDouble("currentHP");
+					double currentMp = npc.isDead() ? npc.getMaxMp() : info.getDouble("currentMP");
+					ctx.NpcRespawns.Where(r => r.Id == npcId).ExecuteUpdate(s =>
+						s.SetProperty(r => r.RespawnTime, respawnTime).SetProperty(r => r.CurrentHp, currentHp)
+							.SetProperty(r => r.CurrentMp, currentMp));
 				}
 				catch (Exception e)
 				{
-					LOGGER.Warn(GetType().Name + ": Couldnt update npc_respawns table " + e);
+					LOGGER.Error(GetType().Name + ": Couldnt update npc_respawns table " + e);
 				}
 			}
 		}

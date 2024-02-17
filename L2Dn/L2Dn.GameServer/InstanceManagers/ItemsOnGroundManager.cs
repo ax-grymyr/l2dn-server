@@ -1,8 +1,10 @@
 using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -43,76 +45,64 @@ public class ItemsOnGroundManager: Runnable
 		// if DestroyPlayerDroppedItem was previously false, items currently protected will be added to ItemsAutoDestroy
 		if (Config.DESTROY_DROPPED_PLAYER_ITEM)
 		{
-			String str = null;
-			if (!Config.DESTROY_EQUIPABLE_PLAYER_ITEM)
-			{
-				// Recycle misc. items only
-				str = "UPDATE itemsonground SET drop_time = ? WHERE drop_time = -1 AND equipable = 0";
-			}
-			else if (Config.DESTROY_EQUIPABLE_PLAYER_ITEM)
-			{
-				// Recycle all items including equip-able
-				str = "UPDATE itemsonground SET drop_time = ? WHERE drop_time = -1";
-			}
-			
 			try 
 			{
+				DateTime time = DateTime.UtcNow;
+
 				using GameServerDbContext ctx = new();
-				PreparedStatement ps = con.prepareStatement(str);
-				ps.setLong(1, System.currentTimeMillis());
-				ps.execute();
+				var query = ctx.ItemsOnGround.Where(r => r.DropTime == null);
+
+				if (!Config.DESTROY_EQUIPABLE_PLAYER_ITEM)
+					query = query.Where(r => !r.Equipable);
+
+				query.ExecuteUpdate(s => s.SetProperty(r => r.DropTime, time));
 			}
 			catch (Exception e)
 			{
-				LOGGER.Error(GetType().Name + ": Error while updating table ItemsOnGround " + e.getMessage(), e);
+				LOGGER.Error(GetType().Name + ": Error while updating table ItemsOnGround: " + e);
 			}
 		}
 		
 		// Add items to world
 		try 
 		{
-			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement(
-					"SELECT object_id,item_id,count,enchant_level,x,y,z,drop_time,equipable FROM itemsonground");
 			int count = 0;
-			
+			using GameServerDbContext ctx = new();
+			foreach (ItemOnGround itemOnGround in ctx.ItemsOnGround)
 			{
-				ResultSet rs = ps.executeQuery();
 				Item item;
-				while (rs.next())
+				item = new Item(itemOnGround.ObjectId, itemOnGround.ItemId);
+				World.getInstance().addObject(item);
+				// this check and..
+				if (item.isStackable() && (itemOnGround.Count > 1))
 				{
-					item = new Item(rs.getInt(1), rs.getInt(2));
-					World.getInstance().addObject(item);
-					// this check and..
-					if (item.isStackable() && (rs.getInt(3) > 1))
-					{
-						item.setCount(rs.getInt(3));
-					}
-					// this, are really necessary?
-					if (rs.getInt(4) > 0)
-					{
-						item.setEnchantLevel(rs.getInt(4));
-					}
-					item.setXYZ(rs.getInt(5), rs.getInt(6), rs.getInt(7));
-					item.setWorldRegion(World.getInstance().getRegion(item));
-					item.getWorldRegion().addVisibleObject(item);
-					long dropTime = rs.getLong(8);
-					item.setDropTime(dropTime);
-					item.setProtected(dropTime == -1);
-					item.setSpawned(true);
-					World.getInstance().addVisibleObject(item, item.getWorldRegion());
-					_items.add(item);
-					count++;
-					// add to ItemsAutoDestroy only items not protected
-					if (!Config.LIST_PROTECTED_ITEMS.Contains(item.getId()) && (dropTime > -1) &&
-					    (((Config.AUTODESTROY_ITEM_AFTER > 0) && !item.getTemplate().hasExImmediateEffect()) ||
-					     ((Config.HERB_AUTO_DESTROY_TIME > 0) && item.getTemplate().hasExImmediateEffect())))
-					{
-						ItemsAutoDestroyTaskManager.getInstance().addItem(item);
-					}
+					item.setCount(itemOnGround.Count);
+				}
+				// this, are really necessary?
+				if (itemOnGround.EnchantLevel > 0)
+				{
+					item.setEnchantLevel(itemOnGround.EnchantLevel);
+				}
+				
+				item.setXYZ(itemOnGround.X, itemOnGround.Y, itemOnGround.Z);
+				item.setWorldRegion(World.getInstance().getRegion(item));
+				item.getWorldRegion().addVisibleObject(item);
+				DateTime? dropTime = itemOnGround.DropTime;
+				item.setDropTime(dropTime ?? DateTime.MinValue); // TODO
+				item.setProtected(dropTime is null);
+				item.setSpawned(true);
+				World.getInstance().addVisibleObject(item, item.getWorldRegion());
+				_items.add(item);
+				count++;
+				// add to ItemsAutoDestroy only items not protected
+				if (!Config.LIST_PROTECTED_ITEMS.Contains(item.getId()) && (dropTime is not null) &&
+				    (((Config.AUTODESTROY_ITEM_AFTER > 0) && !item.getTemplate().hasExImmediateEffect()) ||
+				     ((Config.HERB_AUTO_DESTROY_TIME > 0) && item.getTemplate().hasExImmediateEffect())))
+				{
+					ItemsAutoDestroyTaskManager.getInstance().addItem(item);
 				}
 			}
+			
 			LOGGER.Info(GetType().Name +": Loaded " + count + " items.");
 		}
 		catch (Exception e)
@@ -157,8 +147,7 @@ public class ItemsOnGroundManager: Runnable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			Statement s = con.createStatement();
-			s.executeUpdate("DELETE FROM itemsonground");
+			ctx.ItemsOnGround.ExecuteDelete();
 		}
 		catch (Exception e1)
 		{
@@ -167,7 +156,7 @@ public class ItemsOnGroundManager: Runnable
 	}
 	
 	[MethodImpl(MethodImplOptions.Synchronized)]
-	public synchronized void run()
+	public void run()
 	{
 		if (!Config.SAVE_DROPPED_ITEM)
 		{
@@ -184,8 +173,7 @@ public class ItemsOnGroundManager: Runnable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(
-				"INSERT INTO itemsonground(object_id,item_id,count,enchant_level,x,y,z,drop_time,equipable) VALUES(?,?,?,?,?,?,?,?,?)");
+			
 			foreach (Item item in _items)
 			{
 				if (item == null)
@@ -197,26 +185,22 @@ public class ItemsOnGroundManager: Runnable
 				{
 					continue; // Cursed Items not saved to ground, prevent double save
 				}
-				
-				try
+
+				ctx.ItemsOnGround.Add(new ItemOnGround()
 				{
-					statement.setInt(1, item.getObjectId());
-					statement.setInt(2, item.getId());
-					statement.setLong(3, item.getCount());
-					statement.setInt(4, item.getEnchantLevel());
-					statement.setInt(5, item.getX());
-					statement.setInt(6, item.getY());
-					statement.setInt(7, item.getZ());
-					statement.setLong(8, (item.isProtected() ? -1 : item.getDropTime())); // item is protected or AutoDestroyed
-					statement.setLong(9, (item.isEquipable() ? 1 : 0)); // set equip-able
-					statement.execute();
-					statement.clearParameters();
-				}
-				catch (Exception e)
-				{
-					LOGGER.Error(GetType().Name + ": Error while inserting into table ItemsOnGround: " + e);
-				}
+					ObjectId = item.getObjectId(),
+					ItemId = item.getId(),
+					Count = item.getCount(),
+					EnchantLevel = item.getEnchantLevel(),
+					X = item.getX(),
+					Y = item.getY(),
+					Z = item.getZ(),
+					DropTime = item.isProtected() ? null : item.getDropTime(),
+					Equipable = item.isEquipable()
+				});
 			}
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{

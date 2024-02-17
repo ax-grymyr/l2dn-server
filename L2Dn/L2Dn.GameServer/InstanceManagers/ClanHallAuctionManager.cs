@@ -103,9 +103,9 @@ public class ClanHallAuctionManager
 		return false;
 	}
 	
-	public long getRemainingTime()
+	public TimeSpan getRemainingTime()
 	{
-		return _endTask.getDelay(TimeUnit.MILLISECONDS);
+		return _endTask.getDelay();
 	}
 	
 	public static ClanHallAuctionManager getInstance()

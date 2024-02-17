@@ -1,4 +1,7 @@
-﻿namespace L2Dn.GameServer.Model.Commission;
+﻿using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Utilities;
+
+namespace L2Dn.GameServer.Model.Commission;
 
 public class CommissionItem
 {
@@ -6,12 +9,12 @@ public class CommissionItem
 	private readonly Item _itemInstance;
 	private readonly ItemInfo _itemInfo;
 	private readonly long _pricePerUnit;
-	private readonly Instant _startTime;
-	private readonly byte _durationInDays;
-	private readonly byte _discountInPercentage;
-	private ScheduledFuture<?> _saleEndTask;
+	private readonly DateTime _startTime;
+	private readonly int _durationInDays;
+	private readonly int _discountInPercentage;
+	private ScheduledFuture _saleEndTask;
 	
-	public CommissionItem(long commissionId, Item itemInstance, long pricePerUnit, Instant startTime, byte durationInDays, byte discountInPercentage)
+	public CommissionItem(long commissionId, Item itemInstance, long pricePerUnit, DateTime startTime, int durationInDays, int discountInPercentage)
 	{
 		_commissionId = commissionId;
 		_itemInstance = itemInstance;
@@ -62,7 +65,7 @@ public class CommissionItem
 	 * Gets the start time.
 	 * @return the start time
 	 */
-	public Instant getStartTime()
+	public DateTime getStartTime()
 	{
 		return _startTime;
 	}
@@ -71,7 +74,7 @@ public class CommissionItem
 	 * Gets the duration in days.
 	 * @return the duration in days
 	 */
-	public byte getDurationInDays()
+	public int getDurationInDays()
 	{
 		return _durationInDays;
 	}
@@ -80,7 +83,7 @@ public class CommissionItem
 	 * Gets the discount in percentage
 	 * @return the _discountInPercentage
 	 */
-	public byte getDiscountInPercentage()
+	public int getDiscountInPercentage()
 	{
 		return _discountInPercentage;
 	}
@@ -89,16 +92,16 @@ public class CommissionItem
 	 * Gets the end time.
 	 * @return the end time
 	 */
-	public Instant getEndTime()
+	public DateTime getEndTime()
 	{
-		return _startTime.plus(_durationInDays, ChronoUnit.DAYS);
+		return _startTime.AddDays(_durationInDays);
 	}
 	
 	/**
 	 * Gets the sale end task.
 	 * @return the sale end task
 	 */
-	public ScheduledFuture<?> getSaleEndTask()
+	public ScheduledFuture getSaleEndTask()
 	{
 		return _saleEndTask;
 	}
@@ -107,7 +110,7 @@ public class CommissionItem
 	 * Sets the sale end task.
 	 * @param saleEndTask the sale end task
 	 */
-	public void setSaleEndTask(ScheduledFuture<?> saleEndTask)
+	public void setSaleEndTask(ScheduledFuture saleEndTask)
 	{
 		_saleEndTask = saleEndTask;
 	}

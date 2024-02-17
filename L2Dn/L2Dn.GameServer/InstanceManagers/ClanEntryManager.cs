@@ -461,14 +461,14 @@ public class ClanEntryManager
 		return sortedList;
 	}
 	
-	public long getPlayerLockTime(int playerId)
+	public TimeSpan getPlayerLockTime(int playerId)
 	{
-		return _playerLocked.get(playerId) == null ? 0 : _playerLocked.get(playerId).getDelay(TimeUnit.MINUTES);
+		return _playerLocked.get(playerId) == null ? TimeSpan.Zero : _playerLocked.get(playerId).getDelay();
 	}
 	
-	public long getClanLockTime(int playerId)
+	public TimeSpan getClanLockTime(int playerId)
 	{
-		return _clanLocked.get(playerId) == null ? 0 : _clanLocked.get(playerId).getDelay(TimeUnit.MINUTES);
+		return _clanLocked.get(playerId) == null ? TimeSpan.Zero : _clanLocked.get(playerId).getDelay();
 	}
 	
 	private void lockPlayer(int playerId)

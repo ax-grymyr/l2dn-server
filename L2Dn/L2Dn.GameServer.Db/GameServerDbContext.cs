@@ -40,14 +40,28 @@ public class GameServerDbContext: DbContext
     }
 
     public DbSet<AccountRef> AccountRefs => Set<AccountRef>();
+    public DbSet<AccountVariable> AccountVariables => Set<AccountVariable>();
+
     public DbSet<Character> Characters => Set<Character>();
     public DbSet<CharacterFriend> CharacterFriends => Set<CharacterFriend>();
     public DbSet<CharacterSummon> CharacterSummons => Set<CharacterSummon>();
     public DbSet<CharacterOfflineTrade> CharacterOfflineTrades => Set<CharacterOfflineTrade>();
     public DbSet<CharacterOfflineTradeItem> CharacterOfflineTradeItems => Set<CharacterOfflineTradeItem>();
     public DbSet<CharacterDailyReward> CharacterDailyRewards => Set<CharacterDailyReward>();
+    public DbSet<CharacterSubClass> CharacterSubClasses => Set<CharacterSubClass>();
+    public DbSet<CharacterSkillReuse> CharacterSkillReuses => Set<CharacterSkillReuse>();
+    public DbSet<CharacterItemReuse> CharacterItemReuses => Set<CharacterItemReuse>();
+    public DbSet<CharacterRecoBonus> CharacterRecoBonuses => Set<CharacterRecoBonus>();
+    public DbSet<CharacterInstance> CharacterInstances => Set<CharacterInstance>();
+    public DbSet<CharacterVariable> CharacterVariables => Set<CharacterVariable>();
+    
     public DbSet<Pet> Pets => Set<Pet>();
+
     public DbSet<DbItem> Items => Set<DbItem>();
+    public DbSet<ItemAuction> ItemAuctions => Set<ItemAuction>();
+    public DbSet<ItemAuctionBid> ItemAuctionBids => Set<ItemAuctionBid>();
+    public DbSet<ItemOnGround> ItemsOnGround => Set<ItemOnGround>();
+    public DbSet<DbCommissionItem> CommissionItems => Set<DbCommissionItem>();
     
      public DbSet<Clan> Clans => Set<Clan>();
     public DbSet<ClanPrivileges> ClanPrivileges => Set<ClanPrivileges>();
@@ -81,6 +95,9 @@ public class GameServerDbContext: DbContext
     public DbSet<DbCustomMail> CustomMails => Set<DbCustomMail>();
     public DbSet<NpcRespawn> NpcRespawns => Set<NpcRespawn>();
     public DbSet<DbFort> Forts => Set<DbFort>();
+    public DbSet<FortSiegeClan> FortSiegeClans => Set<FortSiegeClan>();
+    public DbSet<HuntPass> HuntPasses => Set<HuntPass>();
+    public DbSet<DbGrandBoss> GrandBosses => Set<DbGrandBoss>();
 
     public DbSet<GlobalVariable> GlobalVariables => Set<GlobalVariable>();
 }

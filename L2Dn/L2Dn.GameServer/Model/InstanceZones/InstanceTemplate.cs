@@ -1,9 +1,13 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.InstanceZones.Conditions;
 using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Utilities;
 
@@ -18,8 +22,8 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 	// Basic instance parameters
 	private int _templateId = -1;
 	private String _name = "UnknownInstance";
-	private int _duration = -1;
-	private long _emptyDestroyTime = -1;
+	private TimeSpan? _duration;
+	private TimeSpan? _emptyDestroyTime;
 	private int _ejectTime = Config.EJECT_DEAD_PLAYER_TIME;
 	private int _maxWorldCount = -1;
 	private bool _isPvP = false;
@@ -44,7 +48,7 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 	private List<int> _removeBuffExceptions = Collections.emptyList();
 	// Conditions
 	private List<Condition> _conditions = Collections.emptyList();
-	private int _groupMask = GroupType.NONE.getMask();
+	private GroupType _groupMask = GroupType.Player;
 	
 	/**
 	 * @param set
@@ -367,7 +371,7 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 	 * Get time after empty instance is destroyed.
 	 * @return time in milliseconds
 	 */
-	public long getEmptyDestroyTime()
+	public TimeSpan getEmptyDestroyTime()
 	{
 		return _emptyDestroyTime;
 	}
@@ -376,7 +380,7 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 	 * Get instance duration time.
 	 * @return time in minutes
 	 */
-	public int getDuration()
+	public TimeSpan getDuration()
 	{
 		return _duration;
 	}
@@ -461,7 +465,7 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 		// Make list of affected playable objects
 		List<Playable> affected = new();
 		affected.Add(player);
-		player.getServitors().values().forEach(affected::add);
+		player.getServitors().values().forEach(x => affected.add(x));
 		if (player.hasPet())
 		{
 			affected.Add(player.getPet());
@@ -509,7 +513,7 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 	 * Calculate re-enter time for instance world.
 	 * @return re-enter time in milliseconds
 	 */
-	public long calculateReenterTime()
+	public DateTime calculateReenterTime()
 	{
 		long time = -1;
 		foreach (InstanceReenterTimeHolder data in _reenterData)
@@ -564,8 +568,7 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 	 */
 	private bool groupMaskContains(GroupType type)
 	{
-		int flag = type.getMask();
-		return (_groupMask & flag) == flag;
+		return (_groupMask & type) == type;
 	}
 	
 	/**
@@ -578,13 +581,13 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 		// If mask doesn't contain any group
 		if (_groupMask == 0)
 		{
-			return null;
+			return GroupType.None;
 		}
 		
 		// If player can override instance conditions then he can enter alone
 		if (player.canOverrideCond(PlayerCondOverride.INSTANCE_CONDITIONS))
 		{
-			return GroupType.NONE;
+			return GroupType.Player;
 		}
 		
 		// Check if mask contains player's group
@@ -603,15 +606,16 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 		
 		// When mask contains more group types but without player's group, choose nearest one
 		// player < party < command channel
-		foreach (GroupType t in GroupType.values())
+		foreach (GroupType t in Enum.GetValues<GroupType>())
 		{
 			if ((t != playerGroup) && groupMaskContains(t))
 			{
 				return t;
 			}
 		}
+		
 		// nothing found? then player cannot enter
-		return null;
+		return GroupType.None;
 	}
 	
 	/**
@@ -647,7 +651,7 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 		{
 			foreach (Player member in pGroup.getMembers())
 			{
-				if (!member.equals(player))
+				if (member != player)
 				{
 					group.add(member);
 				}
@@ -663,7 +667,7 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 	 * @param htmlCallback callback function used to display fail HTML when condition validate failed
 	 * @return {@code true} when all condition are met, otherwise {@code false}
 	 */
-	public bool validateConditions(List<Player> group, Npc npc, BiConsumer<Player, String> htmlCallback)
+	public bool validateConditions(List<Player> group, Npc npc, Action<Player, String> htmlCallback)
 	{
 		foreach (Condition cond in _conditions)
 		{
