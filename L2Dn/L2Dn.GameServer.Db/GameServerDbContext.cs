@@ -98,6 +98,6 @@ public class GameServerDbContext: DbContext
     public DbSet<FortSiegeClan> FortSiegeClans => Set<FortSiegeClan>();
     public DbSet<HuntPass> HuntPasses => Set<HuntPass>();
     public DbSet<DbGrandBoss> GrandBosses => Set<DbGrandBoss>();
-
+    public DbSet<DbMailMessage> MailMessages => Set<DbMailMessage>();
     public DbSet<GlobalVariable> GlobalVariables => Set<GlobalVariable>();
 }

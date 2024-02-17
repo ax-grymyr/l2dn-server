@@ -1,4 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.ItemContainers;
@@ -8,8 +10,8 @@ namespace L2Dn.GameServer.Model;
 
 public class Message
 {
-	private const int EXPIRATION = 360; // 15 days
-	private const int COD_EXPIRATION = 12; // 12 hours
+	private static readonly TimeSpan EXPIRATION = TimeSpan.FromDays(15); // 15 days
+	private static readonly TimeSpan COD_EXPIRATION = TimeSpan.FromHours(12); // 12 hours
 	
 	// post state
 	public const int DELETED = 0;
@@ -19,7 +21,7 @@ public class Message
 	private readonly int _messageId;
 	private readonly int _senderId;
 	private readonly int _receiverId;
-	private readonly long _expiration;
+	private readonly DateTime _expiration;
 	private String _senderName = null;
 	private String _receiverName = null;
 	private readonly  String _subject;
@@ -40,31 +42,30 @@ public class Message
 	/*
 	 * Constructor for restoring from DB.
 	 */
-	public Message(ResultSet rset)
+	public Message(DbMailMessage record)
 	{
-		_messageId = rset.getInt("messageId");
-		_senderId = rset.getInt("senderId");
-		_receiverId = rset.getInt("receiverId");
-		_subject = rset.getString("subject");
-		_content = rset.getString("content");
-		_expiration = rset.getLong("expiration");
-		_reqAdena = rset.getLong("reqAdena");
-		_hasAttachments = rset.getBoolean("hasAttachments");
-		_unread = rset.getBoolean("isUnread");
-		_deletedBySender = rset.getBoolean("isDeletedBySender");
-		_deletedByReceiver = rset.getBoolean("isDeletedByReceiver");
-		_messageType = MailType.values()[rset.getInt("sendBySystem")];
-		_returned = rset.getBoolean("isReturned");
-		_itemId = rset.getInt("itemId");
-		_enchantLvl = rset.getInt("enchantLvl");
-		String elemental = rset.getString("elementals");
+		_messageId = record.MessageId;
+		_senderId = record.SenderId;
+		_receiverId = record.ReceiverId;
+		_subject = record.Subject;
+		_content = record.Content;
+		_expiration = record.ExpirationTime;
+		_reqAdena = record.RequiredAdena;
+		_hasAttachments = record.HasAttachments;
+		_unread = record.IsUnread;
+		_deletedBySender = record.IsDeletedBySender;
+		_deletedByReceiver = record.IsDeletedByReceiver;
+		_messageType = (MailType)record.SentBySystem;
+		_returned = record.IsReturned;
+		_itemId = record.ItemId;
+		_enchantLvl = record.EnchantLevel;
+		
+		string? elemental = record.Elementals;
 		if (elemental != null)
 		{
-			String[] elemDef = elemental.split(";");
+			string[] elemDef = elemental.Split(";");
 			for (int i = 0; i < 6; i++)
-			{
 				_elementals[i] = int.Parse(elemDef[i]);
-			}
 		}
 	}
 	
@@ -78,7 +79,7 @@ public class Message
 		_receiverId = receiverId;
 		_subject = subject;
 		_content = text;
-		_expiration = (isCod ? System.currentTimeMillis() + (COD_EXPIRATION * 3600000) : System.currentTimeMillis() + (EXPIRATION * 3600000));
+		_expiration = DateTime.UtcNow + (isCod ? COD_EXPIRATION : EXPIRATION);
 		_hasAttachments = false;
 		_unread = true;
 		_deletedBySender = false;
@@ -97,7 +98,7 @@ public class Message
 		_receiverId = receiverId;
 		_subject = subject;
 		_content = content;
-		_expiration = System.currentTimeMillis() + (EXPIRATION * 3600000);
+		_expiration = DateTime.UtcNow + EXPIRATION;
 		_reqAdena = 0;
 		_hasAttachments = false;
 		_unread = true;
@@ -117,7 +118,7 @@ public class Message
 		_receiverId = receiverId;
 		_subject = subject;
 		_content = content;
-		_expiration = System.currentTimeMillis() + (EXPIRATION * 3600000);
+		_expiration = DateTime.UtcNow + EXPIRATION;
 		_hasAttachments = false;
 		_unread = true;
 		_deletedBySender = true;
@@ -136,7 +137,7 @@ public class Message
 		_receiverId = msg.getSenderId();
 		_subject = "";
 		_content = "";
-		_expiration = System.currentTimeMillis() + (EXPIRATION * 3600000);
+		_expiration = DateTime.UtcNow + EXPIRATION;
 		_unread = true;
 		_deletedBySender = true;
 		_deletedByReceiver = false;
@@ -156,7 +157,7 @@ public class Message
 		_receiverId = receiverId;
 		_subject = "";
 		_content = item.getName();
-		_expiration = System.currentTimeMillis() + (EXPIRATION * 3600000);
+		_expiration = DateTime.UtcNow + EXPIRATION;
 		_unread = true;
 		_deletedBySender = true;
 		_messageType = mailType;
@@ -186,28 +187,6 @@ public class Message
 		}
 	}
 	
-	public static PreparedStatement getStatement(Message msg, Connection con)
-	{
-		using PreparedStatement stmt = con.prepareStatement("INSERT INTO messages (messageId, senderId, receiverId, subject, content, expiration, reqAdena, hasAttachments, isUnread, isDeletedBySender, isDeletedByReceiver, sendBySystem, isReturned, itemId, enchantLvl, elementals) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-		stmt.setInt(1, msg._messageId);
-		stmt.setInt(2, msg._senderId);
-		stmt.setInt(3, msg._receiverId);
-		stmt.setString(4, msg._subject);
-		stmt.setString(5, msg._content);
-		stmt.setLong(6, msg._expiration);
-		stmt.setLong(7, msg._reqAdena);
-		stmt.setString(8, String.valueOf(msg._hasAttachments));
-		stmt.setString(9, String.valueOf(msg._unread));
-		stmt.setString(10, String.valueOf(msg._deletedBySender));
-		stmt.setString(11, String.valueOf(msg._deletedByReceiver));
-		stmt.setInt(12, msg._messageType.ordinal());
-		stmt.setString(13, String.valueOf(msg._returned));
-		stmt.setInt(14, msg._itemId);
-		stmt.setInt(15, msg._enchantLvl);
-		stmt.setString(16, msg._elementals[0] + ";" + msg._elementals[1] + ";" + msg._elementals[2] + ";" + msg._elementals[3] + ";" + msg._elementals[4] + ";" + msg._elementals[5]);
-		return stmt;
-	}
-	
 	public int getId()
 	{
 		return _messageId;
@@ -227,7 +206,7 @@ public class Message
 	{
 		switch (_messageType)
 		{
-			case REGULAR:
+			case MailType.REGULAR:
 			{
 				_senderName = CharInfoTable.getInstance().getNameById(_senderId);
 				break;
@@ -269,7 +248,7 @@ public class Message
 		return _reqAdena > 0;
 	}
 	
-	public long getExpiration()
+	public DateTime getExpiration()
 	{
 		return _expiration;
 	}

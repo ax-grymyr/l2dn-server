@@ -1,8 +1,11 @@
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -27,14 +30,13 @@ public class MailManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			Statement ps = con.createStatement();
-			ResultSet rs = ps.executeQuery("SELECT * FROM messages ORDER BY expiration");
-			while (rs.next())
+			foreach (DbMailMessage record in ctx.MailMessages.OrderBy(m=>m.ExpirationTime))
 			{
 				count++;
-				Message msg = new Message(rs);
+				Message msg = new Message(record);
 				int msgId = msg.getId();
 				_messages.put(msgId, msg);
+				
 				MessageDeletionTaskManager.getInstance().add(msgId, msg.getExpiration());
 			}
 		}
@@ -107,9 +109,9 @@ public class MailManager
 		return inbox;
 	}
 	
-	public long getUnreadCount(Player player)
+	public int getUnreadCount(Player player)
 	{
-		long count = 0;
+		int count = 0;
 		foreach (Message message in getInbox(player.getObjectId()))
 		{
 			if (message.isUnread())
@@ -159,8 +161,28 @@ public class MailManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = Message.getStatement(msg, con);
-			ps.execute();
+			ctx.MailMessages.Add(new DbMailMessage()
+			{
+				MessageId = msg.getId(),
+				SenderId = msg.getSenderId(),
+				ReceiverId = msg.getReceiverId(),
+				Subject = msg.getSubject(),
+				Content = msg.getContent(),
+				ExpirationTime = msg.getExpiration(),
+				RequiredAdena = msg.getReqAdena(),
+				HasAttachments = msg.hasAttachments(),
+				IsUnread = msg.isUnread(),
+				IsDeletedByReceiver = msg.isDeletedByReceiver(),
+				IsDeletedBySender = msg.isDeletedBySender(),
+				SentBySystem = (byte)msg.getMailType(),
+				IsReturned = msg.isReturned(),
+				IsLocked = msg.isLocked(),
+				ItemId = msg.getItemId(),
+				EnchantLevel = (short)msg.getEnchantLvl(),
+				Elementals = string.Join(";", msg.getElementals()) 
+			});
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -170,8 +192,9 @@ public class MailManager
 		Player receiver = World.getInstance().getPlayer(msg.getReceiverId());
 		if (receiver != null)
 		{
-			receiver.sendPacket(ExNoticePostArrived.valueOf(true));
-			receiver.sendPacket(new ExUnReadMailCount(receiver));
+			int unreadMessageCount = getUnreadCount(receiver);
+			receiver.sendPacket(new ExNoticePostArrivedPacket(true));
+			receiver.sendPacket(new ExUnReadMailCountPacket(unreadMessageCount));
 		}
 		
 		MessageDeletionTaskManager.getInstance().add(msg.getId(), msg.getExpiration());
@@ -182,9 +205,7 @@ public class MailManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("UPDATE messages SET isUnread = 'false' WHERE messageId = ?");
-			ps.setInt(1, msgId);
-			ps.execute();
+			ctx.MailMessages.Where(m => m.MessageId == msgId).ExecuteUpdate(s => s.SetProperty(m => m.IsUnread, false));
 		}
 		catch (Exception e)
 		{
@@ -197,10 +218,7 @@ public class MailManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement("UPDATE messages SET isDeletedBySender = 'true' WHERE messageId = ?");
-			ps.setInt(1, msgId);
-			ps.execute();
+			ctx.MailMessages.Where(m => m.MessageId == msgId).ExecuteUpdate(s => s.SetProperty(m => m.IsDeletedBySender, true));
 		}
 		catch (Exception e)
 		{
@@ -213,10 +231,7 @@ public class MailManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement("UPDATE messages SET isDeletedByReceiver = 'true' WHERE messageId = ?");
-			ps.setInt(1, msgId);
-			ps.execute();
+			ctx.MailMessages.Where(m => m.MessageId == msgId).ExecuteUpdate(s => s.SetProperty(m => m.IsDeletedByReceiver, true));
 		}
 		catch (Exception e)
 		{
@@ -229,10 +244,7 @@ public class MailManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement("UPDATE messages SET hasAttachments = 'false' WHERE messageId = ?");
-			ps.setInt(1, msgId);
-			ps.execute();
+			ctx.MailMessages.Where(m => m.MessageId == msgId).ExecuteUpdate(s => s.SetProperty(m => m.HasAttachments, false));
 		}
 		catch (Exception e)
 		{
@@ -245,9 +257,7 @@ public class MailManager
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM messages WHERE messageId = ?");
-			ps.setInt(1, msgId);
-			ps.execute();
+			ctx.MailMessages.Where(m => m.MessageId == msgId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
