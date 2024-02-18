@@ -3,6 +3,7 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Model;
 
@@ -60,13 +61,12 @@ public class CombatFlag
 		// Equip with the weapon
 		_item = item;
 		_player.getInventory().equipItem(_item);
-		SystemMessage sm = new SystemMessage(SystemMessageId.S1_EQUIPPED);
-		sm.addItemName(_item);
+		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_EQUIPPED);
+		sm.Params.addItemName(_item);
 		_player.sendPacket(sm);
 		
 		// Refresh inventory
-		InventoryUpdate iu = new InventoryUpdate();
-		iu.addItem(_item);
+		InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(_item));
 		_player.sendInventoryUpdate(iu);
 		
 		// Refresh player stats

@@ -76,7 +76,7 @@ public abstract class AbstractPlayerGroup
 	/**
 	 * @return the count of all players in this group
 	 */
-	public int getMemberCount()
+	public virtual int getMemberCount()
 	{
 		return getMembers().Count;
 	}
@@ -154,7 +154,7 @@ public abstract class AbstractPlayerGroup
 	 * @param player the player to check
 	 * @return {@code true} if this group contains the specified player, {@code false} otherwise
 	 */
-	public bool containsPlayer(Player player)
+	public virtual bool containsPlayer(Player player)
 	{
 		return getMembers().Contains(player);
 	}

@@ -22,7 +22,7 @@ public class StaticObject: Creature
 	private readonly int _staticObjectId;
 	private int _meshIndex = 0; // 0 - static objects, alternate static objects
 	private int _type = -1; // 0 - map signs, 1 - throne , 2 - arena signs
-	private ShowTownMap _map;
+	private ShowTownMapPacket _map;
 	
 	protected override CreatureAI initAI()
 	{
@@ -80,10 +80,10 @@ public class StaticObject: Creature
 	
 	public void setMap(String texture, int x, int y)
 	{
-		_map = new ShowTownMap("town_map." + texture, x, y);
+		_map = new ShowTownMapPacket("town_map." + texture, x, y);
 	}
 	
-	public ShowTownMap getMap()
+	public ShowTownMapPacket getMap()
 	{
 		return _map;
 	}

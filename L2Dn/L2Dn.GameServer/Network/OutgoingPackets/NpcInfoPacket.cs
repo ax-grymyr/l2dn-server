@@ -131,7 +131,7 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 		}
         
 		_helper.AddComponent(NpcInfoType.PET_EVOLUTION_ID);
-		if (npc.getPvpFlag() > 0)
+		if (npc.getPvpFlag())
 			_helper.AddComponent(NpcInfoType.PVP_FLAG);
 
 		// TODO: Confirm me

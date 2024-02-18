@@ -1,3 +1,5 @@
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 
 namespace L2Dn.GameServer.Model.Holders;
@@ -16,7 +18,7 @@ public class SubClassHolder
 	private static readonly int MAX_VITALITY_POINTS = 3500000;
 	private static readonly int MIN_VITALITY_POINTS = 0;
 
-	private ClassId _class;
+	private CharacterClass _class;
 	private long _exp = ExperienceData.getInstance().getExpForLevel(Config.BASE_SUBCLASS_LEVEL);
 	private long _sp = 0;
 	private int _level = Config.BASE_SUBCLASS_LEVEL;
@@ -30,14 +32,9 @@ public class SubClassHolder
 		// using the preset default values.
 	}
 
-	public ClassId getClassDefinition()
+	public CharacterClass getClassDefinition()
 	{
 		return _class;
-	}
-
-	public int getClassId()
-	{
-		return _class.getId();
 	}
 
 	public long getExp()
@@ -57,12 +54,12 @@ public class SubClassHolder
 
 	public int getVitalityPoints()
 	{
-		return Math.min(Math.max(_vitalityPoints, MIN_VITALITY_POINTS), MAX_VITALITY_POINTS);
+		return Math.Min(Math.Max(_vitalityPoints, MIN_VITALITY_POINTS), MAX_VITALITY_POINTS);
 	}
 
 	public void setVitalityPoints(int value)
 	{
-		_vitalityPoints = Math.min(Math.max(value, MIN_VITALITY_POINTS), MAX_VITALITY_POINTS);
+		_vitalityPoints = Math.Min(Math.Max(value, MIN_VITALITY_POINTS), MAX_VITALITY_POINTS);
 	}
 
 	/**
@@ -74,9 +71,9 @@ public class SubClassHolder
 		return _classIndex;
 	}
 
-	public void setClassId(int classId)
+	public void setClassId(CharacterClass classId)
 	{
-		_class = ClassId.getClassId(classId);
+		_class = classId;
 	}
 
 	public void setExp(long expValue)

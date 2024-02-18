@@ -13,6 +13,7 @@ using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor;
@@ -79,7 +80,7 @@ public abstract class Playable: Creature
 	{
 		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_DEATH, this))
 		{
-			TerminateReturn returnBack = EventDispatcher.getInstance().notifyEvent(new OnCreatureDeath(killer, this), this, TerminateReturn.class);
+			TerminateReturn returnBack = EventDispatcher.getInstance().notifyEvent<TerminateReturn>(new OnCreatureDeath(killer, this), this);
 			if ((returnBack != null) && returnBack.terminate())
 			{
 				return false;
@@ -132,7 +133,7 @@ public abstract class Playable: Creature
 					getActingPlayer().reviveRequest(getActingPlayer(), false, 0, 0, 0, 0);
 				}
 				player.setCharmOfCourage(false);
-				player.sendPacket(new EtcStatusUpdate(player));
+				player.sendPacket(new EtcStatusUpdatePacket(player));
 			}
 		}
 		
@@ -187,7 +188,7 @@ public abstract class Playable: Creature
 			|| (target == null) //
 			|| (player == target) //
 			|| (target.getReputation() < 0) //
-			|| (target.getPvpFlag() > 0) //
+			|| (target.getPvpFlag()) //
 			|| target.isOnDarkSide())
 		{
 			return true;

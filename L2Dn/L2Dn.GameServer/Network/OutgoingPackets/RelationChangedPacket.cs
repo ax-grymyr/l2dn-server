@@ -35,7 +35,7 @@ public struct RelationChangedPacket: IOutgoingPacket
 		public long RelationCode;
 		public bool AutoAttackable;
 		public int Reputation;
-		public byte PvpFlag;
+		public bool PvpFlag;
 	}
 
 	private readonly Relation _relation;

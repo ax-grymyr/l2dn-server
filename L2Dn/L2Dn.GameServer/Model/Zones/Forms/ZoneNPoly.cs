@@ -1,4 +1,4 @@
-﻿using L2Dn.GameServer.Model.Geo;
+﻿using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Utilities;
 

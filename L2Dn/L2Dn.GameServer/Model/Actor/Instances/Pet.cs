@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
@@ -44,7 +45,7 @@ public class Pet: Summon
 	private PetData _data;
 	private PetLevelData _leveldata;
 	private EvolveLevel _evolveLevel = EvolveLevel.None;
-	private Future<?> _feedTask;
+	private ScheduledFuture _feedTask;
 	
 	private void deletePetEvolved()
 	{

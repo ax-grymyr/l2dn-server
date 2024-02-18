@@ -1,6 +1,6 @@
 ﻿using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Model.Actor.Templates;
-using L2Dn.GameServer.Model.Geo;
 using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Model.Actor;
@@ -43,7 +43,7 @@ public abstract class Tower: Npc
             player.setTarget(this);
         }
         else if (interact && isAutoAttackable(player) && (Math.Abs(player.getZ() - getZ()) < 100) &&
-                 GeoEngine.Instance.CanSeeTarget(player, this))
+                 GeoEngine.getInstance().canSeeTarget(player, this))
         {
             // Notify the Player AI with AI_INTENTION_INTERACT
             player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this);

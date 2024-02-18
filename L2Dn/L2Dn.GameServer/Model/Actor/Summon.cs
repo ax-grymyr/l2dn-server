@@ -47,7 +47,7 @@ public abstract class Summon : Playable
 		15955
 	};
 	
-	public Summon(NpcTemplate template, Player owner):  base(template)
+	public Summon(NpcTemplate template, Player owner): base(template)
 	{
 		setInstanceType(InstanceType.Summon);
 		setInstance(owner.getInstanceWorld()); // set instance to same as owner
@@ -86,8 +86,8 @@ public abstract class Summon : Playable
 					sendPacket(new PetItemList(getInventory().getItems()));
 				}
 			}
-			sendPacket(new RelationChanged(this, _owner.getRelation(_owner), false));
-			World.getInstance().forEachVisibleObject<Player>(getOwner(), player => player.sendPacket(new RelationChanged(this, _owner.getRelation(player), isAutoAttackable(player))));
+			sendPacket(new RelationChangedPacket(this, _owner.getRelation(_owner), false));
+			World.getInstance().forEachVisibleObject<Player>(getOwner(), player => player.sendPacket(new RelationChangedPacket(this, _owner.getRelation(player), isAutoAttackable(player))));
 		}
 		
 		Party party = _owner.getParty();

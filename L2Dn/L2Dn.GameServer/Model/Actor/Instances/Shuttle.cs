@@ -82,14 +82,11 @@ public class Shuttle: Vehicle
 
 	public override void oustPlayers()
 	{
-		Player player;
-
-		// Use iterator because oustPlayer will try to remove player from _passengers
-		Iterator<Player> iter = _passengers.iterator();
-		while (iter.hasNext())
+		// TODO: does same as base method
+		List<Player> passengers = _passengers.ToList();
+		foreach (Player player in passengers)
 		{
-			player = iter.next();
-			iter.remove();
+			_passengers.remove(player);
 			if (player != null)
 			{
 				oustPlayer(player);

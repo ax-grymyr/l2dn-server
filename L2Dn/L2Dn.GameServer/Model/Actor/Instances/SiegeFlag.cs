@@ -9,7 +9,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -128,21 +128,24 @@ public class SiegeFlag: Npc
 		if (canTalk() && (((getCastle() != null) && getCastle().getSiege().isInProgress()) || ((getFort() != null) && getFort().getSiege().isInProgress())) && (_clan != null))
 		{
 			// send warning to owners of headquarters that theirs base is under attack
-			_clan.broadcastToOnlineMembers(new SystemMessage(SystemMessageId.SIEGE_CAMP_IS_UNDER_ATTACK));
+			_clan.broadcastToOnlineMembers(new SystemMessagePacket(SystemMessageId.SIEGE_CAMP_IS_UNDER_ATTACK));
 			setCanTalk(false);
-			ThreadPool.schedule(new ScheduleTalkTask(), 20000);
+			ThreadPool.schedule(new ScheduleTalkTask(this), 20000);
 		}
 	}
 	
 	private class ScheduleTalkTask: Runnable
 	{
-		public ScheduleTalkTask()
+		private readonly SiegeFlag _siegeFlag;
+
+		public ScheduleTalkTask(SiegeFlag siegeFlag)
 		{
+			_siegeFlag = siegeFlag;
 		}
 		
-		public override void run()
+		public void run()
 		{
-			setCanTalk(true);
+			_siegeFlag.setCanTalk(true);
 		}
 	}
 	

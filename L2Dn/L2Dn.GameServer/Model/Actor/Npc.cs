@@ -278,7 +278,7 @@ public class Npc: Creature
 			}
 			else if (getRunSpeed() == 0)
 			{
-				player.sendPacket(new ServerObjectInfo(this, player));
+				player.sendPacket(new ServerObjectInfoPacket(this, player));
 			}
 			else
 			{

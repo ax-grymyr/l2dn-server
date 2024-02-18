@@ -26,7 +26,7 @@ public class Servitor : Summon, Runnable
 	
 	private int _referenceSkill;
 	
-	public Servitor(NpcTemplate template, Player owner): base(template)
+	public Servitor(NpcTemplate template, Player owner): base(template, owner)
 	{
 		setInstanceType(InstanceType.Servitor);
 		setShowSummonAnimation(true);

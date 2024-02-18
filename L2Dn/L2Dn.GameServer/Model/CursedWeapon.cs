@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -133,8 +134,8 @@ public class CursedWeapon : INamable
 		// Delete infos from table if any
 		CursedWeaponsManager.removeFromDb(_itemId);
 		
-		SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_DISAPPEARED);
-		sm.addItemName(_itemId);
+		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_HAS_DISAPPEARED);
+		sm.Params.addItemName(_itemId);
 		CursedWeaponsManager.announce(sm);
 		
 		// Reset state
@@ -210,20 +211,20 @@ public class CursedWeapon : INamable
 			// _player.getInventory().getItemByItemId(_itemId).dropMe(_player, _player.getX(), _player.getY(), _player.getZ());
 		}
 		_isDropped = true;
-		SystemMessage sm = new SystemMessage(SystemMessageId.S2_HAS_APPEARED_IN_S1_THE_TREASURE_CHEST_CONTAINS_S2_ADENA_FIXED_REWARD_S3_ADDITIONAL_REWARD_S4_THE_ADENA_WILL_BE_GIVEN_TO_THE_LAST_OWNER_AT_23_59);
+		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S2_HAS_APPEARED_IN_S1_THE_TREASURE_CHEST_CONTAINS_S2_ADENA_FIXED_REWARD_S3_ADDITIONAL_REWARD_S4_THE_ADENA_WILL_BE_GIVEN_TO_THE_LAST_OWNER_AT_23_59);
 		if (player != null)
 		{
-			sm.addZoneName(player.getX(), player.getY(), player.getZ()); // Region Name
+			sm.Params.addZoneName(player.getX(), player.getY(), player.getZ()); // Region Name
 		}
 		else if (_player != null)
 		{
-			sm.addZoneName(_player.getX(), _player.getY(), _player.getZ()); // Region Name
+			sm.Params.addZoneName(_player.getX(), _player.getY(), _player.getZ()); // Region Name
 		}
 		else
 		{
-			sm.addZoneName(killer.getX(), killer.getY(), killer.getZ()); // Region Name
+			sm.Params.addZoneName(killer.getX(), killer.getY(), killer.getZ()); // Region Name
 		}
-		sm.addItemName(_itemId);
+		sm.Params.addItemName(_itemId);
 		CursedWeaponsManager.announce(sm); // in the Hot Spring region
 	}
 	
@@ -232,16 +233,16 @@ public class CursedWeapon : INamable
 		doTransform();
 		giveSkill();
 		
-		SystemMessage msg = new SystemMessage(SystemMessageId.THE_S2_S_OWNER_IS_IN_S1_THE_TREASURE_CHEST_CONTAINS_S2_ADENA_FIXED_REWARD_S3_ADDITIONAL_REWARD_S4_THE_ADENA_WILL_BE_GIVEN_TO_THE_LAST_OWNER_AT_23_59);
-		msg.addZoneName(_player.getX(), _player.getY(), _player.getZ());
-		msg.addItemName(_player.getCursedWeaponEquippedId());
+		SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.THE_S2_S_OWNER_IS_IN_S1_THE_TREASURE_CHEST_CONTAINS_S2_ADENA_FIXED_REWARD_S3_ADDITIONAL_REWARD_S4_THE_ADENA_WILL_BE_GIVEN_TO_THE_LAST_OWNER_AT_23_59);
+		msg.Params.addZoneName(_player.getX(), _player.getY(), _player.getZ());
+		msg.Params.addItemName(_player.getCursedWeaponEquippedId());
 		CursedWeaponsManager.announce(msg);
 		
 		CursedWeapon cw = CursedWeaponsManager.getInstance().getCursedWeapon(_player.getCursedWeaponEquippedId());
-		SystemMessage msg2 = new SystemMessage(SystemMessageId.S1_HAS_S2_MIN_OF_USAGE_TIME_REMAINING);
+		SystemMessagePacket msg2 = new SystemMessagePacket(SystemMessageId.S1_HAS_S2_MIN_OF_USAGE_TIME_REMAINING);
 		int timeLeft = (int) (cw.getTimeLeft() / 60000);
-		msg2.addItemName(_player.getCursedWeaponEquippedId());
-		msg2.addInt(timeLeft);
+		msg2.Params.addItemName(_player.getCursedWeaponEquippedId());
+		msg2.Params.addInt(timeLeft);
 		_player.sendPacket(msg2);
 	}
 	
@@ -363,8 +364,8 @@ public class CursedWeapon : INamable
 		// Equip with the weapon
 		_item = item;
 		_player.getInventory().equipItem(_item);
-		SystemMessage sm = new SystemMessage(SystemMessageId.S1_EQUIPPED);
-		sm.addItemName(_item);
+		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_EQUIPPED);
+		sm.Params.addItemName(_item);
 		_player.sendPacket(sm);
 		
 		// Fully heal player
@@ -377,12 +378,12 @@ public class CursedWeapon : INamable
 		// Refresh player stats
 		_player.broadcastUserInfo();
 		
-		SocialAction atk = new SocialAction(_player.getObjectId(), 17);
+		SocialActionPacket atk = new SocialActionPacket(_player.getObjectId(), 17);
 		_player.broadcastPacket(atk);
 		
-		sm = new SystemMessage(SystemMessageId.THE_S2_S_OWNER_HAS_APPEARED_IN_S1_THE_TREASURE_CHEST_CONTAINS_S2_ADENA_FIXED_REWARD_S3_ADDITIONAL_REWARD_S4_THE_ADENA_WILL_BE_GIVEN_TO_THE_LAST_OWNER_AT_23_59);
-		sm.addZoneName(_player.getX(), _player.getY(), _player.getZ()); // Region Name
-		sm.addItemName(_item);
+		sm = new SystemMessagePacket(SystemMessageId.THE_S2_S_OWNER_HAS_APPEARED_IN_S1_THE_TREASURE_CHEST_CONTAINS_S2_ADENA_FIXED_REWARD_S3_ADDITIONAL_REWARD_S4_THE_ADENA_WILL_BE_GIVEN_TO_THE_LAST_OWNER_AT_23_59);
+		sm.Params.addZoneName(_player.getX(), _player.getY(), _player.getZ()); // Region Name
+		sm.Params.addItemName(_item);
 		CursedWeaponsManager.announce(sm);
 	}
 	

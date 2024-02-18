@@ -162,10 +162,10 @@ public class FortManager : Merchant
 				{
 					if (!val.isEmpty())
 					{
-						 bool open = (Integer.parseInt(val) == 1);
+						 bool open = (int.Parse(val) == 1);
 						while (st.hasMoreTokens())
 						{
-							getFort().openCloseDoor(player, Integer.parseInt(st.nextToken()), open);
+							getFort().openCloseDoor(player, int.Parse(st.nextToken()), open);
 						}
 						if (open)
 						{
@@ -350,7 +350,7 @@ public class FortManager : Merchant
 								 NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 								html.setFile(player, "data/html/fortress/functions-apply.htm");
 								html.replace("%name%", "(HP Recovery Device)");
-								 int percent = Integer.parseInt(val);
+								 int percent = int.Parse(val);
 								int cost;
 								switch (percent)
 								{
@@ -378,7 +378,7 @@ public class FortManager : Merchant
 								 NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 								html.setFile(player, "data/html/fortress/functions-apply.htm");
 								html.replace("%name%", "(MP Recovery)");
-								 int percent = Integer.parseInt(val);
+								 int percent = int.Parse(val);
 								int cost;
 								switch (percent)
 								{
@@ -405,7 +405,7 @@ public class FortManager : Merchant
 								 NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 								html.setFile(player, "data/html/fortress/functions-apply.htm");
 								html.replace("%name%", "(EXP Recovery Device)");
-								 int percent = Integer.parseInt(val);
+								 int percent = int.Parse(val);
 								int cost;
 								switch (percent)
 								{
@@ -436,7 +436,7 @@ public class FortManager : Merchant
 									html.setFile(player, "data/html/fortress/functions-apply_confirmed.htm");
 									if (getFort().getFortFunction(Fort.FUNC_RESTORE_HP) != null)
 									{
-										if (getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getLvl() == Integer.parseInt(val))
+										if (getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getLvl() == int.Parse(val))
 										{
 											html.setFile(player, "data/html/fortress/functions-used.htm");
 											html.replace("%val%", val + "%");
@@ -444,7 +444,7 @@ public class FortManager : Merchant
 											return;
 										}
 									}
-									 int percent = Integer.parseInt(val);
+									 int percent = int.Parse(val);
 									switch (percent)
 									{
 										case 0:
@@ -483,7 +483,7 @@ public class FortManager : Merchant
 									html.setFile(player, "data/html/fortress/functions-apply_confirmed.htm");
 									if (getFort().getFortFunction(Fort.FUNC_RESTORE_MP) != null)
 									{
-										if (getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getLvl() == Integer.parseInt(val))
+										if (getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getLvl() == int.Parse(val))
 										{
 											html.setFile(player, "data/html/fortress/functions-used.htm");
 											html.replace("%val%", val + "%");
@@ -491,7 +491,7 @@ public class FortManager : Merchant
 											return;
 										}
 									}
-									 int percent = Integer.parseInt(val);
+									 int percent = int.Parse(val);
 									switch (percent)
 									{
 										case 0:
@@ -530,7 +530,7 @@ public class FortManager : Merchant
 									html.setFile(player, "data/html/fortress/functions-apply_confirmed.htm");
 									if (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP) != null)
 									{
-										if (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getLvl() == Integer.parseInt(val))
+										if (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getLvl() == int.Parse(val))
 										{
 											html.setFile(player, "data/html/fortress/functions-used.htm");
 											html.replace("%val%", val + "%");
@@ -538,7 +538,7 @@ public class FortManager : Merchant
 											return;
 										}
 									}
-									 int percent = Integer.parseInt(val);
+									 int percent = int.Parse(val);
 									switch (percent)
 									{
 										case 0:
@@ -643,7 +643,7 @@ public class FortManager : Merchant
 								 NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 								html.setFile(player, "data/html/fortress/functions-apply.htm");
 								html.replace("%name%", "Insignia (Supplementary Magic)");
-								 int stage = Integer.parseInt(val);
+								 int stage = int.Parse(val);
 								int cost;
 								switch (stage)
 								{
@@ -670,7 +670,7 @@ public class FortManager : Merchant
 								 NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 								html.setFile(player, "data/html/fortress/functions-apply.htm");
 								html.replace("%name%", "Mirror (Teleportation Device)");
-								 int stage = Integer.parseInt(val);
+								 int stage = int.Parse(val);
 								int cost;
 								switch (stage)
 								{
@@ -701,7 +701,7 @@ public class FortManager : Merchant
 									html.setFile(player, "data/html/fortress/functions-apply_confirmed.htm");
 									if (getFort().getFortFunction(Fort.FUNC_TELEPORT) != null)
 									{
-										if (getFort().getFortFunction(Fort.FUNC_TELEPORT).getLvl() == Integer.parseInt(val))
+										if (getFort().getFortFunction(Fort.FUNC_TELEPORT).getLvl() == int.Parse(val))
 										{
 											html.setFile(player, "data/html/fortress/functions-used.htm");
 											html.replace("%val%", "Stage " + val);
@@ -709,7 +709,7 @@ public class FortManager : Merchant
 											return;
 										}
 									}
-									 int level = Integer.parseInt(val);
+									 int level = int.Parse(val);
 									switch (level)
 									{
 										case 0:
@@ -748,7 +748,7 @@ public class FortManager : Merchant
 									html.setFile(player, "data/html/fortress/functions-apply_confirmed.htm");
 									if (getFort().getFortFunction(Fort.FUNC_SUPPORT) != null)
 									{
-										if (getFort().getFortFunction(Fort.FUNC_SUPPORT).getLvl() == Integer.parseInt(val))
+										if (getFort().getFortFunction(Fort.FUNC_SUPPORT).getLvl() == int.Parse(val))
 										{
 											html.setFile(player, "data/html/fortress/functions-used.htm");
 											html.replace("%val%", "Stage " + val);
@@ -756,7 +756,7 @@ public class FortManager : Merchant
 											return;
 										}
 									}
-									 int level = Integer.parseInt(val);
+									 int level = int.Parse(val);
 									switch (level)
 									{
 										case 0:
@@ -849,7 +849,7 @@ public class FortManager : Merchant
 				
 				try
 				{
-					 int skillId = Integer.parseInt(val);
+					 int skillId = int.Parse(val);
 					try
 					{
 						if (getFort().getFortFunction(Fort.FUNC_SUPPORT) == null)
@@ -864,7 +864,7 @@ public class FortManager : Merchant
 						int skillLevel = 0;
 						if (st.countTokens() >= 1)
 						{
-							skillLevel = Integer.parseInt(st.nextToken());
+							skillLevel = int.Parse(st.nextToken());
 						}
 						skill = SkillData.getInstance().getSkill(skillId, skillLevel);
 						if (skill.hasEffectType(EffectType.SUMMON))

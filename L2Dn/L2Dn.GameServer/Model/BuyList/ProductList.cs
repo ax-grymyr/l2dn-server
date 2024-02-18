@@ -44,7 +44,7 @@ public class ProductList
 	
     public bool isNpcAllowed(int npcId)
     {
-        return (_allowedNpcs != null) && _allowedNpcs.contains(npcId);
+        return (_allowedNpcs != null) && _allowedNpcs.Contains(npcId);
     }
 	
     public Set<int> getNpcsAllowed()

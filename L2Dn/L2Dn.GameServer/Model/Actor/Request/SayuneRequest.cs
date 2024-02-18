@@ -77,7 +77,7 @@ public class SayuneRequest : AbstractRequest
 		}
 		
 		SayuneType type = (pos == 0) && nextEntry.isSelector() ? SayuneType.START_LOC : nextEntry.isSelector() ? SayuneType.MULTI_WAY_LOC : SayuneType.ONE_WAY_LOC;
-		List<SayuneEntry> locations = nextEntry.isSelector() ? nextEntry.getInnerEntries() : Arrays.asList(nextEntry);
+		List<SayuneEntry> locations = nextEntry.isSelector() ? nextEntry.getInnerEntries() : [nextEntry];
 		if (nextEntry.isSelector())
 		{
 			_possibleEntries.clear();

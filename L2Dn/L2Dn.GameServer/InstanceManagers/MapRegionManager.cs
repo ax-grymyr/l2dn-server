@@ -177,7 +177,7 @@ public class MapRegionManager: DataReaderBase
 	 * @param teleportWhere
 	 * @return
 	 */
-	public ILocational getTeleToLocation(Creature creature, TeleportWhereType teleportWhere)
+	public Location getTeleToLocation(Creature creature, TeleportWhereType teleportWhere)
 	{
 		if (creature.isPlayer())
 		{

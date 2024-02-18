@@ -29,6 +29,7 @@ using L2Dn.GameServer.Model.Options;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Zones;
+using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
@@ -465,7 +466,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			}
 			else if (Config.DISCONNECT_AFTER_DEATH)
 			{
-				Disconnection.of(getActingPlayer()).deleteMe().defaultSequence(new SystemMessage(SystemMessageId.SIXTY_MIN_HAVE_PASSED_AFTER_THE_DEATH_OF_YOUR_CHARACTER_SO_YOU_WERE_DISCONNECTED_FROM_THE_GAME));
+				Disconnection.of(getActingPlayer()).deleteMe().defaultSequence(new SystemMessagePacket(SystemMessageId.SIXTY_MIN_HAVE_PASSED_AFTER_THE_DEATH_OF_YOUR_CHARACTER_SO_YOU_WERE_DISCONNECTED_FROM_THE_GAME));
 			}
 		}
 		else
@@ -620,14 +621,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	{
 		if (isPlayable())
 		{
-			broadcastPacket(new SocialAction(getObjectId(), id));
+			broadcastPacket(new SocialActionPacket(getObjectId(), id));
 		}
 		else
 		{
 			WorldRegion region = getWorldRegion();
 			if ((region != null) && region.areNeighborsActive())
 			{
-				broadcastPacket(new SocialAction(getObjectId(), id));
+				broadcastPacket(new SocialActionPacket(getObjectId(), id));
 			}
 		}
 	}
@@ -683,7 +684,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 */
 	public virtual void broadcastStatusUpdate(Creature caster)
 	{
-		StatusUpdate su = new StatusUpdate(this);
+		StatusUpdatePacket su = new StatusUpdatePacket(this);
 		if (caster != null)
 		{
 			su.addCaster(caster);
@@ -778,7 +779,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		z += 5;
 		
 		// Send teleport packet where needed.
-		broadcastPacket(new TeleportToLocation(this, x, y, z, heading));
+		broadcastPacket(new TeleportToLocationPacket(this, x, y, z, heading));
 		
 		// Change instance world.
 		if (getInstanceWorld() != instance)
@@ -795,10 +796,10 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		}
 		
 		// Send teleport finished packet to player.
-		sendPacket(new ExTeleportToLocationActivate(this));
+		sendPacket(new ExTeleportToLocationActivatePacket(this));
 		
 		// Allow recall of the detached characters.
-		if (!isPlayer() || ((getActingPlayer().getClient() != null) && getActingPlayer().getClient().isDetached()))
+		if (!isPlayer() || ((getActingPlayer().getClient() != null) && getActingPlayer().getClient().IsDetached))
 		{
 			onTeleported();
 		}
@@ -2635,7 +2636,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * Updates Effect Icons for this character(player/summon) and his party if any.
 	 * @param partyOnly
 	 */
-	public void updateEffectIcons(bool partyOnly)
+	public virtual void updateEffectIcons(bool partyOnly)
 	{
 		// overridden
 	}

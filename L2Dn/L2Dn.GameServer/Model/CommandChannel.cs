@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model;
@@ -64,7 +65,7 @@ public class CommandChannel : AbstractPlayerGroup
 		
 		_parties.remove(party);
 		_channelLvl = 0;
-		foreach (Party pty in _parties.Keys)
+		foreach (Party pty in _parties)
 		{
 			if (pty.getLevel() > _channelLvl)
 			{
@@ -75,7 +76,7 @@ public class CommandChannel : AbstractPlayerGroup
 		party.broadcastPacket(ExCloseMPCC.STATIC_PACKET);
 		if (_parties.size() < 2)
 		{
-			broadcastPacket(new SystemMessage(SystemMessageId.THE_COMMAND_CHANNEL_IS_DISBANDED));
+			broadcastPacket(new SystemMessagePacket(SystemMessageId.THE_COMMAND_CHANNEL_IS_DISBANDED));
 			disbandChannel();
 		}
 		else
@@ -124,7 +125,7 @@ public class CommandChannel : AbstractPlayerGroup
 	 */
 	public ICollection<Party> getParties()
 	{
-		return _parties.Keys;
+		return _parties;
 	}
 	
 	/**
@@ -133,7 +134,7 @@ public class CommandChannel : AbstractPlayerGroup
 	public override List<Player> getMembers()
 	{
 		List<Player> members = new();
-		foreach (Party party in _parties.Keys)
+		foreach (Party party in _parties)
 		{
 			members.AddRange(party.getMembers());
 		}
@@ -187,7 +188,7 @@ public class CommandChannel : AbstractPlayerGroup
 	{
 		if ((_parties != null) && !_parties.isEmpty())
 		{
-			foreach (Party party in _parties.Keys)
+			foreach (Party party in _parties)
 			{
 				if (party.containsPlayer(player))
 				{
@@ -206,7 +207,7 @@ public class CommandChannel : AbstractPlayerGroup
 	{
 		if ((_parties != null) && !_parties.isEmpty())
 		{
-			foreach (Party party in _parties.Keys)
+			foreach (Party party in _parties)
 			{
 				if (!party.forEachMember(function))
 				{

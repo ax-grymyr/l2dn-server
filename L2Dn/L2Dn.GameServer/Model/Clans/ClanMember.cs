@@ -1,4 +1,6 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using NLog;
 
@@ -17,9 +19,9 @@ public class ClanMember
 	private String _title;
 	private int _powerGrade;
 	private int _level;
-	private int _classId;
+	private CharacterClass _classId;
 	private bool _sex;
-	private int _raceOrdinal;
+	private Race _race;
 	private Player _player;
 	private int _pledgeType;
 	private int _apprentice;
@@ -49,7 +51,7 @@ public class ClanMember
 		_apprentice = clanMember.getInt("apprentice");
 		_sponsor = clanMember.getInt("sponsor");
 		_sex = clanMember.getInt("sex") != 0;
-		_raceOrdinal = clanMember.getInt("race");
+		_race = clanMember.getInt("race");
 	}
 	
 	/**
@@ -67,7 +69,7 @@ public class ClanMember
 		_clan = clan;
 		_name = player.getName();
 		_level = player.getLevel();
-		_classId = player.getClassId().getId();
+		_classId = player.getClassId();
 		_objectId = player.getObjectId();
 		_pledgeType = player.getPledgeType();
 		_powerGrade = player.getPowerGrade();
@@ -75,7 +77,7 @@ public class ClanMember
 		_sponsor = 0;
 		_apprentice = 0;
 		_sex = player.getAppearance().isFemale();
-		_raceOrdinal = player.getRace().ordinal();
+		_race = player.getRace();
 	}
 	
 	/**
@@ -97,7 +99,7 @@ public class ClanMember
 			_apprentice = _player.getApprentice();
 			_sponsor = _player.getSponsor();
 			_sex = _player.getAppearance().isFemale();
-			_raceOrdinal = _player.getRace().ordinal();
+			_race = _player.getRace().ordinal();
 		}
 		
 		if (player != null)
@@ -134,7 +136,7 @@ public class ClanMember
 		{
 			return false;
 		}
-		if ((_player.getClient() == null) || _player.getClient().isDetached())
+		if ((_player.getClient() == null) || _player.getClient().IsDetached)
 		{
 			return false;
 		}
@@ -147,7 +149,7 @@ public class ClanMember
 	 */
 	public int getClassId()
 	{
-		return _player != null ? _player.getClassId().getId() : _classId;
+		return _player != null ? _player.getClassId() : _classId;
 	}
 	
 	/**
