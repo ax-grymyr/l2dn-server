@@ -31,11 +31,12 @@ public class RecipeManager
 		// Check if player is trying to alter recipe book while engaged in manufacturing.
 		if (!_activeMakers.containsKey(player.getObjectId()))
 		{
-			RecipeBookItemList response = new RecipeBookItemList(isDwarvenCraft, player.getMaxMp());
-			response.addRecipes(isDwarvenCraft ? player.getDwarvenRecipeBook() : player.getCommonRecipeBook());
+			ICollection<RecipeList> recipes = isDwarvenCraft ? player.getDwarvenRecipeBook() : player.getCommonRecipeBook();
+			RecipeBookItemListPacket response = new RecipeBookItemListPacket(recipes, isDwarvenCraft, player.getMaxMp());
 			player.sendPacket(response);
 			return;
 		}
+		
 		player.sendPacket(SystemMessageId.YOU_MAY_NOT_ALTER_YOUR_RECIPE_BOOK_WHILE_ENGAGED_IN_MANUFACTURING);
 	}
 	
@@ -54,7 +55,9 @@ public class RecipeManager
 		
 		if (!manufacturer.getDwarvenRecipeBook().Contains(recipeList) && !manufacturer.getCommonRecipeBook().Contains(recipeList))
 		{
-			Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false recipe id.", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(player,
+				"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
+				" sent a false recipe id.", Config.DEFAULT_PUNISH);
 			return;
 		}
 		
@@ -66,7 +69,7 @@ public class RecipeManager
 		}
 		
 		RecipeItemMaker maker = new RecipeItemMaker(manufacturer, recipeList, player);
-		if (maker._isValid)
+		if (maker.isValid())
 		{
 			if (Config.ALT_GAME_CREATION)
 			{
@@ -401,22 +404,22 @@ public class RecipeManager
 		{
 			if (_target == _player)
 			{
-				_target.sendPacket(new RecipeItemMakeInfo(_recipeList.getId(), _target, success));
+				_target.sendPacket(new RecipeItemMakeInfoPacket(_recipeList.getId(), _target, success));
 			}
 			else
 			{
-				_target.sendPacket(new RecipeShopItemInfo(_player, _recipeList.getId()));
+				_target.sendPacket(new RecipeShopItemInfoPacket(_player, _recipeList.getId()));
 			}
 		}
 		
 		private void updateCurLoad()
 		{
-			_target.sendPacket(new ExUserInfoInvenWeight(_target));
+			_target.sendPacket(new ExUserInfoInventoryWeightPacket(_target));
 		}
 		
 		private void updateCurMp()
 		{
-			StatusUpdate su = new StatusUpdate(_target);
+			StatusUpdatePacket su = new StatusUpdatePacket(_target);
 			su.addUpdate(StatusUpdateType.CUR_MP, (int)_target.getCurrentMp());
 			_target.sendPacket(su);
 		}

@@ -26,8 +26,8 @@ public class CreatureStat
 	private readonly Map<int, Double> _mpConsumeStat = new();
 	private readonly Map<int, LinkedList<Double>> _skillEvasionStat = new();
 	private readonly Map<Stat, Map<Position, Double>> _positionStats = new();
-	private readonly Deque<StatHolder> _additionalAdd = new ConcurrentLinkedDeque<>();
-	private readonly Deque<StatHolder> _additionalMul = new ConcurrentLinkedDeque<>();
+	private readonly Deque<StatHolder> _additionalAdd = new();
+	private readonly Deque<StatHolder> _additionalMul = new();
 	private readonly Map<Stat, Double> _fixedValue = new();
 	
 	private readonly float[] _attackTraitValues = new float[Enum.GetValues<TraitType>().Length];
@@ -150,12 +150,12 @@ public class CreatureStat
 		return (int) getValue(Stat.MAGIC_EVASION_RATE);
 	}
 	
-	public long getExp()
+	public virtual long getExp()
 	{
 		return _exp;
 	}
 	
-	public void setExp(long value)
+	public virtual void setExp(long value)
 	{
 		_exp = value;
 	}
@@ -391,12 +391,12 @@ public class CreatureStat
 		return (int) getValue(Stat.SHIELD_DEFENCE);
 	}
 	
-	public long getSp()
+	public virtual long getSp()
 	{
 		return _sp;
 	}
 	
-	public void setSp(long value)
+	public virtual void setSp(long value)
 	{
 		_sp = value;
 	}
@@ -846,7 +846,7 @@ public class CreatureStat
 	 * Locks and resets all stats and recalculates all
 	 * @param broadcast
 	 */
-	public void recalculateStats(bool broadcast)
+	public virtual void recalculateStats(bool broadcast)
 	{
 		// Copy old data before wiping it out.
 		Map<Stat, Double> adds = !broadcast ? Collections.emptyMap() : new(_statsAdd);
@@ -959,7 +959,7 @@ public class CreatureStat
 		}
 	}
 	
-	protected void onRecalculateStats(bool broadcast)
+	protected virtual void onRecalculateStats(bool broadcast)
 	{
 		// Check if Max HP/MP/CP is lower than current due to new stats.
 		if (_creature.getCurrentCp() > getMaxCp())

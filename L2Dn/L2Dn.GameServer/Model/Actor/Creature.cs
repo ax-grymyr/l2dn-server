@@ -526,7 +526,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	}
 	
 	[MethodImpl(MethodImplOptions.Synchronized)]
-	public void onTeleported()
+	public virtual void onTeleported()
 	{
 		if (!_isTeleporting)
 		{
@@ -868,7 +868,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(), randomOffset, instance);
 	}
 	
-	public void teleToLocation(ILocational loc, bool randomOffset)
+	public virtual void teleToLocation(ILocational loc, bool randomOffset)
 	{
 		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(), (randomOffset) ? Config.MAX_OFFSET_ON_TELEPORT : 0);
 	}
@@ -1341,7 +1341,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param shiftPressed if the player has pressed shift key during casting, aka dont move.
 	 */
 	[MethodImpl(MethodImplOptions.Synchronized)]
-	public void doCast(Skill skill, Item item, bool ctrlPressed, bool shiftPressed)
+	public virtual void doCast(Skill skill, Item item, bool ctrlPressed, bool shiftPressed)
 	{
 		// Get proper casting type.
 		SkillCastingType castingType = SkillCastingType.NORMAL;
@@ -3075,7 +3075,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * But x and y positions must be calculated to avoid that players try to modify their movement speed.</b></font>
 	 * @return True if the movement is finished
 	 */
-	public bool updatePosition()
+	public virtual bool updatePosition()
 	{
 		// Get movement data
 		MoveData m = _move;
@@ -3725,7 +3725,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		// the CtrlEvent.EVT_ARRIVED will be sent when the character will actually arrive to destination by MovementTaskManager
 	}
 	
-	public bool moveToNextRoutePoint()
+	public virtual bool moveToNextRoutePoint()
 	{
 		if (!isOnGeodataPath())
 		{
@@ -4494,9 +4494,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * Dummy value that gets overriden in Playable.
 	 * @return 0
 	 */
-	public virtual byte getPvpFlag()
+	public virtual bool getPvpFlag()
 	{
-		return 0;
+		return false;
 	}
 	
 	public void updatePvPFlag(int value)
@@ -4710,7 +4710,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		_status.addStatusListener(obj);
 	}
 	
-	public void doAttack(double damageValue, Creature target, Skill skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
+	public virtual void doAttack(double damageValue, Creature target, Skill skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
 	{
 		// Check if fake players should aggro each other.
 		if (isFakePlayer() && !Config.FAKE_PLAYER_AGGRO_FPC && target.isFakePlayer())
@@ -5124,7 +5124,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	/**
 	 * @return true
 	 */
-	public bool giveRaidCurse()
+	public virtual bool giveRaidCurse()
 	{
 		return false;
 	}
@@ -5237,7 +5237,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * Dummy method overriden in {@link Attackable}
 	 * @return {@code true} if there is a loot to sweep, {@code false} otherwise.
 	 */
-	public bool isSweepActive()
+	public virtual bool isSweepActive()
 	{
 		return false;
 	}

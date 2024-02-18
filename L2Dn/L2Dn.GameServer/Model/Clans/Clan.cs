@@ -2344,7 +2344,7 @@ public class Clan: IIdentifiable, INamable
 		return _dissolvingExpiryTime;
 	}
 	
-	public void setDissolvingExpiryTime(long time)
+	public void setDissolvingExpiryTime(DateTime? time)
 	{
 		_dissolvingExpiryTime = time;
 	}

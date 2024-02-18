@@ -50,7 +50,7 @@ public class RankingPowerManager
 	
 	private void createClone(Player player)
 	{
-		ILocational location = player.getLocation();
+		Location location = player.getLocation();
 		
 		NpcTemplate template = NpcData.getInstance().getTemplate(LEADER_STATUE);
 		_decoyInstance = new Decoy(template, player, COOLDOWN, false);

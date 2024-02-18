@@ -1,10 +1,20 @@
 ﻿using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events;
+using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Model.Items.Types;
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Zones;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Stats;
 
@@ -124,29 +134,29 @@ public class PlayerStat: PlayableStat
 			addToSp *= ratioTakenByPlayer;
 		}
 		
-		long finalExp = Math.round(addToExp);
-		long finalSp = Math.round(addToSp);
+		long finalExp = (long)addToExp;
+		long finalSp = (long)addToSp;
 		bool expAdded = addExp(finalExp);
 		bool spAdded = addSp(finalSp);
 		if (!expAdded && spAdded)
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_ACQUIRED_S1_SP);
-			sm.addLong(finalSp);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_ACQUIRED_S1_SP);
+			sm.Params.addLong(finalSp);
 			player.sendPacket(sm);
 		}
 		else if (expAdded && !spAdded)
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_ACQUIRED_S1_XP);
-			sm.addLong(finalExp);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_ACQUIRED_S1_XP);
+			sm.Params.addLong(finalExp);
 			player.sendPacket(sm);
 		}
 		else if ((finalExp > 0) || (finalSp > 0))
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_ACQUIRED_S1_XP_BONUS_S2_AND_S3_SP_BONUS_S4);
-			sm.addLong(finalExp);
-			sm.addLong(Math.round(addToExp - baseExp));
-			sm.addLong(finalSp);
-			sm.addLong(Math.round(addToSp - baseSp));
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_ACQUIRED_S1_XP_BONUS_S2_AND_S3_SP_BONUS_S4);
+			sm.Params.addLong(finalExp);
+			sm.Params.addLong((long)(addToExp - baseExp));
+			sm.Params.addLong(finalSp);
+			sm.Params.addLong((long)(addToSp - baseSp));
 			player.sendPacket(sm);
 		}
 	}
@@ -167,11 +177,11 @@ public class PlayerStat: PlayableStat
 		if (sendMessage)
 		{
 			// Send a Server->Client System Message to the Player
-			SystemMessage sm = new SystemMessage(SystemMessageId.YOUR_XP_HAS_DECREASED_BY_S1);
-			sm.addLong(addToExp);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOUR_XP_HAS_DECREASED_BY_S1);
+			sm.Params.addLong(addToExp);
 			getActiveChar().sendPacket(sm);
-			sm = new SystemMessage(SystemMessageId.YOUR_SP_HAS_DECREASED_BY_S1);
-			sm.addLong(addToSp);
+			sm = new SystemMessagePacket(SystemMessageId.YOUR_SP_HAS_DECREASED_BY_S1);
+			sm.Params.addLong(addToSp);
 			getActiveChar().sendPacket(sm);
 			if (getLevel() < level)
 			{
@@ -192,7 +202,7 @@ public class PlayerStat: PlayableStat
 		if (levelIncreased)
 		{
 			getActiveChar().setCurrentCp(getMaxCp());
-			getActiveChar().broadcastPacket(new SocialAction(getActiveChar().getObjectId(), SocialAction.LEVEL_UP));
+			getActiveChar().broadcastPacket(new SocialActionPacket(getActiveChar().getObjectId(), SocialActionPacket.LEVEL_UP));
 			getActiveChar().sendPacket(SystemMessageId.YOUR_LEVEL_HAS_INCREASED);
 			getActiveChar().notifyFriends(FriendStatus.MODE_LEVEL);
 		}
@@ -220,7 +230,7 @@ public class PlayerStat: PlayableStat
 		}
 		
 		// Maybe add some skills when player levels up in transformation.
-		getActiveChar().getTransformation().ifPresent(transform -> transform.onLevelUp(getActiveChar()));
+		getActiveChar().getTransformation().ifPresent(transform => transform.onLevelUp(getActiveChar()));
 		
 		// Synchronize level with pet if possible.
 		Summon sPet = getActiveChar().getPet();
@@ -234,7 +244,7 @@ public class PlayerStat: PlayableStat
 				pet.getStat().getExpForLevel(availableLevel);
 				pet.setCurrentHp(pet.getMaxHp());
 				pet.setCurrentMp(pet.getMaxMp());
-				pet.broadcastPacket(new SocialAction(getActiveChar().getObjectId(), SocialAction.LEVEL_UP));
+				pet.broadcastPacket(new SocialActionPacket(getActiveChar().getObjectId(), SocialActionPacket.LEVEL_UP));
 				pet.updateAndBroadcastStatus(1);
 			}
 		}

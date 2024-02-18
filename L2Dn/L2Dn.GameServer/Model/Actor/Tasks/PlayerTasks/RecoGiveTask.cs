@@ -1,3 +1,5 @@
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
@@ -15,7 +17,7 @@ public class RecoGiveTask: Runnable
 		_player = player;
 	}
 	
-	public override void run()
+	public void run()
 	{
 		if (_player != null)
 		{
@@ -30,8 +32,8 @@ public class RecoGiveTask: Runnable
 			
 			_player.setRecomLeft(_player.getRecomLeft() + recoToGive);
 			
-			SystemMessage sm = new SystemMessage(SystemMessageId.YOU_OBTAINED_S1_RECOMMENDATION_S);
-			sm.addInt(recoToGive);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_OBTAINED_S1_RECOMMENDATION_S);
+			sm.Params.addInt(recoToGive);
 			_player.sendPacket(sm);
 			_player.updateUserInfo();
 		}

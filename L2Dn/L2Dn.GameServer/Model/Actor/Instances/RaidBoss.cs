@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -33,7 +34,7 @@ public class RaidBoss: Monster
     {
         base.onSpawn();
         setRandomWalking(false);
-        broadcastPacket(new PlaySound(1, getParameters().getString("RaidSpawnMusic", "Rm01_A"), 0, 0, 0, 0, 0));
+        broadcastPacket(new PlaySoundPacket(1, getParameters().getString("RaidSpawnMusic", "Rm01_A"), 0, 0, 0, 0, 0));
     }
 
     public override int getVitalityPoints(int level, double exp, bool isBoss)

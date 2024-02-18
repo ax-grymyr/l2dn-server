@@ -2,13 +2,15 @@
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Utilities;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
 public class EffectPoint : Npc
 {
 	private readonly Player _owner;
-	private ScheduledFuture<?> _skillTask;
+	private ScheduledFuture _skillTask;
 	
 	public EffectPoint(NpcTemplate template, Creature owner): base(template)
 	{
@@ -24,8 +26,8 @@ public class EffectPoint : Npc
 		SkillHolder skill = template.getParameters().getSkillHolder("union_skill");
 		if (skill != null)
 		{
-			long castTime = (long) (template.getParameters().getFloat("cast_time", 0.1f) * 1000);
-			long skillDelay = (long) (template.getParameters().getFloat("skill_delay", 2) * 1000);
+			TimeSpan castTime = TimeSpan.FromMilliseconds(template.getParameters().getFloat("cast_time", 0.1f) * 1000);
+			TimeSpan skillDelay = TimeSpan.FromMilliseconds(template.getParameters().getFloat("skill_delay", 2) * 1000);
 			_skillTask = ThreadPool.scheduleAtFixedRate(() =>
 			{
 				if ((isDead() || !isSpawned()) && (_skillTask != null))
@@ -105,9 +107,9 @@ public class EffectPoint : Npc
 		return (_owner != null) ? _owner.getAllyId() : 0;
 	}
 	
-	public override byte getPvpFlag()
+	public override bool getPvpFlag()
 	{
-		return _owner != null ? _owner.getPvpFlag() : 0;
+		return _owner != null ? _owner.getPvpFlag() : false;
 	}
 	
 	public override Team getTeam()

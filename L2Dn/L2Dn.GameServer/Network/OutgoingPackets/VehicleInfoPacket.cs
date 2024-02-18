@@ -1,8 +1,11 @@
-﻿using L2Dn.GameServer.Model.Actor;
+﻿using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
+/**
+ * @author Maktakien
+ */
 public readonly struct VehicleInfoPacket: IOutgoingPacket
 {
     private readonly int _objId;
@@ -11,7 +14,7 @@ public readonly struct VehicleInfoPacket: IOutgoingPacket
     private readonly int _z;
     private readonly int _heading;
 	
-    public VehicleInfoPacket(Vehicle boat)
+    public VehicleInfoPacket(Boat boat)
     {
         _objId = boat.getObjectId();
         _x = boat.getX();

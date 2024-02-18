@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor.Stats;
@@ -12,8 +13,9 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -23,7 +25,7 @@ public class Door : Creature
 	private bool _isAttackableDoor = false;
 	private bool _isInverted = false;
 	private int _meshindex = 1;
-	private Future<?> _autoCloseTask;
+	private ScheduledFuture _autoCloseTask;
 	
 	public Door(DoorTemplate template): base(template)
 	{
@@ -69,7 +71,7 @@ public class Door : Creature
 		{
 			delay += Rnd.get(getTemplate().getRandomTime());
 		}
-		ThreadPool.schedule(new TimerOpen(), delay * 1000);
+		ThreadPool.schedule(new TimerOpen(this), delay * 1000);
 	}
 	
 	public override DoorTemplate getTemplate()
@@ -205,7 +207,7 @@ public class Door : Creature
 		{
 			return 0;
 		}
-		int dmg = 6 - (int) Math.Ceil((getCurrentHp() / getMaxHp()) * 6);
+		int dmg = 6 - (int) Math.Ceiling((getCurrentHp() / getMaxHp()) * 6);
 		if (dmg > 6)
 		{
 			return 6;
@@ -224,7 +226,7 @@ public class Door : Creature
 	
 	public Fort getFort()
 	{
-		return FortManager.getInstance().getFort(this);
+		return InstanceManagers.FortManager.getInstance().getFort(this);
 	}
 	
 	public bool isEnemy()
@@ -311,19 +313,19 @@ public class Door : Creature
 			return;
 		}
 		
-		StaticObjectInfo su = new StaticObjectInfo(this, false);
-		StaticObjectInfo targetableSu = new StaticObjectInfo(this, true);
-		DoorStatusUpdate dsu = new DoorStatusUpdate(this);
-		OnEventTrigger oe = null;
+		StaticObjectInfoPacket su = new StaticObjectInfoPacket(this, false);
+		StaticObjectInfoPacket targetableSu = new StaticObjectInfoPacket(this, true);
+		DoorStatusUpdatePacket dsu = new DoorStatusUpdatePacket(this);
+		OnEventTriggerPacket? oe = null;
 		if (getEmitter() > 0)
 		{
 			if (_isInverted)
 			{
-				oe = new OnEventTrigger(getEmitter(), !_open);
+				oe = new OnEventTriggerPacket(getEmitter(), !_open);
 			}
 			else
 			{
-				oe = new OnEventTrigger(getEmitter(), _open);
+				oe = new OnEventTriggerPacket(getEmitter(), _open);
 			}
 		}
 		
@@ -346,7 +348,7 @@ public class Door : Creature
 			player.sendPacket(dsu);
 			if (oe != null)
 			{
-				player.sendPacket(oe);
+				player.sendPacket(oe.Value);
 			}
 		}
 	}
@@ -382,7 +384,7 @@ public class Door : Creature
 	public void closeMe()
 	{
 		// remove close task
-		Future<?> oldTask = _autoCloseTask;
+		ScheduledFuture oldTask = _autoCloseTask;
 		if (oldTask != null)
 		{
 			_autoCloseTask = null;
@@ -526,7 +528,7 @@ public class Door : Creature
 		bool isCastle = ((getCastle() != null) && (getCastle().getResidenceId() > 0) && getCastle().getSiege().isInProgress());
 		if (isFort || isCastle)
 		{
-			broadcastPacket(new SystemMessage(SystemMessageId.THE_CASTLE_GATE_HAS_BEEN_DESTROYED));
+			broadcastPacket(new SystemMessagePacket(SystemMessageId.THE_CASTLE_GATE_HAS_BEEN_DESTROYED));
 		}
 		else
 		{
@@ -540,17 +542,17 @@ public class Door : Creature
 	{
 		if (isVisibleFor(player))
 		{
-			player.sendPacket(new StaticObjectInfo(this, player.isGM()));
-			player.sendPacket(new DoorStatusUpdate(this));
+			player.sendPacket(new StaticObjectInfoPacket(this, player.isGM()));
+			player.sendPacket(new DoorStatusUpdatePacket(this));
 			if (getEmitter() > 0)
 			{
 				if (_isInverted)
 				{
-					player.sendPacket(new OnEventTrigger(getEmitter(), !_open));
+					player.sendPacket(new OnEventTriggerPacket(getEmitter(), !_open));
 				}
 				else
 				{
-					player.sendPacket(new OnEventTrigger(getEmitter(), _open));
+					player.sendPacket(new OnEventTriggerPacket(getEmitter(), _open));
 				}
 			}
 		}
@@ -585,44 +587,59 @@ public class Door : Creature
 			return;
 		}
 		
-		Future<?> oldTask = _autoCloseTask;
+		ScheduledFuture oldTask = _autoCloseTask;
 		if (oldTask != null)
 		{
 			_autoCloseTask = null;
 			oldTask.cancel(false);
 		}
-		_autoCloseTask = ThreadPool.schedule(new AutoClose(), getTemplate().getCloseTime() * 1000);
+		_autoCloseTask = ThreadPool.schedule(new AutoClose(this), getTemplate().getCloseTime() * 1000);
 	}
 	
-	class AutoClose : Runnable
+	private class AutoClose : Runnable
 	{
-		public override void run()
+		private readonly Door _door;
+
+		public AutoClose(Door door)
 		{
-			if (_open)
+			_door = door;
+		}
+		
+		public void run()
+		{
+			if (_door._open)
 			{
-				closeMe();
+				_door.closeMe();
 			}
 		}
 	}
 	
-	class TimerOpen : Runnable
+	private class TimerOpen: Runnable
 	{
-		public override void run()
+		private readonly Door _door;
+
+		public TimerOpen(Door door)
 		{
-			if (_open)
+			_door = door;
+		}
+		
+		public void run()
+		{
+			if (_door._open)
 			{
-				closeMe();
+				_door.closeMe();
 			}
 			else
 			{
-				openMe();
+				_door.openMe();
 			}
 			
-			int delay = _open ? getTemplate().getCloseTime() : getTemplate().getOpenTime();
-			if (getTemplate().getRandomTime() > 0)
+			int delay = _door._open ? _door.getTemplate().getCloseTime() : _door.getTemplate().getOpenTime();
+			if (_door.getTemplate().getRandomTime() > 0)
 			{
-				delay += Rnd.get(getTemplate().getRandomTime());
+				delay += Rnd.get(_door.getTemplate().getRandomTime());
 			}
+			
 			ThreadPool.schedule(this, delay * 1000);
 		}
 	}

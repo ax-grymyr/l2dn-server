@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Shuttles;
+using L2Dn.GameServer.Network.OutgoingPackets.Shuttle;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -58,7 +59,7 @@ public class Shuttle: Vehicle
 
 		player.setVehicle(this);
 		player.setInVehiclePosition(new Location(0, 0, 0));
-		player.broadcastPacket(new ExShuttleGetOn(player, this));
+		player.broadcastPacket(new ExShuttleGetOnPacket(player, this));
 		player.setXYZ(getX(), getY(), getZ());
 		player.revalidateZone(true);
 		return true;
@@ -69,7 +70,7 @@ public class Shuttle: Vehicle
 		oustPlayer(player);
 		if (player.isOnline())
 		{
-			player.broadcastPacket(new ExShuttleGetOff(player, this, x, y, z));
+			player.broadcastPacket(new ExShuttleGetOffPacket(player, this, x, y, z));
 			player.setXYZ(x, y, z);
 			player.revalidateZone(true);
 		}
@@ -98,12 +99,12 @@ public class Shuttle: Vehicle
 
 	public override void sendInfo(Player player)
 	{
-		player.sendPacket(new ExShuttleInfo(this));
+		player.sendPacket(new ExShuttleInfoPacket(this));
 	}
 
 	public void broadcastShuttleInfo()
 	{
-		broadcastPacket(new ExShuttleInfo(this));
+		broadcastPacket(new ExShuttleInfoPacket(this));
 	}
 
 	public void setData(ShuttleDataHolder data)

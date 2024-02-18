@@ -1,4 +1,17 @@
-﻿// using System.Globalization;
+﻿namespace L2Dn.GameServer.Utilities;
+
+// TODO: this is stub class currently
+// need to decide what to do: rewrite original class from L2J or find 3rd party library
+public class SchedulingPattern
+{
+    public DateTime next(DateTime utcNow)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+
+// using System.Globalization;
 //
 // namespace L2Dn.GameServer.Utilities;
 //

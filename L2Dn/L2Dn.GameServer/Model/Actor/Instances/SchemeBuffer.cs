@@ -4,6 +4,8 @@ using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
@@ -25,9 +27,9 @@ public class SchemeBuffer : Npc
 		String currentCommand = st.nextToken();
 		if (currentCommand.startsWith("menu"))
 		{
-			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-			html.setFile(player, getHtmlPath(getId(), 0, player));
-			html.replace("%objectId%", getObjectId());
+			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, getHtmlPath(getId(), 0, player));
+			helper.Replace("%objectId%", getObjectId().ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 			player.sendPacket(html);
 		}
 		else if (currentCommand.startsWith("cleanup"))
@@ -41,9 +43,9 @@ public class SchemeBuffer : Npc
 			}
 			player.getServitors().values().forEach(servitor => servitor.stopAllEffects());
 			
-			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-			html.setFile(player, getHtmlPath(getId(), 0, player));
-			html.replace("%objectId%", getObjectId());
+			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, getHtmlPath(getId(), 0, player));
+			helper.Replace("%objectId%", getObjectId().ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 			player.sendPacket(html);
 		}
 		else if (currentCommand.startsWith("heal"))
@@ -58,9 +60,9 @@ public class SchemeBuffer : Npc
 			}
 			player.getServitors().values().forEach(servitor => servitor.setCurrentHpMp(servitor.getMaxHp(), servitor.getMaxMp()));
 			
-			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-			html.setFile(player, getHtmlPath(getId(), 0, player));
-			html.replace("%objectId%", getObjectId());
+			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, getHtmlPath(getId(), 0, player));
+			helper.Replace("%objectId%", getObjectId().ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 			player.sendPacket(html);
 		}
 		else if (currentCommand.startsWith("support"))
@@ -135,7 +137,7 @@ public class SchemeBuffer : Npc
 			}
 			else if (currentCommand.startsWith("skillunselect"))
 			{
-				skills.Remove(Integer.valueOf(skillId));
+				skills.Remove(skillId);
 			}
 			
 			showEditSchemeWindow(player, groupType, schemeName, page);
@@ -144,19 +146,20 @@ public class SchemeBuffer : Npc
 		{
 			try
 			{
-				String schemeName = st.nextToken().trim();
+				String schemeName = st.nextToken().Trim();
 				if (schemeName.Length > 14)
 				{
 					player.sendMessage("Scheme's name must contain up to 14 chars.");
 					return;
 				}
 				// Simple hack to use spaces, dots, commas, minus, plus, exclamations or question marks.
-				if (!Util.isAlphaNumeric(schemeName.Replace(" ", "").Replace(".", "").Replace(",", "").Replace("-", "").replace("+", "").replace("!", "").replace("?", "")))
+				if (!Util.isAlphaNumeric(schemeName.Replace(" ", "").Replace(".", "").Replace(",", "").Replace("-", "")
+					    .Replace("+", "").Replace("!", "").Replace("?", "")))
 				{
 					player.sendMessage("Please use plain alphanumeric characters.");
 					return;
 				}
-				
+
 				Map<String, List<int>> schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.getObjectId());
 				if (schemes != null)
 				{
@@ -231,19 +234,23 @@ public class SchemeBuffer : Npc
 			foreach (var scheme in schemes)
 			{
 				int cost = getFee(scheme.Value);
-				sb.Append("<font color=\"LEVEL\">" + scheme.Key + " [" + scheme.Value.size() + " skill(s)]" + ((cost > 0) ? " - cost: " + NumberFormat.getInstance(Locale.ENGLISH).format(cost) : "") + "</font><br1>");
-				sb.Append("<a action=\"bypass -h npc_%objectId%_givebuffs;" + scheme.Key + ";" + cost + "\">Use on Me</a>&nbsp;|&nbsp;");
-				sb.Append("<a action=\"bypass -h npc_%objectId%_givebuffs;" + scheme.Key + ";" + cost + ";pet\">Use on Pet</a>&nbsp;|&nbsp;");
-				sb.Append("<a action=\"bypass -h npc_%objectId%_editschemes;Buffs;" + scheme.Key + ";1\">Edit</a>&nbsp;|&nbsp;");
+				sb.Append("<font color=\"LEVEL\">" + scheme.Key + " [" + scheme.Value.size() + " skill(s)]" +
+				          ((cost > 0) ? " - cost: " + cost : "") + "</font><br1>");
+				sb.Append("<a action=\"bypass -h npc_%objectId%_givebuffs;" + scheme.Key + ";" + cost +
+				          "\">Use on Me</a>&nbsp;|&nbsp;");
+				sb.Append("<a action=\"bypass -h npc_%objectId%_givebuffs;" + scheme.Key + ";" + cost +
+				          ";pet\">Use on Pet</a>&nbsp;|&nbsp;");
+				sb.Append("<a action=\"bypass -h npc_%objectId%_editschemes;Buffs;" + scheme.Key +
+				          ";1\">Edit</a>&nbsp;|&nbsp;");
 				sb.Append("<a action=\"bypass -h npc_%objectId%_deletescheme;" + scheme.Key + "\">Delete</a><br>");
 			}
 		}
 		
-		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-		html.setFile(player, getHtmlPath(getId(), 1, player));
-		html.replace("%schemes%", sb.ToString());
-		html.replace("%max_schemes%", Config.BUFFER_MAX_SCHEMES);
-		html.replace("%objectId%", getObjectId());
+		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, getHtmlPath(getId(), 1, player));
+		helper.Replace("%schemes%", sb.ToString());
+		helper.Replace("%max_schemes%", Config.BUFFER_MAX_SCHEMES.ToString());
+		helper.Replace("%objectId%", getObjectId().ToString());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 		player.sendPacket(html);
 	}
 	
@@ -256,17 +263,21 @@ public class SchemeBuffer : Npc
 	 */
 	private void showEditSchemeWindow(Player player, String groupType, String schemeName, int page)
 	{
-		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 		List<int> schemeSkills = SchemeBufferTable.getInstance().getScheme(player.getObjectId(), schemeName);
-		html.setFile(player, getHtmlPath(getId(), 2, player));
-		html.replace("%schemename%", schemeName);
-		html.replace("%count%", getCountOf(schemeSkills, false) + " / " + player.getStat().getMaxBuffCount() + " buffs, " + getCountOf(schemeSkills, true) + " / " + Config.DANCES_MAX_AMOUNT + " dances/songs");
-		html.replace("%typesframe%", getTypesFrame(groupType, schemeName));
-		html.replace("%skilllistframe%", getGroupSkillList(player, groupType, schemeName, page));
-		html.replace("%objectId%", getObjectId());
+
+		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, getHtmlPath(getId(), 2, player));
+		helper.Replace("%schemename%", schemeName);
+		helper.Replace("%count%",
+			getCountOf(schemeSkills, false) + " / " + player.getStat().getMaxBuffCount() + " buffs, " +
+			getCountOf(schemeSkills, true) + " / " + Config.DANCES_MAX_AMOUNT + " dances/songs");
+		
+		helper.Replace("%typesframe%", getTypesFrame(groupType, schemeName));
+		helper.Replace("%skilllistframe%", getGroupSkillList(player, groupType, schemeName, page));
+		helper.Replace("%objectId%", getObjectId().ToString());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 		player.sendPacket(html);
 	}
-	
+
 	/**
 	 * @param player : The player to make checks on.
 	 * @param groupType : The group of skills to select.
@@ -282,7 +293,7 @@ public class SchemeBuffer : Npc
 		{
 			return "That group doesn't contain any skills.";
 		}
-		
+
 		// Calculate page number.
 		int max = MathUtil.countPagesNumber(skills.Count, PAGE_LIMIT);
 		int page = pageValue;
@@ -290,56 +301,70 @@ public class SchemeBuffer : Npc
 		{
 			page = max;
 		}
-		
+
 		// Cut skills list up to page number.
-		skills = skills.subList((page - 1) * PAGE_LIMIT, Math.Min(page * PAGE_LIMIT, skills.Count));
-		
+		skills = skills.GetRange((page - 1) * PAGE_LIMIT, Math.Min(page * PAGE_LIMIT, skills.Count));
+
 		List<int> schemeSkills = SchemeBufferTable.getInstance().getScheme(player.getObjectId(), schemeName);
 		StringBuilder sb = new StringBuilder(skills.Count * 150);
 		int row = 0;
 		foreach (int skillId in skills)
 		{
 			sb.Append(((row % 2) == 0 ? "<table width=\"280\" bgcolor=\"000000\"><tr>" : "<table width=\"280\"><tr>"));
-			
+
 			Skill skill = SkillData.getInstance().getSkill(skillId, 1);
 			if (schemeSkills.Contains(skillId))
 			{
-				sb.Append("<td height=40 width=40><img src=\"" + skill.getIcon() + "\" width=32 height=32></td><td width=190>" + skill.getName() + "<br1><font color=\"B09878\">" + SchemeBufferTable.getInstance().getAvailableBuff(skillId).getDescription() + "</font></td><td><button value=\" \" action=\"bypass -h npc_%objectId%_skillunselect;" + groupType + ";" + schemeName + ";" + skillId + ";" + page + "\" width=32 height=32 back=\"L2UI_CH3.mapbutton_zoomout2\" fore=\"L2UI_CH3.mapbutton_zoomout1\"></td>");
+				sb.Append("<td height=40 width=40><img src=\"" + skill.getIcon() +
+				          "\" width=32 height=32></td><td width=190>" + skill.getName() +
+				          "<br1><font color=\"B09878\">" +
+				          SchemeBufferTable.getInstance().getAvailableBuff(skillId).getDescription() +
+				          "</font></td><td><button value=\" \" action=\"bypass -h npc_%objectId%_skillunselect;" +
+				          groupType + ";" + schemeName + ";" + skillId + ";" + page +
+				          "\" width=32 height=32 back=\"L2UI_CH3.mapbutton_zoomout2\" fore=\"L2UI_CH3.mapbutton_zoomout1\"></td>");
 			}
 			else
 			{
-				sb.Append("<td height=40 width=40><img src=\"" + skill.getIcon() + "\" width=32 height=32></td><td width=190>" + skill.getName() + "<br1><font color=\"B09878\">" + SchemeBufferTable.getInstance().getAvailableBuff(skillId).getDescription() + "</font></td><td><button value=\" \" action=\"bypass -h npc_%objectId%_skillselect;" + groupType + ";" + schemeName + ";" + skillId + ";" + page + "\" width=32 height=32 back=\"L2UI_CH3.mapbutton_zoomin2\" fore=\"L2UI_CH3.mapbutton_zoomin1\"></td>");
+				sb.Append("<td height=40 width=40><img src=\"" + skill.getIcon() +
+				          "\" width=32 height=32></td><td width=190>" + skill.getName() +
+				          "<br1><font color=\"B09878\">" +
+				          SchemeBufferTable.getInstance().getAvailableBuff(skillId).getDescription() +
+				          "</font></td><td><button value=\" \" action=\"bypass -h npc_%objectId%_skillselect;" +
+				          groupType + ";" + schemeName + ";" + skillId + ";" + page +
+				          "\" width=32 height=32 back=\"L2UI_CH3.mapbutton_zoomin2\" fore=\"L2UI_CH3.mapbutton_zoomin1\"></td>");
 			}
-			
+
 			sb.Append("</tr></table><img src=\"L2UI.SquareGray\" width=277 height=1>");
 			row++;
 		}
-		
+
 		// Build page footer.
 		sb.Append("<br><img src=\"L2UI.SquareGray\" width=277 height=1><table width=\"100%\" bgcolor=000000><tr>");
 		if (page > 1)
 		{
-			sb.Append("<td align=left width=70><a action=\"bypass -h npc_" + getObjectId() + "_editschemes;" + groupType + ";" + schemeName + ";" + (page - 1) + "\">Previous</a></td>");
+			sb.Append("<td align=left width=70><a action=\"bypass -h npc_" + getObjectId() + "_editschemes;" +
+			          groupType + ";" + schemeName + ";" + (page - 1) + "\">Previous</a></td>");
 		}
 		else
 		{
 			sb.Append("<td align=left width=70>Previous</td>");
 		}
-		
+
 		sb.Append("<td align=center width=100>Page " + page + "</td>");
 		if (page < max)
 		{
-			sb.Append("<td align=right width=70><a action=\"bypass -h npc_" + getObjectId() + "_editschemes;" + groupType + ";" + schemeName + ";" + (page + 1) + "\">Next</a></td>");
+			sb.Append("<td align=right width=70><a action=\"bypass -h npc_" + getObjectId() + "_editschemes;" +
+			          groupType + ";" + schemeName + ";" + (page + 1) + "\">Next</a></td>");
 		}
 		else
 		{
 			sb.Append("<td align=right width=70>Next</td>");
 		}
-		
+
 		sb.Append("</tr></table><img src=\"L2UI.SquareGray\" width=277 height=1>");
 		return sb.ToString();
 	}
-	
+
 	/**
 	 * @param groupType : The group of skills to select.
 	 * @param schemeName : The scheme to make check.

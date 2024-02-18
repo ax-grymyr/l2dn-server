@@ -16,7 +16,7 @@ public class HennaDurationTask: Runnable
 		_slot = slot;
 	}
 	
-	public override void run()
+	public void run()
 	{
 		if (_player != null)
 		{

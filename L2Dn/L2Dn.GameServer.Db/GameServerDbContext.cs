@@ -60,7 +60,10 @@ public class GameServerDbContext: DbContext
     public DbSet<CharacterVariable> CharacterVariables => Set<CharacterVariable>();
     
     public DbSet<Pet> Pets => Set<Pet>();
+    public DbSet<PetEvolve> PetEvolves => Set<PetEvolve>();
 
+    public DbSet<OlympiadNoble> OlympiadNobles => Set<OlympiadNoble>();
+    
     public DbSet<DbItem> Items => Set<DbItem>();
     public DbSet<ItemAuction> ItemAuctions => Set<ItemAuction>();
     public DbSet<ItemAuctionBid> ItemAuctionBids => Set<ItemAuctionBid>();
@@ -69,7 +72,7 @@ public class GameServerDbContext: DbContext
     public DbSet<ItemTransactionHistory> ItemTransactionHistory => Set<ItemTransactionHistory>();
     public DbSet<WorldExchangeItem> WorldExchangeItems => Set<WorldExchangeItem>();
     
-     public DbSet<Clan> Clans => Set<Clan>();
+    public DbSet<Clan> Clans => Set<Clan>();
     public DbSet<ClanPrivileges> ClanPrivileges => Set<ClanPrivileges>();
     public DbSet<ClanSkill> ClanSkills => Set<ClanSkill>();
     public DbSet<ClanSubPledge> ClanSubPledges => Set<ClanSubPledge>();

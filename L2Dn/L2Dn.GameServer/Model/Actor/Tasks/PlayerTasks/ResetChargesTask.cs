@@ -15,7 +15,7 @@ public class ResetChargesTask: Runnable
 		_player = player;
 	}
 	
-	public override void run()
+	public void run()
 	{
 		if (_player != null)
 		{

@@ -1,5 +1,5 @@
 ﻿using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Tasks.AttackableTasks;
 
@@ -12,19 +12,19 @@ public class CommandChannelTimer: Runnable
         _attackable = attackable;
     }
 
-    public override void run()
+    public void run()
     {
         if (_attackable == null)
         {
             return;
         }
 
-        if ((System.currentTimeMillis() - _attackable.getCommandChannelLastAttack()) >
-            Config.LOOT_RAIDS_PRIVILEGE_INTERVAL)
+        if ((DateTime.UtcNow - _attackable.getCommandChannelLastAttack()) >
+            TimeSpan.FromMilliseconds(Config.LOOT_RAIDS_PRIVILEGE_INTERVAL))
         {
             _attackable.setCommandChannelTimer(null);
             _attackable.setFirstCommandChannelAttacked(null);
-            _attackable.setCommandChannelLastAttack(0);
+            _attackable.setCommandChannelLastAttack(null);
         }
         else
         {

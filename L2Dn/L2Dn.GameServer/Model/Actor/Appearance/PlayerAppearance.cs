@@ -147,7 +147,7 @@ public class PlayerAppearance
 		return _isFemale ? Sex.FEMALE : Sex.MALE;
 	}
 	
-	public int getNameColor()
+	public Color getNameColor()
 	{
 		return _nameColor;
 	}
@@ -157,29 +157,14 @@ public class PlayerAppearance
 		_nameColor = nameColor;
 	}
 	
-	public void setNameColor(int red, int green, int blue)
-	{
-		_nameColor = (red & 0xFF) + ((green & 0xFF) << 8) + ((blue & 0xFF) << 16);
-	}
-	
-	public int getTitleColor()
+	public Color getTitleColor()
 	{
 		return _titleColor;
 	}
 	
 	public void setTitleColor(Color titleColor)
 	{
-		if (titleColor < 0)
-		{
-			return;
-		}
-		
 		_titleColor = titleColor;
-	}
-	
-	public void setTitleColor(int red, int green, int blue)
-	{
-		_titleColor = (red & 0xFF) + ((green & 0xFF) << 8) + ((blue & 0xFF) << 16);
 	}
 	
 	/**

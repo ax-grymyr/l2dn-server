@@ -230,7 +230,7 @@ public class Npc: Creature
 	/**
 	 * @return false.
 	 */
-	public bool isAggressive()
+	public virtual bool isAggressive()
 	{
 		return false;
 	}
@@ -274,7 +274,7 @@ public class Npc: Creature
 			
 			if (_isFakePlayer)
 			{
-				player.sendPacket(new FakePlayerInfo(this));
+				player.sendPacket(new FakePlayerInfoPacket(this));
 			}
 			else if (getRunSpeed() == 0)
 			{
@@ -325,7 +325,7 @@ public class Npc: Creature
 		return _isAutoAttackable;
 	}
 	
-	public void setAutoAttackable(bool flag)
+	public virtual void setAutoAttackable(bool flag)
 	{
 		_isAutoAttackable = flag;
 	}
@@ -603,7 +603,7 @@ public class Npc: Creature
 			pom = npcId + "-" + value;
 		}
 		
-		String temp = "data/html/default/" + pom + ".htm";
+		String temp = "html/default/" + pom + ".htm";
 		if (Config.HTM_CACHE)
 		{
 			// If not running lazy cache the file must be in the cache or it does not exist
@@ -618,10 +618,10 @@ public class Npc: Creature
 		}
 		
 		// If the file is not found, the standard message "I have nothing to say to you" is returned
-		return "data/html/npcdefault.htm";
+		return "html/npcdefault.htm";
 	}
 	
-	public void showChatWindow(Player player)
+	public virtual void showChatWindow(Player player)
 	{
 		showChatWindow(player, 0);
 	}
@@ -657,7 +657,7 @@ public class Npc: Creature
 	 * @param player The Player that talk with the Npc
 	 * @param value The number of the page of the Npc to display
 	 */
-	public void showChatWindow(Player player, int value)
+	public virtual void showChatWindow(Player player, int value)
 	{
 		if (!_isTalkable)
 		{
@@ -1003,7 +1003,7 @@ public class Npc: Creature
 	/**
 	 * Invoked when the NPC is re-spawned to reset the instance variables
 	 */
-	public void onRespawn()
+	public virtual void onRespawn()
 	{
 		// Make it alive
 		setDead(false);
@@ -1643,7 +1643,7 @@ public class Npc: Creature
 	 * @param npcStringId the NPC string id
 	 * @param parameters the NPC string id parameters
 	 */
-	public void broadcastSay(ChatType chatType, NpcStringId npcStringId, params String[] parameters)
+	public void broadcastSay(ChatType chatType, NpcStringId npcStringId, params string[] parameters)
 	{
 		NpcSay npcSay = new NpcSay(this, chatType, npcStringId);
 		if (parameters != null)

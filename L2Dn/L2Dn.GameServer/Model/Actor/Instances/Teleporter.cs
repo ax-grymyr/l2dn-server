@@ -96,7 +96,7 @@ public class Teleporter: Npc
 				int val = 0;
 				try
 				{
-					val = Integer.parseInt(command.substring(5));
+					val = int.Parse(command.Substring(5));
 				}
 				catch (IndexOutOfRangeException)
 				{
@@ -122,7 +122,7 @@ public class Teleporter: Npc
 			String token = st.nextToken();
 			if (Util.isDigit(token))
 			{
-				return Integer.parseInt(token);
+				return int.Parse(token);
 			}
 		}
 		return defaultVal;
@@ -133,7 +133,7 @@ public class Teleporter: Npc
 		String pom;
 		if (value == 0)
 		{
-			pom = String.valueOf(npcId);
+			pom = npcId.ToString();
 			if ((player != null) && QUEST_RECOMENDATIONS.containsKey(npcId))
 			{
 				CHECK: foreach (TeleporterQuestRecommendationHolder rec in QUEST_RECOMENDATIONS.get(npcId))

@@ -1,6 +1,9 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -15,27 +18,29 @@ public class FortDoorman: Doorman
     {
         player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 
-        NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
+        HtmlPacketHelper helper;
         if (!isOwnerClan(player))
         {
-            html.setFile(player, "data/html/doorman/" + getTemplate().getId() + "-no.htm");
+            helper = new HtmlPacketHelper(DataFileLocation.Data, "html/doorman/" + getTemplate().getId() + "-no.htm");
         }
         else if (isUnderSiege())
         {
-            html.setFile(player, "data/html/doorman/" + getTemplate().getId() + "-busy.htm");
+            helper = new HtmlPacketHelper(DataFileLocation.Data, "html/doorman/" + getTemplate().getId() + "-busy.htm");
         }
         else
         {
-            html.setFile(player, "data/html/doorman/" + getTemplate().getId() + ".htm");
+            helper = new HtmlPacketHelper(DataFileLocation.Data, "html/doorman/" + getTemplate().getId() + ".htm");
         }
 
-        html.replace("%objectId%", getObjectId().ToString());
+        helper.Replace("%objectId%", getObjectId().ToString());
+
+        NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
         player.sendPacket(html);
     }
 
     protected override void openDoors(Player player, String command)
     {
-        StringTokenizer st = new StringTokenizer(command.substring(10), ", ");
+        StringTokenizer st = new StringTokenizer(command.Substring(10), ", ");
         st.nextToken();
 
         while (st.hasMoreTokens())
@@ -46,7 +51,7 @@ public class FortDoorman: Doorman
 
     protected override void closeDoors(Player player, String command)
     {
-        StringTokenizer st = new StringTokenizer(command.substring(11), ", ");
+        StringTokenizer st = new StringTokenizer(command.Substring(11), ", ");
         st.nextToken();
 
         while (st.hasMoreTokens())

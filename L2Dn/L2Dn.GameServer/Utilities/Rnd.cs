@@ -2,36 +2,38 @@
 
 public static class Rnd
 {
-    [ThreadStatic]
-    private static readonly Random _random = new();
-    
     public static int get(int maxValue)
     {
-        return _random.Next(maxValue);
+        return Random.Shared.Next(maxValue);
     }
     
     public static double get(double maxValue)
     {
-        return _random.NextDouble() * maxValue;
+        return Random.Shared.NextDouble() * maxValue;
     }
     
     public static int get(int minValue, int maxValue)
     {
-        return _random.Next(minValue, maxValue);
+        return Random.Shared.Next(minValue, maxValue);
     }
 
     public static long get(long minValue, long maxValue)
     {
-        return _random.NextInt64(minValue, maxValue);
+        return Random.Shared.NextInt64(minValue, maxValue);
+    }
+
+    public static TimeSpan get(TimeSpan minValue, TimeSpan maxValue)
+    {
+        return TimeSpan.FromTicks(get(minValue.Ticks, maxValue.Ticks));
     }
 
     public static double nextDouble()
     {
-        return _random.NextDouble();
+        return Random.Shared.NextDouble();
     }
 
     public static bool nextBoolean()
     {
-        return _random.Next(1) != 0;
+        return Random.Shared.Next(1) != 0;
     }
 }

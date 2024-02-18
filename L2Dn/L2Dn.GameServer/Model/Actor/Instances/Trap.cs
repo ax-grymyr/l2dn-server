@@ -11,9 +11,10 @@ using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -33,7 +34,7 @@ public class Trap: Npc
 	private readonly SkillHolder _skill;
 	private int _remainingTime;
 	// Tasks
-	private ScheduledFuture<?> _trapTask = null;
+	private ScheduledFuture _trapTask = null;
 	
 	public Trap(NpcTemplate template, int instanceId, int lifeTime): base(template)
 	{
@@ -158,9 +159,9 @@ public class Trap: Npc
 		return _owner;
 	}
 	
-	public override byte getPvpFlag()
+	public override bool getPvpFlag()
 	{
-		return _owner != null ? _owner.getPvpFlag() : 0;
+		return _owner != null ? _owner.getPvpFlag() : false;
 	}
 	
 	public override Item getSecondaryWeaponInstance()
@@ -232,11 +233,11 @@ public class Trap: Npc
 		}
 		else
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.C1_HAS_DEALT_S3_DAMAGE_TO_C2);
-			sm.addString(getName());
-			sm.addString(target.getName());
-			sm.addInt(damage);
-			sm.addPopup(target.getObjectId(), getObjectId(), (damage * -1));
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_DEALT_S3_DAMAGE_TO_C2);
+			sm.Params.addString(getName());
+			sm.Params.addString(target.getName());
+			sm.Params.addInt(damage);
+			sm.Params.addPopup(target.getObjectId(), getObjectId(), (damage * -1));
 			_owner.sendPacket(sm);
 		}
 	}
@@ -245,7 +246,7 @@ public class Trap: Npc
 	{
 		if (_isTriggered || canBeSeen(player))
 		{
-			player.sendPacket(new NpcInfo(this));
+			player.sendPacket(new NpcInfoPacket(this));
 		}
 	}
 	
@@ -260,7 +261,7 @@ public class Trap: Npc
 			return;
 		}
 		
-		if ((_owner != null) && (_owner.getPvpFlag() == 0) && (_owner.getReputation() >= 0))
+		if ((_owner != null) && (!_owner.getPvpFlag()) && (_owner.getReputation() >= 0))
 		{
 			return;
 		}
@@ -297,7 +298,7 @@ public class Trap: Npc
 		}
 		
 		_isTriggered = true;
-		broadcastPacket(new NpcInfo(this));
+		broadcastPacket(new NpcInfoPacket(this));
 		setTarget(target);
 		
 		if (EventDispatcher.getInstance().hasListener(EventType.ON_TRAP_ACTION, this))

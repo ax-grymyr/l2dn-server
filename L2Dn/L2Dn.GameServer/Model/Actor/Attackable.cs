@@ -18,6 +18,7 @@ using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -50,7 +51,7 @@ public class Attackable : Npc
 	// Command channel
 	private CommandChannel _firstCommandChannelAttacked = null;
 	private CommandChannelTimer _commandChannelTimer = null;
-	private DateTime _commandChannelLastAttack;
+	private DateTime? _commandChannelLastAttack;
 	// Misc
 	private bool _mustGiveExpSp;
 	
@@ -113,7 +114,7 @@ public class Attackable : Npc
 	 * Use the skill if minimum checks are pass.
 	 * @param skill the skill
 	 */
-	public void useMagic(Skill skill)
+	public virtual void useMagic(Skill skill)
 	{
 		if (!SkillCaster.checkUseConditions(this, skill))
 		{
@@ -421,7 +422,7 @@ public class Attackable : Npc
 					{
 						int points = (int) (Math.Max(raidbossPoints / members.Count, 1) * p.getStat().getValue(Stat.BONUS_RAID_POINTS, 1));
 						p.increaseRaidbossPoints(points);
-						p.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S1_RAID_POINT_S).addInt(points));
+						p.sendPacket(new SystemMessagePacket(SystemMessageId.YOU_HAVE_EARNED_S1_RAID_POINT_S).addInt(points));
 						if (p.isNoble())
 						{
 							Hero.getInstance().setRBkilled(p.getObjectId(), getId());
@@ -432,7 +433,7 @@ public class Attackable : Npc
 				{
 					int points = (int) (Math.Max(raidbossPoints, 1) * player.getStat().getValue(Stat.BONUS_RAID_POINTS, 1));
 					player.increaseRaidbossPoints(points);
-					player.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S1_RAID_POINT_S).addInt(points));
+					player.sendPacket(new SystemMessagePacket(SystemMessageId.YOU_HAVE_EARNED_S1_RAID_POINT_S).addInt(points));
 					if (player.isNoble())
 					{
 						Hero.getInstance().setRBkilled(player.getObjectId(), getId());
@@ -1081,7 +1082,7 @@ public class Attackable : Npc
 	 * @param npcTemplate
 	 * @param mainDamageDealer
 	 */
-	public void doItemDrop(NpcTemplate npcTemplate, Creature mainDamageDealer)
+	public virtual void doItemDrop(NpcTemplate npcTemplate, Creature mainDamageDealer)
 	{
 		if (mainDamageDealer == null)
 		{
@@ -1156,10 +1157,10 @@ public class Attackable : Npc
 				// Broadcast message if RaidBoss was defeated
 				if (_isRaid && !_isRaidMinion)
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.C1_DIED_AND_DROPPED_S2_X_S3);
-					sm.addString(getName());
-					sm.addItemName(item);
-					sm.addLong(drop.getCount());
+					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_DIED_AND_DROPPED_S2_X_S3);
+					sm.Params.addString(getName());
+					sm.Params.addItemName(item);
+					sm.Params.addLong(drop.getCount());
 					broadcastPacket(sm);
 					if (RaidDropAnnounceData.getInstance().isAnnounce(item.getId()))
 					{
@@ -1202,10 +1203,10 @@ public class Attackable : Npc
 						// Message.
 						if (_isRaid && !_isRaidMinion)
 						{
-							SystemMessage sm = new SystemMessage(SystemMessageId.THANKS_TO_C1_S_FORTUNE_TIME_EFFECT_S2_X_S3_DROPPED);
-							sm.addString(getName());
-							sm.addItemName(item);
-							sm.addLong(drop.getCount());
+							SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THANKS_TO_C1_S_FORTUNE_TIME_EFFECT_S2_X_S3_DROPPED);
+							sm.Params.addString(getName());
+							sm.Params.addItemName(item);
+							sm.Params.addLong(drop.getCount());
 							broadcastPacket(sm);
 						}
 					}
@@ -1669,7 +1670,7 @@ public class Attackable : Npc
 	/**
 	 * @return the _commandChannelLastAttack
 	 */
-	public DateTime getCommandChannelLastAttack()
+	public DateTime? getCommandChannelLastAttack()
 	{
 		return _commandChannelLastAttack;
 	}
@@ -1677,7 +1678,7 @@ public class Attackable : Npc
 	/**
 	 * @param channelLastAttack the _commandChannelLastAttack to set
 	 */
-	public void setCommandChannelLastAttack(DateTime channelLastAttack)
+	public void setCommandChannelLastAttack(DateTime? channelLastAttack)
 	{
 		_commandChannelLastAttack = channelLastAttack;
 	}
@@ -1695,7 +1696,7 @@ public class Attackable : Npc
 	/*
 	 * Return vitality points decrease (if positive) or increase (if negative) based on damage. Maximum for damage = maxHp.
 	 */
-	public int getVitalityPoints(int level, double exp, bool isBoss)
+	public virtual int getVitalityPoints(int level, double exp, bool isBoss)
 	{
 		if ((getLevel() <= 0) || (getExpReward() <= 0) || (isBoss && (Config.VITALITY_CONSUME_BY_BOSS == 0)))
 		{
@@ -1709,7 +1710,7 @@ public class Attackable : Npc
 	/*
 	 * True if vitality rate for exp and sp should be applied
 	 */
-	public bool useVitalityRate()
+	public virtual bool useVitalityRate()
 	{
 		return !_champion || Config.CHAMPION_ENABLE_VITALITY;
 	}
@@ -1752,7 +1753,7 @@ public class Attackable : Npc
 	/**
 	 * @return leader of this minion or null.
 	 */
-	public Attackable getLeader()
+	public virtual Attackable getLeader()
 	{
 		return null;
 	}

@@ -1,3 +1,7 @@
+using L2Dn.GameServer.Handlers;
+using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -18,7 +22,7 @@ public class PetFeedTask: Runnable
 		_player = player;
 	}
 	
-	public override void run()
+	public void run()
 	{
 		if (_player != null)
 		{
@@ -51,7 +55,7 @@ public class PetFeedTask: Runnable
 				}
 				
 				Item food = null;
-				foreach (int id in foodIds.Keys)
+				foreach (int id in foodIds)
 				{
 					// TODO: possibly pet inv?
 					food = _player.getInventory().getItemByItemId(id);
@@ -67,8 +71,8 @@ public class PetFeedTask: Runnable
 					if (handler != null)
 					{
 						handler.useItem(_player, food, false);
-						SystemMessage sm = new SystemMessage(SystemMessageId.YOUR_PET_WAS_HUNGRY_SO_IT_ATE_S1);
-						sm.addItemName(food.getId());
+						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOUR_PET_WAS_HUNGRY_SO_IT_ATE_S1);
+						sm.Params.addItemName(food.getId());
 						_player.sendPacket(sm);
 					}
 				}

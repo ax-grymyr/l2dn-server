@@ -6,15 +6,16 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
 public class Doppelganger : Attackable
 {
 	private bool _copySummonerEffects = true;
-	private ScheduledFuture<?> _attackTask = null;
+	private ScheduledFuture _attackTask = null;
 	private Creature _attackTarget = null;
 	
 	public Doppelganger(NpcTemplate template, Player owner): base(template)
@@ -86,7 +87,7 @@ public class Doppelganger : Attackable
 	{
 		stopAttackTask();
 		_attackTarget = target;
-		_attackTask = ThreadPool.scheduleAtFixedRate(this::thinkCombat, 1000, 1000);
+		_attackTask = ThreadPool.scheduleAtFixedRate(thinkCombat, 1000, 1000);
 	}
 	
 	private void thinkCombat()
@@ -101,9 +102,9 @@ public class Doppelganger : Attackable
 		// TODO: Cast skills.
 	}
 	
-	public override byte getPvpFlag()
+	public override bool getPvpFlag()
 	{
-		return getSummoner() != null ? getSummoner().getPvpFlag() : 0;
+		return getSummoner() != null ? getSummoner().getPvpFlag() : false;
 	}
 	
 	public override Team getTeam()
@@ -137,18 +138,18 @@ public class Doppelganger : Attackable
 				OlympiadGameManager.getInstance().notifyCompetitorDamage(getSummoner().getActingPlayer(), damage);
 			}
 			
-			 SystemMessage sm;
+			SystemMessagePacket sm;
 			if ((target.isHpBlocked() && !target.isNpc()) || (target.isPlayer() && target.isAffected(EffectFlag.DUELIST_FURY) && !getActingPlayer().isAffected(EffectFlag.FACEOFF)))
 			{
-				sm = new SystemMessage(SystemMessageId.THE_ATTACK_HAS_BEEN_BLOCKED);
+				sm = new SystemMessagePacket(SystemMessageId.THE_ATTACK_HAS_BEEN_BLOCKED);
 			}
 			else
 			{
-				sm = new SystemMessage(SystemMessageId.C1_HAS_DEALT_S3_DAMAGE_TO_C2);
-				sm.addNpcName(this);
-				sm.addString(target.getName());
-				sm.addInt(damage);
-				sm.addPopup(target.getObjectId(), getObjectId(), (damage * -1));
+				sm = new SystemMessagePacket(SystemMessageId.C1_HAS_DEALT_S3_DAMAGE_TO_C2);
+				sm.Params.addNpcName(this);
+				sm.Params.addString(target.getName());
+				sm.Params.addInt(damage);
+				sm.Params.addPopup(target.getObjectId(), getObjectId(), (damage * -1));
 			}
 			
 			sendPacket(sm);
@@ -161,11 +162,11 @@ public class Doppelganger : Attackable
 		
 		if ((getSummoner() != null) && getSummoner().isPlayer() && (attacker != null) && !isDead() && !isHpBlocked())
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
-			sm.addNpcName(this);
-			sm.addString(attacker.getName());
-			sm.addInt((int) damage);
-			sm.addPopup(getObjectId(), attacker.getObjectId(), (int) -damage);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
+			sm.Params.addNpcName(this);
+			sm.Params.addString(attacker.getName());
+			sm.Params.addInt((int) damage);
+			sm.Params.addPopup(getObjectId(), attacker.getObjectId(), (int) -damage);
 			sendPacket(sm);
 		}
 	}

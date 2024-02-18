@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
@@ -30,7 +31,7 @@ public class Boat: Vehicle
         bool result = base.moveToNextRoutePoint();
         if (result)
         {
-            broadcastPacket(new VehicleDeparture(this));
+            broadcastPacket(new VehicleDeparturePacket(this));
         }
 
         return result;
@@ -55,12 +56,12 @@ public class Boat: Vehicle
     {
         base.stopMove(loc);
 
-        broadcastPacket(new VehicleStarted(this, 0));
-        broadcastPacket(new VehicleInfo(this));
+        broadcastPacket(new VehicleStartedPacket(getObjectId(), 0));
+        broadcastPacket(new VehicleInfoPacket(this));
     }
 
     public override void sendInfo(Player player)
     {
-        player.sendPacket(new VehicleInfo(this));
+        player.sendPacket(new VehicleInfoPacket(this));
     }
 }

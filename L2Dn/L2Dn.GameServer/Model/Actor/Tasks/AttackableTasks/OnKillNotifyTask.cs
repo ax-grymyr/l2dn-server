@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Utilities;
+﻿using L2Dn.GameServer.Model.Quests;
+using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Tasks.AttackableTasks;
 
@@ -17,7 +18,7 @@ public class OnKillNotifyTask: Runnable
         _isSummon = isSummon;
     }
 
-    public override void run()
+    public void run()
     {
         if ((_quest != null) && (_attackable != null) && (_killer != null))
         {

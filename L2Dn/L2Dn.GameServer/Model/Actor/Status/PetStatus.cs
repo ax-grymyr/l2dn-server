@@ -1,4 +1,7 @@
 ﻿using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Model.Actor.Status;
 
@@ -28,9 +31,9 @@ public class PetStatus: SummonStatus
         {
             if (!isDOT && (getActiveChar().getOwner() != null))
             {
-                SystemMessage sm = new SystemMessage(SystemMessageId.C1_DEALS_S2_DAMAGE_TO_THE_PET);
-                sm.addString(attacker.getName());
-                sm.addInt((int)value);
+                SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_DEALS_S2_DAMAGE_TO_THE_PET);
+                sm.Params.addString(attacker.getName());
+                sm.Params.addInt((int)value);
                 getActiveChar().sendPacket(sm);
             }
 

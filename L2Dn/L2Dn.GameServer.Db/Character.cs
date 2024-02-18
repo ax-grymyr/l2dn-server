@@ -24,6 +24,7 @@ public class Character
     public string Name { get; set; } = string.Empty;
 
     public CharacterClass Class { get; set; } // Race and base class are calculated from the class
+    
     public short Level { get; set; } = 1;
     public long Exp { get; set; }
     public long ExpBeforeDeath { get; set; }
@@ -87,6 +88,8 @@ public class Character
     public DateOnly Created { get; set; }
     public DateTime? LastLogin { get; set; }
     public TimeSpan OnlineTime { get; set; }
+    public bool IsOnline { get; set; }
+
     public DateTime? DeleteTime { get; set; }
     public DateTime? ClanCreateExpiryTime { get; set; }
     public DateTime? ClanJoinExpiryTime { get; set; }

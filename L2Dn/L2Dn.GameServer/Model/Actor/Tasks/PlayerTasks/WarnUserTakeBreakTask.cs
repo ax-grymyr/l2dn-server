@@ -1,3 +1,5 @@
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
@@ -15,14 +17,18 @@ public class WarnUserTakeBreakTask: Runnable
 		_player = player;
 	}
 	
-	public override void run()
+	public void run()
 	{
 		if (_player != null)
 		{
 			if (_player.isOnline())
 			{
-				long hours = TimeUnit.MILLISECONDS.toHours(_player.getUptime() + 60000);
-				_player.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_PLAYED_FOR_S1_H_TAKE_A_BREAK_PLEASE).addLong(hours));
+				int hours = (int)(_player.getUptime() + TimeSpan.FromMinutes(1)).TotalHours;
+				SystemMessagePacket sm =
+					new SystemMessagePacket(SystemMessageId.YOU_HAVE_PLAYED_FOR_S1_H_TAKE_A_BREAK_PLEASE);
+				
+				sm.Params.addLong(hours);
+				_player.sendPacket(sm);
 			}
 			else
 			{

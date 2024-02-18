@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Items;
@@ -215,9 +216,9 @@ public sealed class SystemMessageParams
 	 * @param type
 	 * @return
 	 */
-	public SystemMessageParams addClassId(int type)
+	public SystemMessageParams addClassId(CharacterClass type)
 	{
-		append(SystemMessageParamType.TYPE_CLASS_ID, type);
+		append(SystemMessageParamType.TYPE_CLASS_ID, (int)type);
 		return this;
 	}
 	

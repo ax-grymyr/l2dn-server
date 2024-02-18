@@ -1,4 +1,7 @@
-﻿namespace L2Dn.GameServer.Model.Actor.Status;
+﻿using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.Utilities;
+
+namespace L2Dn.GameServer.Model.Actor.Status;
 
 public class SummonStatus : PlayableStatus
 {
@@ -65,7 +68,7 @@ public class SummonStatus : PlayableStatus
 		else if ((caster != null) && (caster == getActiveChar().getOwner()) && Util.checkIfInRange(1000, getActiveChar(), caster, true) && !caster.isDead()) // when no party, transfer only to owner (caster)
 		{
 			int transferDmg = ((int) value * (int) getActiveChar().getStat().getValue(Stat.TRANSFER_DAMAGE_TO_PLAYER, 0)) / 100;
-			transferDmg = Math.min((int) caster.getCurrentHp() - 1, transferDmg);
+			transferDmg = Math.Min((int) caster.getCurrentHp() - 1, transferDmg);
 			if (transferDmg > 0)
 			{
 				if (attacker.isPlayable() && (caster.getCurrentCp() > 0))

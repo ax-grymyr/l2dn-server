@@ -56,12 +56,12 @@ public class Fence : WorldObject
 	
 	public override void sendInfo(Player player)
 	{
-		player.sendPacket(new ExColosseumFenceInfo(this));
+		player.sendPacket(new ExColosseumFenceInfoPacket(this));
 		if (_heightFences != null)
 		{
 			foreach (int objId in _heightFences)
 			{
-				player.sendPacket(new ExColosseumFenceInfo(objId, getX(), getY(), getZ(), _width, _length, _state));
+				player.sendPacket(new ExColosseumFenceInfoPacket(objId, getX(), getY(), getZ(), _width, _length, _state));
 			}
 		}
 	}

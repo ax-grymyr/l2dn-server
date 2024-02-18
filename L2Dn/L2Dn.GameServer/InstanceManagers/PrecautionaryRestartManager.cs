@@ -63,40 +63,42 @@ public class PrecautionaryRestartManager
 	{
 		try
 		{
-			MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
-			ObjectName name = ObjectName.getInstance("java.lang:type=OperatingSystem");
-			AttributeList list = mbs.getAttributes(name, new String[]
-			{
-				var
-			});
-
-			if (list.isEmpty())
-			{
-				return 0;
-			}
-
-			Attribute att = (Attribute)list.get(0);
-			Double value = (Double)att.getValue();
-			if (value == -1)
-			{
-				return 0;
-			}
-
-			return (value * 1000) / 10d;
+			// Process process = Process.GetCurrentProcess();
+			// MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
+			// ObjectName name = ObjectName.getInstance("java.lang:type=OperatingSystem");
+			// AttributeList list = mbs.getAttributes(name, new String[]
+			// {
+			// 	var
+			// });
+			//
+			// if (list.isEmpty())
+			// {
+			// 	return 0;
+			// }
+			//
+			// Attribute att = (Attribute)list.get(0);
+			// Double value = (Double)att.getValue();
+			// if (value == -1)
+			// {
+			// 	return 0;
+			// }
+			//
+			// return (value * 1000) / 10d;
 		}
 		catch (Exception e)
 		{
 		}
 
-		return 0;
+		return 0; // TODO: not implemented currently
 	}
 
 	private static double getProcessRamLoad()
 	{
-		Runtime runTime = Runtime.getRuntime();
-		long totalMemory = runTime.maxMemory();
-		long usedMemory = totalMemory - ((totalMemory - runTime.totalMemory()) + runTime.freeMemory());
-		return (usedMemory * 100) / totalMemory;
+		// long processMemory = Environment.WorkingSet;
+		// long totalMemory = runTime.maxMemory();
+		// long usedMemory = totalMemory - ((totalMemory - runTime.totalMemory()) + runTime.freeMemory());
+		// return (usedMemory * 100) / totalMemory;
+		return 0; // TODO: not implemented currently
 	}
 
 	private bool serverBizzy()

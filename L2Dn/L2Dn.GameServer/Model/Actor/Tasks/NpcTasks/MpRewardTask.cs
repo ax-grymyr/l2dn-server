@@ -1,5 +1,7 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Utilities;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Tasks.NpcTasks;
 
@@ -7,7 +9,7 @@ public class MpRewardTask
 {
     private int _count;
     private readonly double _value;
-    private readonly ScheduledFuture<?> _task;
+    private readonly ScheduledFuture _task;
     private readonly Creature _creature;
 	
     public MpRewardTask(Creature creature, Npc npc)
@@ -16,7 +18,8 @@ public class MpRewardTask
         _creature = creature;
         _count = template.getMpRewardTicks();
         _value = calculateBaseValue(npc, creature);
-        _task = ThreadPool.scheduleAtFixedRate(this::run, Config.EFFECT_TICK_RATIO, Config.EFFECT_TICK_RATIO);
+        _task = ThreadPool.scheduleAtFixedRate(run, TimeSpan.FromMilliseconds(Config.EFFECT_TICK_RATIO),
+            TimeSpan.FromMilliseconds(Config.EFFECT_TICK_RATIO));
     }
 	
     /**

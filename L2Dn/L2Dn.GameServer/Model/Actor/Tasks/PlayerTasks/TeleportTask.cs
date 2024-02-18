@@ -16,7 +16,7 @@ public class TeleportTask: Runnable
 		_loc = loc;
 	}
 	
-	public override void run()
+	public void run()
 	{
 		if ((_player != null) && _player.isOnline())
 		{

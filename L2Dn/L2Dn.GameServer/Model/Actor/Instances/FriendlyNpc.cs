@@ -3,6 +3,9 @@ using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Events;
+using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -110,7 +113,7 @@ public class FriendlyNpc : Attackable
 			}
 		}
 		// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
-		player.sendPacket(ActionFailed.STATIC_PACKET);
+		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 	}
 	
 	public override String getHtmlPath(int npcId, int value, Player player)

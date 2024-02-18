@@ -1,5 +1,10 @@
 using System.Text;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
+using L2Dn.GameServer.Model.Punishment;
+using L2Dn.GameServer.Network;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -48,7 +53,7 @@ public class IllegalPlayerActionTask: Runnable
 		}
 	}
 
-	public override void run()
+	public void run()
 	{
 		StringBuilder sb = new StringBuilder();
 		sb.Append("AUDIT, ");
@@ -70,7 +75,8 @@ public class IllegalPlayerActionTask: Runnable
 				}
 				case IllegalActionPunishmentType.KICK:
 				{
-					Disconnection.of(_actor).defaultSequence(LeaveWorld.STATIC_PACKET);
+					LeaveWorldPacket packet = LeaveWorldPacket.STATIC_PACKET;
+					Disconnection.of(_actor).defaultSequence(ref packet);
 					break;
 				}
 				case IllegalActionPunishmentType.KICKBAN:
@@ -78,7 +84,7 @@ public class IllegalPlayerActionTask: Runnable
 					PunishmentManager.getInstance().startPunishment(new PunishmentTask(_actor.getObjectId(),
 						PunishmentAffect.CHARACTER, PunishmentType.BAN,
 						System.currentTimeMillis() + (Config.DEFAULT_PUNISH_PARAM * 1000), _message,
-						getClass().getSimpleName()));
+						GetType().Name));
 					break;
 				}
 				case IllegalActionPunishmentType.JAIL:
@@ -86,7 +92,7 @@ public class IllegalPlayerActionTask: Runnable
 					PunishmentManager.getInstance().startPunishment(new PunishmentTask(_actor.getObjectId(),
 						PunishmentAffect.CHARACTER, PunishmentType.JAIL,
 						System.currentTimeMillis() + (Config.DEFAULT_PUNISH_PARAM * 1000), _message,
-						getClass().getSimpleName()));
+						GetType().Name));
 					break;
 				}
 			}

@@ -37,7 +37,7 @@ public interface ILocational
      * Gets this object's location.
      * @return a {@link ILocational} object containing the current position of this object
      */
-    ILocational getLocation();
+    Location getLocation();
 	
      /**
       * @param to

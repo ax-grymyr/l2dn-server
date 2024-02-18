@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -130,7 +131,7 @@ public class StaticObject: Creature
 	public void setMeshIndex(int meshIndex)
 	{
 		_meshIndex = meshIndex;
-		broadcastPacket(new StaticObjectInfo(this));
+		broadcastPacket(new StaticObjectInfoPacket(this));
 	}
 	
 	/**
@@ -148,7 +149,7 @@ public class StaticObject: Creature
 	
 	public override void sendInfo(Player player)
 	{
-		player.sendPacket(new StaticObjectInfo(this));
+		player.sendPacket(new StaticObjectInfoPacket(this));
 	}
 	
 	public override void moveToLocation(int x, int y, int z, int offset)

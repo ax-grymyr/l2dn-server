@@ -8,10 +8,11 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor;
 
@@ -24,16 +25,17 @@ public abstract class Vehicle : Creature
 	
 	protected VehiclePathPoint[] _currentPath = null;
 	protected int _runState = 0;
-	private ScheduledFuture<?> _monitorTask = null;
-	private readonly Location _monitorLocation = new Location(this);
+	private ScheduledFuture _monitorTask = null;
+	private readonly Location _monitorLocation;
 	
 	public Vehicle(CreatureTemplate template): base(template)
 	{
+		_monitorLocation = new Location(this);
 		setInstanceType(InstanceType.Vehicle);
 		setFlying(true);
 	}
 	
-	public bool isBoat()
+	public virtual bool isBoat()
 	{
 		return false;
 	}
@@ -43,7 +45,7 @@ public abstract class Vehicle : Creature
 		return false;
 	}
 	
-	public bool canBeControlled()
+	public virtual bool canBeControlled()
 	{
 		return _engine == null;
 	}
@@ -215,7 +217,7 @@ public abstract class Vehicle : Creature
 		return _oustLoc != null ? _oustLoc : MapRegionManager.getInstance().getTeleToLocation(this, TeleportWhereType.TOWN);
 	}
 	
-	public void oustPlayers()
+	public virtual void oustPlayers()
 	{
 		Player player;
 		
@@ -232,7 +234,7 @@ public abstract class Vehicle : Creature
 		}
 	}
 	
-	public void oustPlayer(Player player)
+	public virtual void oustPlayer(Player player)
 	{
 		player.setVehicle(null);
 		player.setInVehiclePosition(null);
@@ -312,8 +314,8 @@ public abstract class Vehicle : Creature
 						player.teleToLocation(new Location(oustX, oustY, oustZ), true);
 						return;
 					}
-					InventoryUpdate iu = new InventoryUpdate();
-					iu.addModifiedItem(ticket);
+					
+					InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(ticket, ItemChangeType.MODIFIED));
 					player.sendInventoryUpdate(iu);
 				}
 				addPassenger(player);

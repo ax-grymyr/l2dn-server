@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Sieges;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
@@ -28,10 +29,12 @@ public class FortManager : Merchant
 		return true;
 	}
 	
-	private void sendHtmlMessage(Player player, NpcHtmlMessage html)
+	private void sendHtmlMessage(Player player, HtmlPacketHelper helper)
 	{
-		html.replace("%objectId%", String.valueOf(getObjectId()));
-		html.replace("%npcId%", String.valueOf(getId()));
+		helper.Replace("%objectId%", getObjectId().ToString());
+		helper.Replace("%npcId%", getId().ToString());
+		
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 		player.sendPacket(html);
 	}
 	
@@ -42,8 +45,9 @@ public class FortManager : Merchant
 		{
 			return;
 		}
-		 SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-		 int condition = validateCondition(player);
+		 
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+		int condition = validateCondition(player);
 		if (condition <= COND_ALL_FALSE)
 		{
 			return;
@@ -65,14 +69,14 @@ public class FortManager : Merchant
 			{
 				if (player.hasClanPrivilege(ClanPrivilege.CS_DISMISS))
 				{
-					 NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
+					NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 					html.setFile(player, "data/html/fortress/foreman-expel.htm");
 					html.replace("%objectId%", String.valueOf(getObjectId()));
 					player.sendPacket(html);
 				}
 				else
 				{
-					 NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
+					NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 					html.setFile(player, "data/html/fortress/foreman-noprivs.htm");
 					html.replace("%objectId%", String.valueOf(getObjectId()));
 					player.sendPacket(html);

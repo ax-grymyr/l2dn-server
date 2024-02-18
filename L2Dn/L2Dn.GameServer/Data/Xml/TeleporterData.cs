@@ -35,40 +35,37 @@ public class TeleporterData: DataReaderBase
 		
 		LOGGER.Info(GetType().Name + ": Loaded " + _teleporters.size() + " npc teleporters.");
 	}
-	
+
 	private void loadElement(string filePath, XElement element)
 	{
-			Map<String, TeleportHolder> teleList = new();
+		Map<String, TeleportHolder> teleList = new();
 
-			// Parse npc node child
-			int npcId = element.Attribute("id").GetInt32();
+		// Parse npc node child
+		int npcId = element.Attribute("id").GetInt32();
 
-			element.Elements("npcs").Elements("npc").Select(e => e.Attribute("id").GetInt32())
-				.ForEach(npcId => registerTeleportList(npcId, teleList));
-			
-			element.Elements("teleport").ForEach(el =>
+		element.Elements("npcs").Elements("npc").Select(e => e.Attribute("id").GetInt32())
+			.ForEach(npcId => registerTeleportList(npcId, teleList));
+
+		element.Elements("teleport").ForEach(el =>
+		{
+			TeleportType type = el.Attribute("type").GetEnum<TeleportType>();
+			string name = el.Attribute("name").GetString(type.ToString());
+
+			// Parse locations
+			TeleportHolder holder = new TeleportHolder(name, type);
+
+			el.Elements("location").ForEach(e => { holder.registerLocation(new StatSet(e)); });
+
+			// Register holder
+			if (teleList.putIfAbsent(name, holder) != null)
 			{
-				TeleportType type = el.Attribute("type").GetEnum<TeleportType>();
-				string name = el.Attribute("name").GetString(type.ToString());
+				LOGGER.Error("Duplicate teleport list (" + name + ") has been found for NPC: " + npcId);
+			}
+		});
 
-				// Parse locations
-				TeleportHolder holder = new TeleportHolder(name, type);
-				
-				el.Elements("location").ForEach(e =>
-				{
-					holder.registerLocation(new StatSet(e));
-				});
-
-				// Register holder
-				if (teleList.putIfAbsent(name, holder) != null)
-				{
-					LOGGER.Error("Duplicate teleport list (" + name + ") has been found for NPC: " + npcId);
-				}
-			});
-
-			registerTeleportList(npcId, teleList);
+		registerTeleportList(npcId, teleList);
 	}
-	
+
 	public int getTeleporterCount()
 	{
 		return _teleporters.size();

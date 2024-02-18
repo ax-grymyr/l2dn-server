@@ -23,56 +23,56 @@ public class AirShip : Vehicle
 		return true;
 	}
 	
-	public bool isOwner(Player player)
+	public virtual bool isOwner(Player player)
 	{
 		return false;
 	}
 	
-	public int getOwnerId()
+	public virtual int getOwnerId()
 	{
 		return 0;
 	}
 	
-	public bool isCaptain(Player player)
+	public virtual bool isCaptain(Player player)
 	{
 		return false;
 	}
 	
-	public int getCaptainId()
+	public virtual int getCaptainId()
 	{
 		return 0;
 	}
 	
-	public int getHelmObjectId()
+	public virtual int getHelmObjectId()
 	{
 		return 0;
 	}
 	
-	public int getHelmItemId()
+	public virtual int getHelmItemId()
 	{
 		return 0;
 	}
 	
-	public bool setCaptain(Player player)
+	public virtual bool setCaptain(Player player)
 	{
 		return false;
 	}
 	
-	public int getFuel()
+	public virtual int getFuel()
 	{
 		return 0;
 	}
 	
-	public void setFuel(int f)
+	public virtual void setFuel(int f)
 	{
 	}
 	
-	public int getMaxFuel()
+	public virtual int getMaxFuel()
 	{
 		return 0;
 	}
 	
-	public void setMaxFuel(int mf)
+	public virtual void setMaxFuel(int mf)
 	{
 	}
 	
@@ -100,7 +100,7 @@ public class AirShip : Vehicle
 		
 		player.setVehicle(this);
 		player.setInVehiclePosition(new Location(0, 0, 0));
-		player.broadcastPacket(new ExGetOnAirShip(player, this));
+		player.broadcastPacket(new ExGetOnAirShipPacket(player, this));
 		player.setXYZ(getX(), getY(), getZ());
 		player.revalidateZone(true);
 		player.stopMove(null);
@@ -113,7 +113,7 @@ public class AirShip : Vehicle
 		Location loc = getOustLoc();
 		if (player.isOnline())
 		{
-			player.broadcastPacket(new ExGetOffAirShip(player, this, loc.getX(), loc.getY(), loc.getZ()));
+			player.broadcastPacket(new ExGetOffAirShipPacket(player, this, loc.getX(), loc.getY(), loc.getZ()));
 			player.teleToLocation(loc.getX(), loc.getY(), loc.getZ());
 		}
 		else
@@ -142,14 +142,14 @@ public class AirShip : Vehicle
 	
 	public override void updateAbnormalVisualEffects()
 	{
-		broadcastPacket(new ExAirShipInfo(this));
+		broadcastPacket(new ExAirShipInfoPacket(this));
 	}
 	
 	public override void sendInfo(Player player)
 	{
 		if (isVisibleFor(player))
 		{
-			player.sendPacket(new ExAirShipInfo(this));
+			player.sendPacket(new ExAirShipInfoPacket(this));
 		}
 	}
 }

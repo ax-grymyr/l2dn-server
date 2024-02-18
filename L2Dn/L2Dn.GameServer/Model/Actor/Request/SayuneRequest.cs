@@ -9,7 +9,7 @@ public class SayuneRequest : AbstractRequest
 {
 	private readonly int _mapId;
 	private bool _isSelecting;
-	private readonly Deque<SayuneEntry> _possibleEntries = new LinkedList<>();
+	private readonly Deque<SayuneEntry> _possibleEntries = new();
 
 	public SayuneRequest(Player player, int mapId): base(player)
 	{

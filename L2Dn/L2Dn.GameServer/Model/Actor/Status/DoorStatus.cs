@@ -1,4 +1,6 @@
-﻿namespace L2Dn.GameServer.Model.Actor.Status;
+﻿using L2Dn.GameServer.Model.Actor.Instances;
+
+namespace L2Dn.GameServer.Model.Actor.Status;
 
 public class DoorStatus: CreatureStatus
 {

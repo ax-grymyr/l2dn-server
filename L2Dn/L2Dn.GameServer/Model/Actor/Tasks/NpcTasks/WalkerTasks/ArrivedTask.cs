@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Utilities;
+﻿using L2Dn.GameServer.InstanceManagers;
+using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Tasks.NpcTasks.WalkerTasks;
 
@@ -17,7 +18,7 @@ public class ArrivedTask: Runnable
         _walk = walk;
     }
 
-    public override void run()
+    public void run()
     {
         _npc.broadcastInfo();
         _walk.setBlocked(false);

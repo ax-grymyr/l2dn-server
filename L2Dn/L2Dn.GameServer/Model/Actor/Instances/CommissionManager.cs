@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Network.OutgoingPackets.Commission;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
@@ -21,11 +22,11 @@ public class CommissionManager: Npc
         return base.isAutoAttackable(attacker);
     }
 
-    public override void onBypassFeedback(Player player, String command)
+    public override void onBypassFeedback(Player player, string command)
     {
         if (command.equalsIgnoreCase("show_commission"))
         {
-            player.sendPacket(ExShowCommission.STATIC_PACKET);
+            player.sendPacket(ExShowCommissionPacket.STATIC_PACKET);
         }
         else
         {

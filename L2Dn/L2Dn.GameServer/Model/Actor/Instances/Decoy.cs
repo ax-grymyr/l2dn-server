@@ -51,8 +51,8 @@ public class Decoy : Creature
 			{
 				doCast(skill.getSkill()); // (?)
 				
-				long castTime = (long) (template.getParameters().getFloat("cast_time", 5) * 1000) - 100;
-				long skillDelay = (long) (template.getParameters().getFloat("skill_delay", 2) * 1000);
+				TimeSpan castTime = TimeSpan.FromMilliseconds(template.getParameters().getFloat("cast_time", 5) * 1000 - 100);
+				TimeSpan skillDelay = TimeSpan.FromMilliseconds(template.getParameters().getFloat("skill_delay", 2) * 1000);
 				_skillTask = ThreadPool.scheduleAtFixedRate(() =>
 				{
 					if ((isDead() || !isSpawned()) && (_skillTask != null))

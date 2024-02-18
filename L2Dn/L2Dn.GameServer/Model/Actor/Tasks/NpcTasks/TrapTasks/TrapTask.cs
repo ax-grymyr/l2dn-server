@@ -1,4 +1,6 @@
 ﻿using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -19,7 +21,7 @@ public class TrapTask: Runnable
         _trap = trap;
     }
 
-    public override void run()
+    public void run()
     {
         try
         {
@@ -30,7 +32,7 @@ public class TrapTask: Runnable
                     _trap.setRemainingTime(_trap.getRemainingTime() - TICK);
                     if (_trap.getRemainingTime() < (_trap.getLifeTime() - 15000))
                     {
-                        _trap.broadcastPacket(new SocialAction(_trap.getObjectId(), 2));
+                        _trap.broadcastPacket(new SocialActionPacket(_trap.getObjectId(), 2));
                     }
 
                     if (_trap.getRemainingTime() <= 0)

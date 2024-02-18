@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
@@ -49,9 +50,9 @@ public class Fisherman: Merchant
                 .getMinLevelForNewSkill(player, SkillTreeData.getInstance().getFishingSkillTree());
             if (minlLevel > 0)
             {
-                SystemMessage sm = new SystemMessage(SystemMessageId
+                SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId
                     .YOU_DO_NOT_HAVE_ANY_FURTHER_SKILLS_TO_LEARN_COME_BACK_WHEN_YOU_HAVE_REACHED_LEVEL_S1);
-                sm.addInt(minlLevel);
+                sm.Params.addInt(minlLevel);
                 player.sendPacket(sm);
             }
             else
@@ -61,7 +62,7 @@ public class Fisherman: Merchant
         }
         else
         {
-            player.sendPacket(new ExAcquirableSkillListByClass(skills, AcquireSkillType.FISHING));
+            player.sendPacket(new ExAcquirableSkillListByClassPacket(skills, AcquireSkillType.FISHING));
         }
     }
 }

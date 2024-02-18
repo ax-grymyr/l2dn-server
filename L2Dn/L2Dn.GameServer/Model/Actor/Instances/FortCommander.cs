@@ -3,8 +3,9 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -88,7 +89,7 @@ public class FortCommander : Defender
 			{
 				if (spawn2.getId() == spawn.getId())
 				{
-					NpcStringId npcString = null;
+					NpcStringId? npcString = null;
 					switch (spawn2.getMessageId())
 					{
 						case 1:
@@ -111,11 +112,12 @@ public class FortCommander : Defender
 							break;
 						}
 					}
+					
 					if (npcString != null)
 					{
-						broadcastSay(ChatType.NPC_SHOUT, npcString, npcString.getParamCount() == 1 ? attacker.getName() : null);
+						broadcastSay(ChatType.NPC_SHOUT, npcString.Value, npcString.Value.GetParamCount() == 1 ? attacker.getName() : null);
 						setCanTalk(false);
-						ThreadPool.schedule(new ScheduleTalkTask(), 10000);
+						ThreadPool.schedule(new ScheduleTalkTask(this), 10000);
 					}
 				}
 			}
@@ -125,13 +127,16 @@ public class FortCommander : Defender
 	
 	private class ScheduleTalkTask : Runnable
 	{
-		public ScheduleTalkTask()
+		private readonly FortCommander _commander;
+
+		public ScheduleTalkTask(FortCommander commander)
 		{
+			_commander = commander;
 		}
 		
-		public override void run()
+		public void run()
 		{
-			setCanTalk(true);
+			_commander.setCanTalk(true);
 		}
 	}
 	

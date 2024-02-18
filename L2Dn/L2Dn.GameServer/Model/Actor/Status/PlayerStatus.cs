@@ -1,6 +1,14 @@
 ﻿using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
+using L2Dn.GameServer.Model.Actor.Stats;
 using L2Dn.GameServer.Model.Effects;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Status;
 
@@ -151,15 +159,15 @@ public class PlayerStatus : PlayableStatus
 				else
 				{
 					getActiveChar().reduceCurrentMp(mpDam);
-					SystemMessage smsg = new SystemMessage(SystemMessageId.ARCANE_SHIELD_S1_DECREASED_YOUR_MP_INSTEAD_OF_HP);
-					smsg.addInt(mpDam);
+					SystemMessagePacket smsg = new SystemMessagePacket(SystemMessageId.ARCANE_SHIELD_S1_DECREASED_YOUR_MP_INSTEAD_OF_HP);
+					smsg.Params.addInt(mpDam);
 					getActiveChar().sendPacket(smsg);
 					return;
 				}
 			}
 			
 			Player caster = getActiveChar().getTransferingDamageTo();
-			if ((caster != null) && (getActiveChar().getParty() != null) && Util.checkIfInRange(1000, getActiveChar(), caster, true) && !caster.isDead() && (getActiveChar() != caster) && getActiveChar().getParty().getMembers().contains(caster))
+			if ((caster != null) && (getActiveChar().getParty() != null) && Util.checkIfInRange(1000, getActiveChar(), caster, true) && !caster.isDead() && (getActiveChar() != caster) && getActiveChar().getParty().getMembers().Contains(caster))
 			{
 				int transferDmg = 0;
 				transferDmg = ((int) amount * (int) getActiveChar().getStat().getValue(Stat.TRANSFER_DAMAGE_TO_PLAYER, 0)) / 100;
@@ -214,8 +222,8 @@ public class PlayerStatus : PlayableStatus
 			if ((fullValue > 0) && !isDOT)
 			{
 				// Send a System Message to the Player
-				SystemMessage smsg = new SystemMessage(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
-				smsg.addString(getActiveChar().getName());
+				SystemMessagePacket smsg = new SystemMessagePacket(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
+				smsg.Params.addString(getActiveChar().getName());
 				
 				// Localisation related.
 				String targetName = attacker.getName();
@@ -228,16 +236,16 @@ public class PlayerStatus : PlayableStatus
 					}
 				}
 				
-				smsg.addString(targetName);
-				smsg.addInt(fullValue);
-				smsg.addPopup(getActiveChar().getObjectId(), attacker.getObjectId(), -fullValue);
+				smsg.Params.addString(targetName);
+				smsg.Params.addInt(fullValue);
+				smsg.Params.addPopup(getActiveChar().getObjectId(), attacker.getObjectId(), -fullValue);
 				getActiveChar().sendPacket(smsg);
 				
 				if ((tDmg > 0) && (summon != null) && (attackerPlayer != null))
 				{
-					smsg = new SystemMessage(SystemMessageId.YOU_VE_DEALT_S1_DAMAGE_TO_YOUR_TARGET_AND_S2_DAMAGE_TO_THEIR_SERVITOR);
-					smsg.addInt(fullValue);
-					smsg.addInt(tDmg);
+					smsg = new SystemMessagePacket(SystemMessageId.YOU_VE_DEALT_S1_DAMAGE_TO_YOUR_TARGET_AND_S2_DAMAGE_TO_THEIR_SERVITOR);
+					smsg.Params.addInt(fullValue);
+					smsg.Params.addInt(tDmg);
 					attackerPlayer.sendPacket(smsg);
 				}
 			}
@@ -257,7 +265,7 @@ public class PlayerStatus : PlayableStatus
 					if (attacker != null)
 					{
 						attacker.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
-						attacker.sendPacket(ActionFailed.STATIC_PACKET);
+						attacker.sendPacket(ActionFailedPacket.STATIC_PACKET);
 					}
 					// let the DuelManager know of his defeat
 					DuelManager.getInstance().onPlayerDefeat(getActiveChar());

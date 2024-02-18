@@ -18,7 +18,7 @@ public class NotifyAITask: Runnable
         _event = @event;
     }
 
-    public override void run()
+    public void run()
     {
         if (_creature != null)
         {

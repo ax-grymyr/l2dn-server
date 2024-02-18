@@ -1,11 +1,21 @@
 ﻿using System.Text;
+using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Quests;
+using L2Dn.GameServer.Model.Sieges;
+using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -13,35 +23,38 @@ public class VillageMaster: Folk
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(VillageMaster));
 	
-	private static readonly Set<ClassId> mainSubclassSet;
-	private static readonly Set<ClassId> neverSubclassed = EnumSet.of(ClassId.OVERLORD, ClassId.WARSMITH);
-	private static readonly Set<ClassId> subclasseSet1 = EnumSet.of(ClassId.DARK_AVENGER, ClassId.PALADIN, ClassId.TEMPLE_KNIGHT, ClassId.SHILLIEN_KNIGHT);
-	private static readonly Set<ClassId> subclasseSet2 = EnumSet.of(ClassId.TREASURE_HUNTER, ClassId.ABYSS_WALKER, ClassId.PLAINS_WALKER);
-	private static readonly Set<ClassId> subclasseSet3 = EnumSet.of(ClassId.HAWKEYE, ClassId.SILVER_RANGER, ClassId.PHANTOM_RANGER);
-	private static readonly Set<ClassId> subclasseSet4 = EnumSet.of(ClassId.WARLOCK, ClassId.ELEMENTAL_SUMMONER, ClassId.PHANTOM_SUMMONER);
-	private static readonly Set<ClassId> subclasseSet5 = EnumSet.of(ClassId.SORCERER, ClassId.SPELLSINGER, ClassId.SPELLHOWLER);
-	private static readonly EnumMap<ClassId, Set<ClassId>> subclassSetMap = new EnumMap<>(ClassId.class);
-	static
+	private static readonly Set<CharacterClass> mainSubclassSet;
+	private static readonly Set<CharacterClass> neverSubclassed = EnumSet.of(CharacterClass.OVERLORD, CharacterClass.WARSMITH);
+	private static readonly Set<CharacterClass> subclasseSet1 = EnumSet.of(CharacterClass.DARK_AVENGER, CharacterClass.PALADIN, CharacterClass.TEMPLE_KNIGHT, CharacterClass.SHILLIEN_KNIGHT);
+	private static readonly Set<CharacterClass> subclasseSet2 = EnumSet.of(CharacterClass.TREASURE_HUNTER, CharacterClass.ABYSS_WALKER, CharacterClass.PLAINS_WALKER);
+	private static readonly Set<CharacterClass> subclasseSet3 = EnumSet.of(CharacterClass.HAWKEYE, CharacterClass.SILVER_RANGER, CharacterClass.PHANTOM_RANGER);
+	private static readonly Set<CharacterClass> subclasseSet4 = EnumSet.of(CharacterClass.WARLOCK, CharacterClass.ELEMENTAL_SUMMONER, CharacterClass.PHANTOM_SUMMONER);
+	private static readonly Set<CharacterClass> subclasseSet5 = EnumSet.of(CharacterClass.SORCERER, CharacterClass.SPELLSINGER, CharacterClass.SPELLHOWLER);
+	private static readonly Map<CharacterClass, Set<CharacterClass>> subclassSetMap = new();
+
+	static VillageMaster()
 	{
-		Set<ClassId> subclasses = CategoryData.getInstance().getCategoryByType(CategoryType.THIRD_CLASS_GROUP).stream().map(ClassId::getClassId).collect(Collectors.toSet());
+		Set<CharacterClass> subclasses = new();
+		subclasses.addAll(CategoryData.getInstance().getCategoryByType(CategoryType.THIRD_CLASS_GROUP).Select(x => (CharacterClass)x));
 		subclasses.removeAll(neverSubclassed);
 		mainSubclassSet = subclasses;
-		subclassSetMap.put(ClassId.DARK_AVENGER, subclasseSet1);
-		subclassSetMap.put(ClassId.PALADIN, subclasseSet1);
-		subclassSetMap.put(ClassId.TEMPLE_KNIGHT, subclasseSet1);
-		subclassSetMap.put(ClassId.SHILLIEN_KNIGHT, subclasseSet1);
-		subclassSetMap.put(ClassId.TREASURE_HUNTER, subclasseSet2);
-		subclassSetMap.put(ClassId.ABYSS_WALKER, subclasseSet2);
-		subclassSetMap.put(ClassId.PLAINS_WALKER, subclasseSet2);
-		subclassSetMap.put(ClassId.HAWKEYE, subclasseSet3);
-		subclassSetMap.put(ClassId.SILVER_RANGER, subclasseSet3);
-		subclassSetMap.put(ClassId.PHANTOM_RANGER, subclasseSet3);
-		subclassSetMap.put(ClassId.WARLOCK, subclasseSet4);
-		subclassSetMap.put(ClassId.ELEMENTAL_SUMMONER, subclasseSet4);
-		subclassSetMap.put(ClassId.PHANTOM_SUMMONER, subclasseSet4);
-		subclassSetMap.put(ClassId.SORCERER, subclasseSet5);
-		subclassSetMap.put(ClassId.SPELLSINGER, subclasseSet5);
-		subclassSetMap.put(ClassId.SPELLHOWLER, subclasseSet5);
+		
+		subclassSetMap.put(CharacterClass.DARK_AVENGER, subclasseSet1);
+		subclassSetMap.put(CharacterClass.PALADIN, subclasseSet1);
+		subclassSetMap.put(CharacterClass.TEMPLE_KNIGHT, subclasseSet1);
+		subclassSetMap.put(CharacterClass.SHILLIEN_KNIGHT, subclasseSet1);
+		subclassSetMap.put(CharacterClass.TREASURE_HUNTER, subclasseSet2);
+		subclassSetMap.put(CharacterClass.ABYSS_WALKER, subclasseSet2);
+		subclassSetMap.put(CharacterClass.PLAINS_WALKER, subclasseSet2);
+		subclassSetMap.put(CharacterClass.HAWKEYE, subclasseSet3);
+		subclassSetMap.put(CharacterClass.SILVER_RANGER, subclasseSet3);
+		subclassSetMap.put(CharacterClass.PHANTOM_RANGER, subclasseSet3);
+		subclassSetMap.put(CharacterClass.WARLOCK, subclasseSet4);
+		subclassSetMap.put(CharacterClass.ELEMENTAL_SUMMONER, subclasseSet4);
+		subclassSetMap.put(CharacterClass.PHANTOM_SUMMONER, subclasseSet4);
+		subclassSetMap.put(CharacterClass.SORCERER, subclasseSet5);
+		subclassSetMap.put(CharacterClass.SPELLSINGER, subclasseSet5);
+		subclassSetMap.put(CharacterClass.SPELLHOWLER, subclasseSet5);
 	}
 	
 	/**
@@ -67,7 +80,7 @@ public class VillageMaster: Folk
 		String pom = "";
 		if (value == 0)
 		{
-			pom = Integer.toString(npcId);
+			pom = npcId.ToString();
 		}
 		else
 		{
@@ -197,8 +210,8 @@ public class VillageMaster: Folk
 			ClanMember member = clan.getClanMember(cmdParams);
 			if (member == null)
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.S1_DOES_NOT_EXIST);
-				sm.addString(cmdParams);
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_DOES_NOT_EXIST);
+				sm.Params.addString(cmdParams);
 				player.sendPacket(sm);
 				return;
 			}
@@ -222,16 +235,20 @@ public class VillageMaster: Folk
 			}
 			else
 			{
-				NpcHtmlMessage msg = new NpcHtmlMessage(getObjectId());
+				HtmlPacketHelper helper;
 				if (clan.getNewLeaderId() == 0)
 				{
 					clan.setNewLeaderId(member.getObjectId(), true);
-					msg.setFile(player, "data/scripts/village_master/ClanMaster/9000-07-success.htm");
+					helper = new HtmlPacketHelper(DataFileLocation.Data,
+						"scripts/village_master/ClanMaster/9000-07-success.htm");
 				}
 				else
 				{
-					msg.setFile(player, "data/scripts/village_master/ClanMaster/9000-07-in-progress.htm");
+					helper = new HtmlPacketHelper(DataFileLocation.Data,
+						"scripts/village_master/ClanMaster/9000-07-in-progress.htm");
 				}
+				
+				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(getObjectId(), helper);
 				player.sendPacket(msg);
 			}
 		}
@@ -244,17 +261,20 @@ public class VillageMaster: Folk
 			}
 			
 			Clan clan = player.getClan();
-			NpcHtmlMessage msg = new NpcHtmlMessage(getObjectId());
+			HtmlPacketHelper helper;
 			if (clan.getNewLeaderId() != 0)
 			{
 				clan.setNewLeaderId(0, true);
-				msg.setFile(player, "data/scripts/village_master/ClanMaster/9000-07-canceled.htm");
+				helper = new HtmlPacketHelper(DataFileLocation.Data,
+					"scripts/village_master/ClanMaster/9000-07-canceled.htm");
 			}
 			else
 			{
-				msg.setHtml("<html><body>You don't have clan leader delegation applications submitted yet!</body></html>");
+				helper = new HtmlPacketHelper(
+					"<html><body>You don't have clan leader delegation applications submitted yet!</body></html>");
 			}
-			
+
+			NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(getObjectId(), helper);
 			player.sendPacket(msg);
 		}
 		else if (actualCommand.equalsIgnoreCase("recover_clan"))
@@ -265,8 +285,8 @@ public class VillageMaster: Folk
 		{
 			if (player.getClan().levelUpClan(player))
 			{
-				player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 0, 0));
-				player.broadcastPacket(new MagicSkillLaunched(player, 5103, 1));
+				player.broadcastPacket(new MagicSkillUsePacket(player, 5103, 1, 0, 0));
+				player.broadcastPacket(new MagicSkillLaunchedPacket(player, 5103, 1));
 			}
 		}
 		else if (actualCommand.equalsIgnoreCase("learn_clan_skills"))
@@ -281,19 +301,25 @@ public class VillageMaster: Folk
 				player.sendPacket(SystemMessageId.SUBCLASSES_MAY_NOT_BE_CREATED_OR_CHANGED_WHILE_A_SKILL_IS_IN_USE);
 				return;
 			}
-			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
+
 			// Subclasses may not be changed while a transformated state.
 			if (player.isTransformed())
 			{
-				html.setFile(player, "data/html/villagemaster/SubClass_NoTransformed.htm");
-				player.sendPacket(html);
+				HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data,
+					"html/villagemaster/SubClass_NoTransformed.htm");
+				
+				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(getObjectId(), helper);
+				player.sendPacket(msg);
 				return;
 			}
 			// Subclasses may not be changed while a summon is active.
 			if (player.hasSummon())
 			{
-				html.setFile(player, "data/html/villagemaster/SubClass_NoSummon.htm");
-				player.sendPacket(html);
+				HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data,
+					"html/villagemaster/SubClass_NoSummon.htm");
+				
+				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(getObjectId(), helper);
+				player.sendPacket(msg);
 				return;
 			}
 			// Subclasses may not be changed while you have exceeded your inventory limit.
@@ -335,7 +361,7 @@ public class VillageMaster: Folk
 				LOGGER.Warn(nameof(VillageMaster) + ": Wrong numeric values for command " + command);
 			}
 			
-			Set<ClassId> subsAvailable = null;
+			Set<CharacterClass> subsAvailable = null;
 			switch (cmdChoice)
 			{
 				case 0: // Subclass change menu
@@ -354,7 +380,7 @@ public class VillageMaster: Folk
 					{
 						html.setFile(player, "data/html/villagemaster/SubClass_Add.htm");
 						StringBuilder content1 = new StringBuilder(200);
-						foreach (ClassId subClass in subsAvailable)
+						foreach (CharacterClass subClass in subsAvailable)
 						{
 							content1.Append("<a action=\"bypass -h npc_%objectId%_Subclass 4 " + (int)subClass + "\" msg=\"1268;" + ClassListData.getInstance().getClass(subClass).getClassName() + "\">" + ClassListData.getInstance().getClass(subClass).getClientCode() + "</a><br>");
 						}
@@ -519,8 +545,8 @@ public class VillageMaster: Folk
 						
 						html.setFile(player, "data/html/villagemaster/SubClass_AddOk.htm");
 						
-						SystemMessage msg = new SystemMessage(SystemMessageId.YOU_HAVE_ACHIEVED_THE_SECOND_CLASS_S1_CONGRATS);
-						msg.addClassId(player.getClassId().getId());
+						SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_ACHIEVED_THE_SECOND_CLASS_S1_CONGRATS);
+						msg.Params.addClassId(player.getClassId());
 						player.sendPacket(msg);
 					}
 					else
@@ -587,9 +613,11 @@ public class VillageMaster: Folk
 					}
 					
 					StringBuilder content6 = new StringBuilder(200);
-					foreach (ClassId subClass in subsAvailable)
+					foreach (CharacterClass subClass in subsAvailable)
 					{
-						content6.Append("<a action=\"bypass -h npc_%objectId%_Subclass 7 " + paramOne + " " + subClass.getId() + "\" msg=\"1445;\">" + ClassListData.getInstance().getClass(subClass.getId()).getClientCode() + "</a><br>");
+						content6.Append("<a action=\"bypass -h npc_%objectId%_Subclass 7 " + paramOne + " " +
+						                (int)subClass + "\" msg=\"1445;\">" +
+						                ClassListData.getInstance().getClass(subClass).getClientCode() + "</a><br>");
 					}
 					
 					switch (paramOne)
@@ -634,8 +662,8 @@ public class VillageMaster: Folk
 						html.setFile(player, "data/html/villagemaster/SubClass_ModifyOk.htm");
 						html.replace("%name%", ClassListData.getInstance().getClass(paramTwo).getClientCode());
 						
-						SystemMessage msg = new SystemMessage(SystemMessageId.YOU_HAVE_ACHIEVED_THE_SECOND_CLASS_S1_CONGRATS);
-						msg.addClassId(player.getClassId().getId());
+						SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_ACHIEVED_THE_SECOND_CLASS_S1_CONGRATS);
+						msg.Params.addClassId(player.getClassId());
 						player.sendPacket(msg);
 					}
 					else
@@ -649,7 +677,7 @@ public class VillageMaster: Folk
 					}
 					break;
 			}
-			html.replace("%objectId%", String.valueOf(getObjectId()));
+			html.replace("%objectId%", getObjectId().ToString());
 			player.sendPacket(html);
 		}
 		else
@@ -700,17 +728,17 @@ public class VillageMaster: Folk
 	 * @param player
 	 * @return
 	 */
-	private Set<ClassId> getAvailableSubClasses(Player player)
+	private Set<CharacterClass> getAvailableSubClasses(Player player)
 	{
 		// get player base class
-		int currentBaseId = player.getBaseClass();
-		ClassId baseCID = ClassId.getClassId(currentBaseId);
+		CharacterClass currentBaseId = player.getBaseClass();
+		CharacterClass baseCID = currentBaseId;
 		
 		// we need 2nd occupation ID
-		int baseClassId;
-		if (baseCID.level() > 2)
+		CharacterClass baseClassId;
+		if (baseCID.GetLevel() > 2)
 		{
-			baseClassId = baseCID.getParent().getId();
+			baseClassId = baseCID.GetParentClass().Value;
 		}
 		else
 		{
@@ -723,12 +751,12 @@ public class VillageMaster: Folk
 		 * and Shillien Knight Warlocks, Elemental Summoner and Phantom Summoner Elder and Shillien Elder Swordsinger and Bladedancer Sorcerer, Spellsinger and Spellhowler Also, Kamael have a special, hidden 4 subclass, the inspector, which can only be taken if you have already completed the other
 		 * two Kamael subclasses
 		 */
-		Set<ClassId> availSubs = getSubclasses(player, baseClassId);
+		Set<CharacterClass> availSubs = getSubclasses(player, baseClassId);
 		if ((availSubs != null) && !availSubs.isEmpty())
 		{
-			for (Iterator<ClassId> availSub = availSubs.iterator(); availSub.hasNext();)
+			for (Iterator<CharacterClass> availSub = availSubs.iterator(); availSub.hasNext();)
 			{
-				ClassId pclass = availSub.next();
+				CharacterClass pclass = availSub.next();
 				
 				// check for the village master
 				if (!checkVillageMaster(pclass))
@@ -739,13 +767,13 @@ public class VillageMaster: Folk
 				
 				// scan for already used subclasses
 				int availClassId = pclass.getId();
-				ClassId cid = ClassId.getClassId(availClassId);
+				CharacterClass cid = CharacterClass.getClassId(availClassId);
 				SubClassHolder prevSubClass;
-				ClassId subClassId;
+				CharacterClass subClassId;
 				for (Iterator<SubClassHolder> subList = iterSubClasses(player); subList.hasNext();)
 				{
 					prevSubClass = subList.next();
-					subClassId = ClassId.getClassId(prevSubClass.getClassId());
+					subClassId = CharacterClass.getClassId(prevSubClass.getClassId());
 					if (subClassId.equalsOrChildOf(cid))
 					{
 						availSub.remove();
@@ -758,10 +786,10 @@ public class VillageMaster: Folk
 		return availSubs;
 	}
 	
-	public Set<ClassId> getSubclasses(Player player, int classId)
+	public Set<CharacterClass> getSubclasses(Player player, CharacterClass classId)
 	{
-		Set<ClassId> subclasses = null;
-		ClassId pClass = ClassId.getClassId(classId);
+		Set<CharacterClass> subclasses = null;
+		CharacterClass pClass = classId;
 		if (CategoryData.getInstance().isInCategory(CategoryType.THIRD_CLASS_GROUP, classId) || (CategoryData.getInstance().isInCategory(CategoryType.FOURTH_CLASS_GROUP, classId)))
 		{
 			subclasses = EnumSet.copyOf(mainSubclassSet);
@@ -769,9 +797,9 @@ public class VillageMaster: Folk
 			
 			if (player.getRace() == Race.KAMAEL)
 			{
-				foreach (ClassId cid in ClassId.values())
+				foreach (CharacterClass cid in Enum.GetValues<CharacterClass>())
 				{
-					if (cid.getRace() != Race.KAMAEL)
+					if (cid.GetRace() != Race.KAMAEL)
 					{
 						subclasses.remove(cid);
 					}
@@ -779,25 +807,25 @@ public class VillageMaster: Folk
 				
 				// if (player.getAppearance().isFemale())
 				// {
-				// subclasses.remove(ClassId.MALE_SOULBREAKER);
+				// subclasses.remove(CharacterClass.MALE_SOULBREAKER);
 				// }
 				// else
 				// {
-				// subclasses.remove(ClassId.FEMALE_SOULBREAKER);
+				// subclasses.remove(CharacterClass.FEMALE_SOULBREAKER);
 				// }
 				//
 				// if (!player.getSubClasses().containsKey(2) || (player.getSubClasses().get(2).getLevel() < 75))
 				// {
-				// subclasses.remove(ClassId.INSPECTOR);
+				// subclasses.remove(CharacterClass.INSPECTOR);
 				// }
 			}
 			else
 			{
 				if (player.getRace() == Race.ELF)
 				{
-					foreach (ClassId cid in ClassId.values())
+					foreach (CharacterClass cid in Enum.GetValues<CharacterClass>())
 					{
-						if (cid.getRace() == Race.DARK_ELF)
+						if (cid.GetRace() == Race.DARK_ELF)
 						{
 							subclasses.remove(cid);
 						}
@@ -805,7 +833,7 @@ public class VillageMaster: Folk
 				}
 				else if (player.getRace() == Race.DARK_ELF)
 				{
-					foreach (ClassId cid in ClassId.values())
+					foreach (CharacterClass cid in Enum.GetValues<CharacterClass>())
 					{
 						if (cid.getRace() == Race.ELF)
 						{
@@ -814,7 +842,7 @@ public class VillageMaster: Folk
 					}
 				}
 				
-				foreach (ClassId cid in ClassId.values())
+				foreach (CharacterClass cid in Enum.GetValues<CharacterClass>())
 				{
 					if (cid.getRace() == Race.KAMAEL)
 					{
@@ -823,7 +851,7 @@ public class VillageMaster: Folk
 				}
 			}
 			
-			Set<ClassId> unavailableClasses = subclassSetMap.get(pClass);
+			Set<CharacterClass> unavailableClasses = subclassSetMap.get(pClass);
 			if (unavailableClasses != null)
 			{
 				subclasses.removeAll(unavailableClasses);
@@ -832,8 +860,8 @@ public class VillageMaster: Folk
 		
 		if (subclasses != null)
 		{
-			ClassId currClassId = player.getClassId();
-			foreach (ClassId tempClass in subclasses)
+			CharacterClass currClassId = player.getClassId();
+			foreach (CharacterClass tempClass in subclasses)
 			{
 				if (currClassId.equalsOrChildOf(tempClass))
 				{
@@ -850,20 +878,20 @@ public class VillageMaster: Folk
 	 * @param classId
 	 * @return
 	 */
-	private bool isValidNewSubClass(Player player, int classId)
+	private bool isValidNewSubClass(Player player, CharacterClass classId)
 	{
 		if (!checkVillageMaster(classId))
 		{
 			return false;
 		}
 		
-		ClassId cid = ClassId.getClassId(classId);
+		CharacterClass cid = classId;
 		SubClassHolder sub;
-		ClassId subClassId;
+		CharacterClass subClassId;
 		for (Iterator<SubClassHolder> subList = iterSubClasses(player); subList.hasNext();)
 		{
 			sub = subList.next();
-			subClassId = ClassId.getClassId(sub.getClassId());
+			subClassId = CharacterClass.getClassId(sub.getClassId());
 			if (subClassId.equalsOrChildOf(cid))
 			{
 				return false;
@@ -871,56 +899,38 @@ public class VillageMaster: Folk
 		}
 		
 		// get player base class
-		int currentBaseId = player.getBaseClass();
-		ClassId baseCID = ClassId.getClassId(currentBaseId);
+		CharacterClass currentBaseId = player.getBaseClass();
+		CharacterClass baseCID = currentBaseId;
 		
 		// we need 2nd occupation ID
-		int baseClassId;
-		if (baseCID.level() > 2)
+		CharacterClass baseClassId;
+		if (baseCID.GetLevel() > 2)
 		{
-			baseClassId = baseCID.getParent().getId();
+			baseClassId = baseCID.GetParentClass().Value;
 		}
 		else
 		{
 			baseClassId = currentBaseId;
 		}
 		
-		Set<ClassId> availSubs = getSubclasses(player, baseClassId);
+		Set<CharacterClass> availSubs = getSubclasses(player, baseClassId);
 		if ((availSubs == null) || availSubs.isEmpty())
 		{
 			return false;
 		}
 		
-		bool found = false;
-		foreach (ClassId pclass in availSubs)
-		{
-			if (pclass.getId() == classId)
-			{
-				found = true;
-				break;
-			}
-		}
+		bool found = availSubs.Contains(classId);
 		return found;
 	}
 	
-	protected virtual bool checkVillageMasterRace(ClassId pClass)
+	protected virtual bool checkVillageMasterRace(CharacterClass pClass)
 	{
 		return true;
 	}
 	
-	protected virtual bool checkVillageMasterTeachType(ClassId pClass)
+	protected virtual bool checkVillageMasterTeachType(CharacterClass pClass)
 	{
 		return true;
-	}
-	
-	/**
-	 * Returns true if this classId allowed for master
-	 * @param classId
-	 * @return
-	 */
-	public bool checkVillageMaster(int classId)
-	{
-		return checkVillageMaster(ClassId.getClassId(classId));
 	}
 	
 	/**
@@ -928,7 +938,7 @@ public class VillageMaster: Folk
 	 * @param pclass
 	 * @return
 	 */
-	public bool checkVillageMaster(ClassId pclass)
+	public bool checkVillageMaster(CharacterClass pclass)
 	{
 		if (Config.ALT_GAME_SUBCLASS_EVERYWHERE)
 		{
@@ -975,7 +985,7 @@ public class VillageMaster: Folk
 				return;
 			}
 		}
-		foreach (Fort fort in FortManager.getInstance().getForts())
+		foreach (Fort fort in InstanceManagers.FortManager.getInstance().getForts())
 		{
 			if (FortSiegeManager.getInstance().checkIsRegistered(clan, fort.getResidenceId()))
 			{
@@ -989,13 +999,13 @@ public class VillageMaster: Folk
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DISSOLVE_A_CLAN_DURING_A_SIEGE_OR_WHILE_PROTECTING_A_CASTLE);
 			return;
 		}
-		if (clan.getDissolvingExpiryTime() > System.currentTimeMillis())
+		if (clan.getDissolvingExpiryTime() > DateTime.UtcNow)
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_ALREADY_REQUESTED_THE_DISSOLUTION_OF_S1_CLAN);
 			return;
 		}
 		
-		clan.setDissolvingExpiryTime(System.currentTimeMillis() + (Config.ALT_CLAN_DISSOLVE_DAYS * 86400000)); // 24*60*60*1000 = 86400000
+		clan.setDissolvingExpiryTime(DateTime.UtcNow + TimeSpan.FromDays(Config.ALT_CLAN_DISSOLVE_DAYS)); // 24*60*60*1000 = 86400000
 		clan.updateClanInDB();
 		
 		// The clan leader should take the XP penalty of a full death.
@@ -1012,7 +1022,7 @@ public class VillageMaster: Folk
 		}
 		
 		Clan clan = player.getClan();
-		clan.setDissolvingExpiryTime(0);
+		clan.setDissolvingExpiryTime(null);
 		clan.updateClanInDB();
 	}
 	
@@ -1038,12 +1048,12 @@ public class VillageMaster: Folk
 			
 			return;
 		}
-		if (!Util.isAlphaNumeric(clanName) || !isValidName(clanName) || (2 > clanName.length()))
+		if (!Util.isAlphaNumeric(clanName) || !isValidName(clanName) || (2 > clanName.Length))
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_IS_INVALID);
 			return;
 		}
-		if (clanName.length() > 16)
+		if (clanName.Length > 16)
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_S_LENGTH_IS_INCORRECT);
 			return;
@@ -1055,8 +1065,8 @@ public class VillageMaster: Folk
 			{
 				if (pledgeType == Clan.SUBUNIT_ACADEMY)
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.S1_ALREADY_EXISTS);
-					sm.addString(clanName);
+					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_ALREADY_EXISTS);
+					sm.Params.addString(clanName);
 					player.sendPacket(sm);
 				}
 				else
@@ -1092,25 +1102,25 @@ public class VillageMaster: Folk
 			return;
 		}
 		
-		SystemMessage sm;
+		SystemMessagePacket sm;
 		if (pledgeType == Clan.SUBUNIT_ACADEMY)
 		{
-			sm = new SystemMessage(SystemMessageId.CONGRATULATIONS_THE_S1_S_CLAN_ACADEMY_HAS_BEEN_CREATED);
-			sm.addString(player.getClan().getName());
+			sm = new SystemMessagePacket(SystemMessageId.CONGRATULATIONS_THE_S1_S_CLAN_ACADEMY_HAS_BEEN_CREATED);
+			sm.Params.addString(player.getClan().getName());
 		}
 		else if (pledgeType >= Clan.SUBUNIT_KNIGHT1)
 		{
-			sm = new SystemMessage(SystemMessageId.THE_KNIGHTS_OF_S1_HAVE_BEEN_CREATED);
-			sm.addString(player.getClan().getName());
+			sm = new SystemMessagePacket(SystemMessageId.THE_KNIGHTS_OF_S1_HAVE_BEEN_CREATED);
+			sm.Params.addString(player.getClan().getName());
 		}
 		else if (pledgeType >= Clan.SUBUNIT_ROYAL1)
 		{
-			sm = new SystemMessage(SystemMessageId.THE_ROYAL_GUARD_OF_S1_HAVE_BEEN_CREATED);
-			sm.addString(player.getClan().getName());
+			sm = new SystemMessagePacket(SystemMessageId.THE_ROYAL_GUARD_OF_S1_HAVE_BEEN_CREATED);
+			sm.Params.addString(player.getClan().getName());
 		}
 		else
 		{
-			sm = new SystemMessage(SystemMessageId.YOUR_CLAN_HAS_BEEN_CREATED);
+			sm = new SystemMessagePacket(SystemMessageId.YOUR_CLAN_HAS_BEEN_CREATED);
 		}
 		player.sendPacket(sm);
 		
@@ -1135,18 +1145,18 @@ public class VillageMaster: Folk
 		}
 		
 		Clan clan = player.getClan();
-		SubPledge subPledge = player.getClan().getSubPledge(pledgeType);
+		Clan.SubPledge subPledge = player.getClan().getSubPledge(pledgeType);
 		if (subPledge == null)
 		{
 			player.sendMessage("Pledge don't exists.");
 			return;
 		}
-		if (!Util.isAlphaNumeric(pledgeName) || !isValidName(pledgeName) || (2 > pledgeName.length()))
+		if (!Util.isAlphaNumeric(pledgeName) || !isValidName(pledgeName) || (2 > pledgeName.Length))
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_IS_INVALID);
 			return;
 		}
-		if (pledgeName.length() > 16)
+		if (pledgeName.Length > 16)
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_S_LENGTH_IS_INCORRECT);
 			return;
@@ -1165,7 +1175,7 @@ public class VillageMaster: Folk
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
 			return;
 		}
-		if (leaderName.length() > 16)
+		if (leaderName.Length > 16)
 		{
 			player.sendPacket(SystemMessageId.ENTER_THE_CHARACTER_S_NAME_UP_TO_16_CHARACTERS);
 			return;
@@ -1177,7 +1187,7 @@ public class VillageMaster: Folk
 		}
 		
 		Clan clan = player.getClan();
-		SubPledge subPledge = player.getClan().getSubPledge(clanName);
+		Clan.SubPledge subPledge = player.getClan().getSubPledge(clanName);
 		if ((null == subPledge) || (subPledge.getId() == Clan.SUBUNIT_ACADEMY))
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_IS_INVALID);
@@ -1210,9 +1220,9 @@ public class VillageMaster: Folk
 		}
 		
 		clan.broadcastClanStatus();
-		SystemMessage sm = new SystemMessage(SystemMessageId.C1_HAS_BEEN_SELECTED_AS_THE_CAPTAIN_OF_S2);
-		sm.addString(leaderName);
-		sm.addString(clanName);
+		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_BEEN_SELECTED_AS_THE_CAPTAIN_OF_S2);
+		sm.Params.addString(leaderName);
+		sm.Params.addString(clanName);
 		clan.broadcastToOnlineMembers(sm);
 	}
 	
@@ -1227,7 +1237,7 @@ public class VillageMaster: Folk
 			NpcHtmlMessage html = new NpcHtmlMessage();
 			html.setFile(player, "data/html/villagemaster/NotClanLeader.htm");
 			player.sendPacket(html);
-			player.sendPacket(ActionFailed.STATIC_PACKET);
+			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return;
 		}
 		
@@ -1236,14 +1246,14 @@ public class VillageMaster: Folk
 		{
 			if (player.getClan().getLevel() <= 1)
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ANY_FURTHER_SKILLS_TO_LEARN_COME_BACK_WHEN_YOU_HAVE_REACHED_LEVEL_S1);
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_DO_NOT_HAVE_ANY_FURTHER_SKILLS_TO_LEARN_COME_BACK_WHEN_YOU_HAVE_REACHED_LEVEL_S1);
 				if (player.getClan().getLevel() <= 1)
 				{
-					sm.addInt(1);
+					sm.Params.addInt(1);
 				}
 				else
 				{
-					sm.addInt(player.getClan().getLevel() + 1);
+					sm.Params.addInt(player.getClan().getLevel() + 1);
 				}
 				player.sendPacket(sm);
 			}
@@ -1258,7 +1268,7 @@ public class VillageMaster: Folk
 		{
 			player.sendPacket(new ExAcquirableSkillListByClass(skills, AcquireSkillType.PLEDGE));
 		}
-		player.sendPacket(ActionFailed.STATIC_PACKET);
+		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 	}
 	
 	private static bool isValidName(String name)

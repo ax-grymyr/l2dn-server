@@ -1,5 +1,6 @@
 using System.Xml.Linq;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
@@ -62,6 +63,14 @@ public class CategoryData: DataReaderBase
 		}
 		return category.Contains(id);
 	}
+
+	/**
+	 * Checks if ID is in category.
+	 * @param type The category type
+	 * @param id The id to be checked
+	 * @return {@code true} if id is in category, {@code false} if id is not in category or category was not found
+	 */
+	public bool isInCategory(CategoryType type, CharacterClass id) => isInCategory(type, (int)id);
 	
 	/**
 	 * Gets the category by category type.

@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices.JavaScript;
 using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
@@ -24,7 +23,7 @@ public class DBSpawnManager
 	
 	protected readonly Map<int, Npc> _npcs = new();
 	protected readonly Map<int, Spawn> _spawns = new();
-	protected readonly Map<int, StatSet> _storedInfo = new();
+	protected readonly Map<int, StatSet> _storedInfo = new(); // TODO replace StatSet to dto object
 	protected readonly Map<int, ScheduledFuture> _schedules = new();
 	
 	/**
@@ -75,37 +74,29 @@ public class DBSpawnManager
 					List<NpcSpawnTemplate> spawns = SpawnData.getInstance().getNpcSpawns(npc => (npc.getId() == template.getId()) && npc.hasDBSave());
 					if (spawns.isEmpty())
 					{
-						LOGGER.Warn(GetType().Name + ": Couldn't find spawn declaration for npc: " + template.getId() + " - " + template.getName());
+						LOGGER.Warn(GetType().Name + ": Couldn't find spawn declaration for npc: " + template.getId() +
+						            " - " + template.getName());
+						
 						deleteSpawn(spawn, true);
 						continue;
 					}
-					
+
 					if (spawns.size() > 1)
 					{
-						LOGGER.Warn(GetType().Name + ": Found multiple database spawns for npc: " + template.getId() + " - " + template.getName() + " " + spawns);
+						LOGGER.Warn(GetType().Name + ": Found multiple database spawns for npc: " + template.getId() +
+						            " - " + template.getName() + " " + spawns);
+						
 						continue;
 					}
-					
+
 					NpcSpawnTemplate spawnTemplate = spawns.get(0);
 					spawn.setSpawnTemplate(spawnTemplate);
 					
-					int respawn = 0;
-					int respawnRandom = 0;
-					SchedulingPattern respawnPattern = null;
-					if (spawnTemplate.getRespawnTime() != null)
-					{
-						respawn = (int) spawnTemplate.getRespawnTime().getSeconds();
-					}
-					if (spawnTemplate.getRespawnTimeRandom() != null)
-					{
-						respawnRandom = (int) spawnTemplate.getRespawnTimeRandom().getSeconds();
-					}
-					if (spawnTemplate.getRespawnPattern() != null)
-					{
-						respawnPattern = spawnTemplate.getRespawnPattern();
-					}
+					TimeSpan? respawn = spawnTemplate.getRespawnTime();
+					TimeSpan respawnRandom = spawnTemplate.getRespawnTimeRandom();
+					SchedulingPattern respawnPattern = spawnTemplate.getRespawnPattern();
 					
-					if ((respawn > 0) || (respawnPattern != null))
+					if ((respawn != null) || (respawnPattern != null))
 					{
 						spawn.setRespawnDelay(respawn, respawnRandom);
 						spawn.setRespawnPattern(respawnPattern);
@@ -114,10 +105,12 @@ public class DBSpawnManager
 					else
 					{
 						spawn.stopRespawn();
-						LOGGER.Warn(GetType().Name + ": Found database spawns without respawn for npc: " + template.getId() + " - " + template.getName() + " " + spawnTemplate);
+						LOGGER.Warn(GetType().Name + ": Found database spawns without respawn for npc: " +
+						            template.getId() + " - " + template.getName() + " " + spawnTemplate);
+						
 						continue;
 					}
-					
+
 					addNewSpawn(spawn, record.RespawnTime, record.CurrentHp, record.CurrentMp, false);
 				}
 				else
@@ -182,31 +175,34 @@ public class DBSpawnManager
 			npc.setDBStatus(RaidBossStatus.DEAD);
 			
 			SchedulingPattern respawnPattern = npc.getSpawn().getRespawnPattern();
-			int respawnMinDelay;
-			int respawnMaxDelay;
-			int respawnDelay;
-			long respawnTime;
+			TimeSpan respawnMinDelay;
+			TimeSpan respawnMaxDelay;
+			TimeSpan respawnDelay;
+			DateTime respawnTime;
 			if (respawnPattern != null)
 			{
-				respawnTime = respawnPattern.next(System.currentTimeMillis());
-				respawnMinDelay = (int) (respawnTime - System.currentTimeMillis());
+				respawnTime = respawnPattern.next(DateTime.UtcNow);
+				respawnMinDelay = respawnTime - DateTime.UtcNow;
 				respawnMaxDelay = respawnMinDelay;
 				respawnDelay = respawnMinDelay;
 			}
 			else
 			{
-				respawnMinDelay = (int) (npc.getSpawn().getRespawnMinDelay() * Config.RAID_MIN_RESPAWN_MULTIPLIER);
-				respawnMaxDelay = (int) (npc.getSpawn().getRespawnMaxDelay() * Config.RAID_MAX_RESPAWN_MULTIPLIER);
+				respawnMinDelay = npc.getSpawn().getRespawnMinDelay() * Config.RAID_MIN_RESPAWN_MULTIPLIER;
+				respawnMaxDelay = npc.getSpawn().getRespawnMaxDelay() * Config.RAID_MAX_RESPAWN_MULTIPLIER;
 				respawnDelay = Rnd.get(respawnMinDelay, respawnMaxDelay);
-				respawnTime = System.currentTimeMillis() + respawnDelay;
+				respawnTime = DateTime.UtcNow + respawnDelay;
 			}
 			
 			info.set("currentHP", npc.getMaxHp());
 			info.set("currentMP", npc.getMaxMp());
 			info.set("respawnTime", respawnTime);
-			if ((!_schedules.containsKey(npc.getId()) && ((respawnMinDelay > 0) || (respawnMaxDelay > 0))) || (respawnPattern != null))
+			if ((!_schedules.containsKey(npc.getId()) &&
+			     ((respawnMinDelay > TimeSpan.Zero) || (respawnMaxDelay > TimeSpan.Zero))) || (respawnPattern != null))
 			{
-				LOGGER.Info(GetType().Name +": Updated " + npc.getName() + " respawn time to " + Util.formatDate(new JSType.Date(respawnTime), "dd.MM.yyyy HH:mm"));
+				LOGGER.Info(GetType().Name + ": Updated " + npc.getName() + " respawn time to " +
+				            respawnTime.ToString("dd.MM.yyyy HH:mm"));
+				
 				_schedules.put(npc.getId(), ThreadPool.schedule(() => scheduleSpawn(npc.getId()), respawnDelay));
 				updateDb();
 			}
@@ -431,7 +427,7 @@ public class DBSpawnManager
 				
 				try
 				{
-					DateTime? respawnTime = info.getLong("respawnTime");
+					DateTime? respawnTime = info.getDateTime("respawnTime");
 					double currentHp = npc.isDead() ? npc.getMaxHp() : info.getDouble("currentHP");
 					double currentMp = npc.isDead() ? npc.getMaxMp() : info.getDouble("currentMP");
 					ctx.NpcRespawns.Where(r => r.Id == npcId).ExecuteUpdate(s =>

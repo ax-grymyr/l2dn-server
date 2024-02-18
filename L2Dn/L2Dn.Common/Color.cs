@@ -4,7 +4,7 @@ namespace L2Dn;
 
 public readonly record struct Color(int Value): IParsable<Color>
 {
-    public int Red => (Value >> 16) & 0xFF;
+    public int Red => (Value >> 16) & 0xFF; // TODO: red is least bits???
     public int Green => (Value >> 8) & 0xFF;
     public int Blue => Value & 0xFF;
 

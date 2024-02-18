@@ -1,5 +1,8 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -18,25 +21,26 @@ public class BroadcastingTower: Npc
         {
             if (value == 0)
             {
-                filename = "data/html/observation/" + getId() + "-Oracle.htm";
+                filename = "html/observation/" + getId() + "-Oracle.htm";
             }
             else
             {
-                filename = "data/html/observation/" + getId() + "-Oracle-" + value + ".htm";
+                filename = "html/observation/" + getId() + "-Oracle-" + value + ".htm";
             }
         }
         else if (value == 0)
         {
-            filename = "data/html/observation/" + getId() + ".htm";
+            filename = "html/observation/" + getId() + ".htm";
         }
         else
         {
-            filename = "data/html/observation/" + getId() + "-" + value + ".htm";
+            filename = "html/observation/" + getId() + "-" + value + ".htm";
         }
 
-        NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-        html.setFile(player, filename);
-        html.replace("%objectId%", String.valueOf(getObjectId()));
+        HtmlPacketHelper helper = new(DataFileLocation.Data, filename);
+        helper.Replace("%objectId%", getObjectId().ToString());
+        
+        NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
         player.sendPacket(html);
     }
 }

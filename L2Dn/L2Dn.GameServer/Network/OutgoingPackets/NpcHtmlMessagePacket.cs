@@ -3,7 +3,7 @@ using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
-public readonly struct NpcHtmlMessagePacket: IOutgoingPacket
+public readonly struct NpcHtmlMessagePacket: IOutgoingPacket // TODO: refactor
 {
     private readonly HtmlPacketHelper? _helper;
     private readonly int _npcObjectId;
@@ -26,6 +26,13 @@ public readonly struct NpcHtmlMessagePacket: IOutgoingPacket
     public NpcHtmlMessagePacket(int npcObjId, string html)
     {
         _helper = new(html);
+        _npcObjectId = npcObjId;
+        _playSound = true;
+    }
+	
+    public NpcHtmlMessagePacket(int npcObjId, HtmlPacketHelper htmlPacketHelper)
+    {
+        _helper = htmlPacketHelper;
         _npcObjectId = npcObjId;
         _playSound = true;
     }

@@ -1,6 +1,14 @@
-﻿using L2Dn.GameServer.Model.Actor.Instances;
+﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Events;
+using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Returns;
+using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.Model.Variables;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Actor.Stats;
@@ -17,7 +25,10 @@ public class PlayableStat: CreatureStat
 	{
 		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYABLE_EXP_CHANGED, getActiveChar()))
 		{
-			TerminateReturn term = EventDispatcher.getInstance().notifyEvent(new OnPlayableExpChanged(getActiveChar(), getExp(), getExp() + amount), getActiveChar(), TerminateReturn.class);
+			TerminateReturn term = EventDispatcher.getInstance()
+				.notifyEvent<TerminateReturn>(new OnPlayableExpChanged(getActiveChar(), getExp(), getExp() + amount),
+					getActiveChar());
+			
 			if ((term != null) && term.terminate())
 			{
 				return false;
@@ -120,7 +131,7 @@ public class PlayableStat: CreatureStat
 		return true;
 	}
 	
-	public bool removeExpAndSp(long exp, long sp)
+	public virtual bool removeExpAndSp(long exp, long sp)
 	{
 		bool expRemoved = false;
 		bool spRemoved = false;
@@ -320,7 +331,7 @@ public class PlayableStat: CreatureStat
 			return;
 		}
 		
-		reputation = (int) Math.ceil(reputation * Config.LVL_OBTAINED_REP_SCORE_MULTIPLIER);
+		reputation = (int) Math.Ceiling(reputation * Config.LVL_OBTAINED_REP_SCORE_MULTIPLIER);
 		
 		clan.addReputationScore(reputation);
 		
@@ -328,8 +339,8 @@ public class PlayableStat: CreatureStat
 		{
 			if (member.isOnline())
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.CLAN_REPUTATION_POINTS_S1);
-				sm.addInt(reputation);
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.CLAN_REPUTATION_POINTS_S1);
+				sm.Params.addInt(reputation);
 				member.getPlayer().sendPacket(sm);
 			}
 		}

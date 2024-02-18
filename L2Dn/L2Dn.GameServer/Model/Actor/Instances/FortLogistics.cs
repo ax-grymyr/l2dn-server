@@ -1,5 +1,8 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
@@ -8,29 +11,10 @@ namespace L2Dn.GameServer.Model.Actor.Instances;
 public class FortLogistics : Merchant
 {
 	private static readonly int[] SUPPLY_BOX_IDS =
-	{
-		35665,
-		35697,
-		35734,
-		35766,
-		35803,
-		35834,
-		35866,
-		35903,
-		35935,
-		35973,
-		36010,
-		36042,
-		36080,
-		36117,
-		36148,
-		36180,
-		36218,
-		36256,
-		36293,
-		36325,
-		36363
-	};
+	[
+		35665, 35697, 35734, 35766, 35803, 35834, 35866, 35903, 35935, 35973, 36010, 36042, 36080, 36117, 36148, 36180,
+		36218, 36256, 36293, 36325, 36363
+	];
 	
 	public FortLogistics(NpcTemplate template): base(template)
 	{
@@ -47,23 +31,26 @@ public class FortLogistics : Merchant
 		StringTokenizer st = new StringTokenizer(command, " ");
 		String actualCommand = st.nextToken(); // Get actual command
 		bool isMyLord = player.isClanLeader() && (player.getClan().getFortId() == (getFort() != null ? getFort().getResidenceId() : -1));
-		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
+
 		if (actualCommand.equalsIgnoreCase("rewards"))
 		{
+			HtmlPacketHelper helper;
 			if (isMyLord)
 			{
-				html.setFile(player, "data/html/fortress/logistics-rewards.htm");
-				html.replace("%bloodoath%", String.valueOf(player.getClan().getBloodOathCount()));
+				helper = new HtmlPacketHelper(DataFileLocation.Data, "data/html/fortress/logistics-rewards.htm");
+				helper.Replace("%bloodoath%", player.getClan().getBloodOathCount().ToString());
 			}
 			else
 			{
-				html.setFile(player, "data/html/fortress/logistics-noprivs.htm");
+				helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-noprivs.htm");
 			}
-			html.replace("%objectId%", String.valueOf(getObjectId()));
+			helper.Replace("%objectId%", getObjectId().ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId());
 			player.sendPacket(html);
 		}
 		else if (actualCommand.equalsIgnoreCase("blood"))
 		{
+			HtmlPacketHelper helper;
 			if (isMyLord)
 			{
 				int blood = player.getClan().getBloodOathCount();
@@ -71,48 +58,54 @@ public class FortLogistics : Merchant
 				{
 					player.addItem("Quest", 9910, blood, this, true);
 					player.getClan().resetBloodOathCount();
-					html.setFile(player, "data/html/fortress/logistics-blood.htm");
+					helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-blood.htm");
 				}
 				else
 				{
-					html.setFile(player, "data/html/fortress/logistics-noblood.htm");
+					helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-noblood.htm");
 				}
 			}
 			else
 			{
-				html.setFile(player, "data/html/fortress/logistics-noprivs.htm");
+				helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-noprivs.htm");
 			}
-			html.replace("%objectId%", String.valueOf(getObjectId()));
+			
+			helper.Replace("%objectId%", getObjectId().ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 			player.sendPacket(html);
 		}
 		else if (actualCommand.equalsIgnoreCase("supplylvl"))
 		{
+			HtmlPacketHelper helper;
 			if (getFort().getFortState() == 2)
 			{
 				if (player.isClanLeader())
 				{
-					html.setFile(player, "data/html/fortress/logistics-supplylvl.htm");
-					html.replace("%supplylvl%", String.valueOf(getFort().getSupplyLvL()));
+					helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-supplylvl.htm");
+					helper.Replace("%supplylvl%", getFort().getSupplyLvL().ToString());
 				}
 				else
 				{
-					html.setFile(player, "data/html/fortress/logistics-noprivs.htm");
+					helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-noprivs.htm");
 				}
 			}
 			else
 			{
-				html.setFile(player, "data/html/fortress/logistics-1.htm"); // TODO: Missing HTML?
+				helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-1.htm"); // TODO: Missing HTML?
 			}
-			html.replace("%objectId%", String.valueOf(getObjectId()));
+			
+			helper.Replace("%objectId%", getObjectId().ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 			player.sendPacket(html);
 		}
 		else if (actualCommand.equalsIgnoreCase("supply"))
 		{
+			HtmlPacketHelper helper;
 			if (isMyLord)
 			{
 				if (getFort().getSiege().isInProgress())
 				{
-					html.setFile(player, "data/html/fortress/logistics-siege.htm");
+					helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-siege.htm");
 				}
 				else
 				{
@@ -129,19 +122,21 @@ public class FortLogistics : Merchant
 						getFort().setSupplyLvL(0);
 						getFort().saveFortVariables();
 						
-						html.setFile(player, "data/html/fortress/logistics-supply.htm");
+						helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-supply.htm");
 					}
 					else
 					{
-						html.setFile(player, "data/html/fortress/logistics-nosupply.htm");
+						helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-nosupply.htm");
 					}
 				}
 			}
 			else
 			{
-				html.setFile(player, "data/html/fortress/logistics-noprivs.htm");
+				helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-noprivs.htm");
 			}
-			html.replace("%objectId%", String.valueOf(getObjectId()));
+			
+			helper.Replace("%objectId%", getObjectId().ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 			player.sendPacket(html);
 		}
 		else
@@ -162,25 +157,26 @@ public class FortLogistics : Merchant
 		String filename;
 		if (value == 0)
 		{
-			filename = "data/html/fortress/logistics.htm";
+			filename = "html/fortress/logistics.htm";
 		}
 		else
 		{
-			filename = "data/html/fortress/logistics-" + value + ".htm";
+			filename = "html/fortress/logistics-" + value + ".htm";
 		}
 		
-		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-		html.setFile(player, filename);
-		html.replace("%objectId%", String.valueOf(getObjectId()));
-		html.replace("%npcId%", String.valueOf(getId()));
+		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, filename);
+		helper.Replace("%objectId%", getObjectId().ToString());
+		helper.Replace("%npcId%", getId().ToString());
 		if (getFort().getOwnerClan() != null)
 		{
-			html.replace("%clanname%", getFort().getOwnerClan().getName());
+			helper.Replace("%clanname%", getFort().getOwnerClan().getName());
 		}
 		else
 		{
-			html.replace("%clanname%", "NPC");
+			helper.Replace("%clanname%", "NPC");
 		}
+
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 		player.sendPacket(html);
 	}
 	

@@ -1,6 +1,6 @@
 ﻿using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Tasks.NpcTasks.TrapTasks;
 
@@ -17,7 +17,7 @@ public class TrapTriggerTask: Runnable
         _trap = trap;
     }
 
-    public override void run()
+    public void run()
     {
         try
         {

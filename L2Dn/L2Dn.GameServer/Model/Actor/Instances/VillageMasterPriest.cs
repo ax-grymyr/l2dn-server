@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
 
@@ -14,12 +15,12 @@ public class VillageMasterPriest: VillageMaster
     {
     }
 
-    protected sealed override bool checkVillageMasterRace(ClassId pClass)
+    protected sealed override bool checkVillageMasterRace(CharacterClass pClass)
     {
-        return (pClass.getRace() == Race.HUMAN) || (pClass.getRace() == Race.ELF);
+        return (pClass.GetRace() == Race.HUMAN) || (pClass.GetRace() == Race.ELF);
     }
 
-    protected sealed override bool checkVillageMasterTeachType(ClassId pClass)
+    protected sealed override bool checkVillageMasterTeachType(CharacterClass pClass)
     {
         return CategoryData.getInstance().isInCategory(CategoryType.CLERIC_GROUP, pClass);
     }

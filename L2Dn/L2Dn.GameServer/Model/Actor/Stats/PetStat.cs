@@ -1,5 +1,8 @@
-﻿using L2Dn.GameServer.Model.Actor.Instances;
+﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Model.Actor.Stats;
 
@@ -12,7 +15,7 @@ public class PetStat: SummonStat
 	public override bool addExp(long value)
 	{
 		if (getActiveChar().isUncontrollable() ||
-		    !base.addExp(Math.round(value * (1 + (getValue(Stat.BONUS_EXP_PET, 0) / 100)))))
+		    !base.addExp((long)(value * (1 + (getValue(Stat.BONUS_EXP_PET, 0) / 100)))))
 		{
 			return false;
 		}
@@ -23,14 +26,14 @@ public class PetStat: SummonStat
 	
 	public bool addExpAndSp(double addToExp)
 	{
-		long finalExp = Math.round(addToExp * (1 + (getValue(Stat.BONUS_EXP_PET, 0) / 100)));
+		long finalExp = (long)(addToExp * (1 + (getValue(Stat.BONUS_EXP_PET, 0) / 100)));
 		if (getActiveChar().isUncontrollable() || !addExp(finalExp))
 		{
 			return false;
 		}
 		
-		SystemMessage sm = new SystemMessage(SystemMessageId.YOUR_PET_GAINED_S1_XP);
-		sm.addLong(finalExp);
+		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOUR_PET_GAINED_S1_XP);
+		sm.Params.addLong(finalExp);
 		getActiveChar().updateAndBroadcastStatus(1);
 		getActiveChar().sendPacket(sm);
 		return true;
@@ -47,7 +50,7 @@ public class PetStat: SummonStat
 		getActiveChar().broadcastStatusUpdate();
 		if (levelIncreased)
 		{
-			getActiveChar().broadcastPacket(new SocialAction(getActiveChar().getObjectId(), SocialAction.LEVEL_UP));
+			getActiveChar().broadcastPacket(new SocialActionPacket(getActiveChar().getObjectId(), SocialActionPacket.LEVEL_UP));
 		}
 		// Send a Server->Client packet PetInfo to the Player
 		getActiveChar().updateAndBroadcastStatus(1);
@@ -66,13 +69,14 @@ public class PetStat: SummonStat
 		{
 			return PetDataTable.getInstance().getPetLevelData(getActiveChar().getId(), level).getPetMaxExp();
 		}
-		catch (NullPointerException e)
+		catch (NullReferenceException e)
 		{
 			if (getActiveChar() != null)
 			{
 				LOGGER.Warn("Pet objectId:" + getActiveChar().getObjectId() + ", NpcId:" + getActiveChar().getId() +
 				            ", level:" + level + " is missing data from pets_stats table!");
 			}
+			
 			throw e;
 		}
 	}
@@ -97,7 +101,7 @@ public class PetStat: SummonStat
 		getActiveChar().setPetData(PetDataTable.getInstance().getPetLevelData(getActiveChar().getTemplate().getId(), value));
 		if (getActiveChar().getPetLevelData() == null)
 		{
-			throw new IllegalArgumentException("No pet data for npc: " + getActiveChar().getTemplate().getId() + " level: " + value);
+			throw new ArgumentException("No pet data for npc: " + getActiveChar().getTemplate().getId() + " level: " + value);
 		}
 		getActiveChar().stopFeed();
 		base.setLevel(value);

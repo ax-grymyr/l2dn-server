@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Geo;
 using L2Dn.GameServer.Model.Interfaces;
@@ -36,9 +37,9 @@ public class Spawn : Location, IIdentifiable, INamable
 	/** The spawn instance id */
 	private int _instanceId = 0;
 	/** Minimum respawn delay */
-	private int _respawnMinDelay;
+	private TimeSpan _respawnMinDelay;
 	/** Maximum respawn delay */
-	private int _respawnMaxDelay;
+	private TimeSpan _respawnMaxDelay;
 	/** Respawn Pattern **/
 	private SchedulingPattern _respawnPattern;
 	/** The generic constructor of Npc managed by this Spawn */
@@ -149,7 +150,7 @@ public class Spawn : Location, IIdentifiable, INamable
 	/**
 	 * @return min respawn delay.
 	 */
-	public int getRespawnMinDelay()
+	public TimeSpan getRespawnMinDelay()
 	{
 		return _respawnMinDelay;
 	}
@@ -157,7 +158,7 @@ public class Spawn : Location, IIdentifiable, INamable
 	/**
 	 * @return max respawn delay.
 	 */
-	public int getRespawnMaxDelay()
+	public TimeSpan getRespawnMaxDelay()
 	{
 		return _respawnMaxDelay;
 	}
@@ -445,7 +446,7 @@ public class Spawn : Location, IIdentifiable, INamable
 		_currentCount++;
 		
 		// Minions
-		if (npc.isMonster() && NpcData.getMasterMonsterIDs().contains(npc.getId()))
+		if (npc.isMonster() && NpcData.getMasterMonsterIDs().Contains(npc.getId()))
 		{
 			((Monster) npc).getMinionList().spawnMinions(npc.getParameters().getMinionList("Privates"));
 		}
@@ -458,11 +459,11 @@ public class Spawn : Location, IIdentifiable, INamable
 	 * @param delay delay in seconds
 	 * @param randomInterval random interval in seconds
 	 */
-	public void setRespawnDelay(TimeSpan delay, TimeSpan randomInterval)
+	public void setRespawnDelay(TimeSpan? delay, TimeSpan? randomInterval)
 	{
-		if (delay != TimeSpan.Zero)
+		if (delay != null)
 		{
-			if (delay < TimeSpan.Zero)
+			if (delay.Value < TimeSpan.Zero)
 			{
 				LOGGER.Error("respawn delay is negative for spawn:" + this);
 			}

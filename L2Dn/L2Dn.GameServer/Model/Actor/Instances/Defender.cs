@@ -1,8 +1,8 @@
 ﻿using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor.Templates;
-using L2Dn.GameServer.Model.Geo;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -87,7 +87,7 @@ public class Defender : Attackable
 	{
 		base.onSpawn();
 		
-		_fort = FortManager.getInstance().getFort(getX(), getY(), getZ());
+		_fort = InstanceManagers.FortManager.getInstance().getFort(getX(), getY(), getZ());
 		_castle = CastleManager.getInstance().getCastle(getX(), getY(), getZ());
 		if ((_fort == null) && (_castle == null))
 		{

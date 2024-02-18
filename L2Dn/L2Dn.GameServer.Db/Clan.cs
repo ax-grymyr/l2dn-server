@@ -18,7 +18,10 @@ public class Clan
     
     public int Reputation { get; set; }
     
-    public int? Castle { get; set; }
+    public short? Castle { get; set; }
+
+    public short BloodAllianceCount { get; set; }
+    public short BloodOathCount { get; set; }
     
     public int? AllyId { get; set; }
     
@@ -39,8 +42,14 @@ public class Clan
     
     [ForeignKey(nameof(LargeCrestId))]
     public Crest? LargeCrest { get; set; }
+ 
+    public int AuctionBidAt { get; set; }
     
     public DateTime? AllyPenaltyExpireTime { get; set; }
     public byte AllyPenaltyExpireType { get; set; }
     public DateTime? CharPenaltyExpireTime { get; set; }
+    public DateTime? DissolvingExpireTime { get; set; }
+    
+    public int? NewLeaderId { get; set; }
+    public long Exp { get; set; }
 }

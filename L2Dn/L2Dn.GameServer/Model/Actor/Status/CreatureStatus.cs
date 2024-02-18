@@ -1,7 +1,11 @@
 ﻿using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Model.Events;
+using L2Dn.GameServer.Model.Events.Impl.Creatures;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Status;
 
@@ -17,13 +21,13 @@ public class CreatureStatus
 	/** Array containing all clients that need to be notified about hp/mp updates of the Creature */
 	private Set<Creature> _StatusListener;
 	
-	private Future<?> _regTask;
+	private ScheduledFuture _regTask;
 	
-	protected byte _flagsRegenActive = 0;
+	protected int _flagsRegenActive = 0;
 	
-	protected const byte REGEN_FLAG_CP = 4;
-	private const byte REGEN_FLAG_HP = 1;
-	private const byte REGEN_FLAG_MP = 2;
+	protected const int REGEN_FLAG_CP = 4; // TODO: enum
+	private const int REGEN_FLAG_HP = 1;
+	private const int REGEN_FLAG_MP = 2;
 	
 	public CreatureStatus(Creature creature)
 	{
@@ -45,14 +49,14 @@ public class CreatureStatus
 	 * <ul>
 	 * @param object Creature to add to the listener
 	 */
-	public void addStatusListener(Creature object)
+	public void addStatusListener(Creature obj)
 	{
-		if (object == _creature)
+		if (obj == _creature)
 		{
 			return;
 		}
 		
-		getStatusListener().add(object);
+		getStatusListener().add(obj);
 	}
 	
 	/**
@@ -95,7 +99,7 @@ public class CreatureStatus
 	}
 	
 	// place holder, only PcStatus has CP
-	public void reduceCp(int value)
+	public virtual void reduceCp(int value)
 	{
 	}
 	
@@ -187,7 +191,7 @@ public class CreatureStatus
 			int period = Formulas.getRegeneratePeriod(_creature);
 			
 			// Create the HP/MP/CP Regeneration task
-			_regTask = ThreadPool.scheduleAtFixedRate(this::doRegeneration, period, period);
+			_regTask = ThreadPool.scheduleAtFixedRate(doRegeneration, period, period);
 		}
 	}
 	
@@ -215,18 +219,18 @@ public class CreatureStatus
 	}
 	
 	// place holder, only PcStatus has CP
-	public double getCurrentCp()
+	public virtual double getCurrentCp()
 	{
 		return 0;
 	}
 	
 	// place holder, only PcStatus has CP
-	public void setCurrentCp(double newCp)
+	public virtual void setCurrentCp(double newCp)
 	{
 	}
 	
 	// place holder, only PcStatus has CP
-	public void setCurrentCp(double newCp, bool broadcastPacket)
+	public virtual void setCurrentCp(double newCp, bool broadcastPacket)
 	{
 	}
 	
@@ -374,7 +378,7 @@ public class CreatureStatus
 		return mpWasChanged;
 	}
 	
-	protected void doRegeneration()
+	protected virtual void doRegeneration()
 	{
 		// Modify the current HP/MP of the Creature and broadcast Server->Client packet StatusUpdate
 		if (!_creature.isDead() && ((_currentHp < _creature.getMaxRecoverableHp()) || (_currentMp < _creature.getMaxRecoverableMp())))

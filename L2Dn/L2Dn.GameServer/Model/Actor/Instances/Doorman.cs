@@ -1,7 +1,9 @@
-﻿using L2Dn.GameServer.Data.Xml;
+﻿using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Teleporters;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
@@ -64,7 +66,7 @@ public class Doorman : Folk
 		{
 			if (isOwnerClan(player))
 			{
-				TeleportHolder holder = TeleporterData.getInstance().getHolder(getId(), TeleportType.OTHER.name());
+				TeleportHolder holder = TeleporterData.getInstance().getHolder(getId(), TeleportType.OTHER.ToString());
 				if (holder != null)
 				{
 					int locId = int.Parse(command.Substring(5).Trim());
@@ -79,22 +81,24 @@ public class Doorman : Folk
 	public override void showChatWindow(Player player)
 	{
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-		
-		 NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
+
+		HtmlPacketHelper helper;
 		if (!isOwnerClan(player))
 		{
-			html.setFile(player, "data/html/doorman/" + getTemplate().getId() + "-no.htm");
+			helper = new HtmlPacketHelper(DataFileLocation.Data, "html/doorman/" + getTemplate().getId() + "-no.htm");
 		}
 		else
 		{
-			html.setFile(player, "data/html/doorman/" + getTemplate().getId() + ".htm");
+			helper = new HtmlPacketHelper(DataFileLocation.Data, "html/doorman/" + getTemplate().getId() + ".htm");
 		}
 		
-		html.replace("%objectId%", String.valueOf(getObjectId()));
+		helper.Replace("%objectId%", getObjectId().ToString());
+
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 		player.sendPacket(html);
 	}
 	
-	protected void openDoors(Player player, String command)
+	protected virtual void openDoors(Player player, String command)
 	{
 		 StringTokenizer st = new StringTokenizer(command.Substring(10), ", ");
 		st.nextToken();
@@ -105,7 +109,7 @@ public class Doorman : Folk
 		}
 	}
 	
-	protected void closeDoors(Player player, String command)
+	protected virtual void closeDoors(Player player, String command)
 	{
 		 StringTokenizer st = new StringTokenizer(command.Substring(11), ", ");
 		st.nextToken();
@@ -120,17 +124,17 @@ public class Doorman : Folk
 	{
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		
-		 NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-		html.setFile(player, "data/html/doorman/" + getTemplate().getId() + "-busy.htm");
+		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/doorman/" + getTemplate().getId() + "-busy.htm");
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 		player.sendPacket(html);
 	}
 	
-	protected bool isOwnerClan(Player player)
+	protected virtual bool isOwnerClan(Player player)
 	{
 		return true;
 	}
 	
-	protected bool isUnderSiege()
+	protected virtual bool isUnderSiege()
 	{
 		return false;
 	}

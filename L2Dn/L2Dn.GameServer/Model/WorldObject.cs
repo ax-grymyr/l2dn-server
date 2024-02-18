@@ -117,7 +117,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 		return true;
 	}
 	
-	public void refreshId()
+	public virtual void refreshId()
 	{
 		World.getInstance().removeObject(this);
 		IdManager.getInstance().releaseId(getObjectId());
@@ -254,7 +254,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * Verify if object is instance of Door.
 	 * @return {@code true} if object is instance of Door, {@code false} otherwise
 	 */
-	public bool isDoor()
+	public virtual bool isDoor()
 	{
 		return false;
 	}
@@ -272,7 +272,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * Verify if object is instance of Monster.
 	 * @return {@code true} if object is instance of Monster, {@code false} otherwise
 	 */
-	public bool isMonster()
+	public virtual bool isMonster()
 	{
 		return false;
 	}
@@ -344,7 +344,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * Verify if object is instance of Trap.
 	 * @return {@code true} if object is instance of Trap, {@code false} otherwise
 	 */
-	public bool isTrap()
+	public virtual bool isTrap()
 	{
 		return false;
 	}
@@ -380,7 +380,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * Verifies if this object is a vehicle.
 	 * @return {@code true} if object is Vehicle, {@code false} otherwise
 	 */
-	public bool isVehicle()
+	public virtual bool isVehicle()
 	{
 		return false;
 	}
@@ -389,12 +389,12 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * Verifies if this object is a fence.
 	 * @return {@code true} if object is Fence, {@code false} otherwise
 	 */
-	public bool isFence()
+	public virtual bool isFence()
 	{
 		return false;
 	}
 	
-	public void setTargetable(bool targetable)
+	public virtual void setTargetable(bool targetable)
 	{
 		if (_isTargetable != targetable)
 		{
@@ -602,7 +602,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * Gets the location object.
 	 * @return the location object
 	 */
-	public virtual ILocational getLocation()
+	public virtual Location getLocation()
 	{
 		return _location;
 	}

@@ -22,7 +22,7 @@ public class FlyMoveStartTask: Runnable
 		_zone = zone;
 	}
 
-	public override void run()
+	public void run()
 	{
 		if (!_zone.isCharacterInZone(_player))
 		{

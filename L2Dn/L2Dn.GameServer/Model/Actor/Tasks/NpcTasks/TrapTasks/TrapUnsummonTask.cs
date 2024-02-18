@@ -16,7 +16,7 @@ public class TrapUnsummonTask: Runnable
         _trap = trap;
     }
 
-    public override void run()
+    public void run()
     {
         _trap.unSummon();
     }

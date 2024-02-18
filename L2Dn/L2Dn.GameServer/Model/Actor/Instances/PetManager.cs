@@ -1,6 +1,9 @@
 ﻿using System.Globalization;
+using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
@@ -29,16 +32,16 @@ public class PetManager: Merchant
 
 	public override void showChatWindow(Player player)
 	{
-		String filename = "data/html/petmanager/" + getId() + ".htm";
+		string filename = "html/petmanager/" + getId() + ".htm";
 		if ((getId() == 36478) && player.hasSummon())
 		{
-			filename = "data/html/petmanager/restore-unsummonpet.htm";
+			filename = "html/petmanager/restore-unsummonpet.htm";
 		}
 
-		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-		html.setFile(player, filename);
-		html.replace("%objectId%", String.valueOf(getObjectId()));
-		html.replace("%npcname%", getName());
+		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, filename);
+		helper.Replace("%objectId%", getObjectId().ToString());
+		helper.Replace("%npcname%", getName());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 		player.sendPacket(html);
 	}
 
@@ -47,7 +50,7 @@ public class PetManager: Merchant
 		if (command.startsWith("exchange"))
 		{
 			String[] @params = command.Split(" ");
-			int val = Integer.parseInt(@params[1]);
+			int val = int.Parse(@params[1]);
 			switch (val)
 			{
 				case 1:
@@ -70,7 +73,7 @@ public class PetManager: Merchant
 		else if (command.startsWith("evolve"))
 		{
 			String[] @params = command.Split(" ");
-			int val = Integer.parseInt(@params[1]);
+			int val = int.Parse(@params[1]);
 			bool ok = false;
 			switch (val)
 			{
@@ -105,15 +108,15 @@ public class PetManager: Merchant
 
 			if (!ok)
 			{
-				NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-				html.setFile(player, "data/html/petmanager/evolve_no.htm");
+				HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/petmanager/evolve_no.htm");
+				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 				player.sendPacket(html);
 			}
 		}
 		else if (command.startsWith("restore"))
 		{
 			String[] @params = command.Split(" ");
-			int val = Integer.parseInt(@params[1]);
+			int val = int.Parse(@params[1]);
 			bool ok = false;
 			switch (val)
 			{
@@ -147,8 +150,8 @@ public class PetManager: Merchant
 
 			if (!ok)
 			{
-				NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-				html.setFile(player, "data/html/petmanager/restore_no.htm");
+				HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/petmanager/restore_no.htm");
+				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 				player.sendPacket(html);
 			}
 		}
@@ -160,16 +163,18 @@ public class PetManager: Merchant
 
 	public void exchange(Player player, int itemIdtake, int itemIdgive)
 	{
-		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 		if (player.destroyItemByItemId("Consume", itemIdtake, 1, this, true))
 		{
 			player.addItem("", itemIdgive, 1, this, true);
-			html.setFile(player, "data/html/petmanager/" + getId() + ".htm");
+
+			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/petmanager/" + getId() + ".htm");
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 			player.sendPacket(html);
 		}
 		else
 		{
-			html.setFile(player, "data/html/petmanager/exchange_no.htm");
+			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/petmanager/exchange_no.htm");
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 			player.sendPacket(html);
 		}
 	}

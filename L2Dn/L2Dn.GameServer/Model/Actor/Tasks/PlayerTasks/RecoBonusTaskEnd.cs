@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
@@ -15,11 +16,11 @@ public class RecoBonusTaskEnd: Runnable
 		_player = player;
 	}
 	
-	public override void run()
+	public void run()
 	{
 		if (_player != null)
 		{
-			_player.sendPacket(new ExVoteSystemInfo(_player));
+			_player.sendPacket(new ExVoteSystemInfoPacket(_player));
 		}
 	}
 }

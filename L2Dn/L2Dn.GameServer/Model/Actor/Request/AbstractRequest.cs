@@ -1,14 +1,14 @@
 ﻿using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Request;
 
 public abstract class AbstractRequest
 {
     private readonly Player _player;
-    private long _timestamp = 0;
+    private long _timestamp;
     private volatile bool _isProcessing;
-    private ScheduledFuture<?> _timeOutTask;
+    private ScheduledFuture _timeOutTask;
 
     public AbstractRequest(Player player)
     {
@@ -26,14 +26,14 @@ public abstract class AbstractRequest
         return Interlocked.Read(ref _timestamp);
     }
 
-    public void setTimestamp(long timestamp)
+    public void setTimestamp(TimeSpan timestamp)
     {
-        Interlocked.Exchange(ref _timestamp, timestamp);
+        Interlocked.Exchange(ref _timestamp, timestamp.Ticks);
     }
 
-    public void scheduleTimeout(long delay)
+    public void scheduleTimeout(TimeSpan delay)
     {
-        _timeOutTask = ThreadPool.schedule(this::onTimeout, delay);
+        _timeOutTask = ThreadPool.schedule(onTimeout, delay);
     }
 
     public bool isTimeout()

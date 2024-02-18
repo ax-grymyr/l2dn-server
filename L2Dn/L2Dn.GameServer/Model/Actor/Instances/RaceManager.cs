@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using L2Dn.GameServer.Data;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.InstanceManagers.Games;
 using L2Dn.GameServer.Model.Actor.Templates;
@@ -11,17 +12,7 @@ namespace L2Dn.GameServer.Model.Actor.Instances;
 
 public class RaceManager: Npc
 {
-	protected static readonly int[] TICKET_PRICES =
-	{
-		100,
-		500,
-		1000,
-		5000,
-		10000,
-		20000,
-		50000,
-		100000
-	};
+	protected static readonly int[] TICKET_PRICES = [100, 500, 1000, 5000, 10000, 20000, 50000, 100000];
 	
 	public RaceManager(NpcTemplate template): base(template)
 	{
@@ -51,25 +42,25 @@ public class RaceManager: Npc
 			}
 			
 			String search, replace;
-			
-			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
+
+			HtmlPacketHelper helper;
 			if (val < 10)
 			{
-				html.setFile(player, getHtmlPath(getId(), 2, player));
+				helper = new HtmlPacketHelper(DataFileLocation.Data, getHtmlPath(getId(), 2, player));
 				for (int i = 0; i < 8; i++)
 				{
 					int n = i + 1;
 					search = "Mob" + n;
-					html.replace(search, MonsterRace.getInstance().getMonsters()[i].getTemplate().getName());
+					helper.Replace(search, MonsterRace.getInstance().getMonsters()[i].getTemplate().getName());
 				}
 				search = "No1";
 				if (val == 0)
 				{
-					html.replace(search, "");
+					helper.Replace(search, "");
 				}
 				else
 				{
-					html.replace(search, val);
+					helper.Replace(search, val.ToString());
 					player.setRaceTicket(0, val);
 				}
 			}
@@ -80,19 +71,19 @@ public class RaceManager: Npc
 					return;
 				}
 				
-				html.setFile(player, getHtmlPath(getId(), 3, player));
-				html.replace("0place", player.getRaceTicket(0));
+				helper = new HtmlPacketHelper(DataFileLocation.Data, getHtmlPath(getId(), 3, player));
+				helper.Replace("0place", player.getRaceTicket(0).ToString());
 				search = "Mob1";
 				replace = MonsterRace.getInstance().getMonsters()[player.getRaceTicket(0) - 1].getTemplate().getName();
-				html.replace(search, replace);
+				helper.Replace(search, replace);
 				search = "0adena";
 				if (val == 10)
 				{
-					html.replace(search, "");
+					helper.Replace(search, "");
 				}
 				else
 				{
-					html.replace(search, TICKET_PRICES[val - 11]);
+					helper.Replace(search, TICKET_PRICES[val - 11].ToString());
 					player.setRaceTicket(1, val - 10);
 				}
 			}
@@ -103,20 +94,20 @@ public class RaceManager: Npc
 					return;
 				}
 				
-				html.setFile(player, getHtmlPath(getId(), 4, player));
-				html.replace("0place", player.getRaceTicket(0));
+				helper = new HtmlPacketHelper(DataFileLocation.Data, getHtmlPath(getId(), 4, player));
+				helper.Replace("0place", player.getRaceTicket(0).ToString());
 				search = "Mob1";
 				replace = MonsterRace.getInstance().getMonsters()[player.getRaceTicket(0) - 1].getTemplate().getName();
-				html.replace(search, replace);
+				helper.Replace(search, replace);
 				search = "0adena";
 				int price = TICKET_PRICES[player.getRaceTicket(1) - 1];
-				html.replace(search, price);
+				helper.Replace(search, price.ToString());
 				search = "0tax";
 				int tax = 0;
-				html.replace(search, tax);
+				helper.Replace(search, tax.ToString());
 				search = "0total";
 				int total = price + tax;
-				html.replace(search, total);
+				helper.Replace(search, total.ToString());
 			}
 			else
 			{
@@ -140,9 +131,9 @@ public class RaceManager: Npc
 				item.setCustomType1(ticket);
 				item.setCustomType2(TICKET_PRICES[priceId - 1] / 100);
 				player.addItem("Race", item, player, false);
-				SystemMessage msg = new SystemMessage(SystemMessageId.YOU_VE_OBTAINED_S1_S2_2);
-				msg.addInt(MonsterRace.getInstance().getRaceNumber());
-				msg.addItemName(4443);
+				SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_VE_OBTAINED_S1_S2_2);
+				msg.Params.addInt(MonsterRace.getInstance().getRaceNumber());
+				msg.Params.addItemName(4443);
 				player.sendPacket(msg);
 				
 				// Refresh lane bet.
@@ -150,8 +141,12 @@ public class RaceManager: Npc
 				base.onBypassFeedback(player, "Chat 0");
 				return;
 			}
-			html.replace("1race", MonsterRace.getInstance().getRaceNumber());
-			html.replace("%objectId%", getObjectId());
+			
+			helper.Replace("1race", MonsterRace.getInstance().getRaceNumber().ToString());
+			helper.Replace("%objectId%", getObjectId().ToString());
+			
+			
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId());
 			player.sendPacket(html);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
@@ -163,20 +158,22 @@ public class RaceManager: Npc
 				base.onBypassFeedback(player, "Chat 0");
 				return;
 			}
-			
-			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-			html.setFile(player, getHtmlPath(getId(), 5, player));
+
+			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, getHtmlPath(getId(), 5, player));
 			for (int i = 0; i < 8; i++)
 			{
 				int n = i + 1;
-				html.replace("Mob" + n, MonsterRace.getInstance().getMonsters()[i].getTemplate().getName());
+				helper.Replace("Mob" + n, MonsterRace.getInstance().getMonsters()[i].getTemplate().getName());
 				
 				// Odd
 				double odd = MonsterRace.getInstance().getOdds().get(i);
-				html.replace("Odd" + n, (odd > 0D) ? String.format(Locale.ENGLISH, "%.1f", odd) : "&$804;");
+				helper.Replace("Odd" + n, (odd > 0D) ? odd.ToString("N1") : "&$804;");
 			}
-			html.replace("1race", MonsterRace.getInstance().getRaceNumber());
-			html.replace("%objectId%", getObjectId());
+
+			helper.Replace("1race", MonsterRace.getInstance().getRaceNumber().ToString());
+			helper.Replace("%objectId%", getObjectId().ToString());
+
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 			player.sendPacket(html);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
@@ -186,16 +183,18 @@ public class RaceManager: Npc
 			{
 				return;
 			}
-			
-			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-			html.setFile(player, getHtmlPath(getId(), 6, player));
+
+			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, getHtmlPath(getId(), 6, player));
 			for (int i = 0; i < 8; i++)
 			{
 				int n = i + 1;
 				String search = "Mob" + n;
-				html.replace(search, MonsterRace.getInstance().getMonsters()[i].getTemplate().getName());
+				helper.Replace(search, MonsterRace.getInstance().getMonsters()[i].getTemplate().getName());
 			}
-			html.replace("%objectId%", getObjectId());
+			
+			helper.Replace("%objectId%", getObjectId().ToString());
+
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 			player.sendPacket(html);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
@@ -221,11 +220,11 @@ public class RaceManager: Npc
 				
 				StringUtil.append(sb, "<tr><td><a action=\"bypass -h npc_%objectId%_ShowTicket ", "" + ticket.getObjectId(), "\">", "" + ticket.getEnchantLevel(), " Race Number</a></td><td align=right><font color=\"LEVEL\">", "" + ticket.getCustomType1(), "</font> Number</td><td align=right><font color=\"LEVEL\">", "" + (ticket.getCustomType2() * 100), "</font> Adena</td></tr>");
 			}
-			
-			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-			html.setFile(player, getHtmlPath(getId(), 7, player));
-			html.replace("%tickets%", sb.ToString());
-			html.replace("%objectId%", getObjectId());
+
+			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, getHtmlPath(getId(), 7, player));
+			helper.Replace("%tickets%", sb.ToString());
+			helper.Replace("%objectId%", getObjectId().ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 			player.sendPacket(html);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
@@ -259,15 +258,15 @@ public class RaceManager: Npc
 				return;
 			}
 			
-			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-			html.setFile(player, getHtmlPath(getId(), 8, player));
-			html.replace("%raceId%", raceId);
-			html.replace("%lane%", lane);
-			html.replace("%bet%", bet);
-			html.replace("%firstLane%", info.getFirst());
-			html.replace("%odd%", (lane == info.getFirst()) ? String.format(Locale.ENGLISH, "%.2f", info.getOddRate()) : "0.01");
-			html.replace("%objectId%", getObjectId());
-			html.replace("%ticketObjectId%", val);
+			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, getHtmlPath(getId(), 8, player));
+			helper.Replace("%raceId%", raceId.ToString());
+			helper.Replace("%lane%", lane.ToString());
+			helper.Replace("%bet%", bet.ToString());
+			helper.Replace("%firstLane%", info.getFirst().ToString());
+			helper.Replace("%odd%", (lane == info.getFirst()) ? info.getOddRate().ToString("N2") : "0.01");
+			helper.Replace("%objectId%", getObjectId().ToString());
+			helper.Replace("%ticketObjectId%", val.ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 			player.sendPacket(html);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
@@ -326,13 +325,17 @@ public class RaceManager: Npc
 			for (int i = history.size() - 1; i >= Math.Max(0, history.size() - 7); i--)
 			{
 				MonsterRace.HistoryInfo info = history.get(i);
-				StringUtil.append(sb, "<tr><td><font color=\"LEVEL\">", "" + info.getRaceId(), "</font> th</td><td><font color=\"LEVEL\">", "" + info.getFirst(), "</font> Lane </td><td><font color=\"LEVEL\">", "" + info.getSecond(), "</font> Lane</td><td align=right><font color=00ffff>", String.format(Locale.ENGLISH, "%.2f", info.getOddRate()), "</font> Times</td></tr>");
+				StringUtil.append(sb, "<tr><td><font color=\"LEVEL\">", "" + info.getRaceId(),
+					"</font> th</td><td><font color=\"LEVEL\">", "" + info.getFirst(),
+					"</font> Lane </td><td><font color=\"LEVEL\">", "" + info.getSecond(),
+					"</font> Lane</td><td align=right><font color=00ffff>",
+					info.getOddRate().ToString("N2"), "</font> Times</td></tr>");
 			}
 			
-			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-			html.setFile(player, getHtmlPath(getId(), 9, player));
-			html.replace("%infos%", sb.ToString());
-			html.replace("%objectId%", getObjectId());
+			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, getHtmlPath(getId(), 9, player));
+			helper.Replace("%infos%", sb.ToString());
+			helper.Replace("%objectId%", getObjectId().ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 			player.sendPacket(html);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}

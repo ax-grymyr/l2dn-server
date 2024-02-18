@@ -161,7 +161,7 @@ public class Player: Playable
 	private long _onlineTime;
 	private long _onlineBeginTime;
 	private long _lastAccess;
-	private long _uptime;
+	private DateTime _uptime;
 	
 	private ScheduledFuture _itemListTask;
 	private ScheduledFuture _skillListTask;
@@ -6156,14 +6156,14 @@ public class Player: Playable
 		return true;
 	}
 	
-	public void setUptime(long time)
+	public void setUptime(DateTime time)
 	{
 		_uptime = time;
 	}
 	
-	public long getUptime()
+	public TimeSpan getUptime()
 	{
-		return DateTime.Now - _uptime;
+		return DateTime.UtcNow - _uptime;
 	}
 	
 	/**

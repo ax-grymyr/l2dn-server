@@ -16,7 +16,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 	
 	private readonly int _id;
 	private readonly int _count;
-	private readonly TimeSpan _respawnTime;
+	private readonly TimeSpan? _respawnTime;
 	private readonly TimeSpan _respawnTimeRandom;
 	private readonly SchedulingPattern _respawnPattern;
 	private readonly int _chaseRange;
@@ -158,7 +158,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		return _count;
 	}
 	
-	public TimeSpan getRespawnTime()
+	public TimeSpan? getRespawnTime()
 	{
 		return _respawnTime;
 	}

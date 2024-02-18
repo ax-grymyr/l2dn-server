@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
@@ -13,8 +14,8 @@ public class VillageMasterDElf: VillageMaster
     {
     }
 
-    protected sealed override bool checkVillageMasterRace(ClassId pClass)
+    protected sealed override bool checkVillageMasterRace(CharacterClass pClass)
     {
-        return pClass.getRace() == Race.DARK_ELF;
+        return pClass.GetRace() == Race.DARK_ELF;
     }
 }

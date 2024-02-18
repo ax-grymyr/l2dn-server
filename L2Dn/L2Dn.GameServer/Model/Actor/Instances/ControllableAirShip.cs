@@ -6,7 +6,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -22,8 +22,8 @@ public class ControllableAirShip : AirShip
 	private int _helmId;
 	private Player _captain = null;
 	
-	private Future<?> _consumeFuelTask;
-	private Future<?> _checkTask;
+	private ScheduledFuture _consumeFuelTask;
+	private ScheduledFuture _checkTask;
 	
 	public ControllableAirShip(CreatureTemplate template, int ownerId): base(template)
 	{
@@ -185,11 +185,11 @@ public class ControllableAirShip : AirShip
 		
 		if ((_fuel == 0) && (old > 0))
 		{
-			broadcastToPassengers(new SystemMessage(SystemMessageId.THE_AIRSHIP_S_FUEL_EP_HAS_RUN_OUT_THE_AIRSHIP_S_SPEED_HAS_DECREASED_GREATLY));
+			broadcastToPassengers(new SystemMessagePacket(SystemMessageId.THE_AIRSHIP_S_FUEL_EP_HAS_RUN_OUT_THE_AIRSHIP_S_SPEED_HAS_DECREASED_GREATLY));
 		}
 		else if (_fuel < LOW_FUEL)
 		{
-			broadcastToPassengers(new SystemMessage(SystemMessageId.THE_AIRSHIP_S_FUEL_EP_WILL_SOON_RUN_OUT));
+			broadcastToPassengers(new SystemMessagePacket(SystemMessageId.THE_AIRSHIP_S_FUEL_EP_WILL_SOON_RUN_OUT));
 		}
 	}
 	
@@ -216,8 +216,8 @@ public class ControllableAirShip : AirShip
 	public override void onSpawn()
 	{
 		base.onSpawn();
-		_checkTask = ThreadPool.scheduleAtFixedRate(new CheckTask(), 60000, 10000);
-		_consumeFuelTask = ThreadPool.scheduleAtFixedRate(new ConsumeFuelTask(), 60000, 60000);
+		_checkTask = ThreadPool.scheduleAtFixedRate(new CheckTask(this), 60000, 10000);
+		_consumeFuelTask = ThreadPool.scheduleAtFixedRate(new ConsumeFuelTask(this), 60000, 60000);
 	}
 	
 	public override bool deleteMe()
@@ -260,9 +260,16 @@ public class ControllableAirShip : AirShip
 	
 	protected class ConsumeFuelTask : Runnable
 	{
-		public override void run()
+		private readonly ControllableAirShip _ship;
+
+		public ConsumeFuelTask(ControllableAirShip ship)
 		{
-			int fuel = getFuel();
+			_ship = ship;
+		}
+		
+		public void run()
+		{
+			int fuel = _ship.getFuel();
 			if (fuel > 0)
 			{
 				fuel -= 10;
@@ -271,29 +278,43 @@ public class ControllableAirShip : AirShip
 					fuel = 0;
 				}
 				
-				setFuel(fuel);
-				updateAbnormalVisualEffects();
+				_ship.setFuel(fuel);
+				_ship.updateAbnormalVisualEffects();
 			}
 		}
 	}
 	
 	protected class CheckTask : Runnable
 	{
-		public override void run()
+		private readonly ControllableAirShip _ship;
+
+		public CheckTask(ControllableAirShip ship)
 		{
-			if (isSpawned() && isEmpty() && !isInDock())
+			_ship = ship;
+		}
+		
+		public void run()
+		{
+			if (_ship.isSpawned() && _ship.isEmpty() && !_ship.isInDock())
 			{
 				// deleteMe() can't be called from CheckTask because task should not cancel itself
-				ThreadPool.execute(new DecayTask());
+				ThreadPool.execute(new DecayTask(_ship));
 			}
 		}
 	}
 	
 	protected class DecayTask : Runnable
 	{
-		public override void run()
+		private readonly ControllableAirShip _ship;
+
+		public DecayTask(ControllableAirShip ship)
 		{
-			deleteMe();
+			_ship = ship;
+		}
+		
+		public void run()
+		{
+			_ship.deleteMe();
 		}
 	}
 }
