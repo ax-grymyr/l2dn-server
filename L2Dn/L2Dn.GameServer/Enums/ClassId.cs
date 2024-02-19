@@ -176,6 +176,23 @@ public static class CharacterClassUtil
 	public static CharacterClass GetRootClass(this CharacterClass cId) => CharacterClassInfo.GetClassInfo(cId).getRootClassId().getId();
 	public static Race GetRace(this CharacterClass cId) => CharacterClassInfo.GetClassInfo(cId).getRace();
 	public static int GetLevel(this CharacterClass cId) => CharacterClassInfo.GetClassInfo(cId).level();
+
+	public static bool EqualsOrChildOf(this CharacterClass cId, CharacterClass other)
+	{
+		if (cId == other)
+			return true;
+
+		CharacterClass? parent = other.GetParentClass();
+		while (parent != null)
+		{
+			if (parent == cId)
+				return true;
+
+			parent = parent.Value.GetParentClass();
+		}
+
+		return false;
+	}
 }
 
 public class CharacterClassInfo

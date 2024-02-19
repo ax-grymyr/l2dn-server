@@ -15,5 +15,5 @@ public class CharacterSummon
     public int SummonSkillId { get; set; }
     public int CurrentHp { get; set; }
     public int CurrentMp { get; set; }
-    public TimeSpan Time { get; set; }
+    public TimeSpan? Time { get; set; }
 }

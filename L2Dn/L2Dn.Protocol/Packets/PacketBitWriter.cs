@@ -120,6 +120,19 @@ public readonly ref struct PacketBitWriter
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public void WriteVariableInt(int value)
+    {
+        // TODO: how to deal with negative values
+        if (value >= short.MaxValue)
+        {
+            WriteInt16(short.MaxValue);
+            WriteInt32(value);
+        }
+        else
+            WriteInt16((short)value);
+    }
+    
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void WritePacketCode<TPacketCode, TExPacketCode>(TPacketCode code, TExPacketCode exCode)
         where TPacketCode: unmanaged, Enum
         where TExPacketCode: unmanaged, Enum

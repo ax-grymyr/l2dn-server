@@ -29,10 +29,6 @@ public class Pet: Summon
 {
 	protected static readonly Logger LOGGER_PET = LogManager.GetLogger(nameof(Pet));
 	
-	private const String ADD_SKILL_SAVE = "INSERT INTO character_pet_skills_save (petObjItemId,skill_id,skill_level,skill_sub_level,remaining_time,buff_index) VALUES (?,?,?,?,?,?)";
-	private const String RESTORE_SKILL_SAVE = "SELECT petObjItemId,skill_id,skill_level,skill_sub_level,remaining_time,buff_index FROM character_pet_skills_save WHERE petObjItemId=? ORDER BY buff_index ASC";
-	private const String DELETE_SKILL_SAVE = "DELETE FROM character_pet_skills_save WHERE petObjItemId=?";
-	
 	protected int _curFed;
 	protected readonly PetInventory _inventory;
 	private readonly bool _mountable;
@@ -1026,18 +1022,28 @@ public class Pet: Summon
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(req);
-			statement.setString(1, getName());
-			statement.setInt(2, getStat().getLevel());
-			statement.setDouble(3, getStatus().getCurrentHp());
-			statement.setDouble(4, getStatus().getCurrentMp());
-			statement.setLong(5, getStat().getExp());
-			statement.setLong(6, getStat().getSp());
-			statement.setInt(7, _curFed);
-			statement.setInt(8, getOwner().getObjectId());
-			statement.setString(9, String.valueOf(_restoreSummon)); // True restores pet on login
-			statement.setInt(10, _controlObjectId);
-			statement.executeUpdate();
+			Db.Pet? record = ctx.Pets.SingleOrDefault(r => r.ItemObjectId == _controlObjectId);
+			if (record is null)
+			{
+				record = new Db.Pet()
+				{
+					ItemObjectId = _controlObjectId
+				};
+
+				ctx.Pets.Add(record);
+			}
+
+			record.Name = getName();
+			record.Level = (short)getStat().getLevel();
+			record.CurrentHp = (int)getStatus().getCurrentHp();
+			record.CurrentMp = (int)getStatus().getCurrentMp();
+			record.Exp = getStat().getExp();
+			record.Sp = getStat().getSp();
+			record.Fed = _curFed;
+			record.OwnerId = getOwner().getObjectId();
+			record.Restore = _restoreSummon;
+
+			ctx.SaveChanges();
 			
 			_respawned = true;
 			if (_restoreSummon)
@@ -1070,20 +1076,17 @@ public class Pet: Summon
 		}
 		
 		// Clear list for overwrite
-		SummonEffectTable.getInstance().getPetEffects().getOrDefault(getControlObjectId(), Collections.emptyList()).clear();
+		SummonEffectTable.getInstance().getPetEffects()
+			.getOrDefault(getControlObjectId(), new List<SummonEffectTable.SummonEffect>()).Clear();
 		
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps1 = con.prepareStatement(DELETE_SKILL_SAVE);
-			PreparedStatement ps2 = con.prepareStatement(ADD_SKILL_SAVE);
 			
 			// Delete all current stored effects for summon to avoid dupe
-			ps1.setInt(1, _controlObjectId);
-			ps1.execute();
+			ctx.PetSkillReuses.Where(r => r.PetItemObjectId == _controlObjectId).ExecuteDelete();
 			
 			int buffIndex = 0;
-			
 			Set<long> storedSkills = new();
 			
 			// Store all effect data along with calculated remaining
@@ -1127,22 +1130,28 @@ public class Pet: Summon
 						continue;
 					}
 					
-					ps2.setInt(1, _controlObjectId);
-					ps2.setInt(2, skill.getId());
-					ps2.setInt(3, skill.getLevel());
-					ps2.setInt(4, skill.getSubLevel());
-					ps2.setInt(5, info.getTime());
-					ps2.setInt(6, ++buffIndex);
-					ps2.addBatch();
+					++buffIndex;
+					ctx.PetSkillReuses.Add(new DbPetSkillReuse()
+					{
+						PetItemObjectId = _controlObjectId,
+						SkillId = skill.getId(),
+						SkillLevel = (short)skill.getLevel(),
+						SkillSubLevel = (short)skill.getSubLevel(),
+						RemainingTime = info.getTime(),
+						BuffIndex = (byte)buffIndex
+					});
 					
-					SummonEffectTable.getInstance().getPetEffects().computeIfAbsent(getControlObjectId(), k => ConcurrentHashMap.newKeySet()).add(new SummonEffectTable.SummonEffect(skill, info.getTime()));
+					SummonEffectTable.getInstance().getPetEffects()
+						.computeIfAbsent(getControlObjectId(), k => new List<SummonEffectTable.SummonEffect>())
+						.Add(new SummonEffectTable.SummonEffect(skill, info.getTime()));
 				}
-				ps2.executeBatch();
+
+				ctx.SaveChanges();
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Could not store pet effect data: " + e);
+			LOGGER.Error("Could not store pet effect data: " + e);
 		}
 	}
 	
@@ -1150,37 +1159,37 @@ public class Pet: Summon
 	{
 		try 
 		{
+			const String RESTORE_SKILL_SAVE = "SELECT petObjItemId,skill_id,skill_level,skill_sub_level,remaining_time,buff_index FROM character_pet_skills_save WHERE petObjItemId=? ORDER BY buff_index ASC";
+			const String DELETE_SKILL_SAVE = "DELETE FROM character_pet_skills_save WHERE petObjItemId=?";
+			
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps1 = con.prepareStatement(RESTORE_SKILL_SAVE);
-			PreparedStatement ps2 = con.prepareStatement(DELETE_SKILL_SAVE);
+
 			if (!SummonEffectTable.getInstance().getPetEffects().containsKey(getControlObjectId()))
 			{
-				ps1.setInt(1, _controlObjectId);
-				ResultSet rset = ps1.executeQuery();
+				foreach (DbPetSkillReuse record in ctx.PetSkillReuses.Where(r => r.PetItemObjectId == _controlObjectId)
+					         .OrderBy(r => r.BuffIndex))
 				{
-					while (rset.next())
+					TimeSpan effectCurTime = record.RemainingTime;
+					Skill skill = SkillData.getInstance().getSkill(record.SkillId, record.SkillLevel);
+					if (skill == null)
 					{
-						int effectCurTime = rset.getInt("remaining_time");
-						Skill skill = SkillData.getInstance().getSkill(rset.getInt("skill_id"), rset.getInt("skill_level"));
-						if (skill == null)
-						{
-							continue;
-						}
-						
-						if (skill.hasEffects(EffectScope.GENERAL))
-						{
-							SummonEffectTable.getInstance().getPetEffects().computeIfAbsent(getControlObjectId(), k -> ConcurrentHashMap.newKeySet()).add(new SummonEffect(skill, effectCurTime));
-						}
+						continue;
+					}
+					
+					if (skill.hasEffects(EffectScope.GENERAL))
+					{
+						SummonEffectTable.getInstance().getPetEffects()
+							.computeIfAbsent(getControlObjectId(), k => new List<SummonEffectTable.SummonEffect>())
+							.Add(new SummonEffectTable.SummonEffect(skill, effectCurTime));
 					}
 				}
 			}
-			
-			ps2.setInt(1, _controlObjectId);
-			ps2.executeUpdate();
+
+			ctx.PetSkillReuses.Where(r => r.PetItemObjectId == _controlObjectId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Could not restore " + this + " active effect data: " + e);
+			LOGGER.Error("Could not restore " + this + " active effect data: " + e);
 		}
 		finally
 		{

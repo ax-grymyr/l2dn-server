@@ -30,7 +30,7 @@ public class BuffInfo
 	private Map<AbstractEffect, EffectTaskInfo> _tasks;
 	// Time and ticks
 	/** Abnormal time. */
-	private int _abnormalTime;
+	private TimeSpan _abnormalTime;
 	/** The game ticks at the start of this effect. */
 	private int _periodStartTicks;
 	// Misc
@@ -135,7 +135,7 @@ public class BuffInfo
 	 * Sets the abnormal time.
 	 * @param abnormalTime the abnormal time to set
 	 */
-	public void setAbnormalTime(int abnormalTime)
+	public void setAbnormalTime(TimeSpan abnormalTime)
 	{
 		_abnormalTime = abnormalTime;
 	}
@@ -169,7 +169,7 @@ public class BuffInfo
 	 * Get the remaining time in seconds for this buff info.
 	 * @return the elapsed time
 	 */
-	public int getTime()
+	public TimeSpan getTime()
 	{
 		return _abnormalTime - ((GameTimeTaskManager.getInstance().getGameTicks() - _periodStartTicks) / GameTimeTaskManager.TICKS_PER_SECOND);
 	}

@@ -1236,7 +1236,7 @@ public class Skill: IIdentifiable
 	 * @param instant if {@code true} instant effects will be applied to the effected
 	 * @param abnormalTime custom abnormal time, if equal or lesser than zero will be ignored
 	 */
-	public void applyEffects(Creature effector, Creature effected, bool instant, int abnormalTime)
+	public void applyEffects(Creature effector, Creature effected, bool instant, TimeSpan abnormalTime)
 	{
 		applyEffects(effector, effected, false, false, instant, abnormalTime, null);
 	}
@@ -1251,7 +1251,7 @@ public class Skill: IIdentifiable
 	 * @param abnormalTime custom abnormal time, if equal or lesser than zero will be ignored
 	 * @param item
 	 */
-	public void applyEffects(Creature effector, Creature effected, bool self, bool passive, bool instant, int abnormalTime, Item item)
+	public void applyEffects(Creature effector, Creature effected, bool self, bool passive, bool instant, TimeSpan abnormalTime, Item item)
 	{
 		// null targets cannot receive any effects.
 		if (effected == null)
@@ -1268,7 +1268,7 @@ public class Skill: IIdentifiable
 		if (!self && !passive)
 		{
 			BuffInfo info = new BuffInfo(effector, effected, this, !instant, item, null);
-			if (addContinuousEffects && (abnormalTime > 0))
+			if (addContinuousEffects && (abnormalTime > TimeSpan.Zero))
 			{
 				info.setAbnormalTime(abnormalTime);
 			}

@@ -63,7 +63,11 @@ public class GameServerDbContext: DbContext
     public DbSet<Pet> Pets => Set<Pet>();
     public DbSet<PetEvolve> PetEvolves => Set<PetEvolve>();
     public DbSet<DbPetSkill> PetSkills => Set<DbPetSkill>();
+    public DbSet<DbPetSkillReuse> PetSkillReuses => Set<DbPetSkillReuse>();
 
+    public DbSet<DbSummonSkillReuse> SummonSkillReuses => Set<DbSummonSkillReuse>();
+    
+    
     public DbSet<OlympiadNoble> OlympiadNobles => Set<OlympiadNoble>();
     
     public DbSet<DbItem> Items => Set<DbItem>();

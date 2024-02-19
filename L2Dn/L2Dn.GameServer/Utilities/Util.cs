@@ -17,6 +17,7 @@ namespace L2Dn.GameServer.Utilities;
 public class Util
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Util));
+	public const char VAR_PARAM_START_CHAR = '$';
 	
 	private static readonly NumberFormatInfo _adenaFormat;
 
@@ -352,7 +353,7 @@ public class Util
 				bypass = html.Substring(bypassStartEnd, bypassEnd).Trim();
 			}
 			
-			int firstParameterStart = bypass.IndexOf(AbstractHtmlPacket.VAR_PARAM_START_CHAR);
+			int firstParameterStart = bypass.IndexOf(VAR_PARAM_START_CHAR);
 			if (firstParameterStart != -1)
 			{
 				bypass = bypass.Substring(0, firstParameterStart + 1);
@@ -534,9 +535,11 @@ public class Util
 	 */
 	public static void fillMultiEditContent(Player player, String text)
 	{
-		player.sendPacket(new ShowBoardPacket(Arrays.asList("0", "0", "0", "0", "0", "0", player.getName(),
+		player.sendPacket(new ShowBoardPacket([
+			"0", "0", "0", "0", "0", "0", player.getName(),
 			player.getObjectId().ToString(), player.getAccountName(), "9", " ", " ",
-			text.Replace("<br>", Environment.NewLine), "0", "0", "0", "0")));
+			text.Replace("<br>", Environment.NewLine), "0", "0", "0", "0"
+		]));
 	}
 	
 	public static bool isInsideRangeOfObjectId(WorldObject obj, int targetObjId, int radius)

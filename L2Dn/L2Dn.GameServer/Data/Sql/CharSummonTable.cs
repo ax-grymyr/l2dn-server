@@ -155,7 +155,7 @@ public class CharSummonTable
 				int skillId = dbSummon.SummonSkillId;
 				int curHp = dbSummon.CurrentHp;
 				int curMp = dbSummon.CurrentMp;
-				TimeSpan time = dbSummon.Time;
+				TimeSpan? time = dbSummon.Time;
 
 				removeServitor(player, summonObjId);
 				skill = SkillData.getInstance().getSkill(skillId, player.getSkillLevel(skillId));
@@ -209,7 +209,7 @@ public class CharSummonTable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			TimeSpan remainingTime = summon.getLifeTimeRemaining();
+			TimeSpan? remainingTime = summon.getLifeTimeRemaining();
 			if (remainingTime < TimeSpan.Zero)
 				remainingTime = TimeSpan.Zero;
 				

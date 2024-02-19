@@ -83,13 +83,13 @@ public class Servitor : Summon, Runnable
 	
 	// ************************************/
 	
-	public void setItemConsumeInterval(int interval)
+	public void setItemConsumeInterval(TimeSpan interval)
 	{
 		_consumeItemInterval = interval;
 		_consumeItemIntervalRemaining = interval;
 	}
 	
-	public int getItemConsumeInterval()
+	public TimeSpan getItemConsumeInterval()
 	{
 		return _consumeItemInterval;
 	}
@@ -109,7 +109,7 @@ public class Servitor : Summon, Runnable
 	
 	// ************************************/
 	
-	public void setLifeTimeRemaining(TimeSpan time)
+	public void setLifeTimeRemaining(TimeSpan? time)
 	{
 		_lifeTimeRemaining = time;
 	}

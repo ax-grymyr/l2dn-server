@@ -42,9 +42,9 @@ public class SummonEffectTable
 	public class SummonEffect
 	{
 		private readonly Skill _skill;
-		private readonly int _effectCurTime;
+		private readonly TimeSpan _effectCurTime;
 		
-		public SummonEffect(Skill skill, int effectCurTime)
+		public SummonEffect(Skill skill, TimeSpan effectCurTime)
 		{
 			_skill = skill;
 			_effectCurTime = effectCurTime;
@@ -55,7 +55,7 @@ public class SummonEffectTable
 			return _skill;
 		}
 		
-		public int getEffectCurTime()
+		public TimeSpan getEffectCurTime()
 		{
 			return _effectCurTime;
 		}
