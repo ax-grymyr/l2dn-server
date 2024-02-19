@@ -1,5 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
@@ -14,8 +16,10 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Network.OutgoingPackets.Pets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 using ThreadPool = System.Threading.ThreadPool;
 
@@ -31,8 +35,6 @@ public class Pet: Summon
 	private const String SELECT_PET_SKILLS = "SELECT * FROM pet_skills WHERE petObjItemId=?";
 	private const String INSERT_PET_SKILLS = "INSERT INTO pet_skills (petObjItemId, skillId, skillLevel) VALUES (?,?,?) ON DUPLICATE KEY UPDATE skillId=VALUES(skillId), skillLevel=VALUES(skillLevel), petObjItemId=VALUES(petObjItemId)";
 	private const String DELETE_PET_SKILLS = "DELETE FROM pet_skills WHERE petObjItemId=?";
-	private const String SELECT_EVOLVED_PETS = "SELECT * FROM pet_evolves WHERE itemObjId=?";
-	private const String UPDATE_EVOLVED_PETS = "REPLACE INTO pet_evolves (`itemObjId`, `index`, `level`) VALUES (?, ?, ?)";
 	
 	protected int _curFed;
 	protected readonly PetInventory _inventory;
@@ -52,9 +54,7 @@ public class Pet: Summon
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps1 = con.prepareStatement("DELETE FROM pet_evolves WHERE itemObjId=?");
-			ps1.setInt(1, _controlObjectId);
-			ps1.execute();
+			ctx.PetEvolves.Where(r => r.ItemObjectId == _controlObjectId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -67,12 +67,9 @@ public class Pet: Summon
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps2 = con.prepareStatement(SELECT_EVOLVED_PETS);
-			ps2.setInt(1, _controlObjectId);
-			ResultSet rset = ps2.executeQuery();
-			if (rset.next())
+			foreach (PetEvolve record in ctx.PetEvolves.Where(r => r.ItemObjectId == _controlObjectId))
 			{
-				setEvolveLevel(EvolveLevel.values()[rset.getInt("level")]);
+				setEvolveLevel((EvolveLevel)record.Level);
 			}
 		}
 		catch (Exception e)
@@ -87,18 +84,29 @@ public class Pet: Summon
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement stmt = con.prepareStatement(UPDATE_EVOLVED_PETS);
-			stmt.setInt(1, controlItemObjId);
-			stmt.setInt(2, index);
-			stmt.setInt(3, evolveLevel);
-			stmt.execute();
+			PetEvolve? record = ctx.PetEvolves.SingleOrDefault(r =>
+				r.ItemObjectId == controlItemObjId && r.Index == index && r.Level == evolveLevel);
+
+			if (record is null)
+			{
+				record = new PetEvolve()
+				{
+					ItemObjectId = controlItemObjId,
+					Index = index,
+					Level = evolveLevel
+				};
+
+				ctx.PetEvolves.Add(record);
+				ctx.SaveChanges();
+			}
 		}
 		catch (Exception e)
 		{
-			e.printStackTrace();
+			LOGGER.Error(e);
 		}
-		
-		getOwner().setPetEvolve(controlItemObjId, new PetEvolveHolder(index, evolveLevel, getName(), getLevel(), getExpForThisLevel()));
+
+		getOwner().setPetEvolve(controlItemObjId,
+			new PetEvolveHolder(index, (EvolveLevel)evolveLevel, getName(), getLevel(), getExpForThisLevel()));
 	}
 	
 	public void storePetSkills(int skillId, int skillLevel)
@@ -106,11 +114,21 @@ public class Pet: Summon
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps2 = con.prepareStatement(INSERT_PET_SKILLS);
-			ps2.setInt(1, _controlObjectId);
-			ps2.setInt(2, skillId);
-			ps2.setInt(3, skillLevel);
-			ps2.execute();
+			DbPetSkill? record = ctx.PetSkills.SingleOrDefault(r =>
+				r.PetItemObjectId == _controlObjectId && r.SkillId == skillId && r.SkillLevel == skillLevel);
+
+			if (record is null)
+			{
+				record = new DbPetSkill()
+				{
+					PetItemObjectId = _controlObjectId,
+					SkillLevel = (short)skillLevel,
+					SkillId = skillId
+				};
+
+				ctx.PetSkills.Add(record);
+				ctx.SaveChanges();
+			}
 		}
 		catch (Exception e)
 		{
@@ -123,13 +141,9 @@ public class Pet: Summon
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps1 = con.prepareStatement(SELECT_PET_SKILLS);
-			PreparedStatement ps2 = con.prepareStatement(DELETE_PET_SKILLS);
-			ps1.setInt(1, _controlObjectId);
-			ResultSet rset = ps1.executeQuery();
-			while (rset.next())
+			foreach (DbPetSkill record in ctx.PetSkills.Where(r => r.PetItemObjectId == _controlObjectId))
 			{
-				Skill skill = SkillData.getInstance().getSkill(rset.getInt("skillId"), rset.getInt("skillLevel"));
+				Skill skill = SkillData.getInstance().getSkill(record.SkillId, record.SkillLevel);
 				if (skill == null)
 				{
 					continue;
@@ -138,8 +152,7 @@ public class Pet: Summon
 				addSkill(skill);
 			}
 
-			ps2.setInt(1, _controlObjectId);
-			ps2.executeUpdate();
+			ctx.PetSkills.Where(r => r.PetItemObjectId == _controlObjectId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -177,48 +190,55 @@ public class Pet: Summon
 	 * If pet has food in inventory and feed level drops below 55% then consume food from inventory.<br>
 	 * Send a broadcastStatusUpdate packet for this Pet
 	 */
-	class FeedTask : Runnable
+	private class FeedTask: Runnable
 	{
-		public override void run()
+		private readonly Pet _pet;
+
+		public FeedTask(Pet pet)
+		{
+			_pet = pet;
+		}
+		
+		public void run()
 		{
 			try
 			{
-				Summon pet = getOwner().getPet();
-				BuffInfo buffInfo = getOwner() != null ? getOwner().getEffectList().getBuffInfoBySkillId(49300) : null;
+				Summon pet = _pet.getOwner().getPet();
+				BuffInfo buffInfo = _pet.getOwner() != null ? _pet.getOwner().getEffectList().getBuffInfoBySkillId(49300) : null;
 				int buffLvl = buffInfo == null ? 0 : buffInfo.getSkill().getLevel();
 				int feedCons = buffLvl != 0 ? getFeedConsume() + ((getFeedConsume() / 100) * (buffLvl * 50)) : getFeedConsume();
-				if ((getOwner() == null) || (pet == null) || (pet.getObjectId() != getObjectId()))
+				if ((_pet.getOwner() == null) || (pet == null) || (pet.getObjectId() != _pet.getObjectId()))
 				{
-					stopFeed();
+					_pet.stopFeed();
 					return;
 				}
-				else if (_curFed > feedCons)
+				else if (_pet._curFed > feedCons)
 				{
-					setCurrentFed(_curFed - feedCons);
+					_pet.setCurrentFed(_pet._curFed - feedCons);
 				}
 				else
 				{
-					setCurrentFed(0);
+					_pet.setCurrentFed(0);
 				}
 				
-				broadcastStatusUpdate();
+				_pet.broadcastStatusUpdate();
 				
-				Set<int> foodIds = getPetData().getFood();
+				Set<int> foodIds = _pet.getPetData().getFood();
 				if (foodIds.isEmpty())
 				{
-					if (isUncontrollable())
+					if (_pet.isUncontrollable())
 					{
 						// Owl Monk remove PK
-						if ((getTemplate().getId() == 16050) && (getOwner() != null))
+						if ((_pet.getTemplate().getId() == 16050) && (_pet.getOwner() != null))
 						{
-							getOwner().setPkKills(Math.Max(0, getOwner().getPkKills() - Rnd.get(1, 6)));
+							_pet.getOwner().setPkKills(Math.Max(0, _pet.getOwner().getPkKills() - Rnd.get(1, 6)));
 						}
-						sendPacket(SystemMessageId.THE_PET_IS_NOW_LEAVING);
-						deleteMe(getOwner());
+						_pet.sendPacket(SystemMessageId.THE_PET_IS_NOW_LEAVING);
+						_pet.deleteMe(_pet.getOwner());
 					}
-					else if (isHungry())
+					else if (_pet.isHungry())
 					{
-						sendPacket(SystemMessageId.THERE_IS_NOT_MUCH_TIME_REMAINING_UNTIL_THE_PET_LEAVES);
+						_pet.sendPacket(SystemMessageId.THERE_IS_NOT_MUCH_TIME_REMAINING_UNTIL_THE_PET_LEAVES);
 					}
 					return;
 				}
@@ -226,44 +246,45 @@ public class Pet: Summon
 				Item food = null;
 				foreach (int id in foodIds)
 				{
-					food = getOwner().getInventory().getItemByItemId(id);
-					if ((food != null) && getOwner().getAutoUseSettings().getAutoSupplyItems().contains(id))
+					food = _pet.getOwner().getInventory().getItemByItemId(id);
+					if ((food != null) && _pet.getOwner().getAutoUseSettings().getAutoSupplyItems().Contains(id))
 					{
 						break;
 					}
 				}
 				
-				if ((food != null) && isHungry() && getOwner().getAutoUseSettings().getAutoSupplyItems().contains(food.getId()) && !pet.isInsideZone(ZoneId.PEACE))
+				if ((food != null) && _pet.isHungry() && _pet.getOwner().getAutoUseSettings().getAutoSupplyItems().Contains(food.getId()) && 
+				    !pet.isInsideZone(ZoneId.PEACE))
 				{
 					IItemHandler handler = ItemHandler.getInstance().getHandler(food.getEtcItem());
 					if (handler != null)
 					{
-						SystemMessage sm = new SystemMessage(SystemMessageId.YOUR_PET_WAS_HUNGRY_SO_IT_ATE_S1);
-						sm.addItemName(food.getId());
-						sendPacket(sm);
-						handler.useItem(getOwner(), food, false);
+						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOUR_PET_WAS_HUNGRY_SO_IT_ATE_S1);
+						sm.Params.addItemName(food.getId());
+						_pet.sendPacket(sm);
+						handler.useItem(_pet.getOwner(), food, false);
 					}
 				}
 				
-				if (isUncontrollable())
+				if (_pet.isUncontrollable())
 				{
-					sendPacket(SystemMessageId.YOUR_PET_IS_STARVING_AND_WILL_NOT_OBEY_UNTIL_IT_GETS_IT_S_FOOD_FEED_YOUR_PET);
+					_pet.sendPacket(SystemMessageId.YOUR_PET_IS_STARVING_AND_WILL_NOT_OBEY_UNTIL_IT_GETS_IT_S_FOOD_FEED_YOUR_PET);
 				}
 			}
 			catch (Exception e)
 			{
-				LOGGER_PET.Error("Pet [ObjectId: " + getObjectId() + "] a feed task error has occurred: " + e);
+				LOGGER_PET.Error("Pet [ObjectId: " + _pet.getObjectId() + "] a feed task error has occurred: " + e);
 			}
 		}
 		
 		private int getFeedConsume()
 		{
 			// if pet is attacking
-			if (isAttackingNow())
+			if (_pet.isAttackingNow())
 			{
-				return getPetLevelData().getPetFeedBattle();
+				return _pet.getPetLevelData().getPetFeedBattle();
 			}
-			return getPetLevelData().getPetFeedNormal();
+			return _pet.getPetLevelData().getPetFeedNormal();
 		}
 	}
 	
@@ -375,11 +396,11 @@ public class Pet: Summon
 	{
 		if (num <= 0)
 		{
-			sendPacket(new ExChangeNpcState(getObjectId(), 0x64));
+			sendPacket(new ExChangeNpcStatePacket(getObjectId(), 0x64)); // TODO: what numbers mean?
 		}
 		else if ((_curFed <= 0) && (num > 0))
 		{
-			sendPacket(new ExChangeNpcState(getObjectId(), 0x65));
+			sendPacket(new ExChangeNpcStatePacket(getObjectId(), 0x65));
 		}
 		_curFed = num > getMaxFed() ? getMaxFed() : num;
 	}
@@ -393,7 +414,9 @@ public class Pet: Summon
 		{
 			foreach (Item item in _inventory.getItems())
 			{
-				if ((item.getItemLocation() == ItemLocation.PET_EQUIP) && ((item.getTemplate().getBodyPart() == ItemTemplate.SLOT_R_HAND) || (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_LR_HAND)))
+				if ((item.getItemLocation() == ItemLocation.PET_EQUIP) &&
+				    ((item.getTemplate().getBodyPart() == ItemTemplate.SLOT_R_HAND) ||
+				     (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_LR_HAND)))
 				{
 					return item;
 				}
@@ -454,23 +477,22 @@ public class Pet: Summon
 		}
 		
 		// Send Pet inventory update packet
-		PetInventoryUpdate petIU = new PetInventoryUpdate();
-		petIU.addItem(item);
+		PetInventoryUpdatePacket petIU = new PetInventoryUpdatePacket(item);
 		sendPacket(petIU);
 		
 		if (sendMessage)
 		{
 			if (count > 1)
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.S1_X_S2_DISAPPEARED);
-				sm.addItemName(item.getId());
-				sm.addLong(count);
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_X_S2_DISAPPEARED);
+				sm.Params.addItemName(item.getId());
+				sm.Params.addLong(count);
 				sendPacket(sm);
 			}
 			else
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.S1_DISAPPEARED);
-				sm.addItemName(item.getId());
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_DISAPPEARED);
+				sm.Params.addItemName(item.getId());
 				sendPacket(sm);
 			}
 		}
@@ -499,23 +521,22 @@ public class Pet: Summon
 		}
 		
 		// Send Pet inventory update packet
-		PetInventoryUpdate petIU = new PetInventoryUpdate();
-		petIU.addItem(item);
+		PetInventoryUpdatePacket petIU = new PetInventoryUpdatePacket(item);
 		sendPacket(petIU);
 		
 		if (sendMessage)
 		{
 			if (count > 1)
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.S1_X_S2_DISAPPEARED);
-				sm.addItemName(item.getId());
-				sm.addLong(count);
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_X_S2_DISAPPEARED);
+				sm.Params.addItemName(item.getId());
+				sm.Params.addLong(count);
 				sendPacket(sm);
 			}
 			else
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.S1_DISAPPEARED);
-				sm.addItemName(item.getId());
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_DISAPPEARED);
+				sm.Params.addItemName(item.getId());
 				sendPacket(sm);
 			}
 		}
@@ -531,7 +552,7 @@ public class Pet: Summon
 		}
 		
 		getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		broadcastPacket(new StopMove(this));
+		broadcastPacket(new StopMovePacket(this));
 		if (!@object.isItem())
 		{
 			// dont try to pickup anything that is not an item :)
@@ -543,11 +564,13 @@ public class Pet: Summon
 		bool follow = getFollowStatus();
 		Item target = (Item) @object;
 		
+		SystemMessagePacket smsg;
+
 		// Cursed weapons
 		if (CursedWeaponsManager.getInstance().isCursed(target.getId()))
 		{
-			SystemMessage smsg = new SystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S1);
-			smsg.addItemName(target.getId());
+			smsg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S1);
+			smsg.Params.addItemName(target.getId());
 			sendPacket(smsg);
 			return;
 		}
@@ -556,7 +579,6 @@ public class Pet: Summon
 			return;
 		}
 		
-		SystemMessage smsg = null;
 		lock (target)
 		{
 			// Check if the target to pick up is visible
@@ -570,8 +592,8 @@ public class Pet: Summon
 			if (!target.getDropProtection().tryPickUp(this))
 			{
 				sendPacket(ActionFailedPacket.STATIC_PACKET);
-				smsg = new SystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S1);
-				smsg.addItemName(target);
+				smsg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S1);
+				smsg.Params.addItemName(target);
 				sendPacket(smsg);
 				return;
 			}
@@ -587,19 +609,19 @@ public class Pet: Summon
 			{
 				if (target.getId() == Inventory.ADENA_ID)
 				{
-					smsg = new SystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S1_ADENA);
-					smsg.addLong(target.getCount());
+					smsg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S1_ADENA);
+					smsg.Params.addLong(target.getCount());
 				}
 				else if (target.getCount() > 1)
 				{
-					smsg = new SystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S2_S1_S);
-					smsg.addItemName(target);
-					smsg.addLong(target.getCount());
+					smsg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S2_S1_S);
+					smsg.Params.addItemName(target);
+					smsg.Params.addLong(target.getCount());
 				}
 				else
 				{
-					smsg = new SystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S1);
-					smsg.addItemName(target);
+					smsg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S1);
+					smsg.Params.addItemName(target);
 				}
 				sendPacket(ActionFailedPacket.STATIC_PACKET);
 				sendPacket(smsg);
@@ -640,28 +662,28 @@ public class Pet: Summon
 		{
 			if (target.getId() == Inventory.ADENA_ID)
 			{
-				smsg = new SystemMessage(SystemMessageId.YOUR_PET_PICKED_UP_S1_ADENA);
-				smsg.addLong(target.getCount());
+				smsg = new SystemMessagePacket(SystemMessageId.YOUR_PET_PICKED_UP_S1_ADENA);
+				smsg.Params.addLong(target.getCount());
 				sendPacket(smsg);
 			}
 			else if (target.getEnchantLevel() > 0)
 			{
-				smsg = new SystemMessage(SystemMessageId.YOUR_PET_HAS_PICKED_UP_S1_S2);
-				smsg.addInt(target.getEnchantLevel());
-				smsg.addItemName(target);
+				smsg = new SystemMessagePacket(SystemMessageId.YOUR_PET_HAS_PICKED_UP_S1_S2);
+				smsg.Params.addInt(target.getEnchantLevel());
+				smsg.Params.addItemName(target);
 				sendPacket(smsg);
 			}
 			else if (target.getCount() > 1)
 			{
-				smsg = new SystemMessage(SystemMessageId.YOUR_PET_PICKED_UP_S2_S1_S);
-				smsg.addLong(target.getCount());
-				smsg.addItemName(target);
+				smsg = new SystemMessagePacket(SystemMessageId.YOUR_PET_PICKED_UP_S2_S1_S);
+				smsg.Params.addLong(target.getCount());
+				smsg.Params.addItemName(target);
 				sendPacket(smsg);
 			}
 			else
 			{
-				smsg = new SystemMessage(SystemMessageId.YOUR_PET_PICKED_UP_S1);
-				smsg.addItemName(target);
+				smsg = new SystemMessagePacket(SystemMessageId.YOUR_PET_PICKED_UP_S1);
+				smsg.Params.addItemName(target);
 				sendPacket(smsg);
 			}
 			
@@ -675,7 +697,7 @@ public class Pet: Summon
 				Item item = getOwner().getInventory().addItem("Pet Pickup", target, getOwner(), this);
 				if (item != null)
 				{
-					getOwner().sendPacket(new PetItemList(getInventory().getItems()));
+					getOwner().sendPacket(new PetItemListPacket(getInventory().getItems()));
 				}
 			}
 		}
@@ -699,7 +721,7 @@ public class Pet: Summon
 		// destroyControlItem(owner, false); // this should also delete the pet from the db
 		// CharSummonTable.getInstance().getPets().remove(getOwner().getObjectId());
 	}
-	
+
 	public override bool doDie(Creature killer)
 	{
 		Player owner = getOwner();
@@ -707,12 +729,14 @@ public class Pet: Summon
 		{
 			deathPenalty();
 		}
+
 		if (!base.doDie(killer, true))
 		{
 			return false;
 		}
+
 		stopFeed();
-		
+
 		// Pet related - Removed on Essence.
 		// sendPacket(SystemMessageId.THE_PET_HAS_BEEN_KILLED_IF_YOU_DON_T_RESURRECT_IT_WITHIN_24_H_THE_PET_S_BODY_WILL_DISAPPEAR_ALONG_WITH_ALL_THE_PET_S_ITEMS);
 		// Pet related - Added the following.
@@ -721,17 +745,20 @@ public class Pet: Summon
 		{
 			storePetSkills(skill.getId(), skill.getLevel());
 		}
-		
+
 		DecayTaskManager.getInstance().add(this);
 		if (owner != null)
 		{
 			BuffInfo buffInfo = owner.getEffectList().getBuffInfoBySkillId(49300);
-			owner.getEffectList().add(new BuffInfo(owner, owner, SkillData.getInstance().getSkill(49300, buffInfo == null ? 1 : Math.min(buffInfo.getSkill().getLevel() + 1, 10)), false, null, null));
+			owner.getEffectList().add(new BuffInfo(owner, owner,
+				SkillData.getInstance().getSkill(49300,
+					buffInfo == null ? 1 : Math.Min(buffInfo.getSkill().getLevel() + 1, 10)), false, null, null));
 		}
+
 		// do not decrease exp if is in duel, arena
 		return true;
 	}
-	
+
 	public override void doRevive()
 	{
 		getOwner().removeReviving();
@@ -777,22 +804,22 @@ public class Pet: Summon
 		}
 		
 		// Send inventory update packet
-		PetInventoryUpdate petIU = new PetInventoryUpdate();
+		PetInventoryUpdatePacket petIU;
 		if ((oldItem.getCount() > 0) && (oldItem != newItem))
 		{
-			petIU.addModifiedItem(oldItem);
+			petIU = new PetInventoryUpdatePacket(new ItemInfo(oldItem, ItemChangeType.MODIFIED));
 		}
 		else
 		{
-			petIU.addRemovedItem(oldItem);
+			petIU = new PetInventoryUpdatePacket(new ItemInfo(oldItem, ItemChangeType.REMOVED));
 		}
+		
 		sendInventoryUpdate(petIU);
 		
 		// Send target update packet
 		if ((playerOldItem != null) && newItem.isStackable())
 		{
-			InventoryUpdate iu = new InventoryUpdate();
-			iu.addModifiedItem(newItem);
+			InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(newItem, ItemChangeType.MODIFIED));
 			getOwner().sendInventoryUpdate(iu);
 		}
 		
@@ -822,8 +849,8 @@ public class Pet: Summon
 				removedItem = owner.getInventory().destroyItem("PetDestroy", _controlObjectId, 1, getOwner(), this);
 				if (removedItem != null)
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.S1_DISAPPEARED);
-					sm.addItemName(removedItem);
+					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_DISAPPEARED);
+					sm.Params.addItemName(removedItem);
 					owner.sendPacket(sm);
 				}
 			}
@@ -834,9 +861,7 @@ public class Pet: Summon
 			}
 			else
 			{
-				InventoryUpdate iu = new InventoryUpdate();
-				iu.addRemovedItem(removedItem);
-				
+				InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(removedItem, ItemChangeType.REMOVED));
 				owner.sendInventoryUpdate(iu);
 				owner.broadcastUserInfo();
 			}
@@ -850,9 +875,7 @@ public class Pet: Summon
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement("DELETE FROM pets WHERE item_obj_id = ?");
-			statement.setInt(1, _controlObjectId);
-			statement.execute();
+			ctx.Pets.Where(r => r.ItemObjectId == _controlObjectId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -967,14 +990,14 @@ public class Pet: Summon
 	public override void stopSkillEffects(SkillFinishType type, int skillId)
 	{
 		base.stopSkillEffects(type, skillId);
-		ICollection<SummonEffect> effects = SummonEffectTable.getInstance().getPetEffects().get(getControlObjectId());
+		ICollection<SummonEffectTable.SummonEffect> effects = SummonEffectTable.getInstance().getPetEffects().get(getControlObjectId());
 		if ((effects != null) && !effects.isEmpty())
 		{
-			foreach (SummonEffect effect in effects)
+			foreach (SummonEffectTable.SummonEffect effect in effects)
 			{
 				if (effect.getSkill().getId() == skillId)
 				{
-					SummonEffectTable.getInstance().getPetEffects().get(getControlObjectId()).remove(effect);
+					SummonEffectTable.getInstance().getPetEffects().get(getControlObjectId()).Remove(effect);
 				}
 			}
 		}
@@ -1115,7 +1138,7 @@ public class Pet: Summon
 					ps2.setInt(6, ++buffIndex);
 					ps2.addBatch();
 					
-					SummonEffectTable.getInstance().getPetEffects().computeIfAbsent(getControlObjectId(), k -> ConcurrentHashMap.newKeySet()).add(new SummonEffect(skill, info.getTime()));
+					SummonEffectTable.getInstance().getPetEffects().computeIfAbsent(getControlObjectId(), k => ConcurrentHashMap.newKeySet()).add(new SummonEffectTable.SummonEffect(skill, info.getTime()));
 				}
 				ps2.executeBatch();
 			}
@@ -1166,7 +1189,7 @@ public class Pet: Summon
 		{
 			if (SummonEffectTable.getInstance().getPetEffects().get(getControlObjectId()) != null)
 			{
-				foreach (SummonEffect se in SummonEffectTable.getInstance().getPetEffects().get(getControlObjectId()))
+				foreach (SummonEffectTable.SummonEffect se in SummonEffectTable.getInstance().getPetEffects().get(getControlObjectId()))
 				{
 					if (se != null)
 					{
@@ -1237,7 +1260,7 @@ public class Pet: Summon
 		double percentLost = (-0.07 * level) + 6.5;
 		
 		// Calculate the Experience loss
-		long lostExp = Math.Round(((getStat().getExpForLevel(level + 1) - getStat().getExpForLevel(level)) * percentLost) / 100);
+		long lostExp = (long)(((getStat().getExpForLevel(level + 1) - getStat().getExpForLevel(level)) * percentLost) / 100);
 		
 		// Get the Experience before applying penalty
 		_expBeforeDeath = getStat().getExp();
@@ -1456,7 +1479,7 @@ public class Pet: Summon
 	
 	public bool canEatFoodId(int itemId)
 	{
-		return _data.getFood().contains(itemId);
+		return _data.getFood().Contains(itemId);
 	}
 	
 	public override bool isPet()
@@ -1498,9 +1521,9 @@ public class Pet: Summon
 		_petType = petType;
 	}
 	
-	public int getEvolveLevel()
+	public EvolveLevel getEvolveLevel()
 	{
-		return _evolveLevel.ordinal();
+		return _evolveLevel;
 	}
 	
 	public void setEvolveLevel(EvolveLevel evolveLevel)
@@ -1527,19 +1550,19 @@ public class Pet: Summon
 		List<Item> items;
 		bool isEquiped = item.isEquipped();
 		int oldInvLimit = getInventoryLimit();
-		SystemMessage sm = null;
+		SystemMessagePacket sm;
 		if (isEquiped)
 		{
 			if (item.getEnchantLevel() > 0)
 			{
-				sm = new SystemMessage(SystemMessageId.S1_S2_UNEQUIPPED);
-				sm.addInt(item.getEnchantLevel());
-				sm.addItemName(item);
+				sm = new SystemMessagePacket(SystemMessageId.S1_S2_UNEQUIPPED);
+				sm.Params.addInt(item.getEnchantLevel());
+				sm.Params.addItemName(item);
 			}
 			else
 			{
-				sm = new SystemMessage(SystemMessageId.S1_UNEQUIPPED);
-				sm.addItemName(item);
+				sm = new SystemMessagePacket(SystemMessageId.S1_UNEQUIPPED);
+				sm.Params.addItemName(item);
 			}
 			sendPacket(sm);
 			
@@ -1561,14 +1584,14 @@ public class Pet: Summon
 			{
 				if (item.getEnchantLevel() > 0)
 				{
-					sm = new SystemMessage(SystemMessageId.S1_S2_EQUIPPED);
-					sm.addInt(item.getEnchantLevel());
-					sm.addItemName(item);
+					sm = new SystemMessagePacket(SystemMessageId.S1_S2_EQUIPPED);
+					sm.Params.addInt(item.getEnchantLevel());
+					sm.Params.addItemName(item);
 				}
 				else
 				{
-					sm = new SystemMessage(SystemMessageId.S1_EQUIPPED);
-					sm.addItemName(item);
+					sm = new SystemMessagePacket(SystemMessageId.S1_EQUIPPED);
+					sm.Params.addItemName(item);
 				}
 				sendPacket(sm);
 				// Consume mana - will start a task if required; returns if item is not a shadow item
@@ -1591,12 +1614,12 @@ public class Pet: Summon
 		
 		if (abortAttack)
 		{
-			abortAttack();
+			this.abortAttack();
 		}
 		
 		if (getInventoryLimit() != oldInvLimit)
 		{
-			getOwner().sendPacket(new ExStorageMaxCount(getOwner()));
+			getOwner().sendPacket(new ExStorageMaxCountPacket(getOwner()));
 		}
 	}
 }

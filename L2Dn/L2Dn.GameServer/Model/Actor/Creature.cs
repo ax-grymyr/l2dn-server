@@ -1842,7 +1842,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	}
 	
 	/** Sets HP, MP and CP and revives the Creature. */
-	public void doRevive()
+	public virtual void doRevive()
 	{
 		if (!_isDead)
 		{
@@ -1880,7 +1880,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * Revives the Creature using skill.
 	 * @param revivePower
 	 */
-	public void doRevive(double revivePower)
+	public virtual void doRevive(double revivePower)
 	{
 		doRevive();
 	}
@@ -2501,7 +2501,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param type determines the system message that will be sent.
 	 * @param skillId the skill Id
 	 */
-	public void stopSkillEffects(SkillFinishType type, int skillId)
+	public virtual void stopSkillEffects(SkillFinishType type, int skillId)
 	{
 		_effectList.stopSkillEffects(type, skillId);
 	}
@@ -2937,7 +2937,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	/**
 	 * @return True if the Creature is in combat.
 	 */
-	public bool isInCombat()
+	public virtual bool isInCombat()
 	{
 		return hasAI() && getAI().isAutoAttacking();
 	}
@@ -4555,7 +4555,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return _stat.getCriticalDmg(init);
 	}
 	
-	public int getCriticalHit()
+	public virtual int getCriticalHit()
 	{
 		return _stat.getCriticalHit();
 	}
@@ -4580,7 +4580,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return _stat.getMaxRecoverableCp();
 	}
 	
-	public int getMAtk()
+	public virtual int getMAtk()
 	{
 		return _stat.getMAtk();
 	}
@@ -4615,7 +4615,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return _stat.getMCriticalHit();
 	}
 	
-	public int getMDef()
+	public virtual int getMDef()
 	{
 		return _stat.getMDef();
 	}
@@ -4640,17 +4640,17 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return _stat.getPhysicalAttackRange();
 	}
 	
-	public double getMovementSpeedMultiplier()
+	public virtual double getMovementSpeedMultiplier()
 	{
 		return _stat.getMovementSpeedMultiplier();
 	}
 	
-	public double getRunSpeed()
+	public virtual double getRunSpeed()
 	{
 		return _stat.getRunSpeed();
 	}
 	
-	public double getWalkSpeed()
+	public virtual double getWalkSpeed()
 	{
 		return _stat.getWalkSpeed();
 	}
@@ -4665,7 +4665,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return _stat.getSwimWalkSpeed();
 	}
 	
-	public double getMoveSpeed()
+	public virtual double getMoveSpeed()
 	{
 		return _stat.getMoveSpeed();
 	}
@@ -5247,7 +5247,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * Dummy method overriden in {@link Player}
 	 * @return the clan id of current character.
 	 */
-	public int getClanId()
+	public virtual int getClanId()
 	{
 		return 0;
 	}
@@ -5877,7 +5877,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		_chargedShots = new();
 	}
 	
-	public void rechargeShots(bool physical, bool magic, bool fish)
+	public virtual void rechargeShots(bool physical, bool magic, bool fish)
 	{
 		// Dummy method to be overriden.
 	}

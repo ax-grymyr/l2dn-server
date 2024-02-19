@@ -341,7 +341,7 @@ public abstract class Playable: Creature
 	
 	public abstract void restoreEffects();
 	
-	public bool isOnEvent()
+	public virtual bool isOnEvent()
 	{
 		return false;
 	}

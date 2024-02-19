@@ -23,6 +23,7 @@ using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Network.OutgoingPackets.Pets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -79,11 +80,11 @@ public abstract class Summon : Playable
 		{
 			if (isPet())
 			{
-				sendPacket(new PetSummonInfo(this, 1));
-				sendPacket(new ExPetSkillList(true, (Pet) this));
+				sendPacket(new PetSummonInfoPacket(this, 1));
+				sendPacket(new ExPetSkillListPacket(true, (Pet) this));
 				if (getInventory() != null)
 				{
-					sendPacket(new PetItemList(getInventory().getItems()));
+					sendPacket(new PetItemListPacket(getInventory().getItems()));
 				}
 			}
 			sendPacket(new RelationChangedPacket(this, _owner.getRelation(_owner), false));
@@ -93,7 +94,7 @@ public abstract class Summon : Playable
 		Party party = _owner.getParty();
 		if (party != null)
 		{
-			party.broadcastToPartyMembers(_owner, new ExPartyPetWindowAdd(this));
+			party.broadcastToPartyMembers(_owner, new ExPartyPetWindowAddPacket(this));
 		}
 		setShowSummonAnimation(false); // addVisibleObject created the info packets with summon animation
 		// if someone comes into range now, the animation shouldn't show any more
@@ -164,21 +165,20 @@ public abstract class Summon : Playable
 					{
 						if (player == _owner)
 						{
-							player.sendPacket(new PetSummonInfo(this, 1));
+							player.sendPacket(new PetSummonInfoPacket(this, 1));
 							return;
 						}
 						
-						AbstractMaskPacket<NpcInfoType> packet;
 						if (isPet())
 						{
-							packet = new ExPetInfo(this, player, 1);
+							ExPetInfoPacket packet = new ExPetInfoPacket(this, player, 1, NpcInfoType.ABNORMALS);
+							player.sendPacket(packet);
 						}
 						else
 						{
-							packet = new SummonInfo(this, player, 1);
+							SummonInfoPacket packet = new SummonInfoPacket(this, player, 1, NpcInfoType.ABNORMALS);
+							player.sendPacket(packet);
 						}
-						packet.addComponentType(NpcInfoType.ABNORMALS);
-						player.sendPacket(packet);
 					});
 				}
 				_abnormalEffectTask = null;
@@ -219,7 +219,7 @@ public abstract class Summon : Playable
 	
 	public override bool getPvpFlag()
 	{
-		return _owner != null ? _owner.getPvpFlag() : 0;
+		return _owner != null ? _owner.getPvpFlag() : false;
 	}
 	
 	public override Team getTeam()
@@ -241,7 +241,7 @@ public abstract class Summon : Playable
 		return getTemplate().getId();
 	}
 	
-	public short getSoulShotsPerHit()
+	public virtual short getSoulShotsPerHit()
 	{
 		if (getTemplate().getSoulShot() > 0)
 		{
@@ -250,7 +250,7 @@ public abstract class Summon : Playable
 		return 1;
 	}
 	
-	public short getSpiritShotsPerHit()
+	public virtual short getSpiritShotsPerHit()
 	{
 		if (getTemplate().getSpiritShot() > 0)
 		{
@@ -332,17 +332,17 @@ public abstract class Summon : Playable
 		updateAndBroadcastStatus(1);
 	}
 	
-	public void deleteMe(Player owner)
+	public virtual void deleteMe(Player owner)
 	{
 		base.deleteMe();
 		
 		if (owner != null)
 		{
-			owner.sendPacket(new PetDelete(getSummonType(), getObjectId()));
+			owner.sendPacket(new PetDeletePacket(getSummonType(), getObjectId()));
 			Party party = owner.getParty();
 			if (party != null)
 			{
-				party.broadcastToPartyMembers(owner, new ExPartyPetWindowDelete(this));
+				party.broadcastToPartyMembers(owner, new ExPartyPetWindowDeletePacket(this));
 			}
 			
 			if (isPet())
@@ -375,7 +375,7 @@ public abstract class Summon : Playable
 		}
 	}
 	
-	public void unSummon(Player owner)
+	public virtual void unSummon(Player owner)
 	{
 		if (isSpawned())
 		{
@@ -408,7 +408,7 @@ public abstract class Summon : Playable
 			{
 				if (isPet())
 				{
-					getSkills().forEach((id, skill) => ((Pet) this).storePetSkills(id, skill.getLevel()));
+					getSkills().forEach(kvp => ((Pet) this).storePetSkills(kvp.Key, kvp.Value.getLevel()));
 					owner.setPet(null);
 				}
 				else
@@ -416,11 +416,11 @@ public abstract class Summon : Playable
 					owner.removeServitor(getObjectId());
 				}
 				
-				owner.sendPacket(new PetDelete(getSummonType(), getObjectId()));
+				owner.sendPacket(new PetDeletePacket(getSummonType(), getObjectId()));
 				Party party = owner.getParty();
 				if (party != null)
 				{
-					party.broadcastToPartyMembers(owner, new ExPartyPetWindowDelete(this));
+					party.broadcastToPartyMembers(owner, new ExPartyPetWindowDeletePacket(this));
 				}
 				
 				if ((getInventory() != null) && (getInventory().getSize() > 0))
@@ -486,7 +486,7 @@ public abstract class Summon : Playable
 		return (_owner != null) && _owner.isAutoAttackable(attacker);
 	}
 	
-	public int getControlObjectId()
+	public virtual int getControlObjectId()
 	{
 		return 0;
 	}
@@ -501,7 +501,7 @@ public abstract class Summon : Playable
 		return null;
 	}
 	
-	public void setRestoreSummon(bool value)
+	public virtual void setRestoreSummon(bool value)
 	{
 	}
 	
@@ -725,18 +725,18 @@ public abstract class Summon : Playable
 				OlympiadGameManager.getInstance().notifyCompetitorDamage(getOwner(), damage);
 			}
 			
-			SystemMessage sm;
+			SystemMessagePacket sm;
 			if ((target.isHpBlocked() && !target.isNpc()) || (target.isPlayer() && target.isAffected(EffectFlag.DUELIST_FURY) && !_owner.isAffected(EffectFlag.FACEOFF)))
 			{
-				sm = new SystemMessage(SystemMessageId.THE_ATTACK_HAS_BEEN_BLOCKED);
+				sm = new SystemMessagePacket(SystemMessageId.THE_ATTACK_HAS_BEEN_BLOCKED);
 			}
 			else
 			{
-				sm = new SystemMessage(SystemMessageId.C1_HAS_DEALT_S3_DAMAGE_TO_C2);
-				sm.addNpcName(this);
-				sm.addString(target.getName());
-				sm.addInt(damage);
-				sm.addPopup(target.getObjectId(), getObjectId(), (damage * -1));
+				sm = new SystemMessagePacket(SystemMessageId.C1_HAS_DEALT_S3_DAMAGE_TO_C2);
+				sm.Params.addNpcName(this);
+				sm.Params.addString(target.getName());
+				sm.Params.addInt(damage);
+				sm.Params.addPopup(target.getObjectId(), getObjectId(), (damage * -1));
 			}
 			
 			sendPacket(sm);
@@ -749,11 +749,11 @@ public abstract class Summon : Playable
 		
 		if (!isDead() && !isHpBlocked() && (_owner != null) && (attacker != null) && (!_owner.isAffected(EffectFlag.DUELIST_FURY) || attacker.isAffected(EffectFlag.FACEOFF)))
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
-			sm.addNpcName(this);
-			sm.addString(attacker.getName());
-			sm.addInt((int) damage);
-			sm.addPopup(getObjectId(), attacker.getObjectId(), (int) -damage);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
+			sm.Params.addNpcName(this);
+			sm.Params.addString(attacker.getName());
+			sm.Params.addInt((int) damage);
+			sm.Params.addPopup(getObjectId(), attacker.getObjectId(), (int) -damage);
 			sendPacket(sm);
 		}
 	}
@@ -783,7 +783,7 @@ public abstract class Summon : Playable
 		return _owner;
 	}
 	
-	public void updateAndBroadcastStatus(int value)
+	public virtual void updateAndBroadcastStatus(int value)
 	{
 		if (_owner == null)
 		{
@@ -792,14 +792,14 @@ public abstract class Summon : Playable
 		
 		if (isSpawned())
 		{
-			sendPacket(new PetSummonInfo(this, value));
-			sendPacket(new PetStatusUpdate(this));
+			sendPacket(new PetSummonInfoPacket(this, value));
+			sendPacket(new PetStatusUpdatePacket(this));
 			broadcastNpcInfo(value);
 			
 			Party party = _owner.getParty();
 			if (party != null)
 			{
-				party.broadcastToPartyMembers(_owner, new ExPartyPetWindowUpdate(this));
+				party.broadcastToPartyMembers(_owner, new ExPartyPetWindowUpdatePacket(this));
 			}
 		}
 	}
@@ -815,26 +815,26 @@ public abstract class Summon : Playable
 			
 			if (isPet())
 			{
-				player.sendPacket(new ExPetInfo(this, player, value));
+				player.sendPacket(new ExPetInfoPacket(this, player, value));
 			}
 			else
 			{
-				player.sendPacket(new SummonInfo(this, player, value));
+				player.sendPacket(new SummonInfoPacket(this, player, value));
 			}
 		});
 	}
 	
-	public bool isHungry()
+	public virtual bool isHungry()
 	{
 		return false;
 	}
 	
-	public int getWeapon()
+	public virtual int getWeapon()
 	{
 		return 0;
 	}
 	
-	public int getArmor()
+	public virtual int getArmor()
 	{
 		return 0;
 	}
@@ -844,21 +844,21 @@ public abstract class Summon : Playable
 		// Check if the Player is the owner of the Pet
 		if (player == _owner)
 		{
-			player.sendPacket(new PetSummonInfo(this, isDead() ? 0 : 1));
+			player.sendPacket(new PetSummonInfoPacket(this, isDead() ? 0 : 1));
 			if (isPet())
 			{
-				player.sendPacket(new PetItemList(getInventory().getItems()));
+				player.sendPacket(new PetItemListPacket(getInventory().getItems()));
 			}
 		}
 		else
 		{
 			if (isPet())
 			{
-				player.sendPacket(new ExPetInfo(this, player, 0));
+				player.sendPacket(new ExPetInfoPacket(this, player, 0));
 			}
 			else
 			{
-				player.sendPacket(new SummonInfo(this, player, 0));
+				player.sendPacket(new SummonInfoPacket(this, player, 0));
 			}
 		}
 	}
@@ -866,7 +866,7 @@ public abstract class Summon : Playable
 	public override void onTeleported()
 	{
 		base.onTeleported();
-		sendPacket(new TeleportToLocation(this, getX(), getY(), getZ(), getHeading()));
+		sendPacket(new TeleportToLocationPacket(this, getX(), getY(), getZ(), getHeading()));
 	}
 	
 	public override bool isUndead()
@@ -994,7 +994,7 @@ public abstract class Summon : Playable
 		return true;
 	}
 	
-	public override void sendPacket(ServerPacket packet)
+	public override void sendPacket<TPacket>(TPacket packet)
 	{
 		if (_owner != null)
 		{
@@ -1074,7 +1074,7 @@ public abstract class Summon : Playable
 		return _summonPoints;
 	}
 	
-	public void sendInventoryUpdate(PetInventoryUpdate iu)
+	public void sendInventoryUpdate(PetInventoryUpdatePacket iu)
 	{
 		Player owner = _owner;
 		if (owner != null)
@@ -1082,9 +1082,9 @@ public abstract class Summon : Playable
 			owner.sendPacket(iu);
 			if (getInventory() != null)
 			{
-				owner.sendPacket(new PetItemList(getInventory().getItems()));
+				owner.sendPacket(new PetItemListPacket(getInventory().getItems()));
 			}
-			owner.sendPacket(new PetSummonInfo(this, 1));
+			owner.sendPacket(new PetSummonInfoPacket(this, 1));
 		}
 	}
 	

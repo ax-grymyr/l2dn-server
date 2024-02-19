@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Ensoul;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.Enums;
@@ -129,11 +130,11 @@ public class InventoryPacketHelper
     {
         if (item != null)
         {
-            writer.WriteByte((byte)item.getSoulCrystalOptions().size()); // Size of regular soul crystal options.
+            writer.WriteByte((byte)item.getSoulCrystalOptions().Count); // Size of regular soul crystal options.
             foreach (EnsoulOption option in item.getSoulCrystalOptions())
                 writer.WriteInt32(option.getId()); // Regular Soul Crystal Ability ID.
 
-            writer.WriteByte((byte)item.getSoulCrystalSpecialOptions().size()); // Size of special soul crystal options.
+            writer.WriteByte((byte)item.getSoulCrystalSpecialOptions().Count); // Size of special soul crystal options.
             foreach (EnsoulOption option in item.getSoulCrystalSpecialOptions())
                 writer.WriteInt32(option.getId()); // Special Soul Crystal Ability ID.
         }

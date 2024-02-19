@@ -206,7 +206,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 		return _name;
 	}
 	
-	public void setName(String value)
+	public virtual void setName(String value)
 	{
 		_name = value;
 	}
@@ -290,7 +290,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * Verify if object is instance of Pet.
 	 * @return {@code true} if object is instance of Pet, {@code false} otherwise
 	 */
-	public bool isPet()
+	public virtual bool isPet()
 	{
 		return false;
 	}
@@ -335,7 +335,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * Verify if object is instance of Summon.
 	 * @return {@code true} if object is instance of Summon, {@code false} otherwise
 	 */
-	public bool isSummon()
+	public virtual bool isSummon()
 	{
 		return false;
 	}
