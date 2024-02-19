@@ -326,7 +326,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * Verify if object is instance of Servitor.
 	 * @return {@code true} if object is instance of Servitor, {@code false} otherwise
 	 */
-	public bool isServitor()
+	public virtual bool isServitor()
 	{
 		return false;
 	}

@@ -1,10 +1,14 @@
-﻿using L2Dn.GameServer.Data.Xml;
+﻿using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Model.Teleporters;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Network.OutgoingPackets.Teleports;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -45,7 +49,7 @@ public class Teleporter: Npc
 			}
 			case "showTeleports":
 			{
-				String listName = (st.hasMoreTokens()) ? st.nextToken() : TeleportType.NORMAL.name();
+				String listName = (st.hasMoreTokens()) ? st.nextToken() : TeleportType.NORMAL.ToString();
 				TeleportHolder holder = TeleporterData.getInstance().getHolder(getId(), listName);
 				if (holder == null)
 				{
@@ -57,12 +61,12 @@ public class Teleporter: Npc
 			}
 			case "showTeleportList":
 			{
-				player.sendPacket(ExShowTeleportUi.STATIC_PACKET);
+				player.sendPacket(ExShowTeleportUiPacket.STATIC_PACKET);
 				break;
 			}
 			case "showTeleportsHunting":
 			{
-				String listName = (st.hasMoreTokens()) ? st.nextToken() : TeleportType.HUNTING.name();
+				String listName = (st.hasMoreTokens()) ? st.nextToken() : TeleportType.HUNTING.ToString();
 				TeleportHolder holder = TeleporterData.getInstance().getHolder(getId(), listName);
 				if (holder == null)
 				{
@@ -136,8 +140,9 @@ public class Teleporter: Npc
 			pom = npcId.ToString();
 			if ((player != null) && QUEST_RECOMENDATIONS.containsKey(npcId))
 			{
-				CHECK: foreach (TeleporterQuestRecommendationHolder rec in QUEST_RECOMENDATIONS.get(npcId))
+				foreach (TeleporterQuestRecommendationHolder rec in QUEST_RECOMENDATIONS.get(npcId))
 				{
+					bool breakOuterLoop = false;
 					QuestState qs = player.getQuestState(rec.getQuestName());
 					if ((qs != null) && qs.isStarted())
 					{
@@ -146,10 +151,14 @@ public class Teleporter: Npc
 							if ((cond == -1) || qs.isCond(cond))
 							{
 								pom = rec.getHtml();
-								break CHECK;
+								breakOuterLoop = true;
+								break;
 							}
 						}
 					}
+					
+					if (breakOuterLoop)
+						break;
 				}
 			}
 		}
@@ -157,7 +166,8 @@ public class Teleporter: Npc
 		{
 			pom = (npcId + "-" + value);
 		}
-		return "data/html/teleporter/" + pom + ".htm";
+		
+		return "html/teleporter/" + pom + ".htm";
 	}
 	
 	public override void showChatWindow(Player player)
@@ -170,24 +180,24 @@ public class Teleporter: Npc
 		}
 		
 		// Teleporter is on castle ground
-		String filename = "data/html/teleporter/castleteleporter-no.htm";
+		String filename = "html/teleporter/castleteleporter-no.htm";
 		if ((player.getClan() != null) && (getCastle().getOwnerId() == player.getClanId())) // Clan owns castle
 		{
 			filename = getHtmlPath(getId(), 0, player); // Owner message window
 		}
 		else if (getCastle().getSiege().isInProgress()) // Teleporter is busy due siege
 		{
-			filename = "data/html/teleporter/castleteleporter-busy.htm"; // Busy because of siege
+			filename = "html/teleporter/castleteleporter-busy.htm"; // Busy because of siege
 		}
 		sendHtmlMessage(player, filename);
 	}
 	
 	private void sendHtmlMessage(Player player, String filename)
 	{
-		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-		html.setFile(player, filename);
-		html.replace("%objectId%", String.valueOf(getObjectId()));
-		html.replace("%npcname%", getName());
+		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, filename);
+		helper.Replace("%objectId%", getObjectId().ToString());
+		helper.Replace("%npcname%", getName());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 		player.sendPacket(html);
 	}
 }

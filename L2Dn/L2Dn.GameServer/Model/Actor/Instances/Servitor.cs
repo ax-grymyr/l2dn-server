@@ -1,7 +1,13 @@
 ﻿using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -18,10 +24,10 @@ public class Servitor : Summon, Runnable
 	
 	private float _expMultiplier = 0;
 	private ItemHolder _itemConsume;
-	private int _lifeTime;
-	private TimeSpan _lifeTimeRemaining;
-	private int _consumeItemInterval;
-	private int _consumeItemIntervalRemaining;
+	private TimeSpan? _lifeTime;
+	private TimeSpan? _lifeTimeRemaining;
+	private TimeSpan _consumeItemInterval;
+	private TimeSpan _consumeItemIntervalRemaining;
 	protected ScheduledFuture? _summonLifeTask;
 	
 	private int _referenceSkill;
@@ -35,7 +41,7 @@ public class Servitor : Summon, Runnable
 	public override void onSpawn()
 	{
 		base.onSpawn();
-		if ((_lifeTime > 0) && (_summonLifeTask == null))
+		if ((_lifeTime != null) && (_summonLifeTask == null))
 		{
 			_summonLifeTask = ThreadPool.scheduleAtFixedRate(this, 0, 5000);
 		}
@@ -90,13 +96,13 @@ public class Servitor : Summon, Runnable
 	
 	// ************************************/
 	
-	public void setLifeTime(int lifeTime)
+	public void setLifeTime(TimeSpan? lifeTime)
 	{
 		_lifeTime = lifeTime;
 		_lifeTimeRemaining = lifeTime;
 	}
 	
-	public int getLifeTime()
+	public TimeSpan? getLifeTime()
 	{
 		return _lifeTime;
 	}
@@ -108,7 +114,7 @@ public class Servitor : Summon, Runnable
 		_lifeTimeRemaining = time;
 	}
 	
-	public TimeSpan getLifeTimeRemaining()
+	public TimeSpan? getLifeTimeRemaining()
 	{
 		return _lifeTimeRemaining;
 	}
@@ -180,18 +186,18 @@ public class Servitor : Summon, Runnable
 	public override void stopSkillEffects(SkillFinishType type, int skillId)
 	{
 		base.stopSkillEffects(type, skillId);
-		Map<int, Collection<SummonEffect>> servitorEffects = SummonEffectTable.getInstance().getServitorEffects(getOwner());
+		Map<int, ICollection<SummonEffectTable.SummonEffect>> servitorEffects = SummonEffectTable.getInstance().getServitorEffects(getOwner());
 		if (servitorEffects != null)
 		{
-			Collection<SummonEffect> effects = servitorEffects.get(_referenceSkill);
+			ICollection<SummonEffectTable.SummonEffect> effects = servitorEffects.get(_referenceSkill);
 			if ((effects != null) && !effects.isEmpty())
 			{
-				foreach (SummonEffect effect in effects)
+				foreach (SummonEffectTable.SummonEffect effect in effects)
 				{
 					Skill skill = effect.getSkill();
 					if ((skill != null) && (skill.getId() == skillId))
 					{
-						effects.remove(effect);
+						effects.Remove(effect);
 					}
 				}
 			}
@@ -231,9 +237,9 @@ public class Servitor : Summon, Runnable
 		}
 		
 		// Clear list for overwrite
-		if (SummonEffectTable.getInstance().getServitorEffectsOwner().getOrDefault(getOwner().getObjectId(), Collections.emptyMap()).containsKey(getOwner().getClassIndex()))
+		if (SummonEffectTable.getInstance().getServitorEffectsOwner().getOrDefault(getOwner().getObjectId(), new()).containsKey(getOwner().getClassIndex()))
 		{
-			SummonEffectTable.getInstance().getServitorEffects(getOwner()).getOrDefault(getReferenceSkill(), Collections.emptyList()).clear();
+			SummonEffectTable.getInstance().getServitorEffects(getOwner()).getOrDefault(getReferenceSkill(), new List<SummonEffectTable.SummonEffect>()).Clear();
 		}
 		
 		try 
@@ -308,18 +314,18 @@ public class Servitor : Summon, Runnable
 						// XXX: Rework me!
 						if (!SummonEffectTable.getInstance().getServitorEffectsOwner().containsKey(getOwner().getObjectId()))
 						{
-							SummonEffectTable.getInstance().getServitorEffectsOwner().put(getOwner().getObjectId(), new HashMap<>());
+							SummonEffectTable.getInstance().getServitorEffectsOwner().put(getOwner().getObjectId(), new());
 						}
 						if (!SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).containsKey(getOwner().getClassIndex()))
 						{
-							SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).put(getOwner().getClassIndex(), new HashMap<>());
+							SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).put(getOwner().getClassIndex(), new());
 						}
 						if (!SummonEffectTable.getInstance().getServitorEffects(getOwner()).containsKey(getReferenceSkill()))
 						{
-							SummonEffectTable.getInstance().getServitorEffects(getOwner()).put(getReferenceSkill(), ConcurrentHashMap.newKeySet());
+							SummonEffectTable.getInstance().getServitorEffects(getOwner()).put(getReferenceSkill(), new List<SummonEffectTable.SummonEffect>());
 						}
 						
-						SummonEffectTable.getInstance().getServitorEffects(getOwner()).get(getReferenceSkill()).add(new SummonEffect(skill, info.getTime()));
+						SummonEffectTable.getInstance().getServitorEffects(getOwner()).get(getReferenceSkill()).Add(new SummonEffectTable.SummonEffect(skill, info.getTime()));
 					}
 					ps2.executeBatch();
 				}
@@ -365,18 +371,18 @@ public class Servitor : Summon, Runnable
 							{
 								if (!SummonEffectTable.getInstance().getServitorEffectsOwner().containsKey(getOwner().getObjectId()))
 								{
-									SummonEffectTable.getInstance().getServitorEffectsOwner().put(getOwner().getObjectId(), new HashMap<>());
+									SummonEffectTable.getInstance().getServitorEffectsOwner().put(getOwner().getObjectId(), new());
 								}
 								if (!SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).containsKey(getOwner().getClassIndex()))
 								{
-									SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).put(getOwner().getClassIndex(), new HashMap<>());
+									SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).put(getOwner().getClassIndex(), new());
 								}
 								if (!SummonEffectTable.getInstance().getServitorEffects(getOwner()).containsKey(getReferenceSkill()))
 								{
-									SummonEffectTable.getInstance().getServitorEffects(getOwner()).put(getReferenceSkill(), ConcurrentHashMap.newKeySet());
+									SummonEffectTable.getInstance().getServitorEffects(getOwner()).put(getReferenceSkill(), new List<SummonEffectTable.SummonEffect>());
 								}
 								
-								SummonEffectTable.getInstance().getServitorEffects(getOwner()).get(getReferenceSkill()).add(new SummonEffect(skill, effectCurTime));
+								SummonEffectTable.getInstance().getServitorEffects(getOwner()).get(getReferenceSkill()).Add(new SummonEffectTable.SummonEffect(skill, effectCurTime));
 							}
 						}
 					}
@@ -467,9 +473,9 @@ public class Servitor : Summon, Runnable
 		return true;
 	}
 	
-	public override void run()
+	public void run()
 	{
-		int usedtime = 5000;
+		TimeSpan usedtime = TimeSpan.FromMilliseconds(5000);
 		_lifeTimeRemaining -= usedtime;
 		if (isDead() || !isSpawned())
 		{
@@ -481,7 +487,7 @@ public class Servitor : Summon, Runnable
 		}
 		
 		// check if the summon's lifetime has ran out
-		if (_lifeTimeRemaining < 0)
+		if (_lifeTimeRemaining < TimeSpan.Zero)
 		{
 			sendPacket(SystemMessageId.YOUR_SERVITOR_PASSED_AWAY);
 			unSummon(getOwner());
@@ -497,8 +503,8 @@ public class Servitor : Summon, Runnable
 			{
 				if (destroyItemByItemId("Consume", _itemConsume.getId(), _itemConsume.getCount(), this, false))
 				{
-					SystemMessage msg = new SystemMessage(SystemMessageId.A_SUMMONED_MONSTER_USES_S1);
-					msg.addItemName(_itemConsume.getId());
+					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.A_SUMMONED_MONSTER_USES_S1);
+					msg.Params.addItemName(_itemConsume.getId());
 					sendPacket(msg);
 					
 					// Reset

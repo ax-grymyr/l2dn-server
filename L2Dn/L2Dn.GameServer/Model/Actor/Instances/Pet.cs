@@ -21,7 +21,7 @@ using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -32,9 +32,6 @@ public class Pet: Summon
 	private const String ADD_SKILL_SAVE = "INSERT INTO character_pet_skills_save (petObjItemId,skill_id,skill_level,skill_sub_level,remaining_time,buff_index) VALUES (?,?,?,?,?,?)";
 	private const String RESTORE_SKILL_SAVE = "SELECT petObjItemId,skill_id,skill_level,skill_sub_level,remaining_time,buff_index FROM character_pet_skills_save WHERE petObjItemId=? ORDER BY buff_index ASC";
 	private const String DELETE_SKILL_SAVE = "DELETE FROM character_pet_skills_save WHERE petObjItemId=?";
-	private const String SELECT_PET_SKILLS = "SELECT * FROM pet_skills WHERE petObjItemId=?";
-	private const String INSERT_PET_SKILLS = "INSERT INTO pet_skills (petObjItemId, skillId, skillLevel) VALUES (?,?,?) ON DUPLICATE KEY UPDATE skillId=VALUES(skillId), skillLevel=VALUES(skillLevel), petObjItemId=VALUES(petObjItemId)";
-	private const String DELETE_PET_SKILLS = "DELETE FROM pet_skills WHERE petObjItemId=?";
 	
 	protected int _curFed;
 	protected readonly PetInventory _inventory;
@@ -930,23 +927,21 @@ public class Pet: Summon
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement =
-				con.prepareStatement(
-					"SELECT item_obj_id, name, level, curHp, curMp, exp, sp, fed FROM pets WHERE item_obj_id=?");
+			int controlObjectId = control.getObjectId();
+
 			Pet pet;
-			statement.setInt(1, control.getObjectId());
-			ResultSet rset = statement.executeQuery();
+			Db.Pet? record = ctx.Pets.SingleOrDefault(r => r.ItemObjectId == controlObjectId);
+			if (record is null)
 			{
-				if (!rset.next())
-				{
-					return new Pet(template, owner, control);
-				}
-				
-				pet = new Pet(template, owner, control, rset.getInt("level"));
+				pet = new Pet(template, owner, control);
+			}
+			else
+			{
+				pet = new Pet(template, owner, control, record.Level);
 				pet._respawned = true;
-				pet.setName(rset.getString("name"));
+				pet.setName(record.Name);
 				
-				long exp = rset.getLong("exp");
+				long exp = record.Exp;
 				PetLevelData info = PetDataTable.getInstance().getPetLevelData(pet.getId(), pet.getLevel());
 				// DS: update experience based by level
 				// Avoiding pet delevels due to exp per level values changed.
@@ -956,13 +951,13 @@ public class Pet: Summon
 				}
 				
 				pet.getStat().setExp(exp);
-				pet.getStat().setLevel(rset.getInt("level"));
-				pet.getStat().setSp(rset.getInt("sp"));
+				pet.getStat().setLevel(record.Level);
+				pet.getStat().setSp(record.Sp);
 				
-				pet.getStatus().setCurrentHp(rset.getInt("curHp"));
-				pet.getStatus().setCurrentMp(rset.getInt("curMp"));
+				pet.getStatus().setCurrentHp(record.CurrentHp);
+				pet.getStatus().setCurrentMp(record.CurrentMp);
 				pet.getStatus().setCurrentCp(pet.getMaxCp());
-				if (rset.getDouble("curHp") < 1)
+				if (record.CurrentHp < 1)
 				{
 					// Pet related - Removed on Essence.
 					// pet.setDead(true);
@@ -970,9 +965,11 @@ public class Pet: Summon
 					// Pet related - Added the following.
 					pet.setCurrentHpMp(pet.getMaxHp(), pet.getMaxMp());
 				}
+				
 				pet.setEvolveLevel(pet.getPetData().getEvolveLevel());
-				pet.setCurrentFed(rset.getInt("fed"));
+				pet.setCurrentFed(record.Fed);
 			}
+
 			return pet;
 		}
 		catch (Exception e)
@@ -1217,7 +1214,7 @@ public class Pet: Summon
 		stopFeed();
 		if (!isDead() && (getOwner().getPet() == this))
 		{
-			_feedTask = ThreadPool.scheduleAtFixedRate(new FeedTask(), 10000, 10000);
+			_feedTask = ThreadPool.scheduleAtFixedRate(new FeedTask(this), 10000, 10000);
 		}
 	}
 	
@@ -1247,7 +1244,7 @@ public class Pet: Summon
 		if (_expBeforeDeath > 0)
 		{
 			// Restore the specified % of lost experience.
-			getStat().addExp(Math.Round(((_expBeforeDeath - getStat().getExp()) * restorePercent) / 100));
+			getStat().addExp((long)Math.Round(((_expBeforeDeath - getStat().getExp()) * restorePercent) / 100));
 			_expBeforeDeath = 0;
 		}
 	}
@@ -1465,8 +1462,7 @@ public class Pet: Summon
 				// name not set yet
 				controlItem.setCustomType2(name != null ? 1 : 0);
 				controlItem.updateDatabase();
-				InventoryUpdate iu = new InventoryUpdate();
-				iu.addModifiedItem(controlItem);
+				InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(controlItem, ItemChangeType.MODIFIED));
 				getOwner().sendInventoryUpdate(iu);
 			}
 		}
@@ -1608,8 +1604,7 @@ public class Pet: Summon
 			}
 		}
 		
-		PetInventoryUpdate petIU = new PetInventoryUpdate();
-		petIU.addItems(items);
+		PetInventoryUpdatePacket petIU = new PetInventoryUpdatePacket(items);
 		sendInventoryUpdate(petIU);
 		
 		if (abortAttack)

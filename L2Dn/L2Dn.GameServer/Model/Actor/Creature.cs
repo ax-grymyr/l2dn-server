@@ -5092,17 +5092,17 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	{
 	}
 	
-	public AttributeType getAttackElement()
+	public virtual AttributeType getAttackElement()
 	{
 		return _stat.getAttackElement();
 	}
 	
-	public int getAttackElementValue(AttributeType attackAttribute)
+	public virtual int getAttackElementValue(AttributeType attackAttribute)
 	{
 		return _stat.getAttackElementValue(attackAttribute);
 	}
 	
-	public int getDefenseElementValue(AttributeType defenseAttribute)
+	public virtual int getDefenseElementValue(AttributeType defenseAttribute)
 	{
 		return _stat.getDefenseElementValue(defenseAttribute);
 	}

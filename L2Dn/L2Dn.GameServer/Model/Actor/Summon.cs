@@ -189,12 +189,12 @@ public abstract class Summon : Playable
 	/**
 	 * @return Returns the mountable.
 	 */
-	public bool isMountable()
+	public virtual bool isMountable()
 	{
 		return false;
 	}
 	
-	public long getExpForThisLevel()
+	public virtual long getExpForThisLevel()
 	{
 		if (getLevel() >= ExperienceData.getInstance().getMaxPetLevel())
 		{
@@ -203,7 +203,7 @@ public abstract class Summon : Playable
 		return ExperienceData.getInstance().getExpForLevel(getLevel());
 	}
 	
-	public long getExpForNextLevel()
+	public virtual long getExpForNextLevel()
 	{
 		if (getLevel() >= (ExperienceData.getInstance().getMaxPetLevel() - 1))
 		{

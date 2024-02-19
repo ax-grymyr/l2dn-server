@@ -2,9 +2,11 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Effects;
+using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -27,8 +29,8 @@ public class TamedBeast: FeedableBeast
 	private int _homeY;
 	private int _homeZ;
 	protected Player _owner;
-	private Future<?> _buffTask = null;
-	private Future<?> _durationCheckTask = null;
+	private ScheduledFuture _buffTask = null;
+	private ScheduledFuture _durationCheckTask = null;
 	protected bool _isFreyaBeast;
 	private Set<Skill> _beastSkills = null;
 	
@@ -182,30 +184,32 @@ public class TamedBeast: FeedableBeast
 		int delay = 100;
 		foreach (Skill skill in _beastSkills)
 		{
-			ThreadPool.schedule(new buffCast(skill), delay);
+			ThreadPool.schedule(new buffCast(this, skill), delay);
 			delay += (100 + skill.getHitTime());
 		}
-		ThreadPool.schedule(new buffCast(null), delay);
+		ThreadPool.schedule(new buffCast(this, null), delay);
 	}
 	
 	private class buffCast: Runnable
 	{
-		private Skill _skill;
+		private readonly TamedBeast _tamedBeast;
+		private readonly Skill _skill;
 		
-		public buffCast(Skill skill)
+		public buffCast(TamedBeast tamedBeast, Skill skill)
 		{
+			_tamedBeast = tamedBeast;
 			_skill = skill;
 		}
 		
-		public override void run()
+		public void run()
 		{
 			if (_skill == null)
 			{
-				getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, _owner);
+				_tamedBeast.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, _tamedBeast._owner);
 			}
 			else
 			{
-				sitCastAndFollow(_skill, _owner);
+				_tamedBeast.sitCastAndFollow(_skill, _tamedBeast._owner);
 			}
 		}
 	}
@@ -223,7 +227,7 @@ public class TamedBeast: FeedableBeast
 			setTitle(owner.getName());
 			// broadcast the new title
 			setShowSummonAnimation(true);
-			broadcastPacket(new NpcInfo(this));
+			broadcastPacket(new NpcInfoPacket(this));
 			owner.addTrainedBeast(this);
 			
 			// always and automatically follow the owner.
@@ -246,7 +250,9 @@ public class TamedBeast: FeedableBeast
 				{
 					_buffTask.cancel(true);
 				}
-				_buffTask = ThreadPool.scheduleAtFixedRate(new CheckOwnerBuffs(this, totalBuffsAvailable), BUFF_INTERVAL, BUFF_INTERVAL);
+
+				_buffTask = ThreadPool.scheduleAtFixedRate(new CheckOwnerBuffs(this, totalBuffsAvailable),
+					BUFF_INTERVAL, BUFF_INTERVAL);
 			}
 		}
 		else
@@ -308,7 +314,7 @@ public class TamedBeast: FeedableBeast
 		}
 		
 		// if the tamed beast is currently in the middle of casting, let it complete its skill...
-		if (isCastingNow(SkillCaster::isAnyNormalType))
+		if (isCastingNow(x => x.isAnyNormalType()))
 		{
 			return;
 		}
@@ -361,7 +367,7 @@ public class TamedBeast: FeedableBeast
 	protected void sitCastAndFollow(Skill skill, Creature target)
 	{
 		stopMove(null);
-		broadcastPacket(new StopMove(this));
+		broadcastPacket(new StopMovePacket(this));
 		getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		
 		setTarget(target);
@@ -373,12 +379,12 @@ public class TamedBeast: FeedableBeast
 	{
 		private TamedBeast _tamedBeast;
 		
-		CheckDuration(TamedBeast tamedBeast)
+		public CheckDuration(TamedBeast tamedBeast)
 		{
 			_tamedBeast = tamedBeast;
 		}
 		
-		public override void run()
+		public void run()
 		{
 			int foodTypeSkillId = _tamedBeast.getFoodType();
 			Player owner = _tamedBeast.getOwner();
@@ -389,7 +395,7 @@ public class TamedBeast: FeedableBeast
 				if ((item != null) && (item.getCount() >= 1))
 				{
 					owner.destroyItem("BeastMob", item, 1, _tamedBeast, true);
-					_tamedBeast.broadcastPacket(new SocialAction(_tamedBeast.getObjectId(), 3));
+					_tamedBeast.broadcastPacket(new SocialActionPacket(_tamedBeast.getObjectId(), 3));
 				}
 				else
 				{
@@ -447,26 +453,26 @@ public class TamedBeast: FeedableBeast
 		private TamedBeast _tamedBeast;
 		private int _numBuffs;
 		
-		CheckOwnerBuffs(TamedBeast tamedBeast, int numBuffs)
+		public CheckOwnerBuffs(TamedBeast tamedBeast, int numBuffs)
 		{
 			_tamedBeast = tamedBeast;
 			_numBuffs = numBuffs;
 		}
 		
-		public override void run()
+		public void run()
 		{
 			Player owner = _tamedBeast.getOwner();
 			
 			// check if the owner is no longer around...if so, despawn
 			if ((owner == null) || !owner.isOnline())
 			{
-				deleteMe();
+				_tamedBeast.deleteMe();
 				return;
 			}
 			// if the owner is too far away, stop anything else and immediately run towards the owner.
-			if (!isInsideRadius3D(owner, MAX_DISTANCE_FROM_OWNER))
+			if (!_tamedBeast.isInsideRadius3D(owner, MAX_DISTANCE_FROM_OWNER))
 			{
-				getAI().startFollow(owner);
+				_tamedBeast.getAI().startFollow(owner);
 				return;
 			}
 			// if the owner is dead, do nothing...
@@ -475,7 +481,7 @@ public class TamedBeast: FeedableBeast
 				return;
 			}
 			// if the tamed beast is currently casting a spell, do not interfere (do not attempt to cast anything new yet).
-			if (isCastingNow(SkillCaster::isAnyNormalType))
+			if (_tamedBeast.isCastingNow(x => x.isAnyNormalType()))
 			{
 				return;
 			}
@@ -506,7 +512,8 @@ public class TamedBeast: FeedableBeast
 			{
 				_tamedBeast.sitCastAndFollow(buffToGive, owner);
 			}
-			getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, _tamedBeast.getOwner());
+			
+			_tamedBeast.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, _tamedBeast.getOwner());
 		}
 	}
 	
@@ -532,7 +539,7 @@ public class TamedBeast: FeedableBeast
 			else
 			{
 				// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
-				player.sendPacket(ActionFailed.STATIC_PACKET);
+				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			}
 		}
 	}

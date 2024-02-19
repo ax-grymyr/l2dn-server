@@ -24,6 +24,12 @@ public readonly struct PetInventoryUpdatePacket: IOutgoingPacket
 		_helper.Items.Add(item);
 	}
 	
+	public PetInventoryUpdatePacket(List<Item> items)
+	{
+		_helper = new InventoryPacketHelper();
+		_helper.Items.AddRange(items.Select(i => new ItemInfo(i)));
+	}
+	
 	public PetInventoryUpdatePacket(List<ItemInfo> items)
 	{
 		_helper = new InventoryPacketHelper();
