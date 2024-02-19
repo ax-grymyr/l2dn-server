@@ -1,3 +1,5 @@
+using L2Dn.GameServer.Enums;
+
 namespace L2Dn.GameServer.Model.Holders;
 
 /**
@@ -7,7 +9,7 @@ public class ElementalSpiritDataHolder
 {
 	private int _charId;
 	private int _level = 1;
-	private byte _type;
+	private ElementalType _type;
 	private byte _stage = 1;
 	private long _experience;
 	private byte _attackPoints;
@@ -20,7 +22,7 @@ public class ElementalSpiritDataHolder
 	{
 	}
 
-	public ElementalSpiritDataHolder(byte type, int objectId)
+	public ElementalSpiritDataHolder(ElementalType type, int objectId)
 	{
 		_charId = objectId;
 		_type = type;
@@ -46,12 +48,12 @@ public class ElementalSpiritDataHolder
 		_level = level;
 	}
 
-	public byte getType()
+	public ElementalType getType()
 	{
 		return _type;
 	}
 
-	public void setType(byte type)
+	public void setType(ElementalType type)
 	{
 		_type = type;
 	}

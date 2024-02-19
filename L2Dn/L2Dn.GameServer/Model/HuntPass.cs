@@ -1,9 +1,10 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model;
 
@@ -26,7 +27,7 @@ public class HuntPass
 	
 	private bool _toggleSayha = false;
 	private ScheduledFuture _sayhasSustentionTask = null;
-	private int _toggleStartTime = 0;
+	private DateTime? _toggleStartTime;
 	private int _usedSayhaTime;
 	
 	private static int _dayEnd = 0;
@@ -42,27 +43,24 @@ public class HuntPass
 	public void restoreHuntPass()
 	{
 		try 
-		{ using GameServerDbContext ctx = new();
-			using PreparedStatement statement = con.prepareStatement(RESTORE_SEASONPASS);
-			statement.setString(1, getAccountName());
-			using ResultSet rset = statement.executeQuery();				
-				if (rset.next())
-				{
-					setPoints(rset.getInt("points"));
-					setCurrentStep(rset.getInt("current_step"));
-					setRewardStep(rset.getInt("reward_step"));
-					setPremium(rset.getBoolean("is_premium"));
-					setPremiumRewardStep(rset.getInt("premium_reward_step"));
-					setAvailableSayhaTime(rset.getInt("sayha_points_available"));
-					setUsedSayhaTime(rset.getInt("sayha_points_used"));
-					setRewardAlert(rset.getBoolean("unclaimed_reward"));
-				}
-				rset.close();
-				statement.close();
+		{ 
+			int accountId = _user.getAccountId();
+			using GameServerDbContext ctx = new();
+			foreach (Db.HuntPass record in ctx.HuntPasses.Where(r => r.AccountId == accountId))
+			{
+				setPoints(record.Points);
+				setCurrentStep(record.CurrentStep);
+				setRewardStep(record.RewardStep);
+				setPremium(record.IsPremium);
+				setPremiumRewardStep(record.PremiumRewardStep);
+				setAvailableSayhaTime(record.SayhaPointsAvailable);
+				setUsedSayhaTime(record.SayhaPointsUsed);
+				setRewardAlert(record.UnclaimedReward);
+			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error("Could not restore Season Pass for playerId: " + _user.getAccountName());
+			LOGGER.Error("Could not restore Season Pass for playerId: " + _user.getAccountName() + ": " + e);
 		}
 	}
 	
@@ -88,19 +86,27 @@ public class HuntPass
 	{
 		try 
 		{
+			int accountId = _user.getAccountId();
 			using GameServerDbContext ctx = new();
-			using PreparedStatement statement = con.prepareStatement(INSERT_SEASONPASS);
-			statement.setString(1, getAccountName());
-			statement.setInt(2, getCurrentStep());
-			statement.setInt(3, getPoints());
-			statement.setInt(4, getRewardStep());
-			statement.setBoolean(5, isPremium());
-			statement.setInt(6, getPremiumRewardStep());
-			statement.setInt(7, getAvailableSayhaTime());
-			statement.setInt(8, getUsedSayhaTime());
-			statement.setBoolean(9, rewardAlert());
-			statement.execute();
-			statement.close();
+			Db.HuntPass? huntPass = ctx.HuntPasses.SingleOrDefault(r => r.AccountId == accountId);
+			if (huntPass is null)
+			{
+				huntPass = new Db.HuntPass();
+				huntPass.AccountId = accountId;
+				ctx.HuntPasses.Add(huntPass);
+			}
+
+			huntPass.CurrentStep = getCurrentStep();
+			huntPass.Points = getPoints();
+			huntPass.RewardStep = getRewardStep();
+			huntPass.IsPremium = isPremium();
+			huntPass.RewardStep = getRewardStep();
+			huntPass.PremiumRewardStep = getPremiumRewardStep();
+			huntPass.SayhaPointsAvailable = getAvailableSayhaTime();
+			huntPass.SayhaPointsUsed = getUsedSayhaTime();
+			huntPass.UnclaimedReward = rewardAlert();
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -268,7 +274,7 @@ public class HuntPass
 		_usedSayhaTime += time;
 	}
 	
-	public int getToggleStartTime()
+	public DateTime? getToggleStartTime()
 	{
 		return _toggleStartTime;
 	}
@@ -278,14 +284,14 @@ public class HuntPass
 		_toggleSayha = active;
 		if (active)
 		{
-			_toggleStartTime = (int) (System.currentTimeMillis() / 1000);
+			_toggleStartTime = DateTime.UtcNow;
 			if (_sayhasSustentionTask != null)
 			{
 				_sayhasSustentionTask.cancel(true);
 				_sayhasSustentionTask = null;
 			}
 			_user.sendPacket(SystemMessageId.SAYHA_S_GRACE_SUSTENTION_EFFECT_OF_THE_SEASON_PASS_IS_ACTIVATED_AVAILABLE_SAYHA_S_GRACE_SUSTENTION_TIME_IS_BEING_CONSUMED);
-			_sayhasSustentionTask = ThreadPool.schedule(this::onSayhaEndTime, Math.Max(0, getAvailableSayhaTime() - getUsedSayhaTime()) * 1000L);
+			_sayhasSustentionTask = ThreadPool.schedule(onSayhaEndTime, Math.Max(0, getAvailableSayhaTime() - getUsedSayhaTime()) * 1000L);
 		}
 		else
 		{

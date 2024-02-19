@@ -1,5 +1,6 @@
 using System.Xml.Linq;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
@@ -25,7 +26,7 @@ public class ElementalSpiritData: DataReaderBase
 		1500000
 	};
 	
-	private static readonly Map<Byte, Map<Byte, ElementalSpiritTemplateHolder>> SPIRIT_DATA = new();
+	private static readonly Map<ElementalType, Map<byte, ElementalSpiritTemplateHolder>> SPIRIT_DATA = new();
 	
 	protected ElementalSpiritData()
 	{
@@ -42,7 +43,7 @@ public class ElementalSpiritData: DataReaderBase
 	
 	private void parseSpirit(XElement spiritNode)
 	{
-		byte type = spiritNode.Attribute("type").GetByte();
+		ElementalType type = (ElementalType)spiritNode.Attribute("type").GetByte();
 		byte stage = spiritNode.Attribute("stage").GetByte();
 		int npcId = spiritNode.Attribute("npcId").GetInt32();
 		int extractItem = spiritNode.Attribute("extractItem").GetInt32();
@@ -76,7 +77,7 @@ public class ElementalSpiritData: DataReaderBase
 		});
 	}
 	
-	public ElementalSpiritTemplateHolder getSpirit(byte type, byte stage)
+	public ElementalSpiritTemplateHolder getSpirit(ElementalType type, byte stage)
 	{
 		if (SPIRIT_DATA.containsKey(type))
 		{

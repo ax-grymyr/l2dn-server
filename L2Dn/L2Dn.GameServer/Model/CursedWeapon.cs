@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
@@ -9,6 +10,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -38,7 +40,7 @@ public class CursedWeapon : INamable
 	private ScheduledFuture _removeTask;
 	
 	private int _nbKills = 0;
-	private DateTime _endTime;
+	private DateTime? _endTime;
 	
 	private int _playerId = 0;
 	protected Player _player = null;
@@ -83,28 +85,22 @@ public class CursedWeapon : INamable
 			{
 				// Remove from Db
 				LOGGER.Info(_name + " being removed offline.");
-				
-				try {
+
+				try
+				{
 					using GameServerDbContext ctx = new();
-					PreparedStatement del = con.prepareStatement("DELETE FROM items WHERE owner_id=? AND item_id=?");
-					PreparedStatement ps =
-						con.prepareStatement("UPDATE characters SET reputation=?, pkkills=? WHERE charId=?");
-					// Delete the item
-					del.setInt(1, _playerId);
-					del.setInt(2, _itemId);
-					if (del.executeUpdate() != 1)
-					{
-						LOGGER.Warn("Error while deleting itemId " + _itemId + " from userId " + _playerId);
-					}
 					
-					// Restore the reputation
-					ps.setInt(1, _playerReputation);
-					ps.setInt(2, _playerPkKills);
-					ps.setInt(3, _playerId);
-					if (ps.executeUpdate() != 1)
-					{
+					int recordCnt = ctx.Items.Where(r => r.OwnerId == _playerId && r.ItemId == _itemId).ExecuteDelete();
+					if (recordCnt != 1)
+						LOGGER.Error("Error while deleting itemId " + _itemId + " from userId " + _playerId);
+
+					recordCnt = ctx.Characters.Where(r => r.Id == _playerId)
+						.ExecuteUpdate(s =>
+							s.SetProperty(r => r.Reputation, _playerReputation)
+								.SetProperty(r => r.PkKills, _playerPkKills));
+
+					if (recordCnt != 1)
 						LOGGER.Warn("Error while updating karma & pkkills for userId " + _playerId);
-					}
 				}
 				catch (Exception e)
 				{
@@ -142,7 +138,7 @@ public class CursedWeapon : INamable
 		cancelTask();
 		_isActivated = false;
 		_isDropped = false;
-		_endTime = 0;
+		_endTime = null;
 		_player = null;
 		_playerId = 0;
 		_playerReputation = 0;
@@ -189,7 +185,7 @@ public class CursedWeapon : INamable
 		if (fromMonster)
 		{
 			_item = attackable.dropItem(player, _itemId, 1);
-			_item.setDropTime(0); // Prevent item from being removed by ItemsAutoDestroy
+			_item.setDropTime(null); // Prevent item from being removed by ItemsAutoDestroy
 			
 			// RedSky and Earthquake
 			ExRedSky rs = new ExRedSky(10);

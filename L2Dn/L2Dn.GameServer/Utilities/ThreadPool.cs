@@ -39,13 +39,12 @@ public static class ThreadPool
 
     public static ScheduledFuture scheduleAtFixedRate(Action action, int initialDelayInMs, int periodInMs)
     {
-        return new ScheduledFuture(action, Validate(initialDelayInMs), Validate(periodInMs));
+        return scheduleAtFixedRate(action, TimeSpan.FromMilliseconds(initialDelayInMs), TimeSpan.FromMilliseconds(periodInMs));
     }
     
     public static ScheduledFuture scheduleAtFixedRate(Action action, TimeSpan initialDelayInMs, TimeSpan periodInMs)
     {
-        return new ScheduledFuture(action, Validate((int)initialDelayInMs.TotalMilliseconds),
-            Validate((int)periodInMs.TotalMilliseconds));
+        return new ScheduledFuture(action, Validate(initialDelayInMs), Validate(periodInMs));
     }
     
     public static ScheduledFuture scheduleAtFixedRate(Runnable runnable, int initialDelayInMs, int periodInMs)
@@ -55,32 +54,31 @@ public static class ThreadPool
     
     public static ScheduledFuture schedule(Runnable runnable, int delayInMs)
     {
-        return new ScheduledFuture(runnable.run, Validate(delayInMs), Timeout.Infinite);
+        return schedule(runnable.run, TimeSpan.FromMilliseconds(delayInMs));
     }
     
     public static ScheduledFuture schedule(Runnable runnable, TimeSpan delay)
     {
-        return schedule(runnable, (int)delay.TotalMilliseconds);
+        return new ScheduledFuture(runnable.run, delay, Timeout.InfiniteTimeSpan);
     }
     
     public static ScheduledFuture schedule(Action action, int delayInMs)
     {
-        return new ScheduledFuture(action, Validate(delayInMs), Timeout.Infinite);
+        return schedule(action, TimeSpan.FromMilliseconds(delayInMs));
     }
     
     public static ScheduledFuture schedule(Action action, TimeSpan delay)
     {
-        return schedule(action, (int)delay.TotalMilliseconds);
+        return new ScheduledFuture(action, delay, Timeout.InfiniteTimeSpan);
     }
     
-    private static int Validate(int delay)
+    private static TimeSpan Validate(TimeSpan delay)
     {
-        if (delay < 0)
+        if (delay < TimeSpan.Zero)
         {
-            LOGGER.Warn("ThreadPool found delay " + delay + "!");
             StackTrace stackTrace = new StackTrace();
-            LOGGER.Warn(stackTrace.ToString());
-            return 0;
+            LOGGER.Error("ThreadPool found delay " + delay + "!\n" + stackTrace);
+            return TimeSpan.Zero;
         }
         
         return delay;

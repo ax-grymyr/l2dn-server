@@ -5,7 +5,7 @@ using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model;
 
@@ -52,7 +52,7 @@ public class EffectList
 	/** Hidden buffs count, prevents iterations. */
 	private readonly AtomicInteger _hiddenBuffs = new AtomicInteger();
 	/** Delay task **/
-	private ScheduledFuture<?> _updateEffectIconTask;
+	private ScheduledFuture _updateEffectIconTask;
 	private readonly AtomicBoolean _updateAbnormalStatus = new AtomicBoolean();
 	
 	/**
@@ -1072,16 +1072,16 @@ public class EffectList
 					}
 					
 					// Send icon update for player buff bar.
-					asu.ifPresent(_owner::sendPacket);
+					asu.ifPresent(x => _owner.sendPacket(x));
 					
 					// Player or summon is in party. Broadcast packet to everyone in the party.
 					if (party != null)
 					{
-						ps.ifPresent(party::broadcastPacket);
+						ps.ifPresent(x => party.broadcastPacket(x));
 					}
 					else // Not in party, then its a summon info for its owner.
 					{
-						ps.ifPresent(player::sendPacket);
+						ps.ifPresent(x => player.sendPacket(x));
 					}
 					
 					// Send icon update to all olympiad observers.
@@ -1090,7 +1090,7 @@ public class EffectList
 						OlympiadGameTask game = OlympiadGameManager.getInstance().getOlympiadTask(player.getOlympiadGameId());
 						if ((game != null) && game.isBattleStarted())
 						{
-							os.ifPresent(game.getStadium()::broadcastPacketToObservers);
+							os.ifPresent(x => game.getStadium().broadcastPacketToObservers(x));
 						}
 					}
 				}

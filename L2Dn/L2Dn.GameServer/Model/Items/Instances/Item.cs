@@ -77,7 +77,7 @@ public class Item: WorldObject
 	private int _type1;
 	private int _type2;
 	
-	private DateTime _dropTime;
+	private DateTime? _dropTime;
 	
 	private bool _published = false;
 	
@@ -591,7 +591,7 @@ public class Item: WorldObject
 		_type2 = newtype;
 	}
 	
-	public void setDropTime(DateTime time)
+	public void setDropTime(DateTime? time)
 	{
 		_dropTime = time;
 	}

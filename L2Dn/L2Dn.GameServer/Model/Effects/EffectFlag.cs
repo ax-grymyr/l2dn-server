@@ -41,3 +41,11 @@ public enum EffectFlag
     DUELIST_FURY,
     FEAR
 }
+
+public static class EffectFlagUtil
+{
+    public static long getMask(this EffectFlag effectFlag)
+    {
+        return 1L << (int)effectFlag;
+    }
+}

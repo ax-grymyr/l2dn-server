@@ -11,11 +11,11 @@ public class ScheduledFuture
     private bool _cancelled;
     private bool _done;
 
-    public ScheduledFuture(Action action, int initialDelayInMs, int periodInMs)
+    public ScheduledFuture(Action action, TimeSpan initialDelay, TimeSpan period)
     {
         _action = action;
-        _oneTime = periodInMs == Timeout.Infinite;
-        _timer = new Timer(Run, null, initialDelayInMs, periodInMs);
+        _oneTime = period == Timeout.InfiniteTimeSpan;
+        _timer = new Timer(Run, null, initialDelay, period);
     }
 
     private void Run(object? state)

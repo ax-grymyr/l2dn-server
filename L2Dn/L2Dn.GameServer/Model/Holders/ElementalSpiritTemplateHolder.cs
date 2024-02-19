@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Holders;
@@ -7,7 +8,7 @@ namespace L2Dn.GameServer.Model.Holders;
  */
 public class ElementalSpiritTemplateHolder
 {
-	private readonly byte _type;
+	private readonly ElementalType _type;
 	private readonly byte _stage;
 	private readonly int _npcId;
 	private readonly int _maxCharacteristics;
@@ -17,7 +18,7 @@ public class ElementalSpiritTemplateHolder
 	private List<ItemHolder> _itemsToEvolve;
 	private List<ElementalSpiritAbsorbItemHolder> _absorbItems;
 
-	public ElementalSpiritTemplateHolder(byte type, byte stage, int npcId, int extractItem, int maxCharacteristics)
+	public ElementalSpiritTemplateHolder(ElementalType type, byte stage, int npcId, int extractItem, int maxCharacteristics)
 	{
 		_type = type;
 		_stage = stage;
@@ -49,7 +50,7 @@ public class ElementalSpiritTemplateHolder
 		_itemsToEvolve.Add(new ItemHolder(itemId, count));
 	}
 
-	public byte getType()
+	public ElementalType getType()
 	{
 		return _type;
 	}
@@ -102,7 +103,7 @@ public class ElementalSpiritTemplateHolder
 
 	public List<ItemHolder> getItemsToEvolve()
 	{
-		return _itemsToEvolve == null ? Collections.emptyList() : _itemsToEvolve;
+		return _itemsToEvolve == null ? new() : _itemsToEvolve;
 	}
 
 	public void addAbsorbItem(int itemId, int experience)
@@ -117,7 +118,7 @@ public class ElementalSpiritTemplateHolder
 
 	public List<ElementalSpiritAbsorbItemHolder> getAbsorbItems()
 	{
-		return _absorbItems == null ? Collections.emptyList() : _absorbItems;
+		return _absorbItems == null ? new() : _absorbItems;
 	}
 
 	public int getExtractItem()
@@ -127,14 +128,10 @@ public class ElementalSpiritTemplateHolder
 
 	private class SpiritLevel
 	{
-		public SpiritLevel()
-		{
-		}
-
-		long maxExperience;
-		int criticalDamage;
-		int criticalRate;
-		int defense;
-		int attack;
+		public long maxExperience;
+		public int criticalDamage;
+		public int criticalRate;
+		public int defense;
+		public int attack;
 	}
 }

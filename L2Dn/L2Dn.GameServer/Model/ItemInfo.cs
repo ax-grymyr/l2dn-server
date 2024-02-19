@@ -103,19 +103,19 @@ public class ItemInfo
 		// Get the action to do clientside
 		switch (item.getLastChange())
 		{
-			case Item.ADDED:
+			case ItemChangeType.ADDED:
 			{
-				_change = 1;
+				_change = ItemChangeType.ADDED;
 				break;
 			}
-			case Item.MODIFIED:
+			case ItemChangeType.MODIFIED:
 			{
-				_change = 2;
+				_change = ItemChangeType.MODIFIED;
 				break;
 			}
-			case Item.REMOVED:
+			case ItemChangeType.REMOVED:
 			{
-				_change = 3;
+				_change = ItemChangeType.REMOVED;
 				break;
 			}
 		}
@@ -280,8 +280,8 @@ public class ItemInfo
 			_attributeDefence[i] = item.getElementDefAttr(i);
 		}
 		_option = item.getEnchantOptions();
-		_soulCrystalOptions = item.getSoulCrystalOptions();
-		_soulCrystalSpecialOptions = item.getSoulCrystalSpecialOptions();
+		_soulCrystalOptions = item.getSoulCrystalOptions().ToList();
+		_soulCrystalSpecialOptions = item.getSoulCrystalSpecialOptions().ToList();
 		_isBlessed = item.isBlessed();
 	}
 	
@@ -330,7 +330,7 @@ public class ItemInfo
 		return _equipped;
 	}
 	
-	public int getChange()
+	public ItemChangeType getChange()
 	{
 		return _change;
 	}
@@ -367,7 +367,7 @@ public class ItemInfo
 	
 	public int getAttributeDefence(AttributeType attribute)
 	{
-		return _attributeDefence[attribute.getClientId()];
+		return _attributeDefence[(int)attribute];
 	}
 	
 	public int[] getEnchantOptions()
@@ -380,9 +380,9 @@ public class ItemInfo
 		return _visualId;
 	}
 	
-	public Collection<EnsoulOption> getSoulCrystalOptions()
+	public List<EnsoulOption> getSoulCrystalOptions()
 	{
-		return _soulCrystalOptions != null ? _soulCrystalOptions : Collections.emptyList();
+		return _soulCrystalOptions != null ? _soulCrystalOptions : new();
 	}
 	
 	public bool soulCrystalOptionsMatch(EnsoulOption[] soulCrystalOptions)
@@ -397,7 +397,7 @@ public class ItemInfo
 			bool found = false;
 			foreach (EnsoulOption soulCrystalOption2 in soulCrystalOptions)
 			{
-				if (soulCrystalOption1.equals(soulCrystalOption2))
+				if (soulCrystalOption1.Equals(soulCrystalOption2))
 				{
 					found = true;
 					break;
@@ -412,9 +412,9 @@ public class ItemInfo
 		return true;
 	}
 	
-	public Collection<EnsoulOption> getSoulCrystalSpecialOptions()
+	public List<EnsoulOption> getSoulCrystalSpecialOptions()
 	{
-		return _soulCrystalSpecialOptions != null ? _soulCrystalSpecialOptions : Collections.emptyList();
+		return _soulCrystalSpecialOptions != null ? _soulCrystalSpecialOptions : new();
 	}
 	
 	public bool soulCrystalSpecialOptionsMatch(EnsoulOption[] soulCrystalSpecialOptions)
@@ -429,7 +429,7 @@ public class ItemInfo
 			bool found = false;
 			foreach (EnsoulOption soulCrystalSpecialOption2 in soulCrystalSpecialOptions)
 			{
-				if (soulCrystalSpecialOption1.equals(soulCrystalSpecialOption2))
+				if (soulCrystalSpecialOption1.Equals(soulCrystalSpecialOption2))
 				{
 					found = true;
 					break;

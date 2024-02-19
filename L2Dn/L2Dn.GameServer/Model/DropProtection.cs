@@ -2,7 +2,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model;
 
@@ -10,7 +10,7 @@ public class DropProtection: Runnable
 {
     private volatile bool _isProtected = false;
     private Creature _owner = null;
-    private ScheduledFuture<?> _task = null;
+    private ScheduledFuture _task = null;
 
     private const long PROTECTED_MILLIS_TIME = 15000;
 
@@ -87,6 +87,6 @@ public class DropProtection: Runnable
             throw new InvalidOperationException("Trying to protect dropped item to null owner");
         }
 
-        _task = ThreadPool.schedule(this, PROTECTED_MILLIS_TIME);
+        _task = ThreadPool.schedule(this, TimeSpan.FromMilliseconds(PROTECTED_MILLIS_TIME));
     }
 }

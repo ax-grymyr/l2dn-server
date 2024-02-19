@@ -1,6 +1,6 @@
 ﻿namespace L2Dn.GameServer.Enums;
 
-public enum ElementalType
+public enum ElementalType: byte
 {
     NONE,
     FIRE,

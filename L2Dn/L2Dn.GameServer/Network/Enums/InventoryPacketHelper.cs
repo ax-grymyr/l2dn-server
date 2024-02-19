@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Ensoul;
+using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.Enums;
@@ -23,6 +24,11 @@ public class InventoryPacketHelper
             writer.WriteInt16((short)item.getChange()); // Update type : 01-add, 02-modify, 03-remove // TODO: make enum
             WriteItem(writer, item);
         }
+    }
+
+    public static void WriteItem(PacketBitWriter writer, Item item)
+    {
+        WriteItem(writer, new ItemInfo(item));
     }
 
     public static void WriteItem(PacketBitWriter writer, ItemInfo item)

@@ -94,7 +94,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	private CrystalType _crystalType;
 	private int _equipReuseDelay;
 	private int _duration;
-	private long _time;
+	private DateTime? _time;
 	private int _autoDestroyTime;
 	private long _bodyPart;
 	private int _referencePrice;
@@ -289,7 +289,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	 * Returns the time of the item
 	 * @return long
 	 */
-	public long getTime()
+	public DateTime? getTime()
 	{
 		return _time;
 	}

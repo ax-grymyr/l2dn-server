@@ -1,15 +1,19 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
+using NLog;
 
 namespace L2Dn.GameServer.Model;
 
 public class ElementalSpirit
 {
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(ElementalSpirit));
 	private const String STORE_ELEMENTAL_SPIRIT_QUERY = "REPLACE INTO character_spirits (charId, type, level, stage, experience, attack_points, defense_points, crit_rate_points, crit_damage_points, in_use) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	
 	private readonly Player _owner;
@@ -18,8 +22,8 @@ public class ElementalSpirit
 	
 	public ElementalSpirit(ElementalType type, Player owner)
 	{
-		_data = new ElementalSpiritDataHolder(type.getId(), owner.getObjectId());
-		_template = ElementalSpiritData.getInstance().getSpirit(type.getId(), _data.getStage());
+		_data = new ElementalSpiritDataHolder(type, owner.getObjectId());
+		_template = ElementalSpiritData.getInstance().getSpirit(type, _data.getStage());
 		_owner = owner;
 	}
 	
@@ -39,15 +43,15 @@ public class ElementalSpirit
 		
 		_data.addExperience(experience);
 		_owner.sendPacket(new ExElementalSpiritGetExp(_data.getType(), _data.getExperience()));
-		_owner.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_ACQUIRED_S1_S2_ATTRIBUTE_XP).addInt(experience).addElementalSpirit(_data.getType()));
+		_owner.sendPacket(new SystemMessagePacket(SystemMessageId.YOU_HAVE_ACQUIRED_S1_S2_ATTRIBUTE_XP).addInt(experience).addElementalSpirit(_data.getType()));
 		
 		if (_data.getExperience() > getExperienceToNextLevel())
 		{
 			levelUp();
-			_owner.sendPacket(new SystemMessage(SystemMessageId.S1_ATTRIBUTE_SPIRIT_HAS_REACHED_LV_S2).addElementalSpirit(_data.getType()).addByte(_data.getLevel()));
+			_owner.sendPacket(new SystemMessagePacket(SystemMessageId.S1_ATTRIBUTE_SPIRIT_HAS_REACHED_LV_S2).addElementalSpirit(_data.getType()).addByte(_data.getLevel()));
 			_owner.sendPacket(new ElementalSpiritInfo(_owner, (byte) 0));
 			_owner.sendPacket(new ExElementalSpiritAttackType(_owner));
-			UserInfo userInfo = new UserInfo(_owner);
+			UserInfoPacket userInfo = new UserInfoPacket(_owner);
 			userInfo.addComponentType(UserInfoType.ATT_SPIRITS);
 			_owner.sendPacket(userInfo);
 		}
@@ -98,12 +102,14 @@ public class ElementalSpirit
 	
 	public int getExtractAmount()
 	{
-		int amount = Math.Round(_data.getExperience() / ElementalSpiritData.FRAGMENT_XP_CONSUME);
+		float amount = _data.getExperience() / ElementalSpiritData.FRAGMENT_XP_CONSUME;
 		if (getLevel() > 1)
 		{
-			amount += ElementalSpiritData.getInstance().getSpirit(_data.getType(), _data.getStage()).getMaxExperienceAtLevel(getLevel() - 1) / ElementalSpiritData.FRAGMENT_XP_CONSUME;
+			amount += ElementalSpiritData.getInstance().getSpirit(_data.getType(), _data.getStage())
+				.getMaxExperienceAtLevel(getLevel() - 1) / ElementalSpiritData.FRAGMENT_XP_CONSUME;
 		}
-		return amount;
+		
+		return (int)amount;
 	}
 	
 	public void resetStage()
@@ -139,7 +145,7 @@ public class ElementalSpirit
 		_data.setCritDamagePoints((byte) 0);
 	}
 	
-	public byte getType()
+	public ElementalType getType()
 	{
 		return _template.getType();
 	}
@@ -229,22 +235,34 @@ public class ElementalSpirit
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			using PreparedStatement statement = con.prepareStatement(STORE_ELEMENTAL_SPIRIT_QUERY);
-			statement.setInt(1, _data.getCharId());
-			statement.setInt(2, _data.getType());
-			statement.setInt(3, _data.getLevel());
-			statement.setInt(4, _data.getStage());
-			statement.setLong(5, _data.getExperience());
-			statement.setInt(6, _data.getAttackPoints());
-			statement.setInt(7, _data.getDefensePoints());
-			statement.setInt(8, _data.getCritRatePoints());
-			statement.setInt(9, _data.getCritDamagePoints());
-			statement.setInt(10, _data.isInUse() ? 1 : 0);
-			statement.execute();
+			int charId = _data.getCharId();
+			byte type = (byte)_data.getType();
+			CharacterSpirit? spirit = ctx.CharacterSpirits.SingleOrDefault(r => r.CharacterId == charId && r.Type == type);
+			if (spirit is null)
+			{
+				spirit = new CharacterSpirit()
+				{
+					CharacterId = charId,
+					Type = type
+				};
+				
+				ctx.CharacterSpirits.Add(spirit);
+			}
+
+			spirit.Level = (byte)_data.getLevel();
+			spirit.Stage = _data.getStage();
+			spirit.Exp = _data.getExperience();
+			spirit.AttackPoints = _data.getAttackPoints();
+			spirit.DefensePoints = _data.getDefensePoints();
+			spirit.CriticalRatePoints = _data.getCritRatePoints();
+			spirit.CriticalDamagePoints = _data.getCritDamagePoints();
+			spirit.IsInUse = _data.isInUse();
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			e.printStackTrace();
+			_logger.Error(e);
 		}
 	}
 	
