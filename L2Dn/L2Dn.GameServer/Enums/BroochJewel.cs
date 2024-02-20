@@ -1,4 +1,6 @@
-﻿namespace L2Dn.GameServer.Enums;
+﻿using System.Collections.Immutable;
+
+namespace L2Dn.GameServer.Enums;
 
 public enum BroochJewel
 {
@@ -63,6 +65,14 @@ public enum BroochJewel
 	GREATER_SAPPHIRE_LV5_2 // + 14 % m attack + crit. m. ata +10%
 };
 
+public static class BroochJewelUtil
+{
+	public static int GetItemId(this BroochJewel broochJewel)
+	{
+		return BroochJewelInfo.All[broochJewel].getItemId();
+	}
+} 
+
 public class BroochJewelInfo
 {
 	// Working effect
@@ -123,6 +133,67 @@ public class BroochJewelInfo
 	public static readonly BroochJewelInfo GREATER_SAPPHIRE_LV4_2 = new(BroochJewel.GREATER_SAPPHIRE_LV4_2, 91328, 59151, 1, 0.20, false, true); // + 10 % m attack
 	public static readonly BroochJewelInfo GREATER_SAPPHIRE_LV5_2 = new(BroochJewel.GREATER_SAPPHIRE_LV5_2, 91329, 59151, 1, 0.20, false, true); // + 14 % m attack + crit. m. ata +10%
 
+	public static readonly ImmutableDictionary<BroochJewel, BroochJewelInfo> All = new[]
+	{
+		// Working effect
+		RUBY_LV1,
+		RUBY_LV2,
+		RUBY_LV3,
+		RUBY_LV4,
+		RUBY_LV5,
+		GREATER_RUBY_LV1, // + 1% p atk
+		GREATER_RUBY_LV2, // + 2% p atk
+		GREATER_RUBY_LV3, // + 3% p atk
+		GREATER_RUBY_LV4, // + 5% p atk
+		GREATER_RUBY_LV5, // + 7% p atk + crit. p. rate +10%
+
+		// Not show recharge effect - not used in classics maybe
+		RUBY_LV1_2,
+		RUBY_LV2_2,
+		RUBY_LV3_2,
+		RUBY_LV4_2,
+		RUBY_LV5_2,
+		GREATER_RUBY_LV1_2, // + 1% p atk
+		GREATER_RUBY_LV2_2, // + 2% p atk
+		GREATER_RUBY_LV3_2, // + 3% p atk
+		GREATER_RUBY_LV4_2, // + 5% p atk
+		GREATER_RUBY_LV5_2, // + 7% p atk + crit. p. rate +10%
+
+		// Onyx effect
+		ONYX_LV1, // Soulshot / Spiritshot damage +2%
+		ONYX_LV2, // Soulshot / Spiritshot damage +3%
+		ONYX_LV3, // Soulshot / Spiritshot damage +5%
+		ONYX_LV4, // Soulshot / Spiritshot damage +8%
+		ONYX_LV5, // Soulshot / Spiritshot damage +12%
+		ONYX_LV6, // Soulshot / Spiritshot damage +16%, P. Atk. +50, M. Atk. +50
+		ONYX_LV7, // Soulshot / Spiritshot damage +20%, P. Atk. +150, M. Atk. +150
+		ONYX_LV8, // Soulshot / Spiritshot damage +25%, P. Atk. +300, M. Atk. +300
+
+		// Working effect
+		SAPPHIRE_LV1,
+		SAPPHIRE_LV2,
+		SAPPHIRE_LV3,
+		SAPPHIRE_LV4,
+		SAPPHIRE_LV5,
+		GREATER_SAPPHIRE_LV1, // + 2 % m attack
+		GREATER_SAPPHIRE_LV2, // + 4 % m attack
+		GREATER_SAPPHIRE_LV3, // + 6 % m attack
+		GREATER_SAPPHIRE_LV4, // + 10 % m attack
+		GREATER_SAPPHIRE_LV5, // + 14 % m attack + crit. m. rate +10%
+
+		// Not show recharge effect - not used in classics maybe
+		SAPPHIRE_LV1_2,
+		SAPPHIRE_LV2_2,
+		SAPPHIRE_LV3_2,
+		SAPPHIRE_LV4_2,
+		SAPPHIRE_LV5_2,
+		GREATER_SAPPHIRE_LV1_2, // + 2 % m attack
+		GREATER_SAPPHIRE_LV2_2, // + 4 % m attack
+		GREATER_SAPPHIRE_LV3_2, // + 6 % m attack
+		GREATER_SAPPHIRE_LV4_2, // + 10 % m attack
+		GREATER_SAPPHIRE_LV5_2 // + 14 % m attack + crit. m. ata +10%
+	}.ToImmutableDictionary(i => i.Jewel);
+	
 	private readonly BroochJewel _jewel;
 	private readonly int _itemId;
 	private readonly int _skillId;

@@ -14569,7 +14569,7 @@ public class Player: Playable
 		}
 	}
 	
-	public void addTimerHolder(TimerHolder<?> timer)
+	public void addTimerHolder(TimerHolder timer)
 	{
 		lock (_timerHolders)
 		{
@@ -14577,7 +14577,7 @@ public class Player: Playable
 		}
 	}
 	
-	public void removeTimerHolder(TimerHolder<?> timer)
+	public void removeTimerHolder(TimerHolder timer)
 	{
 		lock (_timerHolders)
 		{
@@ -14978,12 +14978,12 @@ public class Player: Playable
 		return _spirits[type.getId() - 1];
 	}
 	
-	public byte getActiveElementalSpiritType()
+	public ElementalType getActiveElementalSpiritType()
 	{
 		return (byte) CommonUtil.zeroIfNullOrElse(_activeElementalSpiritType, x => x.getId());
 	}
 	
-	public void changeElementalSpirit(byte element)
+	public void changeElementalSpirit(ElementalType element)
 	{
 		_activeElementalSpiritType = ElementalType.of(element);
 		if (_spirits != null)

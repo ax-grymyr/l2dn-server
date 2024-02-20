@@ -245,7 +245,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * Verify if object is instance of Creature.
 	 * @return {@code true} if object is instance of Creature, {@code false} otherwise
 	 */
-	public bool isCreature()
+	public virtual bool isCreature()
 	{
 		return false;
 	}
@@ -281,7 +281,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * Verify if object is instance of Npc.
 	 * @return {@code true} if object is instance of Npc, {@code false} otherwise
 	 */
-	public bool isNpc()
+	public virtual bool isNpc()
 	{
 		return false;
 	}
@@ -371,7 +371,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * Verifies if the object is a walker NPC.
 	 * @return {@code true} if object is a walker NPC, {@code false} otherwise
 	 */
-	public bool isWalker()
+	public virtual bool isWalker()
 	{
 		return false;
 	}
@@ -417,7 +417,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	/**
 	 * @return {@code true} if the object can be targetted by other players, {@code false} otherwise.
 	 */
-	public bool isTargetable()
+	public virtual bool isTargetable()
 	{
 		return _isTargetable;
 	}
@@ -427,7 +427,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * @param zone the zone Id to check
 	 * @return {@code true} if the object is in that zone Id
 	 */
-	public bool isInsideZone(ZoneId zone)
+	public virtual bool isInsideZone(ZoneId zone)
 	{
 		return false;
 	}
@@ -485,7 +485,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 		return (T?) _scripts.get(typeof(T).Name);
 	}
 	
-	public void removeStatusListener(Creature @object)
+	public virtual void removeStatusListener(Creature @object)
 	{
 	}
 	
@@ -840,7 +840,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * @param player
 	 * @return {@code true} if player can see an invisible object if it's invisible, {@code false} otherwise.
 	 */
-	public bool isVisibleFor(Player player)
+	public virtual bool isVisibleFor(Player player)
 	{
 		return !_isInvisible || player.canOverrideCond(PlayerCondOverride.SEE_ALL_PLAYERS);
 	}
@@ -859,7 +859,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 		});
 	}
 	
-	public bool isInvul()
+	public virtual bool isInvul()
 	{
 		return false;
 	}

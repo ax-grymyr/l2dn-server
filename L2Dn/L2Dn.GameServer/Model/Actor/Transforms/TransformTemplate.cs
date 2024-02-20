@@ -23,7 +23,7 @@ public class TransformTemplate
 	{
 		_collisionRadius = set.Contains("radius") ? set.getFloat("radius") : null;
 		_collisionHeight = set.Contains("height") ? set.getFloat("height") : null;
-		_baseAttackType = set.getEnum<WeaponType>("attackType", null);
+		_baseAttackType = set.getEnum<WeaponType>("attackType", WeaponType.NONE);
 		if (set.contains("range"))
 		{
 			addStats(Stat.PHYSICAL_ATTACK_RANGE, set.getDouble("range", 0));

@@ -91,7 +91,7 @@ public class ListenersContainer
 	 * @param type
 	 * @return {@code List} of {@link AbstractEventListener} by the specified type
 	 */
-	public Set<AbstractEventListener> getListeners(EventType type)
+	public virtual Set<AbstractEventListener> getListeners(EventType type)
 	{
 		return _listeners != null && _listeners.TryGetValue(type, out var listeners)
 			? listeners

@@ -47,6 +47,11 @@ public static class ThreadPool
         return new ScheduledFuture(action, Validate(initialDelayInMs), Validate(periodInMs));
     }
     
+    public static ScheduledFuture scheduleAtFixedRate(Runnable runnable, TimeSpan initialDelayInMs, TimeSpan periodInMs)
+    {
+        return new ScheduledFuture(runnable.run, Validate(initialDelayInMs), Validate(periodInMs));
+    }
+    
     public static ScheduledFuture scheduleAtFixedRate(Runnable runnable, int initialDelayInMs, int periodInMs)
     {
         return scheduleAtFixedRate(runnable.run, initialDelayInMs, periodInMs);

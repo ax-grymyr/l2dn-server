@@ -16,6 +16,7 @@ using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
+using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
 using L2Dn.GameServer.Model.Events.Listeners;
 using L2Dn.GameServer.Model.Events.Returns;
 using L2Dn.GameServer.Model.Holders;
@@ -99,13 +100,13 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	/** Map containing the item reuse time stamps. */
 	private readonly Map<int, TimeStamp> _reuseTimeStampsItems = new();
 	/** Map containing all the disabled skills. */
-	private readonly Map<long, long> _disabledSkills = new();
+	private readonly Map<long, DateTime> _disabledSkills = new();
 	private bool _allSkillsDisabled;
 	
 	private readonly byte[] _zones = new byte[(int)Enum.GetValues<ZoneId>().Max() + 1];
 	protected readonly Location _lastZoneValidateLocation;
 	
-	private readonly StampedLock _attackLock = new StampedLock();
+	private readonly object _attackLock = new();
 	
 	private Team _team = Team.NONE;
 	
@@ -117,7 +118,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	
 	private Map<int, IgnoreSkillHolder> _ignoreSkillEffects;
 	/** Creatures effect list. */
-	private readonly EffectList _effectList = new EffectList(this);
+	private readonly EffectList _effectList;
 	/** The creature that summons this character. */
 	private Creature _summoner = null;
 	
@@ -214,6 +215,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			throw new ArgumentNullException(nameof(template), "Template is null!");
 		}
 
+		_effectList = new EffectList(this);
 		_isRunning = isPlayer();
 		_lastZoneValidateLocation = new Location(getX(), getY(), getZ());
 		
@@ -298,8 +300,11 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 				{
 					return false;
 				}
+
+				break;
 			}
 		}
+		
 		return _zones[(int)zone] > 0;
 	}
 	
@@ -350,7 +355,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		Transform transform = TransformData.getInstance().getTransform(id);
 		if (transform != null)
 		{
-			transform(transform, addSkills);
+			this.transform(transform, addSkills);
 			return true;
 		}
 		return false;
@@ -403,7 +408,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return 0;
 	}
 	
-	public float getCollisionRadius()
+	public virtual float getCollisionRadius()
 	{
 		float defaultCollisionRadius = _template.getCollisionRadius();
 		if (_transform is null)
@@ -412,7 +417,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return _transform.getCollisionRadius(this, defaultCollisionRadius);
 	}
 	
-	public float getCollisionHeight()
+	public virtual float getCollisionHeight()
 	{
 		float defaultCollisionHeight = _template.getCollisionHeight();
 		if (_transform is null)
@@ -466,7 +471,10 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			}
 			else if (Config.DISCONNECT_AFTER_DEATH)
 			{
-				Disconnection.of(getActingPlayer()).deleteMe().defaultSequence(new SystemMessagePacket(SystemMessageId.SIXTY_MIN_HAVE_PASSED_AFTER_THE_DEATH_OF_YOUR_CHARACTER_SO_YOU_WERE_DISCONNECTED_FROM_THE_GAME));
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId
+					.SIXTY_MIN_HAVE_PASSED_AFTER_THE_DEATH_OF_YOUR_CHARACTER_SO_YOU_WERE_DISCONNECTED_FROM_THE_GAME);
+				
+				Disconnection.of(getActingPlayer()).deleteMe().defaultSequence(ref sm);
 			}
 		}
 		else
@@ -479,7 +487,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			}
 			
 			// Removes itself from the summoned list.
-			if ((_summoner != null))
+			if (_summoner != null)
 			{
 				_summoner.removeSummonedNpc(getObjectId());
 			}
@@ -734,7 +742,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		
 		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_TELEPORT, this))
 		{
-			LocationReturn term = EventDispatcher.getInstance().notifyEvent(new OnCreatureTeleport(this, x, y, z, heading, instance), this, LocationReturn.class);
+			LocationReturn term = EventDispatcher.getInstance().notifyEvent<LocationReturn>(new OnCreatureTeleport(this, x, y, z, heading, instance), this);
 			if (term != null)
 			{
 				if (term.terminate())
@@ -759,8 +767,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		}
 		
 		// Abort any client actions, casting and remove target.
-		sendPacket(ActionFailedPacket.get(SkillCastingType.NORMAL));
-		sendPacket(ActionFailedPacket.get(SkillCastingType.NORMAL_SECOND));
+		sendPacket(new ActionFailedPacket(SkillCastingType.NORMAL));
+		sendPacket(new ActionFailedPacket(SkillCastingType.NORMAL_SECOND));
 		if (isMoving())
 		{
 			stopMove(null);
@@ -888,7 +896,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	{
 		teleToLocation(MapRegionManager.getInstance().getTeleToLocation(this, teleportWhere), true, instance);
 	}
-	
+
 	/**
 	 * Launch a physical attack against a target (Simple, Bow, Pole or Dual).<br>
 	 * <br>
@@ -906,34 +914,30 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 */
 	public virtual void doAutoAttack(Creature target)
 	{
-		long stamp = _attackLock.tryWriteLock();
-		if (stamp == 0)
-		{
-			return;
-		}
-		try
+		lock (_attackLock)
 		{
 			if ((target == null) || (isAttackDisabled() && !isSummon()) || !target.isTargetable())
 			{
 				return;
 			}
-			
+
 			if (!isAlikeDead())
 			{
-				if (((isNpc() && target.isAlikeDead()) || !isInSurroundingRegion(target)) || (isPlayer() && target.isDead()))
+				if (((isNpc() && target.isAlikeDead()) || !isInSurroundingRegion(target)) ||
+				    (isPlayer() && target.isDead()))
 				{
 					getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 					sendPacket(ActionFailedPacket.STATIC_PACKET);
 					return;
 				}
-				
+
 				if (checkTransformed(transform => !transform.canAttack()))
 				{
 					sendPacket(ActionFailedPacket.STATIC_PACKET);
 					return;
 				}
 			}
-			
+
 			if (getActingPlayer() != null)
 			{
 				if (getActingPlayer().inObserverMode())
@@ -944,7 +948,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 				}
 				else if (getActingPlayer().isSiegeFriend(target))
 				{
-					sendPacket(SystemMessageId.FORCE_ATTACK_IS_IMPOSSIBLE_AGAINST_A_TEMPORARY_ALLIED_MEMBER_DURING_A_SIEGE);
+					sendPacket(SystemMessageId
+						.FORCE_ATTACK_IS_IMPOSSIBLE_AGAINST_A_TEMPORARY_ALLIED_MEMBER_DURING_A_SIEGE);
 					sendPacket(ActionFailedPacket.STATIC_PACKET);
 					return;
 				}
@@ -956,7 +961,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 					return;
 				}
 				// Events.
-				else if (getActingPlayer().isOnEvent() && !getActingPlayer().isOnSoloEvent() && target.isPlayable() && (getActingPlayer().getTeam() == target.getActingPlayer().getTeam()))
+				else if (getActingPlayer().isOnEvent() && !getActingPlayer().isOnSoloEvent() && target.isPlayable() &&
+				         (getActingPlayer().getTeam() == target.getActingPlayer().getTeam()))
 				{
 					sendPacket(ActionFailedPacket.STATIC_PACKET);
 					return;
@@ -968,9 +974,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 				sendPacket(ActionFailedPacket.STATIC_PACKET);
 				return;
 			}
-			
+
 			stopEffectsOnAction();
-			
+
 			// GeoData Los Check here (or dz > 1000)
 			if (!GeoEngine.getInstance().canSeeTarget(this, target))
 			{
@@ -979,11 +985,11 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 				sendPacket(ActionFailedPacket.STATIC_PACKET);
 				return;
 			}
-			
+
 			// Get the active weapon item corresponding to the active weapon instance (always equipped in the right hand)
 			Weapon weaponItem = getActiveWeaponItem();
 			WeaponType weaponType = getAttackType();
-			
+
 			// BOW and CROSSBOW checks
 			if (weaponItem != null)
 			{
@@ -997,10 +1003,11 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 					{
 						sendPacket(SystemMessageId.YOU_CANNOT_ATTACK_WITH_THIS_WEAPON);
 					}
+
 					sendPacket(ActionFailedPacket.STATIC_PACKET);
 					return;
 				}
-				
+
 				// Ranged weapon checks.
 				if (weaponItem.getItemType().isRanged())
 				{
@@ -1012,14 +1019,16 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 							ThreadPool.schedule(new NotifyAITask(this, CtrlEvent.EVT_READY_TO_ACT), 300);
 							sendPacket(ActionFailedPacket.STATIC_PACKET);
 						}
+
 						return;
 					}
-					
+
 					// Check for arrows and MP
 					if (isPlayer())
 					{
 						// Check if there are arrows to use or else cancel the attack.
-						if (!checkAndEquipAmmunition(weaponItem.getItemType().isPistols() ? EtcItemType.ELEMENTAL_ORB : weaponItem.getItemType().isCrossbow() ? EtcItemType.BOLT : EtcItemType.ARROW))
+						if (!checkAndEquipAmmunition(weaponItem.getItemType().isPistols() ? EtcItemType.ELEMENTAL_ORB :
+							    weaponItem.getItemType().isCrossbow() ? EtcItemType.BOLT : EtcItemType.ARROW))
 						{
 							// Cancel the action because the Player have no arrow
 							getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
@@ -1032,9 +1041,10 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 							{
 								sendPacket(SystemMessageId.YOU_HAVE_RUN_OUT_OF_ARROWS);
 							}
+
 							return;
 						}
-						
+
 						// Checking if target has moved to peace zone - only for player-bow attacks at the moment
 						// Other melee is checked in movement code and for offensive spells a check is done every time
 						if (target.isInsidePeaceZone(getActingPlayer()))
@@ -1044,13 +1054,15 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 							sendPacket(ActionFailedPacket.STATIC_PACKET);
 							return;
 						}
-						
+
 						// Check if player has enough MP to shoot.
 						int mpConsume = weaponItem.getMpConsume();
-						if ((weaponItem.getReducedMpConsume() > 0) && (Rnd.get(100) < weaponItem.getReducedMpConsumeChance()))
+						if ((weaponItem.getReducedMpConsume() > 0) &&
+						    (Rnd.get(100) < weaponItem.getReducedMpConsumeChance()))
 						{
 							mpConsume = weaponItem.getReducedMpConsume();
 						}
+
 						mpConsume = isAffected(EffectFlag.CHEAPSHOT) ? 0 : mpConsume;
 						if (_status.getCurrentMp() < mpConsume)
 						{
@@ -1060,7 +1072,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 							sendPacket(ActionFailedPacket.STATIC_PACKET);
 							return;
 						}
-						
+
 						// If Player have enough MP, the bow consumes it
 						if (mpConsume > 0)
 						{
@@ -1069,13 +1081,13 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 					}
 				}
 			}
-			
+
 			// Mobius: Do not move when attack is launched.
 			if (isMoving())
 			{
 				stopMove(getLocation());
 			}
-			
+
 			WeaponType attackType = getAttackType();
 			bool isTwoHanded = (weaponItem != null) && (weaponItem.getBodyPart() == ItemTemplate.SLOT_LR_HAND);
 			int timeAtk = Formulas.calculateTimeBetweenAttacks(_stat.getPAtkSpd());
@@ -1087,19 +1099,19 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			{
 				_attackEndTime = currentTime.AddMilliseconds(int.MaxValue);
 			}
-			
+
 			// Make sure that char is facing selected target
 			// also works: setHeading(Util.convertDegreeToClientHeading(Util.calculateAngleFrom(this, target)));
 			setHeading(Util.calculateHeadingFrom(this, target));
-			
+
 			// Always try to charge soulshots.
 			if (!isChargedShot(ShotType.SOULSHOTS) && !isChargedShot(ShotType.BLESSED_SOULSHOTS))
 			{
 				rechargeShots(true, false, false);
 			}
-			
+
 			// Get the Attack Reuse Delay of the Weapon
-			Attack attack = generateAttackTargetData(target, weaponItem, attackType);
+			AttackPacket attack = generateAttackTargetData(target, weaponItem, attackType);
 			bool crossbow = false;
 			switch (attackType)
 			{
@@ -1108,6 +1120,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 				{
 					crossbow = true;
 					// fallthrough
+					goto case WeaponType.BOW;
 				}
 				case WeaponType.BOW:
 				{
@@ -1115,14 +1128,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 					int reuse = Formulas.calculateReuseTime(this, weaponItem);
 					// Try to do what is expected by having more attack speed.
 					// int reuse = (int) (Formulas.calculateReuseTime(this, weaponItem) / (Math.Max(1, _stat.getAttackSpeedMultiplier() - 1)));
-					
+
 					// Consume ammunition.
 					Inventory inventory = getInventory();
 					if (inventory != null)
 					{
 						inventory.reduceAmmunitionCount(crossbow ? EtcItemType.BOLT : EtcItemType.ARROW);
 					}
-					
+
 					// Check if the Creature is a Player
 					if (isPlayer())
 					{
@@ -1130,10 +1143,10 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 						{
 							sendPacket(SystemMessageId.YOUR_CROSSBOW_IS_PREPARING_TO_FIRE);
 						}
-						
-						sendPacket(new SetupGauge(getObjectId(), SetupGauge.RED, reuse));
+
+						sendPacket(new SetupGaugePacket(getObjectId(), SetupGaugePacket.RED, reuse));
 					}
-					
+
 					// Calculate and set the disable delay of the bow in function of the Attack Speed
 					_disableRangedAttackEndTime = currentTime.AddMilliseconds(reuse);
 					// Precaution. It happened in the past for _attackEndTime. Will not risk it.
@@ -1141,7 +1154,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 					{
 						_disableRangedAttackEndTime = currentTime.AddMilliseconds(int.MaxValue);
 					}
-					CreatureAttackTaskManager.getInstance().onHitTimeNotDual(this, weaponItem, attack, timeToHit, timeAtk);
+
+					CreatureAttackTaskManager.getInstance()
+						.onHitTimeNotDual(this, weaponItem, attack, timeToHit, timeAtk);
 					break;
 				}
 				case WeaponType.PISTOLS:
@@ -1153,17 +1168,20 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 					{
 						_disableRangedAttackEndTime = currentTime.AddMilliseconds(int.MaxValue);
 					}
-					CreatureAttackTaskManager.getInstance().onHitTimeNotDual(this, weaponItem, attack, timeToHit, timeAtk);
+
+					CreatureAttackTaskManager.getInstance()
+						.onHitTimeNotDual(this, weaponItem, attack, timeToHit, timeAtk);
 					break;
 				}
 				case WeaponType.FIST:
 				{
 					if (!isPlayer())
 					{
-						CreatureAttackTaskManager.getInstance().onHitTimeNotDual(this, weaponItem, attack, timeToHit, timeAtk);
+						CreatureAttackTaskManager.getInstance()
+							.onHitTimeNotDual(this, weaponItem, attack, timeToHit, timeAtk);
 						break;
 					}
-					
+
 					goto case WeaponType.DUAL;
 				}
 				case WeaponType.DUAL:
@@ -1171,35 +1189,39 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 				case WeaponType.DUALBLUNT:
 				case WeaponType.DUALDAGGER:
 				{
-					int delayForSecondAttack = Formulas.calculateTimeToHit(timeAtk, weaponType, isTwoHanded, true) - timeToHit;
-					CreatureAttackTaskManager.getInstance().onFirstHitTimeForDual(this, weaponItem, attack, timeToHit, timeAtk, delayForSecondAttack);
+					int delayForSecondAttack =
+						Formulas.calculateTimeToHit(timeAtk, weaponType, isTwoHanded, true) - timeToHit;
+					CreatureAttackTaskManager.getInstance().onFirstHitTimeForDual(this, weaponItem, attack, timeToHit,
+						timeAtk, delayForSecondAttack);
 					break;
 				}
 				default:
 				{
-					CreatureAttackTaskManager.getInstance().onHitTimeNotDual(this, weaponItem, attack, timeToHit, timeAtk);
+					CreatureAttackTaskManager.getInstance()
+						.onHitTimeNotDual(this, weaponItem, attack, timeToHit, timeAtk);
 					break;
 				}
 			}
-			
+
 			// If the Server=>Client packet Attack contains at least 1 hit, send the Server=>Client packet Attack
 			// to the Creature AND to all Player in the _KnownPlayers of the Creature
 			if (attack.hasHits())
 			{
 				broadcastPacket(attack);
 			}
-			
+
 			// Flag the attacker if it's a Player outside a PvP area
 			Player player = getActingPlayer();
-			if ((player != null) && !player.isInsideZone(ZoneId.PVP) && (player != target)) // Prevent players from flagging in PvP Zones.
+			if ((player != null) && !player.isInsideZone(ZoneId.PVP) &&
+			    (player != target)) // Prevent players from flagging in PvP Zones.
 			{
 				AttackStanceTaskManager.getInstance().addAttackStanceTask(player);
 				player.updatePvPStatus(target);
 			}
-			
+
 			if (isFakePlayer() && !Config.FAKE_PLAYER_AUTO_ATTACKABLE && (target.isPlayable() || target.isFakePlayer()))
 			{
-				Npc npc = ((Npc) this);
+				Npc npc = ((Npc)this);
 				if (!npc.isScriptValue(1))
 				{
 					npc.setScriptValue(1); // in combat
@@ -1208,16 +1230,12 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 				}
 			}
 		}
-		finally
-		{
-			_attackLock.unlockWrite(stamp);
-		}
 	}
-	
-	private Attack generateAttackTargetData(Creature target, Weapon weapon, WeaponType weaponType)
+
+	private AttackPacket generateAttackTargetData(Creature target, Weapon weapon, WeaponType weaponType)
 	{
 		bool isDual = (WeaponType.DUAL == weaponType) || (WeaponType.DUALBLUNT == weaponType) || (WeaponType.DUALDAGGER == weaponType) || (WeaponType.DUALFIST == weaponType);
-		Attack attack = new Attack(this, target);
+		AttackPacket attack = new AttackPacket(this, target);
 		bool shotConsumed = false;
 		
 		// Calculate the main target hit.
@@ -1356,7 +1374,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		if ((skillCaster == null) && isPlayer())
 		{
 			// Skill casting failed, notify player.
-			sendPacket(ActionFailedPacket.get(castingType));
+			sendPacket(new ActionFailedPacket(castingType));
 			getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 		}
 		
@@ -1388,9 +1406,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param item the item
 	 * @param reuse the reuse
 	 */
-	public void addTimeStampItem(Item item, long reuse)
+	public void addTimeStampItem(Item item, TimeSpan reuse)
 	{
-		addTimeStampItem(item, reuse, -1);
+		addTimeStampItem(item, reuse, null);
 	}
 	
 	/**
@@ -1400,7 +1418,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param reuse the reuse
 	 * @param systime the system time
 	 */
-	public void addTimeStampItem(Item item, long reuse, long systime)
+	public void addTimeStampItem(Item item, TimeSpan reuse, DateTime? systime)
 	{
 		_reuseTimeStampsItems.put(item.getObjectId(), new TimeStamp(item, reuse, systime));
 	}
@@ -1410,10 +1428,10 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param itemObjId the item object ID
 	 * @return if the item has a reuse time stamp, the remaining time, otherwise -1
 	 */
-	public long getItemRemainingReuseTime(int itemObjId)
+	public TimeSpan? getItemRemainingReuseTime(int itemObjId)
 	{
 		TimeStamp reuseStamp = _reuseTimeStampsItems.get(itemObjId);
-		return reuseStamp != null ? reuseStamp.getRemaining() : -1;
+		return reuseStamp != null ? reuseStamp.getRemaining() : null;
 	}
 	
 	/**
@@ -1421,24 +1439,25 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param group the shared reuse item group
 	 * @return if the shared reuse item group has a reuse time stamp, the remaining time, otherwise -1
 	 */
-	public long getReuseDelayOnGroup(int group)
+	public TimeSpan? getReuseDelayOnGroup(int group)
 	{
 		if ((group > 0) && !_reuseTimeStampsItems.isEmpty())
 		{
-			DateTime currentTime = DateTime.Now;
+			DateTime currentTime = DateTime.UtcNow;
 			foreach (TimeStamp ts in _reuseTimeStampsItems.values())
 			{
 				if (ts.getSharedReuseGroup() == group)
 				{
-					long stamp = ts.getStamp();
+					DateTime? stamp = ts.getStamp();
 					if (currentTime < stamp)
 					{
-						return Math.Max(stamp - currentTime, 0);
+						return stamp.Value - currentTime;
 					}
 				}
 			}
 		}
-		return -1;
+		
+		return null;
 	}
 	
 	/**
@@ -1455,9 +1474,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param skill the skill
 	 * @param reuse the delay
 	 */
-	public void addTimeStamp(Skill skill, long reuse)
+	public void addTimeStamp(Skill skill, TimeSpan reuse)
 	{
-		addTimeStamp(skill, reuse, -1);
+		addTimeStamp(skill, reuse, null);
 	}
 	
 	/**
@@ -1467,7 +1486,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param reuse the reuse
 	 * @param systime the system time
 	 */
-	public void addTimeStamp(Skill skill, long reuse, long systime)
+	public void addTimeStamp(Skill skill, TimeSpan reuse, DateTime? systime)
 	{
 		_reuseTimeStampsSkills.put(skill.getReuseHashCode(), new TimeStamp(skill, reuse, systime));
 	}
@@ -1494,10 +1513,10 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param hashCode the skill hash code
 	 * @return if the skill has a reuse time stamp, the remaining time, otherwise -1
 	 */
-	public long getSkillRemainingReuseTime(long hashCode)
+	public TimeSpan? getSkillRemainingReuseTime(long hashCode)
 	{
 		TimeStamp reuseStamp = _reuseTimeStampsSkills.get(hashCode);
-		return reuseStamp != null ? reuseStamp.getRemaining() : -1;
+		return reuseStamp != null ? reuseStamp.getRemaining() : null;
 	}
 	
 	/**
@@ -1526,7 +1545,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * Gets the disabled skills map.
 	 * @return the disabled skills map
 	 */
-	public Map<long, long> getDisabledSkills()
+	public Map<long, DateTime> getDisabledSkills()
 	{
 		return _disabledSkills;
 	}
@@ -1550,13 +1569,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param skill the skill to disable
 	 * @param delay delay in milliseconds
 	 */
-	public void disableSkill(Skill skill, long delay)
+	public void disableSkill(Skill skill, TimeSpan delay)
 	{
 		if (skill == null)
 		{
 			return;
 		}
-		_disabledSkills.put(skill.getReuseHashCode(), delay > 0 ? System.currentTimeMillis() + delay : long.MaxValue);
+		
+		_disabledSkills.put(skill.getReuseHashCode(), delay > TimeSpan.Zero ? DateTime.UtcNow + delay : DateTime.MaxValue);
 	}
 	
 	/**
@@ -1599,12 +1619,11 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		{
 			return false;
 		}
-		long? stamp = _disabledSkills.get(hashCode);
-		if (stamp == null)
-		{
+
+		if (!_disabledSkills.TryGetValue(hashCode, out DateTime stamp))
 			return false;
-		}
-		if (stamp < System.currentTimeMillis())
+		
+		if (stamp < DateTime.UtcNow)
 		{
 			_disabledSkills.remove(hashCode);
 			return false;
@@ -1661,17 +1680,17 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		
 		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_DEATH, this))
 		{
-			EventDispatcher.getInstance().notifyEvent(new OnCreatureDeath(killer, this), this);
+			EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(new OnCreatureDeath(killer, this), this);
 		}
 		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_KILLED, killer))
 		{
-			EventDispatcher.getInstance().notifyEvent(new OnCreatureKilled(killer, this), killer);
+			EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(new OnCreatureKilled(killer, this), killer);
 		}
 		
 		if ((killer != null) && killer.isPlayer())
 		{
 			Player player = killer.getActingPlayer();
-			if (player.isAssassin() && player.isAffectedBySkill(CommonSkill.BRUTALITY.getId()))
+			if (player.isAssassin() && player.isAffectedBySkill((int)CommonSkill.BRUTALITY))
 			{
 				player.setAssassinationPoints(player.getAssassinationPoints() + 10000);
 			}
@@ -1805,7 +1824,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return base.decayMe();
 	}
 	
-	public override bool deleteMe()
+	public virtual bool deleteMe()
 	{
 		if (hasAI())
 		{
@@ -1867,7 +1886,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			}
 			
 			// Start broadcast status
-			broadcastPacket(new Revive(this));
+			broadcastPacket(new RevivePacket(this));
 			ZoneManager.getInstance().getRegion(this).onRevive(this);
 		}
 		else
@@ -1979,7 +1998,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			{
 				if (_attackByList == null)
 				{
-					_attackByList = ConcurrentHashMap.newKeySet();
+					_attackByList = new();
 				}
 			}
 		}
@@ -2117,7 +2136,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 */
 	public Map<int, Summon> getServitors()
 	{
-		return Collections.emptyMap();
+		return new();
 	}
 	
 	public Summon getServitor(int objectId)
@@ -2182,7 +2201,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		_isRunning = value;
 		if (_stat.getRunSpeed() != 0)
 		{
-			broadcastPacket(new ChangeMoveType(this));
+			broadcastPacket(new ChangeMoveTypePacket(this));
 		}
 		if (isPlayer())
 		{
@@ -2203,15 +2222,15 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 				
 				if (isFakePlayer())
 				{
-					player.sendPacket(new FakePlayerInfo((Npc) this));
+					player.sendPacket(new FakePlayerInfoPacket((Npc) this));
 				}
 				else if (_stat.getRunSpeed() == 0)
 				{
-					player.sendPacket(new ServerObjectInfo((Npc) this, player));
+					player.sendPacket(new ServerObjectInfoPacket((Npc) this, player));
 				}
 				else
 				{
-					player.sendPacket(new NpcInfo((Npc) this));
+					player.sendPacket(new NpcInfoPacket((Npc) this));
 				}
 			});
 		}
@@ -2456,7 +2475,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		abortCast();
 		stopMove(null);
 		getAI().notifyEvent(CtrlEvent.EVT_FAKE_DEATH);
-		broadcastPacket(new ChangeWaitType(this, ChangeWaitType.WT_START_FAKEDEATH));
+		broadcastPacket(new ChangeWaitTypePacket(this, ChangeWaitTypePacket.WT_START_FAKEDEATH));
 		
 		// Remove target from those that have the untargetable creature on target.
 		if (Config.FAKE_DEATH_UNTARGET)
@@ -2558,10 +2577,10 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			getActingPlayer().setRecentFakeDeath(true);
 		}
 		
-		broadcastPacket(new ChangeWaitType(this, ChangeWaitType.WT_STOP_FAKEDEATH));
+		broadcastPacket(new ChangeWaitTypePacket(this, ChangeWaitTypePacket.WT_STOP_FAKEDEATH));
 		// TODO: Temp hack: players see FD on ppl that are moving: Teleport to someone who uses FD - if he gets up he will fall down again for that client -
 		// even tho he is actually standing... Probably bad info in CharInfo packet?
-		broadcastPacket(new Revive(this));
+		broadcastPacket(new RevivePacket(this));
 	}
 	
 	/**
@@ -2599,7 +2618,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			_effectList.stopEffects(AbnormalType.CHANGEBODY);
 		}
 		
-		if (_transform.isPresent())
+		if (_transform != null)
 		{
 			untransform();
 		}
@@ -2727,8 +2746,10 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 					{
 						return;
 					}
+
+					currentChanges = new();
+					currentChanges.addAll(_broadcastModifiedStatChanges);
 					
-					currentChanges = EnumSet.copyOf(_broadcastModifiedStatChanges);
 					_broadcastModifiedStatChanges.clear();
 				}
 				
@@ -2748,8 +2769,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 				}
 				else if (isPlayer())
 				{
-					UserInfo info = new UserInfo(getActingPlayer(), false);
-					info.addComponentType(UserInfoType.SLOTS, UserInfoType.ENCHANTLEVEL);
+					UserInfoPacket info = new UserInfoPacket(getActingPlayer(), false);
+					info.addComponentType(UserInfoType.SLOTS);
+					info.addComponentType(UserInfoType.ENCHANTLEVEL);
 					
 					bool updateWeight = false;
 					foreach (Stat stat in currentChanges)
@@ -2769,7 +2791,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 							}
 							case Stat.PHYSICAL_ATTACK_SPEED:
 							{
-								info.addComponentType(UserInfoType.MULTIPLIER, UserInfoType.STATS);
+								info.addComponentType(UserInfoType.MULTIPLIER);
+								info.addComponentType(UserInfoType.STATS);
 								break;
 							}
 							case Stat.PHYSICAL_ATTACK:
@@ -2880,15 +2903,15 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 						
 						if (isFakePlayer())
 						{
-							player.sendPacket(new FakePlayerInfo((Npc) this));
+							player.sendPacket(new FakePlayerInfoPacket((Npc) this));
 						}
 						else if (getRunSpeed() == 0)
 						{
-							player.sendPacket(new ServerObjectInfo((Npc) this, player));
+							player.sendPacket(new ServerObjectInfoPacket((Npc) this, player));
 						}
 						else
 						{
-							player.sendPacket(new NpcInfo((Npc) this));
+							player.sendPacket(new NpcInfoPacket((Npc) this));
 						}
 					});
 				}
@@ -3179,7 +3202,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 						{
 							_suspendedMovement = true;
 							_move.onGeodataPathIndex = -1;
-							broadcastPacket(new StopMove(this));
+							broadcastPacket(new StopMovePacket(this));
 							return false;
 						}
 					}
@@ -3275,7 +3298,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		// Broadcast MoveToLocation when Playable tries to reach a Playable target (once per second).
 		if (isPlayable() && (target != null) && target.isPlayable() && ((gameTicks % 10) == 0) && (calculateDistance3D(target) > 150))
 		{
-			broadcastPacket(new MoveToLocation(this));
+			broadcastPacket(new MoveToLocationPacket(this));
 		}
 		
 		return distFraction > 1.79; // Arrived.
@@ -3327,7 +3350,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			setHeading(loc.getHeading());
 			revalidateZone(true);
 		}
-		broadcastPacket(new StopMove(this));
+		broadcastPacket(new StopMovePacket(this));
 	}
 	
 	/**
@@ -3944,7 +3967,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param hitTime the time it took for this hit to occur
 	 * @param attackTime the time it takes for the whole attack to complete
 	 */
-	public void onHitTimeNotDual(Weapon weapon, Attack attack, int hitTime, int attackTime)
+	public void onHitTimeNotDual(Weapon weapon, AttackPacket attack, int hitTime, int attackTime)
 	{
 		if (_isDead)
 		{
@@ -3971,8 +3994,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 				{
 					if (target.isPlayer())
 					{
-						SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_AVOIDED_C1_S_ATTACK);
-						sm.addString(getName());
+						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_AVOIDED_C1_S_ATTACK);
+						sm.Params.addString(getName());
 						target.sendPacket(sm);
 					}
 					if (isPlayer())
@@ -3989,7 +4012,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		CreatureAttackTaskManager.getInstance().onAttackFinish(this, attack, attackTime - hitTime);
 	}
 	
-	public void onFirstHitTimeForDual(Weapon weapon, Attack attack, int hitTime, int attackTime, int delayForSecondAttack)
+	public void onFirstHitTimeForDual(Weapon weapon, AttackPacket attack, int hitTime, int attackTime, int delayForSecondAttack)
 	{
 		if (_isDead)
 		{
@@ -4018,7 +4041,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		}
 	}
 	
-	public void onSecondHitTimeForDual(Weapon weapon, Attack attack, int hitTime1, int hitTime2, int attackTime)
+	public void onSecondHitTimeForDual(Weapon weapon, AttackPacket attack, int hitTime1, int hitTime2, int attackTime)
 	{
 		if (_isDead)
 		{
@@ -4064,7 +4087,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			_onCreatureAttack.setAttacker(this);
 			_onCreatureAttack.setTarget(target);
 			_onCreatureAttack.setSkill(null);
-			EventDispatcher.getInstance().notifyEvent(_onCreatureAttack, this);
+			EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(_onCreatureAttack, this);
 		}
 		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_ATTACKED, target))
 		{
@@ -4075,7 +4098,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			_onCreatureAttacked.setAttacker(this);
 			_onCreatureAttacked.setTarget(target);
 			_onCreatureAttacked.setSkill(null);
-			EventDispatcher.getInstance().notifyEvent(_onCreatureAttacked, target);
+			EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(_onCreatureAttacked, target);
 		}
 		
 		if (_triggerSkills != null)
@@ -4120,23 +4143,23 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 					player.setBeastPoints(player.getBeastPoints() + 1);
 				}
 			}
-			else if (player.isAssassin() && CategoryData.getInstance().isInCategory(CategoryType.FOURTH_CLASS_GROUP, player.getBaseTemplate().getClassId().getId()) && target.isDead())
+			else if (player.isAssassin() && CategoryData.getInstance().isInCategory(CategoryType.FOURTH_CLASS_GROUP, player.getBaseTemplate().getClassId()) && target.isDead())
 			{
 				if (target.isPlayable())
 				{
 					player.setAssassinationPoints(player.getAssassinationPoints() + 1000);
-					player.sendPacket(new UserInfo(player));
+					player.sendPacket(new UserInfoPacket(player));
 				}
 				else if (target.isAttackable())
 				{
 					player.setAssassinationPoints(player.getAssassinationPoints() + 5);
-					player.sendPacket(new UserInfo(player));
+					player.sendPacket(new UserInfoPacket(player));
 				}
 			}
 		}
 	}
 	
-	public void onAttackFinish(Attack attack)
+	public void onAttackFinish(AttackPacket attack)
 	{
 		// Recharge any active auto-soulshot tasks for current creature after the attack has successfully hit.
 		foreach (Hit hit in attack.getHits())
@@ -4275,7 +4298,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			{
 				return false;
 			}
-			if ((attacker.getActingPlayer() != null) && (attacker.getActingPlayer().getReputation() < 0) && (target.getActingPlayer() != null) && (target.getActingPlayer().getPvpFlag() > 0))
+			if ((attacker.getActingPlayer() != null) && (attacker.getActingPlayer().getReputation() < 0) && (target.getActingPlayer() != null) && (target.getActingPlayer().getPvpFlag()))
 			{
 				return false;
 			}
@@ -4335,7 +4358,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param skill The Skill to add to the Creature
 	 * @return The Skill replaced or null if just added a new Skill
 	 */
-	public override Skill addSkill(Skill skill)
+	public Skill addSkill(Skill skill)
 	{
 		Skill oldSkill = null;
 		Skill newSkill = skill;
@@ -4364,7 +4387,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			
 			if (newSkill.isPassive())
 			{
-				newSkill.applyEffects(this, this, false, true, false, 0, null);
+				newSkill.applyEffects(this, this, false, true, false, TimeSpan.Zero, null);
 			}
 		}
 		return oldSkill;
@@ -4430,7 +4453,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	/**
 	 * @return the map containing this character skills.
 	 */
-	public override Map<int, Skill> getSkills()
+	public Map<int, Skill> getSkills()
 	{
 		return _skills;
 	}
@@ -4440,7 +4463,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param skillId The identifier of the Skill whose level must be returned
 	 * @return The level of the Skill identified by skillId
 	 */
-	public override int getSkillLevel(int skillId)
+	public virtual int getSkillLevel(int skillId)
 	{
 		Skill skill = getKnownSkill(skillId);
 		return (skill == null) ? 0 : skill.getLevel();
@@ -4450,7 +4473,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param skillId The identifier of the Skill to check the knowledge
 	 * @return the skill from the known skill.
 	 */
-	public override Skill getKnownSkill(int skillId)
+	public Skill getKnownSkill(int skillId)
 	{
 		return _skills.get(skillId);
 	}
@@ -4470,7 +4493,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	}
 	
 	// Quest event ON_SPELL_FNISHED
-	public void notifyQuestEventSkillFinished(Skill skill, WorldObject target)
+	public virtual void notifyQuestEventSkillFinished(Skill skill, WorldObject target)
 	{
 	}
 	
@@ -4738,7 +4761,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		if (!reflect && !isDOT)
 		{
 			// RearDamage effect bonus.
-			if (isBehind(target))
+			if (((ILocational)this).isBehind(target))
 			{
 				damage *= _stat.getMul(Stat.REAR_DAMAGE_RATE, 1);
 			}
@@ -4766,7 +4789,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 				double absorbHpPercent = getStat().getValue(Stat.ABSORB_DAMAGE_PERCENT, 0);
 				if ((absorbHpPercent > 0) && (Rnd.nextDouble() < _stat.getValue(Stat.ABSORB_DAMAGE_CHANCE)))
 				{
-					int absorbDamage = (int) Math.Min(absorbHpPercent * damage, _stat.getMaxRecoverableHp() - _status.getCurrentHp());
+					double absorbDamage = Math.Min(absorbHpPercent * damage, _stat.getMaxRecoverableHp() - _status.getCurrentHp());
 					absorbDamage = Math.Min(absorbDamage, (int) target.getCurrentHp());
 					absorbDamage *= target.getStat().getValue(Stat.ABSORB_DAMAGE_DEFENCE, 1);
 					if (absorbDamage > 0)
@@ -4858,7 +4881,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			_onCreatureDamageDealt.setCritical(critical);
 			_onCreatureDamageDealt.setDamageOverTime(isDOT);
 			_onCreatureDamageDealt.setReflect(reflect);
-			EventDispatcher.getInstance().notifyEvent(_onCreatureDamageDealt, attacker);
+			EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(_onCreatureDamageDealt, attacker);
 		}
 		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_DAMAGE_RECEIVED, this))
 		{
@@ -4873,7 +4896,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			_onCreatureDamageReceived.setCritical(critical);
 			_onCreatureDamageReceived.setDamageOverTime(isDOT);
 			_onCreatureDamageReceived.setReflect(reflect);
-			DamageReturn term = EventDispatcher.getInstance().notifyEvent(_onCreatureDamageReceived, this, DamageReturn.class);
+			DamageReturn term = EventDispatcher.getInstance().notifyEvent<DamageReturn>(_onCreatureDamageReceived, this);
 			if (term != null)
 			{
 				if (term.terminate())
@@ -4949,9 +4972,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			if (playerSpirits != null)
 			{
 				ElementalType monsterElementalType = getElementalSpiritType();
-				if ((monsterElementalType != ElementalType.NONE) && (attacker.getActingPlayer().getActiveElementalSpiritType() != monsterElementalType.getId()))
+				if ((monsterElementalType != ElementalType.NONE) && (attacker.getActingPlayer().getActiveElementalSpiritType() != monsterElementalType))
 				{
-					attacker.getActingPlayer().changeElementalSpirit(ElementalType.superior(monsterElementalType).getId());
+					attacker.getActingPlayer().changeElementalSpirit(monsterElementalType.superior());
 				}
 			}
 		}
@@ -5146,7 +5169,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return _team;
 	}
 	
-	public void setTeam(Team team)
+	public virtual void setTeam(Team team)
 	{
 		_team = team;
 	}
@@ -5304,7 +5327,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			_onCreatureAttackAvoid.setAttacker(this);
 			_onCreatureAttackAvoid.setTarget(target);
 			_onCreatureAttackAvoid.setDamageOverTime(isDot);
-			EventDispatcher.getInstance().notifyEvent(_onCreatureAttackAvoid, target);
+			EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(_onCreatureAttackAvoid, target);
 		}
 	}
 	
@@ -5399,7 +5422,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 */
 	public ICollection<Npc> getSummonedNpcs()
 	{
-		return _summonedNpcs != null ? _summonedNpcs.values() : new();
+		return _summonedNpcs != null ? _summonedNpcs.values() : new List<Npc>();
 	}
 	
 	/**
@@ -5569,16 +5592,18 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return _ignoreSkillEffects;
 	}
 	
-	public override Queue<AbstractEventListener> getListeners(EventType type)
+	public override Set<AbstractEventListener> getListeners(EventType type)
 	{
-		Queue<AbstractEventListener> objectListenres = base.getListeners(type);
-		Queue<AbstractEventListener> templateListeners = _template.getListeners(type);
-		Queue<AbstractEventListener> globalListeners = isNpc() && !isMonster() ? Containers.Npcs().getListeners(type) : isMonster() ? Containers.Monsters().getListeners(type) : isPlayer() ? Containers.Players().getListeners(type) : EmptyQueue.emptyQueue();
+		Set<AbstractEventListener> objectListenres = base.getListeners(type);
+		Set<AbstractEventListener> templateListeners = _template.getListeners(type);
+		Set<AbstractEventListener> globalListeners = isNpc() && !isMonster() ? Containers.Npcs().getListeners(type) :
+			isMonster() ? Containers.Monsters().getListeners(type) :
+			isPlayer() ? Containers.Players().getListeners(type) : new();
 		
 		// Attempt to do not create collection
 		if (objectListenres.isEmpty() && templateListeners.isEmpty() && globalListeners.isEmpty())
 		{
-			return EmptyQueue.emptyQueue();
+			return new();
 		}
 		else if (!objectListenres.isEmpty() && templateListeners.isEmpty() && globalListeners.isEmpty())
 		{
@@ -5593,7 +5618,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			return globalListeners;
 		}
 		
-		Queue<AbstractEventListener> both = new();
+		Set<AbstractEventListener> both = new();
 		both.addAll(objectListenres);
 		both.addAll(templateListeners);
 		both.addAll(globalListeners);
@@ -5751,7 +5776,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			return;
 		}
 		
-		_seenCreatures.remove(worldObject);
+		if (worldObject is Creature creature)
+			_seenCreatures.remove(creature);
 	}
 	
 	public MoveType getMoveType()
@@ -5767,7 +5793,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return MoveType.STANDING;
 	}
 	
-	protected void computeStatusUpdate(StatusUpdate su, StatusUpdateType type)
+	protected void computeStatusUpdate(StatusUpdatePacket su, StatusUpdateType type)
 	{
 		int newValue = type.getValue(this);
 		_statusUpdates.compute(type, (key, oldValue) =>
@@ -5787,7 +5813,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 					}
 					else if ((type == StatusUpdateType.MAX_AP))
 					{
-						getActingPlayer().sendPacket(new ExMax()); // TODO: Investigate this.
+						getActingPlayer().sendPacket(new ExMaxPacket()); // TODO: Investigate this.
 						su.addUpdate(StatusUpdateType.CUR_AP, getActingPlayer().getAssassinationPoints());
 					}
 				}

@@ -4,7 +4,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Network.Enums;
 
-public class MaskablePacketHelper<T>
+public class MaskablePacketHelper<T> // TODO refactor this, UserInfoType, NpcInfoType, etc must be mask itself
     where T: struct, Enum
 {
     private readonly int _maskSizeInBytes;

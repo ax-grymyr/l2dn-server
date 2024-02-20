@@ -18,9 +18,9 @@ public class TimeStamp
 	/** Skill level. */
 	private readonly int _id3;
 	/** Item or skill reuse time. */
-	private readonly long _reuse;
+	private readonly TimeSpan _reuse;
 	/** Time stamp. */
-	private long _stamp;
+	private DateTime? _stamp;
 	/** Shared reuse group. */
 	private readonly int _group;
 	
@@ -30,13 +30,13 @@ public class TimeStamp
 	 * @param reuse the reuse time for this skill.
 	 * @param systime overrides the system time with a customized one.
 	 */
-	public TimeStamp(Skill skill, long reuse, long systime)
+	public TimeStamp(Skill skill, TimeSpan reuse, DateTime? systime = null)
 	{
 		_id1 = skill.getId();
 		_id2 = skill.getLevel();
 		_id3 = skill.getSubLevel();
 		_reuse = reuse;
-		_stamp = systime > 0 ? systime : reuse != 0 ? System.currentTimeMillis() + reuse : 0;
+		_stamp = systime != null ? systime.Value : reuse > TimeSpan.Zero ? DateTime.UtcNow + reuse : null;
 		_group = skill.getReuseDelayGroup();
 	}
 	
@@ -46,13 +46,13 @@ public class TimeStamp
 	 * @param reuse the reuse time for this item.
 	 * @param systime overrides the system time with a customized one.
 	 */
-	public TimeStamp(Item item, long reuse, long systime)
+	public TimeStamp(Item item, TimeSpan reuse, DateTime? systime)
 	{
 		_id1 = item.getId();
 		_id2 = item.getObjectId();
 		_id3 = 0;
 		_reuse = reuse;
-		_stamp = systime > 0 ? systime : reuse != 0 ? System.currentTimeMillis() + reuse : 0;
+		_stamp = systime != null ? systime.Value : reuse > TimeSpan.Zero ? DateTime.UtcNow + reuse : null;
 		_group = item.getSharedReuseGroup();
 	}
 	
@@ -60,7 +60,7 @@ public class TimeStamp
 	 * Gets the time stamp.
 	 * @return the time stamp, either the system time where this time stamp was created or the custom time assigned
 	 */
-	public long getStamp()
+	public DateTime? getStamp()
 	{
 		return _stamp;
 	}
@@ -114,7 +114,7 @@ public class TimeStamp
 	 * Gets the reuse.
 	 * @return the reuse
 	 */
-	public long getReuse()
+	public TimeSpan getReuse()
 	{
 		return _reuse;
 	}
@@ -133,17 +133,18 @@ public class TimeStamp
 	 * Gets the remaining time.
 	 * @return the remaining time for this time stamp to expire
 	 */
-	public long getRemaining()
+	public TimeSpan getRemaining()
 	{
-		if (_stamp == 0)
+		if (_stamp == null)
 		{
-			return 0;
+			return TimeSpan.Zero;
 		}
-		
-		long remainingTime = Math.Max(_stamp - System.currentTimeMillis(), 0);
-		if (remainingTime == 0)
+
+		TimeSpan remainingTime = _stamp.Value - DateTime.UtcNow;
+		if (remainingTime <= TimeSpan.Zero)
 		{
-			_stamp = 0;
+			_stamp = null;
+			remainingTime = TimeSpan.Zero;
 		}
 		
 		return remainingTime;
@@ -155,15 +156,15 @@ public class TimeStamp
 	 */
 	public bool hasNotPassed()
 	{
-		if (_stamp == 0)
+		if (_stamp == null)
 		{
 			return false;
 		}
 		
-		bool hasNotPassed = System.currentTimeMillis() < _stamp;
+		bool hasNotPassed = DateTime.UtcNow < _stamp.Value;
 		if (!hasNotPassed)
 		{
-			_stamp = 0;
+			_stamp = null;
 		}
 		
 		return hasNotPassed;

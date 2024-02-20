@@ -381,11 +381,11 @@ public class Attackable : Npc
 					damagingParties.Add(container);
 				}
 			}
-			
-			PartyContainer mostDamageParty;
-			damagingParties.Sort(Comparator.comparingLong(c => c.damage));
-			mostDamageParty = !damagingParties.isEmpty() ? damagingParties[0] : null;
-			
+
+			damagingParties.Sort((a, b) => a.damage.CompareTo(b.damage));
+			PartyContainer? mostDamageParty =
+				!damagingParties.isEmpty() ? damagingParties[damagingParties.Count - 1] : null;
+
 			// Calculate raidboss points
 			if (_isRaid && !_isRaidMinion)
 			{
@@ -422,7 +422,9 @@ public class Attackable : Npc
 					{
 						int points = (int) (Math.Max(raidbossPoints / members.Count, 1) * p.getStat().getValue(Stat.BONUS_RAID_POINTS, 1));
 						p.increaseRaidbossPoints(points);
-						p.sendPacket(new SystemMessagePacket(SystemMessageId.YOU_HAVE_EARNED_S1_RAID_POINT_S).addInt(points));
+						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_EARNED_S1_RAID_POINT_S);
+						sm.Params.addInt(points);
+						p.sendPacket(sm);
 						if (p.isNoble())
 						{
 							Hero.getInstance().setRBkilled(p.getObjectId(), getId());
@@ -433,7 +435,9 @@ public class Attackable : Npc
 				{
 					int points = (int) (Math.Max(raidbossPoints, 1) * player.getStat().getValue(Stat.BONUS_RAID_POINTS, 1));
 					player.increaseRaidbossPoints(points);
-					player.sendPacket(new SystemMessagePacket(SystemMessageId.YOU_HAVE_EARNED_S1_RAID_POINT_S).addInt(points));
+					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_EARNED_S1_RAID_POINT_S);
+					sm.Params.addInt(points);
+					player.sendPacket(sm);
 					if (player.isNoble())
 					{
 						Hero.getInstance().setRBkilled(player.getObjectId(), getId());
@@ -515,7 +519,7 @@ public class Attackable : Npc
 							if (_overhit && (overhitAttacker != null) && (overhitAttacker.getActingPlayer() != null) && (attacker == overhitAttacker.getActingPlayer()))
 							{
 								attacker.sendPacket(SystemMessageId.OVER_HIT);
-								attacker.sendPacket(new ExMagicAttackInfo(overhitAttacker.getObjectId(), getObjectId(), ExMagicAttackInfo.OVERHIT));
+								attacker.sendPacket(new ExMagicAttackInfoPacket(overhitAttacker.getObjectId(), getObjectId(), ExMagicAttackInfoPacket.OVERHIT));
 								exp += calculateOverhitExp(exp);
 							}
 							
@@ -660,7 +664,7 @@ public class Attackable : Npc
 						if (_overhit && (overhitAttacker != null) && (overhitAttacker.getActingPlayer() != null) && (attacker == overhitAttacker.getActingPlayer()))
 						{
 							attacker.sendPacket(SystemMessageId.OVER_HIT);
-							attacker.sendPacket(new ExMagicAttackInfo(overhitAttacker.getObjectId(), getObjectId(), ExMagicAttackInfo.OVERHIT));
+							attacker.sendPacket(new ExMagicAttackInfoPacket(overhitAttacker.getObjectId(), getObjectId(), ExMagicAttackInfoPacket.OVERHIT));
 							exp += calculateOverhitExp(exp);
 						}
 						
@@ -1177,7 +1181,7 @@ public class Attackable : Npc
 			}
 			if (announceItems != null)
 			{
-				Broadcast.toAllOnlinePlayers(new ExRaidDropItemAnnounce(player.getName(), getId(), announceItems));
+				Broadcast.toAllOnlinePlayers(new ExRaidDropItemAnnouncePacket(player.getName(), getId(), announceItems));
 			}
 			deathItems1.Clear();
 			
@@ -1778,9 +1782,9 @@ public class Attackable : Npc
 		if (@object == null)
 		{
 			WorldObject target = getTarget();
-			if (target != null)
+			if (target is Creature creature)
 			{
-				_aggroList.remove(target);
+				_aggroList.remove(creature);
 			}
 			if (_aggroList.isEmpty())
 			{

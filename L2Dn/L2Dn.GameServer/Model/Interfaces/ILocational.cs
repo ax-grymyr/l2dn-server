@@ -3,10 +3,10 @@ using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Interfaces;
 
-/**
- * Object world location storage interface.
- * @author xban1x
- */
+/// <summary>
+/// Object world location storage interface.
+/// @author xban1x
+/// </summary>
 public interface ILocational
 {
     /**
@@ -43,7 +43,7 @@ public interface ILocational
       * @param to
       * @return the heading to the target specified
       */
-    int calculateHeadingTo(ILocational to)
+     public int calculateHeadingTo(ILocational to)
     {
      return Util.calculateHeadingFrom(getX(), getY(), to.getX(), to.getY());
     }
@@ -52,7 +52,7 @@ public interface ILocational
      * @param target
      * @return {@code true} if this location is in front of the target location based on the game's concept of position.
      */
-    bool isInFrontOf(ILocational target)
+    public bool isInFrontOf(ILocational target)
     {
      if (target == null)
      {
@@ -66,7 +66,7 @@ public interface ILocational
      * @param target
      * @return {@code true} if this location is in one of the sides of the target location based on the game's concept of position.
      */
-    bool isOnSideOf(ILocational target)
+    public bool isOnSideOf(ILocational target)
     {
      if (target == null)
      {
@@ -80,7 +80,7 @@ public interface ILocational
      * @param target
      * @return {@code true} if this location is behind the target location based on the game's concept of position.
      */
-    bool isBehind(ILocational target)
+    public bool isBehind(ILocational target)
     {
       if (target == null)
       {
@@ -90,3 +90,4 @@ public interface ILocational
      return Position.BACK == PositionUtil.getPosition(this, target);
     }
 }
+

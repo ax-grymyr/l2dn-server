@@ -41,68 +41,48 @@ public enum UserInfoType
 	UNK_414 = 0x1D,
 }
 
-// public enum UserInfoType implements IUpdateTypeComponent
-// {
-// RELATION(0x00, 4),
-// BASIC_INFO(0x01, 23),
-// BASE_STATS(0x02, 18),
-// MAX_HPCPMP(0x03, 14),
-// CURRENT_HPMPCP_EXP_SP(0x04, 39),
-// ENCHANTLEVEL(0x05, 5),
-// APPAREANCE(0x06, 19),
-// STATUS(0x07, 6),
-// 	
-// STATS(0x08, 64),
-// ELEMENTALS(0x09, 14),
-// POSITION(0x0A, 18),
-// SPEED(0x0B, 18),
-// MULTIPLIER(0x0C, 18),
-// COL_RADIUS_HEIGHT(0x0D, 18),
-// ATK_ELEMENTAL(0x0E, 5),
-// CLAN(0x0F, 32),
-// 	
-// SOCIAL(0x10, 34),
-// VITA_FAME(0x11, 19),
-// SLOTS(0x12, 12),
-// MOVEMENTS(0x13, 4),
-// COLOR(0x14, 10),
-// INVENTORY_LIMIT(0x15, 13),
-// TRUE_HERO(0x16, 9),
-// 	
-// ATT_SPIRITS(0x17, 34),
-// 	
-// RANKING(0x18, 6),
-// 	
-// STAT_POINTS(0x19, 16),
-// STAT_ABILITIES(0x1A, 18),
-// 	
-// ELIXIR_USED(0x1B, 1),
-// 	
-// VANGUARD_MOUNT(0x1C, 1),
-// UNK_414(0x1D, 1);
-// 	
-// /** Int mask. */
-// private final int _mask;
-// private final int _blockLength;
-// 	
-// private UserInfoType(int mask, int blockLength)
-// {
-//     _mask = mask;
-//     _blockLength = blockLength;
-// }
-// 	
-// /**
-//  * Gets the int mask.
-//  * @return the int mask
-//  */
-// @Override
-// public int getMask()
-// {
-//     return _mask;
-// }
-// 	
-// public int getBlockLength()
-// {
-//     return _blockLength;
-// }
-// }
+public static class UserInfoTypeUtil
+{
+	public static int GetBlockLength(this UserInfoType type) => type switch
+	{
+		UserInfoType.RELATION => 4,
+		UserInfoType.BASIC_INFO => 23,
+		UserInfoType.BASE_STATS => 18,
+		UserInfoType.MAX_HPCPMP => 14,
+		UserInfoType.CURRENT_HPMPCP_EXP_SP => 39,
+		UserInfoType.ENCHANTLEVEL => 5,
+		UserInfoType.APPAREANCE => 19,
+		UserInfoType.STATUS => 6,
+
+		UserInfoType.STATS => 64,
+		UserInfoType.ELEMENTALS => 14,
+		UserInfoType.POSITION => 18,
+		UserInfoType.SPEED => 18,
+		UserInfoType.MULTIPLIER => 18,
+		UserInfoType.COL_RADIUS_HEIGHT => 18,
+		UserInfoType.ATK_ELEMENTAL => 5,
+		UserInfoType.CLAN => 32,
+
+		UserInfoType.SOCIAL => 34,
+		UserInfoType.VITA_FAME => 19,
+		UserInfoType.SLOTS => 12,
+		UserInfoType.MOVEMENTS => 4,
+		UserInfoType.COLOR => 10,
+		UserInfoType.INVENTORY_LIMIT => 13,
+		UserInfoType.TRUE_HERO => 9,
+
+		UserInfoType.ATT_SPIRITS => 34,
+
+		UserInfoType.RANKING => 6,
+
+		UserInfoType.STAT_POINTS => 16,
+		UserInfoType.STAT_ABILITIES => 18,
+
+		UserInfoType.ELIXIR_USED => 1,
+
+		UserInfoType.VANGUARD_MOUNT => 1,
+		UserInfoType.UNK_414 => 1,
+
+		_ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
+	};
+}

@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
 using System.Text;
 using L2Dn.GameServer.Cache;
+using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
@@ -33,7 +34,7 @@ using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using FortManager = L2Dn.GameServer.InstanceManagers.FortManager;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor;
 
@@ -59,16 +60,16 @@ public class Npc: Creature
 	/** True if this Npc is autoattackable **/
 	private bool _isAutoAttackable = false;
 	/** Time of last social packet broadcast */
-	private long _lastSocialBroadcast = 0;
+	private DateTime _lastSocialBroadcast;
 	/** Minimum interval between social packets */
-	private const int MINIMUM_SOCIAL_INTERVAL = 6000;
+	private static readonly TimeSpan MINIMUM_SOCIAL_INTERVAL = TimeSpan.FromMilliseconds(6000);
 	/** Support for random animation switching */
 	private bool _isRandomAnimationEnabled = true;
 	private bool _isRandomWalkingEnabled = true;
 	private bool _isWalker = false;
-	private bool _isTalkable = getTemplate().isTalkable();
-	private readonly bool _isQuestMonster = getTemplate().isQuestMonster();
-	private readonly bool _isFakePlayer = getTemplate().isFakePlayer();
+	private bool _isTalkable;
+	private readonly bool _isQuestMonster;
+	private readonly bool _isFakePlayer;
 	
 	private int _currentLHandId; // normally this shouldn't change from the template, but there exist exceptions
 	private int _currentRHandId; // normally this shouldn't change from the template, but there exist exceptions
@@ -85,8 +86,8 @@ public class Npc: Creature
 	private int _cloneObjId; // Used in NpcInfo packet to clone the specified player.
 	private int _clanId; // Used in NpcInfo packet to show the specified clan.
 	
-	private NpcStringId _titleString;
-	private NpcStringId _nameString;
+	private NpcStringId? _titleString;
+	private NpcStringId? _nameString;
 	
 	private StatSet _params;
 	private volatile int _scriptValue = 0;
@@ -96,7 +97,7 @@ public class Npc: Creature
 	private TaxZone _taxZone = null;
 	
 	private readonly List<QuestTimer> _questTimers = new();
-	private readonly List<TimerHolder<?>> _timerHolders = new();
+	private readonly List<TimerHolder> _timerHolders = new();
 	
 	/**
 	 * Constructor of Npc (use Creature constructor).<br>
@@ -117,6 +118,10 @@ public class Npc: Creature
 		initCharStatusUpdateValues();
 		setTargetable(getTemplate().isTargetable());
 		
+		_isTalkable = getTemplate().isTalkable();
+		_isQuestMonster = getTemplate().isQuestMonster();
+		_isFakePlayer = getTemplate().isFakePlayer();
+		
 		// initialize the "current" equipment
 		_currentLHandId = getTemplate().getLHandId();
 		_currentRHandId = getTemplate().getRHandId();
@@ -136,7 +141,7 @@ public class Npc: Creature
 	public void onRandomAnimation(int animationId)
 	{
 		// Send a packet SocialAction to all Player in the _KnownPlayers of the Npc
-		long now = System.currentTimeMillis();
+		DateTime now = DateTime.UtcNow;
 		if ((now - _lastSocialBroadcast) > MINIMUM_SOCIAL_INTERVAL)
 		{
 			_lastSocialBroadcast = now;
@@ -282,7 +287,7 @@ public class Npc: Creature
 			}
 			else
 			{
-				player.sendPacket(new NpcInfoAbnormalVisualEffect(this));
+				player.sendPacket(new NpcInfoAbnormalVisualEffectPacket(this));
 			}
 		});
 	}
@@ -638,7 +643,7 @@ public class Npc: Creature
 		if (html != null)
 		{
 			html = html.Replace("%objectId%", getObjectId().ToString(CultureInfo.InvariantCulture));
-			player.sendPacket(new NpcHtmlMessage(getObjectId(), html));
+			player.sendPacket(new NpcHtmlMessagePacket(getObjectId(), html));
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return true;
 		}
@@ -747,10 +752,10 @@ public class Npc: Creature
 		}
 		
 		// Send a Server->Client NpcHtmlMessage containing the text of the Npc to the Player
-		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-		html.setFile(player, filename);
-		html.replace("%npcname%", getName());
-		html.replace("%objectId%", String.valueOf(getObjectId()));
+		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, filename);
+		helper.Replace("%npcname%", getName());
+		helper.Replace("%objectId%", getObjectId().ToString());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 		player.sendPacket(html);
 		
 		// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
@@ -765,9 +770,9 @@ public class Npc: Creature
 	public void showChatWindow(Player player, String filename)
 	{
 		// Send a Server->Client NpcHtmlMessage containing the text of the Npc to the Player
-		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-		html.setFile(player, filename);
-		html.replace("%objectId%", String.valueOf(getObjectId()));
+		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, filename);
+		helper.Replace("%objectId%", getObjectId().ToString());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 		player.sendPacket(html);
 		
 		// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
@@ -861,8 +866,8 @@ public class Npc: Creature
 						String msg = Config.ANNOUNCE_PK_MSG.Replace("$killer", player.getName()).Replace("$target", getName());
 						if (Config.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
 						{
-							SystemMessage sm = new SystemMessage(SystemMessageId.S1_3);
-							sm.addString(msg);
+							SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_3);
+							sm.Params.addString(msg);
 							Broadcast.toAllOnlinePlayers(sm);
 						}
 						else
@@ -892,8 +897,8 @@ public class Npc: Creature
 					String msg = Config.ANNOUNCE_PVP_MSG.Replace("$killer", player.getName()).Replace("$target", getName());
 					if (Config.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
 					{
-						SystemMessage sm = new SystemMessage(SystemMessageId.S1_3);
-						sm.addString(msg);
+						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_3);
+						sm.Params.addString(msg);
 						Broadcast.toAllOnlinePlayers(sm);
 					}
 					else
@@ -1214,20 +1219,20 @@ public class Npc: Creature
 		{
 			if (_isFakePlayer)
 			{
-				player.sendPacket(new FakePlayerInfo(this));
+				player.sendPacket(new FakePlayerInfoPacket(this));
 			}
 			else if (getRunSpeed() == 0)
 			{
-				player.sendPacket(new ServerObjectInfo(this, player));
+				player.sendPacket(new ServerObjectInfoPacket(this, player));
 			}
 			else
 			{
-				player.sendPacket(new NpcInfo(this));
+				player.sendPacket(new NpcInfoPacket(this));
 			}
 		}
 	}
 	
-	public void scheduleDespawn(long delay)
+	public void scheduleDespawn(TimeSpan delay)
 	{
 		ThreadPool.schedule(() =>
 		{
@@ -1261,7 +1266,7 @@ public class Npc: Creature
 		if (value != _displayEffect)
 		{
 			_displayEffect = value;
-			broadcastPacket(new ExChangeNpcState(getObjectId(), value));
+			broadcastPacket(new ExChangeNpcStatePacket(getObjectId(), value));
 		}
 	}
 	
@@ -1316,12 +1321,12 @@ public class Npc: Creature
 		{
 			if (physical)
 			{
-				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUse(this, this, 2154, 1, 0, 0), 600);
+				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUsePacket(this, this, 2154, 1, 0, 0), 600);
 				chargeShot(ShotType.SOULSHOTS);
 			}
 			if (magic)
 			{
-				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUse(this, this, 2061, 1, 0, 0), 600);
+				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUsePacket(this, this, 2061, 1, 0, 0), 600);
 				chargeShot(ShotType.SPIRITSHOTS);
 			}
 		}
@@ -1334,7 +1339,7 @@ public class Npc: Creature
 					return;
 				}
 				_soulshotamount--;
-				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUse(this, this, 2154, 1, 0, 0), 600);
+				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUsePacket(this, this, 2154, 1, 0, 0), 600);
 				chargeShot(ShotType.SOULSHOTS);
 			}
 			if (magic && (_spiritshotamount > 0))
@@ -1344,7 +1349,7 @@ public class Npc: Creature
 					return;
 				}
 				_spiritshotamount--;
-				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUse(this, this, 2061, 1, 0, 0), 600);
+				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUsePacket(this, this, 2061, 1, 0, 0), 600);
 				chargeShot(ShotType.SPIRITSHOTS);
 			}
 		}
@@ -1532,7 +1537,7 @@ public class Npc: Creature
 	{
 		if (hasListener(EventType.ON_NPC_CAN_BE_SEEN))
 		{
-			TerminateReturn term = EventDispatcher.getInstance().notifyEvent(new OnNpcCanBeSeen(this, player), this, TerminateReturn.class);
+			TerminateReturn term = EventDispatcher.getInstance().notifyEvent<TerminateReturn>(new OnNpcCanBeSeen(this, player), this);
 			if (term != null)
 			{
 				return term.terminate();
@@ -1634,7 +1639,7 @@ public class Npc: Creature
 	 */
 	public void broadcastSay(ChatType chatType, String text)
 	{
-		Broadcast.toKnownPlayers(this, new NpcSay(this, chatType, text));
+		Broadcast.toKnownPlayers(this, new NpcSayPacket(this, chatType, text));
 	}
 	
 	/**
@@ -1645,7 +1650,7 @@ public class Npc: Creature
 	 */
 	public void broadcastSay(ChatType chatType, NpcStringId npcStringId, params string[] parameters)
 	{
-		NpcSay npcSay = new NpcSay(this, chatType, npcStringId);
+		NpcSayPacket npcSay = new NpcSayPacket(this, chatType, npcStringId);
 		if (parameters != null)
 		{
 			foreach (String parameter in parameters)
@@ -1680,7 +1685,7 @@ public class Npc: Creature
 	 */
 	public void broadcastSay(ChatType chatType, String text, int radius)
 	{
-		Broadcast.toKnownPlayersInRadius(this, new NpcSay(this, chatType, text), radius);
+		Broadcast.toKnownPlayersInRadius(this, new NpcSayPacket(this, chatType, text), radius);
 	}
 	
 	/**
@@ -1691,7 +1696,7 @@ public class Npc: Creature
 	 */
 	public void broadcastSay(ChatType chatType, NpcStringId npcStringId, int radius)
 	{
-		Broadcast.toKnownPlayersInRadius(this, new NpcSay(this, chatType, npcStringId), radius);
+		Broadcast.toKnownPlayersInRadius(this, new NpcSayPacket(this, chatType, npcStringId), radius);
 	}
 	
 	/**
@@ -1748,7 +1753,7 @@ public class Npc: Creature
 	/**
 	 * @return the NpcStringId for name
 	 */
-	public NpcStringId getNameString()
+	public NpcStringId? getNameString()
 	{
 		return _nameString;
 	}
@@ -1756,7 +1761,7 @@ public class Npc: Creature
 	/**
 	 * @return the NpcStringId for title
 	 */
-	public NpcStringId getTitleString()
+	public NpcStringId? getTitleString()
 	{
 		return _titleString;
 	}
@@ -1773,7 +1778,7 @@ public class Npc: Creature
 	
 	public void sendChannelingEffect(Creature target, int state)
 	{
-		broadcastPacket(new ExShowChannelingEffect(this, target, state));
+		broadcastPacket(new ExShowChannelingEffectPacket(this, target, state));
 	}
 	
 	public void setDBStatus(RaidBossStatus status)
@@ -1814,7 +1819,7 @@ public class Npc: Creature
 		}
 	}
 	
-	public void addTimerHolder(TimerHolder<?> timer)
+	public void addTimerHolder(TimerHolder timer)
 	{
 		lock (_timerHolders)
 		{
@@ -1822,11 +1827,11 @@ public class Npc: Creature
 		}
 	}
 	
-	public void removeTimerHolder(TimerHolder<?> timer)
+	public void removeTimerHolder(TimerHolder timer)
 	{
 		lock (_timerHolders)
 		{
-			_timerHolders.remove(timer);
+			_timerHolders.Remove(timer);
 		}
 	}
 	
@@ -1834,11 +1839,12 @@ public class Npc: Creature
 	{
 		lock (_timerHolders)
 		{
-			foreach (TimerHolder<?> timer in _timerHolders)
+			foreach (TimerHolder timer in _timerHolders)
 			{
 				timer.cancelTask();
 			}
-			_timerHolders.clear();
+			
+			_timerHolders.Clear();
 		}
 	}
 	

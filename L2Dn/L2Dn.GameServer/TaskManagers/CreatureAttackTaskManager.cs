@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -110,22 +111,22 @@ public class CreatureAttackTaskManager
 		}
 	}
 	
-	public void onHitTimeNotDual(Creature creature, Weapon weapon, Attack attack, int hitTime, int attackTime)
+	public void onHitTimeNotDual(Creature creature, Weapon weapon, AttackPacket attack, int hitTime, int attackTime)
 	{
 		scheduleAttack(ScheduledAttackType.NORMAL, creature, weapon, attack, hitTime, attackTime, 0, hitTime);
 	}
 	
-	public void onFirstHitTimeForDual(Creature creature, Weapon weapon, Attack attack, int hitTime, int attackTime, int delayForSecondAttack)
+	public void onFirstHitTimeForDual(Creature creature, Weapon weapon, AttackPacket attack, int hitTime, int attackTime, int delayForSecondAttack)
 	{
 		scheduleAttack(ScheduledAttackType.DUAL_FIRST, creature, weapon, attack, hitTime, attackTime, delayForSecondAttack, hitTime);
 	}
 	
-	public void onSecondHitTimeForDual(Creature creature, Weapon weapon, Attack attack, int hitTime, int attackTime, int delayForSecondAttack)
+	public void onSecondHitTimeForDual(Creature creature, Weapon weapon, AttackPacket attack, int hitTime, int attackTime, int delayForSecondAttack)
 	{
 		scheduleAttack(ScheduledAttackType.DUAL_SECOND, creature, weapon, attack, hitTime, attackTime, delayForSecondAttack, delayForSecondAttack);
 	}
 	
-	private void scheduleAttack(ScheduledAttackType type, Creature creature, Weapon weapon, Attack attack, int hitTime, int attackTime, int delayForSecondAttack, int taskDelay)
+	private void scheduleAttack(ScheduledAttackType type, Creature creature, Weapon weapon, AttackPacket attack, int hitTime, int attackTime, int delayForSecondAttack, int taskDelay)
 	{
 		ScheduledAttack scheduledAttack = new ScheduledAttack(type, weapon, attack, hitTime, attackTime, delayForSecondAttack, 
 			DateTime.Now.AddMilliseconds(taskDelay));
@@ -145,7 +146,7 @@ public class CreatureAttackTaskManager
 		ATTACK_POOLS.add(pool1);
 	}
 	
-	public void onAttackFinish(Creature creature, Attack attack, int taskDelay)
+	public void onAttackFinish(Creature creature, AttackPacket attack, int taskDelay)
 	{
 		ScheduledFinish scheduledFinish = new ScheduledFinish(attack, DateTime.Now.AddMilliseconds(taskDelay));
 		
@@ -187,13 +188,13 @@ public class CreatureAttackTaskManager
 	{
 		public readonly ScheduledAttackType type;
 		public readonly Weapon weapon;
-		public readonly Attack attack;
+		public readonly AttackPacket attack;
 		public readonly int hitTime;
 		public readonly int attackTime;
 		public readonly int delayForSecondAttack;
 		public readonly DateTime endTime;
 		
-		public ScheduledAttack(ScheduledAttackType type, Weapon weapon, Attack attack, int hitTime, int attackTime, int delayForSecondAttack, DateTime endTime)
+		public ScheduledAttack(ScheduledAttackType type, Weapon weapon, AttackPacket attack, int hitTime, int attackTime, int delayForSecondAttack, DateTime endTime)
 		{
 			this.type = type;
 			this.weapon = weapon;
@@ -207,10 +208,10 @@ public class CreatureAttackTaskManager
 	
 	private class ScheduledFinish
 	{
-		public readonly Attack attack;
+		public readonly AttackPacket attack;
 		public readonly DateTime endTime;
 		
-		public ScheduledFinish(Attack attack, DateTime endTime)
+		public ScheduledFinish(AttackPacket attack, DateTime endTime)
 		{
 			this.attack = attack;
 			this.endTime = endTime;
