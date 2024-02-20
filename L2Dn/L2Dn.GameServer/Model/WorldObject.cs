@@ -299,7 +299,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * Verify if object is instance of Player.
 	 * @return {@code true} if object is instance of Player, {@code false} otherwise
 	 */
-	public bool isPlayer()
+	public virtual bool isPlayer()
 	{
 		return false;
 	}

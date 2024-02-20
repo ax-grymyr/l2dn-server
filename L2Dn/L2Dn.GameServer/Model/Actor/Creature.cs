@@ -431,7 +431,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * but if the player is not GM it will return false.
 	 * @return GM status
 	 */
-	public bool isGM()
+	public virtual bool isGM()
 	{
 		return false;
 	}
@@ -440,7 +440,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * Overridden in Player.
 	 * @return the access level.
 	 */
-	public AccessLevel getAccessLevel()
+	public virtual AccessLevel getAccessLevel()
 	{
 		return null;
 	}
@@ -711,7 +711,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	/**
 	 * @param text
 	 */
-	public void sendMessage(String text)
+	public virtual void sendMessage(String text)
 	{
 		// default implementation
 	}
@@ -2126,7 +2126,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	/**
 	 * @return the summon
 	 */
-	public Summon getPet()
+	public virtual Summon getPet()
 	{
 		return null;
 	}
@@ -2139,7 +2139,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return new();
 	}
 	
-	public Summon getServitor(int objectId)
+	public virtual Summon getServitor(int objectId)
 	{
 		return null;
 	}
@@ -2262,7 +2262,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return _isTeleporting;
 	}
 	
-	public void setTeleporting(bool value)
+	public virtual void setTeleporting(bool value)
 	{
 		_isTeleporting = value;
 	}
@@ -3904,7 +3904,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @return True if arrows are available.
 	 * @param type
 	 */
-	protected bool checkAndEquipAmmunition(EtcItemType type)
+	protected virtual bool checkAndEquipAmmunition(EtcItemType type)
 	{
 		return true;
 	}
@@ -4358,7 +4358,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param skill The Skill to add to the Creature
 	 * @return The Skill replaced or null if just added a new Skill
 	 */
-	public Skill addSkill(Skill skill)
+	public virtual Skill addSkill(Skill skill)
 	{
 		Skill oldSkill = null;
 		Skill newSkill = skill;
@@ -4393,7 +4393,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return oldSkill;
 	}
 	
-	public Skill removeSkill(Skill skill, bool cancelEffect)
+	public virtual Skill removeSkill(Skill skill, bool cancelEffect)
 	{
 		return (skill != null) ? removeSkill(skill.getId(), cancelEffect) : null;
 	}
@@ -4473,7 +4473,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param skillId The identifier of the Skill to check the knowledge
 	 * @return the skill from the known skill.
 	 */
-	public Skill getKnownSkill(int skillId)
+	public virtual Skill getKnownSkill(int skillId)
 	{
 		return _skills.get(skillId);
 	}
@@ -5174,7 +5174,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		_team = team;
 	}
 	
-	public void addOverrideCond(params PlayerCondOverride[] excs)
+	public virtual void addOverrideCond(params PlayerCondOverride[] excs)
 	{
 		foreach (PlayerCondOverride exc in excs)
 		{
@@ -5244,7 +5244,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * Dummy method overriden in {@link Player}
 	 * @return {@code true} if current player can revive and shows 'To Village' button upon death, {@code false} otherwise.
 	 */
-	public bool canRevive()
+	public virtual bool canRevive()
 	{
 		return true;
 	}
@@ -5279,7 +5279,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * Dummy method overriden in {@link Player}
 	 * @return the clan of current character.
 	 */
-	public Clan getClan()
+	public virtual Clan getClan()
 	{
 		return null;
 	}
@@ -5288,7 +5288,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * Dummy method overriden in {@link Player}
 	 * @return {@code true} if player is in academy, {@code false} otherwise.
 	 */
-	public bool isAcademyMember()
+	public virtual bool isAcademyMember()
 	{
 		return false;
 	}
@@ -5828,7 +5828,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		_statusUpdates.put(type, type.getValue(this));
 	}
 	
-	protected void initStatusUpdateCache()
+	protected virtual void initStatusUpdateCache()
 	{
 		addStatusUpdateValue(StatusUpdateType.MAX_HP);
 		addStatusUpdateValue(StatusUpdateType.MAX_MP);
@@ -5840,7 +5840,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * Checks if the creature has basic property resist towards mesmerizing debuffs.
 	 * @return {@code true}.
 	 */
-	public bool hasBasicPropertyResist()
+	public virtual bool hasBasicPropertyResist()
 	{
 		return true;
 	}

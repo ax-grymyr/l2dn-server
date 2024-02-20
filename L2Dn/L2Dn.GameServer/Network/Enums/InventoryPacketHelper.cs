@@ -32,6 +32,11 @@ public class InventoryPacketHelper
         WriteItem(writer, new ItemInfo(item));
     }
 
+    public static void WriteItem(PacketBitWriter writer, TradeItem item)
+    {
+        WriteItem(writer, new ItemInfo(item));
+    }
+
     public static void WriteItem(PacketBitWriter writer, ItemInfo item)
     {
         ItemListType mask = CalculateMask(item);

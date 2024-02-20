@@ -58,6 +58,7 @@ public class GameServerDbContext: DbContext
     public DbSet<CharacterPurge> CharacterPurges => Set<CharacterPurge>();
     public DbSet<CharacterRevenge> CharacterRevenges => Set<CharacterRevenge>();
     public DbSet<CharacterSpirit> CharacterSpirits => Set<CharacterSpirit>();
+    public DbSet<CharacterRecipeBook> CharacterRecipeBooks => Set<CharacterRecipeBook>();
     public DbSet<CharacterVariable> CharacterVariables => Set<CharacterVariable>();
     
     public DbSet<Pet> Pets => Set<Pet>();

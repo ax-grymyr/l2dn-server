@@ -71,6 +71,21 @@ public static class BroochJewelUtil
 	{
 		return BroochJewelInfo.All[broochJewel].getItemId();
 	}
+
+	public static bool isRuby(this BroochJewel broochJewel)
+	{
+		return BroochJewelInfo.All[broochJewel].isRuby();
+	}
+
+	public static bool isSapphire(this BroochJewel broochJewel)
+	{
+		return BroochJewelInfo.All[broochJewel].isSapphire();
+	}
+
+	public static double getBonus(this BroochJewel broochJewel)
+	{
+		return BroochJewelInfo.All[broochJewel].getBonus();
+	}
 } 
 
 public class BroochJewelInfo

@@ -13,6 +13,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 using FortManager = L2Dn.GameServer.InstanceManagers.FortManager;
@@ -671,7 +672,7 @@ public class FortSiege: ListenersContainer, Siegable
 	 * Announce to player.
 	 * @param sm the system message to send to player
 	 */
-	public void announceToPlayer(SystemMessage sm)
+	public void announceToPlayer(SystemMessagePacket sm)
 	{
 		// announce messages only for participants
 		Clan clan;
@@ -699,9 +700,9 @@ public class FortSiege: ListenersContainer, Siegable
 		}
 	}
 	
-	public void announceToPlayer(SystemMessage sm, String s)
+	public void announceToPlayer(SystemMessagePacket sm, String s)
 	{
-		sm.addString(s);
+		sm.Params.addString(s);
 		announceToPlayer(sm);
 	}
 	

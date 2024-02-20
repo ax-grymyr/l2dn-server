@@ -47,6 +47,8 @@ public readonly struct ConfirmDialogPacket: IOutgoingPacket
 		_params = new SystemMessageParams(SystemMessageId.S1_3);
 		_params.addString(text);
 	}
+
+	public SystemMessageParams Params => _params;
 	
 	public void WriteContent(PacketBitWriter writer)
 	{
