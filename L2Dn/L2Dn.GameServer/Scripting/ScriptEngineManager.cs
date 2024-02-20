@@ -56,7 +56,7 @@ public class ScriptEngineManager
 	// 						String nextPart = relativePath.next().toString();
 	// 						if (excludePaths.containsKey(nextPart))
 	// 						{
-	// 							boolean excludeScript = true;
+	// 							bool excludeScript = true;
 	// 							
 	// 							List<String> includePath = excludePaths.get(nextPart);
 	// 							if (includePath != null)

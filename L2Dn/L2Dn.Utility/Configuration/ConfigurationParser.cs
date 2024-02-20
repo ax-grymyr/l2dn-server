@@ -79,7 +79,7 @@ public class ConfigurationParser
             string.Equals(value, "0", StringComparison.Ordinal))
             return true;
 
-        _logger.Error($"Invalid boolean value '{value}' in entry '{key}' in configuration file '{_filePath}'");
+        _logger.Error($"Invalid bool value '{value}' in entry '{key}' in configuration file '{_filePath}'");
         return defaultValue;
     }
 

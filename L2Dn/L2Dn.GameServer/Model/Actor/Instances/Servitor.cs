@@ -9,19 +9,13 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
-using NLog;
+using Microsoft.EntityFrameworkCore;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
 public class Servitor : Summon, Runnable
 {
-	protected static readonly Logger log = LogManager.GetLogger(nameof(Servitor));
-	
-	private const String ADD_SKILL_SAVE = "REPLACE INTO character_summon_skills_save (ownerId,ownerClassIndex,summonSkillId,skill_id,skill_level,remaining_time,buff_index) VALUES (?,?,?,?,?,?,?)";
-	private const String RESTORE_SKILL_SAVE = "SELECT skill_id,skill_level,remaining_time,buff_index FROM character_summon_skills_save WHERE ownerId=? AND ownerClassIndex=? AND summonSkillId=? ORDER BY buff_index ASC";
-	private const String DELETE_SKILL_SAVE = "DELETE FROM character_summon_skills_save WHERE ownerId=? AND ownerClassIndex=? AND summonSkillId=?";
-	
 	private float _expMultiplier = 0;
 	private ItemHolder _itemConsume;
 	private TimeSpan? _lifeTime;
@@ -245,90 +239,113 @@ public class Servitor : Summon, Runnable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(DELETE_SKILL_SAVE);
 			
 			// Delete all current stored effects for summon to avoid dupe
-			statement.setInt(1, getOwner().getObjectId());
-			statement.setInt(2, getOwner().getClassIndex());
-			statement.setInt(3, _referenceSkill);
-			statement.execute();
+			int ownerId = getOwner().getObjectId();
+			int ownerClassIndex = getOwner().getClassIndex();
+			ctx.SummonSkillReuses.Where(r =>
+					r.OwnerId == ownerId && r.OwnerClassIndex == ownerClassIndex && r.SummonSkillId == _referenceSkill)
+				.ExecuteDelete();
 			
 			int buffIndex = 0;
 			
-			Collection<Long> storedSkills = ConcurrentHashMap.newKeySet();
+			Set<long> storedSkills = new();
 			
 			// Store all effect data along with calculated remaining
 			if (storeEffects)
 			{
-				PreparedStatement ps2 = con.prepareStatement(ADD_SKILL_SAVE);
+				foreach (BuffInfo info in getEffectList().getEffects())
 				{
-					foreach (BuffInfo info in getEffectList().getEffects())
+					if (info == null)
 					{
-						if (info == null)
-						{
-							continue;
-						}
-						
-						Skill skill = info.getSkill();
-						
-						// Do not store those effects.
-						if (skill.isDeleteAbnormalOnLeave())
-						{
-							continue;
-						}
-						
-						// Do not save heals.
-						if (skill.getAbnormalType() == AbnormalType.LIFE_FORCE_OTHERS)
-						{
-							continue;
-						}
-						
-						// Toggles are skipped, unless they are necessary to be always on.
-						if (skill.isToggle() && !skill.isNecessaryToggle())
-						{
-							continue;
-						}
-						
-						// Dances and songs are not kept in retail.
-						if (skill.isDance() && !Config.ALT_STORE_DANCES)
-						{
-							continue;
-						}
-						
-						if (storedSkills.contains(skill.getReuseHashCode()))
-						{
-							continue;
-						}
-						
-						storedSkills.add(skill.getReuseHashCode());
-						
-						ps2.setInt(1, getOwner().getObjectId());
-						ps2.setInt(2, getOwner().getClassIndex());
-						ps2.setInt(3, _referenceSkill);
-						ps2.setInt(4, skill.getId());
-						ps2.setInt(5, skill.getLevel());
-						ps2.setInt(6, info.getTime());
-						ps2.setInt(7, ++buffIndex);
-						ps2.addBatch();
-						
-						// XXX: Rework me!
-						if (!SummonEffectTable.getInstance().getServitorEffectsOwner().containsKey(getOwner().getObjectId()))
-						{
-							SummonEffectTable.getInstance().getServitorEffectsOwner().put(getOwner().getObjectId(), new());
-						}
-						if (!SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).containsKey(getOwner().getClassIndex()))
-						{
-							SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).put(getOwner().getClassIndex(), new());
-						}
-						if (!SummonEffectTable.getInstance().getServitorEffects(getOwner()).containsKey(getReferenceSkill()))
-						{
-							SummonEffectTable.getInstance().getServitorEffects(getOwner()).put(getReferenceSkill(), new List<SummonEffectTable.SummonEffect>());
-						}
-						
-						SummonEffectTable.getInstance().getServitorEffects(getOwner()).get(getReferenceSkill()).Add(new SummonEffectTable.SummonEffect(skill, info.getTime()));
+						continue;
 					}
-					ps2.executeBatch();
+
+					Skill skill = info.getSkill();
+
+					// Do not store those effects.
+					if (skill.isDeleteAbnormalOnLeave())
+					{
+						continue;
+					}
+
+					// Do not save heals.
+					if (skill.getAbnormalType() == AbnormalType.LIFE_FORCE_OTHERS)
+					{
+						continue;
+					}
+
+					// Toggles are skipped, unless they are necessary to be always on.
+					if (skill.isToggle() && !skill.isNecessaryToggle())
+					{
+						continue;
+					}
+
+					// Dances and songs are not kept in retail.
+					if (skill.isDance() && !Config.ALT_STORE_DANCES)
+					{
+						continue;
+					}
+
+					if (storedSkills.Contains(skill.getReuseHashCode()))
+					{
+						continue;
+					}
+
+					storedSkills.add(skill.getReuseHashCode());
+
+					int skillId = skill.getId();
+					int skillLevel = skill.getLevel();
+					
+					// Search by primary key
+					DbSummonSkillReuse? record = ctx.SummonSkillReuses.SingleOrDefault(r =>
+						r.OwnerId == ownerId && r.OwnerClassIndex == ownerClassIndex &&
+						r.SummonSkillId == _referenceSkill && r.SkillId == skillId && r.SkillLevel == skillLevel);
+
+					if (record is null)
+					{
+						record = new DbSummonSkillReuse()
+						{
+							OwnerId = ownerId,
+							OwnerClassIndex = (byte)ownerClassIndex,
+							SummonSkillId = _referenceSkill,
+							SkillId = skillId,
+							SkillLevel = (short)skillLevel
+						};
+
+						ctx.SummonSkillReuses.Add(record);
+					}
+
+					record.RemainingTime = info.getTime();
+					++buffIndex;
+					record.BuffIndex = (byte)buffIndex;
+
+					// XXX: Rework me!
+					if (!SummonEffectTable.getInstance().getServitorEffectsOwner()
+						    .containsKey(getOwner().getObjectId()))
+					{
+						SummonEffectTable.getInstance().getServitorEffectsOwner().put(getOwner().getObjectId(), new());
+					}
+
+					if (!SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId())
+						    .containsKey(getOwner().getClassIndex()))
+					{
+						SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId())
+							.put(getOwner().getClassIndex(), new());
+					}
+
+					if (!SummonEffectTable.getInstance().getServitorEffects(getOwner())
+						    .containsKey(getReferenceSkill()))
+					{
+						SummonEffectTable.getInstance().getServitorEffects(getOwner()).put(getReferenceSkill(),
+							new List<SummonEffectTable.SummonEffect>());
+					}
+
+					SummonEffectTable.getInstance().getServitorEffects(getOwner()).get(getReferenceSkill())
+						.Add(new SummonEffectTable.SummonEffect(skill, info.getTime()));
 				}
+
+				ctx.SaveChanges();
 			}
 		}
 		catch (Exception e)
@@ -347,55 +364,55 @@ public class Servitor : Summon, Runnable
 		try
 		{
 			using GameServerDbContext ctx = new();
+			int ownerId = getOwner().getObjectId();
+			int ownerClassIndex = getOwner().getClassIndex();
 			if (!SummonEffectTable.getInstance().getServitorEffectsOwner().containsKey(getOwner().getObjectId()) || !SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).containsKey(getOwner().getClassIndex()) || !SummonEffectTable.getInstance().getServitorEffects(getOwner()).containsKey(getReferenceSkill()))
 			{
-				PreparedStatement statement = con.prepareStatement(RESTORE_SKILL_SAVE);
-				try
+				IQueryable<DbSummonSkillReuse> query = ctx.SummonSkillReuses.Where(r =>
+					r.OwnerId == ownerId && r.OwnerClassIndex == ownerClassIndex && r.SummonSkillId == _referenceSkill);
+
+				foreach (DbSummonSkillReuse record in query)
 				{
-					statement.setInt(1, getOwner().getObjectId());
-					statement.setInt(2, getOwner().getClassIndex());
-					statement.setInt(3, _referenceSkill);
-					ResultSet rset = statement.executeQuery();
+					TimeSpan effectCurTime = record.RemainingTime;
+					Skill skill = SkillData.getInstance().getSkill(record.SkillId, record.SkillLevel);
+					if (skill == null)
 					{
-						while (rset.next())
-						{
-							int effectCurTime = rset.getInt("remaining_time");
-							Skill skill = SkillData.getInstance().getSkill(rset.getInt("skill_id"), rset.getInt("skill_level"));
-							if (skill == null)
-							{
-								continue;
-							}
+						continue;
+					}
 							
-							// XXX: Rework me!
-							if (skill.hasEffects(EffectScope.GENERAL))
-							{
-								if (!SummonEffectTable.getInstance().getServitorEffectsOwner().containsKey(getOwner().getObjectId()))
-								{
-									SummonEffectTable.getInstance().getServitorEffectsOwner().put(getOwner().getObjectId(), new());
-								}
-								if (!SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).containsKey(getOwner().getClassIndex()))
-								{
-									SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).put(getOwner().getClassIndex(), new());
-								}
-								if (!SummonEffectTable.getInstance().getServitorEffects(getOwner()).containsKey(getReferenceSkill()))
-								{
-									SummonEffectTable.getInstance().getServitorEffects(getOwner()).put(getReferenceSkill(), new List<SummonEffectTable.SummonEffect>());
-								}
-								
-								SummonEffectTable.getInstance().getServitorEffects(getOwner()).get(getReferenceSkill()).Add(new SummonEffectTable.SummonEffect(skill, effectCurTime));
-							}
+					// TODO: Rework me!
+					if (skill.hasEffects(EffectScope.GENERAL))
+					{
+						if (!SummonEffectTable.getInstance().getServitorEffectsOwner()
+							    .containsKey(getOwner().getObjectId()))
+						{
+							SummonEffectTable.getInstance().getServitorEffectsOwner()
+								.put(getOwner().getObjectId(), new());
 						}
+
+						if (!SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId())
+							    .containsKey(getOwner().getClassIndex()))
+						{
+							SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId())
+								.put(getOwner().getClassIndex(), new());
+						}
+
+						if (!SummonEffectTable.getInstance().getServitorEffects(getOwner())
+							    .containsKey(getReferenceSkill()))
+						{
+							SummonEffectTable.getInstance().getServitorEffects(getOwner()).put(getReferenceSkill(),
+								new List<SummonEffectTable.SummonEffect>());
+						}
+
+						SummonEffectTable.getInstance().getServitorEffects(getOwner()).get(getReferenceSkill())
+							.Add(new SummonEffectTable.SummonEffect(skill, effectCurTime));
 					}
 				}
 			}
 
-			PreparedStatement statement = con.prepareStatement(DELETE_SKILL_SAVE);
-			{
-				statement.setInt(1, getOwner().getObjectId());
-				statement.setInt(2, getOwner().getClassIndex());
-				statement.setInt(3, _referenceSkill);
-				statement.executeUpdate();
-			}
+			ctx.SummonSkillReuses.Where(r =>
+					r.OwnerId == ownerId && r.OwnerClassIndex == ownerClassIndex && r.SummonSkillId == _referenceSkill)
+				.ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -405,7 +422,7 @@ public class Servitor : Summon, Runnable
 		{
 			if (SummonEffectTable.getInstance().getServitorEffectsOwner().containsKey(getOwner().getObjectId()) && SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).containsKey(getOwner().getClassIndex()) && SummonEffectTable.getInstance().getServitorEffects(getOwner()).containsKey(getReferenceSkill()))
 			{
-				foreach (SummonEffect se in SummonEffectTable.getInstance().getServitorEffects(getOwner()).get(getReferenceSkill()))
+				foreach (SummonEffectTable.SummonEffect se in SummonEffectTable.getInstance().getServitorEffects(getOwner()).get(getReferenceSkill()))
 				{
 					if (se != null)
 					{
@@ -494,12 +511,12 @@ public class Servitor : Summon, Runnable
 			return;
 		}
 		
-		if (_consumeItemInterval > 0)
+		if (_consumeItemInterval > TimeSpan.Zero)
 		{
 			_consumeItemIntervalRemaining -= usedtime;
 			
 			// check if it is time to consume another item
-			if ((_consumeItemIntervalRemaining <= 0) && (_itemConsume.getCount() > 0) && (_itemConsume.getId() > 0) && !isDead())
+			if ((_consumeItemIntervalRemaining <= TimeSpan.Zero) && (_itemConsume.getCount() > 0) && (_itemConsume.getId() > 0) && !isDead())
 			{
 				if (destroyItemByItemId("Consume", _itemConsume.getId(), _itemConsume.getCount(), this, false))
 				{
@@ -517,8 +534,10 @@ public class Servitor : Summon, Runnable
 				}
 			}
 		}
-		
-		sendPacket(new SetSummonRemainTime(_lifeTime, _lifeTimeRemaining));
+
+		int lifeTimeInMs = (int)(_lifeTime ?? TimeSpan.Zero).TotalMilliseconds;
+		int lifeTimeRemainingInMs = (int)(_lifeTimeRemaining ?? TimeSpan.Zero).TotalMilliseconds;
+		sendPacket(new SetSummonRemainTimePacket(lifeTimeInMs, lifeTimeRemainingInMs));
 		
 		// Using same task to check if owner is in visible range
 		if (calculateDistance3D(getOwner()) > 2000)

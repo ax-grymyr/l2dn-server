@@ -25,7 +25,9 @@ public readonly struct AbnormalStatusUpdatePacket: IOutgoingPacket
                 writer.WriteInt16((short)info.getSkill().getDisplayLevel());
                 writer.WriteInt16((short)info.getSkill().getSubLevel());
                 writer.WriteInt32((int)info.getSkill().getAbnormalType());
-                writer.WriteVariableInt(info.getSkill().isAura() || info.getSkill().isToggle() ? -1 : info.getTime());
+                writer.WriteVariableInt(info.getSkill().isAura() || info.getSkill().isToggle()
+                    ? -1
+                    : (int)info.getTime().TotalSeconds);
             }
         }
     }

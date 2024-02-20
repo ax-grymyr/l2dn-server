@@ -50,7 +50,7 @@ public readonly struct SystemMessagePacket: IOutgoingPacket
 		// 				writer.WriteInt16(SystemMessageId.S1_2.getId());
 		// 				writer.WriteByte(1);
 		// 				writer.WriteByte(TYPE_TEXT);
-		// 				writeString(sml.getLocalisation(params));
+		// 				writer.WriteString(sml.getLocalisation(params));
 		// 				return;
 		// 			}
 		// 		}

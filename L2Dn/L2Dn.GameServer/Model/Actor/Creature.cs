@@ -547,7 +547,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * Add Creature instance that is attacking to the attacker list.
 	 * @param creature The Creature that attacks this one
 	 */
-	public void addAttackerToAttackByList(Creature creature)
+	public virtual void addAttackerToAttackByList(Creature creature)
 	{
 		// DS: moved to Attackable
 	}
@@ -1837,7 +1837,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return true;
 	}
 	
-	protected void calculateRewards(Creature killer)
+	protected virtual void calculateRewards(Creature killer)
 	{
 	}
 	

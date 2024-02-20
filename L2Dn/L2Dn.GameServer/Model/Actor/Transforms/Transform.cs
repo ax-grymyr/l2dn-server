@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Transforms;
@@ -173,7 +174,8 @@ public class Transform: IIdentifiable
 		TransformTemplate template = getTemplate(creature);
 		if ((template != null) && (template.getCollisionHeight() != null))
 		{
-			return template.getCollisionHeight();
+			return template.getCollisionHeight() ?? defaultCollisionHeight;
+			
 		}
 		return defaultCollisionHeight;
 	}
@@ -183,7 +185,7 @@ public class Transform: IIdentifiable
 		TransformTemplate template = getTemplate(creature);
 		if ((template != null) && (template.getCollisionRadius() != null))
 		{
-			return template.getCollisionRadius();
+			return template.getCollisionRadius() ?? defaultCollisionRadius;
 		}
 		return defaultCollisionRadius;
 	}
@@ -283,7 +285,7 @@ public class Transform: IIdentifiable
 				// Send basic action list.
 				if (template.hasBasicActionList())
 				{
-					player.sendPacket(new ExBasicActionList(template.getBasicActionList()));
+					player.sendPacket(new ExBasicActionListPacket(template.getBasicActionList()));
 				}
 				
 				player.getEffectList().stopAllToggles();
@@ -291,7 +293,7 @@ public class Transform: IIdentifiable
 				if (player.hasTransformSkills())
 				{
 					player.sendSkillList();
-					player.sendPacket(new SkillCoolTime(player));
+					player.sendPacket(new SkillCoolTimePacket(player));
 				}
 				
 				player.broadcastUserInfo();
@@ -350,7 +352,7 @@ public class Transform: IIdentifiable
 					player.getInventory().unblock();
 				}
 				
-				player.sendPacket(ExBasicActionList.STATIC_PACKET);
+				player.sendPacket(ExBasicActionListPacket.STATIC_PACKET);
 				
 				if (!player.getEffectList().stopEffects(AbnormalType.TRANSFORM))
 				{
@@ -360,11 +362,11 @@ public class Transform: IIdentifiable
 				if (hasTransformSkills)
 				{
 					player.sendSkillList();
-					player.sendPacket(new SkillCoolTime(player));
+					player.sendPacket(new SkillCoolTimePacket(player));
 				}
 				
 				player.broadcastUserInfo();
-				player.sendPacket(new ExUserInfoEquipSlot(player));
+				player.sendPacket(new ExUserInfoEquipSlotPacket(player));
 				
 				// Notify to scripts
 				if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_TRANSFORM, player))

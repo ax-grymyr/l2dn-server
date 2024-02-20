@@ -42,7 +42,7 @@ public class Doppelganger : Attackable
 		{
 			foreach (BuffInfo summonerInfo in getSummoner().getEffectList().getEffects())
 			{
-				if (summonerInfo.getAbnormalTime() > 0)
+				if (summonerInfo.getAbnormalTime() > TimeSpan.Zero)
 				{
 					BuffInfo info = new BuffInfo(getSummoner(), this, summonerInfo.getSkill(), false, null, null);
 					info.setAbnormalTime(summonerInfo.getAbnormalTime());

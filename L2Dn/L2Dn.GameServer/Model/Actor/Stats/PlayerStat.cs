@@ -3,6 +3,7 @@ using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.GameServer.Model.Actor.Transforms;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
@@ -14,6 +15,8 @@ using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Network.OutgoingPackets.DailyMissions;
+using L2Dn.GameServer.Network.OutgoingPackets.Friends;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Stats;
@@ -166,7 +169,7 @@ public class PlayerStat: PlayableStat
 		return removeExpAndSp(addToExp, addToSp, true);
 	}
 	
-	public override bool removeExpAndSp(long addToExp, long addToSp, bool sendMessage)
+	public bool removeExpAndSp(long addToExp, long addToSp, bool sendMessage)
 	{
 		int level = getLevel();
 		if (!base.removeExpAndSp(addToExp, addToSp))
@@ -204,7 +207,7 @@ public class PlayerStat: PlayableStat
 			getActiveChar().setCurrentCp(getMaxCp());
 			getActiveChar().broadcastPacket(new SocialActionPacket(getActiveChar().getObjectId(), SocialActionPacket.LEVEL_UP));
 			getActiveChar().sendPacket(SystemMessageId.YOUR_LEVEL_HAS_INCREASED);
-			getActiveChar().notifyFriends(FriendStatus.MODE_LEVEL);
+			getActiveChar().notifyFriends(FriendStatusPacket.MODE_LEVEL);
 		}
 		
 		// Notify to scripts
@@ -214,7 +217,7 @@ public class PlayerStat: PlayableStat
 		}
 		
 		// Update daily mission count.
-		getActiveChar().sendPacket(new ExConnectedTimeAndGettableReward(getActiveChar()));
+		getActiveChar().sendPacket(new ExConnectedTimeAndGettableRewardPacket(getActiveChar()));
 		
 		// Give AutoGet skills and all normal skills if Auto-Learn is activated.
 		getActiveChar().rewardSkills();
@@ -222,7 +225,7 @@ public class PlayerStat: PlayableStat
 		if (getActiveChar().getClan() != null)
 		{
 			getActiveChar().getClan().updateClanMember(getActiveChar());
-			getActiveChar().getClan().broadcastToOnlineMembers(new PledgeShowMemberListUpdate(getActiveChar()));
+			getActiveChar().getClan().broadcastToOnlineMembers(new PledgeShowMemberListUpdatePacket(getActiveChar()));
 		}
 		if (getActiveChar().isInParty())
 		{
@@ -230,7 +233,9 @@ public class PlayerStat: PlayableStat
 		}
 		
 		// Maybe add some skills when player levels up in transformation.
-		getActiveChar().getTransformation().ifPresent(transform => transform.onLevelUp(getActiveChar()));
+		Transform? transform = getActiveChar().getTransformation();
+		if (transform is not null)
+			transform.onLevelUp(getActiveChar());
 		
 		// Synchronize level with pet if possible.
 		Summon sPet = getActiveChar().getPet();
@@ -255,9 +260,9 @@ public class PlayerStat: PlayableStat
 		// Send a Server->Client packet UserInfo to the Player
 		getActiveChar().updateUserInfo();
 		// Send acquirable skill list
-		getActiveChar().sendPacket(new AcquireSkillList(getActiveChar()));
-		getActiveChar().sendPacket(new ExVoteSystemInfo(getActiveChar()));
-		getActiveChar().sendPacket(new ExOneDayReceiveRewardList(getActiveChar(), true));
+		getActiveChar().sendPacket(new AcquireSkillListPacket(getActiveChar()));
+		getActiveChar().sendPacket(new ExVoteSystemInfoPacket(getActiveChar()));
+		getActiveChar().sendPacket(new ExOneDayReceiveRewardListPacket(getActiveChar(), true));
 		return levelIncreased;
 	}
 	
@@ -442,7 +447,7 @@ public class PlayerStat: PlayableStat
 		{
 			return getValue(Stat.VITALITY_EXP_RATE, Config.RATE_VITALITY_EXP_MULTIPLIER);
 		}
-		if (getActiveChar().getLimitedSayhaGraceEndTime() > System.currentTimeMillis())
+		if (getActiveChar().getLimitedSayhaGraceEndTime() > DateTime.UtcNow)
 		{
 			return Config.RATE_LIMITED_SAYHA_GRACE_EXP_MULTIPLIER;
 		}
@@ -457,7 +462,7 @@ public class PlayerStat: PlayableStat
 			return;
 		}
 		_vitalityPoints = Math.Min(Math.Max(value, MIN_VITALITY_POINTS), MAX_VITALITY_POINTS);
-		getActiveChar().sendPacket(new ExVitalityPointInfo(_vitalityPoints));
+		getActiveChar().sendPacket(new ExVitalityPointInfoPacket(_vitalityPoints));
 	}
 	
 	/*
@@ -495,14 +500,13 @@ public class PlayerStat: PlayableStat
 		}
 		
 		Player player = getActiveChar();
-		player.sendPacket(new ExVitalityPointInfo(getVitalityPoints()));
+		player.sendPacket(new ExVitalityPointInfoPacket(getVitalityPoints()));
 		player.broadcastUserInfo(UserInfoType.VITA_FAME);
 		Party party = player.getParty();
 		if (party != null)
 		{
-			PartySmallWindowUpdate partyWindow = new PartySmallWindowUpdate(player, false);
-			partyWindow.addComponentType(PartySmallWindowUpdateType.VITALITY_POINTS);
-			party.broadcastToPartyMembers(player, partyWindow);
+			party.broadcastToPartyMembers(player,
+				new PartySmallWindowUpdatePacket(player, PartySmallWindowUpdateType.VITALITY_POINTS));
 		}
 	}
 	
@@ -514,7 +518,7 @@ public class PlayerStat: PlayableStat
 			return;
 		}
 		
-		int points = value;
+		double points = value;
 		if (useRates)
 		{
 			if (getActiveChar().isLucky())
@@ -529,6 +533,7 @@ public class PlayerStat: PlayableStat
 				{
 					return;
 				}
+
 				points *= consumeRate;
 			}
 			
@@ -558,7 +563,7 @@ public class PlayerStat: PlayableStat
 			return;
 		}
 		
-		setVitalityPoints(points);
+		setVitalityPoints((int)points);
 	}
 	
 	public double getExpBonusMultiplier()

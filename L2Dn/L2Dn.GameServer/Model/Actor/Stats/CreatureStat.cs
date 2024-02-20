@@ -21,14 +21,14 @@ public class CreatureStat
 	
 	private readonly Map<Stat, double> _statsAdd = new();
 	private readonly Map<Stat, double> _statsMul = new();
-	private readonly Map<Stat, Map<MoveType, Double>> _moveTypeStats = new();
-	private readonly Map<int, Double> _reuseStat = new();
-	private readonly Map<int, Double> _mpConsumeStat = new();
-	private readonly Map<int, LinkedList<Double>> _skillEvasionStat = new();
-	private readonly Map<Stat, Map<Position, Double>> _positionStats = new();
-	private readonly Deque<StatHolder> _additionalAdd = new();
-	private readonly Deque<StatHolder> _additionalMul = new();
-	private readonly Map<Stat, Double> _fixedValue = new();
+	private readonly Map<Stat, Map<MoveType, double>> _moveTypeStats = new();
+	private readonly Map<int, double> _reuseStat = new();
+	private readonly Map<int, double> _mpConsumeStat = new();
+	private readonly Map<int, LinkedList<double>> _skillEvasionStat = new();
+	private readonly Map<Stat, Map<Position, double>> _positionStats = new();
+	private readonly List<StatHolder> _additionalAdd = new();
+	private readonly List<StatHolder> _additionalMul = new();
+	private readonly Map<Stat, double> _fixedValue = new();
 	
 	private readonly float[] _attackTraitValues = new float[Enum.GetValues<TraitType>().Length];
 	private readonly float[] _defenceTraitValues = new float[Enum.GetValues<TraitType>().Length];
@@ -40,7 +40,7 @@ public class CreatureStat
 	private double _attackSpeedMultiplier = 1;
 	private double _mAttackSpeedMultiplier = 1;
 	
-	private readonly ReentrantReadWriteLock _lock = new ReentrantReadWriteLock();
+	private readonly object _lock = new();
 	
 	public CreatureStat(Creature creature)
 	{
@@ -428,7 +428,7 @@ public class CreatureStat
 			return 1;
 		}
 		double mpConsume = skill.getMpConsume();
-		double nextDanceMpCost = Math.ceil(skill.getMpConsume() / 2.0);
+		double nextDanceMpCost = Math.Ceiling(skill.getMpConsume() / 2.0);
 		if (skill.isDance() && Config.DANCE_CONSUME_ADDITIONAL_MP && (_creature != null) && (_creature.getDanceCount() > 0))
 		{
 			mpConsume += _creature.getDanceCount() * nextDanceMpCost;
@@ -475,7 +475,7 @@ public class CreatureStat
 		{
 			if (stats[x] > tempVal)
 			{
-				returnVal = AttributeType.findByClientId(x);
+				returnVal = (AttributeType)x;
 				tempVal = stats[x];
 			}
 		}
@@ -555,22 +555,16 @@ public class CreatureStat
 	
 	public void mergeAttackTrait(TraitType traitType, float value)
 	{
-		_lock.readLock().@lock();
-		try
+		lock (_lock)
 		{
 			_attackTraitValues[(int)traitType] += value;
 			_attackTraits.add(traitType);
-		}
-		finally
-		{
-			_lock.readLock().unlock();
 		}
 	}
 	
 	public void removeAttackTrait(TraitType traitType, float value)
 	{
-		_lock.readLock().@lock();
-		try
+		lock (_lock)
 		{
 			_attackTraitValues[(int)traitType] -= value;
 			if (_attackTraitValues[(int)traitType] == 1.0f)
@@ -578,56 +572,36 @@ public class CreatureStat
 				_attackTraits.remove(traitType);
 			}
 		}
-		finally
-		{
-			_lock.readLock().unlock();
-		}
 	}
 	
 	public float getAttackTrait(TraitType traitType)
 	{
-		_lock.readLock().@lock();
-		try
+		lock (_lock)
 		{
 			return _attackTraitValues[(int)traitType];
-		}
-		finally
-		{
-			_lock.readLock().unlock();
 		}
 	}
 	
 	public bool hasAttackTrait(TraitType traitType)
 	{
-		_lock.readLock().@lock();
-		try
+		lock (_lock)
 		{
 			return _attackTraits.Contains(traitType);
-		}
-		finally
-		{
-			_lock.readLock().unlock();
 		}
 	}
 	
 	public void mergeDefenceTrait(TraitType traitType, float value)
 	{
-		_lock.readLock().@lock();
-		try
+		lock (_lock)
 		{
 			_defenceTraitValues[(int)traitType] += value;
 			_defenceTraits.add(traitType);
-		}
-		finally
-		{
-			_lock.readLock().unlock();
 		}
 	}
 	
 	public void removeDefenceTrait(TraitType traitType, float value)
 	{
-		_lock.readLock().@lock();
-		try
+		lock (_lock)
 		{
 			_defenceTraitValues[(int)traitType] -= value;
 			if (_defenceTraitValues[(int)traitType] == 0)
@@ -635,74 +609,45 @@ public class CreatureStat
 				_defenceTraits.remove(traitType);
 			}
 		}
-		finally
-		{
-			_lock.readLock().unlock();
-		}
 	}
 	
 	public float getDefenceTrait(TraitType traitType)
 	{
-		_lock.readLock().@lock();
-		try
+		lock (_lock)
 		{
 			return _defenceTraitValues[(int)traitType];
-		}
-		finally
-		{
-			_lock.readLock().unlock();
 		}
 	}
 	
 	public bool hasDefenceTrait(TraitType traitType)
 	{
-		_lock.readLock().@lock();
-		try
+		lock (_lock)
 		{
 			return _defenceTraits.Contains(traitType);
-		}
-		finally
-		{
-			_lock.readLock().unlock();
 		}
 	}
 	
 	public void mergeInvulnerableTrait(TraitType traitType)
 	{
-		_lock.readLock().@lock();
-		try
+		lock (_lock)
 		{
 			_invulnerableTraits.add(traitType);
-		}
-		finally
-		{
-			_lock.readLock().unlock();
 		}
 	}
 	
 	public void removeInvulnerableTrait(TraitType traitType)
 	{
-		_lock.readLock().@lock();
-		try
+		lock (_lock)
 		{
 			_invulnerableTraits.remove(traitType);
-		}
-		finally
-		{
-			_lock.readLock().unlock();
 		}
 	}
 	
 	public bool isInvulnerableTrait(TraitType traitType)
 	{
-		_lock.readLock().@lock();
-		try
+		lock (_lock)
 		{
 			return _invulnerableTraits.Contains(traitType);
-		}
-		finally
-		{
-			_lock.readLock().unlock();
 		}
 	}
 	
@@ -729,9 +674,9 @@ public class CreatureStat
 	 * @param stat
 	 * @param value
 	 */
-	public void mergeAdd(Stat stat, Double value)
+	public void mergeAdd(Stat stat, double value)
 	{
-		_statsAdd.merge(stat, value, stat::functionAdd);
+		_statsAdd.merge(stat, value, (x, y) => stat.GetInfo().AddFunction(x, y));
 	}
 	
 	/**
@@ -739,9 +684,9 @@ public class CreatureStat
 	 * @param stat
 	 * @param value
 	 */
-	public void mergeMul(Stat stat, Double value)
+	public void mergeMul(Stat stat, double value)
 	{
-		_statsMul.merge(stat, value, stat::functionMul);
+		_statsMul.merge(stat, value, (x, y) => stat.GetInfo().MulFunction(x, y));
 	}
 	
 	/**
@@ -760,15 +705,9 @@ public class CreatureStat
 	 */
 	public double getAdd(Stat stat, double defaultValue)
 	{
-		_lock.readLock().@lock();
-		try
+		lock (_lock)
 		{
-			double val = _statsAdd.get(stat);
-			return val != null ? val.doubleValue() : defaultValue;
-		}
-		finally
-		{
-			_lock.readLock().unlock();
+			return _statsAdd.GetValueOrDefault(stat, defaultValue);
 		}
 	}
 	
@@ -778,7 +717,7 @@ public class CreatureStat
 	 */
 	public double getMul(Stat stat)
 	{
-		return getMul(stat, 1d);
+		return getMul(stat, 1);
 	}
 	
 	/**
@@ -788,15 +727,9 @@ public class CreatureStat
 	 */
 	public double getMul(Stat stat, double defaultValue)
 	{
-		_lock.readLock().@lock();
-		try
+		lock (_lock)
 		{
-			Double val = _statsMul.get(stat);
-			return val != null ? val.doubleValue() : defaultValue;
-		}
-		finally
-		{
-			_lock.readLock().unlock();
+			return _statsMul.GetValueOrDefault(stat, defaultValue);
 		}
 	}
 	
@@ -807,8 +740,7 @@ public class CreatureStat
 	 */
 	public double getValue(Stat stat, double baseValue)
 	{
-		Double val = _fixedValue.get(stat);
-		return val != null ? val.doubleValue() : stat.finalize(_creature, OptionalDouble.of(baseValue));
+		return _fixedValue.TryGetValue(stat, out double value) ? value : stat.DoFinalize(_creature, baseValue);
 	}
 	
 	/**
@@ -817,8 +749,7 @@ public class CreatureStat
 	 */
 	public double getValue(Stat stat)
 	{
-		Double val = _fixedValue.get(stat);
-		return val != null ? val.doubleValue() : stat.finalize(_creature, OptionalDouble.empty());
+		return _fixedValue.TryGetValue(stat, out double value) ? value : stat.DoFinalize(_creature, null);
 	}
 	
 	protected void resetStats()
@@ -829,15 +760,20 @@ public class CreatureStat
 		_mpVampiricSum = 0;
 		
 		// Initialize default values
-		foreach (Stat stat in Stat.values())
+		foreach (Stat stat in Enum.GetValues<Stat>())
 		{
-			if (stat.getResetAddValue() != 0)
+			StatInfo? info = stat.GetInfo();
+			if (info != null)
 			{
-				_statsAdd.put(stat, stat.getResetAddValue());
-			}
-			if (stat.getResetMulValue() != 0)
-			{
-				_statsMul.put(stat, stat.getResetMulValue());
+				if (info.ResetAddValue != 0)
+				{
+					_statsAdd.put(stat, info.ResetAddValue);
+				}
+
+				if (info.ResetMulValue != 0)
+				{
+					_statsMul.put(stat, info.ResetMulValue);
+				}
 			}
 		}
 	}
@@ -849,12 +785,18 @@ public class CreatureStat
 	public virtual void recalculateStats(bool broadcast)
 	{
 		// Copy old data before wiping it out.
-		Map<Stat, Double> adds = !broadcast ? Collections.emptyMap() : new(_statsAdd);
-		Map<Stat, Double> muls = !broadcast ? Collections.emptyMap() : new(_statsMul);
+		Map<Stat, double> adds = new();
+		Map<Stat, double> muls = new();
+		if (broadcast)
+		{
+			foreach (var kvp in _statsAdd)
+				adds[kvp.Key] = kvp.Value;
+
+			foreach (var kvp in _statsMul)
+				muls[kvp.Key] = kvp.Value;
+		}
 		
-		_lock.writeLock().lock();
-		
-		try
+		lock (_lock)
 		{
 			// Wipe all the data.
 			resetStats();
@@ -936,10 +878,6 @@ public class CreatureStat
 			_attackSpeedMultiplier = Formulas.calcAtkSpdMultiplier(_creature);
 			_mAttackSpeedMultiplier = Formulas.calcMAtkSpdMultiplier(_creature);
 		}
-		finally
-		{
-			_lock.writeLock().unlock();
-		}
 		
 		// Notify recalculation to child classes.
 		onRecalculateStats(broadcast);
@@ -950,9 +888,15 @@ public class CreatureStat
 			Set<Stat> changed = new();
 			foreach (Stat stat in Enum.GetValues<Stat>())
 			{
-				if (_statsAdd.getOrDefault(stat, stat.getResetAddValue()).equals(adds.getOrDefault(stat, stat.getResetAddValue())) || _statsMul.getOrDefault(stat, stat.getResetMulValue()).equals(muls.getOrDefault(stat, stat.getResetMulValue())))
+				StatInfo? info = stat.GetInfo();
+				if (info != null)
 				{
-					changed.add(stat);
+					if (_statsAdd.getOrDefault(stat, info.ResetAddValue) !=
+					    adds.getOrDefault(stat, info.ResetAddValue) ||
+					    _statsMul.getOrDefault(stat, info.ResetMulValue) != muls.getOrDefault(stat, info.ResetMulValue))
+					{
+						changed.add(stat);
+					}
 				}
 			}
 			_creature.broadcastModifiedStats(changed);
@@ -978,84 +922,67 @@ public class CreatureStat
 	
 	public double getPositionTypeValue(Stat stat, Position position)
 	{
-		Map<Position, Double> map = _positionStats.get(stat);
-		if (map != null)
-		{
-			Double val = map.get(position);
-			if (val != null)
-			{
-				return val.doubleValue();
-			}
-		}
-		return 1d;
+		Map<Position, double>? map = _positionStats.get(stat);
+		return map != null && map.TryGetValue(position, out double value) ? value : 1;
 	}
 	
-	public void mergePositionTypeValue(Stat stat, Position position, double value, BiFunction<? super Double, ? super Double, ? extends Double> func)
+	public void mergePositionTypeValue(Stat stat, Position position, double value, Func<double, double, double> func)
 	{
 		_positionStats.computeIfAbsent(stat, key => new()).merge(position, value, func);
 	}
 	
 	public double getMoveTypeValue(Stat stat, MoveType type)
 	{
-		Map<MoveType, Double> map = _moveTypeStats.get(stat);
-		if (map != null)
-		{
-			Double val = map.get(type);
-			if (val != null)
-			{
-				return val.doubleValue();
-			}
-		}
-		return 0d;
+		Map<MoveType, double> map = _moveTypeStats.get(stat);
+		return map != null && map.TryGetValue(type, out double value) ? value : 0;
 	}
 	
 	public void mergeMoveTypeValue(Stat stat, MoveType type, double value)
 	{
-		_moveTypeStats.computeIfAbsent(stat, key => new()).merge(type, value, MathUtil::add);
+		_moveTypeStats.computeIfAbsent(stat, key => new()).merge(type, value, StatInfo.DefaultAddFunction);
 	}
 	
 	public double getReuseTypeValue(int magicType)
 	{
-		Double val = _reuseStat.get(magicType);
-		return val != null ? val.doubleValue() : 1d;
+		return _reuseStat.GetValueOrDefault(magicType, 1);
 	}
 	
-	public void mergeReuseTypeValue(int magicType, double value, BiFunction<? super Double, ? super Double, ? extends Double> func)
+	public void mergeReuseTypeValue(int magicType, double value, Func<double, double, double> func)
 	{
 		_reuseStat.merge(magicType, value, func);
 	}
 	
 	public double getMpConsumeTypeValue(int magicType)
 	{
-		Double val = _mpConsumeStat.get(magicType);
-		return val != null ? val.doubleValue() : 1d;
+		return _mpConsumeStat.GetValueOrDefault(magicType, 1);
 	}
 	
-	public void mergeMpConsumeTypeValue(int magicType, double value, BiFunction<? super Double, ? super Double, ? extends Double> func)
+	public void mergeMpConsumeTypeValue(int magicType, double value, Func<double, double, double> func)
 	{
 		_mpConsumeStat.merge(magicType, value, func);
 	}
 	
 	public double getSkillEvasionTypeValue(int magicType)
 	{
-		LinkedList<Double> skillEvasions = _skillEvasionStat.get(magicType);
+		LinkedList<double> skillEvasions = _skillEvasionStat.get(magicType);
 		if ((skillEvasions != null) && !skillEvasions.isEmpty())
 		{
-			return skillEvasions.peekLast().doubleValue();
+			return skillEvasions.Last.Value;
 		}
-		return 0d;
+		
+		return 0;
 	}
 	
 	public void addSkillEvasionTypeValue(int magicType, double value)
 	{
-		_skillEvasionStat.computeIfAbsent(magicType, k => new LinkedList<>()).add(value);
+		_skillEvasionStat.computeIfAbsent(magicType, k => new()).AddLast(value);
 	}
 	
 	public void removeSkillEvasionTypeValue(int magicType, double value)
 	{
 		_skillEvasionStat.computeIfPresent(magicType, (k, v) =>
 		{
-			v.remove(value);
+			v.Remove(value);
 			return !v.isEmpty() ? v : null;
 		});
 	}
@@ -1067,14 +994,9 @@ public class CreatureStat
 	
 	public double getVampiricSum()
 	{
-		_lock.readLock().@lock();
-		try
+		lock (_lock)
 		{
 			return _vampiricSum;
-		}
-		finally
-		{
-			_lock.readLock().unlock();
 		}
 	}
 	
@@ -1085,14 +1007,9 @@ public class CreatureStat
 	
 	public double getMpVampiricSum()
 	{
-		_lock.readLock().@lock();
-		try
+		lock (_lock)
 		{
 			return _mpVampiricSum;
-		}
-		finally
-		{
-			_lock.readLock().unlock();
 		}
 	}
 	
@@ -1101,7 +1018,7 @@ public class CreatureStat
 	 * @param skill the skill from which reuse time will be calculated.
 	 * @return the time in milliseconds this skill is being under reuse.
 	 */
-	public int getReuseTime(Skill skill)
+	public virtual int getReuseTime(Skill skill)
 	{
 		return (skill.isStaticReuse() || skill.isStatic()) ? skill.getReuseDelay() : (int) (skill.getReuseDelay() * getReuseTypeValue(skill.getMagicType()));
 	}
@@ -1197,7 +1114,7 @@ public class CreatureStat
 	 * @param value
 	 * @return true if the there wasn't previously set fixed value, {@code false} otherwise
 	 */
-	public bool addFixedValue(Stat stat, Double value)
+	public bool addFixedValue(Stat stat, double value)
 	{
 		return _fixedValue.put(stat, value) == null;
 	}

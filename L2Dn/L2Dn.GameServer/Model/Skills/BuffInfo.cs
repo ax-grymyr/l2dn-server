@@ -126,7 +126,7 @@ public class BuffInfo
 	 * Gets the calculated abnormal time.
 	 * @return the abnormal time
 	 */
-	public int getAbnormalTime()
+	public TimeSpan getAbnormalTime()
 	{
 		return _abnormalTime;
 	}

@@ -69,10 +69,10 @@ public class StatSet : IParserAdvUtils
 	}
 	
 	/**
-	 * Return the boolean value associated with key.
+	 * Return the bool value associated with key.
 	 * @param key : String designating the key in the set
-	 * @return boolean : value associated to the key
-	 * @throws IllegalArgumentException : If value is not set or value is not boolean
+	 * @return bool : value associated to the key
+	 * @throws IllegalArgumentException : If value is not set or value is not bool
 	 */
 	public bool getBoolean(String key)
 	{
@@ -98,10 +98,10 @@ public class StatSet : IParserAdvUtils
 	}
 	
 	/**
-	 * Return the boolean value associated with key.<br>
+	 * Return the bool value associated with key.<br>
 	 * If no value is associated with key, or type of value is wrong, returns defaultValue.
 	 * @param key : String designating the key in the entry set
-	 * @return boolean : value associated to the key
+	 * @return bool : value associated to the key
 	 */
 	public bool getBoolean(String key, bool defaultValue)
 	{

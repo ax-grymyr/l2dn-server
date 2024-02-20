@@ -1,6 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets.Sayune;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Request;
@@ -9,7 +10,7 @@ public class SayuneRequest : AbstractRequest
 {
 	private readonly int _mapId;
 	private bool _isSelecting;
-	private readonly Deque<SayuneEntry> _possibleEntries = new();
+	private readonly Queue<SayuneEntry> _possibleEntries = new();
 
 	public SayuneRequest(Player player, int mapId): base(player)
 	{
@@ -17,8 +18,9 @@ public class SayuneRequest : AbstractRequest
 		
 		SayuneEntry map = SayuneData.getInstance().getMap(_mapId);
 		Objects.requireNonNull(map);
-		
-		_possibleEntries.addAll(map.getInnerEntries());
+
+		foreach (SayuneEntry entry in map.getInnerEntries())
+			_possibleEntries.Enqueue(entry);
 	}
 	
 	public override bool isUsing(int objectId)
@@ -28,7 +30,7 @@ public class SayuneRequest : AbstractRequest
 	
 	private SayuneEntry findEntry(int pos)
 	{
-		if (_possibleEntries.isEmpty())
+		if (_possibleEntries.Count == 0)
 		{
 			return null;
 		}
@@ -43,7 +45,11 @@ public class SayuneRequest : AbstractRequest
 			}
 			return null;
 		}
-		return _possibleEntries.removeFirst();
+
+		if (_possibleEntries.TryDequeue(out SayuneEntry? sayuneEntry))
+			return sayuneEntry;
+		
+		return null;
 	}
 	
 	[MethodImpl(MethodImplOptions.Synchronized)]
@@ -71,8 +77,10 @@ public class SayuneRequest : AbstractRequest
 			// Set next possible path
 			if (!nextEntry.isSelector())
 			{
-				_possibleEntries.clear();
-				_possibleEntries.addAll(nextEntry.getInnerEntries());
+				_possibleEntries.Clear();
+
+				foreach (SayuneEntry entry in nextEntry.getInnerEntries())
+					_possibleEntries.Enqueue(entry);
 			}
 		}
 		
@@ -80,15 +88,18 @@ public class SayuneRequest : AbstractRequest
 		List<SayuneEntry> locations = nextEntry.isSelector() ? nextEntry.getInnerEntries() : [nextEntry];
 		if (nextEntry.isSelector())
 		{
-			_possibleEntries.clear();
-			_possibleEntries.addAll(locations);
+			_possibleEntries.Clear();
+
+			foreach (SayuneEntry entry in locations)
+				_possibleEntries.Enqueue(entry);
+
 			_isSelecting = true;
 		}
 		
-		player.sendPacket(new ExFlyMove(player, type, _mapId, locations));
+		player.sendPacket(new ExFlyMovePacket(player, type, _mapId, locations));
 		
 		SayuneEntry activeEntry = locations.get(0);
-		Broadcast.toKnownPlayersInRadius(player, new ExFlyMoveBroadcast(player, type, map.getId(), activeEntry), 1000);
+		Broadcast.toKnownPlayersInRadius(player, new ExFlyMoveBroadcastPacket(player, type, map.getId(), activeEntry), 1000);
 		player.setXYZ(activeEntry);
 	}
 	

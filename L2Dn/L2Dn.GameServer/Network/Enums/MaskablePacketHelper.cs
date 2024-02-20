@@ -1,4 +1,5 @@
-﻿using L2Dn.Packets;
+﻿using L2Dn.Extensions;
+using L2Dn.Packets;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Network.Enums;
@@ -15,6 +16,11 @@ public class MaskablePacketHelper<T>
             throw new ArgumentOutOfRangeException(nameof(maskSizeInBytes));
         
         _maskSizeInBytes = maskSizeInBytes;
+    }
+    
+    public void AddAllComponents()
+    {
+        Enum.GetValues<T>().ForEach(AddComponent);
     }
     
     public void AddComponent(T component)

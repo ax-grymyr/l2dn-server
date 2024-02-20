@@ -77,7 +77,7 @@ public class PlayableStat: CreatureStat
 			Player player = getActiveChar().getActingPlayer();
 			if (SkillTreeData.getInstance().hasAvailableSkills(player, player.getClassId()))
 			{
-				getActiveChar().sendPacket(ExNewSkillToLearnByLevelUp.STATIC_PACKET);
+				getActiveChar().sendPacket(ExNewSkillToLearnByLevelUpPacket.STATIC_PACKET);
 			}
 			
 			// Check last rewarded level - prevent reputation farming via deleveling
@@ -188,7 +188,7 @@ public class PlayableStat: CreatureStat
 		return true;
 	}
 	
-	public bool addSp(long amount)
+	public virtual bool addSp(long amount)
 	{
 		if (amount < 0)
 		{

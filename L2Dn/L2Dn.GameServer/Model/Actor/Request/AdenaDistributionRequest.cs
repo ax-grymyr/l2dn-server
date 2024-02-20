@@ -1,4 +1,6 @@
-﻿namespace L2Dn.GameServer.Model.Actor.Request;
+﻿using L2Dn.GameServer.Network.OutgoingPackets.AdenaDistribution;
+
+namespace L2Dn.GameServer.Model.Actor.Request;
 
 public class AdenaDistributionRequest: AbstractRequest
 {
@@ -47,7 +49,7 @@ public class AdenaDistributionRequest: AbstractRequest
         _players.ForEach(p =>
         {
             p.removeRequest<AdenaDistributionRequest>();
-            p.sendPacket(ExDivideAdenaCancel.STATIC_PACKET);
+            p.sendPacket(ExDivideAdenaCancelPacket.STATIC_PACKET);
         });
     }
 }

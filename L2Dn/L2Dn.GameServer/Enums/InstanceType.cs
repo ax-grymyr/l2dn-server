@@ -276,12 +276,12 @@ public static class InstanceTypeUtil
 // 		return _parent;
 // 	}
 // 	
-// 	public boolean isType(InstanceType it)
+// 	public bool isType(InstanceType it)
 // 	{
 // 		return ((_maskL & it._typeL) > 0) || ((_maskH & it._typeH) > 0);
 // 	}
 // 	
-// 	public boolean isTypes(InstanceType... it)
+// 	public bool isTypes(InstanceType... it)
 // 	{
 // 		for (InstanceType i : it)
 // 		{

@@ -53,6 +53,6 @@ public class PetStatus: SummonStatus
 
     public override Pet getActiveChar()
     {
-        return (Pet)super.getActiveChar();
+        return (Pet)base.getActiveChar();
     }
 }

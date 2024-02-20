@@ -251,7 +251,7 @@ public struct ExShowScreenMessagePacket: IOutgoingPacket
 		// 						writer.WriteInt32(_time);
 		// 						writer.WriteInt32(_fade);
 		// 						writer.WriteInt32(-1);
-		// 						writeString(sml.getLocalisation(_parameters != null ? _parameters : Collections.emptyList()));
+		// 						writer.WriteString(sml.getLocalisation(_parameters != null ? _parameters : Collections.emptyList()));
 		// 						return;
 		// 					}
 		// 				}
@@ -275,7 +275,7 @@ public struct ExShowScreenMessagePacket: IOutgoingPacket
 		// 						writer.WriteInt32(_time);
 		// 						writer.WriteInt32(_fade);
 		// 						writer.WriteInt32(-1);
-		// 						writeString(nsl.getLocalisation(_parameters != null ? _parameters : Collections.emptyList()));
+		// 						writer.WriteString(nsl.getLocalisation(_parameters != null ? _parameters : Collections.emptyList()));
 		// 						return;
 		// 					}
 		// 				}

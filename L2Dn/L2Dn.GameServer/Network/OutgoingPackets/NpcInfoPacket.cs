@@ -348,7 +348,7 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 		
 		if (_helper.HasComponent(NpcInfoType.NAME))
 		{
-			//writeString(localisation != null ? localisation[0] : _npc.getName());
+			//writer.WriteString(localisation != null ? localisation[0] : _npc.getName());
 			writer.WriteString(_npc.getName());
 		}
 		

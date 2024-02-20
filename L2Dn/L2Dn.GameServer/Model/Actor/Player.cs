@@ -12190,7 +12190,7 @@ public class Player: Playable
 		return false;
 	}
 	
-	public long getLimitedSayhaGraceEndTime()
+	public DateTime getLimitedSayhaGraceEndTime()
 	{
 		return getVariables().getLong(PlayerVariables.LIMITED_SAYHA_GRACE_ENDTIME, 0);
 	}

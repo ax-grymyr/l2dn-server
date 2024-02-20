@@ -344,7 +344,7 @@ public class TradeList
 	
 	/**
 	 * Confirms TradeList
-	 * @return : boolean
+	 * @return : bool
 	 */
 	public bool confirm()
 	{
@@ -821,7 +821,7 @@ public class TradeList
 	 * Sell items to this PrivateStore list
 	 * @param player
 	 * @param requestedItems
-	 * @return : boolean true if success
+	 * @return : bool true if success
 	 */
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public bool privateStoreSell(Player player, ItemRequest[] requestedItems)

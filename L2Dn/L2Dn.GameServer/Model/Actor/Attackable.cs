@@ -150,7 +150,7 @@ public class Attackable : Npc
 							_commandChannelTimer = new CommandChannelTimer(this);
 							_commandChannelLastAttack = DateTime.Now;
 							ThreadPool.schedule(_commandChannelTimer, 10000); // check for last attack
-							_firstCommandChannelAttacked.broadcastPacket(new CreatureSay(null, ChatType.PARTYROOM_ALL, "", "You have looting rights!")); // TODO: retail msg
+							_firstCommandChannelAttacked.broadcastPacket(new CreatureSayPacket(null, ChatType.PARTYROOM_ALL, "", "You have looting rights!")); // TODO: retail msg
 						}
 					}
 				}
@@ -245,7 +245,7 @@ public class Attackable : Npc
 			Monster mob = (Monster) this;
 			if ((mob.getLeader() != null) && mob.getLeader().hasMinions())
 			{
-				int respawnTime = Config.MINIONS_RESPAWN_TIME.ContainsKey(getId()) ? Config.MINIONS_RESPAWN_TIME.get(getId()) * 1000 : -1;
+				int respawnTime = Config.MINIONS_RESPAWN_TIME.ContainsKey(getId()) ? Config.MINIONS_RESPAWN_TIME[getId()] * 1000 : -1;
 				mob.getLeader().getMinionList().onMinionDie(mob, respawnTime);
 			}
 			
@@ -348,18 +348,18 @@ public class Attackable : Npc
 					continue;
 				}
 				
-				Optional<PartyContainer> partyContainerStream = Optional.empty();
+				PartyContainer? partyContainerStream = null;
 				for (int i = 0, damagingPartiesSize = damagingParties.Count; i < damagingPartiesSize; i++)
 				{
 					PartyContainer p = damagingParties[i];
 					if (p.party == party)
 					{
-						partyContainerStream = Optional.of(p);
+						partyContainerStream = p;
 						break;
 					}
 				}
-				
-				PartyContainer container = partyContainerStream.orElse(new PartyContainer(party, 0L));
+
+				PartyContainer container = partyContainerStream ?? new PartyContainer(party, 0L);
 				List<Player> members = party.getMembers();
 				foreach (Player e in members)
 				{
@@ -376,21 +376,21 @@ public class Attackable : Npc
 				}
 				container.damage = totalMemberDamage;
 				
-				if (!partyContainerStream.isPresent())
+				if (partyContainerStream is not null)
 				{
 					damagingParties.Add(container);
 				}
 			}
 			
 			PartyContainer mostDamageParty;
-			damagingParties.sort(Comparator.comparingLong(c => c.damage));
+			damagingParties.Sort(Comparator.comparingLong(c => c.damage));
 			mostDamageParty = !damagingParties.isEmpty() ? damagingParties[0] : null;
 			
 			// Calculate raidboss points
 			if (_isRaid && !_isRaidMinion)
 			{
 				Player player = (maxDealer != null) && maxDealer.isOnline() ? maxDealer : lastAttacker.getActingPlayer();
-				broadcastPacket(new SystemMessage(SystemMessageId.CONGRATULATIONS_YOUR_RAID_WAS_SUCCESSFUL));
+				broadcastPacket(new SystemMessagePacket(SystemMessageId.CONGRATULATIONS_YOUR_RAID_WAS_SUCCESSFUL));
 				int raidbossPoints = (int) (getTemplate().getRaidPoints() * Config.RATE_RAIDBOSS_POINTS);
 				Party party = player.getParty();
 				if (party != null)
@@ -522,8 +522,8 @@ public class Attackable : Npc
 							// Distribute the Exp and SP between the Player and its Summon
 							if (!attacker.isDead())
 							{
-								exp = attacker.getStat().getValue(Stat.EXPSP_RATE, exp) * Config.EXP_AMOUNT_MULTIPLIERS[attacker.getClassId().getId()];
-								sp = attacker.getStat().getValue(Stat.EXPSP_RATE, sp) * Config.SP_AMOUNT_MULTIPLIERS[attacker.getClassId().getId()];
+								exp = attacker.getStat().getValue(Stat.EXPSP_RATE, exp) * Config.EXP_AMOUNT_MULTIPLIERS[attacker.getClassId()];
+								sp = attacker.getStat().getValue(Stat.EXPSP_RATE, sp) * Config.SP_AMOUNT_MULTIPLIERS[attacker.getClassId()];
 								
 								// Premium rates
 								if (attacker.hasPremiumStatus())
