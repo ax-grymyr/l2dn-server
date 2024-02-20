@@ -1,4 +1,8 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
@@ -28,10 +32,10 @@ public class ConditionTargetMyPartyExceptMe: Condition
 			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_ON_YOURSELF);
 			isPartyMember = false;
 		}
-		else if (!player.isInParty() || !player.getParty().equals(effected.getParty()))
+		else if (!player.isInParty() || !player.getParty().Equals(effected.getParty()))
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
-			sm.addSkillName(skill);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
+			sm.Params.addSkillName(skill);
 			player.sendPacket(sm);
 			isPartyMember = false;
 		}

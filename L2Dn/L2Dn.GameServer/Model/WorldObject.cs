@@ -353,7 +353,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * Verify if object is instance of Cubic.
 	 * @return {@code true} if object is instance of Cubic, {@code false} otherwise
 	 */
-	public bool isCubic()
+	public virtual bool isCubic()
 	{
 		return false;
 	}
@@ -574,7 +574,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * Gets the instance ID.
 	 * @return the instance ID
 	 */
-	public int getInstanceId()
+	public virtual int getInstanceId()
 	{
 		Instance instance = _instance;
 		return (instance != null) ? instance.getId() : 0;
@@ -584,7 +584,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * Check if object is inside instance world.
 	 * @return {@code true} when object is inside any instance world, otherwise {@code false}
 	 */
-	public bool isInInstance()
+	public virtual bool isInInstance()
 	{
 		return _instance != null;
 	}
@@ -593,7 +593,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * Get instance world where object is currently located.
 	 * @return {@link Instance} if object is inside instance world, otherwise {@code null}
 	 */
-	public Instance getInstanceWorld()
+	public virtual Instance getInstanceWorld()
 	{
 		return _instance;
 	}

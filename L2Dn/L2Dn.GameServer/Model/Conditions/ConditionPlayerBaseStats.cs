@@ -1,4 +1,7 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Model.Stats;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
@@ -34,35 +37,16 @@ public class ConditionPlayerBaseStats: Condition
 		{
 			return false;
 		}
-		
-		switch (_stat)
+
+		return _stat switch
 		{
-			case INT:
-			{
-				return player.getINT() >= _value;
-			}
-			case STR:
-			{
-				return player.getSTR() >= _value;
-			}
-			case CON:
-			{
-				return player.getCON() >= _value;
-			}
-			case DEX:
-			{
-				return player.getDEX() >= _value;
-			}
-			case MEN:
-			{
-				return player.getMEN() >= _value;
-			}
-			case WIT:
-			{
-				return player.getWIT() >= _value;
-			}
-		}
-		
-		return false;
+			BaseStat.INT => player.getINT() >= _value,
+			BaseStat.STR => player.getSTR() >= _value,
+			BaseStat.CON => player.getCON() >= _value,
+			BaseStat.DEX => player.getDEX() >= _value,
+			BaseStat.MEN => player.getMEN() >= _value,
+			BaseStat.WIT => player.getWIT() >= _value,
+			_ => false
+		};
 	}
 }

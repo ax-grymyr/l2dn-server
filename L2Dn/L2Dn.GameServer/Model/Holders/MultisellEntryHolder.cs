@@ -1,3 +1,6 @@
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Model.Items;
+
 namespace L2Dn.GameServer.Model.Holders;
 
 /**

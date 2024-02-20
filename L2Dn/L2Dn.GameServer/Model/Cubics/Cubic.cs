@@ -2,9 +2,16 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Model.InstanceZones;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Model.Olympiads;
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Cubics;
 
@@ -13,8 +20,8 @@ public class Cubic: Creature
 	private readonly Player _owner;
 	private readonly Player _caster;
 	private readonly CubicTemplate _template;
-	private ScheduledFuture<?> _skillUseTask;
-	private ScheduledFuture<?> _expireTask;
+	private ScheduledFuture _skillUseTask;
+	private ScheduledFuture _expireTask;
 	
 	public Cubic(Player owner, Player caster, CubicTemplate template): base(template)
 	{
@@ -27,8 +34,8 @@ public class Cubic: Creature
 	
 	private void activate()
 	{
-		_skillUseTask = ThreadPool.scheduleAtFixedRate(this::readyToUseSkill, 0, _template.getDelay() * 1000);
-		_expireTask = ThreadPool.schedule(this::deactivate, _template.getDuration() * 1000);
+		_skillUseTask = ThreadPool.scheduleAtFixedRate(readyToUseSkill, 0, _template.getDelay() * 1000);
+		_expireTask = ThreadPool.schedule(deactivate, _template.getDuration() * 1000);
 	}
 	
 	public void deactivate()
@@ -52,22 +59,22 @@ public class Cubic: Creature
 	{
 		switch (_template.getTargetType())
 		{
-			case TARGET:
+			case CubicTargetType.TARGET:
 			{
 				actionToCurrentTarget();
 				break;
 			}
-			case BY_SKILL:
+			case CubicTargetType.BY_SKILL:
 			{
 				actionToTargetBySkill();
 				break;
 			}
-			case HEAL:
+			case CubicTargetType.HEAL:
 			{
 				actionHeal();
 				break;
 			}
-			case MASTER:
+			case CubicTargetType.MASTER:
 			{
 				actionToMaster();
 				break;
@@ -106,7 +113,7 @@ public class Cubic: Creature
 		{
 			switch (skill.getTargetType())
 			{
-				case TARGET:
+				case CubicTargetType.TARGET:
 				{
 					WorldObject target = _owner.getTarget();
 					if (target != null)
@@ -115,12 +122,12 @@ public class Cubic: Creature
 					}
 					break;
 				}
-				case HEAL:
+				case CubicTargetType.HEAL:
 				{
 					actionHeal();
 					break;
 				}
-				case MASTER:
+				case CubicTargetType.MASTER:
 				{
 					tryToUseSkill(_owner, skill);
 					break;
@@ -206,7 +213,7 @@ public class Cubic: Creature
 	{
 		if (!_owner.hasSkillReuse(skill.getReuseHashCode()))
 		{
-			_caster.broadcastPacket(new MagicSkillUse(_owner, target, skill.getDisplayId(), skill.getDisplayLevel(), skill.getHitTime(), skill.getReuseDelay()));
+			_caster.broadcastPacket(new MagicSkillUsePacket(_owner, target, skill.getDisplayId(), skill.getDisplayLevel(), skill.getHitTime(), skill.getReuseDelay()));
 			skill.activateSkill(this, target);
 			_owner.addTimeStamp(skill, skill.getReuseDelay());
 		}
@@ -230,16 +237,16 @@ public class Cubic: Creature
 		}
 		else
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.C1_HAS_DEALT_S3_DAMAGE_TO_C2);
-			sm.addString(getName());
-			sm.addString(target.getName());
-			sm.addInt(damage);
-			sm.addPopup(target.getObjectId(), _owner.getObjectId(), (damage * -1));
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_DEALT_S3_DAMAGE_TO_C2);
+			sm.Params.addString(getName());
+			sm.Params.addString(target.getName());
+			sm.Params.addInt(damage);
+			sm.Params.addPopup(target.getObjectId(), _owner.getObjectId(), (damage * -1));
 			_owner.sendPacket(sm);
 		}
 	}
 	
-	public override void sendPacket(ServerPacket packet)
+	public override void sendPacket<TPacket>(TPacket packet)
 	{
 		if (_owner != null)
 		{

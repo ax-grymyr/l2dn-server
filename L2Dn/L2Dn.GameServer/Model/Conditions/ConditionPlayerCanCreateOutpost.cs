@@ -1,5 +1,10 @@
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Sieges;
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
+using L2Dn.GameServer.Network.Enums;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
@@ -24,11 +29,7 @@ public class ConditionPlayerCanCreateOutpost: Condition
 		}
 		
 		Player player = effector.getActingPlayer();
-		bool canCreateOutpost = true;
-		if (player.isAlikeDead() || player.isCursedWeaponEquipped() || (player.getClan() == null))
-		{
-			canCreateOutpost = false;
-		}
+		bool canCreateOutpost = !(player.isAlikeDead() || player.isCursedWeaponEquipped() || (player.getClan() == null));
 		
 		Castle castle = CastleManager.getInstance().getCastle(player);
 		Fort fort = FortManager.getInstance().getFort(player);

@@ -204,7 +204,8 @@ public class Clan: IIdentifiable, INamable
 			{
 				SiegeManager.getInstance().removeSiegeSkills(exLeader);
 			}
-			exLeader.getClanPrivileges().clear();
+			
+			exLeader.setClanPrivileges(ClanPrivilege.None);
 			exLeader.broadcastUserInfo();
 		}
 		else

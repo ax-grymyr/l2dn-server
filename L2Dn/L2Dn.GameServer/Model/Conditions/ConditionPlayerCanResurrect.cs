@@ -1,4 +1,11 @@
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Clans;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Sieges;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
@@ -35,8 +42,8 @@ public class ConditionPlayerCanResurrect: Condition
 				canResurrect = false;
 				if (effector.isPlayer())
 				{
-					SystemMessage msg = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
-					msg.addSkillName(skill);
+					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
+					msg.Params.addSkillName(skill);
 					effector.sendPacket(msg);
 				}
 			}
@@ -106,8 +113,8 @@ public class ConditionPlayerCanResurrect: Condition
 				canResurrect = false;
 				if (effector.isPlayer())
 				{
-					final SystemMessage msg = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
-					msg.addSkillName(skill);
+					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
+					msg.Params.addSkillName(skill);
 					effector.sendPacket(msg);
 				}
 			}

@@ -12,7 +12,7 @@ public class TrainingHolder
 	private readonly int _level;
 	private readonly long _startTime;
 	private long _endTime = -1;
-	private static readonly long TRAINING_DIVIDER = TimeUnit.SECONDS.toMinutes(Config.TRAINING_CAMP_MAX_DURATION);
+	private static readonly TimeSpan TRAINING_DIVIDER = TimeSpan.FromSeconds(Config.TRAINING_CAMP_MAX_DURATION);
 	
 	public TrainingHolder(int objectId, int classIndex, int level, long startTime, long endTime)
 	{

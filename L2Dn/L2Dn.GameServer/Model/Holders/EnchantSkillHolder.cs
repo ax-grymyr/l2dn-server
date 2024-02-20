@@ -64,6 +64,6 @@ public class EnchantSkillHolder
 	
 	public Set<ItemHolder> getRequiredItems(SkillEnchantType type)
 	{
-		return _requiredItems.getOrDefault(type, Collections.emptySet());
+		return _requiredItems.getOrDefault(type, new());
 	}
 }

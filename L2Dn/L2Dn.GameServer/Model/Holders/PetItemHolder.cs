@@ -1,3 +1,5 @@
+using L2Dn.GameServer.Model.Items.Instances;
+
 namespace L2Dn.GameServer.Model.Holders;
 
 /**

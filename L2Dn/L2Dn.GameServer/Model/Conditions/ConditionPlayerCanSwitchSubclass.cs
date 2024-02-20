@@ -1,5 +1,9 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.TaskManagers;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
@@ -52,7 +56,7 @@ public class ConditionPlayerCanSwitchSubclass: Condition
 			canSwitchSub = false;
 			player.sendPacket(SystemMessageId.YOU_CANNOT_CHANGE_THE_CLASS_BECAUSE_OF_IDENTITY_CRISIS);
 		}
-		else if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(player) || (player.getPvpFlag() > 0) || player.isInInstance() || player.isTransformed() || player.isMounted())
+		else if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(player) || (player.getPvpFlag()) || player.isInInstance() || player.isTransformed() || player.isMounted())
 		{
 			canSwitchSub = false;
 		}

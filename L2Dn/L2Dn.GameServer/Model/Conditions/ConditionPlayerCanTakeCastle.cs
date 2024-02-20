@@ -1,4 +1,11 @@
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Sieges;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
@@ -23,27 +30,23 @@ public class ConditionPlayerCanTakeCastle: Condition
 		}
 		
 		Player player = effector.getActingPlayer();
-		bool canTakeCastle = true;
-		if (player.isAlikeDead() || player.isCursedWeaponEquipped() || !player.isClanLeader())
-		{
-			canTakeCastle = false;
-		}
+		bool canTakeCastle = !(player.isAlikeDead() || player.isCursedWeaponEquipped() || !player.isClanLeader());
 		
 		Castle castle = CastleManager.getInstance().getCastle(player);
-		SystemMessage sm;
+		SystemMessagePacket sm;
 		if ((castle == null) || (castle.getResidenceId() <= 0) || !castle.getSiege().isInProgress() || (castle.getSiege().getAttackerClan(player.getClan()) == null))
 		{
-			sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
-			sm.addSkillName(skill);
+			sm = new SystemMessagePacket(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
+			sm.Params.addSkillName(skill);
 			player.sendPacket(sm);
 			canTakeCastle = false;
 		}
-		else if (!castle.getArtefacts().contains(effected))
+		else if (!castle.getArtefacts().Contains(effected))
 		{
 			player.sendPacket(SystemMessageId.INVALID_TARGET);
 			canTakeCastle = false;
 		}
-		else if (!Util.checkIfInRange(200, player, effected, true) || (player.getZ() < effected.getZ()) || (Math.abs(player.getZ() - effected.getZ()) > 40))
+		else if (!Util.checkIfInRange(200, player, effected, true) || (player.getZ() < effected.getZ()) || (Math.Abs(player.getZ() - effected.getZ()) > 40))
 		{
 			player.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_CANCELLED);
 			canTakeCastle = false;

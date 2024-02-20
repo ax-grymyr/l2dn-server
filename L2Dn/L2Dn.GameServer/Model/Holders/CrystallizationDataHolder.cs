@@ -11,7 +11,7 @@ public class CrystallizationDataHolder
 	public CrystallizationDataHolder(int id, List<ItemChanceHolder> items)
 	{
 		_id = id;
-		_items = Collections.unmodifiableList(items);
+		_items = items;
 	}
 
 	public int getId()

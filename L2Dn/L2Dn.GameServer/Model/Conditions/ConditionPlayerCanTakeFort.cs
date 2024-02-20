@@ -1,4 +1,11 @@
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Sieges;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
@@ -23,18 +30,14 @@ public class ConditionPlayerCanTakeFort: Condition
 		}
 		
 		Player player = effector.getActingPlayer();
-		bool canTakeFort = true;
-		if (player.isAlikeDead() || player.isCursedWeaponEquipped() || !player.isClanLeader())
-		{
-			canTakeFort = false;
-		}
+		bool canTakeFort = !(player.isAlikeDead() || player.isCursedWeaponEquipped() || !player.isClanLeader());
 		
 		Fort fort = FortManager.getInstance().getFort(player);
-		SystemMessage sm;
+		SystemMessagePacket sm;
 		if ((fort == null) || (fort.getResidenceId() <= 0) || !fort.getSiege().isInProgress() || (fort.getSiege().getAttackerClan(player.getClan()) == null))
 		{
-			sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
-			sm.addSkillName(skill);
+			sm = new SystemMessagePacket(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
+			sm.Params.addSkillName(skill);
 			player.sendPacket(sm);
 			canTakeFort = false;
 		}

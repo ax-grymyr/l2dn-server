@@ -1,3 +1,5 @@
+using L2Dn.GameServer.Network.Enums;
+
 namespace L2Dn.GameServer.Model.Holders;
 
 /**
@@ -9,9 +11,10 @@ public class ClanHallTeleportHolder: Location
 	private readonly int _minFunctionLevel;
 	private readonly int _cost;
 
-	public ClanHallTeleportHolder(int npcStringId, int x, int y, int z, int minFunctionLevel, int cost): base(x, y, z)
+	public ClanHallTeleportHolder(NpcStringId npcStringId, int x, int y, int z, int minFunctionLevel, int cost)
+		: base(x, y, z)
 	{
-		_npcStringId = NpcStringId.getNpcStringId(npcStringId);
+		_npcStringId = npcStringId;
 		_minFunctionLevel = minFunctionLevel;
 		_cost = cost;
 	}

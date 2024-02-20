@@ -354,13 +354,13 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 		
 		if (_helper.HasComponent(NpcInfoType.NAME_NPCSTRINGID))
 		{
-			NpcStringId nameString = _npc.getNameString();
+			NpcStringId? nameString = _npc.getNameString();
 			writer.WriteInt32(nameString != null ? (int)nameString : -1); // NPCStringId for name
 		}
 		
 		if (_helper.HasComponent(NpcInfoType.TITLE_NPCSTRINGID))
 		{
-			NpcStringId titleString = _npc.getTitleString();
+			NpcStringId? titleString = _npc.getTitleString();
 			writer.WriteInt32(titleString != null ? (int)titleString : -1); // NPCStringId for title
 		}
 		

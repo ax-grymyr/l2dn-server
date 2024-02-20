@@ -1,5 +1,8 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Skills;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
@@ -58,11 +61,11 @@ public class ConditionPlayerState : Condition
 			}
 			case PlayerState.BEHIND:
 			{
-				return (effector.isBehind(effected) == _required);
+				return (((ILocational)effector).isBehind(effected) == _required);
 			}
 			case PlayerState.FRONT:
 			{
-				return (effector.isInFrontOf(effected) == _required);
+				return (((ILocational)effector).isInFrontOf(effected) == _required);
 			}
 			case PlayerState.CHAOTIC:
 			{

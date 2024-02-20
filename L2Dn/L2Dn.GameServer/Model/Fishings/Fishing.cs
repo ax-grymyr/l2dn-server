@@ -1,9 +1,11 @@
 ﻿using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Geo;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
-using L2Dn.GameServer.Model.Geo;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -11,9 +13,11 @@ using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Model.Zones.Types;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Fishings;
 
@@ -23,8 +27,8 @@ public class Fishing
 	private ILocational _baitLocation = new Location(0, 0, 0);
 	
 	private readonly Player _player;
-	private ScheduledFuture<?> _reelInTask;
-	private ScheduledFuture<?> _startFishingTask;
+	private ScheduledFuture _reelInTask;
+	private ScheduledFuture _startFishingTask;
 	private bool _isFishing = false;
 	
 	public Fishing(Player player)
@@ -90,7 +94,7 @@ public class Fishing
 		if (!Config.ALLOW_FISHING && !_player.canOverrideCond(PlayerCondOverride.ZONE_CONDITIONS))
 		{
 			_player.sendMessage("Fishing is disabled.");
-			_player.sendPacket(ActionFailed.STATIC_PACKET);
+			_player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			stopFishing(FishingEndType.ERROR);
 			return;
 		}
@@ -111,7 +115,7 @@ public class Fishing
 		if (baitData == null)
 		{
 			_player.sendPacket(SystemMessageId.YOU_MUST_PUT_BAIT_ON_YOUR_HOOK_BEFORE_YOU_CAN_FISH);
-			_player.sendPacket(ActionFailed.STATIC_PACKET);
+			_player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			stopFishing(FishingEndType.ERROR);
 			return;
 		}
@@ -121,7 +125,7 @@ public class Fishing
 			if (Config.PREMIUM_ONLY_FISHING && !_player.hasPremiumStatus())
 			{
 				_player.sendPacket(SystemMessageId.YOU_CANNOT_FISH_AS_YOU_DO_NOT_MEET_THE_REQUIREMENTS);
-				_player.sendPacket(ActionFailed.STATIC_PACKET);
+				_player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				stopFishing(FishingEndType.ERROR);
 				return;
 			}
@@ -129,7 +133,7 @@ public class Fishing
 			if (baitData.isPremiumOnly() && !_player.hasPremiumStatus())
 			{
 				_player.sendPacket(SystemMessageId.FAILED_PLEASE_TRY_AGAIN_USING_THE_CORRECT_BAIT);
-				_player.sendPacket(ActionFailed.STATIC_PACKET);
+				_player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				stopFishing(FishingEndType.ERROR);
 				return;
 			}
@@ -140,7 +144,7 @@ public class Fishing
 		if ((_player.getLevel() < minPlayerLevel) || (_player.getLevel() > maxPLayerLevel))
 		{
 			_player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_FISHING_LEVEL_REQUIREMENTS);
-			_player.sendPacket(ActionFailed.STATIC_PACKET);
+			_player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			stopFishing(FishingEndType.ERROR);
 			return;
 		}
@@ -149,7 +153,7 @@ public class Fishing
 		if ((rod == null) || (rod.getItemType() != WeaponType.FISHINGROD))
 		{
 			_player.sendPacket(SystemMessageId.YOU_DON_T_HAVE_A_FISHING_ROD_EQUIPPED);
-			_player.sendPacket(ActionFailed.STATIC_PACKET);
+			_player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			stopFishing(FishingEndType.ERROR);
 			return;
 		}
@@ -158,7 +162,7 @@ public class Fishing
 		if (rodData == null)
 		{
 			_player.sendPacket(SystemMessageId.YOU_DON_T_HAVE_A_FISHING_ROD_EQUIPPED);
-			_player.sendPacket(ActionFailed.STATIC_PACKET);
+			_player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			stopFishing(FishingEndType.ERROR);
 			return;
 		}
@@ -166,7 +170,7 @@ public class Fishing
 		if (_player.isTransformed() || _player.isInBoat())
 		{
 			_player.sendPacket(SystemMessageId.YOU_CANNOT_FISH_WHILE_RIDING_AS_A_PASSENGER_OF_A_BOAT_OR_TRANSFORMED);
-			_player.sendPacket(ActionFailed.STATIC_PACKET);
+			_player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			stopFishing(FishingEndType.ERROR);
 			return;
 		}
@@ -174,7 +178,7 @@ public class Fishing
 		if (_player.isCrafting() || _player.isInStoreMode())
 		{
 			_player.sendPacket(SystemMessageId.YOU_CANNOT_FISH_WHILE_USING_A_RECIPE_BOOK_PRIVATE_WORKSHOP_OR_PRIVATE_STORE);
-			_player.sendPacket(ActionFailed.STATIC_PACKET);
+			_player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			stopFishing(FishingEndType.ERROR);
 			return;
 		}
@@ -182,7 +186,7 @@ public class Fishing
 		if (_player.isInsideZone(ZoneId.WATER) || _player.isInWater())
 		{
 			_player.sendPacket(SystemMessageId.YOU_CANNOT_FISH_WHILE_UNDER_WATER);
-			_player.sendPacket(ActionFailed.STATIC_PACKET);
+			_player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			stopFishing(FishingEndType.ERROR);
 			return;
 		}
@@ -193,12 +197,12 @@ public class Fishing
 			if (_isFishing)
 			{
 				// _player.sendPacket(SystemMessageId.YOUR_ATTEMPT_AT_FISHING_HAS_BEEN_CANCELLED);
-				_player.sendPacket(ActionFailed.STATIC_PACKET);
+				_player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			}
 			else
 			{
 				_player.sendPacket(SystemMessageId.YOU_CAN_T_FISH_HERE);
-				_player.sendPacket(ActionFailed.STATIC_PACKET);
+				_player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			}
 			stopFishing(FishingEndType.ERROR);
 			return;
@@ -214,12 +218,12 @@ public class Fishing
 		_reelInTask = ThreadPool.schedule(() =>
 		{
 			_player.getFishing().reelInWithReward();
-			_startFishingTask = ThreadPool.schedule(() -> _player.getFishing().castLine(), fishingWaitTime);
+			_startFishingTask = ThreadPool.schedule(() => _player.getFishing().castLine(), fishingWaitTime);
 		}, fishingTime);
 		_player.stopMove(null);
 		_player.broadcastPacket(new ExFishingStart(_player, -1, _baitLocation));
 		_player.sendPacket(new ExUserInfoFishing(_player, true, _baitLocation));
-		_player.sendPacket(new PlaySound(1, "sf_p_01", 0, 0, 0, 0, 0));
+		_player.sendPacket(new PlaySoundPacket(1, "sf_p_01", 0, 0, 0, 0, 0));
 		_player.sendPacket(SystemMessageId.YOU_CAST_YOUR_LINE_AND_START_TO_FISH);
 	}
 	
@@ -282,8 +286,8 @@ public class Fishing
 					long sp = (long) (Rnd.get(fishingData.getSpRateMin(), fishingData.getSpRateMax()) * lvlModifier * _player.getStat().getMul(Stat.FISHING_EXP_SP_BONUS, 1));
 					_player.addExpAndSp(xp, sp, true);
 					_player.getInventory().addItem("Fishing Reward", fishingCatchData.getItemId(), 1, _player, null);
-					SystemMessage msg = new SystemMessage(SystemMessageId.YOU_HAVE_ACQUIRED_S1);
-					msg.addItemName(fishingCatchData.getItemId());
+					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_ACQUIRED_S1);
+					msg.Params.addItemName(fishingCatchData.getItemId());
 					_player.sendPacket(msg);
 					_player.unchargeShot(ShotType.FISH_SOULSHOTS);
 					_player.rechargeShots(false, false, true);
@@ -350,7 +354,7 @@ public class Fishing
 		int distMax = FishingData.getInstance().getBaitDistanceMax();
 		int distance = Rnd.get(distMin, distMax);
 		double angle = Util.convertHeadingToDegree(_player.getHeading());
-		double radian = Math.toRadians(angle);
+		double radian = MathUtil.toRadians(angle);
 		double sin = Math.Sin(radian);
 		double cos = Math.Cos(radian);
 		int baitX = (int) (_player.getX() + (cos * distance));

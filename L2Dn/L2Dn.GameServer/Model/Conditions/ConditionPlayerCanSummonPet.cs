@@ -1,4 +1,8 @@
+using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.Enums;
 
 namespace L2Dn.GameServer.Model.Conditions;
 

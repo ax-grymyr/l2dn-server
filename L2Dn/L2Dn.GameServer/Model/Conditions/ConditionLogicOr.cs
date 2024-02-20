@@ -1,4 +1,7 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
@@ -8,8 +11,7 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public class ConditionLogicOr: Condition
 {
-	private static Condition[] _emptyConditions = new Condition[0];
-	public Condition[] conditions = _emptyConditions;
+	public readonly List<Condition> conditions = new();
 	
 	/**
 	 * Adds the.
@@ -25,11 +27,8 @@ public class ConditionLogicOr: Condition
 		{
 			condition.setListener(this);
 		}
-		int len = conditions.Length;
-		Condition[] tmp = new Condition[len + 1];
-		System.arraycopy(conditions, 0, tmp, 0, len);
-		tmp[len] = condition;
-		conditions = tmp;
+		
+		conditions.add(condition);
 	}
 	
 	public override void setListener(ConditionListener listener)

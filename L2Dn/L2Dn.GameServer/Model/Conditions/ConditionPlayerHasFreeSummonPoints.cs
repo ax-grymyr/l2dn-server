@@ -1,4 +1,8 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
@@ -30,8 +34,8 @@ public class ConditionPlayerHasFreeSummonPoints : Condition
 		}
 		else if ((player.getSummonPoints() + _summonPoints) > player.getMaxSummonPoints())
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.YOU_CANNOT_USE_THE_S1_SKILL_DUE_TO_INSUFFICIENT_SUMMON_POINTS);
-			sm.addSkillName(skill);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_CANNOT_USE_THE_S1_SKILL_DUE_TO_INSUFFICIENT_SUMMON_POINTS);
+			sm.Params.addSkillName(skill);
 			player.sendPacket(sm);
 			canSummon = false;
 		}

@@ -1,4 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Conditions;
@@ -30,7 +32,7 @@ public class ConditionPlayerRangeFromNpc : Condition
 		{
 			foreach (Npc target in World.getInstance().getVisibleObjectsInRange<Npc>(effector, _radius))
 			{
-				if (_npcIds.contains(target.getId()))
+				if (_npcIds.Contains(target.getId()))
 				{
 					existNpc = true;
 					break;

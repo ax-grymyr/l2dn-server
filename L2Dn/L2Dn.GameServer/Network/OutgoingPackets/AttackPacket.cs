@@ -31,15 +31,15 @@ public readonly struct AttackPacket: IOutgoingPacket
 		}
 		else
 		{
-			BroochJewel activeRuby = player.getActiveRubyJewel();
-			BroochJewel activeShappire = player.getActiveShappireJewel();
+			BroochJewel? activeRuby = player.getActiveRubyJewel();
+			BroochJewel? activeShappire = player.getActiveShappireJewel();
 			if (activeRuby != null)
 			{
-				_soulshotVisualSubstitute = activeRuby.GetItemId();
+				_soulshotVisualSubstitute = activeRuby.Value.GetItemId();
 			}
 			else if (activeShappire != null)
 			{
-				_soulshotVisualSubstitute = activeShappire.GetItemId();
+				_soulshotVisualSubstitute = activeShappire.Value.GetItemId();
 			}
 			else
 			{

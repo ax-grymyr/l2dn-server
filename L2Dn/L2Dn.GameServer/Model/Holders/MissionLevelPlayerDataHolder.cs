@@ -1,4 +1,5 @@
 using System.Text;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Variables;
 

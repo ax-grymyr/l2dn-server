@@ -1,4 +1,6 @@
-﻿using L2Dn.GameServer.Model.Actor;
+﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Clans.Entries;
 
@@ -8,7 +10,7 @@ public class PledgeApplicantInfo
 	private readonly int _requestClanId;
 	private String _playerName;
 	private int _playerLvl;
-	private int _classId;
+	private CharacterClass _classId;
 	private readonly int _karma;
 	private readonly String _message;
 	
@@ -50,12 +52,13 @@ public class PledgeApplicantInfo
 		return _playerLvl;
 	}
 	
-	public int getClassId()
+	public CharacterClass getClassId()
 	{
 		if (isOnline() && (getPlayer().getBaseClass() != _classId))
 		{
-			_classId = getPlayer().getClassId().getId();
+			_classId = getPlayer().getClassId();
 		}
+
 		return _classId;
 	}
 	

@@ -563,7 +563,7 @@ public class VillageMaster: Folk
 					
 					if (allowAddition && isValidNewSubClass(player, (CharacterClass)paramOne))
 					{
-						if (!player.addSubClass(paramOne, player.getTotalSubClasses() + 1, false))
+						if (!player.addSubClass((CharacterClass)paramOne, player.getTotalSubClasses() + 1, false))
 						{
 							return;
 						}
@@ -682,7 +682,7 @@ public class VillageMaster: Folk
 						return;
 					}
 					
-					if (player.modifySubClass(paramOne, paramTwo, false))
+					if (player.modifySubClass(paramOne, (CharacterClass)paramTwo, false))
 					{
 						player.abortCast();
 						player.stopAllEffectsExceptThoseThatLastThroughDeath(); // all effects from old subclass stopped!

@@ -29,13 +29,13 @@ public readonly struct SkillCoolTimePacket: IOutgoingPacket
         writer.WriteInt32(_reuseTimestamps.size());
         foreach (TimeStamp ts in _reuseTimestamps)
         {
-            long reuse = ts.getReuse();
-            long remaining = ts.getRemaining();
+            TimeSpan reuse = ts.getReuse();
+            TimeSpan remaining = ts.getRemaining();
             int sharedReuseGroup = ts.getSharedReuseGroup();
             writer.WriteInt32(sharedReuseGroup > 0 ? sharedReuseGroup : ts.getSkillId());
             writer.WriteInt32(ts.getSkillLevel());
-            writer.WriteInt32((int)(reuse > 0 ? reuse : remaining) / 1000);
-            writer.WriteInt32((int)remaining / 1000);
+            writer.WriteInt32((int)(reuse > TimeSpan.Zero ? reuse : remaining).TotalSeconds);
+            writer.WriteInt32((int)remaining.TotalSeconds);
         }
     }
 }

@@ -31,11 +31,16 @@ public readonly struct ExAbnormalStatusUpdateFromTargetPacket: IOutgoingPacket
         
         foreach (BuffInfo info in _effects)
         {
-            writer.WriteInt32(info.getSkill().getDisplayId());
-            writer.WriteInt16((short)info.getSkill().getDisplayLevel());
-            writer.WriteInt16((short)info.getSkill().getSubLevel());
-            writer.WriteInt16((short)info.getSkill().getAbnormalType());
-            writer.WriteVariableInt(info.getSkill().isAura() ? -1 : info.getTime());
+            Skill skill = info.getSkill();
+            writer.WriteInt32(skill.getDisplayId());
+            writer.WriteInt16((short)skill.getDisplayLevel());
+            writer.WriteInt16((short)skill.getSubLevel());
+            writer.WriteInt16((short)skill.getAbnormalType());
+            if (skill.isAura())
+                writer.WriteVariableInt(-1);
+            else
+                writer.WriteVariableInt((int)info.getTime().TotalSeconds);
+            
             writer.WriteInt32(info.getEffectorObjectId());
         }
     }

@@ -1,4 +1,6 @@
-﻿namespace L2Dn.GameServer.Model.Clans.Entries;
+﻿using L2Dn.GameServer.Data.Sql;
+
+namespace L2Dn.GameServer.Model.Clans.Entries;
 
 public class PledgeRecruitInfo
 {

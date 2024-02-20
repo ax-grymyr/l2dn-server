@@ -16,7 +16,7 @@ public readonly struct DiePacket: IOutgoingPacket
     private readonly int _objectId;
     private readonly bool _isSweepable;
     private readonly int _flags = 1; // To nearest village.
-    private readonly int _delayFeather = 0;
+    private readonly TimeSpan _delayFeather;
     private readonly Player _player;
 
 	public DiePacket(Creature creature)
@@ -92,7 +92,7 @@ public readonly struct DiePacket: IOutgoingPacket
 		writer.WriteInt32(_objectId);
 		writer.WriteInt64(_flags);
 		writer.WriteInt32(_isSweepable);
-		writer.WriteInt32(_delayFeather); // Feather item time.
+		writer.WriteInt32((int)_delayFeather.TotalSeconds); // Feather item time.
 		writer.WriteByte(0); // Hide die animation.
 		writer.WriteInt32(0);
 		if ((_player != null) && Config.RESURRECT_BY_PAYMENT_ENABLED)

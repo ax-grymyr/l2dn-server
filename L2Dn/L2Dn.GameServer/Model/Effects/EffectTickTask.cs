@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Utilities;
+﻿using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Effects;
 
@@ -40,7 +41,7 @@ public class EffectTickTask: Runnable
         return _effect;
     }
 
-    public override void run()
+    public void run()
     {
         _info.onTick(_effect);
     }

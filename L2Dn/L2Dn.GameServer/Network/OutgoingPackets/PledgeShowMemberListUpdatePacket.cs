@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Model.Actor;
+﻿using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.Packets;
 
@@ -11,7 +12,7 @@ internal readonly struct PledgeShowMemberListUpdatePacket: IOutgoingPacket
     private readonly int _level;
     private readonly int _classId;
     private readonly int _objectId;
-    private readonly int _race;
+    private readonly Race _race;
     private readonly byte _onlineStatus;
     private readonly bool _sex;
     private readonly bool _hasSponsor;
@@ -28,7 +29,7 @@ internal readonly struct PledgeShowMemberListUpdatePacket: IOutgoingPacket
         _classId = member.getClassId();
         _objectId = member.getObjectId();
         _pledgeType = member.getPledgeType();
-        _race = member.getRaceOrdinal();
+        _race = member.getRace();
         _sex = member.getSex();
         _onlineStatus = (byte)member.getOnlineStatus();
         _hasSponsor = _pledgeType == Clan.SUBUNIT_ACADEMY && member.getSponsor() != 0;
@@ -42,7 +43,7 @@ internal readonly struct PledgeShowMemberListUpdatePacket: IOutgoingPacket
         writer.WriteInt32(_level);
         writer.WriteInt32(_classId);
         writer.WriteInt32(_sex);
-        writer.WriteInt32(_race);
+        writer.WriteInt32((int)_race);
         if (_onlineStatus > 0)
         {
             writer.WriteInt32(_objectId);

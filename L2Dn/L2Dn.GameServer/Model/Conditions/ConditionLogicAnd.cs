@@ -10,8 +10,7 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public class ConditionLogicAnd: Condition
 {
-	private static Condition[] _emptyConditions = new Condition[0];
-	public Condition[] conditions = _emptyConditions;
+	public readonly List<Condition> conditions = new();
 	
 	/**
 	 * Adds the.
@@ -27,14 +26,11 @@ public class ConditionLogicAnd: Condition
 		{
 			condition.setListener(this);
 		}
-		int len = conditions.Length;
-		Condition[] tmp = new Condition[len + 1];
-		System.arraycopy(conditions, 0, tmp, 0, len);
-		tmp[len] = condition;
-		conditions = tmp;
+		
+		conditions.Add(condition);
 	}
 	
-	protected override void setListener(ConditionListener listener)
+	public override void setListener(ConditionListener listener)
 	{
 		if (listener != null)
 		{

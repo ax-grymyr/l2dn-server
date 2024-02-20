@@ -1,4 +1,6 @@
-﻿namespace L2Dn.GameServer.Model.Effects;
+﻿using L2Dn.GameServer.Utilities;
+
+namespace L2Dn.GameServer.Model.Effects;
 
 /**
  * Effect Task Info DTO.
@@ -7,9 +9,9 @@
 public class EffectTaskInfo
 {
     private readonly EffectTickTask _effectTask;
-    private readonly ScheduledFuture<?> _scheduledFuture;
+    private readonly ScheduledFuture _scheduledFuture;
 	
-    public EffectTaskInfo(EffectTickTask effectTask, ScheduledFuture<?> scheduledFuture)
+    public EffectTaskInfo(EffectTickTask effectTask, ScheduledFuture scheduledFuture)
     {
         _effectTask = effectTask;
         _scheduledFuture = scheduledFuture;
@@ -20,7 +22,7 @@ public class EffectTaskInfo
         return _effectTask;
     }
 	
-    public ScheduledFuture<?> getScheduledFuture()
+    public ScheduledFuture getScheduledFuture()
     {
         return _scheduledFuture;
     }

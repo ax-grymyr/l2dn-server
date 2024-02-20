@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Variables;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Clans;
@@ -91,7 +92,7 @@ public class ClanMember
 			// this is here to keep the data when the player logs off
 			_name = _player.getName();
 			_level = _player.getLevel();
-			_classId = _player.getClassId().getId();
+			_classId = _player.getClassId();
 			_objectId = _player.getObjectId();
 			_powerGrade = _player.getPowerGrade();
 			_pledgeType = _player.getPledgeType();
@@ -99,7 +100,7 @@ public class ClanMember
 			_apprentice = _player.getApprentice();
 			_sponsor = _player.getSponsor();
 			_sex = _player.getAppearance().isFemale();
-			_race = _player.getRace().ordinal();
+			_race = _player.getRace();
 		}
 		
 		if (player != null)
@@ -295,9 +296,9 @@ public class ClanMember
 	 * Gets the player's race ordinal.
 	 * @return the race ordinal
 	 */
-	public int getRaceOrdinal()
+	public Race getRace()
 	{
-		return _player != null ? _player.getRace().ordinal() : _raceOrdinal;
+		return _player != null ? _player.getRace() : _race;
 	}
 	
 	/**

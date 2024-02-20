@@ -1,4 +1,7 @@
 ﻿using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Cubics.Conditions;
+using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Cubics;
 
@@ -77,6 +80,6 @@ public class CubicSkill: SkillHolder, ICubicConditionHolder
     {
         return "Cubic skill id: " + getSkillId() + " level: " + getSkillLevel() + " triggerRate: " + _triggerRate +
                " successRate: " + _successRate + " canUseOnStaticObjects: " + _canUseOnStaticObjects + " targetType: " +
-               _targetType + " isTargetingDebuff: " + _targetDebuff + Config.EOL;
+               _targetType + " isTargetingDebuff: " + _targetDebuff + Environment.NewLine;
     }
 }

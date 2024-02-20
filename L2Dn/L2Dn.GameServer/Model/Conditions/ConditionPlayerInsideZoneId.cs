@@ -1,4 +1,8 @@
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Conditions;
@@ -24,7 +28,7 @@ public class ConditionPlayerInsideZoneId : Condition
 		
 		foreach (ZoneType zone in ZoneManager.getInstance().getZones(effector))
 		{
-			if (_zones.contains(zone.getId()))
+			if (_zones.Contains(zone.getId()))
 			{
 				return true;
 			}

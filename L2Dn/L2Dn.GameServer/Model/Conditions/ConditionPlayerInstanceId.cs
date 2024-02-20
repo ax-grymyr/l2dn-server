@@ -1,4 +1,7 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.InstanceZones;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Conditions;
@@ -28,6 +31,6 @@ public class ConditionPlayerInstanceId : Condition
 		}
 		
 		Instance instance = player.getInstanceWorld();
-		return (instance != null) && _instanceIds.contains(instance.getTemplateId());
+		return (instance != null) && _instanceIds.Contains(instance.getTemplateId());
 	}
 }

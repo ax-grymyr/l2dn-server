@@ -14,8 +14,8 @@ public class FakePlayerChatHolder
 	{
 		_fpcName = fpcName;
 		_searchMethod = searchMethod;
-		_searchText = new ArrayList<>(Arrays.asList(searchText.split(";")));
-		_answers = new ArrayList<>(Arrays.asList(answers.split(";")));
+		_searchText = searchText.Split(";").ToList();
+		_answers = answers.Split(";").ToList();
 	}
 	
 	public String getFpcName()

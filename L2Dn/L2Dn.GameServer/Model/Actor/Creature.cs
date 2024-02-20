@@ -2282,7 +2282,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		_isUndying = undying;
 	}
 	
-	public bool isUndying()
+	public virtual bool isUndying()
 	{
 		return _isUndying || isInvul() || isAffected(EffectFlag.IGNORE_DEATH) || isInsideZone(ZoneId.UNDYING);
 	}
@@ -4531,7 +4531,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	/**
 	 * @return a multiplier based on weapon random damage
 	 */
-	public double getRandomDamageMultiplier()
+	public virtual double getRandomDamageMultiplier()
 	{
 		int random = (int) _stat.getValue(Stat.RANDOM_DAMAGE);
 		return (1 + ((double) Rnd.get(-random, random) / 100));
@@ -4558,7 +4558,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return _stat.getAccuracy();
 	}
 	
-	public int getMagicAccuracy()
+	public virtual int getMagicAccuracy()
 	{
 		return _stat.getMagicAccuracy();
 	}
@@ -4643,7 +4643,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return _stat.getMDef();
 	}
 	
-	public int getPAtk()
+	public virtual int getPAtk()
 	{
 		return _stat.getPAtk();
 	}

@@ -1,4 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Conditions;
@@ -23,7 +25,7 @@ public class ConditionTargetNpcId: Condition
 	{
 		if ((effected != null) && (effected.isNpc() || effected.isDoor()))
 		{
-			return _npcIds.contains(effected.getId());
+			return _npcIds.Contains(effected.getId());
 		}
 		return false;
 	}

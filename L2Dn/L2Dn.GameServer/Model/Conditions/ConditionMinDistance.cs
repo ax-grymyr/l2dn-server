@@ -1,5 +1,7 @@
+using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Geo;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Skills;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
@@ -19,6 +21,6 @@ public class ConditionMinDistance: Condition
 	{
 		return (effected != null) //
 			&& (effector.calculateDistance3D(effected) >= _distance) //
-			&& GeoEngine.Instance.CanSeeTarget(effector, effected);
+			&& GeoEngine.getInstance().canSeeTarget(effector, effected);
 	}
 }

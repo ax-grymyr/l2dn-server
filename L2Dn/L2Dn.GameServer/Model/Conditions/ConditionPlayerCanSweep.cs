@@ -1,4 +1,7 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.Enums;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
@@ -43,7 +46,7 @@ public class ConditionPlayerCanSweep: Condition
 								canSweep = attackable.checkSpoilOwner(sweeper, true);
 								if (canSweep)
 								{
-									canSweep = !attackable.isOldCorpse(sweeper, Config.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY, true);
+									canSweep = !attackable.isOldCorpse(sweeper, TimeSpan.FromMilliseconds(Config.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY), true);
 								}
 								if (canSweep)
 								{

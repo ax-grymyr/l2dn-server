@@ -21,17 +21,17 @@ public class AutoUseSettingsHolder
 
 	public ICollection<int> getAutoSupplyItems()
 	{
-		return _autoSupplyItems.Keys;
+		return _autoSupplyItems;
 	}
 
 	public ICollection<int> getAutoActions()
 	{
-		return _autoActions.Keys;
+		return _autoActions;
 	}
 
 	public ICollection<int> getAutoBuffs()
 	{
-		return _autoBuffs.Keys;
+		return _autoBuffs;
 	}
 
 	public List<int> getAutoSkills()
@@ -61,7 +61,7 @@ public class AutoUseSettingsHolder
 
 	public bool isAutoSkill(int skillId)
 	{
-		return _autoSkills.Contains(skillId) || _autoBuffs.contains(skillId);
+		return _autoSkills.Contains(skillId) || _autoBuffs.Contains(skillId);
 	}
 
 	public int getNextSkillId()
