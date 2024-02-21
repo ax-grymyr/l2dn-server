@@ -23,7 +23,8 @@ public class Character
     [MaxLength(70)]
     public string Name { get; set; } = string.Empty;
 
-    public CharacterClass Class { get; set; } // Race and base class are calculated from the class
+    public CharacterClass BaseClass { get; set; }
+    public CharacterClass Class { get; set; }
     
     public short Level { get; set; } = 1;
     public long Exp { get; set; }
@@ -66,14 +67,14 @@ public class Character
     public int PkKills { get; set; }
     public int Kills { get; set; }
     public int Deaths { get; set; }
-
+    public int PowerGrade { get; set; }
+    public bool IsNobless { get; set; }
     
     // Clan
     public int? ClanId { get; set; }
     
     [ForeignKey(nameof(ClanId))]
     public Clan? Clan { get; set; }
-    
     public int ClanPrivileges { get; set; }
     public int SubPledge { get; set; }
     
@@ -82,17 +83,25 @@ public class Character
     [ForeignKey(nameof(SponsorId))]
     public Character? Sponsor { get; set; }
 
+    public bool WantsPeace { get; set; }
+    
     public byte LevelJoinedAcademy { get; set; } = 1;
 
+    public bool HasDwarvenCraft { get; set; }
+    
     // Some data
-    public DateOnly Created { get; set; }
-    public DateTime? LastLogin { get; set; }
+    public DateTime Created { get; set; }
+    public DateTime? LastAccess { get; set; }
     public TimeSpan OnlineTime { get; set; }
-    public bool IsOnline { get; set; }
+    public CharacterOnlineStatus OnlineStatus { get; set; }
 
     public DateTime? DeleteTime { get; set; }
     public DateTime? ClanCreateExpiryTime { get; set; }
     public DateTime? ClanJoinExpiryTime { get; set; }
+
+    public byte? Faction { get; set; } // TODO: enum?
+    public int Apprentice { get; set; }
+    public int BookmarkSlot { get; set; }
     
     [MaxLength(2)]
     public string? Language { get; set; }

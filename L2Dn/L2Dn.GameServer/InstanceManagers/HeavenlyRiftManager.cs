@@ -13,6 +13,7 @@ namespace L2Dn.GameServer.InstanceManagers;
  */
 public class HeavenlyRiftManager
 {
+	private static readonly TimeSpan _despawnTime = TimeSpan.FromMilliseconds(1800000);
 	protected static readonly ZoneType ZONE = ZoneManager.getInstance().getZoneByName("heavenly_rift");
 
 	public static ZoneType getZone()
@@ -37,38 +38,38 @@ public class HeavenlyRiftManager
 	public static void startEvent20Bomb(Player player)
 	{
 		ZONE.broadcastPacket(new ExShowScreenMessagePacket(NpcStringId.SET_OFF_BOMBS_AND_GET_TREASURES, 2, 5000));
-		spawnMonster(18003, 113352, 12936, 10976, 1800000);
-		spawnMonster(18003, 113592, 13272, 10976, 1800000);
-		spawnMonster(18003, 113816, 13592, 10976, 1800000);
-		spawnMonster(18003, 113080, 13192, 10976, 1800000);
-		spawnMonster(18003, 113336, 13528, 10976, 1800000);
-		spawnMonster(18003, 113560, 13832, 10976, 1800000);
-		spawnMonster(18003, 112776, 13512, 10976, 1800000);
-		spawnMonster(18003, 113064, 13784, 10976, 1800000);
-		spawnMonster(18003, 112440, 13848, 10976, 1800000);
-		spawnMonster(18003, 112728, 14104, 10976, 1800000);
-		spawnMonster(18003, 112760, 14600, 10976, 1800000);
-		spawnMonster(18003, 112392, 14456, 10976, 1800000);
-		spawnMonster(18003, 112104, 14184, 10976, 1800000);
-		spawnMonster(18003, 111816, 14488, 10976, 1800000);
-		spawnMonster(18003, 112104, 14760, 10976, 1800000);
-		spawnMonster(18003, 112392, 15032, 10976, 1800000);
-		spawnMonster(18003, 112120, 15288, 10976, 1800000);
-		spawnMonster(18003, 111784, 15064, 10976, 1800000);
-		spawnMonster(18003, 111480, 14824, 10976, 1800000);
-		spawnMonster(18003, 113144, 14216, 10976, 1800000);
+		spawnMonster(18003, 113352, 12936, 10976, _despawnTime);
+		spawnMonster(18003, 113592, 13272, 10976, _despawnTime);
+		spawnMonster(18003, 113816, 13592, 10976, _despawnTime);
+		spawnMonster(18003, 113080, 13192, 10976, _despawnTime);
+		spawnMonster(18003, 113336, 13528, 10976, _despawnTime);
+		spawnMonster(18003, 113560, 13832, 10976, _despawnTime);
+		spawnMonster(18003, 112776, 13512, 10976, _despawnTime);
+		spawnMonster(18003, 113064, 13784, 10976, _despawnTime);
+		spawnMonster(18003, 112440, 13848, 10976, _despawnTime);
+		spawnMonster(18003, 112728, 14104, 10976, _despawnTime);
+		spawnMonster(18003, 112760, 14600, 10976, _despawnTime);
+		spawnMonster(18003, 112392, 14456, 10976, _despawnTime);
+		spawnMonster(18003, 112104, 14184, 10976, _despawnTime);
+		spawnMonster(18003, 111816, 14488, 10976, _despawnTime);
+		spawnMonster(18003, 112104, 14760, 10976, _despawnTime);
+		spawnMonster(18003, 112392, 15032, 10976, _despawnTime);
+		spawnMonster(18003, 112120, 15288, 10976, _despawnTime);
+		spawnMonster(18003, 111784, 15064, 10976, _despawnTime);
+		spawnMonster(18003, 111480, 14824, 10976, _despawnTime);
+		spawnMonster(18003, 113144, 14216, 10976, _despawnTime);
 	}
 
 	public static void startEventTower(Player player)
 	{
 		ZONE.broadcastPacket(new ExShowScreenMessagePacket(NpcStringId.PROTECT_THE_CENTRAL_TOWER_FROM_DIVINE_ANGELS, 2,
 			5000));
-		spawnMonster(18004, 112648, 14072, 10976, 1800000);
+		spawnMonster(18004, 112648, 14072, 10976, _despawnTime);
 		ThreadPool.schedule(() =>
 		{
 			for (int i = 0; i < 20; ++i)
 			{
-				spawnMonster(20139, 112696, 13960, 10958, 1800000);
+				spawnMonster(20139, 112696, 13960, 10958, _despawnTime);
 			}
 		}, 10000);
 	}
@@ -78,11 +79,11 @@ public class HeavenlyRiftManager
 		ZONE.broadcastPacket(new ExShowScreenMessagePacket(NpcStringId.DESTROY_WEAKENED_DIVINE_ANGELS, 2, 5000));
 		for (int i = 0; i < 40; ++i)
 		{
-			spawnMonster(20139, 112696, 13960, 10958, 1800000);
+			spawnMonster(20139, 112696, 13960, 10958, _despawnTime);
 		}
 	}
 
-	private static void spawnMonster(int npcId, int x, int y, int z, long despawnTime)
+	private static void spawnMonster(int npcId, int x, int y, int z, TimeSpan despawnTime)
 	{
 		try
 		{

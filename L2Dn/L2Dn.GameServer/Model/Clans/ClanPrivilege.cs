@@ -45,5 +45,5 @@ public enum ClanPrivilege // TODO: rename to ClanPrivileges
     CS_MERCENARIES = 1 << 21,
     CS_SET_FUNCTIONS = 1 << 22,
     
-    All = -1 // all bits set
+    All = int.MaxValue // all bits set
 }

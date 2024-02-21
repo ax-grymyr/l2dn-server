@@ -15,7 +15,7 @@ public readonly struct ConfirmDialogPacket: IOutgoingPacket
 		_params = parameters;
 	}
 	
-	public ConfirmDialogPacket(SystemMessageId smId)
+	public ConfirmDialogPacket(SystemMessageId smId, int time = 0)
 	{
 		_params = new SystemMessageParams(smId);
 	}

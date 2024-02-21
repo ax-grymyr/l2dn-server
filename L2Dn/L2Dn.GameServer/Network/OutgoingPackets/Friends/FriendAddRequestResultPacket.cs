@@ -12,7 +12,7 @@ public readonly struct FriendAddRequestResultPacket: IOutgoingPacket
 	private readonly int _result;
 	private readonly int _charId;
 	private readonly string _charName;
-	private readonly int _isOnline;
+	private readonly CharacterOnlineStatus _onlineStatus;
 	private readonly int _charObjectId;
 	private readonly int _charLevel;
 	private readonly CharacterClass _charClassId;
@@ -22,7 +22,7 @@ public readonly struct FriendAddRequestResultPacket: IOutgoingPacket
 		_result = result;
 		_charId = player.getObjectId();
 		_charName = player.getName();
-		_isOnline = player.isOnlineInt();
+		_onlineStatus = player.getOnlineStatus();
 		_charObjectId = player.getObjectId();
 		_charLevel = player.getLevel();
 		_charClassId = player.getActiveClass();
@@ -35,7 +35,7 @@ public readonly struct FriendAddRequestResultPacket: IOutgoingPacket
 		writer.WriteInt32(_result);
 		writer.WriteInt32(_charId);
 		writer.WriteString(_charName);
-		writer.WriteInt32(_isOnline);
+		writer.WriteInt32((int)_onlineStatus);
 		writer.WriteInt32(_charObjectId);
 		writer.WriteInt32(_charLevel);
 		writer.WriteInt32((int)_charClassId);

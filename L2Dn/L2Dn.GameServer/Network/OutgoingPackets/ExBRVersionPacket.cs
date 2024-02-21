@@ -2,12 +2,16 @@
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
-internal readonly struct ExBRVersionPacket: IOutgoingPacket
+public readonly struct ExBRVersionPacket: IOutgoingPacket
 {
     public void WriteContent(PacketBitWriter writer)
     {
-        writer.WriteByte(0xFE); // packet code
-        writer.WriteUInt16(0x308); // packet ex code
+        if (!Config.ENABLE_WORLD_EXCHANGE)
+        {
+            return;
+        }
+		
+        writer.WritePacketCode(OutgoingPacketCodes.EX_BR_VERSION);
 
         writer.WriteByte(1); // enable world exchange
     }

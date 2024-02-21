@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
@@ -96,7 +97,7 @@ public class Transform: IIdentifiable
 		}
 		else if (creature.isNpc())
 		{
-			return ((Npc) creature).getTemplate().getSex() == Sex.FEMALE ? _femaleTemplate : _maleTemplate;
+			return ((Npc) creature).getTemplate().getSex() == Sex.Female ? _femaleTemplate : _maleTemplate;
 		}
 		return null;
 	}

@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
 
@@ -26,7 +27,7 @@ public class MovieHolder
 
 	public void playerEscapeVote(Player player)
 	{
-		if (_votedPlayers.contains(player) || !_players.Contains(player) || !_movie.isEscapable())
+		if (_votedPlayers.Contains(player) || !_players.Contains(player) || !_movie.isEscapable())
 		{
 			return;
 		}

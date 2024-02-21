@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Items;
@@ -256,9 +257,9 @@ public sealed class SystemMessageParams
 		return this;
 	}
 	
-	public SystemMessageParams addElementalSpirit(int elementType)
+	public SystemMessageParams addElementalSpirit(ElementalType elementType)
 	{
-		append(SystemMessageParamType.TYPE_ELEMENTAL_SPIRIT, elementType);
+		append(SystemMessageParamType.TYPE_ELEMENTAL_SPIRIT, (int)elementType);
 		return this;
 	}
 }

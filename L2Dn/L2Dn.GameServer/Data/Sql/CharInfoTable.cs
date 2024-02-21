@@ -16,7 +16,7 @@ public class CharInfoTable
 	private readonly Map<int, CharacterClass> _classes = new();
 	private readonly Map<int, int> _clans = new();
 	private readonly Map<int, Map<int, String>> _memos = new();
-	private readonly Map<int, DateOnly> _creationDates = new();
+	private readonly Map<int, DateTime> _creationDates = new();
 	private readonly Map<int, DateTime> _lastAccess = new();
 	
 	protected CharInfoTable()
@@ -348,15 +348,15 @@ public class CharInfoTable
 		return string.Empty;
 	}
 	
-	public DateOnly? getCharacterCreationDate(int objectId)
+	public DateTime? getCharacterCreationDate(int objectId)
 	{
-		if (_creationDates.TryGetValue(objectId, out DateOnly date))
+		if (_creationDates.TryGetValue(objectId, out DateTime date))
 			return date;
 		
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			DateOnly? createDate = ctx.Characters.Where(c => c.Id == objectId).Select(c => (DateOnly?)c.Created)
+			DateTime? createDate = ctx.Characters.Where(c => c.Id == objectId).Select(c => (DateTime?)c.Created)
 				.SingleOrDefault();
 			
 			if (createDate is not null)
@@ -389,7 +389,7 @@ public class CharInfoTable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			DateTime? dbLastAccess = ctx.Characters.Where(c => c.Id == objectId).Select(c => c.LastLogin)
+			DateTime? dbLastAccess = ctx.Characters.Where(c => c.Id == objectId).Select(c => c.LastAccess)
 				.SingleOrDefault();
 
 			if (dbLastAccess is not null)

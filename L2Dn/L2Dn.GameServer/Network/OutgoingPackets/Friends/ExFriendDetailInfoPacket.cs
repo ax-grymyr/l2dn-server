@@ -71,7 +71,7 @@ public readonly struct ExFriendDetailInfoPacket: IOutgoingPacket
 		else
 		{
 			writer.WriteString(_friend.getName());
-			writer.WriteInt32(_friend.isOnlineInt());
+			writer.WriteInt32((int)_friend.getOnlineStatus());
 			writer.WriteInt32(_friend.getObjectId());
 			writer.WriteInt16((short)_friend.getLevel());
 			writer.WriteInt16((short)_friend.getClassId());

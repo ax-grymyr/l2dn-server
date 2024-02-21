@@ -43,6 +43,9 @@ public class GameServerDbContext: DbContext
     public DbSet<AccountPremium> AccountPremiums => Set<AccountPremium>();
     public DbSet<AccountVariable> AccountVariables => Set<AccountVariable>();
 
+    public DbSet<AccountCollection> AccountCollections => Set<AccountCollection>();
+    public DbSet<AccountCollectionFavorite> AccountCollectionFavorites => Set<AccountCollectionFavorite>();
+    
     public DbSet<Character> Characters => Set<Character>();
     public DbSet<CharacterFriend> CharacterFriends => Set<CharacterFriend>();
     public DbSet<CharacterSummon> CharacterSummons => Set<CharacterSummon>();
@@ -50,6 +53,9 @@ public class GameServerDbContext: DbContext
     public DbSet<CharacterOfflineTradeItem> CharacterOfflineTradeItems => Set<CharacterOfflineTradeItem>();
     public DbSet<CharacterDailyReward> CharacterDailyRewards => Set<CharacterDailyReward>();
     public DbSet<CharacterSubClass> CharacterSubClasses => Set<CharacterSubClass>();
+    public DbSet<CharacterHenna> CharacterHennas => Set<CharacterHenna>();
+    public DbSet<CharacterHennaPoten> CharacterHennaPotens => Set<CharacterHennaPoten>();
+    public DbSet<CharacterSkill> CharacterSkills => Set<CharacterSkill>();
     public DbSet<CharacterSkillReuse> CharacterSkillReuses => Set<CharacterSkillReuse>();
     public DbSet<CharacterItemReuse> CharacterItemReuses => Set<CharacterItemReuse>();
     public DbSet<CharacterRecoBonus> CharacterRecoBonuses => Set<CharacterRecoBonus>();
@@ -59,6 +65,11 @@ public class GameServerDbContext: DbContext
     public DbSet<CharacterRevenge> CharacterRevenges => Set<CharacterRevenge>();
     public DbSet<CharacterSpirit> CharacterSpirits => Set<CharacterSpirit>();
     public DbSet<CharacterRecipeBook> CharacterRecipeBooks => Set<CharacterRecipeBook>();
+    public DbSet<CharacterRecipeShopList> CharacterRecipeShopLists => Set<CharacterRecipeShopList>();
+    public DbSet<CharacterShortCut> CharacterShortCuts => Set<CharacterShortCut>();
+    public DbSet<CharacterTeleportBookmark> CharacterTeleportBookmarks => Set<CharacterTeleportBookmark>();
+    public DbSet<CharacterSurveillance> CharacterSurveillances => Set<CharacterSurveillance>();
+    public DbSet<CharacterPremiumItem> CharacterPremiumItems => Set<CharacterPremiumItem>();
     public DbSet<CharacterVariable> CharacterVariables => Set<CharacterVariable>();
     
     public DbSet<Pet> Pets => Set<Pet>();

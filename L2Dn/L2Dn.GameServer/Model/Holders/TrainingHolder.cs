@@ -10,11 +10,11 @@ public class TrainingHolder
 	private readonly int _objectId;
 	private readonly int _classIndex;
 	private readonly int _level;
-	private readonly long _startTime;
-	private long _endTime = -1;
-	private static readonly TimeSpan TRAINING_DIVIDER = TimeSpan.FromSeconds(Config.TRAINING_CAMP_MAX_DURATION);
+	private readonly DateTime _startTime;
+	private DateTime? _endTime;
+	private static readonly TimeSpan MaxDuration = TimeSpan.FromSeconds(Config.TRAINING_CAMP_MAX_DURATION);
 	
-	public TrainingHolder(int objectId, int classIndex, int level, long startTime, long endTime)
+	public TrainingHolder(int objectId, int classIndex, int level, DateTime startTime, DateTime? endTime)
 	{
 		_objectId = objectId;
 		_classIndex = classIndex;
@@ -23,12 +23,12 @@ public class TrainingHolder
 		_endTime = endTime;
 	}
 	
-	public long getEndTime()
+	public DateTime? getEndTime()
 	{
 		return _endTime;
 	}
 	
-	public void setEndTime(long endTime)
+	public void setEndTime(DateTime? endTime)
 	{
 		_endTime = endTime;
 	}
@@ -48,14 +48,14 @@ public class TrainingHolder
 		return _level;
 	}
 	
-	public long getStartTime()
+	public DateTime getStartTime()
 	{
 		return _startTime;
 	}
 	
 	public bool isTraining()
 	{
-		return _endTime == -1;
+		return _endTime == null;
 	}
 	
 	public bool isValid(Player player)
@@ -63,23 +63,20 @@ public class TrainingHolder
 		return Config.TRAINING_CAMP_ENABLE && (player.getObjectId() == _objectId) && (player.getClassIndex() == _classIndex);
 	}
 	
-	public long getElapsedTime()
+	public TimeSpan getElapsedTime()
 	{
-		return TimeUnit.SECONDS.convert(System.currentTimeMillis() - _startTime, TimeUnit.MILLISECONDS);
+		return DateTime.UtcNow - _startTime;
 	}
 	
-	public long getRemainingTime()
+	public TimeSpan getRemainingTime()
 	{
-		return TimeUnit.SECONDS.toMinutes(Config.TRAINING_CAMP_MAX_DURATION - getElapsedTime());
+		TimeSpan remainingTime = MaxDuration - (DateTime.UtcNow - _startTime);
+		return remainingTime < TimeSpan.Zero ? TimeSpan.Zero : remainingTime;
 	}
 	
-	public long getTrainingTime(TimeUnit unit)
+	public TimeSpan getTrainingTime()
 	{
-		return Math.min(unit.convert(Config.TRAINING_CAMP_MAX_DURATION, TimeUnit.SECONDS), unit.convert(_endTime - _startTime, TimeUnit.MILLISECONDS));
-	}
-	
-	public static long getTrainingDivider()
-	{
-		return TRAINING_DIVIDER;
+		TimeSpan trainingTime = (_endTime ?? DateTime.UtcNow) - _startTime;
+		return trainingTime > MaxDuration ? MaxDuration : trainingTime;
 	}
 }

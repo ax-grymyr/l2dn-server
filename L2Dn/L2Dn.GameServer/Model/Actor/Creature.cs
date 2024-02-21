@@ -570,13 +570,13 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param mov
 	 */
 	public void broadcastPacket<TPacket>(TPacket mov)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		broadcastPacket(mov, true);
 	}
 	
 	public virtual void broadcastPacket<TPacket>(TPacket mov, bool includeSelf)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		World.getInstance().forEachVisibleObject<Player>(this, player =>
 		{
@@ -598,7 +598,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param radiusInKnownlist
 	 */
 	public virtual void broadcastPacket<TPacket>(TPacket mov, int radiusInKnownlist)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		World.getInstance().forEachVisibleObjectInRange<Player>(this, radiusInKnownlist, player =>
 		{
@@ -1513,10 +1513,10 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param hashCode the skill hash code
 	 * @return if the skill has a reuse time stamp, the remaining time, otherwise -1
 	 */
-	public TimeSpan? getSkillRemainingReuseTime(long hashCode)
+	public TimeSpan getSkillRemainingReuseTime(long hashCode)
 	{
 		TimeStamp reuseStamp = _reuseTimeStampsSkills.get(hashCode);
-		return reuseStamp != null ? reuseStamp.getRemaining() : null;
+		return reuseStamp != null ? reuseStamp.getRemaining() : TimeSpan.Zero;
 	}
 	
 	/**
@@ -5182,7 +5182,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		}
 	}
 	
-	public void removeOverridedCond(params PlayerCondOverride[] excs)
+	public virtual void removeOverridedCond(params PlayerCondOverride[] excs)
 	{
 		foreach (PlayerCondOverride exc in excs)
 		{
@@ -5253,7 +5253,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * Dummy method overriden in {@link Player}
 	 * @param value
 	 */
-	public void setCanRevive(bool value)
+	public virtual void setCanRevive(bool value)
 	{
 	}
 	
@@ -5297,7 +5297,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * Dummy method overriden in {@link Player}
 	 * @return the pledge type of current character.
 	 */
-	public int getPledgeType()
+	public virtual int getPledgeType()
 	{
 		return 0;
 	}
@@ -5780,7 +5780,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			_seenCreatures.remove(creature);
 	}
 	
-	public MoveType getMoveType()
+	public virtual MoveType getMoveType()
 	{
 		if (isMoving() && _isRunning)
 		{

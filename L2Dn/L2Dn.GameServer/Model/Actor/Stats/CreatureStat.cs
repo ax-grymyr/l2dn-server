@@ -1032,7 +1032,8 @@ public class CreatureStat
 	 */
 	public bool addAdditionalStat(Stat stat, double value, Func<Creature, StatHolder, bool> condition)
 	{
-		return _additionalAdd.add(new StatHolder(stat, value, condition));
+		_additionalAdd.add(new StatHolder(stat, value, condition));
+		return true;
 	}
 	
 	/**
@@ -1043,7 +1044,8 @@ public class CreatureStat
 	 */
 	public bool addAdditionalStat(Stat stat, double value)
 	{
-		return _additionalAdd.add(new StatHolder(stat, value));
+		_additionalAdd.add(new StatHolder(stat, value));
+		return true;
 	}
 	
 	/**
@@ -1053,16 +1055,16 @@ public class CreatureStat
 	 */
 	public bool removeAddAdditionalStat(Stat stat, double value)
 	{
-		Iterator<StatHolder> it = _additionalAdd.iterator();
-		while (it.hasNext())
+		List<StatHolder> copy = _additionalAdd.ToList();
+		foreach (StatHolder holder in copy)
 		{
-			StatHolder holder = it.next();
 			if ((holder.getStat() == stat) && (holder.getValue() == value))
 			{
-				it.remove();
+				_additionalAdd.Remove(holder);
 				return true;
 			}
 		}
+
 		return false;
 	}
 	
@@ -1075,7 +1077,8 @@ public class CreatureStat
 	 */
 	public bool mulAdditionalStat(Stat stat, double value, Func<Creature, StatHolder, bool> condition)
 	{
-		return _additionalMul.add(new StatHolder(stat, value, condition));
+		_additionalMul.add(new StatHolder(stat, value, condition));
+		return true;
 	}
 	
 	/**
@@ -1086,7 +1089,8 @@ public class CreatureStat
 	 */
 	public bool mulAdditionalStat(Stat stat, double value)
 	{
-		return _additionalMul.add(new StatHolder(stat, value));
+		_additionalMul.add(new StatHolder(stat, value));
+		return true;
 	}
 	
 	/**
@@ -1096,16 +1100,16 @@ public class CreatureStat
 	 */
 	public bool removeMulAdditionalStat(Stat stat, double value)
 	{
-		Iterator<StatHolder> it = _additionalMul.iterator();
-		while (it.hasNext())
+		List<StatHolder> copy = _additionalMul.ToList();
+		foreach (StatHolder holder in copy)
 		{
-			StatHolder holder = it.next();
 			if ((holder.getStat() == stat) && (holder.getValue() == value))
 			{
-				it.remove();
+				_additionalMul.Remove(holder);
 				return true;
 			}
 		}
+
 		return false;
 	}
 	

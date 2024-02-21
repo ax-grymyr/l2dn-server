@@ -16,7 +16,7 @@ public class PunishmentTask: Runnable
 	private const String UPDATE_QUERY = "UPDATE punishments SET expiration = ? WHERE id = ?";
 
 	private int _id;
-	private readonly String _key;
+	private readonly string _key;
 	private readonly PunishmentAffect _affect;
 	private readonly PunishmentType _type;
 	private readonly DateTime _expirationTime;
@@ -47,7 +47,7 @@ public class PunishmentTask: Runnable
 	/**
 	 * @return affection value charId, account, ip, etc..
 	 */
-	public string getKey()
+	public int getKey()
 	{
 		return _key;
 	}

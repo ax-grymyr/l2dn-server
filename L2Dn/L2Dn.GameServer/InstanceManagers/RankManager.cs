@@ -58,7 +58,7 @@ public class RankManager
 		{
 			using GameServerDbContext ctx = new();
 			var query = ctx.Characters
-				.Where(c => CURRENT_TIME - c.LastLogin < TIME_LIMIT && c.AccessLevel == 0 && c.Level >= 40)
+				.Where(c => CURRENT_TIME - c.LastAccess < TIME_LIMIT && c.AccessLevel == 0 && c.Level >= 40)
 				.OrderByDescending(c => c.Exp).ThenByDescending(c => c.OnlineTime).Take(PLAYER_LIMIT);
 			
 			int i = 1;
@@ -175,7 +175,7 @@ public class RankManager
 		{
 			using GameServerDbContext ctx = new();
 			var query = ctx.Characters
-				.Where(c => CURRENT_TIME - c.LastLogin < TIME_LIMIT && c.AccessLevel == 0 && c.Level >= 40)
+				.Where(c => CURRENT_TIME - c.LastAccess < TIME_LIMIT && c.AccessLevel == 0 && c.Level >= 40)
 				.OrderByDescending(c => c.Exp).ThenByDescending(c => c.OnlineTime).Select(c => new
 				{
 					c.Id,
@@ -232,7 +232,7 @@ public class RankManager
 					from pe in ctx.PetEvolves
 					from item in ctx.Items
 					where p.OwnerId == c.Id && pe.ItemObjectId == p.ItemObjectId && pe.ItemObjectId == item.ObjectId
-					      && CURRENT_TIME - c.LastLogin < TIME_LIMIT && c.AccessLevel == 0 && p.Level >= 40
+					      && CURRENT_TIME - c.LastAccess < TIME_LIMIT && c.AccessLevel == 0 && p.Level >= 40
 					orderby p.Exp descending, c.OnlineTime descending
 					select new
 					{
@@ -324,7 +324,7 @@ public class RankManager
 
 			using GameServerDbContext ctx = new();
 			var query = ctx.Characters
-				.Where(c => CURRENT_TIME - c.LastLogin < TIME_LIMIT && c.AccessLevel == 0 && c.Level >= 40 &&
+				.Where(c => CURRENT_TIME - c.LastAccess < TIME_LIMIT && c.AccessLevel == 0 && c.Level >= 40 &&
 				            classes.Contains(c.Class))
 				.OrderByDescending(c => c.Exp).ThenByDescending(c => c.OnlineTime).Select(c => c.Id).Take(PLAYER_LIMIT);
 
@@ -358,7 +358,7 @@ public class RankManager
 			
 			using GameServerDbContext ctx = new();
 			var query = ctx.Characters
-				.Where(c => CURRENT_TIME - c.LastLogin < TIME_LIMIT && c.AccessLevel == 0 && c.Level >= 40 &&
+				.Where(c => CURRENT_TIME - c.LastAccess < TIME_LIMIT && c.AccessLevel == 0 && c.Level >= 40 &&
 				            classes.Contains(c.Class))
 				.OrderByDescending(c => c.Exp).ThenByDescending(c => c.OnlineTime).Select(c => c.Id).Take(PLAYER_LIMIT);
 

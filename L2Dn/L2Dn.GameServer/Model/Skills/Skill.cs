@@ -443,7 +443,7 @@ public class Skill: IIdentifiable
 	 * Is the base to calculate the duration of the continuous effects of this skill.
 	 * @return the abnormal time
 	 */
-	public int getAbnormalTime()
+	public TimeSpan getAbnormalTime()
 	{
 		return _abnormalTime;
 	}

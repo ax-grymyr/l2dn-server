@@ -83,15 +83,15 @@ public class IllegalPlayerActionTask: Runnable
 				{
 					PunishmentManager.getInstance().startPunishment(new PunishmentTask(_actor.getObjectId(),
 						PunishmentAffect.CHARACTER, PunishmentType.BAN,
-						System.currentTimeMillis() + (Config.DEFAULT_PUNISH_PARAM * 1000), _message,
-						GetType().Name));
+						DateTime.UtcNow + TimeSpan.FromSeconds(Config.DEFAULT_PUNISH_PARAM),
+						_message, GetType().Name));
 					break;
 				}
 				case IllegalActionPunishmentType.JAIL:
 				{
 					PunishmentManager.getInstance().startPunishment(new PunishmentTask(_actor.getObjectId(),
 						PunishmentAffect.CHARACTER, PunishmentType.JAIL,
-						System.currentTimeMillis() + (Config.DEFAULT_PUNISH_PARAM * 1000), _message,
+						DateTime.UtcNow + TimeSpan.FromSeconds(Config.DEFAULT_PUNISH_PARAM), _message,
 						GetType().Name));
 					break;
 				}

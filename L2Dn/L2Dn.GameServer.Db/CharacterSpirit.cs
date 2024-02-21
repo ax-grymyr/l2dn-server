@@ -10,9 +10,9 @@ public class CharacterSpirit
     public byte Level { get; set; }
     public byte Stage { get; set; }
     public long Exp { get; set; }
-    public short AttackPoints { get; set; }
-    public short DefensePoints { get; set; }
-    public short CriticalRatePoints { get; set; }
-    public short CriticalDamagePoints { get; set; }
+    public byte AttackPoints { get; set; }
+    public byte DefensePoints { get; set; }
+    public byte CriticalRatePoints { get; set; }
+    public byte CriticalDamagePoints { get; set; }
     public bool IsInUse { get; set; }
 }

@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Enums;
 
 namespace L2Dn.GameServer.Model.Actor.Appearance;
 
@@ -144,7 +145,7 @@ public class PlayerAppearance
 	 */
 	public Sex getSexType()
 	{
-		return _isFemale ? Sex.FEMALE : Sex.MALE;
+		return _isFemale ? Sex.Female : Sex.Male;
 	}
 	
 	public Color getNameColor()

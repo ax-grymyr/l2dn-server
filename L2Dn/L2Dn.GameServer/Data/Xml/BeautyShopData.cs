@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.BeautyShop;
 using L2Dn.GameServer.Utilities;

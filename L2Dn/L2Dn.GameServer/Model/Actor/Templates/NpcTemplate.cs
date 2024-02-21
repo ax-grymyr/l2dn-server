@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Interfaces;
@@ -108,7 +109,7 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 		_title = set.getString("title", "");
 		_usingServerSideTitle = set.getBoolean("usingServerSideTitle", false);
 		setRace(set.getEnum("race", Race.NONE));
-		_sex = set.getEnum("sex", Sex.ETC);
+		_sex = set.getEnum("sex", Sex.Etc);
 		_elementalType = set.getEnum("elementalType", ElementalType.NONE);
 		_chestId = set.getInt("chestId", 0);
 		if ((_chestId > 0) && (ItemData.getInstance().getTemplate(_chestId) == null))

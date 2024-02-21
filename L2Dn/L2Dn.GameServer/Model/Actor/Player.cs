@@ -49,11 +49,16 @@ using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Network.OutgoingPackets.AutoPeel;
 using L2Dn.GameServer.Network.OutgoingPackets.AutoPlay;
 using L2Dn.GameServer.Network.OutgoingPackets.Commission;
+using L2Dn.GameServer.Network.OutgoingPackets.ElementalSpirits;
 using L2Dn.GameServer.Network.OutgoingPackets.Friends;
 using L2Dn.GameServer.Network.OutgoingPackets.HuntingZones;
 using L2Dn.GameServer.Network.OutgoingPackets.LimitShop;
+using L2Dn.GameServer.Network.OutgoingPackets.Pets;
+using L2Dn.GameServer.Network.OutgoingPackets.Surveillance;
+using L2Dn.GameServer.Network.OutgoingPackets.Vip;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using Microsoft.EntityFrameworkCore;
@@ -62,7 +67,6 @@ using ClanWar = L2Dn.GameServer.Model.Clans.ClanWar;
 using FortManager = L2Dn.GameServer.InstanceManagers.FortManager;
 using Forum = L2Dn.GameServer.CommunityBbs.BB.Forum;
 using Pet = L2Dn.GameServer.Model.Actor.Instances.Pet;
-using Sex = L2Dn.GameServer.Enums.Sex;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor;
@@ -73,71 +77,6 @@ namespace L2Dn.GameServer.Model.Actor;
  */
 public class Player: Playable
 {
-	// Character Skill SQL String Definitions:
-	private const string RESTORE_SKILLS_FOR_CHAR = "SELECT skill_id,skill_level,skill_sub_level FROM character_skills WHERE charId=? AND class_index=?";
-	private const string UPDATE_CHARACTER_SKILL_LEVEL = "UPDATE character_skills SET skill_level=?, skill_sub_level=?  WHERE skill_id=? AND charId=? AND class_index=?";
-	private const string ADD_NEW_SKILLS = "REPLACE INTO character_skills (charId,skill_id,skill_level,skill_sub_level,class_index) VALUES (?,?,?,?,?)";
-	private const string DELETE_SKILL_FROM_CHAR = "DELETE FROM character_skills WHERE skill_id=? AND charId=? AND class_index=?";
-	private const string DELETE_CHAR_SKILLS = "DELETE FROM character_skills WHERE charId=? AND class_index=?";
-	
-	// Character Skill Save SQL String Definitions:
-	private const string ADD_SKILL_SAVE = "REPLACE INTO character_skills_save (charId,skill_id,skill_level,skill_sub_level,remaining_time,reuse_delay,systime,restore_type,class_index,buff_index) VALUES (?,?,?,?,?,?,?,?,?,?)";
-	private const string RESTORE_SKILL_SAVE = "SELECT skill_id,skill_level,skill_sub_level,remaining_time, reuse_delay, systime, restore_type FROM character_skills_save WHERE charId=? AND class_index=? ORDER BY buff_index ASC";
-	private const string DELETE_SKILL_SAVE = "DELETE FROM character_skills_save WHERE charId=? AND class_index=?";
-	
-	// Character Item Reuse Time String Definition:
-	private const string ADD_ITEM_REUSE_SAVE = "INSERT INTO character_item_reuse_save (charId,itemId,itemObjId,reuseDelay,systime) VALUES (?,?,?,?,?)";
-	private const string RESTORE_ITEM_REUSE_SAVE = "SELECT charId,itemId,itemObjId,reuseDelay,systime FROM character_item_reuse_save WHERE charId=?";
-	private const string DELETE_ITEM_REUSE_SAVE = "DELETE FROM character_item_reuse_save WHERE charId=?";
-	
-	// Character Character SQL String Definitions:
-	private const string INSERT_CHARACTER = "INSERT INTO characters (account_name,charId,char_name,level,maxHp,curHp,maxCp,curCp,maxMp,curMp,face,hairStyle,hairColor,sex,exp,sp,reputation,fame,raidbossPoints,pvpkills,pkkills,clanid,race,classid,deletetime,cancraft,title,title_color,online,clan_privs,wantspeace,base_class,nobless,power_grade,vitality_points,createDate,kills,deaths) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	private const string UPDATE_CHARACTER = "UPDATE characters SET level=?,maxHp=?,curHp=?,maxCp=?,curCp=?,maxMp=?,curMp=?,face=?,hairStyle=?,hairColor=?,sex=?,heading=?,x=?,y=?,z=?,exp=?,expBeforeDeath=?,sp=?,reputation=?,fame=?,raidbossPoints=?,pvpkills=?,pkkills=?,clanid=?,race=?,classid=?,deletetime=?,title=?,title_color=?,online=?,clan_privs=?,wantspeace=?,base_class=?,onlinetime=?,nobless=?,power_grade=?,subpledge=?,lvl_joined_academy=?,apprentice=?,sponsor=?,clan_join_expiry_time=?,clan_create_expiry_time=?,char_name=?,bookmarkslot=?,vitality_points=?,language=?,faction=?,pccafe_points=?,kills=?,deaths=? WHERE charId=?";
-	private const string UPDATE_CHARACTER_ACCESS = "UPDATE characters SET accesslevel = ? WHERE charId = ?";
-	private const string RESTORE_CHARACTER = "SELECT * FROM characters WHERE charId=?";
-	
-	// Character Teleport Bookmark:
-	private const string INSERT_TP_BOOKMARK = "INSERT INTO character_tpbookmark (charId,Id,x,y,z,icon,tag,name) values (?,?,?,?,?,?,?,?)";
-	private const string UPDATE_TP_BOOKMARK = "UPDATE character_tpbookmark SET icon=?,tag=?,name=? where charId=? AND Id=?";
-	private const string RESTORE_TP_BOOKMARK = "SELECT Id,x,y,z,icon,tag,name FROM character_tpbookmark WHERE charId=?";
-	private const string DELETE_TP_BOOKMARK = "DELETE FROM character_tpbookmark WHERE charId=? AND Id=?";
-	
-	// Character Subclass SQL String Definitions:
-	private const string RESTORE_CHAR_SUBCLASSES = "SELECT class_id,exp,sp,level,vitality_points,class_index,dual_class FROM character_subclasses WHERE charId=? ORDER BY class_index ASC";
-	private const string ADD_CHAR_SUBCLASS = "INSERT INTO character_subclasses (charId,class_id,exp,sp,level,vitality_points,class_index,dual_class) VALUES (?,?,?,?,?,?,?,?)";
-	private const string UPDATE_CHAR_SUBCLASS = "UPDATE character_subclasses SET exp=?,sp=?,level=?,vitality_points=?,class_id=?,dual_class=? WHERE charId=? AND class_index =?";
-	private const string DELETE_CHAR_SUBCLASS = "DELETE FROM character_subclasses WHERE charId=? AND class_index=?";
-	
-	// Character Henna SQL String Definitions:
-	private const string RESTORE_CHAR_HENNAS = "SELECT slot,symbol_id FROM character_hennas WHERE charId=? AND class_index=?";
-	private const string ADD_CHAR_HENNA = "INSERT INTO character_hennas (charId,symbol_id,slot,class_index) VALUES (?,?,?,?)";
-	private const string DELETE_CHAR_HENNA = "DELETE FROM character_hennas WHERE charId=? AND slot=? AND class_index=?";
-	private const string ADD_CHAR_HENNA_POTENS = "REPLACE INTO character_potens (charId,slot_position,poten_id,enchant_level,enchant_exp) VALUES (?,?,?,?,?)";
-	private const string RESTORE_CHAR_HENNA_POTENS = "SELECT slot_position,poten_id,enchant_level,enchant_exp FROM character_potens WHERE charId=?";
-	
-	// Character Shortcut SQL String Definitions:
-	private const string DELETE_CHAR_SHORTCUTS = "DELETE FROM character_shortcuts WHERE charId=? AND class_index=?";
-	
-	// Character Collections list:
-	private const string INSERT_COLLECTION = "REPLACE INTO collections (`accountName`, `itemId`, `collectionId`, `index`) VALUES (?, ?, ?, ?)";
-	private const string RESTORE_COLLECTION = "SELECT * FROM collections WHERE accountName=? ORDER BY `index`";
-	private const string DELETE_COLLECTION_FAVORITE = "DELETE FROM collection_favorites WHERE accountName=?";
-	private const string INSERT_COLLECTION_FAVORITE = "REPLACE INTO collection_favorites (`accountName`, `collectionId`) VALUES (?, ?)";
-	private const string RESTORE_COLLECTION_FAVORITE = "SELECT * FROM collection_favorites WHERE accountName=?";
-	
-	// Character Recipe List Save:
-	private const string DELETE_CHAR_RECIPE_SHOP = "DELETE FROM character_recipeshoplist WHERE charId=?";
-	private const string INSERT_CHAR_RECIPE_SHOP = "REPLACE INTO character_recipeshoplist (`charId`, `recipeId`, `price`, `index`) VALUES (?, ?, ?, ?)";
-	private const string RESTORE_CHAR_RECIPE_SHOP = "SELECT * FROM character_recipeshoplist WHERE charId=? ORDER BY `index`";
-	
-	// Purge list:
-	private const string DELETE_SUBJUGATION = "DELETE FROM character_purge WHERE charId=?";
-	private const string INSERT_SUBJUGATION = "REPLACE INTO character_purge (`charId`, `category`, `points`, `keys`, `remainingKeys`) VALUES (?, ?, ?, ?, ?)";
-	private const string RESTORE_SUBJUGATION = "SELECT * FROM character_purge WHERE charId=?";
-	
-	// Elemental Spirits:
-	private const string RESTORE_ELEMENTAL_SPIRITS = "SELECT * FROM character_spirits WHERE charId=?";
-	
 	private const string COND_OVERRIDE_KEY = "cond_override";
 	
 	public const String NEWBIE_KEY = "NEWBIE";
@@ -153,7 +92,7 @@ public class Player: Playable
 	
 	private readonly int _accountId;
 	private readonly String _accountName;
-	private long _deleteTimer;
+	private DateTime? _deleteTime;
 	private DateTime _createDate = DateTime.Now;
 	
 	private String _lang = null;
@@ -162,9 +101,9 @@ public class Player: Playable
 	private volatile bool _isOnline = false;
 	private bool _offlinePlay = false;
 	private bool _enteredWorld = false;
-	private long _onlineTime;
-	private DateTime _onlineBeginTime;
-	private DateTime _lastAccess;
+	private TimeSpan _onlineTime;
+	private DateTime? _onlineBeginTime;
+	private DateTime? _lastAccess;
 	private DateTime _uptime;
 	
 	private ScheduledFuture _itemListTask;
@@ -276,7 +215,7 @@ public class Player: Playable
 	private bool _inCrystallize;
 	private bool _isCrafting;
 	
-	private long _offlineShopStart = 0;
+	private DateTime? _offlineShopStart;
 	
 	/** The table containing all RecipeList of the Player */
 	private readonly Map<int, RecipeList> _dwarvenRecipeBook = new();
@@ -393,7 +332,7 @@ public class Player: Playable
 	
 	/** Apprentice and Sponsor IDs */
 	private int _apprentice = 0;
-	private int _sponsor = 0;
+	private int? _sponsor;
 	
 	private DateTime? _clanJoinExpiryTime;
 	private DateTime? _clanCreateExpiryTime;
@@ -408,7 +347,7 @@ public class Player: Playable
 	/** Level at which the player joined the clan as an academy member */
 	private int _lvlJoinedAcademy = 0;
 	
-	private int _wantsPeace = 0;
+	private bool _wantsPeace;
 	
 	// charges
 	private readonly AtomicInteger _charges = new AtomicInteger();
@@ -544,8 +483,8 @@ public class Player: Playable
 	private int _clientHeading;
 	
 	// during fall validations will be disabled for 1000 ms.
-	private const int FALLING_VALIDATION_DELAY = 1000;
-	private long _fallingTimestamp = 0;
+	private static readonly TimeSpan FALLING_VALIDATION_DELAY = TimeSpan.FromSeconds(1);
+	private DateTime? _fallingTimestamp;
 	private volatile int _fallingDamage = 0;
 	private ScheduledFuture _fallingDamageTask = null;
 	
@@ -556,14 +495,14 @@ public class Player: Playable
 	
 	private String _adminConfirmCmd = null;
 	
-	private long _lastItemAuctionInfoRequest = 0;
+	private DateTime? _lastItemAuctionInfoRequest;
 	
-	private long _pvpFlagLasts;
+	private DateTime _pvpFlagLasts;
 	
-	private long _notMoveUntil = 0;
+	private DateTime? _notMoveUntil;
 	
 	/** Map containing all custom skills of this player. */
-	private Map<int, Skill> _customSkills = null;
+	private Map<int, Skill> _customSkills;
 	
 	private volatile int _actionMask;
 	
@@ -571,12 +510,12 @@ public class Player: Playable
 	
 	private readonly Fishing _fishing;
 	
-	public void setPvpFlagLasts(long time)
+	public void setPvpFlagLasts(DateTime time)
 	{
 		_pvpFlagLasts = time;
 	}
 	
-	public long getPvpFlagLasts()
+	public DateTime getPvpFlagLasts()
 	{
 		return _pvpFlagLasts;
 	}
@@ -614,7 +553,7 @@ public class Player: Playable
 	
 	private byte _vipTier = 0;
 	
-	private long _attendanceDelay;
+	private DateTime _attendanceDelay;
 	
 	private readonly AutoPlaySettingsHolder _autoPlaySettings = new AutoPlaySettingsHolder();
 	private readonly AutoUseSettingsHolder _autoUseSettings = new AutoUseSettingsHolder();
@@ -1777,18 +1716,18 @@ public class Player: Playable
 	/**
 	 * @return the _deleteTimer of the Player.
 	 */
-	public long getDeleteTimer()
+	public DateTime? getDeleteTime()
 	{
-		return _deleteTimer;
+		return _deleteTime;
 	}
 	
 	/**
 	 * Set the _deleteTimer of the Player.
 	 * @param deleteTimer
 	 */
-	public void setDeleteTimer(long deleteTimer)
+	public void setDeleteTimer(DateTime? deleteTime)
 	{
-		_deleteTimer = deleteTimer;
+		_deleteTime = deleteTime;
 	}
 	
 	/**
@@ -2751,7 +2690,10 @@ public class Player: Playable
 	
 	public DateTime? getClanJoinTime()
 	{
-		return getVariables().getLong(PlayerVariables.CLAN_JOIN_TIME, 0L);
+		DateTime time = getVariables().getDateTime(PlayerVariables.CLAN_JOIN_TIME, DateTime.MinValue);
+		if (time == DateTime.MinValue)
+			return null;
+		return time;
 	}
 	
 	public void setClanJoinTime(DateTime time)
@@ -2764,12 +2706,12 @@ public class Player: Playable
 		return _clanCreateExpiryTime;
 	}
 	
-	public void setClanCreateExpiryTime(DateTime time)
+	public void setClanCreateExpiryTime(DateTime? time)
 	{
 		_clanCreateExpiryTime = time;
 	}
 	
-	public void setOnlineTime(long time)
+	public void setOnlineTime(TimeSpan time)
 	{
 		_onlineTime = time;
 		_onlineBeginTime = DateTime.UtcNow;
@@ -4028,7 +3970,7 @@ public class Player: Playable
 	public void broadcastCharInfo()
 	{
 		// Client is disconnected.
-		if (isOnlineInt() == 0)
+		if (getOnlineStatus() == CharacterOnlineStatus.Offline)
 		{
 			return;
 		}
@@ -4149,7 +4091,7 @@ public class Player: Playable
 	{
 		if (_client != null)
 		{
-			_client.sendPacket(packet);
+			_client.Connection.Send(ref packet);
 		}
 	}
 	
@@ -4474,8 +4416,8 @@ public class Player: Playable
 					standUp();
 				}
 				setPrivateStoreType(PrivateStoreType.BUY_MANAGE);
-				sendPacket(new PrivateStoreManageListBuy(1, this));
-				sendPacket(new PrivateStoreManageListBuy(2, this));
+				sendPacket(new PrivateStoreManageListBuyPacket(1, this));
+				sendPacket(new PrivateStoreManageListBuyPacket(2, this));
 			}
 		}
 		else
@@ -4710,8 +4652,8 @@ public class Player: Playable
 		// Stop auto peel.
 		if (hasRequest<AutoPeelRequest>())
 		{
-			sendPacket(new ExStopItemAutoPeel(true));
-			sendPacket(new ExReadyItemAutoPeel(false, 0));
+			sendPacket(new ExStopItemAutoPeelPacket(true));
+			sendPacket(new ExReadyItemAutoPeelPacket(false, 0));
 			removeRequest<AutoPeelRequest>();
 		}
 		
@@ -5021,7 +4963,7 @@ public class Player: Playable
 					// NOTE: Each time an item is dropped, the chance of another item being dropped gets lesser (dropCount * 2)
 					if (Rnd.get(100) < itemDropPercent)
 					{
-						dropItem("DieDrop", itemDrop, killer, true);
+						this.dropItem("DieDrop", itemDrop, killer, true);
 						droppedItems.add(itemDrop);
 						
 						if (isKarmaDrop)
@@ -5204,7 +5146,7 @@ public class Player: Playable
 			return;
 		}
 		
-		setPvpFlagLasts(DateTime.Now.AddMilliseconds(Config.PVP_NORMAL_TIME));
+		setPvpFlagLasts(DateTime.UtcNow.AddMilliseconds(Config.PVP_NORMAL_TIME));
 		if (!_pvpFlag)
 		{
 			startPvPFlag();
@@ -5238,11 +5180,11 @@ public class Player: Playable
 		{
 			if (checkIfPvP(targetPlayer))
 			{
-				setPvpFlagLasts(DateTime.Now.AddMilliseconds(Config.PVP_PVP_TIME));
+				setPvpFlagLasts(DateTime.UtcNow.AddMilliseconds(Config.PVP_PVP_TIME));
 			}
 			else
 			{
-				setPvpFlagLasts(DateTime.Now.AddMilliseconds(Config.PVP_NORMAL_TIME));
+				setPvpFlagLasts(DateTime.UtcNow.AddMilliseconds(Config.PVP_NORMAL_TIME));
 			}
 			if (!_pvpFlag)
 			{
@@ -5358,7 +5300,7 @@ public class Player: Playable
 		return _pet;
 	}
 	
-	public override Map<int, Summon> getServitors()
+	public Map<int, Summon> getServitors()
 	{
 		return _servitors;
 	}
@@ -5443,7 +5385,7 @@ public class Player: Playable
 	/**
 	 * @return the Player requester of a transaction (ex : FriendInvite, JoinAlly, JoinParty...).
 	 */
-	public Request getRequest()
+	public Model.Request getRequest()
 	{
 		return _request;
 	}
@@ -5563,8 +5505,8 @@ public class Player: Playable
 		SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_BEGIN_TRADING_WITH_C1);
 		msg.Params.addPcName(partner);
 		sendPacket(msg);
-		sendPacket(new TradeStart(1, this));
-		sendPacket(new TradeStart(2, this));
+		sendPacket(new TradeStartPacket(1, this));
+		sendPacket(new TradeStartPacket(2, this));
 	}
 	
 	public void onTradeConfirm(Player partner)
@@ -5572,7 +5514,7 @@ public class Player: Playable
 		SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.C1_HAS_CONFIRMED_THE_TRADE);
 		msg.Params.addPcName(partner);
 		sendPacket(msg);
-		sendPacket(TradeOtherDone.STATIC_PACKET);
+		sendPacket(TradeOtherDonePacket.STATIC_PACKET);
 	}
 	
 	public void onTradeCancel(Player partner)
@@ -5584,7 +5526,7 @@ public class Player: Playable
 		
 		_activeTradeList.@lock();
 		_activeTradeList = null;
-		sendPacket(new TradeDone(0));
+		sendPacket(new TradeDonePacket(0));
 		SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.C1_HAS_CANCELLED_THE_TRADE);
 		msg.Params.addPcName(partner);
 		sendPacket(msg);
@@ -5593,7 +5535,7 @@ public class Player: Playable
 	public void onTradeFinish(bool successfull)
 	{
 		_activeTradeList = null;
-		sendPacket(new TradeDone(1));
+		sendPacket(new TradeDonePacket(1));
 		if (successfull)
 		{
 			sendPacket(SystemMessageId.YOUR_TRADE_WAS_SUCCESSFUL);
@@ -5733,7 +5675,7 @@ public class Player: Playable
 		{
 			setTitle("");
 			_clanId = 0;
-			_clanPrivileges = new EnumIntBitmask<ClanPrivilege>();
+			_clanPrivileges = ClanPrivilege.None;
 			_pledgeType = 0;
 			_powerGrade = 0;
 			_lvlJoinedAcademy = 0;
@@ -5934,7 +5876,7 @@ public class Player: Playable
 		if (sld != null)
 		{
 			List<Item> unequipped = _inventory.unEquipItemInBodySlotAndRecord(sld.getTemplate().getBodyPart());
-			InventoryUpdatePacket iu = new InventoryUpdatePacket(unequipped.Select(itm => new ItemInfo(itm, ItemChangeType.MODIFIED)));
+			InventoryUpdatePacket iu = new InventoryUpdatePacket(unequipped.Select(itm => new ItemInfo(itm, ItemChangeType.MODIFIED)).ToList());
 			sendInventoryUpdate(iu);
 			
 			abortAttack();
@@ -6287,10 +6229,9 @@ public class Player: Playable
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				PreparedStatement ps = con.prepareStatement(UPDATE_CHARACTER_ACCESS);
-				ps.setInt(1, accessLevel.getLevel());
-				ps.setInt(2, getObjectId());
-				ps.executeUpdate();
+				int characterId = getObjectId();
+				ctx.Characters.Where(c => c.Id == characterId)
+					.ExecuteUpdate(s => s.SetProperty(c => c.AccessLevel, accessLevel.getLevel()));
 			}
 			catch (Exception e)
 			{
@@ -6407,12 +6348,9 @@ public class Player: Playable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement =
-				con.prepareStatement("UPDATE characters SET online=?, lastAccess=? WHERE charId=?");
-			statement.setInt(1, isOnlineInt());
-			statement.setLong(2, System.currentTimeMillis());
-			statement.setInt(3, getObjectId());
-			statement.execute();
+			int characterId = getObjectId();
+			ctx.Characters.Where(c => c.Id == characterId).ExecuteUpdate(s =>
+				s.SetProperty(c => c.OnlineStatus, getOnlineStatus()).SetProperty(c => c.LastAccess, DateTime.UtcNow));
 		}
 		catch (Exception e)
 		{
@@ -6429,52 +6367,55 @@ public class Player: Playable
 		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(INSERT_CHARACTER);
-			statement.setString(1, _accountName);
-			statement.setInt(2, getObjectId());
-			statement.setString(3, getName());
-			statement.setInt(4, getLevel());
-			statement.setInt(5, getMaxHp());
-			statement.setDouble(6, getCurrentHp());
-			statement.setInt(7, getMaxCp());
-			statement.setDouble(8, getCurrentCp());
-			statement.setInt(9, getMaxMp());
-			statement.setDouble(10, getCurrentMp());
-			statement.setInt(11, _appearance.getFace());
-			statement.setInt(12, _appearance.getHairStyle());
-			statement.setInt(13, _appearance.getHairColor());
-			statement.setInt(14, _appearance.isFemale() ? 1 : 0);
-			statement.setLong(15, getExp());
-			statement.setLong(16, getSp());
-			statement.setInt(17, getReputation());
-			statement.setInt(18, _fame);
-			statement.setInt(19, _raidbossPoints);
-			statement.setInt(20, _pvpKills);
-			statement.setInt(21, _pkKills);
-			statement.setInt(22, _clanId);
-			statement.setInt(23, getRace().ordinal());
-			statement.setInt(24, getClassId().getId());
-			statement.setLong(25, _deleteTimer);
-			statement.setInt(26, hasDwarvenCraft() ? 1 : 0);
-			statement.setString(27, getTitle());
-			statement.setInt(28, _appearance.getTitleColor());
-			statement.setInt(29, isOnlineInt());
-			statement.setInt(30, _clanPrivileges.getBitmask());
-			statement.setInt(31, _wantsPeace);
-			statement.setInt(32, _baseClass);
-			statement.setInt(33, isNoble() ? 1 : 0);
-			statement.setLong(34, 0);
-			statement.setInt(35, PlayerStat.MIN_VITALITY_POINTS);
-			statement.setDate(36, new Date(_createDate.getTimeInMillis()));
-			statement.setInt(37, getTotalKills());
-			statement.setInt(38, getTotalDeaths());
-			statement.executeUpdate();
+			ctx.Characters.Add(new Character()
+			{
+				Id = getObjectId(),
+				AccountId = _accountId,
+                Name = getName(),
+                Level = (short)getLevel(),
+                MaxHp = getMaxHp(),
+                CurrentHp = (int)getCurrentHp(),
+                MaxCp = getMaxCp(),
+                CurrentCp = (int)getCurrentCp(),
+                MaxMp = getMaxMp(),
+                CurrentMp = (int)getCurrentMp(),
+                Face = _appearance.getFace(),
+                HairStyle = _appearance.getHairStyle(),
+                HairColor = _appearance.getHairColor(),
+                Sex = _appearance.isFemale() ? Sex.Female : Sex.Male,
+                Exp = getExp(),
+                Sp = getSp(),
+                Reputation = getReputation(),
+                Fame = _fame,
+                RaidBossPoints = _raidbossPoints,
+                PvpKills = _pvpKills,
+                PkKills = _pkKills,
+                ClanId = _clanId,
+                Class = getClassId(),
+                DeleteTime = _deleteTime,
+                HasDwarvenCraft = hasDwarvenCraft(),
+				Title = getTitle(),
+				TitleColor = _appearance.getTitleColor().Value,
+				OnlineStatus = getOnlineStatus(),
+				ClanPrivileges = (int)_clanPrivileges,
+				WantsPeace = _wantsPeace,
+				BaseClass = _baseClass,
+				IsNobless = isNoble(),
+				PowerGrade = 0,
+				VitalityPoints = PlayerStat.MIN_VITALITY_POINTS,
+				Created = _createDate,
+				Kills = getTotalKills(),
+				Deaths = getTotalDeaths()
+			});
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
 			LOGGER.Error("Could not insert char data: " + e);
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -6496,210 +6437,218 @@ public class Player: Playable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(RESTORE_CHARACTER);
+
 			// Retrieve the Player from the characters table of the database
-			statement.setInt(1, objectId);
+			Character? character = ctx.Characters.SingleOrDefault(c => c.Id == objectId);
+			if (character is not null)
 			{
-                ResultSet rset = statement.executeQuery();
-				if (rset.next())
+				// Retrieve account name
+				int accountId = character.AccountId;
+				string accountName = ctx.AccountRefs.Where(a => a.Id == accountId).Select(a => a.Login).Single();
+
+				CharacterClass activeClassId = character.Class;
+				bool female = character.Sex != Sex.Male;
+				PlayerTemplate template = PlayerTemplateData.getInstance().getTemplate(activeClassId);
+				PlayerAppearance app =
+					new PlayerAppearance(character.Face, character.HairColor, character.HairStyle, female);
+				player = new Player(objectId, template, accountId, accountName, app);
+				player.setName(character.Name);
+				player.setLastAccess(character.LastAccess);
+
+				player.getStat().setExp(character.Exp);
+				player.setExpBeforeDeath(character.ExpBeforeDeath);
+				player.getStat().setLevel(character.Level);
+				player.getStat().setSp(character.Sp);
+
+				player.setWantsPeace(character.WantsPeace);
+
+				player.setHeading(character.Heading);
+
+				player.setInitialReputation(character.Reputation);
+				player.setFame(character.Fame);
+				player.setRaidbossPoints(character.RaidBossPoints);
+				player.setPvpKills(character.PvpKills);
+				player.setPkKills(character.PkKills);
+				player.setOnlineTime(character.OnlineTime);
+				player.setNoble(character.IsNobless);
+
+				byte? factionId = character.Faction;
+				if (factionId == 1)
 				{
-					CharacterClass activeClassId = rset.getInt("classid");
-					bool female = rset.getInt("sex") != Sex.MALE;
-					PlayerTemplate template = PlayerTemplateData.getInstance().getTemplate(activeClassId);
-					PlayerAppearance app = new PlayerAppearance(rset.getByte("face"), rset.getByte("hairColor"), rset.getByte("hairStyle"), female);
-					player = new Player(objectId, template, accountId, rset.getString("account_name"), app);
-					player.setName(rset.getString("char_name"));
-					player.setLastAccess(rset.getLong("lastAccess"));
-					
-					player.getStat().setExp(rset.getLong("exp"));
-					player.setExpBeforeDeath(rset.getLong("expBeforeDeath"));
-					player.getStat().setLevel(rset.getInt("level"));
-					player.getStat().setSp(rset.getLong("sp"));
-					
-					player.setWantsPeace(rset.getInt("wantspeace"));
-					
-					player.setHeading(rset.getInt("heading"));
-					
-					player.setInitialReputation(rset.getInt("reputation"));
-					player.setFame(rset.getInt("fame"));
-					player.setRaidbossPoints(rset.getInt("raidbossPoints"));
-					player.setPvpKills(rset.getInt("pvpkills"));
-					player.setPkKills(rset.getInt("pkkills"));
-					player.setOnlineTime(rset.getLong("onlinetime"));
-					player.setNoble(rset.getInt("nobless") == 1);
-					
-					int factionId = rset.getInt("faction");
-					if (factionId == 1)
+					player.setGood();
+				}
+
+				if (factionId == 2)
+				{
+					player.setEvil();
+				}
+
+				player.setClanJoinExpiryTime(character.ClanJoinExpiryTime);
+				if (player.getClanJoinExpiryTime() < DateTime.UtcNow)
+				{
+					player.setClanJoinExpiryTime(null);
+				}
+
+				player.setClanCreateExpiryTime(character.ClanCreateExpiryTime);
+				if (player.getClanCreateExpiryTime() < DateTime.UtcNow)
+				{
+					player.setClanCreateExpiryTime(null);
+				}
+
+				player.setPcCafePoints(character.PcCafePoints);
+
+				int? clanId = character.ClanId;
+				player.setPowerGrade(character.PowerGrade);
+				player.getStat().setVitalityPoints(character.VitalityPoints);
+				player.setPledgeType(character.SubPledge);
+				// player.setApprentice(rset.getInt("apprentice"));
+
+				if (clanId != null)
+				{
+					player.setClan(ClanTable.getInstance().getClan(clanId.Value));
+				}
+
+				if (player.getClan() != null)
+				{
+					if (player.getClan().getLeaderId() != player.getObjectId())
 					{
-						player.setGood();
-					}
-					if (factionId == 2)
-					{
-						player.setEvil();
-					}
-					
-					player.setClanJoinExpiryTime(rset.getLong("clan_join_expiry_time"));
-					if (player.getClanJoinExpiryTime() < System.currentTimeMillis())
-					{
-						player.setClanJoinExpiryTime(0);
-					}
-					player.setClanCreateExpiryTime(rset.getLong("clan_create_expiry_time"));
-					if (player.getClanCreateExpiryTime() < System.currentTimeMillis())
-					{
-						player.setClanCreateExpiryTime(0);
-					}
-					
-					player.setPcCafePoints(rset.getInt("pccafe_points"));
-					
-					int clanId = rset.getInt("clanid");
-					player.setPowerGrade(rset.getInt("power_grade"));
-					player.getStat().setVitalityPoints(rset.getInt("vitality_points"));
-					player.setPledgeType(rset.getInt("subpledge"));
-					// player.setApprentice(rset.getInt("apprentice"));
-					
-					if (clanId > 0)
-					{
-						player.setClan(ClanTable.getInstance().getClan(clanId));
-					}
-					
-					if (player.getClan() != null)
-					{
-						if (player.getClan().getLeaderId() != player.getObjectId())
+						if (player.getPowerGrade() == 0)
 						{
-							if (player.getPowerGrade() == 0)
-							{
-								player.setPowerGrade(5);
-							}
-							player.setClanPrivileges(player.getClan().getRankPrivs(player.getPowerGrade()));
+							player.setPowerGrade(5);
 						}
-						else
-						{
-							player.getClanPrivileges().setAll();
-							player.setPowerGrade(1);
-						}
-						player.setPledgeClass(ClanMember.calculatePledgeClass(player));
+
+						player.setClanPrivileges(player.getClan().getRankPrivs(player.getPowerGrade()));
 					}
 					else
 					{
-						if (player.isNoble())
+						player.setClanPrivileges(ClanPrivilege.All);
+						player.setPowerGrade(1);
+					}
+
+					player.setPledgeClass(ClanMember.calculatePledgeClass(player));
+				}
+				else
+				{
+					if (player.isNoble())
+					{
+						player.setPledgeClass(5);
+					}
+
+					if (player.isHero())
+					{
+						player.setPledgeClass(8);
+					}
+
+					player.setClanPrivileges(ClanPrivilege.None);
+				}
+
+				player.setTotalDeaths(character.Deaths);
+				player.setTotalKills(character.Kills);
+				player.setDeleteTimer(character.DeleteTime);
+				player.setTitle(character.Title);
+				player.setAccessLevel(character.AccessLevel, false, false);
+				int titleColor = character.TitleColor;
+				if (titleColor != PlayerAppearance.DEFAULT_TITLE_COLOR)
+				{
+					player.getAppearance().setTitleColor(new Color(titleColor));
+				}
+
+				player.setFistsWeaponItem(player.findFistsWeaponItem(activeClassId));
+				player.setUptime(DateTime.UtcNow);
+
+				currentHp = character.CurrentHp;
+				currentCp = character.CurrentCp;
+				currentMp = character.CurrentMp;
+				player.setClassIndex(0);
+				try
+				{
+					player.setBaseClass(character.BaseClass);
+				}
+				catch (Exception e)
+				{
+					player.setBaseClass(activeClassId);
+					LOGGER.Warn(
+						"Exception during player.setBaseClass for player: " + player + " base class: " +
+						character.BaseClass, e);
+				}
+
+				// Restore Subclass Data (cannot be done earlier in function)
+				if (restoreSubClassData(player) && (activeClassId != player.getBaseClass()))
+				{
+					foreach (SubClassHolder subClass in player.getSubClasses().values())
+					{
+						if (subClass.getClassDefinition() == activeClassId)
 						{
-							player.setPledgeClass(5);
-						}
-						
-						if (player.isHero())
-						{
-							player.setPledgeClass(8);
-						}
-						
-						player.getClanPrivileges().clear();
-					}
-					player.setTotalDeaths(rset.getInt("deaths"));
-					player.setTotalKills(rset.getInt("kills"));
-					player.setDeleteTimer(rset.getLong("deletetime"));
-					player.setTitle(rset.getString("title"));
-					player.setAccessLevel(rset.getInt("accesslevel"), false, false);
-					int titleColor = rset.getInt("title_color");
-					if (titleColor != PlayerAppearance.DEFAULT_TITLE_COLOR)
-					{
-						player.getAppearance().setTitleColor(titleColor);
-					}
-					player.setFistsWeaponItem(player.findFistsWeaponItem(activeClassId));
-					player.setUptime(DateTime.UtcNow);
-					
-					currentHp = rset.getDouble("curHp");
-					currentCp = rset.getDouble("curCp");
-					currentMp = rset.getDouble("curMp");
-					player.setClassIndex(0);
-					try
-					{
-						player.setBaseClass(rset.getInt("base_class"));
-					}
-					catch (Exception e)
-					{
-						player.setBaseClass(activeClassId);
-						LOGGER.Warn("Exception during player.setBaseClass for player: " + player + " base class: " + rset.getInt("base_class"), e);
-					}
-					
-					// Restore Subclass Data (cannot be done earlier in function)
-					if (restoreSubClassData(player) && (activeClassId != player.getBaseClass()))
-					{
-						foreach (SubClassHolder subClass in player.getSubClasses().values())
-						{
-							if (subClass.getClassDefinition() == activeClassId)
-							{
-								player.setClassIndex(subClass.getClassIndex());
-							}
-						}
-					}
-					if ((player.getClassIndex() == 0) && (activeClassId != player.getBaseClass()))
-					{
-						// Subclass in use but doesn't exist in DB -
-						// a possible restart-while-modifysubclass cheat has been attempted.
-						// Switching to use base class
-						player.setClassId(player.getBaseClass());
-						LOGGER.Warn(player + " reverted to base class. Possibly has tried a relogin exploit while subclassing.");
-					}
-					else
-					{
-						player._activeClass = activeClassId;
-					}
-					if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, player.getBaseTemplate().getClassId()))
-					{
-						player._isDeathKnight = true;
-					}
-					else if (CategoryData.getInstance().isInCategory(CategoryType.VANGUARD_ALL_CLASS, player.getBaseTemplate().getClassId()))
-					{
-						player._isVanguard = true;
-					}
-					else if (CategoryData.getInstance().isInCategory(CategoryType.ASSASSIN_ALL_CLASS, player.getBaseTemplate().getClassId()))
-					{
-						player._isAssassin = true;
-					}
-					
-					player.setApprentice(rset.getInt("apprentice"));
-					player.setSponsor(rset.getInt("sponsor"));
-					player.setLvlJoinedAcademy(rset.getInt("lvl_joined_academy"));
-					
-					// Set Hero status if it applies.
-					player.setHero(Hero.getInstance().isHero(objectId));
-					
-					CursedWeaponsManager.getInstance().checkPlayer(player);
-					
-					// Set the x,y,z position of the Player and make it invisible
-					int x = rset.getInt("x");
-					int y = rset.getInt("y");
-					int z = rset.getInt("z");
-					player.setXYZInvisible(x, y, z);
-					player.setLastServerPosition(x, y, z);
-					
-					// Set Teleport Bookmark Slot
-					player.setBookMarkSlot(rset.getInt("BookmarkSlot"));
-					
-					// character creation Time
-					player.getCreateDate().setTime(rset.getDate("createDate"));
-					
-					// Language
-					player.setLang(rset.getString("language"));
-					
-					// Retrieve the name and ID of the other characters assigned to this account.
-					try
-					{
-						PreparedStatement stmt =
-							con.prepareStatement(
-								"SELECT charId, char_name FROM characters WHERE account_name=? AND charId<>?");
-						stmt.setString(1, player._accountName);
-						stmt.setInt(2, objectId);
-						{
-							ResultSet chars = stmt.executeQuery();
-							while (chars.next())
-							{
-								player._chars.put(chars.getInt("charId"), chars.getString("char_name"));
-							}
+							player.setClassIndex(subClass.getClassIndex());
 						}
 					}
 				}
+
+				if ((player.getClassIndex() == 0) && (activeClassId != player.getBaseClass()))
+				{
+					// Subclass in use but doesn't exist in DB -
+					// a possible restart-while-modifysubclass cheat has been attempted.
+					// Switching to use base class
+					player.setClassId(player.getBaseClass());
+					LOGGER.Warn(player +
+					            " reverted to base class. Possibly has tried a relogin exploit while subclassing.");
+				}
+				else
+				{
+					player._activeClass = activeClassId;
+				}
+
+				if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS,
+					    player.getBaseTemplate().getClassId()))
+				{
+					player._isDeathKnight = true;
+				}
+				else if (CategoryData.getInstance()
+				         .isInCategory(CategoryType.VANGUARD_ALL_CLASS, player.getBaseTemplate().getClassId()))
+				{
+					player._isVanguard = true;
+				}
+				else if (CategoryData.getInstance()
+				         .isInCategory(CategoryType.ASSASSIN_ALL_CLASS, player.getBaseTemplate().getClassId()))
+				{
+					player._isAssassin = true;
+				}
+
+				player.setApprentice(character.Apprentice);
+				player.setSponsor(character.SponsorId);
+				player.setLvlJoinedAcademy(character.LevelJoinedAcademy);
+
+				// Set Hero status if it applies.
+				player.setHero(Hero.getInstance().isHero(objectId));
+
+				CursedWeaponsManager.getInstance().checkPlayer(player);
+
+				// Set the x,y,z position of the Player and make it invisible
+				int x = character.X;
+				int y = character.Y;
+				int z = character.Z;
+				player.setXYZInvisible(x, y, z);
+				player.setLastServerPosition(x, y, z);
+
+				// Set Teleport Bookmark Slot
+				player.setBookMarkSlot(character.BookmarkSlot);
+
+				// character creation Time
+				player.setCreateDate(character.Created);
+
+				// Language
+				player.setLang(character.Language);
+
+				// Retrieve the name and ID of the other characters assigned to this account.
+				var query = ctx.Characters.Where(c => c.AccountId == accountId)
+					.Select(c => new { c.Id, c.Name, c.SlotIndex });
+
+				foreach (var record in query)
+				{
+					player._chars.put(record.Id, record.Name);
+				}
 			}
-			
+
 			if (player == null)
 			{
 				return null;
@@ -6712,7 +6661,7 @@ public class Player: Playable
 			
 			if (player.isGM())
 			{
-				long masks = player.getVariables().getLong(COND_OVERRIDE_KEY, PlayerCondOverride.getAllExceptionsMask());
+				long masks = player.getVariables().getLong(COND_OVERRIDE_KEY, int.MaxValue);
 				player.setOverrideCond(masks);
 			}
 			
@@ -6850,30 +6799,28 @@ public class Player: Playable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(RESTORE_CHAR_SUBCLASSES);
-			statement.setInt(1, player.getObjectId());
+			int characterId = player.getObjectId();
+			var query = ctx.CharacterSubClasses.Where(r => r.CharacterId == characterId).OrderBy(r => r.ClassIndex);
+			foreach (var record in query)
 			{
-				ResultSet rset = statement.executeQuery();
-				while (rset.next())
-				{
-					SubClassHolder subClass = new SubClassHolder();
-					subClass.setClassId(rset.getInt("class_id"));
-					subClass.setDualClassActive(rset.getBoolean("dual_class"));
-					subClass.setVitalityPoints(rset.getInt("vitality_points"));
-					subClass.setLevel(rset.getInt("level"));
-					subClass.setExp(rset.getLong("exp"));
-					subClass.setSp(rset.getLong("sp"));
-					subClass.setClassIndex(rset.getInt("class_index"));
-					
-					// Enforce the correct indexing of _subClasses against their class indexes.
-					player.getSubClasses().put(subClass.getClassIndex(), subClass);
-				}
+				SubClassHolder subClass = new SubClassHolder();
+				subClass.setClassId(record.SubClass);
+				subClass.setDualClassActive(record.DualClass);
+				subClass.setVitalityPoints(record.VitalityPoints);
+				subClass.setLevel(record.Level);
+				subClass.setExp(record.Exp);
+				subClass.setSp(record.Sp);
+				subClass.setClassIndex(record.ClassIndex);
+				
+				// Enforce the correct indexing of _subClasses against their class indexes.
+				player.getSubClasses().put(subClass.getClassIndex(), subClass);
 			}
 		}
 		catch (Exception e)
 		{
 			LOGGER.Warn("Could not restore classes for " + player.getName() + ": " + e);
 		}
+		
 		return true;
 	}
 	
@@ -6948,47 +6895,34 @@ public class Player: Playable
 	 */
 	private void restoreRecipeBook(bool loadCommon)
 	{
-		String sql = loadCommon ? "SELECT id, type, classIndex FROM character_recipebook WHERE charId=?" : "SELECT id FROM character_recipebook WHERE charId=? AND classIndex=? AND type = 1";
 		try 
 		{
             using GameServerDbContext ctx = new();
-            PreparedStatement statement = con.prepareStatement(sql);
-			statement.setInt(1, getObjectId());
-			if (!loadCommon)
-			{
-				statement.setInt(2, _classIndex);
-			}
+            int characterId = getObjectId();
+            var query = loadCommon
+	            ? ctx.CharacterRecipeBooks.Where(r => r.CharacterId == characterId)
+	            : ctx.CharacterRecipeBooks.Where(r =>
+		            r.CharacterId == characterId && r.ClassIndex == _classIndex && r.Type == 1);
 
+			_dwarvenRecipeBook.clear();
 
-			{
-				ResultSet rset = statement.executeQuery();
-				_dwarvenRecipeBook.clear();
-				
-				RecipeList recipe;
-				RecipeData rd = RecipeData.getInstance();
-				while (rset.next())
+			RecipeData rd = RecipeData.getInstance();            
+            foreach (var record in query)
+            {
+	            RecipeList recipe = rd.getRecipeList(record.Id);
+	            if (loadCommon)
 				{
-					recipe = rd.getRecipeList(rset.getInt("id"));
-					if (loadCommon)
+					if (record.Type == 1)
 					{
-						if (rset.getInt(2) == 1)
-						{
-							if (rset.getInt(3) == _classIndex)
-							{
-								registerDwarvenRecipeList(recipe, false);
-							}
-						}
-						else
-						{
-							registerCommonRecipeList(recipe, false);
-						}
+						if (record.ClassIndex == _classIndex)
+							registerDwarvenRecipeList(recipe, false);
 					}
 					else
-					{
-						registerDwarvenRecipeList(recipe, false);
-					}
+						registerCommonRecipeList(recipe, false);
 				}
-			}
+				else
+					registerDwarvenRecipeList(recipe, false);
+            }
 		}
 		catch (Exception e)
 		{
@@ -7003,22 +6937,18 @@ public class Player: Playable
 	
 	private void loadPremiumItemList()
 	{
-		String sql = "SELECT itemNum, itemId, itemCount, itemSender FROM character_premium_items WHERE charId=?";
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(sql);
-			statement.setInt(1, getObjectId());
-					{
-                        ResultSet rset = statement.executeQuery();
-				while (rset.next())
-				{
-					int itemNum = rset.getInt("itemNum");
-					int itemId = rset.getInt("itemId");
-					long itemCount = rset.getLong("itemCount");
-					String itemSender = rset.getString("itemSender");
-					_premiumItems.put(itemNum, new PremiumItem(itemId, itemCount, itemSender));
-				}
+			int characterId = getObjectId();
+			var query = ctx.CharacterPremiumItems.Where(r => r.CharacterId == characterId);
+			foreach (var record in query)
+			{
+				int itemNum = record.ItemNumber;
+				int itemId = record.ItemId;
+				long itemCount = record.ItemCount;
+				String itemSender = record.ItemSender;
+				_premiumItems.put(itemNum, new PremiumItem(itemId, itemCount, itemSender));
 			}
 		}
 		catch (Exception e)
@@ -7032,12 +6962,9 @@ public class Player: Playable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement =
-				con.prepareStatement("UPDATE character_premium_items SET itemCount=? WHERE charId=? AND itemNum=? ");
-			statement.setLong(1, newcount);
-			statement.setInt(2, getObjectId());
-			statement.setInt(3, itemNum);
-			statement.execute();
+			int characterId = getObjectId();
+			ctx.CharacterPremiumItems.Where(r => r.CharacterId == characterId && r.ItemNumber == itemNum)
+				.ExecuteUpdate(s => s.SetProperty(c => c.ItemCount, newcount));
 		}
 		catch (Exception e)
 		{
@@ -7050,10 +6977,9 @@ public class Player: Playable
 		try 
 		{
             using GameServerDbContext ctx = new();
-            			PreparedStatement statement = con.prepareStatement("DELETE FROM character_premium_items WHERE charId=? AND itemNum=? ");
-			statement.setInt(1, getObjectId());
-			statement.setInt(2, itemNum);
-			statement.execute();
+            int characterId = getObjectId();
+            ctx.CharacterPremiumItems.Where(r => r.CharacterId == characterId && r.ItemNumber == itemNum)
+	            .ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -7146,80 +7072,86 @@ public class Player: Playable
 		long exp = getStat().getBaseExp();
 		int level = getStat().getBaseLevel();
 		long sp = getStat().getBaseSp();
+        
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(UPDATE_CHARACTER);
-			statement.setInt(1, level);
-			statement.setInt(2, getMaxHp());
-			statement.setDouble(3, getCurrentHp());
-			statement.setInt(4, getMaxCp());
-			statement.setDouble(5, getCurrentCp());
-			statement.setInt(6, getMaxMp());
-			statement.setDouble(7, getCurrentMp());
-			statement.setInt(8, _appearance.getFace());
-			statement.setInt(9, _appearance.getHairStyle());
-			statement.setInt(10, _appearance.getHairColor());
-			statement.setInt(11, _appearance.isFemale() ? 1 : 0);
-			statement.setInt(12, getHeading());
-			statement.setInt(13, _lastLoc != null ? _lastLoc.getX() : getX());
-			statement.setInt(14, _lastLoc != null ? _lastLoc.getY() : getY());
-			statement.setInt(15, _lastLoc != null ? _lastLoc.getZ() : getZ());
-			statement.setLong(16, exp);
-			statement.setLong(17, _expBeforeDeath);
-			statement.setLong(18, sp);
-			statement.setInt(19, getReputation());
-			statement.setInt(20, _fame);
-			statement.setInt(21, _raidbossPoints);
-			statement.setInt(22, _pvpKills);
-			statement.setInt(23, _pkKills);
-			statement.setInt(24, _clanId);
-			statement.setInt(25, getRace());
-			statement.setInt(26, getClassId());
-			statement.setLong(27, _deleteTimer);
-			statement.setString(28, getTitle());
-			statement.setInt(29, _appearance.getTitleColor());
-			statement.setInt(30, isOnlineInt());
-			statement.setInt(31, _clanPrivileges);
-			statement.setInt(32, _wantsPeace);
-			statement.setInt(33, _baseClass);
-			long totalOnlineTime = _onlineTime;
-			if (_onlineBeginTime > 0)
-			{
-				totalOnlineTime += (System.currentTimeMillis() - _onlineBeginTime) / 1000;
-			}
-			statement.setLong(34, _offlineShopStart > 0 ? _onlineTime : totalOnlineTime);
-			statement.setInt(35, isNoble() ? 1 : 0);
-			statement.setInt(36, _powerGrade);
-			statement.setInt(37, _pledgeType);
-			statement.setInt(38, _lvlJoinedAcademy);
-			statement.setLong(39, _apprentice);
-			statement.setLong(40, _sponsor);
-			statement.setLong(41, _clanJoinExpiryTime);
-			statement.setLong(42, _clanCreateExpiryTime);
-			statement.setString(43, getName());
-			statement.setInt(44, _bookmarkslot);
-			statement.setInt(45, getStat().getBaseVitalityPoints());
-			statement.setString(46, _lang);
-			int factionId = 0;
+			int characterId = getObjectId();
+            Character? character = ctx.Characters.SingleOrDefault(r => r.Id == characterId);
+            if (character is null)
+            {
+	            character = new Character();
+	            character.Id = characterId;
+	            ctx.Characters.Add(character);
+            }
+            
+            character.Level = (short)level;
+            character.MaxHp = getMaxHp();
+            character.CurrentHp = (int)getCurrentHp();
+            character.MaxCp = getMaxCp();
+            character.CurrentCp = (int)getCurrentCp();
+			character.MaxMp = getMaxMp();
+			character.CurrentMp = (int)getCurrentMp();
+			character.Face = _appearance.getFace();
+			character.HairStyle = _appearance.getHairStyle();
+            character.HairColor = _appearance.getHairColor();
+			character.Sex = _appearance.isFemale() ? Sex.Female : Sex.Male;
+            character.Heading = getHeading();
+            character.X = _lastLoc != null ? _lastLoc.getX() : getX();
+            character.Y = _lastLoc != null ? _lastLoc.getY() : getY();
+            character.Z = _lastLoc != null ? _lastLoc.getZ() : getZ();
+            character.Exp = exp;
+            character.ExpBeforeDeath = _expBeforeDeath;
+            character.Sp = sp;
+            character.Reputation = getReputation();
+            character.Fame = _fame;
+            character.RaidBossPoints = _raidbossPoints;
+            character.PvpKills = _pvpKills;
+            character.PkKills = _pkKills;
+            character.ClanId = _clanId;
+            character.Class = getClassId();
+            character.DeleteTime = _deleteTime;
+            character.Title = getTitle();
+            character.TitleColor = _appearance.getTitleColor().Value;
+            character.OnlineStatus = getOnlineStatus();
+            character.ClanPrivileges = (int)_clanPrivileges;
+			character.WantsPeace = _wantsPeace;
+			character.BaseClass = _baseClass;
+			TimeSpan totalOnlineTime = _onlineTime;
+			if (_onlineBeginTime != null)
+				totalOnlineTime += DateTime.UtcNow - _onlineBeginTime.Value;
+            
+			character.OnlineTime = _offlineShopStart != null ? _onlineTime : totalOnlineTime;
+			character.IsNobless = isNoble();
+			character.PowerGrade = _powerGrade;
+            character.SubPledge = _pledgeType;
+            character.LevelJoinedAcademy = (byte)_lvlJoinedAcademy;
+            character.Apprentice = _apprentice;
+            character.SponsorId = _sponsor;
+            character.ClanJoinExpiryTime = _clanJoinExpiryTime;
+            character.ClanCreateExpiryTime = _clanCreateExpiryTime;
+            character.Name = getName();
+            character.BookmarkSlot = _bookmarkslot;
+            character.VitalityPoints = getStat().getBaseVitalityPoints();
+            character.Language = _lang;
+
+            byte? factionId = null;
 			if (_isGood)
-			{
 				factionId = 1;
-			}
+
 			if (_isEvil)
-			{
 				factionId = 2;
-			}
-			statement.setInt(47, factionId);
-			statement.setInt(48, _pcCafePoints);
-			statement.setInt(49, getTotalKills());
-			statement.setInt(50, getTotalDeaths());
-			statement.setInt(51, getObjectId());
-			statement.execute();
+            
+			character.Faction = factionId;
+            character.PcCafePoints = _pcCafePoints;
+            character.Kills = getTotalKills();
+            character.Deaths = getTotalDeaths();
+			
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Could not store char base data: " + this + " - " + e);
+			LOGGER.Error("Could not store char base data: " + this + " - " + e);
 		}
 	}
 	
@@ -7232,25 +7164,35 @@ public class Player: Playable
 		
 		try 
 		{
-            using GameServerDbContext ctx = new();
-            			PreparedStatement statement = con.prepareStatement(UPDATE_CHAR_SUBCLASS);
+			using GameServerDbContext ctx = new();
+			int characterId = getObjectId();
 			foreach (SubClassHolder subClass in getSubClasses().values())
 			{
-				statement.setLong(1, subClass.getExp());
-				statement.setLong(2, subClass.getSp());
-				statement.setInt(3, subClass.getLevel());
-				statement.setInt(4, subClass.getVitalityPoints());
-				statement.setInt(5, subClass.getClassDefinition());
-				statement.setBoolean(6, subClass.isDualClass());
-				statement.setInt(7, getObjectId());
-				statement.setInt(8, subClass.getClassIndex());
-				statement.addBatch();
+                int classIndex = subClass.getClassIndex();
+                CharacterSubClass? record =
+	                ctx.CharacterSubClasses.SingleOrDefault(r => r.CharacterId == characterId && r.ClassIndex == classIndex);
+
+                if (record is null)
+                {
+	                record = new CharacterSubClass();
+	                record.CharacterId = characterId;
+                    record.ClassIndex = (byte)classIndex;
+                    ctx.CharacterSubClasses.Add(record);
+                }
+
+                record.Exp = subClass.getExp();
+                record.Sp = subClass.getSp();
+                record.Level = (short)subClass.getLevel();
+                record.VitalityPoints = subClass.getVitalityPoints();
+                record.SubClass = subClass.getClassDefinition();
+                record.DualClass = subClass.isDualClass();
 			}
-			statement.executeBatch();
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Could not store sub class data for " + getName() + ": " + e);
+			LOGGER.Error("Could not store sub class data for " + getName() + ": " + e);
 		}
 	}
 	
@@ -7263,121 +7205,121 @@ public class Player: Playable
 		
 		try
 		{
+			int characterId = getObjectId();
 			using GameServerDbContext ctx = new();
+			
 			// Delete all current stored effects for char to avoid dupe
-
-			{
-				PreparedStatement delete = con.prepareStatement(DELETE_SKILL_SAVE);
-				delete.setInt(1, getObjectId());
-				delete.setInt(2, _classIndex);
-				delete.execute();
-			}
+			ctx.CharacterSkillReuses.Where(r => r.CharacterId == characterId && r.ClassIndex == _classIndex)
+				.ExecuteDelete();
 			
 			int buffIndex = 0;
 			List<long> storedSkills = new();
-			long currentTime = System.currentTimeMillis();
+			DateTime currentTime = DateTime.UtcNow;
 			
-			// Store all effect data along with calulated remaining
+			// Store all effect data along with calculated remaining
 			// reuse delays for matching skills. 'restore_type'= 0.
+			if (storeEffects)
 			{
-				PreparedStatement statement = con.prepareStatement(ADD_SKILL_SAVE);
-				if (storeEffects)
+				foreach (BuffInfo info in getEffectList().getEffects())
 				{
-					foreach (BuffInfo info in getEffectList().getEffects())
-					{
-						if (info == null)
-						{
-							continue;
-						}
-						
-						Skill skill = info.getSkill();
-						
-						// Do not store those effects.
-						if (skill.isDeleteAbnormalOnLeave())
-						{
-							continue;
-						}
-						
-						// Do not save heals.
-						if (skill.getAbnormalType() == AbnormalType.LIFE_FORCE_OTHERS)
-						{
-							continue;
-						}
-						
-						// Toggles are skipped, unless they are necessary to be always on.
-						if ((skill.isToggle() && !skill.isNecessaryToggle()))
-						{
-							continue;
-						}
-						
-						if (skill.isMentoring())
-						{
-							continue;
-						}
-						
-						// Dances and songs are not kept in retail.
-						if (skill.isDance() && !Config.ALT_STORE_DANCES)
-						{
-							continue;
-						}
-						
-						if (storedSkills.Contains(skill.getReuseHashCode()))
-						{
-							continue;
-						}
-						
-						storedSkills.add(skill.getReuseHashCode());
-						
-						statement.setInt(1, getObjectId());
-						statement.setInt(2, skill.getId());
-						statement.setInt(3, skill.getLevel());
-						statement.setInt(4, skill.getSubLevel());
-						statement.setInt(5, info.getTime());
-						
-						TimeStamp t = getSkillReuseTimeStamp(skill.getReuseHashCode());
-						statement.setLong(6, (t != null) && (currentTime < t.getStamp()) ? t.getReuse() : 0);
-						statement.setDouble(7, (t != null) && (currentTime < t.getStamp()) ? t.getStamp() : 0);
-						statement.setInt(8, 0); // Store type 0, active buffs/debuffs.
-						statement.setInt(9, _classIndex);
-						statement.setInt(10, ++buffIndex);
-						statement.addBatch();
-					}
-				}
-				
-				// Skills under reuse.
-				foreach (var ts in getSkillReuseTimeStamps())
-				{
-					long hash = ts.Key;
-					if (storedSkills.Contains(hash))
+					if (info == null)
 					{
 						continue;
 					}
 					
-					TimeStamp t = ts.Value;
-					if ((t != null) && (currentTime < t.getStamp()))
+					Skill skill = info.getSkill();
+					
+					// Do not store those effects.
+					if (skill.isDeleteAbnormalOnLeave())
 					{
-						storedSkills.add(hash);
-						
-						statement.setInt(1, getObjectId());
-						statement.setInt(2, t.getSkillId());
-						statement.setInt(3, t.getSkillLevel());
-						statement.setInt(4, t.getSkillSubLevel());
-						statement.setInt(5, -1);
-						statement.setLong(6, t.getReuse());
-						statement.setDouble(7, t.getStamp());
-						statement.setInt(8, 1); // Restore type 1, skill reuse.
-						statement.setInt(9, _classIndex);
-						statement.setInt(10, ++buffIndex);
-						statement.addBatch();
+						continue;
 					}
+					
+					// Do not save heals.
+					if (skill.getAbnormalType() == AbnormalType.LIFE_FORCE_OTHERS)
+					{
+						continue;
+					}
+					
+					// Toggles are skipped, unless they are necessary to be always on.
+					if ((skill.isToggle() && !skill.isNecessaryToggle()))
+					{
+						continue;
+					}
+					
+					if (skill.isMentoring())
+					{
+						continue;
+					}
+					
+					// Dances and songs are not kept in retail.
+					if (skill.isDance() && !Config.ALT_STORE_DANCES)
+					{
+						continue;
+					}
+					
+					if (storedSkills.Contains(skill.getReuseHashCode()))
+					{
+						continue;
+					}
+					
+					storedSkills.add(skill.getReuseHashCode());
+					
+					TimeStamp t = getSkillReuseTimeStamp(skill.getReuseHashCode());
+
+                    ++buffIndex;
+					ctx.CharacterSkillReuses.Add(new CharacterSkillReuse()
+                    {
+	                    CharacterId = characterId,
+                        ClassIndex = (byte)_classIndex,
+                        SkillId = skill.getId(),
+                        SkillLevel = (short)skill.getLevel(),
+                        SkillSubLevel = (short)skill.getSubLevel(),
+                        RemainingTime = info.getTime(),
+                        ReuseDelay = (t != null) && (currentTime < t.getStamp()) ? t.getReuse() : TimeSpan.Zero,
+                        SysTime = (t != null) && (currentTime < t.getStamp()) ? t.getStamp() : null,
+                        RestoreType = 0, // Store type 0, active buffs/debuffs.
+                        BuffIndex = (byte)buffIndex
+                    });
+				}
+			}
+			
+			// Skills under reuse.
+			foreach (var ts in getSkillReuseTimeStamps())
+			{
+				long hash = ts.Key;
+				if (storedSkills.Contains(hash))
+				{
+					continue;
 				}
 				
-				statement.executeBatch();
+				TimeStamp t = ts.Value;
+				if ((t != null) && (currentTime < t.getStamp()))
+				{
+					storedSkills.add(hash);
+
+					++buffIndex;
+					ctx.CharacterSkillReuses.Add(new CharacterSkillReuse()
+					{
+						CharacterId = characterId,
+						ClassIndex = (byte)_classIndex,
+						SkillId = t.getSkillId(),
+						SkillLevel = (short)t.getSkillLevel(),
+						SkillSubLevel = (short)t.getSkillSubLevel(),
+						RemainingTime = null,
+						ReuseDelay = t.getReuse(),
+						SysTime = t.getStamp(),
+						RestoreType = 0, // Store type 0, active buffs/debuffs.
+						BuffIndex = (byte)buffIndex
+					});
+				}
 			}
+			
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Could not store char effect data: ", e);
+			LOGGER.Warn("Could not store char effect data: " + e);
 		}
 	}
 	
@@ -7385,30 +7327,31 @@ public class Player: Playable
 	{
 		try 
 		{
+			int characterId = getObjectId();
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps1 = con.prepareStatement(DELETE_ITEM_REUSE_SAVE);
-			PreparedStatement ps2 = con.prepareStatement(ADD_ITEM_REUSE_SAVE);
-			ps1.setInt(1, getObjectId());
-			ps1.execute();
+            ctx.CharacterItemReuses.Where(r => r.CharacterId == characterId).ExecuteDelete();
 			
-			long currentTime = System.currentTimeMillis();
+			DateTime currentTime = DateTime.UtcNow;
 			foreach (TimeStamp ts in getItemReuseTimeStamps().values())
 			{
 				if ((ts != null) && (currentTime < ts.getStamp()))
 				{
-					ps2.setInt(1, getObjectId());
-					ps2.setInt(2, ts.getItemId());
-					ps2.setInt(3, ts.getItemObjectId());
-					ps2.setLong(4, ts.getReuse());
-					ps2.setDouble(5, ts.getStamp());
-					ps2.addBatch();
+					ctx.CharacterItemReuses.Add(new CharacterItemReuse()
+					{
+						CharacterId = characterId,
+						ItemId = ts.getItemId(),
+						ItemObjectId = ts.getItemObjectId(),
+						ReuseDelay = ts.getReuse(),
+						SysTime = ts.getStamp() ?? DateTime.UtcNow
+					});
 				}
 			}
-			ps2.executeBatch();
+            
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Could not store char item reuse data: ", e);
+			LOGGER.Error("Could not store char item reuse data: " + e);
 		}
 	}
 	
@@ -7420,13 +7363,13 @@ public class Player: Playable
 		return _isOnline;
 	}
 	
-	public int isOnlineInt()
+	public CharacterOnlineStatus getOnlineStatus()
 	{
 		if (_isOnline && (_client != null))
 		{
-			return _client.IsDetached ? 2 : 1;
+			return _client.IsDetached ? CharacterOnlineStatus.OnlineDetached : CharacterOnlineStatus.Online;
 		}
-		return 0;
+		return CharacterOnlineStatus.Offline;
 	}
 	
 	public void startOfflinePlay()
@@ -7531,13 +7474,12 @@ public class Player: Playable
 		{
 			try 
 			{
+                int characterId = getObjectId();
+                int skillId = oldSkill.getId();
 				using GameServerDbContext ctx = new();
-				PreparedStatement statement = con.prepareStatement(DELETE_SKILL_FROM_CHAR);
-				// Remove or update a Player skill from the character_skills table of the database
-				statement.setInt(1, oldSkill.getId());
-				statement.setInt(2, getObjectId());
-				statement.setInt(3, _classIndex);
-				statement.execute();
+
+				// Remove a Player skill from the character_skills table of the database
+                ctx.CharacterSkills.Where(r => r.CharacterId == characterId && r.SkillId == skillId).ExecuteDelete();
 			}
 			catch (Exception e)
 			{
@@ -7575,32 +7517,36 @@ public class Player: Playable
 		int classIndex = (newClassIndex > -1) ? newClassIndex : _classIndex;
 		try
 		{
+  			int characterId = getObjectId();
 			using GameServerDbContext ctx = new();
 			if ((oldSkill != null) && (newSkill != null))
 			{
-				
-				{
-                    PreparedStatement ps = con.prepareStatement(UPDATE_CHARACTER_SKILL_LEVEL);
-					ps.setInt(1, newSkill.getLevel());
-					ps.setInt(2, newSkill.getSubLevel());
-					ps.setInt(3, oldSkill.getId());
-					ps.setInt(4, getObjectId());
-					ps.setInt(5, classIndex);
-					ps.execute();
-				}
+                int skillId = oldSkill.getId();
+
+                ctx.CharacterSkills
+	                .Where(r => r.CharacterId == characterId && r.ClassIndex == classIndex && r.SkillId == skillId)
+	                .ExecuteUpdate(s =>
+		                s.SetProperty(r => r.SkillLevel, (short)newSkill.getLevel())
+			                .SetProperty(r => r.SkillSubLevel, (short)newSkill.getSubLevel()));
 			}
 			else if (newSkill != null)
 			{
+                int skillId = newSkill.getId();
+                CharacterSkill? record = ctx.CharacterSkills.SingleOrDefault(r =>
+	                r.CharacterId == characterId && r.ClassIndex == classIndex && r.SkillId == skillId);
 
+				if (record is null)
 				{
-					PreparedStatement ps = con.prepareStatement(ADD_NEW_SKILLS);
-					ps.setInt(1, getObjectId());
-					ps.setInt(2, newSkill.getId());
-					ps.setInt(3, newSkill.getLevel());
-					ps.setInt(4, newSkill.getSubLevel());
-					ps.setInt(5, classIndex);
-					ps.execute();
+					record = new CharacterSkill();
+					record.CharacterId = characterId;
+					record.ClassIndex = (byte)classIndex;
+					record.SkillId = skillId;
+					ctx.CharacterSkills.Add(record);
 				}
+				
+				record.SkillLevel = (short)newSkill.getLevel(); 
+				record.SkillSubLevel = (short)newSkill.getSubLevel();
+				ctx.SaveChanges();
 			}
 			// else
 			// {
@@ -7609,7 +7555,7 @@ public class Player: Playable
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Error could not store char skills: " + e);
+			LOGGER.Error("Error could not store char skills: " + e);
 		}
 	}
 	
@@ -7628,22 +7574,33 @@ public class Player: Playable
 		int classIndex = (newClassIndex > -1) ? newClassIndex : _classIndex;
 		try
 		{
+            int characterId = getObjectId();
+			const string ADD_NEW_SKILLS = "REPLACE INTO character_skills (charId,skill_id,skill_level,skill_sub_level,class_index) VALUES (?,?,?,?,?)";
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(ADD_NEW_SKILLS);
 			foreach (Skill addSkill in newSkills)
 			{
-				ps.setInt(1, getObjectId());
-				ps.setInt(2, addSkill.getId());
-				ps.setInt(3, addSkill.getLevel());
-				ps.setInt(4, addSkill.getSubLevel());
-				ps.setInt(5, classIndex);
-				ps.addBatch();
+                int skillId = addSkill.getId();
+				CharacterSkill? record = ctx.CharacterSkills.SingleOrDefault(r =>
+					r.CharacterId == characterId && r.ClassIndex == classIndex && r.SkillId == skillId);
+
+				if (record is null)
+				{
+					record = new CharacterSkill();
+					record.CharacterId = characterId;
+					record.ClassIndex = (byte)classIndex;
+					record.SkillId = skillId;
+					ctx.CharacterSkills.Add(record);
+				}
+				
+				record.SkillLevel = (short)addSkill.getLevel(); 
+				record.SkillSubLevel = (short)addSkill.getSubLevel();
 			}
-			ps.executeBatch();
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Error could not store char skills: " + e);
+			LOGGER.Error("Error could not store char skills: " + e);
 		}
 	}
 	
@@ -7654,19 +7611,19 @@ public class Player: Playable
 	{
 		try 
 		{
+            const string RESTORE_SKILLS_FOR_CHAR = "SELECT skill_id,skill_level,skill_sub_level FROM character_skills WHERE charId=? AND class_index=?";
+            
+            int characterId = getObjectId();
+            
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(RESTORE_SKILLS_FOR_CHAR);
-			// Retrieve all skills of this Player from the database
-			statement.setInt(1, getObjectId());
-			statement.setInt(2, _classIndex);
 
+			// Retrieve all skills of this Player from the database
+			var query = ctx.CharacterSkills.Where(r => r.CharacterId == characterId && r.ClassIndex == _classIndex);
+			foreach (var record in query)
 			{
-				ResultSet rset = statement.executeQuery();
-				while (rset.next())
-				{
-					int id = rset.getInt("skill_id");
-					int level = rset.getInt("skill_level");
-					int subLevel = rset.getInt("skill_sub_level");
+					int id = record.SkillId;
+					int level = record.SkillLevel;
+					int subLevel = record.SkillSubLevel;
 					
 					// Create a Skill object for each record
 					Skill skill = SkillData.getInstance().getSkill(id, level, subLevel);
@@ -7687,12 +7644,11 @@ public class Player: Playable
 							removeSkill(skill);
 						}
 					}
-				}
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Could not restore character " + this + " skills: " + e);
+			LOGGER.Error("Could not restore character " + this + " skills: " + e);
 		}
 	}
 	
@@ -7703,34 +7659,30 @@ public class Player: Playable
 	{
 		try
 		{
+            int characterId = getObjectId();
+            
             using GameServerDbContext ctx = new();
-            PreparedStatement statement = con.prepareStatement(RESTORE_SKILL_SAVE);
-			statement.setInt(1, getObjectId());
-			statement.setInt(2, _classIndex);
-
-			{
-				ResultSet rset = statement.executeQuery();
-				long currentTime = System.currentTimeMillis();
-				while (rset.next())
-				{
-					int remainingTime = rset.getInt("remaining_time");
-					long reuseDelay = rset.getLong("reuse_delay");
-					long systime = rset.getLong("systime");
-					int restoreType = rset.getInt("restore_type");
-					Skill skill = SkillData.getInstance().getSkill(rset.getInt("skill_id"), rset.getInt("skill_level"), rset.getInt("skill_sub_level"));
+            var query = ctx.CharacterSkillReuses.Where(r => r.CharacterId == characterId && r.ClassIndex == _classIndex);
+            foreach (var record in query)
+            {
+					TimeSpan? remainingTime = record.RemainingTime;
+					TimeSpan reuseDelay = record.ReuseDelay;
+					DateTime? systime = record.SysTime;
+					int restoreType = record.RestoreType;
+					Skill skill = SkillData.getInstance().getSkill(record.SkillId, record.SkillLevel, record.SkillSubLevel);
 					if (skill == null)
 					{
 						continue;
 					}
 					
-					long time = systime - currentTime;
-					if (time > 10)
+					TimeSpan? time = systime - DateTime.UtcNow;
+					if (time > TimeSpan.FromMilliseconds(10))
 					{
-						disableSkill(skill, time);
+						disableSkill(skill, time.Value);
 						addTimeStamp(skill, reuseDelay, systime);
 					}
 					
-					// Restore Type 1 The remaning skills lost effect upon logout but were still under a high reuse delay.
+					// Restore Type 1 The remaining skills lost effect upon logout but were still under a high reuse delay.
 					if (restoreType > 0)
 					{
 						continue;
@@ -7738,21 +7690,16 @@ public class Player: Playable
 					
 					// Restore Type 0 These skill were still in effect on the character upon logout.
 					// Some of which were self casted and might still have had a long reuse delay which also is restored.
-					skill.applyEffects(this, this, false, remainingTime);
-				}
-			}
-			// Remove previously restored skills
+					skill.applyEffects(this, this, false, remainingTime ?? TimeSpan.Zero);
+            }
 
-			{
-				PreparedStatement delete = con.prepareStatement(DELETE_SKILL_SAVE);
-				delete.setInt(1, getObjectId());
-				delete.setInt(2, _classIndex);
-				delete.executeUpdate();
-			}
+			// Remove previously restored skills
+			ctx.CharacterSkillReuses.Where(r => r.CharacterId == characterId && r.ClassIndex == _classIndex)
+				.ExecuteDelete();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Could not restore " + this + " active effect data: " + e);
+			LOGGER.Error("Could not restore " + this + " active effect data: " + e);
 		}
 	}
 	
@@ -7763,47 +7710,38 @@ public class Player: Playable
 	{
 		try 
         {
+            int characterId = getObjectId();
             using GameServerDbContext ctx = new();
-            			PreparedStatement statement = con.prepareStatement(RESTORE_ITEM_REUSE_SAVE);
-            			PreparedStatement delete = con.prepareStatement(DELETE_ITEM_REUSE_SAVE);
-			statement.setInt(1, getObjectId());
-
+			var query = ctx.CharacterItemReuses.Where(r => r.CharacterId == characterId);
+			foreach (var record in query)
 			{
-				ResultSet rset = statement.executeQuery();
-				int itemId;
-				long reuseDelay;
-				long systime;
-				bool isInInventory;
-				long remainingTime;
-				long currentTime = System.currentTimeMillis();
-				while (rset.next())
+				DateTime currentTime = DateTime.UtcNow;
+				int itemId = record.ItemId;
+				TimeSpan reuseDelay = record.ReuseDelay;
+				DateTime systime = record.SysTime;
+				bool isInInventory = true;
+				TimeSpan remainingTime;
+					
+				// Using item Id
+				Item item = _inventory.getItemByItemId(itemId);
+				if (item == null)
 				{
-					itemId = rset.getInt("itemId");
-					reuseDelay = rset.getLong("reuseDelay");
-					systime = rset.getLong("systime");
-					isInInventory = true;
+					item = getWarehouse().getItemByItemId(itemId);
+					isInInventory = false;
+				}
 					
-					// Using item Id
-					Item item = _inventory.getItemByItemId(itemId);
-					if (item == null)
+				if ((item != null) && (item.getId() == itemId) && (item.getReuseDelay() > 0))
+				{
+					remainingTime = systime - currentTime;
+					if (remainingTime > TimeSpan.FromMilliseconds(10))
 					{
-						item = getWarehouse().getItemByItemId(itemId);
-						isInInventory = false;
-					}
-					
-					if ((item != null) && (item.getId() == itemId) && (item.getReuseDelay() > 0))
-					{
-						remainingTime = systime - currentTime;
-						if (remainingTime > 10)
+						addTimeStampItem(item, reuseDelay, systime);
+						if (isInInventory && item.isEtcItem())
 						{
-							addTimeStampItem(item, reuseDelay, systime);
-							if (isInInventory && item.isEtcItem())
+							int group = item.getSharedReuseGroup();
+							if (group > 0)
 							{
-								int group = item.getSharedReuseGroup();
-								if (group > 0)
-								{
-									sendPacket(new ExUseSharedGroupItem(itemId, group, (int) remainingTime, (int) reuseDelay));
-								}
+								sendPacket(new ExUseSharedGroupItemPacket(itemId, group, remainingTime, reuseDelay));
 							}
 						}
 					}
@@ -7811,12 +7749,11 @@ public class Player: Playable
 			}
 			
 			// Delete item reuse.
-			delete.setInt(1, getObjectId());
-			delete.executeUpdate();
+			ctx.CharacterItemReuses.Where(r => r.CharacterId == characterId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Could not restore " + this + " Item Reuse data: " + e);
+			LOGGER.Error("Could not restore " + this + " Item Reuse data: " + e);
 		}
 	}
 	
@@ -7840,59 +7777,52 @@ public class Player: Playable
 		
 		try 
 		{
+            int characterId = getObjectId();
             using GameServerDbContext ctx = new();
-            			PreparedStatement statement = con.prepareStatement(RESTORE_CHAR_HENNAS);
-			statement.setInt(1, getObjectId());
-			statement.setInt(2, _classIndex);
-			
-			{
-                ResultSet rset = statement.executeQuery();
-				int slot;
-				int symbolId;
-				long currentTime = System.currentTimeMillis();
-				while (rset.next())
+            var query = ctx.CharacterHennas.Where(r => r.CharacterId == characterId && r.ClassIndex == _classIndex);
+			DateTime currentTime = DateTime.UtcNow;
+            foreach (var record in query)
+            {
+				int slot = record.Slot;
+				if ((slot < 1) || (slot > getAvailableHennaSlots()))
 				{
-					slot = rset.getInt("slot");
-					if ((slot < 1) || (slot > getAvailableHennaSlots()))
-					{
-						continue;
-					}
-					
-					symbolId = rset.getInt("symbol_id");
-					if (symbolId == 0)
-					{
-						continue;
-					}
-					
-					Henna henna = HennaData.getInstance().getHennaByDyeId(symbolId);
-					if (henna == null)
-					{
-						continue;
-					}
-					
-					// Task for henna duration
-					if (henna.getDuration() > 0)
-					{
-						long remainingTime = getVariables().getLong("HennaDuration" + slot, currentTime) - currentTime;
-						if (remainingTime < 0)
-						{
-							removeHenna(slot);
-							continue;
-						}
-						
-						// Add the new task.
-						_hennaRemoveSchedules.put(slot, ThreadPool.schedule(new HennaDurationTask(this, slot), currentTime + remainingTime));
-					}
-					
-					_hennaPoten[slot - 1].setHenna(henna);
-					
-					// Reward henna skills
-					foreach (Skill skill in henna.getSkills())
-					{
-						addSkill(skill, false);
-					}
+					continue;
 				}
-			}
+				
+				int symbolId = record.SymbolId;
+				if (symbolId == 0)
+				{
+					continue;
+				}
+				
+				Henna henna = HennaData.getInstance().getHennaByDyeId(symbolId);
+				if (henna == null)
+				{
+					continue;
+				}
+					
+				// Task for henna duration
+				if (henna.getDuration() > 0)
+				{
+					TimeSpan remainingTime = getVariables().getDateTime("HennaDuration" + slot, currentTime) - currentTime;
+					if (remainingTime < TimeSpan.Zero)
+					{
+						removeHenna(slot);
+						continue;
+					}
+					
+					// Add the new task.
+					_hennaRemoveSchedules.put(slot, ThreadPool.schedule(new HennaDurationTask(this, slot), remainingTime));
+				}
+					
+				_hennaPoten[slot - 1].setHenna(henna);
+					
+				// Reward henna skills
+				foreach (Skill skill in henna.getSkills())
+				{
+					addSkill(skill, false);
+				}
+            }
 		}
 		catch (Exception e)
 		{
@@ -7968,12 +7898,9 @@ public class Player: Playable
 		
 		try 
 		{
+            int characterId = getObjectId();
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(DELETE_CHAR_HENNA);
-			statement.setInt(1, getObjectId());
-			statement.setInt(2, slot);
-			statement.setInt(3, _classIndex);
-			statement.execute();
+            ctx.CharacterHennas.Where(r => r.CharacterId == characterId && r.ClassIndex == _classIndex && r.Slot == slot).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -7988,8 +7915,9 @@ public class Player: Playable
 		
 		if ((henna.getCancelCount() > 0) && restoreDye)
 		{
-			long remainingTime = getVariables().getLong("HennaDuration" + slot, 0) - System.currentTimeMillis();
-			if ((remainingTime > 0) || (henna.getDuration() < 0))
+            DateTime now = DateTime.UtcNow;
+			TimeSpan remainingTime = getVariables().getDateTime("HennaDuration" + slot, now) - now;
+			if ((remainingTime > TimeSpan.Zero) || (henna.getDuration() < 0))
 			{
 				_inventory.addItem("Henna", henna.getDyeItemId(), henna.getCancelCount(), this, null);
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
@@ -8049,12 +7977,15 @@ public class Player: Playable
 				try 
 				{
 					using GameServerDbContext ctx = new();
-					PreparedStatement statement = con.prepareStatement(ADD_CHAR_HENNA);
-					statement.setInt(1, getObjectId());
-					statement.setInt(2, henna.getDyeId());
-					statement.setInt(3, slotId);
-					statement.setInt(4, _classIndex);
-					statement.execute();
+                    ctx.CharacterHennas.Add(new CharacterHenna()
+                    {
+                        CharacterId = getObjectId(),
+                        SymbolId = henna.getDyeId(),
+                        Slot = slotId,
+                        ClassIndex = (byte)_classIndex
+                    });
+                    
+                    ctx.SaveChanges();
 				}
 				catch (Exception e)
 				{
@@ -8064,8 +7995,8 @@ public class Player: Playable
 				// Task for henna duration
 				if (henna.getDuration() > 0)
 				{
-					getVariables().set("HennaDuration" + slotId, System.currentTimeMillis() + (henna.getDuration() * 60000));
-					_hennaRemoveSchedules.put(slotId, ThreadPool.schedule(new HennaDurationTask(this, slotId), System.currentTimeMillis() + (henna.getDuration() * 60000)));
+					getVariables().set("HennaDuration" + slotId, DateTime.UtcNow + TimeSpan.FromMilliseconds(henna.getDuration() * 60000));
+					_hennaRemoveSchedules.put(slotId, ThreadPool.schedule(new HennaDurationTask(this, slotId), TimeSpan.FromMilliseconds(henna.getDuration() * 60000)));
 				}
 				
 				// Reward henna skills
@@ -8110,7 +8041,7 @@ public class Player: Playable
 			
 			foreach (var entry in henna.getBaseStats())
 			{
-				_hennaBaseStats.merge(entry.Key, entry.Value, int::sum);
+				_hennaBaseStats.merge(entry.Key, entry.Value, (x, y) => x + y);
 			}
 		}
 	}
@@ -8120,22 +8051,18 @@ public class Player: Playable
 		int pos = 0;
 		try 
 		{
+            int characterId = getObjectId();
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(RESTORE_CHAR_HENNA_POTENS);
-			statement.setInt(1, getObjectId());
-
-			{
-				ResultSet rset = statement.executeQuery();
-				while (rset.next())
-				{
-					_hennaPoten[pos] = new HennaPoten();
-					_hennaPoten[pos].setSlotPosition(rset.getInt("slot_position"));
-					_hennaPoten[pos].setEnchantLevel(rset.getInt("enchant_level"));
-					_hennaPoten[pos].setEnchantExp(rset.getInt("enchant_exp"));
-					_hennaPoten[pos].setPotenId(rset.getInt("poten_id"));
-					pos++;
-				}
-			}
+			var query = ctx.CharacterHennaPotens.Where(r => r.CharacterId == characterId);
+            foreach (var record in query)
+            {
+				_hennaPoten[pos] = new HennaPoten();
+				_hennaPoten[pos].setSlotPosition(record.SlotPosition);
+				_hennaPoten[pos].setEnchantLevel(record.EnchantLevel);
+				_hennaPoten[pos].setEnchantExp(record.EnchantExp);
+				_hennaPoten[pos].setPotenId(record.PotenId);
+				pos++;
+            }
 		}
 		catch (Exception e)
 		{
@@ -8144,7 +8071,7 @@ public class Player: Playable
 		
 		for (int i = pos; i < 4; i++)
 		{
-			_hennaPoten[i] = new HennaPoten();
+			_hennaPoten[i] = new HennaPoten(); // TODO: cleared for some reason??? 
 		}
 		
 		applyDyePotenSkills();
@@ -8158,14 +8085,26 @@ public class Player: Playable
 			{
 				try 
 				{
+					int characterId = getObjectId();
+                    int slotPosition = _hennaPoten[i].getSlotPosition();
+					
                     using GameServerDbContext ctx = new();
-                    					PreparedStatement statement = con.prepareStatement(ADD_CHAR_HENNA_POTENS);
-					statement.setInt(1, getObjectId());
-					statement.setInt(2, _hennaPoten[i].getSlotPosition());
-					statement.setInt(3, _hennaPoten[i].getPotenId());
-					statement.setInt(4, _hennaPoten[i].getEnchantLevel());
-					statement.setInt(5, _hennaPoten[i].getEnchantExp());
-					statement.execute();
+
+                    CharacterHennaPoten? record = ctx.CharacterHennaPotens.SingleOrDefault(r =>
+	                    r.CharacterId == characterId && r.SlotPosition == slotPosition);
+                    
+                    if (record is null)
+                    {
+	                    record = new CharacterHennaPoten();
+                        record.CharacterId = characterId;
+                        record.SlotPosition = slotPosition;
+                    }
+
+                    record.PotenId = _hennaPoten[i].getPotenId();
+                    record.EnchantLevel = _hennaPoten[i].getEnchantLevel(); 
+                    record.EnchantExp = _hennaPoten[i].getEnchantExp();
+                    
+                    ctx.SaveChanges();
 				}
 				catch (Exception e)
 				{
@@ -8460,7 +8399,7 @@ public class Player: Playable
 				}
 				
 				// Check if clan is at war
-				if ((getWantsPeace() == 0) && (attackerPlayer.getWantsPeace() == 0) && !isAcademyMember())
+				if ((!getWantsPeace()) && (!attackerPlayer.getWantsPeace()) && !isAcademyMember())
 				{
 					ClanWar war = attackerClan.getWarWith(getClanId());
 					if (war != null)
@@ -8616,22 +8555,19 @@ public class Player: Playable
 			SystemMessagePacket sm;
 			if (hasSkillReuse(usedSkill.getReuseHashCode()))
 			{
-				int remainingTime = (int) (getSkillRemainingReuseTime(usedSkill.getReuseHashCode()) / 1000);
-				int hours = remainingTime / 3600;
-				int minutes = (remainingTime % 3600) / 60;
-				int seconds = (remainingTime % 60);
-				if (hours > 0)
+				TimeSpan remainingTime = getSkillRemainingReuseTime(usedSkill.getReuseHashCode());
+				if (remainingTime.TotalHours > 0)
 				{
 					sm = new SystemMessagePacket(SystemMessageId.S1_WILL_BE_AVAILABLE_AGAIN_IN_S2_H_S3_MIN_S4_SEC);
 					sm.Params.addSkillName(usedSkill);
-					sm.Params.addInt(hours);
-					sm.Params.addInt(minutes);
+					sm.Params.addInt(remainingTime.Hours);
+					sm.Params.addInt(remainingTime.Minutes);
 				}
-				else if (minutes > 0)
+				else if (remainingTime.TotalMinutes > 0)
 				{
 					sm = new SystemMessagePacket(SystemMessageId.S1_WILL_BE_AVAILABLE_AGAIN_IN_S2_MIN_S3_SEC);
 					sm.Params.addSkillName(usedSkill);
-					sm.Params.addInt(minutes);
+					sm.Params.addInt(remainingTime.Minutes);
 				}
 				else
 				{
@@ -8639,12 +8575,12 @@ public class Player: Playable
 					sm.Params.addSkillName(usedSkill);
 				}
 				
-				sm.Params.addInt(seconds);
+				sm.Params.addInt(remainingTime.Seconds);
 			}
 			else
 			{
 				sm = new SystemMessagePacket(SystemMessageId.S1_IS_NOT_AVAILABLE_AT_THIS_TIME_BEING_PREPARED_FOR_REUSE);
-				sm.addSkillName(usedSkill);
+				sm.Params.addSkillName(usedSkill);
 			}
 			
 			sendPacket(sm);
@@ -8932,7 +8868,7 @@ public class Player: Playable
 			}
 			if (broadcast)
 			{
-				sendPacket(new ExUserInfoCubic(this));
+				sendPacket(new ExUserInfoCubicPacket(this));
 				broadcastUserInfo();
 			}
 		}
@@ -9218,12 +9154,12 @@ public class Player: Playable
 		_apprentice = apprenticeId;
 	}
 	
-	public int getSponsor()
+	public int? getSponsor()
 	{
 		return _sponsor;
 	}
 	
-	public void setSponsor(int sponsorId)
+	public void setSponsor(int? sponsorId)
 	{
 		_sponsor = sponsorId;
 	}
@@ -9265,7 +9201,7 @@ public class Player: Playable
 		getEffectList().stopEffects(AbnormalType.HIDE);
 		
 		setObserving(true);
-		sendPacket(new ObservationMode(loc));
+		sendPacket(new ObservationModePacket(loc));
 		teleToLocation(loc, false);
 		broadcastUserInfo();
 	}
@@ -9299,7 +9235,7 @@ public class Player: Playable
 		{
 			_cubics.values().forEach(x => x.deactivate());
 			_cubics.clear();
-			sendPacket(new ExUserInfoCubic(this));
+			sendPacket(new ExUserInfoCubicPacket(this));
 		}
 		
 		if (_party != null)
@@ -9323,7 +9259,7 @@ public class Player: Playable
 		setInvisible(true);
 		setInstance(OlympiadGameManager.getInstance().getOlympiadTask(id).getStadium().getInstance());
 		teleToLocation(loc, false);
-		sendPacket(new ExOlympiadMode(3));
+		sendPacket(new ExOlympiadModePacket(3));
 		broadcastUserInfo();
 	}
 	
@@ -9333,7 +9269,7 @@ public class Player: Playable
 		setInstance(null);
 		teleToLocation(_lastLoc, false);
 		unsetLastLocation();
-		sendPacket(new ObservationReturn(getLocation()));
+		sendPacket(new ObservationReturnPacket(getLocation()));
 		setBlockActions(false);
 		if (!isGM())
 		{
@@ -9359,7 +9295,7 @@ public class Player: Playable
 		_olympiadGameId = -1;
 		_observerMode = false;
 		setTarget(null);
-		sendPacket(new ExOlympiadMode(0));
+		sendPacket(new ExOlympiadModePacket(0));
 		setInstance(null);
 		teleToLocation(_lastLoc, true);
 		if (!isGM())
@@ -9727,12 +9663,12 @@ public class Player: Playable
 		}
 	}
 	
-	public void setWantsPeace(int wantsPeace)
+	public void setWantsPeace(bool wantsPeace)
 	{
 		_wantsPeace = wantsPeace;
 	}
 	
-	public int getWantsPeace()
+	public bool getWantsPeace()
 	{
 		return _wantsPeace;
 	}
@@ -9750,7 +9686,7 @@ public class Player: Playable
 			_skillListTask = ThreadPool.schedule(() =>
 			{
 				bool isDisabled = false;
-				SkillList skillList = new SkillList();
+				SkillListPacket skillList = new SkillListPacket(lastLearnedSkillId);
 				foreach (Skill skill in getSkillList())
 				{
 					if (_clan != null)
@@ -9770,10 +9706,6 @@ public class Player: Playable
 						skillList.addSkill(skill.getDisplayId(), skill.getReuseDelayGroup(), skill.getDisplayLevel(), skill.getSubLevel(), skill.isPassive(), isDisabled, skill.isEnchantable());
 					}
 				}
-				if (lastLearnedSkillId > 0)
-				{
-					skillList.setLastLearnedSkillId(lastLearnedSkillId);
-				}
 				
 				sendPacket(skillList);
 				sendPacket(new AcquireSkillListPacket(this));
@@ -9789,7 +9721,7 @@ public class Player: Playable
 		{
 			_storageCountTask = ThreadPool.schedule(() =>
 			{
-				sendPacket(new ExStorageMaxCount(this));
+				sendPacket(new ExStorageMaxCountPacket(this));
 				_storageCountTask = null;
 			}, 300);
 		}
@@ -9801,9 +9733,9 @@ public class Player: Playable
 		{
 			_userBoostStatTask = ThreadPool.schedule(() =>
 			{
-				sendPacket(new ExUserBoostStat(this, BonusExpType.VITALITY));
-				sendPacket(new ExUserBoostStat(this, BonusExpType.BUFFS));
-				sendPacket(new ExUserBoostStat(this, BonusExpType.PASSIVE));
+				sendPacket(new ExUserBoostStatPacket(this, BonusExpType.VITALITY));
+				sendPacket(new ExUserBoostStatPacket(this, BonusExpType.BUFFS));
+				sendPacket(new ExUserBoostStatPacket(this, BonusExpType.PASSIVE));
 				if (Config.ENABLE_VITALITY)
 				{
 					sendPacket(new ExVitalityEffectInfoPacket(this));
@@ -9857,17 +9789,20 @@ public class Player: Playable
 			try 
 			{
                 using GameServerDbContext ctx = new();
-                				PreparedStatement statement = con.prepareStatement(ADD_CHAR_SUBCLASS);
+
 				// Store the basic info about this new sub-class.
-				statement.setInt(1, getObjectId());
-				statement.setInt(2, newClass.getClassDefinition());
-				statement.setLong(3, newClass.getExp());
-				statement.setLong(4, newClass.getSp());
-				statement.setInt(5, newClass.getLevel());
-				statement.setInt(6, newClass.getVitalityPoints());
-				statement.setInt(7, newClass.getClassIndex());
-				statement.setBoolean(8, newClass.isDualClass());
-				statement.execute();
+                ctx.CharacterSubClasses.Add(new CharacterSubClass()
+                {
+                    CharacterId = getObjectId(),
+                    SubClass = newClass.getClassDefinition(),
+                    Exp = newClass.getExp(),
+                    Sp = newClass.getSp(),
+                    Level = (short)newClass.getLevel(),
+                    VitalityPoints = newClass.getVitalityPoints(),
+                    DualClass = newClass.isDualClass()
+                });
+                
+                ctx.SaveChanges();
 			}
 			catch (Exception e)
 			{
@@ -9957,41 +9892,28 @@ public class Player: Playable
 		
 		try
 		{
-            using GameServerDbContext ctx = new();
-            			PreparedStatement deleteHennas = con.prepareStatement(DELETE_CHAR_HENNA);
-            			PreparedStatement deleteShortcuts = con.prepareStatement(DELETE_CHAR_SHORTCUTS);
-            			PreparedStatement deleteSkillReuse = con.prepareStatement(DELETE_SKILL_SAVE);
-            			PreparedStatement deleteSkills = con.prepareStatement(DELETE_CHAR_SKILLS);
-            			PreparedStatement deleteSubclass = con.prepareStatement(DELETE_CHAR_SUBCLASS);
+            int characterId = getObjectId();
             
+            using GameServerDbContext ctx = new();
+
 			// Remove all henna info stored for this sub-class.
-			deleteHennas.setInt(1, getObjectId());
-			deleteHennas.setInt(2, classIndex);
-			deleteHennas.execute();
-			
+            ctx.CharacterHennas.Where(r => r.CharacterId == characterId && r.ClassIndex == classIndex).ExecuteDelete();
+
 			// Remove all shortcuts info stored for this sub-class.
-			deleteShortcuts.setInt(1, getObjectId());
-			deleteShortcuts.setInt(2, classIndex);
-			deleteShortcuts.execute();
-			
+            ctx.CharacterShortCuts.Where(r => r.CharacterId == characterId && r.ClassIndex == classIndex).ExecuteDelete();
+
 			// Remove all effects info stored for this sub-class.
-			deleteSkillReuse.setInt(1, getObjectId());
-			deleteSkillReuse.setInt(2, classIndex);
-			deleteSkillReuse.execute();
-			
+            ctx.CharacterSkillReuses.Where(r => r.CharacterId == characterId && r.ClassIndex == classIndex).ExecuteDelete();
+
 			// Remove all skill info stored for this sub-class.
-			deleteSkills.setInt(1, getObjectId());
-			deleteSkills.setInt(2, classIndex);
-			deleteSkills.execute();
-			
+            ctx.CharacterSkills.Where(r => r.CharacterId == characterId && r.ClassIndex == classIndex).ExecuteDelete();
+
 			// Remove all basic info stored about this sub-class.
-			deleteSubclass.setInt(1, getObjectId());
-			deleteSubclass.setInt(2, classIndex);
-			deleteSubclass.execute();
+            ctx.CharacterSubClasses.Where(r => r.CharacterId == characterId && r.ClassIndex == classIndex).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Could not modify sub class for " + getName() + " to class index " + classIndex + ": " + e);
+			LOGGER.Error("Could not modify sub class for " + getName() + " to class index " + classIndex + ": " + e);
 			return false;
 		}
 		
@@ -10232,7 +10154,7 @@ public class Player: Playable
 			sendPacket(new EtcStatusUpdatePacket(this));
 			
 			restoreHenna();
-			sendPacket(new HennaInfo(this));
+			sendPacket(new HennaInfoPacket(this));
 			if (getCurrentHp() > getMaxHp())
 			{
 				setCurrentHp(getMaxHp());
@@ -10253,7 +10175,7 @@ public class Player: Playable
 			setExpBeforeDeath(0);
 			
 			_shortCuts.restoreMe();
-			sendPacket(new ShortCutInit(this));
+			sendPacket(new ShortCutInitPacket(this));
 			broadcastPacket(new SocialActionPacket(getObjectId(), SocialActionPacket.LEVEL_UP));
 			sendPacket(new SkillCoolTimePacket(this));
 			sendStorageMaxCount();
@@ -10451,12 +10373,12 @@ public class Player: Playable
 		}
 	}
 	
-	public DateTime getLastAccess()
+	public DateTime? getLastAccess()
 	{
 		return _lastAccess;
 	}
 	
-	protected void setLastAccess(long lastAccess)
+	protected void setLastAccess(DateTime? lastAccess)
 	{
 		_lastAccess = lastAccess;
 	}
@@ -10550,8 +10472,7 @@ public class Player: Playable
 			ConfirmDialogPacket dlg;
 			if (hasCharmOfCourage())
 			{
-				dlg = new ConfirmDialogPacket(SystemMessageId.YOUR_CHARM_OF_COURAGE_IS_TRYING_TO_RESURRECT_YOU_WOULD_YOU_LIKE_TO_RESURRECT_NOW);
-				dlg.Params.addTime(60000);
+				dlg = new ConfirmDialogPacket(SystemMessageId.YOUR_CHARM_OF_COURAGE_IS_TRYING_TO_RESURRECT_YOU_WOULD_YOU_LIKE_TO_RESURRECT_NOW, 60000);
 				sendPacket(dlg);
 				return;
 			}
@@ -10701,8 +10622,8 @@ public class Player: Playable
 		// Stop auto peel.
 		if (hasRequest<AutoPeelRequest>())
 		{
-			sendPacket(new ExStopItemAutoPeel(true));
-			sendPacket(new ExReadyItemAutoPeel(false, 0));
+			sendPacket(new ExStopItemAutoPeelPacket(true));
+			sendPacket(new ExReadyItemAutoPeelPacket(false, 0));
 			removeRequest<AutoPeelRequest>();
 		}
 		
@@ -10760,7 +10681,7 @@ public class Player: Playable
 		// Show movie if available.
 		if (_movieHolder != null)
 		{
-			sendPacket(new ExStartScenePlayer(_movieHolder.getMovie()));
+			sendPacket(new ExStartScenePlayerPacket(_movieHolder.getMovie()));
 		}
 		
 		// Close time limited zone window.
@@ -11509,7 +11430,7 @@ public class Player: Playable
 		if (_clanId > 0)
 		{
 			_clan.broadcastToOtherOnlineMembers(new PledgeShowMemberListUpdatePacket(this), this);
-			_clan.broadcastToOnlineMembers(new ExPledgeCount(_clan));
+			_clan.broadcastToOnlineMembers(new ExPledgeCountPacket(_clan));
 			// ClanTable.getInstance().getClan(getClanId()).broadcastToOnlineMembers(new PledgeShowMemberListAdd(this));
 		}
 		
@@ -11553,7 +11474,7 @@ public class Player: Playable
 			}
 			
 			// Surveillance list
-			ExUserWatcherTargetStatus surveillanceUpdate = new ExUserWatcherTargetStatus(getName(), false);
+			ExUserWatcherTargetStatusPacket surveillanceUpdate = new ExUserWatcherTargetStatusPacket(getName(), false);
 			sm = new SystemMessagePacket(SystemMessageId.C1_FROM_YOUR_SURVEILLANCE_LIST_IS_OFFLINE);
 			sm.Params.addString(getName());
 			foreach (Player p in World.getInstance().getPlayers())
@@ -11712,7 +11633,7 @@ public class Player: Playable
 	 */
 	public bool isJailed()
 	{
-		return PunishmentManager.getInstance().hasPunishment(getObjectId(), PunishmentAffect.CHARACTER, PunishmentType.JAIL) //
+		return PunishmentManager.getInstance().hasPunishment(getObjectId().ToString(), PunishmentAffect.CHARACTER, PunishmentType.JAIL) //
 			|| PunishmentManager.getInstance().hasPunishment(getAccountName(), PunishmentAffect.ACCOUNT, PunishmentType.JAIL) //
 			|| PunishmentManager.getInstance().hasPunishment(getIPAddress(), PunishmentAffect.IP, PunishmentType.JAIL) //
 			|| ((_client != null) && (_client.getHardwareInfo() != null) && PunishmentManager.getInstance().hasPunishment(_client.getHardwareInfo().getMacAddress(), PunishmentAffect.HWID, PunishmentType.JAIL));
@@ -11723,7 +11644,7 @@ public class Player: Playable
 	 */
 	public bool isChatBanned()
 	{
-		return PunishmentManager.getInstance().hasPunishment(getObjectId(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN) //
+		return PunishmentManager.getInstance().hasPunishment(getObjectId().ToString(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN) //
 			|| PunishmentManager.getInstance().hasPunishment(getAccountName(), PunishmentAffect.ACCOUNT, PunishmentType.CHAT_BAN) //
 			|| PunishmentManager.getInstance().hasPunishment(getIPAddress(), PunishmentAffect.IP, PunishmentType.CHAT_BAN) //
 			|| ((_client != null) && (_client.getHardwareInfo() != null) && PunishmentManager.getInstance().hasPunishment(_client.getHardwareInfo().getMacAddress(), PunishmentAffect.HWID, PunishmentType.CHAT_BAN));
@@ -12170,36 +12091,38 @@ public class Player: Playable
 		getStat().updateVitalityPoints(points, useRates, quiet);
 	}
 	
-	public void setSayhaGraceSupportEndTime(long endTime)
+	public void setSayhaGraceSupportEndTime(DateTime endTime)
 	{
-		if (getVariables().getLong(PlayerVariables.SAYHA_GRACE_SUPPORT_ENDTIME, 0) < System.currentTimeMillis())
+		if (getVariables().getDateTime(PlayerVariables.SAYHA_GRACE_SUPPORT_ENDTIME, DateTime.MinValue) < DateTime.UtcNow)
 		{
 			getVariables().set(PlayerVariables.SAYHA_GRACE_SUPPORT_ENDTIME, endTime);
-			sendPacket(new ExUserBoostStat(this, BonusExpType.VITALITY));
+			sendPacket(new ExUserBoostStatPacket(this, BonusExpType.VITALITY));
 			sendPacket(new ExVitalityEffectInfoPacket(this));
 		}
 	}
 	
-	public DateTime getSayhaGraceSupportEndTime()
+	public DateTime? getSayhaGraceSupportEndTime()
 	{
-		return getVariables().getLong(PlayerVariables.SAYHA_GRACE_SUPPORT_ENDTIME, 0);
+        DateTime value = getVariables().getDateTime(PlayerVariables.SAYHA_GRACE_SUPPORT_ENDTIME, DateTime.MinValue);
+		return value == DateTime.MinValue ? null : value;
 	}
 	
-	public bool setLimitedSayhaGraceEndTime(long endTime)
+	public bool setLimitedSayhaGraceEndTime(DateTime endTime)
 	{
-		if (endTime > getVariables().getLong(PlayerVariables.LIMITED_SAYHA_GRACE_ENDTIME, 0))
+		if (endTime > getVariables().getDateTime(PlayerVariables.LIMITED_SAYHA_GRACE_ENDTIME, DateTime.MinValue))
 		{
 			getVariables().set(PlayerVariables.LIMITED_SAYHA_GRACE_ENDTIME, endTime);
-			sendPacket(new ExUserBoostStat(this, BonusExpType.VITALITY));
+			sendPacket(new ExUserBoostStatPacket(this, BonusExpType.VITALITY));
 			sendPacket(new ExVitalityEffectInfoPacket(this));
 			return true;
 		}
 		return false;
 	}
 	
-	public DateTime getLimitedSayhaGraceEndTime()
+	public DateTime? getLimitedSayhaGraceEndTime()
 	{
-		return getVariables().getLong(PlayerVariables.LIMITED_SAYHA_GRACE_ENDTIME, 0);
+		DateTime value = getVariables().getDateTime(PlayerVariables.LIMITED_SAYHA_GRACE_ENDTIME, DateTime.MinValue);
+        return value == DateTime.MinValue ? null : value;
 	}
 	
 	public void checkItemRestriction()
@@ -12322,7 +12245,8 @@ public class Player: Playable
 			}
 			
 			// Include transformation skills.
-			currentSkills.addAll(_transformSkills.values());
+            foreach (Skill skill in _transformSkills.values()) 
+			    currentSkills.Add(skill);
 		}
 		
 		List<Skill> finalSkills = new();
@@ -12453,15 +12377,12 @@ public class Player: Playable
 	{
 		if ((_controlItemId != 0) && (petId != 0))
 		{
-			String req;
-			req = "UPDATE pets SET fed=? WHERE item_obj_id = ?";
 			try
 			{
                 using GameServerDbContext ctx = new();
-                				PreparedStatement statement = con.prepareStatement(req);
-				statement.setInt(1, _curFeed);
-				statement.setInt(2, _controlItemId);
-				statement.executeUpdate();
+                ctx.Pets.Where(p => p.ItemObjectId == _controlItemId)
+	                .ExecuteUpdate(s => s.SetProperty(p => p.Fed, _curFeed));
+
 				_controlItemId = 0;
 			}
 			catch (Exception e)
@@ -12585,14 +12506,10 @@ public class Player: Playable
 			
 			try 
 			{
+                int characterId = getObjectId();
                 using GameServerDbContext ctx = new();
-                				PreparedStatement statement = con.prepareStatement(UPDATE_TP_BOOKMARK);
-				statement.setInt(1, icon);
-				statement.setString(2, tag);
-				statement.setString(3, name);
-				statement.setInt(4, getObjectId());
-				statement.setInt(5, id);
-				statement.execute();
+                ctx.CharacterTeleportBookmarks.Where(r => r.CharacterId == characterId && r.Id == id).ExecuteUpdate(s =>
+	                s.SetProperty(r => r.Icon, icon).SetProperty(r => r.Tag, tag).SetProperty(r => r.Name, name));
 			}
 			catch (Exception e)
 			{
@@ -12609,11 +12526,9 @@ public class Player: Playable
 		{
 			try
 			{
+                int characterId = getObjectId();
 				using GameServerDbContext ctx = new();
-				PreparedStatement statement = con.prepareStatement(DELETE_TP_BOOKMARK);
-				statement.setInt(1, getObjectId());
-				statement.setInt(2, id);
-				statement.execute();
+                ctx.CharacterTeleportBookmarks.Where(r => r.CharacterId == characterId && r.Id == id).ExecuteDelete();
 			}
 			catch (Exception e)
 			{
@@ -12773,21 +12688,25 @@ public class Player: Playable
 		try 
 		{
             using GameServerDbContext ctx = new();
-            			PreparedStatement statement = con.prepareStatement(INSERT_TP_BOOKMARK);
-			statement.setInt(1, getObjectId());
-			statement.setInt(2, id);
-			statement.setInt(3, x);
-			statement.setInt(4, y);
-			statement.setInt(5, z);
-			statement.setInt(6, icon);
-			statement.setString(7, tag);
-			statement.setString(8, name);
-			statement.execute();
+            ctx.CharacterTeleportBookmarks.Add(new CharacterTeleportBookmark()
+            {
+                CharacterId = getObjectId(),
+                Id = id,
+                X = x,
+                Y = y,
+                Z = z,
+                Icon = icon,
+                Tag = tag,
+                Name = name
+            });
+            
+            ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Could not insert character teleport bookmark data: " + e);
+			LOGGER.Error("Could not insert character teleport bookmark data: " + e);
 		}
+        
 		sendPacket(new ExGetBookMarkInfoPacket(this));
 	}
 	
@@ -12795,17 +12714,13 @@ public class Player: Playable
 	{
 		try
 		{
+            int characterId = getObjectId();
             using GameServerDbContext ctx = new();
-            			PreparedStatement statement = con.prepareStatement(RESTORE_TP_BOOKMARK);
-			statement.setInt(1, getObjectId());
-			
-			{
-                ResultSet rset = statement.executeQuery();
-				while (rset.next())
-				{
-					_tpbookmarks.put(rset.getInt("Id"), new TeleportBookmark(rset.getInt("Id"), rset.getInt("x"), rset.getInt("y"), rset.getInt("z"), rset.getInt("icon"), rset.getString("tag"), rset.getString("name")));
-				}
-			}
+            var query = ctx.CharacterTeleportBookmarks.Where(r => r.CharacterId == characterId);
+            foreach (var record in query)
+            {
+				_tpbookmarks.put(record.Id, new TeleportBookmark(record.Id, record.X, record.Y, record.Z, record.Icon, record.Tag, record.Name));
+            }
 		}
 		catch (Exception e)
 		{
@@ -12824,7 +12739,7 @@ public class Player: Playable
 		{
 			setXYZ(getBoat().getLocation());
 			player.sendPacket(new CharacterInfoPacket(this, isInvisible() && player.canOverrideCond(PlayerCondOverride.SEE_ALL_PLAYERS)));
-			player.sendPacket(new GetOnVehicle(getObjectId(), getBoat().getObjectId(), _inVehiclePosition));
+			player.sendPacket(new GetOnVehiclePacket(getObjectId(), getBoat().getObjectId(), _inVehiclePosition));
 		}
 		else if (isInAirShip())
 		{
@@ -12873,22 +12788,22 @@ public class Player: Playable
 		{
 			case PrivateStoreType.SELL:
 			{
-				player.sendPacket(new PrivateStoreMsgSell(this));
+				player.sendPacket(new PrivateStoreMsgSellPacket(this));
 				break;
 			}
 			case PrivateStoreType.PACKAGE_SELL:
 			{
-				player.sendPacket(new ExPrivateStoreSetWholeMsg(this));
+				player.sendPacket(new ExPrivateStoreSetWholeMsgPacket(this));
 				break;
 			}
 			case PrivateStoreType.BUY:
 			{
-				player.sendPacket(new PrivateStoreMsgBuy(this));
+				player.sendPacket(new PrivateStoreMsgBuyPacket(this));
 				break;
 			}
 			case PrivateStoreType.MANUFACTURE:
 			{
-				player.sendPacket(new RecipeShopMsg(this));
+				player.sendPacket(new RecipeShopMsgPacket(this));
 				break;
 			}
 		}
@@ -12912,13 +12827,13 @@ public class Player: Playable
 		setMovieHolder(holder);
 		if (!isTeleporting())
 		{
-			sendPacket(new ExStartScenePlayer(holder.getMovie()));
+			sendPacket(new ExStartScenePlayerPacket(holder.getMovie()));
 		}
 	}
 	
 	public void stopMovie()
 	{
-		sendPacket(new ExStopScenePlayer(_movieHolder.getMovie()));
+		sendPacket(new ExStopScenePlayerPacket(_movieHolder.getMovie()));
 		setMovieHolder(null);
 	}
 	
@@ -13016,26 +12931,24 @@ public class Player: Playable
 		_friendList.clear();
 		try 
 		{
+            int characterId = getObjectId();
             using GameServerDbContext ctx = new();
-            			PreparedStatement statement = con.prepareStatement("SELECT friendId FROM character_friends WHERE charId=? AND relation=0");
-			statement.setInt(1, getObjectId());
+            var query = ctx.CharacterFriends.Where(r => r.CharacterId == characterId && r.Relation == 0)
+	            .Select(r => r.FriendId);
 
+            foreach (int friendId in query)
 			{
-				ResultSet rset = statement.executeQuery();
-				while (rset.next())
+				if (friendId == getObjectId())
 				{
-					int friendId = rset.getInt("friendId");
-					if (friendId == getObjectId())
-					{
-						continue;
-					}
-					_friendList.add(friendId);
+					continue;
 				}
+
+				_friendList.add(friendId);
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Error found in " + getName() + "'s FriendList: " + e);
+			LOGGER.Error("Error found in " + getName() + "'s FriendList: " + e);
 		}
 	}
 	
@@ -13062,26 +12975,22 @@ public class Player: Playable
 		_surveillanceList.clear();
 		try
 		{
+			int characterId = getObjectId();
             using GameServerDbContext ctx = new();
-            			PreparedStatement statement = con.prepareStatement("SELECT targetId FROM character_surveillances WHERE charId=?");
-			statement.setInt(1, getObjectId());
-			
-			{
-                ResultSet rset = statement.executeQuery();
-				while (rset.next())
+            var query = ctx.CharacterSurveillances.Where(r => r.CharacterId == characterId).Select(r => r.TargetId);
+            foreach (int targetId in query)
+            {
+				if (targetId == getObjectId())
 				{
-					int friendId = rset.getInt("targetId");
-					if (friendId == getObjectId())
-					{
-						continue;
-					}
-					_surveillanceList.add(friendId);
+					continue;
 				}
-			}
+                
+                _surveillanceList.add(targetId);
+            }
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Error found in " + getName() + "'s SurveillanceList: " + e);
+			LOGGER.Error("Error found in " + getName() + "'s SurveillanceList: " + e);
 		}
 	}
 	
@@ -13094,19 +13003,18 @@ public class Player: Playable
 		
 		try 
 		{
-            using GameServerDbContext ctx = new();
-            			PreparedStatement statement = con.prepareStatement("UPDATE character_friends SET memo=? WHERE charId=? AND friendId=?");
+            int characterId = getObjectId();
 			int friendId = CharInfoTable.getInstance().getIdByName(name);
-			statement.setString(1, memo);
-			statement.setInt(2, getObjectId());
-			statement.setInt(3, friendId);
-			statement.execute();
+            
+            using GameServerDbContext ctx = new();
+            ctx.CharacterFriends.Where(r => r.CharacterId == characterId && r.FriendId == friendId).
+                ExecuteUpdate(s => s.SetProperty(r => r.Memo, memo));
 			
 			CharInfoTable.getInstance().setFriendMemo(getObjectId(), friendId, memo);
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Error occurred while updating friend memo: " + e);
+			LOGGER.Error("Error occurred while updating friend memo: " + e);
 		}
 	}
 	
@@ -13166,30 +13074,26 @@ public class Player: Playable
 		{
 			try
 			{
+                int characterId = getObjectId(); 
                 using GameServerDbContext ctx = new();
-				
+
+                ctx.CharacterRecipeShopLists.Where(r => r.CharacterId == characterId).ExecuteDelete();
+
+                int slot = 1;
+				foreach (ManufactureItem item in _manufactureItems.values())
 				{
-                    PreparedStatement st = con.prepareStatement(DELETE_CHAR_RECIPE_SHOP);
-					st.setInt(1, getObjectId());
-					st.execute();
+                    ctx.CharacterRecipeShopLists.Add(new CharacterRecipeShopList()
+                    {
+                        CharacterId = characterId,
+                        RecipeId = item.getRecipeId(),
+                        Price = item.getCost(),
+                        Index = (short)slot
+                    });
+
+                    slot++;                    
 				}
-				
-				try
-				{
-                    PreparedStatement st = con.prepareStatement(INSERT_CHAR_RECIPE_SHOP);
-					AtomicInteger slot = new AtomicInteger(1);
-					con.setAutoCommit(false);
-					foreach (ManufactureItem item in _manufactureItems.values())
-					{
-						st.setInt(1, getObjectId());
-						st.setInt(2, item.getRecipeId());
-						st.setLong(3, item.getCost());
-						st.setInt(4, slot.getAndIncrement());
-						st.addBatch();
-					}
-					st.executeBatch();
-					con.commit();
-				}
+                
+                ctx.SaveChanges();
 			}
 			catch (Exception e)
 			{
@@ -13207,16 +13111,13 @@ public class Player: Playable
 		
 		try 
 		{
+            int characterId = getObjectId(); 
             using GameServerDbContext ctx = new();
-            			PreparedStatement statement = con.prepareStatement(RESTORE_CHAR_RECIPE_SHOP);
-			statement.setInt(1, getObjectId());
-			
+            var query = ctx.CharacterRecipeShopLists.Where(r => r.CharacterId == characterId).OrderBy(r => r.Index);
+
+            foreach (var record in query)
 			{
-                ResultSet rset = statement.executeQuery();
-				while (rset.next())
-				{
-					getManufactureItems().put(rset.getInt("recipeId"), new ManufactureItem(rset.getInt("recipeId"), rset.getLong("price")));
-				}
+				getManufactureItems().put(record.RecipeId, new ManufactureItem(record.RecipeId, record.Price));
 			}
 		}
 		catch (Exception e)
@@ -13306,7 +13207,7 @@ public class Player: Playable
 			return false;
 		}
 		
-		if ((_fallingTimestamp != DateTime.MinValue) && (DateTime.Now < _fallingTimestamp))
+		if ((_fallingTimestamp != DateTime.MinValue) && (DateTime.UtcNow < _fallingTimestamp))
 		{
 			return true;
 		}
@@ -13314,14 +13215,14 @@ public class Player: Playable
 		int deltaZ = getZ() - z;
 		if (deltaZ <= getBaseTemplate().getSafeFallHeight())
 		{
-			_fallingTimestamp = 0;
+			_fallingTimestamp = null;
 			return false;
 		}
 		
 		// If there is no geodata loaded for the place we are, client Z correction might cause falling damage.
 		if (!GeoEngine.getInstance().hasGeo(getX(), getY()))
 		{
-			_fallingTimestamp = 0;
+			_fallingTimestamp = null;
 			return false;
 		}
 		
@@ -13358,7 +13259,7 @@ public class Player: Playable
 	 */
 	public void setFalling()
 	{
-		_fallingTimestamp = DateTime.Now + FALLING_VALIDATION_DELAY;
+		_fallingTimestamp = DateTime.UtcNow + FALLING_VALIDATION_DELAY;
 	}
 	
 	/**
@@ -13379,7 +13280,7 @@ public class Player: Playable
 	 */
 	public void updateLastItemAuctionRequest()
 	{
-		_lastItemAuctionInfoRequest = DateTime.Now;
+		_lastItemAuctionInfoRequest = DateTime.UtcNow;
 	}
 	
 	/**
@@ -13388,7 +13289,7 @@ public class Player: Playable
 	 */
 	public bool isItemAuctionPolling()
 	{
-		return (DateTime.Now - _lastItemAuctionInfoRequest) < 2000;
+		return (DateTime.UtcNow - _lastItemAuctionInfoRequest) < TimeSpan.FromSeconds(2);
 	}
 	
 	public override bool isMovementDisabled()
@@ -13436,12 +13337,12 @@ public class Player: Playable
 		return result;
 	}
 	
-	public DateTime getOfflineStartTime()
+	public DateTime? getOfflineStartTime()
 	{
 		return _offlineShopStart;
 	}
 	
-	public void setOfflineStartTime(DateTime time)
+	public void setOfflineStartTime(DateTime? time)
 	{
 		_offlineShopStart = time;
 	}
@@ -13464,7 +13365,7 @@ public class Player: Playable
 	public void setHonorCoins(long value)
 	{
 		getVariables().set("HONOR_COINS", value);
-		sendPacket(new ExPledgeCoinInfo(this));
+		sendPacket(new ExPledgeCoinInfoPacket(this));
 	}
 	
 	/**
@@ -13629,14 +13530,13 @@ public class Player: Playable
 	{
 		try 
         {
+            int characterId = getObjectId();
             using GameServerDbContext ctx = new();
-            			PreparedStatement statement = con.prepareStatement("SELECT object_id FROM `items` WHERE `owner_id`=? AND (`loc`='PET' OR `loc`='PET_EQUIP') LIMIT 1;");
-			statement.setInt(1, getObjectId());
-			
-			{
-                ResultSet rset = statement.executeQuery();
-				setPetInvItems(rset.next() && (rset.getInt("object_id") > 0));
-			}
+            bool petItems = ctx.Items.Where(r =>
+	            r.OwnerId == characterId &&
+	            (r.Location == (int)ItemLocation.PET || r.Location == (int)ItemLocation.PET_EQUIP)).Any();
+            
+			setPetInvItems(petItems);
 		}
 		catch (Exception e)
 		{
@@ -13661,18 +13561,16 @@ public class Player: Playable
 	{
 		try 
 		{
+            int characterId = getObjectId();
             using GameServerDbContext ctx = new();
-            			PreparedStatement statement = con.prepareStatement("SELECT rec_have, rec_left FROM character_reco_bonus WHERE charId = ?");
-			statement.setInt(1, getObjectId());
-			
-			{
-                ResultSet rset = statement.executeQuery();
-				if (rset.next())
-				{
-					setRecomHave(rset.getInt("rec_have"));
-					setRecomLeft(rset.getInt("rec_left"));
-				}
-			}
+            CharacterRecoBonus? record = ctx.CharacterRecoBonuses.Where(r => r.CharacterId == characterId).
+                SingleOrDefault();
+            
+            if (record is not null)
+            {
+				setRecomHave(record.RecHave);
+				setRecomLeft(record.RecLeft);
+            }
 		}
 		catch (Exception e)
 		{
@@ -13687,13 +13585,21 @@ public class Player: Playable
 	{
 		try 
 		{
+            int characterId = getObjectId();
             using GameServerDbContext ctx = new();
-            			PreparedStatement ps = con.prepareStatement("REPLACE INTO character_reco_bonus (charId,rec_have,rec_left,time_left) VALUES (?,?,?,?)");
-			ps.setInt(1, getObjectId());
-			ps.setInt(2, _recomHave);
-			ps.setInt(3, _recomLeft);
-			ps.setLong(4, 0);
-			ps.execute();
+            CharacterRecoBonus? record = ctx.CharacterRecoBonuses.SingleOrDefault(r => r.CharacterId == characterId);
+
+            if (record is null)
+            {
+                record = new CharacterRecoBonus();
+                record.CharacterId = characterId;
+            }
+                    
+            record.RecHave = (short)_recomHave; 
+            record.RecLeft = (short)_recomLeft; 
+            record.TimeLeft = TimeSpan.Zero; 
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -13732,7 +13638,7 @@ public class Player: Playable
 	public void setPremiumStatus(bool premiumStatus)
 	{
 		_premiumStatus = premiumStatus;
-		sendPacket(new ExBrPremiumState(this));
+		sendPacket(new ExBrPremiumStatePacket(this));
 	}
 	
 	public bool hasPremiumStatus()
@@ -13762,7 +13668,7 @@ public class Player: Playable
 	
 	public void updateNotMoveUntil()
 	{
-		_notMoveUntil = DateTime.Now + Config.PLAYER_MOVEMENT_BLOCK_TIME;
+		_notMoveUntil = DateTime.UtcNow + TimeSpan.FromMilliseconds(Config.PLAYER_MOVEMENT_BLOCK_TIME);
 	}
 	
 	public override bool isPlayer()
@@ -13914,12 +13820,12 @@ public class Player: Playable
 	
 	public override int getId()
 	{
-		return getClassId().getId();
+		return (int)getClassId();
 	}
 	
 	public bool isPartyBanned()
 	{
-		return PunishmentManager.getInstance().hasPunishment(getObjectId(), PunishmentAffect.CHARACTER, PunishmentType.PARTY_BAN);
+		return PunishmentManager.getInstance().hasPunishment(getObjectId().ToString(), PunishmentAffect.CHARACTER, PunishmentType.PARTY_BAN);
 	}
 	
 	/**
@@ -14306,7 +14212,12 @@ public class Player: Playable
 	 */
 	public void removeRequestsThatProcessesItem(int objectId)
 	{
-		_requests.values().removeIf(req => req.isUsing(objectId));
+		var requests = _requests.ToList();
+        foreach (var kvp in requests)
+        {
+            if (kvp.Value.isUsing(objectId))
+				_requests.Remove(kvp.Key);
+        }    
 	}
 	
 	/**
@@ -14341,7 +14252,7 @@ public class Player: Playable
 	public void disableExpGain()
 	{
 		addListener(new FunctionEventListener(this, EventType.ON_PLAYABLE_EXP_CHANGED,
-			(OnPlayableExpChanged @event) => onExperienceReceived(), this));
+			ev => onExperienceReceived(), this));
 	}
 	
 	public void enableExpGain()
@@ -14420,7 +14331,7 @@ public class Player: Playable
 	public void sendInventoryUpdate(InventoryUpdatePacket iu)
 	{
 		sendPacket(iu);
-		sendPacket(new ExAdenaInvenCount(this));
+		sendPacket(new ExAdenaInvenCountPacket(this));
 		sendPacket(new ExUserInfoInventoryWeightPacket(this));
 	}
 	
@@ -14430,11 +14341,11 @@ public class Player: Playable
 		{
 			_itemListTask = ThreadPool.schedule(() =>
 			{
-				sendPacket(new ItemList(1, this));
-				sendPacket(new ItemList(2, this));
-				sendPacket(new ExQuestItemList(1, this));
-				sendPacket(new ExQuestItemList(2, this));
-				sendPacket(new ExAdenaInvenCount(this));
+				sendPacket(new ItemListPacket(1, this));
+				sendPacket(new ItemListPacket(2, this));
+				sendPacket(new ExQuestItemListPacket(1, this));
+				sendPacket(new ExQuestItemListPacket(2, this));
+				sendPacket(new ExAdenaInvenCountPacket(this));
 				sendPacket(new ExUserInfoInventoryWeightPacket(this));
 				_itemListTask = null;
 			}, 300);
@@ -14622,7 +14533,7 @@ public class Player: Playable
 	
 	public GroupType getGroupType()
 	{
-		return isInParty() ? (_party.isInCommandChannel() ? GroupType.COMMAND_CHANNEL : GroupType.PARTY) : GroupType.NONE;
+		return isInParty() ? (_party.isInCommandChannel() ? GroupType.COMMAND_CHANNEL : GroupType.PARTY) : GroupType.None;
 	}
 	
 	public bool isTrueHero()
@@ -14662,12 +14573,17 @@ public class Player: Playable
 		{
 			return null;
 		}
-		return new TrainingHolder(int.Parse(info.Split(";")[0]), int.Parse(info.Split(";")[1]), int.Parse(info.Split(";")[2]), long.Parse(info.Split(";")[3]), long.Parse(info.Split(";")[4]));
+
+        string[] comps = info.Split(";");
+		return new TrainingHolder(int.Parse(comps[0]), int.Parse(comps[1]),
+			int.Parse(comps[2]), new DateTime(long.Parse(comps[3])), new DateTime(long.Parse(comps[4])));
 	}
 	
 	public void setTraingCampInfo(TrainingHolder holder)
 	{
-		getAccountVariables().set(TRAINING_CAMP_VAR, holder.getObjectId() + ";" + holder.getClassIndex() + ";" + holder.getLevel() + ";" + holder.getStartTime() + ";" + holder.getEndTime());
+		getAccountVariables().set(TRAINING_CAMP_VAR,
+			holder.getObjectId() + ";" + holder.getClassIndex() + ";" + holder.getLevel() + ";" +
+			holder.getStartTime().Ticks + ";" + (holder.getEndTime()?.Ticks ?? 0));
 	}
 	
 	public void removeTraingCampInfo()
@@ -14708,16 +14624,16 @@ public class Player: Playable
         time = new DateTime(time.Year, time.Month, time.Day, 6, 30, 0);
 		
 		// Get last player reward time.
-		long receiveDate;
+		DateTime receiveDate;
 		int rewardIndex;
 		if (Config.ATTENDANCE_REWARDS_SHARE_ACCOUNT)
 		{
-			receiveDate = getAccountVariables().getLong(PlayerVariables.ATTENDANCE_DATE, 0);
+			receiveDate = getAccountVariables().getDateTime(PlayerVariables.ATTENDANCE_DATE, DateTime.MinValue);
 			rewardIndex = getAccountVariables().getInt(PlayerVariables.ATTENDANCE_INDEX, 0);
 		}
 		else
 		{
-			receiveDate = getVariables().getLong(PlayerVariables.ATTENDANCE_DATE, 0);
+			receiveDate = getVariables().getDateTime(PlayerVariables.ATTENDANCE_DATE, DateTime.MinValue);
 			rewardIndex = getVariables().getInt(PlayerVariables.ATTENDANCE_INDEX, 0);
 		}
 		
@@ -14759,18 +14675,19 @@ public class Player: Playable
 		}
 	}
 	
-	public int getAttendanceDelay()
+	public TimeSpan getAttendanceDelay()
 	{
-		DateTime currentTime = DateTime.Now;
+		DateTime currentTime = DateTime.UtcNow;
 		TimeSpan remainingTime = _attendanceDelay - currentTime;
-		int remainingSeconds = (int) remainingTime.TotalSeconds;
-		return Math.Max(remainingSeconds, 0);
+        if (remainingTime < TimeSpan.Zero)
+            return TimeSpan.Zero;
+        
+		return remainingTime;
 	}
 	
-	public void setAttendanceDelay(int timeInMinutes)
+	public void setAttendanceDelay(TimeSpan timeInMinutes)
 	{
-		DateTime currentTime = DateTime.Now;
-		_attendanceDelay = currentTime.AddMilliseconds(timeInMinutes * 60 * 1000);
+		_attendanceDelay = DateTime.UtcNow + timeInMinutes;
 	}
 	
 	public byte getVipTier()
@@ -14788,9 +14705,10 @@ public class Player: Playable
 		return getAccountVariables().getLong(AccountVariables.VIP_POINTS, 0L);
 	}
 	
-	public long getVipTierExpiration()
+	public DateTime? getVipTierExpiration()
 	{
-		return getAccountVariables().getLong(AccountVariables.VIP_EXPIRATION, 0L);
+		DateTime value = getAccountVariables().getDateTime(AccountVariables.VIP_EXPIRATION, DateTime.MinValue);
+        return value == DateTime.MinValue ? null : value;
 	}
 	
 	public void setVipTierExpiration(long expiration)
@@ -14821,7 +14739,7 @@ public class Player: Playable
 			}
 		}
 		getAccountVariables().storeMe(); // force to store to prevent falty purchases after a crash.
-		sendPacket(new ReceiveVipInfo(this));
+		sendPacket(new ReceiveVipInfoPacket(this));
 	}
 	
 	public void initElementalSpirits()
@@ -14830,7 +14748,7 @@ public class Player: Playable
 		
 		if (_spirits == null)
 		{
-			ElementalType[] types = ElementalType.values();
+			ElementalType[] types = Enum.GetValues<ElementalType>();
 			_spirits = new ElementalSpirit[types.Length - 1]; // exclude None
 			foreach (ElementalType type in types)
 			{
@@ -14840,14 +14758,14 @@ public class Player: Playable
 				}
 				
 				ElementalSpirit spirit = new ElementalSpirit(type, this);
-				_spirits[type.getId() - 1] = spirit;
+				_spirits[(int)type - 1] = spirit;
 				spirit.save();
 			}
 		}
 		
 		if (_activeElementalSpiritType == null)
 		{
-			changeElementalSpirit(ElementalType.FIRE.getId());
+			changeElementalSpirit(ElementalType.FIRE);
 		}
 	}
 	
@@ -14856,32 +14774,30 @@ public class Player: Playable
 		List<ElementalSpiritDataHolder> restoredSpirits = new();
 		try 
 		{
+            int characterId = getObjectId(); 
 			using GameServerDbContext ctx = new();
-			PreparedStatement stmt = con.prepareStatement(RESTORE_ELEMENTAL_SPIRITS);
-			stmt.setInt(1, getObjectId());
-			 
-			{
-                ResultSet rset = stmt.executeQuery();
-				while (rset.next())
-				{
-					ElementalSpiritDataHolder newHolder = new ElementalSpiritDataHolder();
-					newHolder.setCharId(rset.getInt("charId"));
-					byte type = rset.getByte("type");
-					newHolder.setType(type);
-					byte level = rset.getByte("level");
-					newHolder.setLevel(level);
-					byte stage = rset.getByte("stage");
-					newHolder.setStage(stage);
-					long experience = Math.min(rset.getLong("experience"), ElementalSpiritData.getInstance().getSpirit(type, stage).getMaxExperienceAtLevel(level));
-					newHolder.setExperience(experience);
-					newHolder.setAttackPoints(rset.getByte("attack_points"));
-					newHolder.setDefensePoints(rset.getByte("defense_points"));
-					newHolder.setCritRatePoints(rset.getByte("crit_rate_points"));
-					newHolder.setCritDamagePoints(rset.getByte("crit_damage_points"));
-					newHolder.setInUse(rset.getByte("in_use") == 1);
-					restoredSpirits.add(newHolder);
-				}
-			}
+			var query = ctx.CharacterSpirits.Where(r => r.CharacterId == characterId);
+            foreach (var record in query)
+            {
+				ElementalSpiritDataHolder newHolder = new ElementalSpiritDataHolder();
+                
+				newHolder.setCharId(record.CharacterId);
+				ElementalType type = (ElementalType)record.Type;
+				newHolder.setType(type);
+				byte level = record.Level;
+				newHolder.setLevel(level);
+				byte stage = record.Stage;
+				newHolder.setStage(stage);
+				long experience = Math.Min(record.Exp, ElementalSpiritData.getInstance().getSpirit(type, stage).getMaxExperienceAtLevel(level));
+				newHolder.setExperience(experience);
+    			newHolder.setAttackPoints(record.AttackPoints);
+				newHolder.setDefensePoints(record.DefensePoints);
+				newHolder.setCritRatePoints(record.CriticalRatePoints);
+				newHolder.setCritDamagePoints(record.CriticalDamagePoints);
+				newHolder.setInUse(record.IsInUse);
+                
+				restoredSpirits.add(newHolder);
+            }
 		}
 		catch (Exception e)
 		{
@@ -14890,26 +14806,28 @@ public class Player: Playable
 		
 		if (!restoredSpirits.isEmpty())
 		{
-			_spirits = new ElementalSpirit[ElementalType.values().length - 1];
+			_spirits = new ElementalSpirit[Enum.GetValues<ElementalType>().Length - 1];
 			foreach (ElementalSpiritDataHolder spiritData in restoredSpirits)
 			{
-				_spirits[spiritData.getType() - 1] = new ElementalSpirit(spiritData, this);
+				_spirits[(int)spiritData.getType() - 1] = new ElementalSpirit(spiritData, this);
 				if (spiritData.isInUse())
 				{
-					_activeElementalSpiritType = ElementalType.of(spiritData.getType());
+					_activeElementalSpiritType = spiritData.getType();
 				}
 			}
+            
 			ThreadPool.schedule(() =>
 			{
-				sendPacket(new ElementalSpiritInfo(this, (byte) 0));
-				sendPacket(new ExElementalSpiritAttackType(this));
+				sendPacket(new ElementalSpiritInfoPacket(this, (byte) 0));
+				sendPacket(new ExElementalSpiritAttackTypePacket(this));
 			}, 4000);
 		}
 	}
 	
 	public double getActiveElementalSpiritAttack()
 	{
-		return getStat().getElementalSpiritPower(_activeElementalSpiritType, CommonUtil.zeroIfNullOrElse(getElementalSpirit(_activeElementalSpiritType), ElementalSpirit::getAttack));
+		return getStat().getElementalSpiritPower(_activeElementalSpiritType, 
+			getElementalSpirit(_activeElementalSpiritType)?.getAttack() ?? 0);
 	}
 	
 	public double getFireSpiritAttack()
@@ -14954,22 +14872,22 @@ public class Player: Playable
 	
 	public override double getElementalSpiritDefenseOf(ElementalType type)
 	{
-		return getStat().getElementalSpiritDefense(type, CommonUtil.zeroIfNullOrElse(getElementalSpirit(type), x => x.getDefense()));
+		return getStat().getElementalSpiritDefense(type, getElementalSpirit(type)?.getDefense() ?? 0);
 	}
 	
 	public override double getElementalSpiritAttackOf(ElementalType type)
 	{
-		return getStat().getElementSpiritAttack(type, CommonUtil.zeroIfNullOrElse(getElementalSpirit(type), x => x.getAttack()));
+		return getStat().getElementSpiritAttack(type, getElementalSpirit(type)?.getAttack() ?? 0);
 	}
 	
 	public double getElementalSpiritCritRate()
 	{
-		return getStat().getElementalSpiritCriticalRate(CommonUtil.zeroIfNullOrElse(getElementalSpirit(_activeElementalSpiritType), x => x.getCriticalRate()));
+		return getStat().getElementalSpiritCriticalRate(getElementalSpirit(_activeElementalSpiritType)?.getCriticalRate() ?? 0);
 	}
 	
 	public double getElementalSpiritCritDamage()
 	{
-		return getStat().getElementalSpiritCriticalDamage(CommonUtil.zeroIfNullOrElse(getElementalSpirit(_activeElementalSpiritType), x => x.getCriticalDamage()));
+		return getStat().getElementalSpiritCriticalDamage(getElementalSpirit(_activeElementalSpiritType)?.getCriticalDamage() ?? 0);
 	}
 	
 	public double getElementalSpiritXpBonus()
@@ -14983,17 +14901,17 @@ public class Player: Playable
 		{
 			return null;
 		}
-		return _spirits[type.getId() - 1];
+		return _spirits[(int)type - 1];
 	}
 	
 	public ElementalType getActiveElementalSpiritType()
 	{
-		return (byte) CommonUtil.zeroIfNullOrElse(_activeElementalSpiritType, x => x.getId());
+		return _activeElementalSpiritType;
 	}
 	
 	public void changeElementalSpirit(ElementalType element)
 	{
-		_activeElementalSpiritType = ElementalType.of(element);
+		_activeElementalSpiritType = element;
 		if (_spirits != null)
 		{
 			foreach (ElementalSpirit spirit in _spirits)
@@ -15001,7 +14919,7 @@ public class Player: Playable
 				if (spirit != null)
 				{
 					spirit.setInUse(spirit.getType() == element);
-					sendPacket(new ExElementalSpiritAttackType(this));
+					sendPacket(new ExElementalSpiritAttackTypePacket(this));
 				}
 			}
 		}
@@ -15399,20 +15317,27 @@ public class Player: Playable
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				PreparedStatement ps2 = con.prepareStatement("SELECT pet_evolves.index, pet_evolves.level as evolve, pets.name, pets.level, pets.exp FROM pet_evolves, pets WHERE pet_evolves.itemObjId=? AND pet_evolves.itemObjId = pets.item_obj_id");
-				ps2.setInt(1, it.getObjectId());
-				
-				{
-                    ResultSet rset = ps2.executeQuery();
-					while (rset.next())
-					{
-						EvolveLevel evolve = EvolveLevel.values()[rset.getInt("evolve")];
-						if (evolve != null)
-						{
-							_petEvolves.put(it.getObjectId(), new PetEvolveHolder(rset.getInt("index"), rset.getInt("evolve"), rset.getString("name"), rset.getInt("level"), rset.getLong("exp")));
-						}
-					}
-				}
+                
+                int itemObjectId = it.getObjectId(); 
+                
+                var query = 
+                    from ev in ctx.PetEvolves
+                    from p in ctx.Pets
+                    where ev.ItemObjectId == itemObjectId && p.ItemObjectId == ev.ItemObjectId
+                    select new 
+                    {
+                        ev.Index,
+                        EvolveLevel = ev.Level,
+                        p.Name,
+                        p.Level,
+                        p.Exp
+                    };
+                
+                foreach (var record in query)
+                {
+                    EvolveLevel evolveLevel = (EvolveLevel)record.EvolveLevel;
+  				    _petEvolves.put(it.getObjectId(), new PetEvolveHolder(record.Index, evolveLevel, record.Name, record.Level, record.Exp));
+                }
 			}
 			catch (Exception e)
 			{
@@ -15589,24 +15514,24 @@ public class Player: Playable
 		try
 		{
             using GameServerDbContext ctx = new();
-            			PreparedStatement st = con.prepareStatement(INSERT_COLLECTION);
-			_collections.forEach(data =>
-			{
-				try
-				{
-					st.setString(1, getAccountName());
-					st.setInt(2, data.getItemId());
-					st.setInt(3, data.getCollectionId());
-					st.setInt(4, data.getIndex());
-					st.addBatch();
-				}
-				catch (Exception e)
-				{
-					LOGGER.Error("Could not store collection for playerId " + getObjectId() + ": " + e);
-				}
-			});
-			st.executeBatch();
-			con.commit();
+            
+            foreach (var data in _collections)
+            {
+	            int collectionId = data.getCollectionId();
+                int index = data.getIndex();  
+                var record = ctx.AccountCollections.SingleOrDefault(r => r.AccountId == _accountId && r.CollectionId == collectionId && r.Index == index);
+                if (record is null)
+                {
+					record = new AccountCollection();
+                    record.AccountId = _accountId;
+                    record.CollectionId = (short)collectionId;
+                    record.Index = (short)index;
+                }
+                
+                record.ItemId = data.getItemId();
+            }       
+            
+            ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -15619,31 +15544,18 @@ public class Player: Playable
 		try 
         {
 		    using GameServerDbContext ctx = new();
+            ctx.AccountCollectionFavorites.Where(r => r.AccountId == _accountId).ExecuteDelete();
+
+            foreach (var data in _collectionFavorites)
             {
-                PreparedStatement st = con.prepareStatement(DELETE_COLLECTION_FAVORITE);
-				st.setString(1, getAccountName());
-				st.execute();
-			}
-
-
-			{
-				PreparedStatement st = con.prepareStatement(INSERT_COLLECTION_FAVORITE);
-				_collectionFavorites.forEach(data =>
-				{
-					try
-					{
-						st.setString(1, getAccountName());
-						st.setInt(2, data);
-						st.addBatch();
-					}
-					catch (Exception e)
-					{
-						LOGGER.Error("Could not store collection favorite for playerId " + getObjectId() + ": " + e);
-					}
-				});
-				st.executeBatch();
-				con.commit();
-			}
+                ctx.AccountCollectionFavorites.Add(new AccountCollectionFavorite()
+                {
+                    AccountId = _accountId,
+                    CollectionId = (short)data
+                });
+            }
+            
+            ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -15658,20 +15570,18 @@ public class Player: Playable
 		try 
 		{
             using GameServerDbContext ctx = new();
-            			PreparedStatement statement = con.prepareStatement(RESTORE_COLLECTION);
-			statement.setString(1, getAccountName());
-			
-			{
-                ResultSet rset = statement.executeQuery();
-				while (rset.next())
+            var query = ctx.AccountCollections.Where(r => r.AccountId == _accountId).
+                OrderBy(r => r.Index);
+
+
+            foreach (var record in query)
+            {
+				int collectionId = record.CollectionId;
+				if (CollectionData.getInstance().getCollection(collectionId) != null)
 				{
-					int collectionId = rset.getInt("collectionId");
-					if (CollectionData.getInstance().getCollection(collectionId) != null)
-					{
-						_collections.add(new PlayerCollectionData(collectionId, rset.getInt("itemId"), rset.getInt("index")));
-					}
+					_collections.add(new PlayerCollectionData(collectionId, record.ItemId, record.Index));
 				}
-			}
+            }
 		}
 		catch (Exception e)
 		{
@@ -15716,17 +15626,9 @@ public class Player: Playable
 		try 
         {
             using GameServerDbContext ctx = new();
-            			PreparedStatement statement = con.prepareStatement(RESTORE_COLLECTION_FAVORITE);
-			statement.setString(1, getAccountName());
-			try			
-            {
-                ResultSet rset = statement.executeQuery();
-				while (rset.next())
-				{
-					_collectionFavorites.add(rset.getInt("collectionId"));
-				}
-			}
-		}
+            _collectionFavorites.AddRange(ctx.AccountCollectionFavorites.Where(r => r.AccountId == _accountId)
+	            .Select(r => (int)r.CollectionId));
+        }
 		catch (Exception e)
 		{
 			LOGGER.Error("Could not restore collection favorite list data for playerId: " + getObjectId() + ": " + e);
@@ -15742,36 +15644,27 @@ public class Player: Playable
 	{
 		try 
 		{
+            int characterId = getObjectId();
             using GameServerDbContext ctx = new();
-			
-			{
-                PreparedStatement st = con.prepareStatement(DELETE_SUBJUGATION);
-				st.setInt(1, getObjectId());
-				st.execute();
-			}
+	
+			ctx.CharacterPurges.Where(r => r.CharacterId == characterId).ExecuteDelete();
 
-
-			{
-				PreparedStatement st = con.prepareStatement(INSERT_SUBJUGATION);
-				getPurgePoints().forEach((category, data) =>
-				{
-					try
-					{
-						st.setInt(1, getObjectId());
-						st.setInt(2, category);
-						st.setInt(3, data.getPoints());
-						st.setInt(4, data.getKeys());
-						st.setInt(5, data.getRemainingKeys());
-						st.addBatch();
-					}
-					catch (Exception e)
-					{
-						LOGGER.Error("Could not store subjugation data for playerId " + getObjectId() + ": " + e);
-					}
-				});
-				st.executeBatch();
-				con.commit();
-			}
+            foreach (var kvp in getPurgePoints())
+            {
+                int category = kvp.Key;
+                PurgePlayerHolder data = kvp.Value;
+                
+                ctx.CharacterPurges.Add(new CharacterPurge() 
+                {
+                    CharacterId = characterId,
+                    Category = (short)category,
+                    Points = data.getPoints(),
+                    Keys = data.getKeys(),
+                    RemainingKeys = data.getRemainingKeys()
+                });
+            }    
+            
+            ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -15788,18 +15681,13 @@ public class Player: Playable
 		
 		try 
         {
+            int characterId = getObjectId();
             using GameServerDbContext ctx = new();
-            			PreparedStatement statement = con.prepareStatement(RESTORE_SUBJUGATION);
-			statement.setInt(1, getObjectId());
-
-			{
-				ResultSet rset = statement.executeQuery();
-				while (rset.next())
-				{
-					_purgePoints.put(rset.getInt("category"), new PurgePlayerHolder(rset.getInt("points"), rset.getInt("keys"), rset.getInt("remainingKeys")));
-					
-				}
-			}
+            var query = ctx.CharacterPurges.Where(r => r.CharacterId == characterId);
+            foreach (var record in query)
+            {
+				_purgePoints.put(record.Category, new PurgePlayerHolder(record.Points, record.Keys, record.RemainingKeys));
+            }
 		}
 		catch (Exception e)
 		{
@@ -15881,7 +15769,7 @@ public class Player: Playable
 			_dualInventorySetB = list;
 		}
 		
-		sendPacket(new ExDualInventorySwap(_dualInventorySlot));
+		sendPacket(new ExDualInventorySwapPacket(_dualInventorySlot));
 	}
 	
 	public void setDualInventorySlot(int slot)
@@ -15914,7 +15802,7 @@ public class Player: Playable
 			}
 		}
 		
-		sendPacket(new ExDualInventorySwap(slot));
+		sendPacket(new ExDualInventorySwapPacket(slot));
 		
 		if (changed)
 		{

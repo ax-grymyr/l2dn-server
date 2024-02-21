@@ -274,7 +274,7 @@ public class ItemData: DataReaderBase
 	{
 		ConditionLogicAnd cond = new ConditionLogicAnd();
 		element.Elements().ForEach(e => cond.add(parseCondition(e, template)));
-		if ((cond.conditions == null) || (cond.conditions.Length == 0))
+		if ((cond.conditions == null) || (cond.conditions.Count == 0))
 			LOGGER.Error($"Empty <and> condition in item {template.getId()}");
 		
 		return cond;
@@ -284,7 +284,7 @@ public class ItemData: DataReaderBase
 	{
 		ConditionLogicOr cond = new ConditionLogicOr();
 		element.Elements().ForEach(e => cond.add(parseCondition(e, template)));
-		if ((cond.conditions == null) || (cond.conditions.Length == 0))
+		if ((cond.conditions == null) || (cond.conditions.Count == 0))
 			LOGGER.Error($"Empty <or> condition in item {template.getId()}");
 		
 		return cond;
@@ -558,11 +558,11 @@ public class ItemData: DataReaderBase
 				case "class_id_restriction":
 				{
 					StringTokenizer st = new StringTokenizer((string)attribute, ",");
-					Set<int> array = new();
+					Set<CharacterClass> array = new();
 					while (st.hasMoreTokens())
 					{
 						string item = st.nextToken().Trim();
-						array.add(int.Parse(item));
+						array.add((CharacterClass)int.Parse(item));
 					}
 					cond = joinAnd(cond, new ConditionPlayerClassIdRestriction(array));
 					break;
@@ -895,11 +895,11 @@ public class ItemData: DataReaderBase
 				case "class_id_restriction":
 				{
 					StringTokenizer st = new StringTokenizer((string)attribute, ",");
-					Set<int> set = new();
+					Set<CharacterClass> set = new();
 					while (st.hasMoreTokens())
 					{
 						string item = st.nextToken().Trim();
-						set.add(int.Parse(item));
+						set.add((CharacterClass)int.Parse(item));
 					}
 					cond = joinAnd(cond, new ConditionTargetClassIdRestriction(set));
 					break;

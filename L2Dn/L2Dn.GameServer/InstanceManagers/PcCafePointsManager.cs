@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
@@ -22,7 +23,7 @@ public class PcCafePointsManager
 	
 	public void giveRetailPcCafePont(Player player)
 	{
-		if (!Config.PC_CAFE_ENABLED || !Config.PC_CAFE_RETAIL_LIKE || (player.isOnlineInt() == 0) || (!player.hasPremiumStatus() && Config.PC_CAFE_ONLY_PREMIUM) || player.isInOfflineMode())
+		if (!Config.PC_CAFE_ENABLED || !Config.PC_CAFE_RETAIL_LIKE || (player.getOnlineStatus() == CharacterOnlineStatus.Offline) || (!player.hasPremiumStatus() && Config.PC_CAFE_ONLY_PREMIUM) || player.isInOfflineMode())
 		{
 			return;
 		}
@@ -64,7 +65,7 @@ public class PcCafePointsManager
 	
 	public void givePcCafePoint(Player player, double exp)
 	{
-		if (Config.PC_CAFE_RETAIL_LIKE || !Config.PC_CAFE_ENABLED || player.isInsideZone(ZoneId.PEACE) || player.isInsideZone(ZoneId.PVP) || player.isInsideZone(ZoneId.SIEGE) || (player.isOnlineInt() == 0) || player.isJailed())
+		if (Config.PC_CAFE_RETAIL_LIKE || !Config.PC_CAFE_ENABLED || player.isInsideZone(ZoneId.PEACE) || player.isInsideZone(ZoneId.PVP) || player.isInsideZone(ZoneId.SIEGE) || (player.getOnlineStatus() == CharacterOnlineStatus.Offline) || player.isJailed())
 		{
 			return;
 		}

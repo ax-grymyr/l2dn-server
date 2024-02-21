@@ -37,7 +37,7 @@ public class OfflineTraderTable
 						var trade = new CharacterOfflineTrade
 						{
 							CharacterId = pc.getObjectId(), // Char Id
-							Time = pc.getOfflineStartTime(),
+							Time = pc.getOfflineStartTime() ?? DateTime.UtcNow,
 							Type = (byte)(pc.isSellingBuffs() ? PrivateStoreType.SELL_BUFFS : pc.getPrivateStoreType()),
 						};
 
@@ -393,7 +393,7 @@ public class OfflineTraderTable
 							ctx.CharacterOfflineTrades.Add(new()
 							{
 								CharacterId = traderId,
-								Time = trader.getOfflineStartTime(),
+								Time = trader.getOfflineStartTime() ?? DateTime.UtcNow,
 								Type = (byte)(trader.isSellingBuffs()
 									? PrivateStoreType.SELL_BUFFS
 									: trader.getPrivateStoreType()),

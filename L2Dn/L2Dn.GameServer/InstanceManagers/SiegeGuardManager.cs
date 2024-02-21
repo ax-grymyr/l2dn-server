@@ -208,7 +208,7 @@ public class SiegeGuardManager
 			npc.setDecayed(false);
 			npc.setHeading(pos.getHeading());
 			npc.spawnMe(pos.getX(), pos.getY(), (pos.getZ() + 20));
-			npc.scheduleDespawn(3000);
+			npc.scheduleDespawn(TimeSpan.FromSeconds(3));
 			npc.setImmobilized(holder.isStationary());
 		}
 	}

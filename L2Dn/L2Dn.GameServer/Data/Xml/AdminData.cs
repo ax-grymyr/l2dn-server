@@ -240,7 +240,7 @@ public class AdminData: DataReaderBase
 	 * @param packet the packet
 	 */
 	public void broadcastToGMs<TPacket>(TPacket packet)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		foreach (Player gm in getAllGms(true))
 		{

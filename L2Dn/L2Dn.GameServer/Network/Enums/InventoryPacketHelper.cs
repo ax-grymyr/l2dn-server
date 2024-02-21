@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Ensoul;
+using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
@@ -82,6 +83,23 @@ public class InventoryPacketHelper
         
         if (mask.HasFlag(ItemListType.BLESSED))
             writer.WriteByte(1);
+    }
+
+    public static void WriteInventoryBlock(PacketBitWriter writer, PlayerInventory inventory)
+    {
+        if (inventory.hasInventoryBlock())
+        {
+            writer.WriteInt16((short)inventory.getBlockItems().Count);
+            writer.WriteByte((byte)inventory.getBlockMode());
+            foreach (int id in inventory.getBlockItems())
+            {
+                writer.WriteInt32(id);
+            }
+        }
+        else
+        {
+            writer.WriteInt16(0);
+        }
     }
     
     private static void WriteItemAugment(PacketBitWriter writer, ItemInfo item)

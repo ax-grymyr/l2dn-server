@@ -30,7 +30,7 @@ public class IdManager
 			using GameServerDbContext ctx = new();
 
 			// TODO: this is not right place for this query
-			ctx.Characters.ExecuteUpdate(s => s.SetProperty(c => c.IsOnline, false));
+			ctx.Characters.ExecuteUpdate(s => s.SetProperty(c => c.OnlineStatus, CharacterOnlineStatus.Offline));
 
 			LOGGER.Info("Updated characters online status.");
 		}

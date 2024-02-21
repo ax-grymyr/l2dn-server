@@ -3,5 +3,6 @@
 public enum Sex: byte
 {
     Male,
-    Female
+    Female,
+    Etc
 }

@@ -277,7 +277,7 @@ public abstract class Vehicle : Creature
 	}
 	
 	public void broadcastToPassengers<TPacket>(TPacket packet)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		foreach (Player player in _passengers)
 		{

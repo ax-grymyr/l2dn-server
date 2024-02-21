@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Residences;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 using NLog;
@@ -76,7 +77,7 @@ public class ClanHallData: DataReaderBase
 		
 		element.Elements("teleportList").Elements("teleport").ForEach(el =>
 		{
-			int npcStringId = el.Attribute("npcStringId").GetInt32();
+			NpcStringId npcStringId = (NpcStringId)el.Attribute("npcStringId").GetInt32();
 			int x = el.Attribute("x").GetInt32();
 			int y = el.Attribute("y").GetInt32();
 			int z = el.Attribute("z").GetInt32();
