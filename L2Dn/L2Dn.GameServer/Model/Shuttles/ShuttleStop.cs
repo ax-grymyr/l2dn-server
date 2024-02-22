@@ -5,7 +5,7 @@ public class ShuttleStop
     private readonly int _id;
     private bool _isOpen = true;
     private readonly List<Location> _dimensions = new(3);
-    private long _lastDoorStatusChanges = System.currentTimeMillis();
+    private DateTime _lastDoorStatusChanges = DateTime.UtcNow;
 
     public ShuttleStop(int id)
     {
@@ -40,7 +40,7 @@ public class ShuttleStop
         }
 
         _isOpen = true;
-        _lastDoorStatusChanges = System.currentTimeMillis();
+        _lastDoorStatusChanges = DateTime.UtcNow;
     }
 
     public void closeDoor()
@@ -51,11 +51,11 @@ public class ShuttleStop
         }
 
         _isOpen = false;
-        _lastDoorStatusChanges = System.currentTimeMillis();
+        _lastDoorStatusChanges = DateTime.UtcNow;
     }
 
     public bool hasDoorChanged()
     {
-        return (System.currentTimeMillis() - _lastDoorStatusChanges) <= 1000;
+        return (DateTime.UtcNow - _lastDoorStatusChanges) <= TimeSpan.FromSeconds(1);
     }
 }

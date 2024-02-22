@@ -505,7 +505,7 @@ public class ItemData: DataReaderBase
 				}
 				case "sex":
 				{
-					int sex = (int)attribute;
+					Sex sex = (int)attribute == 1 ? Sex.Female : Sex.Male;
 					cond = joinAnd(cond, new ConditionPlayerSex(sex));
 					break;
 				}

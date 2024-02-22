@@ -1018,9 +1018,11 @@ public class CreatureStat
 	 * @param skill the skill from which reuse time will be calculated.
 	 * @return the time in milliseconds this skill is being under reuse.
 	 */
-	public virtual int getReuseTime(Skill skill)
+	public virtual TimeSpan getReuseTime(Skill skill)
 	{
-		return (skill.isStaticReuse() || skill.isStatic()) ? skill.getReuseDelay() : (int) (skill.getReuseDelay() * getReuseTypeValue(skill.getMagicType()));
+		return (skill.isStaticReuse() || skill.isStatic())
+			? skill.getReuseDelay()
+			: skill.getReuseDelay() * getReuseTypeValue(skill.getMagicType());
 	}
 	
 	/**

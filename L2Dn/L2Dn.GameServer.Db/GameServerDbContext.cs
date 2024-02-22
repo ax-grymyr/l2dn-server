@@ -111,7 +111,6 @@ public class GameServerDbContext: DbContext
 
     public DbSet<BotReport> BotReports => Set<BotReport>();
     public DbSet<BufferScheme> BufferSchemes => Set<BufferScheme>();
-    public DbSet<BuyList> BuyLists => Set<BuyList>();
     public DbSet<MonsterDerbyHistory> DerbyHistory => Set<MonsterDerbyHistory>();
     public DbSet<MonsterDerbyBet> DerbyBets => Set<MonsterDerbyBet>();
     public DbSet<DbAirShip> AirShips => Set<DbAirShip>();
@@ -131,4 +130,5 @@ public class GameServerDbContext: DbContext
     public DbSet<DbMailMessage> MailMessages => Set<DbMailMessage>();
     public DbSet<DbPunishment> Punishments => Set<DbPunishment>();
     public DbSet<GlobalVariable> GlobalVariables => Set<GlobalVariable>();
+    public DbSet<DbBuyList> BuyLists => Set<DbBuyList>();
 }

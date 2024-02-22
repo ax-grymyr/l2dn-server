@@ -22,7 +22,7 @@ public class TrapTriggerTask: Runnable
         try
         {
             _trap.doCast(_trap.getSkill());
-            ThreadPool.schedule(new TrapUnsummonTask(_trap), _trap.getSkill().getHitTime() + 300);
+            ThreadPool.schedule(new TrapUnsummonTask(_trap), _trap.getSkill().getHitTime() + TimeSpan.FromMilliseconds(300));
         }
         catch (Exception e)
         {

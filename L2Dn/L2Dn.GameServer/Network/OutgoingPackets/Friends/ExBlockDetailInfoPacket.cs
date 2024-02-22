@@ -16,7 +16,7 @@ public readonly struct ExBlockDetailInfoPacket: IOutgoingPacket
 	private readonly Player _friend;
 	private readonly string _name;
 	private readonly int _lastAccess;
-	
+
 	public ExBlockDetailInfoPacket(Player player, string name)
 	{
 		_objectId = player.getObjectId();
@@ -24,11 +24,12 @@ public readonly struct ExBlockDetailInfoPacket: IOutgoingPacket
 		_friend = World.getInstance().getPlayer(_name);
 
 		DateTime now = DateTime.UtcNow;
+		TimeSpan onlineTime = (now - _friend.getLastAccess()) ?? TimeSpan.Zero;
 		_lastAccess = (_friend == null) || _friend.isBlocked(player) ? 0 :
 			_friend.isOnline() ? now.getEpochSecond() * 1000 :
-			(int)(now - _friend.getLastAccess()).TotalSeconds; // TODO probably incorrect time 
+			(int)onlineTime.TotalSeconds; // TODO probably incorrect time 
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.EX_FRIEND_DETAIL_INFO);
@@ -46,10 +47,10 @@ public readonly struct ExBlockDetailInfoPacket: IOutgoingPacket
 			if (clan != null)
 			{
 				writer.WriteInt32(clan.getId());
-				writer.WriteInt32(clan.getCrestId());
+				writer.WriteInt32(clan.getCrestId() ?? 0);
 				writer.WriteString(clan.getName());
-				writer.WriteInt32(clan.getAllyId());
-				writer.WriteInt32(clan.getAllyCrestId());
+				writer.WriteInt32(clan.getAllyId() ?? 0);
+				writer.WriteInt32(clan.getAllyCrestId() ?? 0);
 				writer.WriteString(clan.getAllyName());
 			}
 			else
@@ -62,9 +63,9 @@ public readonly struct ExBlockDetailInfoPacket: IOutgoingPacket
 				writer.WriteString("");
 			}
 			
-			DateOnly? createDate = CharInfoTable.getInstance().getCharacterCreationDate(charId);
-			writer.WriteByte((byte)createDate.Value.Month);
-			writer.WriteByte((byte)createDate.Value.Day);
+			DateTime createDate = CharInfoTable.getInstance().getCharacterCreationDate(charId) ?? DateTime.UtcNow;
+			writer.WriteByte((byte)createDate.Month);
+			writer.WriteByte((byte)createDate.Day);
 			writer.WriteInt32((int)CharInfoTable.getInstance().getLastAccessDelay(charId).TotalSeconds);
 			writer.WriteString(CharInfoTable.getInstance().getFriendMemo(_objectId, charId));
 		}

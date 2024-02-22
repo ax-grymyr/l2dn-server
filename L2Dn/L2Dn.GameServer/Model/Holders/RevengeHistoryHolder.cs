@@ -78,8 +78,8 @@ public class RevengeHistoryHolder
 		_killerName = killer.getString("name");
 		_killerClanName = killer.getString("clan");
 		_killerLevel = killer.getInt("level");
-		_killerRaceId = killer.getInt("race");
-		_killerClassId = killer.getInt("class");
+		_killerRaceId = (Race)killer.getInt("race");
+		_killerClassId = (CharacterClass)killer.getInt("class");
 		_killTime = killTime;
 		_shareTime = shareTime;
 		_showLocationRemaining = showLocationRemaining;
@@ -88,8 +88,8 @@ public class RevengeHistoryHolder
 		_victimName = victim.getString("name");
 		_victimClanName = victim.getString("clan");
 		_victimLevel = victim.getInt("level");
-		_victimRaceId = victim.getInt("race");
-		_victimClassId = victim.getInt("class");
+		_victimRaceId = (Race)victim.getInt("race");
+		_victimClassId = (CharacterClass)victim.getInt("class");
 	}
 
 	public RevengeType getType()

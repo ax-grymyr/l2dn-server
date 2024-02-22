@@ -11,10 +11,10 @@ public readonly struct SetupGaugePacket: IOutgoingPacket
 	
     private readonly int _objectId;
     private readonly int _color;
-    private readonly int _currentTime;
-    private readonly int _maxTime;
+    private readonly TimeSpan _currentTime;
+    private readonly TimeSpan _maxTime;
 	
-    public SetupGaugePacket(int objectId, int color, int time)
+    public SetupGaugePacket(int objectId, int color, TimeSpan time)
     {
         _objectId = objectId;
         _color = color; // color 0-blue 1-red 2-cyan 3-green
@@ -22,7 +22,7 @@ public readonly struct SetupGaugePacket: IOutgoingPacket
         _maxTime = time;
     }
 	
-    public SetupGaugePacket(int objectId, int color, int currentTime, int maxTime)
+    public SetupGaugePacket(int objectId, int color, TimeSpan currentTime, TimeSpan maxTime)
     {
         _objectId = objectId;
         _color = color; // color 0-blue 1-red 2-cyan 3-green
@@ -36,7 +36,7 @@ public readonly struct SetupGaugePacket: IOutgoingPacket
         
         writer.WriteInt32(_objectId);
         writer.WriteInt32(_color);
-        writer.WriteInt32(_currentTime);
-        writer.WriteInt32(_maxTime);
+        writer.WriteInt32((int)_currentTime.TotalMilliseconds); // TODO calculate via ticks
+        writer.WriteInt32((int)_maxTime.TotalMilliseconds);
     }
 }

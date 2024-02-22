@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -198,7 +199,7 @@ public class ShortCuts : IRestorable
 			{
 				Shortcut newsc = new Shortcut(sc.getSlot(), sc.getPage(), sc.getType(), sc.getId(), skillLevel, skillSubLevel, 1);
 				newsc.setAutoUse(sc.isAutoUse());
-				_owner.sendPacket(new ShortCutRegister(newsc, _owner));
+				_owner.sendPacket(new ShortCutRegisterPacket(newsc, _owner));
 				_owner.registerShortCut(newsc);
 			}
 		}

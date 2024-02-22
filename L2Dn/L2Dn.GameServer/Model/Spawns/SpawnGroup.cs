@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Spawns;
@@ -55,7 +56,7 @@ public class SpawnGroup: ITerritorized, IParameterized<StatSet>
 
 	public List<SpawnTerritory> getTerritories()
 	{
-		return _territories != null ? _territories : Collections.emptyList();
+		return _territories != null ? _territories : new();
 	}
 
 	public void addBannedTerritory(BannedSpawnTerritory territory)

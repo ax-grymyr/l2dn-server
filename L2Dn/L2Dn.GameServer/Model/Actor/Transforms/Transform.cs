@@ -93,7 +93,7 @@ public class Transform: IIdentifiable
 	{
 		if (creature.isPlayer())
 		{
-			return (creature.getActingPlayer().getAppearance().isFemale() ? _femaleTemplate : _maleTemplate);
+			return (creature.getActingPlayer().getAppearance().getSex() == Sex.Female ? _femaleTemplate : _maleTemplate);
 		}
 		else if (creature.isNpc())
 		{

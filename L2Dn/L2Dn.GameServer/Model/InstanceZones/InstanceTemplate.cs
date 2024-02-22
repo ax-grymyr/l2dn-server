@@ -22,8 +22,8 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 	// Basic instance parameters
 	private int _templateId = -1;
 	private String _name = "UnknownInstance";
-	private TimeSpan? _duration;
-	private TimeSpan? _emptyDestroyTime;
+	private TimeSpan _duration;
+	private TimeSpan _emptyDestroyTime;
 	private int _ejectTime = Config.EJECT_DEAD_PLAYER_TIME;
 	private int _maxWorldCount = -1;
 	private bool _isPvP = false;
@@ -42,12 +42,12 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 	private List<Location> _exitLocations = null;
 	// Reenter data
 	private InstanceReenterType _reenterType = InstanceReenterType.NONE;
-	private List<InstanceReenterTimeHolder> _reenterData = Collections.emptyList();
+	private List<InstanceReenterTimeHolder> _reenterData = new();
 	// Buff remove data
 	private InstanceRemoveBuffType _removeBuffType = InstanceRemoveBuffType.NONE;
-	private List<int> _removeBuffExceptions = Collections.emptyList();
+	private List<int> _removeBuffExceptions = new();
 	// Conditions
-	private List<Condition> _conditions = Collections.emptyList();
+	private List<Condition> _conditions = new();
 	private GroupType _groupMask = GroupType.Player;
 	
 	/**
@@ -80,9 +80,9 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 	 * Set instance world duration.
 	 * @param duration time in minutes
 	 */
-	public void setDuration(int duration)
+	public void setDuration(TimeSpan duration)
 	{
-		if (duration > 0)
+		if (duration > TimeSpan.Zero)
 		{
 			_duration = duration;
 		}
@@ -92,11 +92,11 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 	 * Set time after empty instance will be destroyed.
 	 * @param emptyDestroyTime time in minutes
 	 */
-	public void setEmptyDestroyTime(long emptyDestroyTime)
+	public void setEmptyDestroyTime(TimeSpan emptyDestroyTime)
 	{
-		if (emptyDestroyTime >= 0)
+		if (emptyDestroyTime >= TimeSpan.Zero)
 		{
-			_emptyDestroyTime = TimeUnit.MINUTES.toMillis(emptyDestroyTime);
+			_emptyDestroyTime = emptyDestroyTime;
 		}
 	}
 	
@@ -139,7 +139,7 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 	{
 		if (!set.isEmpty())
 		{
-			_parameters = new StatSet(Collections.unmodifiableMap(set));
+			_parameters = new StatSet(set);
 		}
 	}
 	
@@ -247,19 +247,19 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 			// Player
 			if (min == 1)
 			{
-				_groupMask |= GroupType.NONE.getMask();
+				_groupMask |= GroupType.Player;
 			}
 			// Party
 			int partySize = Config.ALT_PARTY_MAX_MEMBERS;
 			if (((max > 1) && (max <= partySize)) || ((min <= partySize) && (max > partySize)))
 			{
-				_groupMask |= GroupType.PARTY.getMask();
+				_groupMask |= GroupType.PARTY;
 			}
 		}
 		// Command channel
 		if (onlyCC || (max > 7))
 		{
-			_groupMask |= GroupType.COMMAND_CHANNEL.getMask();
+			_groupMask |= GroupType.COMMAND_CHANNEL;
 		}
 	}
 	
@@ -484,7 +484,10 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 			foreach (Playable playable in affected)
 			{
 				// Stop all buffs.
-				playable.getEffectList().stopEffects(info => !info.getSkill().isIrreplacableBuff() && info.getSkill().getBuffType().isBuff() && hasRemoveBuffException(info.getSkill()), true, true);
+				playable.getEffectList()
+					.stopEffects(
+						info => !info.getSkill().isIrreplacableBuff() && info.getSkill().getBuffType() == SkillBuffType.BUFF &&
+						        hasRemoveBuffException(info.getSkill()), true, true);
 			}
 		}
 	}
@@ -515,50 +518,50 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 	 */
 	public DateTime calculateReenterTime()
 	{
-		long time = -1;
+		DateTime? time = null;
 		foreach (InstanceReenterTimeHolder data in _reenterData)
 		{
-			if (data.getTime() > 0)
+			if (data.getTime() > TimeSpan.Zero)
 			{
-				time = System.currentTimeMillis() + data.getTime();
+				time = DateTime.UtcNow + data.getTime().Value;
 				break;
 			}
 			
-			Calendar calendar = Calendar.getInstance();
-			calendar.set(Calendar.HOUR_OF_DAY, data.getHour());
-			calendar.set(Calendar.MINUTE, data.getMinute());
-			calendar.set(Calendar.SECOND, 0);
+			DateTime calendar = DateTime.Now;
+			calendar = new DateTime(calendar.Year, calendar.Month, calendar.Day, data.getHour().Value,
+				data.getMinute().Value, 0);
 			
 			// If calendar time is lower than current, add one more day
-			if (calendar.getTimeInMillis() <= System.currentTimeMillis())
+			if (calendar <= DateTime.Now)
 			{
-				calendar.add(Calendar.DAY_OF_MONTH, 1);
+				calendar = calendar.AddDays(1);
 			}
 			
 			// Modify calendar day
 			if (data.getDay() != null)
 			{
 				// DayOfWeek starts with Monday(1) but Calendar starts with Sunday(1)
-				int day = data.getDay().getValue() + 1;
-				if (day > 7)
+				DayOfWeek day = data.getDay().Value + 1;
+				if (day > DayOfWeek.Saturday)
 				{
-					day = 1;
+					day = DayOfWeek.Sunday;
 				}
 				
 				// Set exact day. If modified date is before current, add one more week.
-				calendar.set(Calendar.DAY_OF_WEEK, day);
-				if (calendar.getTimeInMillis() <= System.currentTimeMillis())
-				{
-					calendar.add(Calendar.WEEK_OF_MONTH, 1);
-				}
+				while (calendar.DayOfWeek != day || calendar < DateTime.Now)
+					calendar = calendar.AddDays(1);
 			}
 			
-			if ((time == -1) || (calendar.getTimeInMillis() < time))
+			if ((time is null) || (calendar < time))
 			{
-				time = calendar.getTimeInMillis();
+				time = calendar;
 			}
 		}
-		return time;
+
+		if (time is not null)
+			time = time.Value.ToUniversalTime();
+		
+		return time ?? DateTime.UtcNow;
 	}
 	
 	/**
@@ -598,8 +601,8 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 		}
 		
 		// Check if mask contains only one group
-		GroupType type = GroupType.getByMask(_groupMask);
-		if (type != null)
+		GroupType type = _groupMask;
+		if (type != GroupType.None)
 		{
 			return type;
 		}

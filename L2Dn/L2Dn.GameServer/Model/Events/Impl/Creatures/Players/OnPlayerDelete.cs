@@ -1,3 +1,5 @@
+using L2Dn.GameServer.Network;
+
 namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
 
 /**
@@ -7,9 +9,9 @@ public class OnPlayerDelete: IBaseEvent
 {
 	private readonly int _objectId;
 	private readonly String _name;
-	private readonly GameClient _client;
+	private readonly GameSession _client;
 	
-	public OnPlayerDelete(int objectId, String name, GameClient client)
+	public OnPlayerDelete(int objectId, String name, GameSession client)
 	{
 		_objectId = objectId;
 		_name = name;
@@ -26,7 +28,7 @@ public class OnPlayerDelete: IBaseEvent
 		return _name;
 	}
 	
-	public GameClient getClient()
+	public GameSession getClient()
 	{
 		return _client;
 	}

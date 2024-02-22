@@ -2,6 +2,7 @@
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Matching;
@@ -37,7 +38,7 @@ public class PartyMatchingRoom: MatchingRoom
 		}
 
 		// Send SystemMessage to other players
-		SystemMessage sm = new SystemMessage(SystemMessageId.C1_HAS_ENTERED_THE_PARTY_ROOM);
+		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_ENTERED_THE_PARTY_ROOM);
 		sm.addPcName(player);
 		foreach (Player member in getMembers())
 		{
@@ -54,10 +55,10 @@ public class PartyMatchingRoom: MatchingRoom
 
 	protected override void notifyRemovedMember(Player player, bool kicked, bool leaderChanged)
 	{
-		SystemMessage sm = new SystemMessage(kicked
+		SystemMessagePacket sm = new SystemMessagePacket(kicked
 			? SystemMessageId.C1_HAS_BEEN_KICKED_FROM_THE_PARTY_ROOM
 			: SystemMessageId.C1_HAS_LEFT_THE_PARTY_ROOM);
-		sm.addPcName(player);
+		sm.Params.addPcName(player);
 
 		getMembers().forEach(p =>
 		{

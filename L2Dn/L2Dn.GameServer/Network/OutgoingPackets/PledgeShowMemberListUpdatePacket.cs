@@ -1,7 +1,9 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.Packets;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -10,11 +12,11 @@ internal readonly struct PledgeShowMemberListUpdatePacket: IOutgoingPacket
     private readonly int _pledgeType;
     private readonly string _name;
     private readonly int _level;
-    private readonly int _classId;
+    private readonly CharacterClass _classId;
     private readonly int _objectId;
     private readonly Race _race;
     private readonly byte _onlineStatus;
-    private readonly bool _sex;
+    private readonly Sex _sex;
     private readonly bool _hasSponsor;
 
     public PledgeShowMemberListUpdatePacket(Player player)
@@ -41,8 +43,8 @@ internal readonly struct PledgeShowMemberListUpdatePacket: IOutgoingPacket
 
         writer.WriteString(_name);
         writer.WriteInt32(_level);
-        writer.WriteInt32(_classId);
-        writer.WriteInt32(_sex);
+        writer.WriteInt32((int)_classId);
+        writer.WriteInt32(_sex == Sex.Female);
         writer.WriteInt32((int)_race);
         if (_onlineStatus > 0)
         {

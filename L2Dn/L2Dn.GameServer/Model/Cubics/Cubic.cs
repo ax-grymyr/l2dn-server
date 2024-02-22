@@ -51,7 +51,7 @@ public class Cubic: Creature
 		}
 		_expireTask = null;
 		_owner.getCubics().remove(_template.getId());
-		_owner.sendPacket(new ExUserInfoCubic(_owner));
+		_owner.sendPacket(new ExUserInfoCubicPacket(_owner));
 		_owner.broadcastCharInfo();
 	}
 	
@@ -148,22 +148,26 @@ public class Cubic: Creature
 				if ((skill != null) && (Rnd.get(100) < cubicSkill.getSuccessRate()))
 				{
 					Party party = _owner.getParty();
-					Stream<Creature> stream;
+					IEnumerable<Creature> stream;
 					if (party != null)
 					{
-						stream = World.getInstance().getVisibleObjectsInRange<Creature>(_owner, Config.ALT_PARTY_RANGE, c => (c.getParty() == party) && _template.validateConditions(this, _owner, c) && cubicSkill.validateConditions(this, _owner, c)).stream();
+						stream = World.getInstance().getVisibleObjectsInRange<Creature>(_owner, Config.ALT_PARTY_RANGE,
+							c => (c.getParty() == party) && _template.validateConditions(this, _owner, c) &&
+							     cubicSkill.validateConditions(this, _owner, c));
 					}
 					else
 					{
-						stream = _owner.getServitorsAndPets().stream().filter(summon => _template.validateConditions(this, _owner, summon) && cubicSkill.validateConditions(this, _owner, summon)).map(Creature.class::cast);
+						stream = _owner.getServitorsAndPets().Where(summon =>
+							_template.validateConditions(this, _owner, summon) &&
+							cubicSkill.validateConditions(this, _owner, summon));
 					}
 					
 					if (_template.validateConditions(this, _owner, _owner) && cubicSkill.validateConditions(this, _owner, _owner))
 					{
-						stream = Stream.concat(stream, Stream.of(_owner));
+						stream = stream.Concat([_owner]);
 					}
 					
-					Creature target = stream.sorted(Comparator.comparingInt(Creature::getCurrentHpPercent)).findFirst().orElse(null);
+					Creature? target = stream.MinBy(c => c.getCurrentHpPercent());
 					if ((target != null) && (!target.isDead())) // Life Cubic should not try to heal dead targets.
 					{
 						if (Rnd.nextDouble() > (target.getCurrentHp() / target.getMaxHp()))

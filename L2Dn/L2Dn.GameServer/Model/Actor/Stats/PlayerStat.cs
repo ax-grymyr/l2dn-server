@@ -685,7 +685,7 @@ public class PlayerStat: PlayableStat
 		return type == null ? 0 : getValue(type.getDefenseStat(), @base);
 	}
 	
-	public override int getReuseTime(Skill skill)
+	public override TimeSpan getReuseTime(Skill skill)
 	{
 		int addedReuse = 0;
 		if (skill.hasEffectType(EffectType.TELEPORT))
@@ -719,7 +719,7 @@ public class PlayerStat: PlayableStat
 				}
 			}
 		}
-		return base.getReuseTime(skill) + addedReuse;
+		return base.getReuseTime(skill) + TimeSpan.FromMilliseconds(addedReuse);
 	}
 	
 	public override void recalculateStats(bool broadcast)

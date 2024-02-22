@@ -1,4 +1,8 @@
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Zones.Types;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -18,13 +22,13 @@ public class OlympiadGameManager: Runnable
 	
 	protected OlympiadGameManager()
 	{
-		Collection<OlympiadStadiumZone> zones = ZoneManager.getInstance().getAllZones<OlympiadStadiumZone>();
+		ICollection<OlympiadStadiumZone> zones = ZoneManager.getInstance().getAllZones<OlympiadStadiumZone>();
 		if ((zones == null) || zones.isEmpty())
 		{
 			throw new InvalidOperationException("No olympiad stadium zones defined !");
 		}
 		
-		OlympiadStadiumZone[] array = zones.toArray(new OlympiadStadiumZone[zones.size()]);
+		OlympiadStadiumZone[] array = zones.ToArray();
 		_tasks = new(STADIUM_COUNT);
 		
 		int zonesCount = array.Length;
@@ -123,13 +127,13 @@ public class OlympiadGameManager: Runnable
 						Player noble = World.getInstance().getPlayer(id);
 						if (noble != null)
 						{
-							noble.sendPacket(new SystemMessage(SystemMessageId.THE_GAMES_MAY_BE_DELAYED_DUE_TO_AN_INSUFFICIENT_NUMBER_OF_PLAYERS_WAITING));
+							noble.sendPacket(new SystemMessagePacket(SystemMessageId.THE_GAMES_MAY_BE_DELAYED_DUE_TO_AN_INSUFFICIENT_NUMBER_OF_PLAYERS_WAITING));
 						}
 					}
 					
 					foreach (Set<int> list in OlympiadManager.getInstance().getRegisteredClassBased().values())
 					{
-						foreach (int id in list.Keys)
+						foreach (int id in list)
 						{
 							if (id == null)
 							{
@@ -139,7 +143,7 @@ public class OlympiadGameManager: Runnable
 							Player noble = World.getInstance().getPlayer(id);
 							if (noble != null)
 							{
-								noble.sendPacket(new SystemMessage(SystemMessageId.THE_GAMES_MAY_BE_DELAYED_DUE_TO_AN_INSUFFICIENT_NUMBER_OF_PLAYERS_WAITING));
+								noble.sendPacket(new SystemMessagePacket(SystemMessageId.THE_GAMES_MAY_BE_DELAYED_DUE_TO_AN_INSUFFICIENT_NUMBER_OF_PLAYERS_WAITING));
 							}
 						}
 					}

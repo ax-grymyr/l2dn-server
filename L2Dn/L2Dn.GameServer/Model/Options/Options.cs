@@ -2,6 +2,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Options;
@@ -255,8 +256,8 @@ public class Options
 		playable.addSkill(skill);
 		if (skill.isActive())
 		{
-			long remainingTime = playable.getSkillRemainingReuseTime(skill.getReuseHashCode());
-			if (remainingTime > 0)
+			TimeSpan remainingTime = playable.getSkillRemainingReuseTime(skill.getReuseHashCode());
+			if (remainingTime > TimeSpan.Zero)
 			{
 				playable.addTimeStamp(skill, remainingTime);
 				playable.disableSkill(skill, remainingTime);
@@ -267,7 +268,7 @@ public class Options
 
 		if (updateTimeStamp && playable.isPlayer())
 		{
-			playable.sendPacket(new SkillCoolTime(playable.getActingPlayer()));
+			playable.sendPacket(new SkillCoolTimePacket(playable.getActingPlayer()));
 		}
 	}
 }

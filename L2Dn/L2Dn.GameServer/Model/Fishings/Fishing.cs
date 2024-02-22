@@ -15,6 +15,7 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Network.OutgoingPackets.Fishing;
 using L2Dn.GameServer.Utilities;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -213,16 +214,19 @@ public class Fishing
 			_player.rechargeShots(false, false, true);
 		}
 		
-		long fishingTime = Math.Max(Rnd.get(baitData.getTimeMin(), baitData.getTimeMax()) - rodData.getReduceFishingTime(), 1000);
-		long fishingWaitTime = Rnd.get(baitData.getWaitMin(), baitData.getWaitMax());
+		TimeSpan fishingTime = Rnd.get(baitData.getTimeMin(), baitData.getTimeMax()) - rodData.getReduceFishingTime();
+		if (fishingTime < TimeSpan.FromSeconds(1))
+			fishingTime = TimeSpan.FromSeconds(1);
+		
+		TimeSpan fishingWaitTime = Rnd.get(baitData.getWaitMin(), baitData.getWaitMax());
 		_reelInTask = ThreadPool.schedule(() =>
 		{
 			_player.getFishing().reelInWithReward();
 			_startFishingTask = ThreadPool.schedule(() => _player.getFishing().castLine(), fishingWaitTime);
 		}, fishingTime);
 		_player.stopMove(null);
-		_player.broadcastPacket(new ExFishingStart(_player, -1, _baitLocation));
-		_player.sendPacket(new ExUserInfoFishing(_player, true, _baitLocation));
+		_player.broadcastPacket(new ExFishingStartPacket(_player, -1, _baitLocation));
+		_player.sendPacket(new ExUserInfoFishingPacket(_player, true, _baitLocation));
 		_player.sendPacket(new PlaySoundPacket(1, "sf_p_01", 0, 0, 0, 0, 0));
 		_player.sendPacket(SystemMessageId.YOU_CAST_YOUR_LINE_AND_START_TO_FISH);
 	}
@@ -309,8 +313,8 @@ public class Fishing
 		}
 		finally
 		{
-			_player.broadcastPacket(new ExFishingEnd(_player, reason));
-			_player.sendPacket(new ExUserInfoFishing(_player, false));
+			_player.broadcastPacket(new ExFishingEndPacket(_player, reason));
+			_player.sendPacket(new ExUserInfoFishingPacket(_player, false));
 		}
 	}
 	

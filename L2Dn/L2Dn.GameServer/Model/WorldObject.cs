@@ -219,7 +219,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	public abstract void sendInfo(Player player);
 	
 	public virtual void sendPacket<TPacket>(TPacket packet)
-		where TPacket: struct, IOutgoingPacket 
+		where TPacket: IOutgoingPacket 
 	{
 	}
 	

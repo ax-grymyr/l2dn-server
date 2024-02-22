@@ -89,9 +89,9 @@ public class BuyListTaskManager
 		PRODUCTS.put(product, endTime);
 	}
 	
-	public DateTime getRestockDelay(Product product)
+	public DateTime? getRestockDelay(Product product)
 	{
-		return PRODUCTS.getOrDefault(product, default);
+		return PRODUCTS.TryGetValue(product, out DateTime time) ? time : null;
 	}
 	
 	public static BuyListTaskManager getInstance()

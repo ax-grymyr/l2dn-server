@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
 
 namespace L2Dn.GameServer.Model.Olympiads;
@@ -11,7 +12,7 @@ public class Participant
 	private Player player;
 	private readonly String name;
 	private readonly int side;
-	private readonly int baseClass;
+	private readonly CharacterClass baseClass;
 	private bool disconnected = false;
 	private bool defaulted = false;
 	private readonly StatSet stats;
@@ -132,7 +133,7 @@ public class Participant
 	/**
 	 * @return the baseClass
 	 */
-	public int getBaseClass()
+	public CharacterClass getBaseClass()
 	{
 		return baseClass;
 	}

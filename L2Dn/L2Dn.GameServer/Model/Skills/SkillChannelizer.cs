@@ -3,7 +3,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Geo;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Skills;
 
@@ -19,7 +19,7 @@ public class SkillChannelizer: Runnable
 	private List<Creature> _channelized;
 
 	private Skill _skill;
-	private ScheduledFuture<?> _task = null;
+	private ScheduledFuture _task = null;
 
 	public SkillChannelizer(Creature channelizer)
 	{

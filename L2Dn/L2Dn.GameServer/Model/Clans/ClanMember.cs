@@ -3,6 +3,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Variables;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Clans;
@@ -16,18 +17,18 @@ public class ClanMember
 	
 	private readonly Clan _clan;
 	private int _objectId;
-	private String _name;
-	private String _title;
+	private string _name;
+	private string? _title;
 	private int _powerGrade;
 	private int _level;
 	private CharacterClass _classId;
-	private bool _sex;
+	private Sex _sex;
 	private Race _race;
 	private Player _player;
 	private int _pledgeType;
 	private int _apprentice;
-	private int _sponsor;
-	private long _onlineTime;
+	private int? _sponsor;
+	private TimeSpan _onlineTime;
 	
 	/**
 	 * Used to restore a clan member from the database.
@@ -35,24 +36,24 @@ public class ClanMember
 	 * @param clanMember the clan member result set
 	 * @throws SQLException if the columnLabel is not valid or a database error occurs
 	 */
-	public ClanMember(Clan clan, ResultSet clanMember)
+	public ClanMember(Clan clan, Character clanMember)
 	{
 		if (clan == null)
 		{
 			throw new ArgumentNullException(nameof(clan),"Cannot create a Clan Member with a null clan.");
 		}
 		_clan = clan;
-		_name = clanMember.getString("char_name");
-		_level = clanMember.getInt("level");
-		_classId = clanMember.getInt("classid");
-		_objectId = clanMember.getInt("charId");
-		_pledgeType = clanMember.getInt("subpledge");
-		_title = clanMember.getString("title");
-		_powerGrade = clanMember.getInt("power_grade");
-		_apprentice = clanMember.getInt("apprentice");
-		_sponsor = clanMember.getInt("sponsor");
-		_sex = clanMember.getInt("sex") != 0;
-		_race = clanMember.getInt("race");
+		_name = clanMember.Name;
+		_level = clanMember.Level;
+		_classId = clanMember.Class;
+		_objectId = clanMember.Id;
+		_pledgeType = clanMember.SubPledge;
+		_title = clanMember.Title;
+		_powerGrade = clanMember.PowerGrade;
+		_apprentice = clanMember.Apprentice;
+		_sponsor = clanMember.SponsorId;
+		_sex = clanMember.Sex;
+		_race = clanMember.Class.GetRace();
 	}
 	
 	/**
@@ -77,7 +78,7 @@ public class ClanMember
 		_title = player.getTitle();
 		_sponsor = 0;
 		_apprentice = 0;
-		_sex = player.getAppearance().isFemale();
+		_sex = player.getAppearance().getSex();
 		_race = player.getRace();
 	}
 	
@@ -99,7 +100,7 @@ public class ClanMember
 			_title = _player.getTitle();
 			_apprentice = _player.getApprentice();
 			_sponsor = _player.getSponsor();
-			_sex = _player.getAppearance().isFemale();
+			_sex = _player.getAppearance().getSex();
 			_race = _player.getRace();
 		}
 		
@@ -148,7 +149,7 @@ public class ClanMember
 	 * Gets the class id.
 	 * @return the classId
 	 */
-	public int getClassId()
+	public CharacterClass getClassId()
 	{
 		return _player != null ? _player.getClassId() : _classId;
 	}
@@ -166,7 +167,7 @@ public class ClanMember
 	 * Gets the name.
 	 * @return the name
 	 */
-	public String getName()
+	public string getName()
 	{
 		return _player != null ? _player.getName() : _name;
 	}
@@ -184,7 +185,7 @@ public class ClanMember
 	 * Gets the title.
 	 * @return the title
 	 */
-	public String getTitle()
+	public string getTitle()
 	{
 		return _player != null ? _player.getTitle() : _title;
 	}
@@ -224,14 +225,13 @@ public class ClanMember
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("UPDATE characters SET subpledge=? WHERE charId=?");
-			ps.setLong(1, _pledgeType);
-			ps.setInt(2, getObjectId());
-			ps.execute();
+			int characterId = getObjectId();
+			ctx.Characters.Where(c => c.Id == characterId)
+				.ExecuteUpdate(s => s.SetProperty(c => c.SubPledge, _pledgeType));
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Could not update pledge type: " + e);
+			LOGGER.Error("Could not update pledge type: " + e);
 		}
 	}
 	
@@ -270,10 +270,9 @@ public class ClanMember
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("UPDATE characters SET power_grade=? WHERE charId=?");
-			ps.setLong(1, _powerGrade);
-			ps.setInt(2, getObjectId());
-			ps.execute();
+			int characterId = getObjectId();
+			ctx.Characters.Where(c => c.Id == characterId)
+				.ExecuteUpdate(s => s.SetProperty(c => c.PowerGrade, _powerGrade));
 		}
 		catch (Exception e)
 		{
@@ -305,16 +304,16 @@ public class ClanMember
 	 * Gets the player's sex.
 	 * @return the sex
 	 */
-	public bool getSex()
+	public Sex getSex()
 	{
-		return _player != null ? _player.getAppearance().isFemale() : _sex;
+		return _player != null ? _player.getAppearance().getSex() : _sex;
 	}
 	
 	/**
 	 * Gets the sponsor.
 	 * @return the sponsor
 	 */
-	public int getSponsor()
+	public int? getSponsor()
 	{
 		return _player != null ? _player.getSponsor() : _sponsor;
 	}
@@ -332,7 +331,7 @@ public class ClanMember
 	 * Gets the apprentice or sponsor name.
 	 * @return the apprentice or sponsor name
 	 */
-	public String getApprenticeOrSponsorName()
+	public string getApprenticeOrSponsorName()
 	{
 		if (_player != null)
 		{
@@ -349,9 +348,10 @@ public class ClanMember
 			}
 			return "Error";
 		}
-		if (_sponsor != 0)
+		
+		if (_sponsor != null)
 		{
-			ClanMember sponsor = _clan.getClanMember(_sponsor);
+			ClanMember sponsor = _clan.getClanMember(_sponsor.Value);
 			if (sponsor != null)
 			{
 				return sponsor.getName();
@@ -777,16 +777,15 @@ public class ClanMember
 	 * @param apprentice the apprentice
 	 * @param sponsor the sponsor
 	 */
-	public void saveApprenticeAndSponsor(int apprentice, int sponsor)
+	public void saveApprenticeAndSponsor(int apprentice, int? sponsor)
 	{
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("UPDATE characters SET apprentice=?,sponsor=? WHERE charId=?");
-			ps.setInt(1, apprentice);
-			ps.setInt(2, sponsor);
-			ps.setInt(3, getObjectId());
-			ps.execute();
+			int characterId = getObjectId();
+			ctx.Characters.Where(c => c.Id == characterId)
+				.ExecuteUpdate(s =>
+					s.SetProperty(c => c.Apprentice, apprentice).SetProperty(c => c.SponsorId, sponsor));
 		}
 		catch (Exception e)
 		{
@@ -794,21 +793,21 @@ public class ClanMember
 		}
 	}
 	
-	public long getOnlineTime()
+	public TimeSpan getOnlineTime()
 	{
 		return _onlineTime;
 	}
 	
-	public void setOnlineTime(long onlineTime)
+	public void setOnlineTime(TimeSpan onlineTime)
 	{
 		_onlineTime = onlineTime;
 	}
 	
 	public void resetBonus()
 	{
-		_onlineTime = 0;
+		_onlineTime = TimeSpan.Zero;
 		PlayerVariables vars = getVariables();
-		vars.set("CLAIMED_CLAN_REWARDS", 0);
+		vars.set("CLAIMED_CLAN_REWARDS", (int)ClanRewardType.None);
 		vars.storeMe();
 	}
 	
@@ -820,16 +819,16 @@ public class ClanMember
 	public bool isRewardClaimed(ClanRewardType type)
 	{
 		PlayerVariables vars = getVariables();
-		int claimedRewards = vars.getInt("CLAIMED_CLAN_REWARDS", ClanRewardType.getDefaultMask());
-		return (claimedRewards & type.getMask()) == type.getMask();
+		ClanRewardType claimedRewards = (ClanRewardType)vars.getInt("CLAIMED_CLAN_REWARDS", (int)ClanRewardType.All);
+		return (claimedRewards & type) == type;
 	}
 	
 	public void setRewardClaimed(ClanRewardType type)
 	{
 		PlayerVariables vars = getVariables();
-		int claimedRewards = vars.getInt("CLAIMED_CLAN_REWARDS", ClanRewardType.getDefaultMask());
-		claimedRewards |= type.getMask();
-		vars.set("CLAIMED_CLAN_REWARDS", claimedRewards);
+		ClanRewardType claimedRewards = (ClanRewardType)vars.getInt("CLAIMED_CLAN_REWARDS", (int)ClanRewardType.All);
+		claimedRewards |= type;
+		vars.set("CLAIMED_CLAN_REWARDS", (int)claimedRewards);
 		vars.storeMe();
 	}
 	

@@ -1,4 +1,9 @@
+using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Olympiads;
@@ -30,7 +35,7 @@ public class OlympiadManager
 		return _classBasedRegisters;
 	}
 
-	protected List<Set<int>> hasEnoughRegisteredClassed()
+	public List<Set<int>> hasEnoughRegisteredClassed()
 	{
 		List<Set<int>> result = null;
 		foreach (var classList in _classBasedRegisters)
@@ -49,12 +54,12 @@ public class OlympiadManager
 		return result;
 	}
 
-	protected bool hasEnoughRegisteredNonClassed()
+	public bool hasEnoughRegisteredNonClassed()
 	{
 		return _nonClassBasedRegisters.size() >= Config.ALT_OLY_NONCLASSED;
 	}
 
-	protected void clearRegistered()
+	public void clearRegistered()
 	{
 		_nonClassBasedRegisters.clear();
 		_classBasedRegisters.clear();
@@ -69,12 +74,12 @@ public class OlympiadManager
 	private bool isRegistered(Player noble, Player player, bool showMessage)
 	{
 		int objId = noble.getObjectId();
-		if (_nonClassBasedRegisters.contains(objId))
+		if (_nonClassBasedRegisters.Contains(objId))
 		{
 			if (showMessage)
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.C1_IS_ALREADY_REGISTERED_FOR_ALL_CLASS_BATTLES);
-				sm.addPcName(noble);
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_IS_ALREADY_REGISTERED_FOR_ALL_CLASS_BATTLES);
+				sm.Params.addPcName(noble);
 				player.sendPacket(sm);
 			}
 
@@ -82,13 +87,13 @@ public class OlympiadManager
 		}
 
 		Set<int> classed = _classBasedRegisters.get(getClassGroup(noble));
-		if ((classed != null) && classed.contains(objId))
+		if ((classed != null) && classed.Contains(objId))
 		{
 			if (showMessage)
 			{
-				SystemMessage sm =
-					new SystemMessage(SystemMessageId.C1_IS_ALREADY_REGISTERED_ON_THE_CLASS_MATCH_WAITING_LIST);
-				sm.addPcName(noble);
+				SystemMessagePacket sm =
+					new SystemMessagePacket(SystemMessageId.C1_IS_ALREADY_REGISTERED_ON_THE_CLASS_MATCH_WAITING_LIST);
+				sm.Params.addPcName(noble);
 				player.sendPacket(sm);
 			}
 
@@ -130,17 +135,17 @@ public class OlympiadManager
 				{
 					case CompetitionType.CLASSED:
 					{
-						SystemMessage sm =
-							new SystemMessage(SystemMessageId.C1_IS_ALREADY_REGISTERED_ON_THE_CLASS_MATCH_WAITING_LIST);
-						sm.addPcName(noble);
+						SystemMessagePacket sm =
+							new SystemMessagePacket(SystemMessageId.C1_IS_ALREADY_REGISTERED_ON_THE_CLASS_MATCH_WAITING_LIST);
+						sm.Params.addPcName(noble);
 						player.sendPacket(sm);
 						break;
 					}
 					case CompetitionType.NON_CLASSED:
 					{
-						SystemMessage sm =
-							new SystemMessage(SystemMessageId.C1_IS_ALREADY_REGISTERED_FOR_ALL_CLASS_BATTLES);
-						sm.addPcName(noble);
+						SystemMessagePacket sm =
+							new SystemMessagePacket(SystemMessageId.C1_IS_ALREADY_REGISTERED_FOR_ALL_CLASS_BATTLES);
+						sm.Params.addPcName(noble);
 						player.sendPacket(sm);
 						break;
 					}
@@ -219,7 +224,7 @@ public class OlympiadManager
 					return false;
 				}
 
-				_classBasedRegisters.computeIfAbsent(getClassGroup(player), k->ConcurrentHashMap.newKeySet())
+				_classBasedRegisters.computeIfAbsent(getClassGroup(player), k=>new())
 					.add(charId);
 				player.sendPacket(SystemMessageId.YOU_VE_BEEN_REGISTERED_FOR_THE_OLYMPIAD_CLASS_MATCHES);
 				break;
@@ -266,9 +271,9 @@ public class OlympiadManager
 		     !noble.isInCategory(CategoryType.FOURTH_CLASS_GROUP)) ||
 		    (noble.getLevel() < 55)) // Classic noble equivalent check.
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId
 				.CHARACTER_C1_DOES_NOT_MEET_THE_CONDITIONS_ONLY_CHARACTERS_WHO_HAVE_CHANGED_TWO_OR_MORE_CLASSES_CAN_PARTICIPATE_IN_OLYMPIAD);
-			sm.addString(noble.getName());
+			sm.Params.addString(noble.getName());
 			noble.sendPacket(sm);
 			return false;
 		}
@@ -338,7 +343,7 @@ public class OlympiadManager
 		public static OlympiadManager INSTANCE = new OlympiadManager();
 	}
 
-	private int getClassGroup(Player player)
+	private CharacterClass getClassGroup(Player player)
 	{
 		return player.getBaseClass();
 	}

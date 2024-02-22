@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
@@ -123,7 +124,7 @@ public class TeleportHolder
 			String confirmDesc = loc.getName();
 			if (loc.getNpcStringId() != null)
 			{
-				int stringId = loc.getNpcStringId().getId();
+				NpcStringId stringId = loc.getNpcStringId();
 				finalName = "<fstring>" + stringId + "</fstring>";
 				confirmDesc = "F;" + stringId;
 			}

@@ -25,8 +25,12 @@ public class Clan
     
     public int? AllyId { get; set; }
     
-    [ForeignKey(nameof(AllyId))]
-    public Ally? Ally { get; set; }
+    [MaxLength(70)]
+    public string? AllyName { get; set; }
+    public int? AllyCrestId { get; set; }
+    
+    // [ForeignKey(nameof(AllyId))]
+    // public Ally? Ally { get; set; }
     
     public int LeaderId { get; set; }
 
@@ -51,5 +55,5 @@ public class Clan
     public DateTime? DissolvingExpireTime { get; set; }
     
     public int? NewLeaderId { get; set; }
-    public long Exp { get; set; }
+    public int Exp { get; set; }
 }

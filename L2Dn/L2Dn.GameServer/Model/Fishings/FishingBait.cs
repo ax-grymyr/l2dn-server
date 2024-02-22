@@ -9,15 +9,15 @@ public class FishingBait
     private readonly int _minPlayerLevel;
     private readonly int _maxPlayerLevel;
     private readonly double _chance;
-    private readonly int _timeMin;
-    private readonly int _timeMax;
-    private readonly int _waitMin;
-    private readonly int _waitMax;
+    private readonly TimeSpan _timeMin;
+    private readonly TimeSpan _timeMax;
+    private readonly TimeSpan _waitMin;
+    private readonly TimeSpan _waitMax;
     private readonly bool _isPremiumOnly;
     private readonly List<FishingCatch> _rewards = new();
 
-    public FishingBait(int itemId, int level, int minPlayerLevel, int maxPlayerLevel, double chance, int timeMin,
-        int timeMax, int waitMin, int waitMax, bool isPremiumOnly)
+    public FishingBait(int itemId, int level, int minPlayerLevel, int maxPlayerLevel, double chance, TimeSpan timeMin,
+        TimeSpan timeMax, TimeSpan waitMin, TimeSpan waitMax, bool isPremiumOnly)
     {
         _itemId = itemId;
         _level = level;
@@ -56,22 +56,22 @@ public class FishingBait
         return _chance;
     }
 
-    public int getTimeMin()
+    public TimeSpan getTimeMin()
     {
         return _timeMin;
     }
 
-    public int getTimeMax()
+    public TimeSpan getTimeMax()
     {
         return _timeMax;
     }
 
-    public int getWaitMin()
+    public TimeSpan getWaitMin()
     {
         return _waitMin;
     }
 
-    public int getWaitMax()
+    public TimeSpan getWaitMax()
     {
         return _waitMax;
     }

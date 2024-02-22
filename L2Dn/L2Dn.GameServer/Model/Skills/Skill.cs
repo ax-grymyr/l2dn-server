@@ -75,11 +75,11 @@ public class Skill: IIdentifiable
 	
 	private readonly int _refId;
 	// all times in milliseconds
-	private readonly int _hitTime;
+	private readonly TimeSpan _hitTime;
 	private readonly double _hitCancelTime;
 	private readonly int _coolTime;
 	private readonly long _reuseHashCode;
-	private readonly int _reuseDelay;
+	private readonly TimeSpan _reuseDelay;
 	private readonly int _reuseDelayGroup;
 	
 	private readonly int _magicLevel;
@@ -755,7 +755,7 @@ public class Skill: IIdentifiable
 	/**
 	 * @return the reuse delay
 	 */
-	public int getReuseDelay()
+	public TimeSpan getReuseDelay()
 	{
 		return _reuseDelay;
 	}
@@ -773,7 +773,7 @@ public class Skill: IIdentifiable
 		return _reuseHashCode;
 	}
 	
-	public int getHitTime()
+	public TimeSpan getHitTime()
 	{
 		return _hitTime;
 	}

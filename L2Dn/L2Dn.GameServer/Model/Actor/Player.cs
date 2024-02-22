@@ -6253,7 +6253,8 @@ public class Player: Playable
 	
 	public void setAccountAccesslevel(int level)
 	{
-		LoginServerThread.getInstance().sendAccessLevel(getAccountName(), level);
+        // TODO do we need access level in the login server?
+		//LoginServerThread.getInstance().sendAccessLevel(getAccountName(), level);
 	}
 	
 	/**
@@ -6382,7 +6383,7 @@ public class Player: Playable
                 Face = _appearance.getFace(),
                 HairStyle = _appearance.getHairStyle(),
                 HairColor = _appearance.getHairColor(),
-                Sex = _appearance.isFemale() ? Sex.Female : Sex.Male,
+                Sex = _appearance.getSex(),
                 Exp = getExp(),
                 Sp = getSp(),
                 Reputation = getReputation(),
@@ -6447,10 +6448,8 @@ public class Player: Playable
 				string accountName = ctx.AccountRefs.Where(a => a.Id == accountId).Select(a => a.Login).Single();
 
 				CharacterClass activeClassId = character.Class;
-				bool female = character.Sex != Sex.Male;
 				PlayerTemplate template = PlayerTemplateData.getInstance().getTemplate(activeClassId);
-				PlayerAppearance app =
-					new PlayerAppearance(character.Face, character.HairColor, character.HairStyle, female);
+				PlayerAppearance app = new PlayerAppearance(character.Face, character.HairColor, character.HairStyle, character.Sex);
 				player = new Player(objectId, template, accountId, accountName, app);
 				player.setName(character.Name);
 				player.setLastAccess(character.LastAccess);
@@ -7095,7 +7094,7 @@ public class Player: Playable
 			character.Face = _appearance.getFace();
 			character.HairStyle = _appearance.getHairStyle();
             character.HairColor = _appearance.getHairColor();
-			character.Sex = _appearance.isFemale() ? Sex.Female : Sex.Male;
+			character.Sex = _appearance.getSex();
             character.Heading = getHeading();
             character.X = _lastLoc != null ? _lastLoc.getX() : getX();
             character.Y = _lastLoc != null ? _lastLoc.getY() : getY();
@@ -8727,7 +8726,7 @@ public class Player: Playable
 	 */
 	public bool isMageClass()
 	{
-		return getClassId().isMage();
+		return getClassId().GetClassInfo().isMage();
 	}
 	
 	/**
@@ -9129,7 +9128,7 @@ public class Player: Playable
 		checkItemRestriction();
 	}
 	
-	public int getPledgeClass()
+	public SocialClass getPledgeClass()
 	{
 		return _pledgeClass;
 	}
@@ -11636,7 +11635,7 @@ public class Player: Playable
 		return PunishmentManager.getInstance().hasPunishment(getObjectId().ToString(), PunishmentAffect.CHARACTER, PunishmentType.JAIL) //
 			|| PunishmentManager.getInstance().hasPunishment(getAccountName(), PunishmentAffect.ACCOUNT, PunishmentType.JAIL) //
 			|| PunishmentManager.getInstance().hasPunishment(getIPAddress(), PunishmentAffect.IP, PunishmentType.JAIL) //
-			|| ((_client != null) && (_client.getHardwareInfo() != null) && PunishmentManager.getInstance().hasPunishment(_client.getHardwareInfo().getMacAddress(), PunishmentAffect.HWID, PunishmentType.JAIL));
+			|| ((_client != null) && (_client.MacAddress != null) && PunishmentManager.getInstance().hasPunishment(_client.MacAddress, PunishmentAffect.HWID, PunishmentType.JAIL));
 	}
 	
 	/**
@@ -11647,7 +11646,7 @@ public class Player: Playable
 		return PunishmentManager.getInstance().hasPunishment(getObjectId().ToString(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN) //
 			|| PunishmentManager.getInstance().hasPunishment(getAccountName(), PunishmentAffect.ACCOUNT, PunishmentType.CHAT_BAN) //
 			|| PunishmentManager.getInstance().hasPunishment(getIPAddress(), PunishmentAffect.IP, PunishmentType.CHAT_BAN) //
-			|| ((_client != null) && (_client.getHardwareInfo() != null) && PunishmentManager.getInstance().hasPunishment(_client.getHardwareInfo().getMacAddress(), PunishmentAffect.HWID, PunishmentType.CHAT_BAN));
+			|| ((_client != null) && (_client.MacAddress != null) && PunishmentManager.getInstance().hasPunishment(_client.MacAddress, PunishmentAffect.HWID, PunishmentType.CHAT_BAN));
 	}
 	
 	public void startFameTask(TimeSpan delay, int fameFixRate)
@@ -13133,7 +13132,7 @@ public class Player: Playable
 			return NpcData.getInstance().getTemplate(getMountNpcId()).getFCollisionRadius();
 		}
 		
-		float defaultCollisionRadius = _appearance.isFemale() ? getBaseTemplate().getFCollisionRadiusFemale() : getBaseTemplate().getFCollisionRadius();
+		float defaultCollisionRadius = _appearance.getSex() == Sex.Female ? getBaseTemplate().getFCollisionRadiusFemale() : getBaseTemplate().getFCollisionRadius();
 		Transform? transform = getTransformation();
 		if (transform != null)
 			return transform.getCollisionRadius(this, defaultCollisionRadius);
@@ -13148,7 +13147,7 @@ public class Player: Playable
 			return NpcData.getInstance().getTemplate(getMountNpcId()).getFCollisionHeight();
 		}
 		
-		float defaultCollisionHeight = _appearance.isFemale() ? getBaseTemplate().getFCollisionHeightFemale() : getBaseTemplate().getFCollisionHeight();
+		float defaultCollisionHeight = _appearance.getSex() == Sex.Female ? getBaseTemplate().getFCollisionHeightFemale() : getBaseTemplate().getFCollisionHeight();
 		Transform? transform = getTransformation();
 		if (transform != null)
 			return transform.getCollisionHeight(this, defaultCollisionHeight);
@@ -13661,7 +13660,7 @@ public class Player: Playable
 		return _contactList;
 	}
 	
-	public long getNotMoveUntil()
+	public DateTime? getNotMoveUntil()
 	{
 		return _notMoveUntil;
 	}
@@ -14216,7 +14215,7 @@ public class Player: Playable
         foreach (var kvp in requests)
         {
             if (kvp.Value.isUsing(objectId))
-				_requests.Remove(kvp.Key);
+				_requests.remove(kvp.Key);
         }    
 	}
 	

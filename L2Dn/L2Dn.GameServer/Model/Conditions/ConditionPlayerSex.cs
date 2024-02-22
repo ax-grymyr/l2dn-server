@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Skills;
@@ -9,14 +10,13 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public class ConditionPlayerSex : Condition
 {
-	// male 0 female 1
-	private readonly int _sex;
+	private readonly Sex _sex;
 	
 	/**
 	 * Instantiates a new condition player sex.
 	 * @param sex the sex
 	 */
-	public ConditionPlayerSex(int sex)
+	public ConditionPlayerSex(Sex sex)
 	{
 		_sex = sex;
 	}
@@ -27,6 +27,6 @@ public class ConditionPlayerSex : Condition
 		{
 			return false;
 		}
-		return (effector.getActingPlayer().getAppearance().isFemale() ? 1 : 0) == _sex;
+		return effector.getActingPlayer().getAppearance().getSex() == _sex;
 	}
 }

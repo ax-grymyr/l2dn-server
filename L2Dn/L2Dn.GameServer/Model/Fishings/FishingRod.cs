@@ -3,11 +3,11 @@
 public class FishingRod
 {
     private readonly int _itemId;
-    private readonly int _reduceFishingTime;
+    private readonly TimeSpan _reduceFishingTime;
     private readonly float _xpMultiplier;
     private readonly float _spMultiplier;
 	
-    public FishingRod(int itemId, int reduceFishingTime, float xpMultiplier, float spMultiplier)
+    public FishingRod(int itemId, TimeSpan reduceFishingTime, float xpMultiplier, float spMultiplier)
     {
         _itemId = itemId;
         _reduceFishingTime = reduceFishingTime;
@@ -20,7 +20,7 @@ public class FishingRod
         return _itemId;
     }
 	
-    public int getReduceFishingTime()
+    public TimeSpan getReduceFishingTime()
     {
         return _reduceFishingTime;
     }

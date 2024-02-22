@@ -8,7 +8,7 @@ namespace L2Dn.GameServer.Model.Holders;
  */
 public class PunishmentHolder
 {
-	private readonly Map<String, Map<PunishmentType, PunishmentTask>> _holder = new();
+	private readonly Map<string, Map<PunishmentType, PunishmentTask>> _holder = new();
 	
 	/**
 	 * Stores the punishment task in the Map.
@@ -18,7 +18,7 @@ public class PunishmentHolder
 	{
 		if (!task.isExpired())
 		{
-			_holder.computeIfAbsent(task.getKey(), k => new()).put(task.getType(), task);
+			_holder.computeIfAbsent(task.getKey().ToString(), k => new()).put(task.getType(), task);
 		}
 	}
 	
@@ -28,7 +28,7 @@ public class PunishmentHolder
 	 */
 	public void stopPunishment(PunishmentTask task)
 	{
-		String key = task.getKey();
+		string key = task.getKey().ToString();
 		if (_holder.containsKey(key))
 		{
 			task.stopPunishment();
@@ -50,7 +50,7 @@ public class PunishmentHolder
 				if (task.getType() == type)
 				{
 					task.stopPunishment();
-					String key = task.getKey();
+					string key = task.getKey().ToString();
 					punishments.remove(task.getType());
 					if (punishments.isEmpty())
 					{
@@ -66,7 +66,7 @@ public class PunishmentHolder
 	 * @param type
 	 * @return {@code true} if Map contains the current key and type, {@code false} otherwise.
 	 */
-	public bool hasPunishment(String key, PunishmentType type)
+	public bool hasPunishment(string key, PunishmentType type)
 	{
 		return getPunishment(key, type) != null;
 	}
@@ -76,7 +76,7 @@ public class PunishmentHolder
 	 * @param type
 	 * @return {@link PunishmentTask} by specified key and type if exists, null otherwise.
 	 */
-	public PunishmentTask getPunishment(String key, PunishmentType type)
+	public PunishmentTask getPunishment(string key, PunishmentType type)
 	{
 		if (_holder.containsKey(key))
 		{

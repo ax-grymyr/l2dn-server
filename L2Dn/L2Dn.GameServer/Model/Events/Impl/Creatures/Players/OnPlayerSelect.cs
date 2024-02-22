@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network;
 
 namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
 
@@ -10,9 +11,9 @@ public class OnPlayerSelect: IBaseEvent
 	private readonly Player _player;
 	private readonly int _objectId;
 	private readonly String _name;
-	private readonly GameClient _client;
+	private readonly GameSession _client;
 	
-	public OnPlayerSelect(Player player, int objectId, String name, GameClient client)
+	public OnPlayerSelect(Player player, int objectId, String name, GameSession client)
 	{
 		_player = player;
 		_objectId = objectId;
@@ -35,7 +36,7 @@ public class OnPlayerSelect: IBaseEvent
 		return _name;
 	}
 	
-	public GameClient getClient()
+	public GameSession getClient()
 	{
 		return _client;
 	}

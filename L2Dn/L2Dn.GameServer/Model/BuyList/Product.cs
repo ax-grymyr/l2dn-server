@@ -105,7 +105,7 @@ public class Product
 		TimeSpan remainTime = nextRestockTime - DateTime.UtcNow;
 		if (remainTime > TimeSpan.Zero)
 		{
-			BuyListTaskManager.getInstance().update(this, remainTime);
+			BuyListTaskManager.getInstance().update(this, nextRestockTime);
 		}
 		else
 		{
@@ -124,30 +124,26 @@ public class Product
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(
-				"INSERT INTO `buylists`(`buylist_id`, `item_id`, `count`, `next_restock_time`) VALUES(?, ?, ?, ?) ON DUPLICATE KEY UPDATE `count` = ?, `next_restock_time` = ?");
-			statement.setInt(1, _buyListId);
-			statement.setInt(2, _item.getId());
-			statement.setLong(3, getCount());
-			statement.setLong(5, getCount());
-			
-			long nextRestockTime = BuyListTaskManager.getInstance().getRestockDelay(this);
-			if (nextRestockTime > 0)
+			int itemId = _item.getId();
+			DbBuyList? record = ctx.BuyLists.SingleOrDefault(r => r.BuyListId == _buyListId && r.ItemId == itemId);
+			if (record is null)
 			{
-				statement.setLong(4, nextRestockTime);
-				statement.setLong(6, nextRestockTime);
-			}
-			else
-			{
-				statement.setLong(4, 0);
-				statement.setLong(6, 0);
+				record = new DbBuyList()
+				{
+					BuyListId = _buyListId,
+					ItemId = itemId
+				};
+				ctx.BuyLists.Add(record);
 			}
 			
-			statement.executeUpdate();
+			record.Count = getCount();
+			record.NextRestockTime = BuyListTaskManager.getInstance().getRestockDelay(this) ?? DateTime.UtcNow;
+			
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Failed to save Product buylist_id:" + _buyListId + " item_id=" + _item.getId() + ": " + e);
+			LOGGER.Error("Failed to save Product buylist_id:" + _buyListId + " item_id=" + _item.getId() + ": " + e);
 		}
 	}
 }

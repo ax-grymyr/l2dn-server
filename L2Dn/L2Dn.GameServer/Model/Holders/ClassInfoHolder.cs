@@ -90,13 +90,13 @@ public class ClassInfoHolder
 		return _className;
 	}
 
-	/**
-	 * @return the escaped class client Id formatted to be displayed on a HTML.
-	 */
-	public String getEscapedClientCode()
-	{
-		return Matcher.quoteReplacement(getClientCode());
-	}
+	// /**
+	//  * @return the escaped class client Id formatted to be displayed on a HTML.
+	//  */
+	// public String getEscapedClientCode()
+	// {
+	// 	return Matcher.quoteReplacement(getClientCode());
+	// }
 
 	/**
 	 * @return the parent class Id.

@@ -27,7 +27,7 @@ public class CommandChannel : AbstractPlayerGroup
 		_channelLvl = party.getLevel();
 		party.setCommandChannel(this);
 		party.broadcastMessage(SystemMessageId.THE_COMMAND_CHANNEL_HAS_BEEN_FORMED);
-		party.broadcastPacket(ExOpenMPCC.STATIC_PACKET);
+		party.broadcastPacket(ExOpenMPCCPacket.STATIC_PACKET);
 	}
 	
 	/**
@@ -41,15 +41,15 @@ public class CommandChannel : AbstractPlayerGroup
 			return;
 		}
 		// Update the CCinfo for existing players
-		broadcastPacket(new ExMPCCPartyInfoUpdate(party, 1));
+		broadcastPacket(new ExMPCCPartyInfoUpdatePacket(party, 1));
 		_parties.add(party);
 		if (party.getLevel() > _channelLvl)
 		{
 			_channelLvl = party.getLevel();
 		}
 		party.setCommandChannel(this);
-		party.broadcastPacket(new SystemMessage(SystemMessageId.YOU_HAVE_JOINED_THE_COMMAND_CHANNEL));
-		party.broadcastPacket(ExOpenMPCC.STATIC_PACKET);
+		party.broadcastPacket(new SystemMessagePacket(SystemMessageId.YOU_HAVE_JOINED_THE_COMMAND_CHANNEL));
+		party.broadcastPacket(ExOpenMPCCPacket.STATIC_PACKET);
 	}
 	
 	/**
@@ -73,7 +73,7 @@ public class CommandChannel : AbstractPlayerGroup
 			}
 		}
 		party.setCommandChannel(null);
-		party.broadcastPacket(ExCloseMPCC.STATIC_PACKET);
+		party.broadcastPacket(ExCloseMPCCPacket.STATIC_PACKET);
 		if (_parties.size() < 2)
 		{
 			broadcastPacket(new SystemMessagePacket(SystemMessageId.THE_COMMAND_CHANNEL_IS_DISBANDED));
@@ -82,7 +82,7 @@ public class CommandChannel : AbstractPlayerGroup
 		else
 		{
 			// Update the CCinfo for existing players
-			broadcastPacket(new ExMPCCPartyInfoUpdate(party, 0));
+			broadcastPacket(new ExMPCCPartyInfoUpdatePacket(party, 0));
 		}
 	}
 	

@@ -138,9 +138,9 @@ public class DailyTaskManager
 	{
 		foreach (Clan clan in ClanTable.getInstance().getClans())
 		{
-			if (clan.getNewLeaderId() != 0)
+			if (clan.getNewLeaderId() != null)
 			{
-				ClanMember member = clan.getClanMember(clan.getNewLeaderId());
+				ClanMember member = clan.getClanMember(clan.getNewLeaderId().Value);
 				if (member == null)
 				{
 					continue;

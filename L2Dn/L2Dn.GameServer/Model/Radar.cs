@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model;
@@ -18,8 +19,8 @@ public class Radar
 	{
 		RadarMarker newMarker = new RadarMarker(x, y, z);
 		_markers.add(newMarker);
-		_player.sendPacket(new RadarControl(2, 2, x, y, z));
-		_player.sendPacket(new RadarControl(0, 1, x, y, z));
+		_player.sendPacket(new RadarControlPacket(2, 2, x, y, z));
+		_player.sendPacket(new RadarControlPacket(0, 1, x, y, z));
 	}
 	
 	// Remove a marker from player's radar
@@ -32,14 +33,14 @@ public class Radar
 				_markers.remove(rm);
 			}
 		}
-		_player.sendPacket(new RadarControl(1, 1, x, y, z));
+		_player.sendPacket(new RadarControlPacket(1, 1, x, y, z));
 	}
 	
 	public void removeAllMarkers()
 	{
 		foreach (RadarMarker tempMarker in _markers)
 		{
-			_player.sendPacket(new RadarControl(2, 2, tempMarker._x, tempMarker._y, tempMarker._z));
+			_player.sendPacket(new RadarControlPacket(2, 2, tempMarker._x, tempMarker._y, tempMarker._z));
 		}
 		
 		_markers.clear();
@@ -47,10 +48,10 @@ public class Radar
 	
 	public void loadMarkers()
 	{
-		_player.sendPacket(new RadarControl(2, 2, _player.getX(), _player.getY(), _player.getZ()));
+		_player.sendPacket(new RadarControlPacket(2, 2, _player.getX(), _player.getY(), _player.getZ()));
 		foreach (RadarMarker tempMarker in _markers)
 		{
-			_player.sendPacket(new RadarControl(0, 1, tempMarker._x, tempMarker._y, tempMarker._z));
+			_player.sendPacket(new RadarControlPacket(0, 1, tempMarker._x, tempMarker._y, tempMarker._z));
 		}
 	}
 	

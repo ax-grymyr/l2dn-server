@@ -48,7 +48,7 @@ public class CubicSkill: SkillHolder, ICubicConditionHolder
         return _targetDebuff;
     }
 
-    public override bool validateConditions(Cubic cubic, Creature owner, WorldObject target)
+    public bool validateConditions(Cubic cubic, Creature owner, WorldObject target)
     {
         if (_targetDebuff && target.isCreature() && (((Creature)target).getEffectList().getDebuffCount() == 0))
         {
@@ -71,7 +71,7 @@ public class CubicSkill: SkillHolder, ICubicConditionHolder
         return true;
     }
 
-    public override void addCondition(ICubicCondition condition)
+    public void addCondition(ICubicCondition condition)
     {
         _conditions.Add(condition);
     }

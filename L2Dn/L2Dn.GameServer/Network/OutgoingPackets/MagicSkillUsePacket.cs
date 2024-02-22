@@ -13,9 +13,9 @@ internal readonly struct MagicSkillUsePacket: IOutgoingPacket
 {
 	private readonly int _skillId;
 	private readonly int _skillLevel;
-	private readonly int _hitTime;
+	private readonly TimeSpan _hitTime;
 	private readonly int _reuseGroup;
-	private readonly int _reuseDelay;
+	private readonly TimeSpan _reuseDelay;
 	private readonly int _actionId; // If skill is called from RequestActionUse, use that ID.
 	private readonly SkillCastingType _castingType; // Defines which client bar is going to use.
 	private readonly Creature _creature;
@@ -23,8 +23,8 @@ internal readonly struct MagicSkillUsePacket: IOutgoingPacket
 	private readonly bool _isGroundTargetSkill;
 	private readonly Location _groundLocation;
 
-	public MagicSkillUsePacket(Creature creature, WorldObject target, int skillId, int skillLevel, int hitTime,
-		int reuseDelay, int reuseGroup, int actionId, SkillCastingType castingType, bool isGroundTargetSkill)
+	public MagicSkillUsePacket(Creature creature, WorldObject target, int skillId, int skillLevel, TimeSpan hitTime,
+		TimeSpan reuseDelay, int reuseGroup, int actionId, SkillCastingType castingType, bool isGroundTargetSkill)
 	{
 		_creature = creature;
 		_target = target;
@@ -39,19 +39,19 @@ internal readonly struct MagicSkillUsePacket: IOutgoingPacket
 		_groundLocation = creature.isPlayer() ? creature.getActingPlayer().getCurrentSkillWorldPosition() : null;
 	}
 
-	public MagicSkillUsePacket(Creature creature, WorldObject target, int skillId, int skillLevel, int hitTime,
-		int reuseDelay, int reuseGroup, int actionId, SkillCastingType castingType)
+	public MagicSkillUsePacket(Creature creature, WorldObject target, int skillId, int skillLevel, TimeSpan hitTime,
+		TimeSpan reuseDelay, int reuseGroup, int actionId, SkillCastingType castingType)
 		: this(creature, target, skillId, skillLevel, hitTime, reuseDelay, reuseGroup, actionId, castingType, false)
 	{
 	}
 
-	public MagicSkillUsePacket(Creature creature, WorldObject target, int skillId, int skillLevel, int hitTime,
-		int reuseDelay)
+	public MagicSkillUsePacket(Creature creature, WorldObject target, int skillId, int skillLevel, TimeSpan hitTime,
+		TimeSpan reuseDelay)
 		: this(creature, target, skillId, skillLevel, hitTime, reuseDelay, -1, -1, SkillCastingType.NORMAL)
 	{
 	}
 
-	public MagicSkillUsePacket(Creature creature, int skillId, int skillLevel, int hitTime, int reuseDelay)
+	public MagicSkillUsePacket(Creature creature, int skillId, int skillLevel, TimeSpan hitTime, TimeSpan reuseDelay)
 		: this(creature, creature, skillId, skillLevel, hitTime, reuseDelay, -1, -1, SkillCastingType.NORMAL)
 	{
 	}
@@ -66,9 +66,9 @@ internal readonly struct MagicSkillUsePacket: IOutgoingPacket
 		writer.WriteInt32(_target.getObjectId());
 		writer.WriteInt32(_skillId);
 		writer.WriteInt32(_skillLevel);
-		writer.WriteInt32(_hitTime);
+		writer.WriteInt32((int)_hitTime.TotalMilliseconds);
 		writer.WriteInt32(_reuseGroup);
-		writer.WriteInt32(_reuseDelay);
+		writer.WriteInt32((int)_reuseDelay.TotalMilliseconds);
 		writer.WriteInt32(_creature.getX());
 		writer.WriteInt32(_creature.getY());
 		writer.WriteInt32(_creature.getZ());
@@ -92,6 +92,7 @@ internal readonly struct MagicSkillUsePacket: IOutgoingPacket
 		writer.WriteInt32(_actionId >= 0
 			? _actionId
 			: 0); // ID from RequestActionUse. Used to set cooldown on summon skills.
+		
 		if (_groundLocation == null)
 		{
 			writer.WriteInt32(-1); // 306

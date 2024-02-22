@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Holders;
@@ -12,7 +13,7 @@ public class EventDropHolder: DropHolder
 	private readonly Set<int> _monsterIds;
 
 	public EventDropHolder(int itemId, long min, long max, double chance, int minLevel, int maxLevel,
-		Set<int> monsterIds): base(null, itemId, min, max, chance)
+		Set<int> monsterIds): base(DropType.DROP, itemId, min, max, chance)
 	{
 		_minLevel = minLevel;
 		_maxLevel = maxLevel;

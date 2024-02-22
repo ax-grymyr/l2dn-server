@@ -43,7 +43,7 @@ public class SkillCaster: Runnable
 	private int _cancelTime;
 	private int _coolTime;
 	private ICollection<WorldObject> _targets;
-	private ScheduledFuture<?> _task;
+	private ScheduledFuture _task;
 	private int _phase;
 	
 	private SkillCaster(Creature caster, WorldObject target, Skill skill, Item item, SkillCastingType castingType, bool ctrlPressed, bool shiftPressed, int castTime)

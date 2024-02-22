@@ -1,10 +1,16 @@
 ﻿namespace L2Dn.GameServer.Enums;
 
+[Flags]
 public enum ClanRewardType
 {
-    MEMBERS_ONLINE,
-    HUNTING_MONSTERS
+    None = 0,
+    
+    MEMBERS_ONLINE = 1,
+    HUNTING_MONSTERS = 2,
+    
+    All = 3
 }
+
 //
 // public enum ClanRewardType
 // {

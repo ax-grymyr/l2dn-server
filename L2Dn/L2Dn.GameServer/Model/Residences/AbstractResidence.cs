@@ -80,7 +80,7 @@ public abstract class AbstractResidence: ListenersContainer, INamable
 	{
 		if ((_residentialSkills != null) && !_residentialSkills.isEmpty())
 		{
-			int playerSocialClass = player.getPledgeClass() + 1;
+			SocialClass playerSocialClass = player.getPledgeClass() + 1;
 			foreach (SkillLearn skill  in  _residentialSkills)
 			{
 				SocialClass skillSocialClass = skill.getSocialClass();

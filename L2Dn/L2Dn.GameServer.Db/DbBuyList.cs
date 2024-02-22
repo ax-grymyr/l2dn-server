@@ -3,7 +3,7 @@
 namespace L2Dn.GameServer.Db;
 
 [PrimaryKey(nameof(BuyListId), nameof(ItemId))]
-public class BuyList
+public class DbBuyList
 {
     public int BuyListId { get; set; }
     public int ItemId { get; set; }

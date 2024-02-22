@@ -1,5 +1,7 @@
+using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Olympiads;
@@ -30,12 +32,12 @@ public class OlympiadAnnouncer: Runnable
 				String arenaId = String.valueOf(task.getGame().getStadiumId() + 1);
 				switch (task.getGame().getType())
 				{
-					case NON_CLASSED:
+					case CompetitionType.NON_CLASSED:
 					{
 						npcString = NpcStringId.THE_DUELS_BETWEEN_PLAYERS_OF_ANY_CLASS_WILL_START_SHORTLY_IN_ARENA_S1;
 						break;
 					}
-					case CLASSED:
+					case CompetitionType.CLASSED:
 					{
 						npcString = NpcStringId.THE_CLASS_DUELS_WILL_START_SHORTLY_IN_ARENA_S1;
 						break;

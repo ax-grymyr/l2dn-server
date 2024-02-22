@@ -303,7 +303,7 @@ public class VillageMaster: Folk
 		{
 			if (player.getClan().levelUpClan(player))
 			{
-				player.broadcastPacket(new MagicSkillUsePacket(player, 5103, 1, 0, 0));
+				player.broadcastPacket(new MagicSkillUsePacket(player, 5103, 1, TimeSpan.Zero, TimeSpan.Zero));
 				player.broadcastPacket(new MagicSkillLaunchedPacket(player, 5103, 1));
 			}
 		}

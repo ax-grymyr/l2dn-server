@@ -181,11 +181,12 @@ public class TamedBeast: FeedableBeast
 		{
 			return;
 		}
-		int delay = 100;
+		
+		TimeSpan delay = TimeSpan.FromMilliseconds(100);
 		foreach (Skill skill in _beastSkills)
 		{
 			ThreadPool.schedule(new buffCast(this, skill), delay);
-			delay += (100 + skill.getHitTime());
+			delay += (TimeSpan.FromMilliseconds(100) + skill.getHitTime());
 		}
 		ThreadPool.schedule(new buffCast(this, null), delay);
 	}

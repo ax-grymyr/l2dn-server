@@ -107,7 +107,7 @@ public abstract class AbstractPlayerGroup
 	 * @param packet the packet to broadcast
 	 */
 	public void broadcastPacket<TPacket>(TPacket packet)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		forEachMember(m =>
 		{

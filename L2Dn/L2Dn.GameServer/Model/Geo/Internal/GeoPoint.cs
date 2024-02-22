@@ -17,6 +17,6 @@ public readonly struct GeoPoint(int x, int y): IEquatable<GeoPoint>
     public static bool operator ==(GeoPoint left, GeoPoint right) => left.X == right.X && left.Y == right.Y;
     public static bool operator !=(GeoPoint left, GeoPoint right) => left.X != right.X || left.Y != right.Y;
 
-    public static implicit operator GeoPoint(in Location location) => new((location.X - Location.WorldXMin) / 16,
-        (location.Y - Location.WorldYMin) / 16);
+    public static implicit operator GeoPoint(in Location location) => new((location.X - World.WORLD_X_MIN) / 16,
+        (location.Y - World.WORLD_Y_MIN) / 16);
 }

@@ -27,6 +27,7 @@ public class ConditionTargetNpcType: Condition
 		{
 			return false;
 		}
-		return effected.getInstanceType().isTypes(_npcType);
+
+		return Array.IndexOf(_npcType, effected.getInstanceType()) >= 0;
 	}
 }

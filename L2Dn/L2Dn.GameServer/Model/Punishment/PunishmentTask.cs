@@ -2,7 +2,7 @@
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Punishment;
 
@@ -121,7 +121,7 @@ public class PunishmentTask: Runnable
 		onStart();
 		if (_expirationTime > 0) // Has expiration?
 		{
-			_task = ThreadPool.schedule(this, (_expirationTime - System.currentTimeMillis()));
+			_task = ThreadPool.schedule(this, (_expirationTime - DateTime.UtcNow));
 		}
 	}
 

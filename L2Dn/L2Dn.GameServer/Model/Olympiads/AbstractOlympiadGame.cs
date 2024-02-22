@@ -9,9 +9,10 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Packets;
 using NLog;
-using FortManager = L2Dn.GameServer.Model.Actor.Instances.FortManager;
 
 namespace L2Dn.GameServer.Model.Olympiads;
 
@@ -33,7 +34,7 @@ public abstract class AbstractOlympiadGame
 	protected const String COMP_DONE_WEEK_NON_CLASSED = "competitions_done_week_non_classed";
 	protected const String COMP_DONE_WEEK_TEAM = "competitions_done_week_team";
 	
-	protected long _startTime = 0;
+	protected DateTime? _startTime;
 	protected bool _aborted = false;
 	protected readonly int _stadiumId;
 	
@@ -54,25 +55,25 @@ public abstract class AbstractOlympiadGame
 	
 	protected virtual bool makeCompetitionStart()
 	{
-		_startTime = System.currentTimeMillis();
+		_startTime = DateTime.UtcNow;
 		return !_aborted;
 	}
 	
 	protected void addPointsToParticipant(Participant par, int points)
 	{
 		par.updateStat(POINTS, points);
-		SystemMessage sm = new SystemMessage(SystemMessageId.C1_HAS_EARNED_OLYMPIAD_POINTS_X_S2);
-		sm.addString(par.getName());
-		sm.addInt(points);
+		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_EARNED_OLYMPIAD_POINTS_X_S2);
+		sm.Params.addString(par.getName());
+		sm.Params.addInt(points);
 		broadcastPacket(sm);
 	}
 	
 	protected void removePointsFromParticipant(Participant par, int points)
 	{
 		par.updateStat(POINTS, -points);
-		SystemMessage sm = new SystemMessage(SystemMessageId.C1_HAS_LOST_OLYMPIAD_POINTS_X_S2);
-		sm.addString(par.getName());
-		sm.addInt(points);
+		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_LOST_OLYMPIAD_POINTS_X_S2);
+		sm.Params.addString(par.getName());
+		sm.Params.addInt(points);
 		broadcastPacket(sm);
 	}
 	
@@ -81,53 +82,53 @@ public abstract class AbstractOlympiadGame
 	 * @param player
 	 * @return
 	 */
-	protected static SystemMessage checkDefaulted(Player player)
+	protected static SystemMessagePacket? checkDefaulted(Player player)
 	{
 		if ((player == null) || !player.isOnline())
 		{
-			return new SystemMessage(SystemMessageId.YOUR_OPPONENT_MADE_HASTE_WITH_THEIR_TAIL_BETWEEN_THEIR_LEGS_THE_MATCH_HAS_BEEN_CANCELLED);
+			return new SystemMessagePacket(SystemMessageId.YOUR_OPPONENT_MADE_HASTE_WITH_THEIR_TAIL_BETWEEN_THEIR_LEGS_THE_MATCH_HAS_BEEN_CANCELLED);
 		}
 		
-		if ((player.getClient() == null) || player.getClient().isDetached())
+		if ((player.getClient() == null) || player.getClient().IsDetached)
 		{
-			return new SystemMessage(SystemMessageId.YOUR_OPPONENT_MADE_HASTE_WITH_THEIR_TAIL_BETWEEN_THEIR_LEGS_THE_MATCH_HAS_BEEN_CANCELLED);
+			return new SystemMessagePacket(SystemMessageId.YOUR_OPPONENT_MADE_HASTE_WITH_THEIR_TAIL_BETWEEN_THEIR_LEGS_THE_MATCH_HAS_BEEN_CANCELLED);
 		}
 		
 		// safety precautions
 		if (player.inObserverMode())
 		{
-			return new SystemMessage(SystemMessageId.YOUR_OPPONENT_DOES_NOT_MEET_THE_REQUIREMENTS_TO_DO_BATTLE_THE_MATCH_HAS_BEEN_CANCELLED);
+			return new SystemMessagePacket(SystemMessageId.YOUR_OPPONENT_DOES_NOT_MEET_THE_REQUIREMENTS_TO_DO_BATTLE_THE_MATCH_HAS_BEEN_CANCELLED);
 		}
 		
-		SystemMessage sm;
+		SystemMessagePacket sm;
 		if (player.isDead())
 		{
-			sm = new SystemMessage(SystemMessageId.C1_IS_DEAD_AND_CANNOT_PARTICIPATE_IN_THE_OLYMPIAD);
-			sm.addPcName(player);
+			sm = new SystemMessagePacket(SystemMessageId.C1_IS_DEAD_AND_CANNOT_PARTICIPATE_IN_THE_OLYMPIAD);
+			sm.Params.addPcName(player);
 			player.sendPacket(sm);
-			return new SystemMessage(SystemMessageId.YOUR_OPPONENT_DOES_NOT_MEET_THE_REQUIREMENTS_TO_DO_BATTLE_THE_MATCH_HAS_BEEN_CANCELLED);
+			return new SystemMessagePacket(SystemMessageId.YOUR_OPPONENT_DOES_NOT_MEET_THE_REQUIREMENTS_TO_DO_BATTLE_THE_MATCH_HAS_BEEN_CANCELLED);
 		}
 		if (player.isSubClassActive())
 		{
-			sm = new SystemMessage(SystemMessageId.C1_DOES_NOT_MEET_THE_PARTICIPATION_REQUIREMENTS_YOU_CANNOT_PARTICIPATE_IN_THE_OLYMPIAD_BECAUSE_YOU_HAVE_CHANGED_YOUR_CLASS_TO_SUBCLASS);
-			sm.addPcName(player);
+			sm = new SystemMessagePacket(SystemMessageId.C1_DOES_NOT_MEET_THE_PARTICIPATION_REQUIREMENTS_YOU_CANNOT_PARTICIPATE_IN_THE_OLYMPIAD_BECAUSE_YOU_HAVE_CHANGED_YOUR_CLASS_TO_SUBCLASS);
+			sm.Params.addPcName(player);
 			player.sendPacket(sm);
-			return new SystemMessage(SystemMessageId.YOUR_OPPONENT_DOES_NOT_MEET_THE_REQUIREMENTS_TO_DO_BATTLE_THE_MATCH_HAS_BEEN_CANCELLED);
+			return new SystemMessagePacket(SystemMessageId.YOUR_OPPONENT_DOES_NOT_MEET_THE_REQUIREMENTS_TO_DO_BATTLE_THE_MATCH_HAS_BEEN_CANCELLED);
 		}
 		if (player.isCursedWeaponEquipped())
 		{
-			sm = new SystemMessage(SystemMessageId.C1_DOES_NOT_MEET_THE_PARTICIPATION_REQUIREMENTS_THE_OWNER_OF_S2_CANNOT_PARTICIPATE_IN_THE_OLYMPIAD);
-			sm.addPcName(player);
-			sm.addItemName(player.getCursedWeaponEquippedId());
+			sm = new SystemMessagePacket(SystemMessageId.C1_DOES_NOT_MEET_THE_PARTICIPATION_REQUIREMENTS_THE_OWNER_OF_S2_CANNOT_PARTICIPATE_IN_THE_OLYMPIAD);
+			sm.Params.addPcName(player);
+			sm.Params.addItemName(player.getCursedWeaponEquippedId());
 			player.sendPacket(sm);
-			return new SystemMessage(SystemMessageId.YOUR_OPPONENT_DOES_NOT_MEET_THE_REQUIREMENTS_TO_DO_BATTLE_THE_MATCH_HAS_BEEN_CANCELLED);
+			return new SystemMessagePacket(SystemMessageId.YOUR_OPPONENT_DOES_NOT_MEET_THE_REQUIREMENTS_TO_DO_BATTLE_THE_MATCH_HAS_BEEN_CANCELLED);
 		}
 		if (!player.isInventoryUnder90(true))
 		{
-			sm = new SystemMessage(SystemMessageId.C1_CAN_T_PARTICIPATE_IN_THE_OLYMPIAD_BECAUSE_THEIR_INVENTORY_IS_FILLED_FOR_MORE_THAN_80);
-			sm.addPcName(player);
+			sm = new SystemMessagePacket(SystemMessageId.C1_CAN_T_PARTICIPATE_IN_THE_OLYMPIAD_BECAUSE_THEIR_INVENTORY_IS_FILLED_FOR_MORE_THAN_80);
+			sm.Params.addPcName(player);
 			player.sendPacket(sm);
-			return new SystemMessage(SystemMessageId.YOUR_OPPONENT_DOES_NOT_MEET_THE_REQUIREMENTS_TO_DO_BATTLE_THE_MATCH_HAS_BEEN_CANCELLED);
+			return new SystemMessagePacket(SystemMessageId.YOUR_OPPONENT_DOES_NOT_MEET_THE_REQUIREMENTS_TO_DO_BATTLE_THE_MATCH_HAS_BEEN_CANCELLED);
 		}
 		
 		return null;
@@ -155,7 +156,7 @@ public abstract class AbstractOlympiadGame
 			player.setOlympiadStart(false);
 			player.setOlympiadSide(par.getSide());
 			player.teleToLocation(loc, instance);
-			player.sendPacket(new ExOlympiadMode(2));
+			player.sendPacket(new ExOlympiadModePacket(2));
 		}
 		catch (Exception e)
 		{
@@ -254,14 +255,14 @@ public abstract class AbstractOlympiadGame
 			// enable skills with cool time <= 15 minutes
 			foreach (Skill skill in player.getAllSkills())
 			{
-				if (skill.getReuseDelay() <= 900000)
+				if (skill.getReuseDelay() <= TimeSpan.FromMinutes(15))
 				{
 					player.enableSkill(skill);
 				}
 			}
 			
 			player.sendSkillList();
-			player.sendPacket(new SkillCoolTime(player));
+			player.sendPacket(new SkillCoolTimePacket(player));
 		}
 		catch (Exception e)
 		{
@@ -341,7 +342,7 @@ public abstract class AbstractOlympiadGame
 			player.setOlympiadStart(false);
 			player.setOlympiadSide(-1);
 			player.setOlympiadGameId(-1);
-			player.sendPacket(new ExOlympiadMode(0));
+			player.sendPacket(new ExOlympiadModePacket(0));
 			
 			// Add Clan Skills
 			Clan clan = player.getClan();
@@ -408,7 +409,7 @@ public abstract class AbstractOlympiadGame
 		
 		try
 		{
-			InventoryUpdate iu = new InventoryUpdate();
+			List<ItemInfo> items = new List<ItemInfo>();
 			list.forEach(holder =>
 			{
 				Item item = player.getInventory().addItem("Olympiad", holder.getId(), holder.getCount(), player, null);
@@ -416,13 +417,15 @@ public abstract class AbstractOlympiadGame
 				{
 					return;
 				}
-				
-				iu.addModifiedItem(item);
-				SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
-				sm.addItemName(item);
-				sm.addLong(holder.getCount());
+
+				items.add(new ItemInfo(item, ItemChangeType.MODIFIED));
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
+				sm.Params.addItemName(item);
+				sm.Params.addLong(holder.getCount());
 				player.sendPacket(sm);
 			});
+			
+			InventoryUpdatePacket iu = new InventoryUpdatePacket(items);
 			player.sendInventoryUpdate(iu);
 		}
 		catch (Exception e)
@@ -441,7 +444,8 @@ public abstract class AbstractOlympiadGame
 	
 	public abstract void broadcastOlympiadInfo(OlympiadStadium stadium);
 	
-	protected abstract void broadcastPacket(ServerPacket packet);
+	protected abstract void broadcastPacket<TPacket>(TPacket packet)
+		where TPacket: struct, IOutgoingPacket;
 	
 	protected abstract bool needBuffers();
 	
@@ -459,7 +463,7 @@ public abstract class AbstractOlympiadGame
 	
 	protected abstract void clearPlayers();
 	
-	protected abstract void handleDisconnect(Player player);
+	public abstract void handleDisconnect(Player player);
 	
 	protected abstract void resetDamage();
 	

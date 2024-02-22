@@ -42,7 +42,7 @@ public class BuyListData: DataReaderBase
 		{
 			using GameServerDbContext ctx = new();
 			var buyLists = ctx.BuyLists;
-			foreach (BuyList dbBuyList in buyLists)
+			foreach (DbBuyList dbBuyList in buyLists)
 			{
 				int buyListId = dbBuyList.BuyListId;
 				int itemId = dbBuyList.ItemId;

@@ -71,9 +71,12 @@ public class RankingPowerManager
 			World.getInstance().forEachVisibleObjectInRange<Player>(_decoyInstance, 300, nearby =>
 			{
 				BuffInfo info = nearby.getEffectList().getBuffInfoBySkillId(LEADER_POWER.getSkillId());
-				if ((info == null) || (info.getTime() < (LEADER_POWER.getSkill().getAbnormalTime() - TimeSpan.FromSeconds(60))))
+				if ((info == null) ||
+				    (info.getTime() < (LEADER_POWER.getSkill().getAbnormalTime() - TimeSpan.FromSeconds(60))))
 				{
-					nearby.sendPacket(new MagicSkillUsePacket(_decoyInstance, nearby, LEADER_POWER.getSkillId(), LEADER_POWER.getSkillLevel(), 0, 0));
+					nearby.sendPacket(new MagicSkillUsePacket(_decoyInstance, nearby, LEADER_POWER.getSkillId(),
+						LEADER_POWER.getSkillLevel(), TimeSpan.Zero, TimeSpan.Zero));
+					
 					LEADER_POWER.getSkill().applyEffects(_decoyInstance, nearby);
 				}
 			});

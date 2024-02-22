@@ -73,6 +73,6 @@ public class PledgeWaitingInfo
 
     public bool isOnline()
     {
-        return (getPlayer() != null) && (getPlayer().isOnlineInt() > 0);
+        return (getPlayer() != null) && (getPlayer().getOnlineStatus() != CharacterOnlineStatus.Offline);
     }
 }

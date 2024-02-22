@@ -15,7 +15,7 @@ public class PlayerAppearance
 	
 	private byte _hairStyle;
 	
-	private bool _isFemale;
+	private Sex _sex;
 	
 	/** The current visible name of this player, not necessarily the real one */
 	private String _visibleName;
@@ -35,12 +35,12 @@ public class PlayerAppearance
 	private int _visibleAllyId = -1;
 	private int _visibleAllyCrestId = -1;
 	
-	public PlayerAppearance(byte face, byte hColor, byte hStyle, bool isFemale)
+	public PlayerAppearance(byte face, byte hColor, byte hStyle, Sex sex)
 	{
 		_face = face;
 		_hairColor = hColor;
 		_hairStyle = hStyle;
-		_isFemale = isFemale;
+		_sex = sex;
 	}
 	
 	/**
@@ -122,30 +122,17 @@ public class PlayerAppearance
 		_hairStyle = (byte) value;
 	}
 	
-	/**
-	 * @return true if char is female
-	 */
-	public bool isFemale()
+	public void setSex(Sex sex)
 	{
-		return _isFemale;
-	}
-	
-	public void setFemale()
-	{
-		_isFemale = true;
-	}
-	
-	public void setMale()
-	{
-		_isFemale = false;
+		_sex = sex;
 	}
 	
 	/**
 	 * @return Sex of the char
 	 */
-	public Sex getSexType()
+	public Sex getSex()
 	{
-		return _isFemale ? Sex.Female : Sex.Male;
+		return _sex;
 	}
 	
 	public Color getNameColor()

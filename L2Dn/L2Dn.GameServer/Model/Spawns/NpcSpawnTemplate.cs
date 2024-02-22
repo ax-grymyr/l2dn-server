@@ -1,4 +1,6 @@
-﻿using L2Dn.GameServer.Model.Actor;
+﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.InstanceManagers;
+using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Holders;
@@ -244,7 +246,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		if (_locations != null)
 		{
 			double locRandom = (100 * Rnd.nextDouble());
-			float cumulativeChance = 0;
+			double cumulativeChance = 0;
 			foreach (ChanceLocation loc in _locations)
 			{
 				if (locRandom <= (cumulativeChance += loc.getChance()))
@@ -332,13 +334,13 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 			NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(_id);
 			if (npcTemplate == null)
 			{
-				LOGGER.Warn("Attempting to spawn unexisting npc id: " + _id + " file: " + _spawnTemplate.getFile().getName() + " spawn: " + _spawnTemplate.getName() + " group: " + _group.getName());
+				LOGGER.Warn("Attempting to spawn unexisting npc id: " + _id + " file: " + _spawnTemplate.getFile() + " spawn: " + _spawnTemplate.getName() + " group: " + _group.getName());
 				return;
 			}
 			
 			if (npcTemplate.isType("Defender"))
 			{
-				LOGGER.Warn("Attempting to spawn npc id: " + _id + " type: " + npcTemplate.getType() + " file: " + _spawnTemplate.getFile().getName() + " spawn: " + _spawnTemplate.getName() + " group: " + _group.getName());
+				LOGGER.Warn("Attempting to spawn npc id: " + _id + " type: " + npcTemplate.getType() + " file: " + _spawnTemplate.getFile() + " spawn: " + _spawnTemplate.getName() + " group: " + _group.getName());
 				return;
 			}
 			
@@ -380,7 +382,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		SchedulingPattern respawnPattern = null;
 		if (_respawnTime != null)
 		{
-			respawn = (int) _respawnTime.TotalSeconds;
+			respawn = (int) _respawnTime.Value.TotalSeconds;
 		}
 		if (_respawnTimeRandom != null)
 		{

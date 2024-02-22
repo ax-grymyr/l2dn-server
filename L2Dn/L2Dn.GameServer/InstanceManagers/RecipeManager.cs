@@ -146,7 +146,7 @@ public class RecipeManager
 		protected int _sp = -1;
 		protected long _price;
 		protected int _totalItems;
-		protected int _delay;
+		protected TimeSpan _delay;
 		
 		public RecipeItemMaker(Player pPlayer, RecipeList pRecipeList, Player pTarget)
 		{
@@ -306,14 +306,15 @@ public class RecipeManager
 				// if still not empty, schedule another pass
 				if (!_items.isEmpty())
 				{
-					_delay = (int) (Config.ALT_GAME_CREATION_SPEED * _player.getStat().getReuseTime(_skill) * GameTimeTaskManager.TICKS_PER_SECOND * GameTimeTaskManager.MILLIS_IN_TICK);
+					_delay = Config.ALT_GAME_CREATION_SPEED * _player.getStat().getReuseTime(_skill) *
+					         GameTimeTaskManager.TICKS_PER_SECOND * GameTimeTaskManager.MILLIS_IN_TICK;
 					
 					// TODO: Fix this packet to show crafting animation?
-					MagicSkillUsePacket msk = new MagicSkillUsePacket(_player, _skillId, _skillLevel, _delay, 0);
+					MagicSkillUsePacket msk = new MagicSkillUsePacket(_player, _skillId, _skillLevel, _delay, TimeSpan.Zero);
 					_player.broadcastPacket(msk);
 					
 					_player.sendPacket(new SetupGaugePacket(_player.getObjectId(), 0, _delay));
-					ThreadPool.schedule(this, 100 + _delay);
+					ThreadPool.schedule(this, TimeSpan.FromMilliseconds(100) + _delay);
 				}
 				else
 				{
@@ -504,7 +505,7 @@ public class RecipeManager
 						if (Config.ALT_GAME_CREATION && isWait)
 						{
 							_player.sendPacket(new SetupGaugePacket(_player.getObjectId(), 0, _delay));
-							ThreadPool.schedule(this, 100 + _delay);
+							ThreadPool.schedule(this, TimeSpan.FromMilliseconds(100) + _delay);
 						}
 						else
 						{
@@ -526,7 +527,7 @@ public class RecipeManager
 						if (Config.ALT_GAME_CREATION && isWait)
 						{
 							_player.sendPacket(new SetupGaugePacket(_player.getObjectId(), 0, _delay));
-							ThreadPool.schedule(this, 100 + _delay);
+							ThreadPool.schedule(this, TimeSpan.FromMilliseconds(100) + _delay);
 						}
 						else
 						{

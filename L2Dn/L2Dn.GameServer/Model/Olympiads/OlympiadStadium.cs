@@ -1,7 +1,12 @@
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Zones;
+using L2Dn.GameServer.Model.Zones.Types;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Packets;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Olympiads;
@@ -19,12 +24,12 @@ public class OlympiadStadium
 	private readonly List<Spawn> _buffers;
 	private OlympiadGameTask _task = null;
 	
-	protected OlympiadStadium(OlympiadStadiumZone olyzone, int stadiumId)
+	public OlympiadStadium(OlympiadStadiumZone olyzone, int stadiumId)
 	{
 		_zone = olyzone;
 		_stadiumId = stadiumId;
 		_instance = InstanceManager.getInstance().createInstance(olyzone.getInstanceTemplateId(), null);
-		_buffers = _instance.getNpcs().Select(n => n.Key.getSpawn()).ToList();
+		_buffers = _instance.getNpcs().Select(n => n.getSpawn()).ToList();
 		_buffers.Select(s => s.getLastSpawn()).forEach(n => n.deleteMe());
 	}
 	
@@ -70,8 +75,8 @@ public class OlympiadStadium
 	
 	public void broadcastStatusUpdate(Player player)
 	{
-		ExOlympiadUserInfo packet = new ExOlympiadUserInfo(player);
-		foreach (Player target in _instance.getPlayers().Keys)
+		ExOlympiadUserInfoPacket packet = new ExOlympiadUserInfoPacket(player);
+		foreach (Player target in _instance.getPlayers())
 		{
 			if (target.inObserverMode() || (target.getOlympiadSide() != player.getOlympiadSide()))
 			{
@@ -80,14 +85,16 @@ public class OlympiadStadium
 		}
 	}
 	
-	public void broadcastPacket(ServerPacket packet)
+	public void broadcastPacket<TPacket>(TPacket packet)
+		where TPacket: struct, IOutgoingPacket
 	{
-		_instance.broadcastPacket(packet);
+		_instance.broadcastPacket().SendPackets(packet);
 	}
 	
-	public void broadcastPacketToObservers(ServerPacket packet)
+	public void broadcastPacketToObservers<TPacket>(TPacket packet)
+		where TPacket: struct, IOutgoingPacket
 	{
-		foreach (Player target in _instance.getPlayers().Keys)
+		foreach (Player target in _instance.getPlayers())
 		{
 			if (target.inObserverMode())
 			{
@@ -104,17 +111,17 @@ public class OlympiadStadium
 		}
 		
 		bool battleStarted = _task.isBattleStarted();
-		SystemMessage sm;
+		SystemMessagePacket sm;
 		if (battleStarted)
 		{
-			sm = new SystemMessage(SystemMessageId.YOU_HAVE_ENTERED_A_COMBAT_ZONE);
+			sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_ENTERED_A_COMBAT_ZONE);
 		}
 		else
 		{
-			sm = new SystemMessage(SystemMessageId.YOU_HAVE_LEFT_A_COMBAT_ZONE);
+			sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_LEFT_A_COMBAT_ZONE);
 		}
 		
-		foreach (Player player in _instance.getPlayers().Keys)
+		foreach (Player player in _instance.getPlayers())
 		{
 			if (player.inObserverMode())
 			{
@@ -130,7 +137,7 @@ public class OlympiadStadium
 			{
 				player.setInsideZone(ZoneId.PVP, false);
 				player.sendPacket(sm);
-				player.sendPacket(ExOlympiadMatchEnd.STATIC_PACKET);
+				player.sendPacket(new ExOlympiadMatchEndPacket());
 			}
 		}
 	}
@@ -142,7 +149,7 @@ public class OlympiadStadium
 			return;
 		}
 		
-		foreach (Player player in _instance.getPlayers().Keys)
+		foreach (Player player in _instance.getPlayers())
 		{
 			if (!player.inObserverMode())
 			{

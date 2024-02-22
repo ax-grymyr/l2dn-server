@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Utilities;
@@ -76,15 +77,15 @@ public class Olympiad: ListenersContainer
 	protected int _currentCycle;
 	private long _compEnd;
 	private Calendar _compStart;
-	protected static bool _inCompPeriod;
+	public static bool _inCompPeriod;
 	protected static bool _compStarted = false;
-	protected ScheduledFuture<?> _scheduledCompStart;
-	protected ScheduledFuture<?> _scheduledCompEnd;
-	protected ScheduledFuture<?> _scheduledOlympiadEnd;
-	protected ScheduledFuture<?> _scheduledWeeklyTask;
-	protected ScheduledFuture<?> _scheduledValdationTask;
-	protected ScheduledFuture<?> _gameManager = null;
-	protected ScheduledFuture<?> _gameAnnouncer = null;
+	protected ScheduledFuture _scheduledCompStart;
+	protected ScheduledFuture _scheduledCompEnd;
+	protected ScheduledFuture _scheduledOlympiadEnd;
+	protected ScheduledFuture _scheduledWeeklyTask;
+	protected ScheduledFuture _scheduledValdationTask;
+	protected ScheduledFuture _gameManager = null;
+	protected ScheduledFuture _gameAnnouncer = null;
 	
 	protected Olympiad()
 	{
@@ -754,7 +755,7 @@ public class Olympiad: ListenersContainer
 		return _compStart.getTimeInMillis() - System.currentTimeMillis();
 	}
 	
-	protected long getMillisToCompEnd()
+	public long getMillisToCompEnd()
 	{
 		// if (_compEnd > System.currentTimeMillis())
 		return _compEnd - System.currentTimeMillis();

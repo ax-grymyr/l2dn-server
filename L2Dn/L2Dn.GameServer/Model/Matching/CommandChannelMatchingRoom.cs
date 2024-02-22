@@ -1,6 +1,8 @@
 ﻿using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Matching;
@@ -35,8 +37,8 @@ public class CommandChannelMatchingRoom: MatchingRoom
 		}
 
 		// Send SystemMessage to other players
-		SystemMessage sm = new SystemMessage(SystemMessageId.C1_ENTERED_THE_COMMAND_CHANNEL_MATCHING_ROOM);
-		sm.addPcName(player);
+		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_ENTERED_THE_COMMAND_CHANNEL_MATCHING_ROOM);
+		sm.Params.addPcName(player);
 		foreach (Player member in getMembers())
 		{
 			if (member != player)
@@ -58,7 +60,7 @@ public class CommandChannelMatchingRoom: MatchingRoom
 			p.sendPacket(new ExMPCCRoomMember(player, this));
 		});
 
-		player.sendPacket(new SystemMessage(kicked
+		player.sendPacket(new SystemMessagePacket(kicked
 			? SystemMessageId.YOU_WERE_EXPELLED_FROM_THE_COMMAND_CHANNEL_MATCHING_ROOM
 			: SystemMessageId.YOU_EXITED_FROM_THE_COMMAND_CHANNEL_MATCHING_ROOM));
 	}

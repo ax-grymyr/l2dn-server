@@ -1,11 +1,13 @@
 ﻿using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.Packets;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
-internal readonly struct PledgeShowMemberListAllPacket: IOutgoingPacket
+public readonly struct PledgeShowMemberListAllPacket: IOutgoingPacket
 {
     private readonly Clan _clan;
     private readonly String _name;
@@ -48,9 +50,9 @@ internal readonly struct PledgeShowMemberListAllPacket: IOutgoingPacket
         writer.WriteInt32(_pledgeId);
         writer.WriteString(_name);
         writer.WriteString(_leaderName);
-        writer.WriteInt32(_clan.getCrestId()); // crest id .. is used again
+        writer.WriteInt32(_clan.getCrestId() ?? 0); // crest id .. is used again
         writer.WriteInt32(_clan.getLevel());
-        writer.WriteInt32(_clan.getCastleId());
+        writer.WriteInt32(_clan.getCastleId() ?? 0);
         writer.WriteInt32(0);
         writer.WriteInt32(_clan.getHideoutId());
         writer.WriteInt32(_clan.getFortId());
@@ -58,9 +60,9 @@ internal readonly struct PledgeShowMemberListAllPacket: IOutgoingPacket
         writer.WriteInt32(_clan.getReputationScore());
         writer.WriteInt32(0); // 0
         writer.WriteInt32(0); // 0
-        writer.WriteInt32(_clan.getAllyId());
-        writer.WriteString(_clan.getAllyName());
-        writer.WriteInt32(_clan.getAllyCrestId());
+        writer.WriteInt32(_clan.getAllyId() ?? 0);
+        writer.WriteString(_clan.getAllyName() ?? string.Empty);
+        writer.WriteInt32(_clan.getAllyCrestId() ?? 0);
         writer.WriteInt32(_clan.isAtWar()); // new c3
         writer.WriteInt32(0); // Territory castle ID
         writer.WriteInt32(_clan.getSubPledgeMembersCount(_pledgeId));
@@ -73,12 +75,12 @@ internal readonly struct PledgeShowMemberListAllPacket: IOutgoingPacket
 
             writer.WriteString(m.getName());
             writer.WriteInt32(m.getLevel());
-            writer.WriteInt32(m.getClassId());
+            writer.WriteInt32((int)m.getClassId());
             
             Player player = m.getPlayer();
             if (player != null)
             {
-                writer.WriteInt32(player.getAppearance().isFemale()); // no visible effect
+                writer.WriteInt32(player.getAppearance().getSex() == Sex.Female); // no visible effect
                 writer.WriteInt32((int)player.getRace()); // writer.WriteInt32 (1);
             }
             else

@@ -194,7 +194,7 @@ public class ClanTable
 		
 		ClanEntryManager.getInstance().removeFromClanList(clan.getId());
 		
-		int castleId = clan.getCastleId();
+		int? castleId = clan.getCastleId();
 		if (castleId == 0)
 		{
 			foreach (Siege siege in SiegeManager.getInstance().getSieges())
@@ -230,7 +230,7 @@ public class ClanTable
 		
 		foreach (ClanMember member in clan.getMembers())
 		{
-			clan.removeClanMember(member.getObjectId(), 0);
+			clan.removeClanMember(member.getObjectId(), null);
 		}
 		
 		_clans.remove(clanId);
@@ -391,8 +391,8 @@ public class ClanTable
 	{
 		foreach (Clan clan in _clans.values())
 		{
-			int allyId = clan.getAllyId();
-			if ((allyId != 0) && (clan.getId() != allyId) && !_clans.containsKey(allyId))
+			int? allyId = clan.getAllyId();
+			if ((allyId != null) && (clan.getId() != allyId) && !_clans.containsKey(allyId.Value))
 			{
 				clan.setAllyId(0);
 				clan.setAllyName(null);

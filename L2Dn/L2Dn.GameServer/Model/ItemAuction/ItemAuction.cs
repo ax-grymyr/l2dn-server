@@ -7,8 +7,8 @@ namespace L2Dn.GameServer.Model.ItemAuction;
 public class ItemAuction
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ItemAuction));
-	private static readonly long ENDING_TIME_EXTEND_5 = TimeUnit.MILLISECONDS.convert(5, TimeUnit.MINUTES);
-	private static readonly long ENDING_TIME_EXTEND_3 = TimeUnit.MILLISECONDS.convert(3, TimeUnit.MINUTES);
+	private static readonly TimeSpan ENDING_TIME_EXTEND_5 = TimeSpan.FromMinutes(5);
+	private static readonly TimeSpan ENDING_TIME_EXTEND_3 = TimeSpan.FromMinutes(3);
 	
 	private readonly int _auctionId;
 	private readonly int _instanceId;

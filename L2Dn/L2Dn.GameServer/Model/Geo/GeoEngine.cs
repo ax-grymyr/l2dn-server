@@ -1,10 +1,11 @@
 ﻿using L2Dn.GameServer.Model.Geo.Internal;
-using L2Dn.Logging;
+using NLog;
 
 namespace L2Dn.GameServer.Model.Geo;
 
 public sealed class GeoEngine
 {
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(GeoEngine)); 
     private readonly IGeoRegion[] _regions = new IGeoRegion[Constants.RegionsInWorld];
     private static readonly NullRegion _nullRegion = new();
 
@@ -51,7 +52,7 @@ public sealed class GeoEngine
             }
         );
 
-        Logger.Info($"Loaded {loadedRegions} regions");
+        _logger.Info($"Loaded {loadedRegions} regions");
     }
     
     public bool HasGeoPos(GeoPoint point) => GetRegion(point).HasGeo;

@@ -11,11 +11,11 @@ public class AchievementBoxHolder
 	private AchievementBoxState _boxState;
 	private AchievementBoxType _boxType;
 	
-	public AchievementBoxHolder(int slotId, int boxState, int boxType)
+	public AchievementBoxHolder(int slotId, AchievementBoxState boxState, AchievementBoxType boxType)
 	{
 		_slotId = slotId;
-		_boxState = AchievementBoxState.values()[boxState];
-		_boxType = AchievementBoxType.values()[boxType];
+		_boxState = boxState;
+		_boxType = boxType;
 	}
 	
 	public void setState(AchievementBoxState value)

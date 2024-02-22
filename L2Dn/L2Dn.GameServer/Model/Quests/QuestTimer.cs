@@ -1,6 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Quests;
 
@@ -11,7 +11,7 @@ public class QuestTimer
 	protected readonly Npc _npc;
 	protected readonly Player _player;
 	protected readonly bool _isRepeating;
-	protected ScheduledFuture<?> _scheduler;
+	protected ScheduledFuture _scheduler;
 	
 	public QuestTimer(Quest quest, String name, long time, Npc npc, Player player, bool repeating)
 	{

@@ -12,7 +12,7 @@ public class MinionHolder: IIdentifiable
 	private readonly int _id;
 	private readonly int _count;
 	private readonly int _max;
-	private readonly long _respawnTime;
+	private readonly TimeSpan _respawnTime;
 	private readonly int _weightPoint;
 	
 	public MinionHolder(StatSet set)
@@ -20,7 +20,7 @@ public class MinionHolder: IIdentifiable
 		_id = set.getInt("id");
 		_count = set.getInt("count", 1);
 		_max = set.getInt("max", 0);
-		_respawnTime = set.getDuration("respawnTime", Duration.ofSeconds(0)).getSeconds() * 1000;
+		_respawnTime = set.getDuration("respawnTime", TimeSpan.Zero);
 		_weightPoint = set.getInt("weightPoint", 0);
 	}
 	
@@ -32,7 +32,7 @@ public class MinionHolder: IIdentifiable
 	 * @param respawnTime the respawn time
 	 * @param weightPoint the weight point
 	 */
-	public MinionHolder(int id, int count, int max, long respawnTime, int weightPoint)
+	public MinionHolder(int id, int count, int max, TimeSpan respawnTime, int weightPoint)
 	{
 		_id = id;
 		_count = count;
@@ -64,7 +64,7 @@ public class MinionHolder: IIdentifiable
 	/**
 	 * @return the respawn time of the Minions.
 	 */
-	public long getRespawnTime()
+	public TimeSpan getRespawnTime()
 	{
 		return _respawnTime;
 	}

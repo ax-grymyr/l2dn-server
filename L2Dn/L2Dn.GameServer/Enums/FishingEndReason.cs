@@ -2,7 +2,7 @@
 
 public enum FishingEndReason
 {
-    LOSE=0,
-    WIN=1,
-    STOP=2
+    LOSE = 0,
+    WIN = 1,
+    STOP = 2
 }

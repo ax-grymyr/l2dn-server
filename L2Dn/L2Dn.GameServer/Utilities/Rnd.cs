@@ -17,6 +17,11 @@ public static class Rnd
         return Random.Shared.Next(minValue, maxValue);
     }
 
+    public static double get(double minValue, double maxValue)
+    {
+        return minValue + Random.Shared.NextDouble() * (maxValue - minValue);
+    }
+
     public static long get(long minValue, long maxValue)
     {
         return Random.Shared.NextInt64(minValue, maxValue);

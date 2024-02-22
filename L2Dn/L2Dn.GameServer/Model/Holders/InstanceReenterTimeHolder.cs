@@ -6,14 +6,14 @@ namespace L2Dn.GameServer.Model.Holders;
  */
 public class InstanceReenterTimeHolder
 {
-	private DayOfWeek _day = null;
-	private int _hour = -1;
-	private int _minute = -1;
-	private long _time = -1;
+	private DayOfWeek? _day;
+	private int? _hour;
+	private int? _minute;
+	private TimeSpan? _time;
 
-	public InstanceReenterTimeHolder(long time)
+	public InstanceReenterTimeHolder(TimeSpan time)
 	{
-		_time = TimeUnit.MINUTES.toMillis(time);
+		_time = time;
 	}
 
 	public InstanceReenterTimeHolder(DayOfWeek day, int hour, int minute)
@@ -23,22 +23,22 @@ public class InstanceReenterTimeHolder
 		_minute = minute;
 	}
 
-	public long getTime()
+	public TimeSpan? getTime()
 	{
 		return _time;
 	}
 
-	public DayOfWeek getDay()
+	public DayOfWeek? getDay()
 	{
 		return _day;
 	}
 
-	public int getHour()
+	public int? getHour()
 	{
 		return _hour;
 	}
 
-	public int getMinute()
+	public int? getMinute()
 	{
 		return _minute;
 	}
