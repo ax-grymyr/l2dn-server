@@ -28,9 +28,9 @@ public class WarehouseItem
 	private readonly VariationInstance _augmentation;
 	private readonly int _customType1;
 	private readonly int _customType2;
-	private readonly int _mana;
+	private readonly int? _mana;
 	
-	private sbyte _elemAtkType = -2;
+	private AttributeType _elemAtkType = AttributeType.NONE;
 	private int _elemAtkPower = 0;
 	
 	private readonly int[] _elemDefAttr =
@@ -65,11 +65,12 @@ public class WarehouseItem
 		_augmentation = item.getAugmentation();
 		_mana = item.getMana();
 		_time = item.isTimeLimitedItem() ? (int) (item.getRemainingTime() / 1000) : -1;
-		_elemAtkType = item.getAttackAttributeType().getClientId();
+		_elemAtkType = item.getAttackAttributeType();
 		_elemAtkPower = item.getAttackAttributePower();
-		foreach (AttributeType type in AttributeType.ATTRIBUTE_TYPES)
+		foreach (AttributeType type in Enum.GetValues<AttributeType>())
 		{
-			_elemDefAttr[type.getClientId()] = item.getDefenceAttribute(type);
+			if (type != AttributeType.NONE)
+				_elemDefAttr[(int)type] = item.getDefenceAttribute(type);
 		}
 		_enchantOptions = item.getEnchantOptions();
 		_soulCrystalOptions = item.getSpecialAbilities();
@@ -231,12 +232,12 @@ public class WarehouseItem
 		return _customType2;
 	}
 	
-	public int getMana()
+	public int? getMana()
 	{
 		return _mana;
 	}
 	
-	public byte getAttackElementType()
+	public AttributeType getAttackElementType()
 	{
 		return _elemAtkType;
 	}

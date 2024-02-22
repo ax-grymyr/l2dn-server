@@ -9,6 +9,7 @@ namespace L2Dn.GameServer.Model.Items.Types;
 public enum WeaponType
 {
 	NONE,
+	
 	SWORD,
 	BLUNT,
 	DAGGER,
@@ -57,8 +58,6 @@ public static class WeaponTypeUtil
 			WeaponType.PISTOLS => TraitType.PISTOLS,
 			_ => throw new ArgumentOutOfRangeException(nameof(weaponType))
 		};
-
-	public static int GetMask(this WeaponType weaponType) => 1 << (int)weaponType;
 
 	public static bool isRanged(this WeaponType weaponType) =>
 		weaponType switch

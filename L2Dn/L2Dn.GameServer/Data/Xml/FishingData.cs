@@ -80,8 +80,10 @@ public class FishingData: DataReaderBase
 			LOGGER.Error(GetType().Name + ": Could not find item with id " + itemId);
 			return;
 		}
-									
-		FishingBait baitData = new FishingBait(itemId, level, minPlayerLevel, maxPlayerLevel, chance, timeMin, timeMax, waitMin, waitMax, isPremiumOnly);
+
+		FishingBait baitData = new FishingBait(itemId, level, minPlayerLevel, maxPlayerLevel, chance,
+			TimeSpan.FromMilliseconds(timeMin), TimeSpan.FromMilliseconds(timeMax),
+			TimeSpan.FromMilliseconds(waitMin), TimeSpan.FromMilliseconds(waitMax), isPremiumOnly);
 		
 		element.Elements("catch").ForEach(el =>
 		{
@@ -103,7 +105,7 @@ public class FishingData: DataReaderBase
 	private void parseRodElement(XElement element)
 	{
 		int itemId = element.Attribute("itemId").GetInt32();
-		int reduceFishingTime = element.Attribute("reduceFishingTime").GetInt32(0);
+		TimeSpan reduceFishingTime = TimeSpan.FromMilliseconds(element.Attribute("reduceFishingTime").GetInt32(0));
 		float xpMultiplier = element.Attribute("xpMultiplier").GetFloat(1f);
 		float spMultiplier = element.Attribute("spMultiplier").GetFloat(1f);
 		if (ItemData.getInstance().getTemplate(itemId) == null)

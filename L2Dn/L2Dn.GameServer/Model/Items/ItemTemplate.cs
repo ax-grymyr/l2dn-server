@@ -83,6 +83,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	
 	public const int SLOT_MULTI_ALLWEAPON = SLOT_LR_HAND | SLOT_R_HAND;
 	
+	private readonly ItemType _itemType;
 	private int _itemId;
 	private int _displayId;
 	private String _name;
@@ -92,10 +93,10 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	private bool _stackable;
 	private MaterialType _materialType;
 	private CrystalType _crystalType;
-	private int _equipReuseDelay;
-	private int _duration;
-	private DateTime? _time;
-	private int _autoDestroyTime;
+	private TimeSpan _equipReuseDelay;
+	private int? _duration; // mana
+	private TimeSpan? _time;
+	private TimeSpan? _autoDestroyTime;
 	private long _bodyPart;
 	private int _referencePrice;
 	private int _crystalCount;
@@ -125,7 +126,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	
 	protected int _type1; // needed for item list (inventory)
 	protected int _type2; // different lists for armor, weapon, etc
-	private Map<AttributeType, AttributeHolder> _elementals = null;
+	private Map<AttributeType, AttributeHolder> _elementals;
 	protected Map<Stat, FuncTemplate> _funcTemplates;
 	protected List<Condition> _preConditions;
 	private List<ItemSkillHolder> _skills;
@@ -140,13 +141,14 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	private bool _isBlessed;
 	
 	private int _artifactSlot;
-	
+
 	/**
 	 * Constructor of the Item that fill class variables.
 	 * @param set : StatSet corresponding to a set of couples (key,value) for description of the item
 	 */
-	protected ItemTemplate(StatSet set)
+	protected ItemTemplate(ItemType itemType, StatSet set)
 	{
+		_itemType = itemType;
 		this.set(set);
 	}
 	
@@ -230,7 +232,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	 * Returns the itemType.
 	 * @return Enum
 	 */
-	public abstract ItemType getItemType();
+	public ItemType getItemType() => _itemType;
 	
 	/**
 	 * Verifies if the item is an etc item.
@@ -271,7 +273,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	/**
 	 * @return the _equipReuseDelay
 	 */
-	public int getEquipReuseDelay()
+	public TimeSpan getEquipReuseDelay()
 	{
 		return _equipReuseDelay;
 	}
@@ -280,7 +282,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	 * Returns the duration of the item
 	 * @return int
 	 */
-	public int getDuration()
+	public int? getDuration()
 	{
 		return _duration;
 	}
@@ -289,7 +291,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	 * Returns the time of the item
 	 * @return long
 	 */
-	public DateTime? getTime()
+	public TimeSpan? getTime()
 	{
 		return _time;
 	}
@@ -297,7 +299,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	/**
 	 * @return the auto destroy time of the item in seconds: 0 or less - default
 	 */
-	public int getAutoDestroyTime()
+	public TimeSpan getAutoDestroyTime()
 	{
 		return _autoDestroyTime;
 	}
@@ -319,8 +321,6 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	{
 		return _displayId;
 	}
-	
-	public abstract int getItemMask();
 	
 	/**
 	 * Return the type of material of the item
@@ -430,7 +430,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 				case TYPE2_SHIELD_ARMOR:
 				case TYPE2_ACCESSORY:
 				{
-					return _crystalCount + (CrystalTypeInfo.Get(_crystalType).getCrystalEnchantBonusArmor() * ((3 * enchantLevel) - 6)));
+					return _crystalCount + (CrystalTypeInfo.Get(_crystalType).getCrystalEnchantBonusArmor() * ((3 * enchantLevel) - 6));
 				}
 				case TYPE2_WEAPON:
 				{
@@ -501,7 +501,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	{
 		if (_elementals == null)
 		{
-			_elementals = new(3);
+			_elementals = new();
 			_elementals.put(holder.getType(), holder);
 		}
 		else
@@ -667,19 +667,19 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 		return _pvpItem;
 	}
 	
-	public bool isPotion()
+	public virtual bool isPotion()
 	{
-		return getItemType() == EtcItemType.POTION;
+		return false;
 	}
 	
-	public bool isElixir()
+	public virtual bool isElixir()
 	{
-		return getItemType() == EtcItemType.ELIXIR;
+		return false;
 	}
 	
-	public bool isScroll()
+	public virtual bool isScroll()
 	{
-		return getItemType() == EtcItemType.SCROLL;
+		return false;
 	}
 	
 	/**
@@ -939,7 +939,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	
 	public bool isOlyRestrictedItem()
 	{
-		return _isOlyRestricted || Config.LIST_OLY_RESTRICTED_ITEMS.contains(_itemId);
+		return _isOlyRestricted || Config.LIST_OLY_RESTRICTED_ITEMS.Contains(_itemId);
 	}
 	
 	/**
@@ -1043,9 +1043,9 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 		return _defaultEnchantLevel;
 	}
 	
-	public bool isPetItem()
+	public virtual bool isPetItem()
 	{
-		return getItemType() == EtcItemType.PET_COLLAR;
+		return false;
 	}
 	
 	/**
@@ -1060,7 +1060,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 		if (_funcTemplates != null)
 		{
 			FuncTemplate template = _funcTemplates.get(stat);
-			if ((template != null) && ((template.getFunctionClass() == FuncAdd.class) || (template.getFunctionClass() == FuncSet.class)))
+			if ((template != null) && ((template.getFunctionClass() == typeof(FuncAdd)) || (template.getFunctionClass() == typeof(FuncSet))))
 			{
 				return template.getValue();
 			}

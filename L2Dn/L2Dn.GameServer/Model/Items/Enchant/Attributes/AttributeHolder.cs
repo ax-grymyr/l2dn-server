@@ -38,6 +38,6 @@ public class AttributeHolder
 
 	public override String ToString()
 	{
-		return _type.name() + " +" + _value;
+		return _type + " +" + _value;
 	}
 }

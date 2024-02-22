@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Model.Stats.Functions;
  */
 public class FuncTemplate
 {
-	private readonly Class<?> _functionClass;
+	private readonly Type _functionClass;
 	private readonly Condition _attachCond;
 	private readonly Condition _applayCond;
 	private readonly Stat _stat;
@@ -45,7 +45,7 @@ public class FuncTemplate
 		}
 	}
 
-	public Class<?> getFunctionClass()
+	public Type getFunctionClass()
 	{
 		return _functionClass;
 	}

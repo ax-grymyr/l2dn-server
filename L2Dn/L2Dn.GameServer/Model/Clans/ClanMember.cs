@@ -375,9 +375,9 @@ public class ClanMember
 	 * @param player the player
 	 * @return the int
 	 */
-	public static int calculatePledgeClass(Player player)
+	public static SocialClass calculatePledgeClass(Player player)
 	{
-		int pledgeClass = 0;
+		SocialClass pledgeClass = 0;
 		if (player == null)
 		{
 			return pledgeClass;
@@ -392,7 +392,7 @@ public class ClanMember
 				{
 					if (player.isClanLeader())
 					{
-						pledgeClass = 3;
+						pledgeClass = SocialClass.HEIR;
 					}
 					break;
 				}
@@ -400,11 +400,11 @@ public class ClanMember
 				{
 					if (player.isClanLeader())
 					{
-						pledgeClass = 4;
+						pledgeClass = SocialClass.KNIGHT;
 					}
 					else
 					{
-						pledgeClass = 2;
+						pledgeClass = SocialClass.APPRENTICE;
 					}
 					break;
 				}
@@ -414,20 +414,20 @@ public class ClanMember
 					{
 						case -1:
 						{
-							pledgeClass = 1;
+							pledgeClass = SocialClass.VASSAL;
 							break;
 						}
 						case 100:
 						case 200:
 						{
-							pledgeClass = 2;
+							pledgeClass = SocialClass.APPRENTICE;
 							break;
 						}
 						case 0:
 						{
 							if (player.isClanLeader())
 							{
-								pledgeClass = 5;
+								pledgeClass = SocialClass.ELDER;
 							}
 							else
 							{
@@ -436,13 +436,13 @@ public class ClanMember
 									case 100:
 									case 200:
 									{
-										pledgeClass = 4;
+										pledgeClass = SocialClass.KNIGHT;
 										break;
 									}
 									case -1:
 									default:
 									{
-										pledgeClass = 3;
+										pledgeClass = SocialClass.HEIR;
 										break;
 									}
 								}
@@ -458,13 +458,13 @@ public class ClanMember
 					{
 						case -1:
 						{
-							pledgeClass = 1;
+							pledgeClass = SocialClass.VASSAL;
 							break;
 						}
 						case 100:
 						case 200:
 						{
-							pledgeClass = 3;
+							pledgeClass = SocialClass.HEIR;
 							break;
 						}
 						case 1001:
@@ -472,14 +472,14 @@ public class ClanMember
 						case 2001:
 						case 2002:
 						{
-							pledgeClass = 2;
+							pledgeClass = SocialClass.APPRENTICE;
 							break;
 						}
 						case 0:
 						{
 							if (player.isClanLeader())
 							{
-								pledgeClass = 7;
+								pledgeClass = SocialClass.VISCOUNT;
 							}
 							else
 							{
@@ -488,7 +488,7 @@ public class ClanMember
 									case 100:
 									case 200:
 									{
-										pledgeClass = 6;
+										pledgeClass = SocialClass.BARON;
 										break;
 									}
 									case 1001:
@@ -496,13 +496,13 @@ public class ClanMember
 									case 2001:
 									case 2002:
 									{
-										pledgeClass = 5;
+										pledgeClass = SocialClass.ELDER;
 										break;
 									}
 									case -1:
 									default:
 									{
-										pledgeClass = 4;
+										pledgeClass = SocialClass.KNIGHT;
 										break;
 									}
 								}
@@ -518,13 +518,13 @@ public class ClanMember
 					{
 						case -1:
 						{
-							pledgeClass = 1;
+							pledgeClass = SocialClass.VASSAL;
 							break;
 						}
 						case 100:
 						case 200:
 						{
-							pledgeClass = 4;
+							pledgeClass = SocialClass.KNIGHT;
 							break;
 						}
 						case 1001:
@@ -532,14 +532,14 @@ public class ClanMember
 						case 2001:
 						case 2002:
 						{
-							pledgeClass = 3;
+							pledgeClass = SocialClass.HEIR;
 							break;
 						}
 						case 0:
 						{
 							if (player.isClanLeader())
 							{
-								pledgeClass = 8;
+								pledgeClass = SocialClass.COUNT;
 							}
 							else
 							{
@@ -548,7 +548,7 @@ public class ClanMember
 									case 100:
 									case 200:
 									{
-										pledgeClass = 7;
+										pledgeClass = SocialClass.VISCOUNT;
 										break;
 									}
 									case 1001:
@@ -556,13 +556,13 @@ public class ClanMember
 									case 2001:
 									case 2002:
 									{
-										pledgeClass = 6;
+										pledgeClass = SocialClass.BARON;
 										break;
 									}
 									case -1:
 									default:
 									{
-										pledgeClass = 5;
+										pledgeClass = SocialClass.ELDER;
 										break;
 									}
 								}
@@ -578,13 +578,13 @@ public class ClanMember
 					{
 						case -1:
 						{
-							pledgeClass = 1;
+							pledgeClass = SocialClass.VASSAL;
 							break;
 						}
 						case 100:
 						case 200:
 						{
-							pledgeClass = 5;
+							pledgeClass = SocialClass.ELDER;
 							break;
 						}
 						case 1001:
@@ -592,14 +592,14 @@ public class ClanMember
 						case 2001:
 						case 2002:
 						{
-							pledgeClass = 4;
+							pledgeClass = SocialClass.KNIGHT;
 							break;
 						}
 						case 0:
 						{
 							if (player.isClanLeader())
 							{
-								pledgeClass = 9;
+								pledgeClass = SocialClass.MARQUIS;
 							}
 							else
 							{
@@ -608,7 +608,7 @@ public class ClanMember
 									case 100:
 									case 200:
 									{
-										pledgeClass = 8;
+										pledgeClass = SocialClass.COUNT;
 										break;
 									}
 									case 1001:
@@ -616,13 +616,13 @@ public class ClanMember
 									case 2001:
 									case 2002:
 									{
-										pledgeClass = 7;
+										pledgeClass = SocialClass.VISCOUNT;
 										break;
 									}
 									case -1:
 									default:
 									{
-										pledgeClass = 6;
+										pledgeClass = SocialClass.BARON;
 										break;
 									}
 								}
@@ -638,13 +638,13 @@ public class ClanMember
 					{
 						case -1:
 						{
-							pledgeClass = 1;
+							pledgeClass = SocialClass.VASSAL;
 							break;
 						}
 						case 100:
 						case 200:
 						{
-							pledgeClass = 6;
+							pledgeClass = SocialClass.BARON;
 							break;
 						}
 						case 1001:
@@ -652,14 +652,14 @@ public class ClanMember
 						case 2001:
 						case 2002:
 						{
-							pledgeClass = 5;
+							pledgeClass = SocialClass.ELDER;
 							break;
 						}
 						case 0:
 						{
 							if (player.isClanLeader())
 							{
-								pledgeClass = 10;
+								pledgeClass = SocialClass.DUKE;
 							}
 							else
 							{
@@ -668,7 +668,7 @@ public class ClanMember
 									case 100:
 									case 200:
 									{
-										pledgeClass = 9;
+										pledgeClass = SocialClass.MARQUIS;
 										break;
 									}
 									case 1001:
@@ -676,13 +676,13 @@ public class ClanMember
 									case 2001:
 									case 2002:
 									{
-										pledgeClass = 8;
+										pledgeClass = SocialClass.COUNT;
 										break;
 									}
 									case -1:
 									default:
 									{
-										pledgeClass = 7;
+										pledgeClass = SocialClass.VISCOUNT;
 										break;
 									}
 								}
@@ -698,13 +698,13 @@ public class ClanMember
 					{
 						case -1:
 						{
-							pledgeClass = 1;
+							pledgeClass = SocialClass.VASSAL;
 							break;
 						}
 						case 100:
 						case 200:
 						{
-							pledgeClass = 7;
+							pledgeClass = SocialClass.VISCOUNT;
 							break;
 						}
 						case 1001:
@@ -712,14 +712,14 @@ public class ClanMember
 						case 2001:
 						case 2002:
 						{
-							pledgeClass = 6;
+							pledgeClass = SocialClass.BARON;
 							break;
 						}
 						case 0:
 						{
 							if (player.isClanLeader())
 							{
-								pledgeClass = 11;
+								pledgeClass = SocialClass.GRAND_DUKE;
 							}
 							else
 							{
@@ -728,7 +728,7 @@ public class ClanMember
 									case 100:
 									case 200:
 									{
-										pledgeClass = 10;
+										pledgeClass = SocialClass.DUKE;
 										break;
 									}
 									case 1001:
@@ -736,13 +736,13 @@ public class ClanMember
 									case 2001:
 									case 2002:
 									{
-										pledgeClass = 9;
+										pledgeClass = SocialClass.MARQUIS;
 										break;
 									}
 									case -1:
 									default:
 									{
-										pledgeClass = 8;
+										pledgeClass = SocialClass.COUNT;
 										break;
 									}
 								}
@@ -754,21 +754,22 @@ public class ClanMember
 				}
 				default:
 				{
-					pledgeClass = 1;
+					pledgeClass = SocialClass.VASSAL;
 					break;
 				}
 			}
 		}
 		
-		if (player.isNoble() && (pledgeClass < 5))
+		if (player.isNoble() && (pledgeClass < SocialClass.ELDER))
 		{
-			pledgeClass = 5;
+			pledgeClass = SocialClass.ELDER;
 		}
 		
-		if (player.isHero() && (pledgeClass < 8))
+		if (player.isHero() && (pledgeClass < SocialClass.COUNT))
 		{
-			pledgeClass = 8;
+			pledgeClass = SocialClass.COUNT;
 		}
+		
 		return pledgeClass;
 	}
 	

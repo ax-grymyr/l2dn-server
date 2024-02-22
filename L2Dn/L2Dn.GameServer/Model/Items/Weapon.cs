@@ -40,16 +40,16 @@ public class Weapon: ItemTemplate
 	 * Constructor for Weapon.
 	 * @param set the StatSet designating the set of couples (key,value) characterizing the weapon.
 	 */
-	public Weapon(StatSet set): base(set)
+	public Weapon(StatSet set): base(ItemType.Weapon, set)
 	{
 	}
 	
 	public override void set(StatSet set)
 	{
 		base.set(set);
-		_type = WeaponType.valueOf(set.getString("weapon_type", "none").toUpperCase());
-		_type1 = ItemTemplate.TYPE1_WEAPON_RING_EARRING_NECKLACE;
-		_type2 = ItemTemplate.TYPE2_WEAPON;
+		_type = Enum.Parse<WeaponType>(set.getString("weapon_type", "none").toUpperCase());
+		_type1 = TYPE1_WEAPON_RING_EARRING_NECKLACE;
+		_type2 = TYPE2_WEAPON;
 		_isMagicWeapon = set.getBoolean("is_magic_weapon", false);
 		_soulShotCount = set.getInt("soulshots", 0);
 		_spiritShotCount = set.getInt("spiritshots", 0);
@@ -85,22 +85,11 @@ public class Weapon: ItemTemplate
 			_reuseDelay = 1500;
 		}
 	}
-	
+
 	/**
 	 * @return the type of Weapon
 	 */
-	public override WeaponType getItemType()
-	{
-		return _type;
-	}
-	
-	/**
-	 * @return the ID of the Etc item after applying the mask.
-	 */
-	public override int getItemMask()
-	{
-		return _type.mask();
-	}
+	public WeaponType getWeaponType() => _type;
 	
 	/**
 	 * @return {@code true} if the item is a weapon, {@code false} otherwise.

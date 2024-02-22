@@ -341,8 +341,8 @@ public class Player: Playable
 	private ClanPrivilege _clanPrivileges;
 	
 	/** Player's pledge class (knight, Baron, etc.) */
-	private int _pledgeClass = 0;
-	private int _pledgeType = 0;
+	private SocialClass _pledgeClass;
+	private int _pledgeType;
 	
 	/** Level at which the player joined the clan as an academy member */
 	private int _lvlJoinedAcademy = 0;
@@ -2237,7 +2237,7 @@ public class Player: Playable
 				msg.Params.addPcName(this);
 				_clan.broadcastToOnlineMembers(msg);
 				_clan.broadcastToOnlineMembers(new PledgeShowMemberListDeletePacket(getName()));
-				_clan.removeClanMember(getObjectId(), 0);
+				_clan.removeClanMember(getObjectId(), null);
 				sendPacket(SystemMessageId.CONGRATULATIONS_YOU_WILL_NOW_GRADUATE_FROM_THE_CLAN_ACADEMY_AND_LEAVE_YOUR_CURRENT_CLAN_YOU_CAN_NOW_JOIN_A_CLAN_WITHOUT_BEING_SUBJECT_TO_ANY_PENALTIES);
 				
 				// receive graduation gift
@@ -2248,7 +2248,7 @@ public class Player: Playable
 				getSubClasses().get(_classIndex).setClassId(id);
 			}
 			setTarget(this);
-			broadcastPacket(new MagicSkillUsePacket(this, 5103, 1, 0, 0));
+			broadcastPacket(new MagicSkillUsePacket(this, 5103, 1, TimeSpan.Zero, TimeSpan.Zero));
 			setClassTemplate(id);
 			if (getClassId().GetLevel() == 3)
 			{
@@ -2657,7 +2657,7 @@ public class Player: Playable
 	/**
 	 * @return the Clan Crest Identifier of the Player or 0.
 	 */
-	public int getClanCrestId()
+	public int? getClanCrestId()
 	{
 		if (_clan != null)
 		{
@@ -2669,7 +2669,7 @@ public class Player: Playable
 	/**
 	 * @return The Clan CrestLarge Identifier or 0
 	 */
-	public int getClanCrestLargeId()
+	public int? getClanCrestLargeId()
 	{
 		if ((_clan != null) && ((_clan.getCastleId() != 0) || (_clan.getHideoutId() != 0)))
 		{
@@ -4077,12 +4077,12 @@ public class Player: Playable
 	/**
 	 * @return the Alliance Identifier of the Player.
 	 */
-	public override int getAllyId()
+	public override int? getAllyId()
 	{
 		return _clan == null ? 0 : _clan.getAllyId();
 	}
 	
-	public int getAllyCrestId()
+	public int? getAllyCrestId()
 	{
 		return getAllyId() == 0 ? 0 : _clan.getAllyCrestId();
 	}
@@ -6083,7 +6083,7 @@ public class Player: Playable
 		}
 		
 		bool wasFlying = isFlying();
-		sendPacket(new SetupGaugePacket(3, 0, 0));
+		sendPacket(new SetupGaugePacket(3, 0, TimeSpan.Zero));
 		int petId = _mountNpcId;
 		setMount(0, 0);
 		stopFeed();
@@ -6530,12 +6530,12 @@ public class Player: Playable
 				{
 					if (player.isNoble())
 					{
-						player.setPledgeClass(5);
+						player.setPledgeClass(SocialClass.ELDER);
 					}
 
 					if (player.isHero())
 					{
-						player.setPledgeClass(8);
+						player.setPledgeClass(SocialClass.COUNT);
 					}
 
 					player.setClanPrivileges(ClanPrivilege.None);
@@ -8638,7 +8638,7 @@ public class Player: Playable
 				}
 				else if (usedSkill.checkCondition(this, target, true))
 				{
-					sendPacket(new MagicSkillUsePacket(this, this, usedSkill.getDisplayId(), usedSkill.getDisplayLevel(), 0, 0, usedSkill.getReuseDelayGroup(), -1, SkillCastingType.NORMAL, true));
+					sendPacket(new MagicSkillUsePacket(this, this, usedSkill.getDisplayId(), usedSkill.getDisplayLevel(), TimeSpan.Zero, TimeSpan.Zero, usedSkill.getReuseDelayGroup(), -1, SkillCastingType.NORMAL, true));
 				}
 			}
 			sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -9122,7 +9122,7 @@ public class Player: Playable
 	}
 	
 	// baron etc
-	public void setPledgeClass(int classId)
+	public void setPledgeClass(SocialClass classId)
 	{
 		_pledgeClass = classId;
 		checkItemRestriction();
@@ -10252,7 +10252,7 @@ public class Player: Playable
 		{
 			_taskWater.cancel(false);
 			_taskWater = null;
-			sendPacket(new SetupGaugePacket(getObjectId(), 2, 0));
+			sendPacket(new SetupGaugePacket(getObjectId(), 2, TimeSpan.Zero));
 		}
 	}
 	
@@ -10260,9 +10260,9 @@ public class Player: Playable
 	{
 		if (!isDead() && (_taskWater == null))
 		{
-			int timeinwater = (int) getStat().getValue(Stat.BREATH, 60000);
+			TimeSpan timeinwater = TimeSpan.FromMilliseconds(getStat().getValue(Stat.BREATH, 60000));
 			sendPacket(new SetupGaugePacket(getObjectId(), 2, timeinwater));
-			_taskWater = ThreadPool.scheduleAtFixedRate(new WaterTask(this), timeinwater, 1000);
+			_taskWater = ThreadPool.scheduleAtFixedRate(new WaterTask(this), timeinwater, TimeSpan.FromSeconds(1));
 		}
 	}
 	
@@ -12272,7 +12272,8 @@ public class Player: Playable
 		{
 			setCurrentFeed(_pet.getCurrentFed());
 			_controlItemId = _pet.getControlObjectId();
-			sendPacket(new SetupGaugePacket(3, (_curFeed * 10000) / getFeedConsume(), (getMaxFeed() * 10000) / getFeedConsume()));
+			TimeSpan duration = TimeSpan.FromMilliseconds((1.0 * getMaxFeed() * 10000) / getFeedConsume());
+			sendPacket(new SetupGaugePacket(3, (_curFeed * 10000) / getFeedConsume(), duration));
 			if (!isDead())
 			{
 				_mountFeedTask = ThreadPool.scheduleAtFixedRate(new PetFeedTask(this), 10000, 10000);
@@ -12281,7 +12282,8 @@ public class Player: Playable
 		else if (_canFeed)
 		{
 			setCurrentFeed(getMaxFeed());
-			sendPacket(new SetupGaugePacket(3, (_curFeed * 10000) / getFeedConsume(), (getMaxFeed() * 10000) / getFeedConsume()));
+			TimeSpan duration = TimeSpan.FromMilliseconds((1.0 * getMaxFeed() * 10000) / getFeedConsume());
+			sendPacket(new SetupGaugePacket(3, (_curFeed * 10000) / getFeedConsume(), duration));
 			if (!isDead())
 			{
 				_mountFeedTask = ThreadPool.scheduleAtFixedRate(new PetFeedTask(this), 10000, 10000);
@@ -12340,7 +12342,8 @@ public class Player: Playable
 	{
 		bool lastHungryState = isHungry();
 		_curFeed = num > getMaxFeed() ? getMaxFeed() : num;
-		sendPacket(new SetupGaugePacket(3, (_curFeed * 10000) / getFeedConsume(), (getMaxFeed() * 10000) / getFeedConsume()));
+		TimeSpan duration = TimeSpan.FromMilliseconds((1.0 * getMaxFeed() * 10000) / getFeedConsume());
+		sendPacket(new SetupGaugePacket(3, (_curFeed * 10000) / getFeedConsume(), duration));
 		// broadcast move speed change when strider becomes hungry / full
 		if (lastHungryState != isHungry())
 		{
@@ -14064,13 +14067,13 @@ public class Player: Playable
 			return CastleSide.NEUTRAL;
 		}
 		
-		int castleId = _clan.getCastleId();
-		if (castleId == 0)
+		int? castleId = _clan.getCastleId();
+		if (castleId is null)
 		{
 			return CastleSide.NEUTRAL;
 		}
 		
-		Castle castle = CastleManager.getInstance().getCastleById(castleId);
+		Castle castle = CastleManager.getInstance().getCastleById(castleId.Value);
 		if (castle == null)
 		{
 			return CastleSide.NEUTRAL;

@@ -58,7 +58,7 @@ public class EnchantRateItem
 	 */
 	public bool validate(ItemTemplate item)
 	{
-		if (!_items.isEmpty() && !_items.contains(item.getId()))
+		if (!_items.isEmpty() && !_items.Contains(item.getId()))
 		{
 			return false;
 		}

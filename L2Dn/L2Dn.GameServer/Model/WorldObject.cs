@@ -219,7 +219,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	public abstract void sendInfo(Player player);
 	
 	public virtual void sendPacket<TPacket>(TPacket packet)
-		where TPacket: IOutgoingPacket 
+		where TPacket: struct, IOutgoingPacket 
 	{
 	}
 	
@@ -362,7 +362,7 @@ public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, 
 	 * Verify if object is instance of Item.
 	 * @return {@code true} if object is instance of Item, {@code false} otherwise
 	 */
-	public bool isItem()
+	public virtual bool isItem()
 	{
 		return false;
 	}

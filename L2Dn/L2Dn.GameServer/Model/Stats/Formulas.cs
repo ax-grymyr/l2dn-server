@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.GameServer.Model.Actor.Transforms;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items;
@@ -1469,7 +1470,7 @@ public class Formulas
 	 * @param weapon
 	 * @return {@code 900000 / PAttackSpeed}
 	 */
-	public static int calculateReuseTime(Creature creature, Weapon weapon)
+	public static TimeSpan calculateReuseTime(Creature creature, Weapon weapon)
 	{
 		if (weapon == null)
 		{
@@ -1477,7 +1478,8 @@ public class Formulas
 		}
 		
 		WeaponType defaultAttackType = weapon.getItemType();
-		WeaponType weaponType = creature.getTransformation().map(transform => transform.getBaseAttackType(creature, defaultAttackType)).orElse(defaultAttackType);
+		Transform? transform = creature.getTransformation();
+		WeaponType weaponType = transform != null ? transform.getBaseAttackType(creature, defaultAttackType) : defaultAttackType;
 		
 		// Only ranged weapons should continue for now.
 		if (!weaponType.isRanged())
@@ -1485,7 +1487,7 @@ public class Formulas
 			return 0;
 		}
 		
-		return 900000 / creature.getStat().getPAtkSpd();
+		return TimeSpan.FromMilliseconds(900000) / creature.getStat().getPAtkSpd();
 	}
 	
 	public static double calculatePvpPveBonus(Creature attacker, Creature target, Skill skill, bool crit)

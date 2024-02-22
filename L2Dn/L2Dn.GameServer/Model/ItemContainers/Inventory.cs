@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
@@ -178,14 +179,14 @@ public abstract class Inventory: ItemContainer
 				return;
 			}
 			
-			switch (item.getWeaponItem().getItemType())
+			switch (item.getWeaponItem().getWeaponType())
 			{
 				case WeaponType.BOW:
 				case WeaponType.CROSSBOW:
 				case WeaponType.TWOHANDCROSSBOW:
 				{
 					Item leftHandItem = inventory.getPaperdollItem(PAPERDOLL_LHAND);
-					if (((leftHandItem != null) && ((leftHandItem.getItemType()) != ArmorType.SIGIL)))
+					if (leftHandItem != null && ((leftHandItem.getItemType()) != ArmorType.SIGIL))
 					{
 						inventory.setPaperdollItem(PAPERDOLL_LHAND, null);
 					}

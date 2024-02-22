@@ -85,7 +85,7 @@ public abstract class DataReaderBase
                         int max = minionsNode.Attribute("max").GetInt32(0);
                         int respawnTime = minionsNode.Attribute("respawnTime").GetInt32();
                         int weightPoint = minionsNode.Attribute("weightPoint").GetInt32(0);
-                        minions.add(new MinionHolder(id, count, max, respawnTime, weightPoint));
+                        minions.add(new MinionHolder(id, count, max, TimeSpan.FromMilliseconds(respawnTime), weightPoint));
                     }
 					
                     if (!minions.isEmpty())

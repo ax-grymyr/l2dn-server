@@ -3,6 +3,7 @@ using System.Text;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Request;
@@ -11,14 +12,21 @@ using L2Dn.GameServer.Model.Ensoul;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
 using L2Dn.GameServer.Model.Events.Impl.Items;
-using L2Dn.GameServer.Model.Geo;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.InstanceZones;
+using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Appearance;
 using L2Dn.GameServer.Model.Items.Enchant.Attributes;
 using L2Dn.GameServer.Model.Items.Types;
+using L2Dn.GameServer.Model.Options;
 using L2Dn.GameServer.Model.Sieges;
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Variables;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Items.Instances;
@@ -43,8 +51,8 @@ public class Item: WorldObject
 	private long _count = 1;
 	/** Initial Quantity of the item */
 	private long _initCount;
-	/** Remaining time (in miliseconds) */
-	private long _time;
+	/** Remaining time (in milliseconds) */
+	private DateTime? _time;
 	/** Quantity of the item can decrease */
 	private bool _decrease = false;
 	
@@ -67,11 +75,11 @@ public class Item: WorldObject
 	private bool _wear;
 	
 	/** Augmented Item */
-	private VariationInstance _augmentation = null;
+	private VariationInstance _augmentation;
 	
 	/** Shadow item */
-	private int _mana = -1;
-	private bool _consumingMana = false;
+	private int? _mana;
+	private bool _consumingMana;
 	
 	/** Custom item types (used loto, race tickets) */
 	private int _type1;
@@ -96,7 +104,7 @@ public class Item: WorldObject
 	private bool _existsInDb; // if a record exists in DB.
 	private bool _storedInDb; // if DB data is up-to-date.
 	
-	private readonly ReentrantLock _dbLock = new();
+	private readonly object _dbLock = new();
 	
 	private Map<AttributeType, AttributeHolder> _elementals = null;
 	
@@ -130,7 +138,7 @@ public class Item: WorldObject
 		_type2 = 0;
 		_dropTime = DateTime.MinValue;
 		_mana = _itemTemplate.getDuration();
-		_time = _itemTemplate.getTime() == -1 ? -1 : System.currentTimeMillis() + (_itemTemplate.getTime() * 60 * 1000);
+		_time = _itemTemplate.getTime() == null ? null : DateTime.UtcNow + _itemTemplate.getTime();
 		scheduleLifeTimeTask();
 		scheduleVisualLifeTime();
 	}
@@ -153,7 +161,7 @@ public class Item: WorldObject
 		base.setName(_itemTemplate.getName());
 		_loc = ItemLocation.VOID;
 		_mana = _itemTemplate.getDuration();
-		_time = _itemTemplate.getTime() == -1 ? -1 : System.currentTimeMillis() + (_itemTemplate.getTime() * 60 * 1000);
+		_time = _itemTemplate.getTime() == null ? null : DateTime.UtcNow + _itemTemplate.getTime();
 		scheduleLifeTimeTask();
 		scheduleVisualLifeTime();
 	}
@@ -211,7 +219,7 @@ public class Item: WorldObject
 		WorldRegion oldregion = getWorldRegion();
 		
 		// Create a server->client GetItem packet to pick up the Item
-		creature.broadcastPacket(new GetItem(this, creature.getObjectId()));
+		creature.broadcastPacket(new GetItemPacket(this, creature.getObjectId()));
 		
 		lock (this)
 		{
@@ -248,7 +256,7 @@ public class Item: WorldObject
 	{
 		setOwnerId(ownerId);
 		
-		if ((Config.LOG_ITEMS && ((!Config.LOG_ITEMS_SMALL_LOG) && (!Config.LOG_ITEMS_IDS_ONLY))) || (Config.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || (_itemTemplate.getId() == ADENA_ID))) || (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.contains(_itemTemplate.getId())))
+		if ((Config.LOG_ITEMS && ((!Config.LOG_ITEMS_SMALL_LOG) && (!Config.LOG_ITEMS_IDS_ONLY))) || (Config.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || (_itemTemplate.getId() == Inventory.ADENA_ID))) || (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.Contains(_itemTemplate.getId())))
 		{
 			if (_enchantLevel > 0)
 			{
@@ -310,7 +318,8 @@ public class Item: WorldObject
 				referenceName = (String) reference;
 			}
 			
-			GMAudit.auditGMAction(creator.ToString(), sb.ToString(), targetName, StringUtil.concat("Object referencing this action is: ", referenceName));
+			// TODO: GM audit not implemented
+			//GMAudit.auditGMAction(creator.ToString(), sb.ToString(), targetName, StringUtil.concat("Object referencing this action is: ", referenceName));
 		}
 	}
 	
@@ -424,7 +433,7 @@ public class Item: WorldObject
 		}
 		
 		long old = _count;
-		long max = _itemId == ADENA_ID ? MAX_ADENA : long.MaxValue;
+		long max = _itemId == Inventory.ADENA_ID ? Inventory.MAX_ADENA : long.MaxValue;
 		
 		if ((count > 0) && (_count > (max - count)))
 		{
@@ -442,7 +451,7 @@ public class Item: WorldObject
 		
 		_storedInDb = false;
 		
-		if ((Config.LOG_ITEMS && (process != null) && ((!Config.LOG_ITEMS_SMALL_LOG) && (!Config.LOG_ITEMS_IDS_ONLY))) || (Config.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || (_itemTemplate.getId() == ADENA_ID))) || (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.contains(_itemTemplate.getId())))
+		if ((Config.LOG_ITEMS && (process != null) && ((!Config.LOG_ITEMS_SMALL_LOG) && (!Config.LOG_ITEMS_IDS_ONLY))) || (Config.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || (_itemTemplate.getId() == Inventory.ADENA_ID))) || (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.Contains(_itemTemplate.getId())))
 		{
 			if (_enchantLevel > 0)
 			{
@@ -512,7 +521,7 @@ public class Item: WorldObject
 				referenceName = (String) reference;
 			}
 			
-			GMAudit.auditGMAction(creator.ToString(), sb.ToString(), targetName, StringUtil.concat("Object referencing this action is: ", referenceName));
+			//GMAudit.auditGMAction(creator.ToString(), sb.ToString(), targetName, StringUtil.concat("Object referencing this action is: ", referenceName));
 		}
 	}
 	
@@ -596,7 +605,7 @@ public class Item: WorldObject
 		_dropTime = time;
 	}
 	
-	public DateTime getDropTime()
+	public DateTime? getDropTime()
 	{
 		return _dropTime;
 	}
@@ -879,7 +888,7 @@ public class Item: WorldObject
 		        && ((pet == null) ||
 		            (getObjectId() != pet.getControlObjectId())) // Not Control item of currently summoned pet
 		        && !(player.isProcessingItem(getObjectId())) // Not momentarily used enchant scroll
-		        && (allowAdena || (_itemId != ADENA_ID)) // Not Adena
+		        && (allowAdena || (_itemId != Inventory.ADENA_ID)) // Not Adena
 		        && (!player.isCastingNow(s => s.getSkill().getItemConsumeId() != _itemId)) && (allowNonTradeable ||
 			        (isTradeable() && (!((_itemTemplate.getItemType() == EtcItemType.PET_COLLAR) &&
 			                             player.havePetInvItems())))));
@@ -1037,9 +1046,8 @@ public class Item: WorldObject
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM item_variations WHERE itemId = ?");
-			ps.setInt(1, getObjectId());
-			ps.executeUpdate();
+			int itemId = getObjectId();
+			ctx.ItemVariations.Where(r => r.ItemId == itemId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -1058,35 +1066,26 @@ public class Item: WorldObject
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps1 = con.prepareStatement("SELECT mineralId,option1,option2 FROM item_variations WHERE itemId=?");
-			PreparedStatement ps2 =
-				con.prepareStatement("SELECT elemType,elemValue FROM item_elementals WHERE itemId=?");
-			ps1.setInt(1, getObjectId());
+			int itemId = getObjectId();
+			DbItemVariation? record = ctx.ItemVariations.SingleOrDefault(r => r.ItemId == itemId);
+			if (record is not null)
 			{
-				ResultSet rs = ps1.executeQuery();
-				if (rs.next())
+				int mineralId = record.MineralId;
+				int option1 = record.Option1;
+				int option2 = record.Option2;
+				if ((option1 != -1) || (option2 != -1))
 				{
-					int mineralId = rs.getInt("mineralId");
-					int option1 = rs.getInt("option1");
-					int option2 = rs.getInt("option2");
-					if ((option1 != -1) || (option2 != -1))
-					{
-						_augmentation = new VariationInstance(mineralId, option1, option2);
-					}
+					_augmentation = new VariationInstance(mineralId, option1, option2);
 				}
 			}
-			
-			ps2.setInt(1, getObjectId());
+
+			foreach (var itemElem in ctx.ItemElementals.Where(r => r.ItemId == itemId))
 			{
-				ResultSet rs = ps2.executeQuery();
-				while (rs.next())
+				AttributeType attributeType = (AttributeType)itemElem.Type;
+				int attributeValue = itemElem.Value;
+				if (attributeType != (AttributeType)(-1) && attributeValue != -1)
 				{
-					byte attributeType = rs.getByte(1);
-					int attributeValue = rs.getInt(2);
-					if ((attributeType != -1) && (attributeValue != -1))
-					{
-						applyAttribute(new AttributeHolder(AttributeType.findByClientId(attributeType), attributeValue));
-					}
+					applyAttribute(new AttributeHolder(attributeType, attributeValue));
 				}
 			}
 		}
@@ -1101,7 +1100,7 @@ public class Item: WorldObject
 		try
 		{
 			using GameServerDbContext ctx = new();
-			updateItemOptions(con);
+			updateItemOptions(ctx);
 		}
 		catch (Exception e)
 		{
@@ -1109,16 +1108,32 @@ public class Item: WorldObject
 		}
 	}
 	
-	private void updateItemOptions(Connection con)
+	private void updateItemOptions(GameServerDbContext ctx)
 	{
 		try
 		{
-			PreparedStatement ps = con.prepareStatement("REPLACE INTO item_variations VALUES(?,?,?,?)");
-			ps.setInt(1, getObjectId());
-			ps.setInt(2, _augmentation != null ? _augmentation.getMineralId() : 0);
-			ps.setInt(3, _augmentation != null ? _augmentation.getOption1Id() : -1);
-			ps.setInt(4, _augmentation != null ? _augmentation.getOption2Id() : -1);
-			ps.executeUpdate();
+			int itemId = getObjectId();
+			DbItemVariation? record = ctx.ItemVariations.SingleOrDefault(r => r.ItemId == itemId);
+			if (record is null)
+			{
+				record = new DbItemVariation();
+				record.ItemId = itemId;
+			}
+
+			if (_augmentation != null)
+			{
+				record.MineralId = _augmentation.getMineralId();
+				record.Option1 = _augmentation.getOption1Id();
+				record.Option1 = _augmentation.getOption2Id();
+			}
+			else
+			{
+				record.MineralId = 0;
+				record.Option1 = -1;
+				record.Option1 = -1;
+			}
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -1131,7 +1146,7 @@ public class Item: WorldObject
 		try
 		{
 			using GameServerDbContext ctx = new();
-			updateItemElements(con);
+			updateItemElements(ctx);
 		}
 		catch (Exception e)
 		{
@@ -1139,13 +1154,12 @@ public class Item: WorldObject
 		}
 	}
 	
-	private void updateItemElements(Connection con)
+	private void updateItemElements(GameServerDbContext ctx)
 	{
 		try
 		{
-			PreparedStatement ps = con.prepareStatement("DELETE FROM item_elementals WHERE itemId = ?");
-			ps.setInt(1, getObjectId());
-			ps.executeUpdate();
+			int itemId = getObjectId();
+			ctx.ItemElementals.Where(r => r.ItemId == itemId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -1159,15 +1173,17 @@ public class Item: WorldObject
 		
 		try
 		{
-			PreparedStatement ps = con.prepareStatement("INSERT INTO item_elementals VALUES(?,?,?)");
 			foreach (AttributeHolder attribute in _elementals.values())
 			{
-				ps.setInt(1, getObjectId());
-				ps.setByte(2, attribute.getType().getClientId());
-				ps.setInt(3, attribute.getValue());
-				ps.executeUpdate();
-				ps.clearParameters();
+				ctx.ItemElementals.Add(new DbItemElemental()
+				{
+					ItemId = getObjectId(),
+					Type = (byte)attribute.getType(),
+					Value = attribute.getValue()
+				});
 			}
+			
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -1297,14 +1313,11 @@ public class Item: WorldObject
 			_elementals.remove(type);
 		}
 		
-		try 
+		try
 		{
+			int itemId = getObjectId();
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement("DELETE FROM item_elementals WHERE itemId = ? AND elemType = ?");
-			ps.setInt(1, getObjectId());
-			ps.setByte(2, type.getClientId());
-			ps.executeUpdate();
+			ctx.ItemElementals.Where(r => r.ItemId == itemId && r.Type == (byte)type).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -1326,10 +1339,9 @@ public class Item: WorldObject
 		
 		try 
 		{
+			int itemId = getObjectId();
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM item_elementals WHERE itemId = ?");
-			ps.setInt(1, getObjectId());
-			ps.executeUpdate();
+			ctx.ItemElementals.Where(r => r.ItemId == itemId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -1343,14 +1355,14 @@ public class Item: WorldObject
 	 */
 	public bool isShadowItem()
 	{
-		return (_mana >= 0);
+		return _mana != null;
 	}
 	
 	/**
 	 * Returns the remaining mana of this shadow item
 	 * @return lifeTime
 	 */
-	public int getMana()
+	public int? getMana()
 	{
 		return _mana;
 	}
@@ -1369,20 +1381,20 @@ public class Item: WorldObject
 	 * @param resetConsumingMana if forces a new consumption task if item is equipped
 	 * @param count how much mana decrease
 	 */
-	public void decreaseMana(bool resetConsumingMana, int count)
+	public void decreaseMana(bool resetConsumingMana, TimeSpan count)
 	{
 		if (!isShadowItem())
 		{
 			return;
 		}
 		
-		if ((_mana - count) >= 0)
+		if ((_mana - count) >= TimeSpan.Zero)
 		{
 			_mana -= count;
 		}
 		else
 		{
-			_mana = 0;
+			_mana = TimeSpan.Zero;
 		}
 		
 		if (_storedInDb)
@@ -1397,46 +1409,47 @@ public class Item: WorldObject
 		Player player = getActingPlayer();
 		if (player != null)
 		{
-			SystemMessage sm;
+			SystemMessagePacket sm;
 			switch (_mana)
 			{
 				case 10:
 				{
-					sm = new SystemMessage(SystemMessageId.S1_S_REMAINING_MANA_IS_NOW_10);
-					sm.addItemName(_itemTemplate);
+					sm = new SystemMessagePacket(SystemMessageId.S1_S_REMAINING_MANA_IS_NOW_10);
+					sm.Params.addItemName(_itemTemplate);
 					player.sendPacket(sm);
 					break;
 				}
 				case 5:
 				{
-					sm = new SystemMessage(SystemMessageId.S1_S_REMAINING_MANA_IS_NOW_5);
-					sm.addItemName(_itemTemplate);
+					sm = new SystemMessagePacket(SystemMessageId.S1_S_REMAINING_MANA_IS_NOW_5);
+					sm.Params.addItemName(_itemTemplate);
 					player.sendPacket(sm);
 					break;
 				}
 				case 1:
 				{
-					sm = new SystemMessage(SystemMessageId.S1_S_REMAINING_MANA_IS_NOW_1_IT_WILL_DISAPPEAR_SOON);
-					sm.addItemName(_itemTemplate);
+					sm = new SystemMessagePacket(SystemMessageId.S1_S_REMAINING_MANA_IS_NOW_1_IT_WILL_DISAPPEAR_SOON);
+					sm.Params.addItemName(_itemTemplate);
 					player.sendPacket(sm);
 					break;
 				}
 			}
 			
-			if (_mana == 0) // The life time has expired
+			if (_mana == TimeSpan.Zero) // The life time has expired
 			{
-				sm = new SystemMessage(SystemMessageId.S1_S_REMAINING_MANA_IS_NOW_0_AND_THE_ITEM_HAS_DISAPPEARED);
-				sm.addItemName(_itemTemplate);
+				sm = new SystemMessagePacket(SystemMessageId.S1_S_REMAINING_MANA_IS_NOW_0_AND_THE_ITEM_HAS_DISAPPEARED);
+				sm.Params.addItemName(_itemTemplate);
 				player.sendPacket(sm);
 				
 				// unequip
 				if (isEquipped())
 				{
-					InventoryUpdate iu = new InventoryUpdate();
+					List<ItemInfo> items = new List<ItemInfo>();
 					foreach (Item item in player.getInventory().unEquipItemInSlotAndRecord(getLocationSlot()))
 					{
-						iu.addModifiedItem(item);
+						items.Add(new ItemInfo(item, ItemChangeType.MODIFIED));
 					}
+					InventoryUpdatePacket iu = new InventoryUpdatePacket(items);
 					player.sendInventoryUpdate(iu);
 					player.broadcastUserInfo();
 				}
@@ -1447,8 +1460,7 @@ public class Item: WorldObject
 					player.getInventory().destroyItem("Item", this, player, null);
 					
 					// send update
-					InventoryUpdate iu = new InventoryUpdate();
-					iu.addRemovedItem(this);
+					InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(this, ItemChangeType.REMOVED));
 					player.sendInventoryUpdate(iu);
 				}
 				else
@@ -1465,8 +1477,7 @@ public class Item: WorldObject
 				}
 				if (_loc != ItemLocation.WAREHOUSE)
 				{
-					InventoryUpdate iu = new InventoryUpdate();
-					iu.addModifiedItem(this);
+					InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(this, ItemChangeType.MODIFIED));
 					player.sendInventoryUpdate(iu);
 				}
 			}
@@ -1506,9 +1517,7 @@ public class Item: WorldObject
 	 */
 	public void updateDatabase(bool force)
 	{
-		_dbLock.lock();
-		
-		try
+		lock (_dbLock)
 		{
 			if (_existsInDb)
 			{
@@ -1529,10 +1538,6 @@ public class Item: WorldObject
 				}
 				insertIntoDb();
 			}
-		}
-		finally
-		{
-			_dbLock.unlock();
 		}
 	}
 	
@@ -1577,7 +1582,7 @@ public class Item: WorldObject
 		setSpawned(true);
 		setXYZ(x, y, z);
 		
-		setDropTime(System.currentTimeMillis());
+		setDropTime(DateTime.UtcNow);
 		setDropperObjectId(dropper != null ? dropper.getObjectId() : 0); // Set the dropper Id for the knownlist packets in sendInfo
 		
 		// Add the Item dropped in the world as a visible object
@@ -1612,36 +1617,43 @@ public class Item: WorldObject
 			return;
 		}
 		
-		try 
+		try
 		{
+			int itemId = getObjectId();
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(
-				"UPDATE items SET owner_id=?,count=?,loc=?,loc_data=?,enchant_level=?,custom_type1=?,custom_type2=?,mana_left=?,time=? WHERE object_id = ?");
-			ps.setInt(1, _ownerId);
-			ps.setLong(2, _count);
-			ps.setString(3, _loc.name());
-			ps.setInt(4, _locData);
-			ps.setInt(5, _enchantLevel);
-			ps.setInt(6, _type1);
-			ps.setInt(7, _type2);
-			ps.setInt(8, _mana);
-			ps.setLong(9, _time);
-			ps.setInt(10, getObjectId());
-			ps.executeUpdate();
+			DbItem? item = ctx.Items.SingleOrDefault(r => r.ObjectId == itemId);
+			if (item is null)
+			{
+				item = new DbItem();
+				item.ObjectId = itemId;
+				item.ItemId = _itemId;
+			}
+
+			item.OwnerId = _ownerId;
+			item.Count = _count;
+			item.Location = (int)_loc;
+			item.LocationData = _locData;
+			item.EnchantLevel = _enchantLevel;
+			item.CustomType1 = _type1;
+			item.CustomType2 = _type2;
+			item.ManaLeft = _mana;
+			item.Time = _time;
+			ctx.SaveChanges();
+
 			_existsInDb = true;
 			_storedInDb = true;
 			
 			if (_augmentation != null)
 			{
-				updateItemOptions(con);
+				updateItemOptions(ctx);
 			}
 			
 			if (_elementals != null)
 			{
-				updateItemElements(con);
+				updateItemElements(ctx);
 			}
 			
-			updateSpecialAbilities(con);
+			updateSpecialAbilities(ctx);
 		}
 		catch (Exception e)
 		{
@@ -1661,37 +1673,38 @@ public class Item: WorldObject
 		
 		try 
 		{
-		using GameServerDbContext ctx = new();
-		PreparedStatement ps =
-			con.prepareStatement(
-				"INSERT INTO items (owner_id,item_id,count,loc,loc_data,enchant_level,object_id,custom_type1,custom_type2,mana_left,time) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
-			ps.setInt(1, _ownerId);
-			ps.setInt(2, _itemId);
-			ps.setLong(3, _count);
-			ps.setString(4, _loc.name());
-			ps.setInt(5, _locData);
-			ps.setInt(6, _enchantLevel);
-			ps.setInt(7, getObjectId());
-			ps.setInt(8, _type1);
-			ps.setInt(9, _type2);
-			ps.setInt(10, _mana);
-			ps.setLong(11, _time);
+			using GameServerDbContext ctx = new();
+			ctx.Items.Add(new DbItem()
+			{
+				OwnerId = _ownerId,
+				ItemId = _itemId,
+				Count = _count,
+				Location = (int)_loc,
+				LocationData = _locData,
+				EnchantLevel = _enchantLevel,
+				ObjectId = getObjectId(),
+				CustomType1 = _type1,
+				CustomType2 = _type2,
+				ManaLeft = _mana,
+				Time = _time,
+			});
 			
-			ps.executeUpdate();
+			ctx.SaveChanges();
+			
 			_existsInDb = true;
 			_storedInDb = true;
 			
 			if (_augmentation != null)
 			{
-				updateItemOptions(con);
+				updateItemOptions(ctx);
 			}
 			
 			if (_elementals != null)
 			{
-				updateItemElements(con);
+				updateItemElements(ctx);
 			}
 			
-			updateSpecialAbilities(con);
+			updateSpecialAbilities(ctx);
 		}
 		catch (Exception e)
 		{
@@ -1711,37 +1724,14 @@ public class Item: WorldObject
 		
 		try
 		{
+			int itemId = getObjectId();
 			using GameServerDbContext ctx = new();
 
-			{
-				PreparedStatement ps = con.prepareStatement("DELETE FROM items WHERE object_id = ?");
-				ps.setInt(1, getObjectId());
-				ps.executeUpdate();
-			}
-
-			{
-				PreparedStatement ps = con.prepareStatement("DELETE FROM item_variations WHERE itemId = ?");
-				ps.setInt(1, getObjectId());
-				ps.executeUpdate();
-			}
-
-			{
-				PreparedStatement ps = con.prepareStatement("DELETE FROM item_elementals WHERE itemId = ?");
-				ps.setInt(1, getObjectId());
-				ps.executeUpdate();
-			}
-
-			{
-				PreparedStatement ps = con.prepareStatement("DELETE FROM item_special_abilities WHERE objectId = ?");
-				ps.setInt(1, getObjectId());
-				ps.executeUpdate();
-			}
-
-			{
-				PreparedStatement ps = con.prepareStatement("DELETE FROM item_variables WHERE id = ?");
-				ps.setInt(1, getObjectId());
-				ps.executeUpdate();
-			}
+			ctx.ItemVariables.Where(r => r.ItemId == itemId).ExecuteDelete();
+			ctx.ItemVariations.Where(r => r.ItemId == itemId).ExecuteDelete();
+			ctx.ItemElementals.Where(r => r.ItemId == itemId).ExecuteDelete();
+			ctx.ItemSpecialAbilities.Where(r => r.ItemId == itemId).ExecuteDelete();
+			ctx.Items.Where(r => r.ObjectId == itemId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -1763,12 +1753,12 @@ public class Item: WorldObject
 		}
 	}
 	
-	public void setItemLootShedule(ScheduledFuture<?> sf)
+	public void setItemLootShedule(ScheduledFuture sf)
 	{
 		_itemLootShedule = sf;
 	}
 	
-	public ScheduledFuture<?> getItemLootShedule()
+	public ScheduledFuture getItemLootShedule()
 	{
 		return _itemLootShedule;
 	}
@@ -1853,21 +1843,21 @@ public class Item: WorldObject
 	
 	public bool isTimeLimitedItem()
 	{
-		return _time > 0;
+		return _time != null;
 	}
 	
 	/**
 	 * Returns (current system time + time) of this time limited item
 	 * @return Time
 	 */
-	public long getTime()
+	public DateTime? getTime()
 	{
 		return _time;
 	}
 	
-	public long getRemainingTime()
+	public TimeSpan? getRemainingTime()
 	{
-		return _time - System.currentTimeMillis();
+		return _time is null ? null : _time.Value - DateTime.UtcNow;
 	}
 	
 	public void endOfLife()
@@ -1877,11 +1867,13 @@ public class Item: WorldObject
 		{
 			if (isEquipped())
 			{
-				InventoryUpdate iu = new InventoryUpdate();
+				List<ItemInfo> items = new List<ItemInfo>();
 				foreach (Item item in player.getInventory().unEquipItemInSlotAndRecord(getLocationSlot()))
 				{
-					iu.addModifiedItem(item);
+					items.Add(new ItemInfo(item, ItemChangeType.MODIFIED));
 				}
+				
+				InventoryUpdatePacket iu = new InventoryUpdatePacket(items);
 				player.sendInventoryUpdate(iu);
 			}
 			
@@ -1891,15 +1883,17 @@ public class Item: WorldObject
 				player.getInventory().destroyItem("Item", this, player, null);
 				
 				// send update
-				InventoryUpdate iu = new InventoryUpdate();
-				iu.addRemovedItem(this);
+				InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(this, ItemChangeType.REMOVED));
 				player.sendInventoryUpdate(iu);
 			}
 			else
 			{
 				player.getWarehouse().destroyItem("Item", this, player, null);
 			}
-			player.sendPacket(new SystemMessage(SystemMessageId.S1_HAS_EXPIRED).addItemName(_itemId));
+
+			var sm = new SystemMessagePacket(SystemMessageId.S1_HAS_EXPIRED);
+			sm.Params.addItemName(_itemId);
+			player.sendPacket(sm);
 		}
 	}
 	
@@ -1909,7 +1903,7 @@ public class Item: WorldObject
 		{
 			return;
 		}
-		if (getRemainingTime() <= 0)
+		if (getRemainingTime() <= TimeSpan.Zero)
 		{
 			endOfLife();
 		}
@@ -1928,11 +1922,11 @@ public class Item: WorldObject
 	{
 		if (_dropperObjectId != 0)
 		{
-			player.sendPacket(new DropItem(this, _dropperObjectId));
+			player.sendPacket(new DropItemPacket(this, _dropperObjectId));
 		}
 		else
 		{
-			player.sendPacket(new SpawnItem(this));
+			player.sendPacket(new SpawnItemPacket(this));
 		}
 	}
 	
@@ -2077,7 +2071,7 @@ public class Item: WorldObject
 		return _owner;
 	}
 	
-	public int getEquipReuseDelay()
+	public TimeSpan getEquipReuseDelay()
 	{
 		return _itemTemplate.getEquipReuseDelay();
 	}
@@ -2269,14 +2263,12 @@ public class Item: WorldObject
 	
 	private void removeSpecialAbility(EnsoulOption option)
 	{
-		try 
+		try
 		{
+			int itemObjectId = getObjectId();
+			int optionId = option.getId();
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement("DELETE FROM item_special_abilities WHERE objectId = ? AND optionId = ?");
-			ps.setInt(1, getObjectId());
-			ps.setInt(2, option.getId());
-			ps.execute();
+			ctx.ItemSpecialAbilities.Where(r => r.ItemId == itemObjectId && r.OptionId == optionId).ExecuteDelete();
 			
 			Skill skill = option.getSkill();
 			if (skill != null)
@@ -2290,7 +2282,7 @@ public class Item: WorldObject
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Item could not remove special ability for " + this + ": " + e);
+			LOGGER.Error("Item could not remove special ability for " + this + ": " + e);
 		}
 	}
 	
@@ -2332,30 +2324,26 @@ public class Item: WorldObject
 	
 	private void restoreSpecialAbilities()
 	{
-		try 
+		try
 		{
+			int itemObjectId = getObjectId();
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement("SELECT * FROM item_special_abilities WHERE objectId = ? ORDER BY position");
-			ps.setInt(1, getObjectId());
+			var query = ctx.ItemSpecialAbilities.Where(r => r.ItemId == itemObjectId).OrderBy(r => r.Position);
+			foreach (var record in query)
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
+				int optionId = record.OptionId;
+				int type = record.Type;
+				int position = record.Position;
+				EnsoulOption option = EnsoulData.getInstance().getOption(optionId);
+				if (option != null)
 				{
-					int optionId = rs.getInt("optionId");
-					int type = rs.getInt("type");
-					int position = rs.getInt("position");
-					EnsoulOption option = EnsoulData.getInstance().getOption(optionId);
-					if (option != null)
-					{
-						addSpecialAbility(option, position, type, false);
-					}
+					addSpecialAbility(option, position, type, false);
 				}
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Item could not restore special abilities for " + this + ": " + e);
+			LOGGER.Error("Item could not restore special abilities for " + this + ": " + e);
 		}
 	}
 	
@@ -2364,7 +2352,7 @@ public class Item: WorldObject
 		try
 		{
 			using GameServerDbContext ctx = new();
-			updateSpecialAbilities(con);
+			updateSpecialAbilities(ctx);
 		}
 		catch (Exception e)
 		{
@@ -2372,28 +2360,37 @@ public class Item: WorldObject
 		}
 	}
 	
-	private void updateSpecialAbilities(Connection con)
+	private void updateSpecialAbilities(GameServerDbContext ctx)
 	{
 		try
 		{
-			PreparedStatement ps = con.prepareStatement(
-				"INSERT INTO item_special_abilities (`objectId`, `type`, `optionId`, `position`) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE type = ?, optionId = ?, position = ?");
-			ps.setInt(1, getObjectId());
+			static DbItemSpecialAbility GetOrCreateSpecialAbility(GameServerDbContext ctx, int itemObjectId, int optionId)
+			{
+				var record =
+					ctx.ItemSpecialAbilities.SingleOrDefault(r => r.ItemId == itemObjectId && r.OptionId == optionId);
+
+				if (record is null)
+				{
+					record = new DbItemSpecialAbility();
+					record.ItemId = itemObjectId;
+					record.OptionId = optionId;
+					ctx.ItemSpecialAbilities.Add(record);
+				}
+
+				return record;
+			}
+
+			int itemObjectId = getObjectId();
 			for (int i = 0; i < _ensoulOptions.Length; i++)
 			{
 				if (_ensoulOptions[i] == null)
 				{
 					continue;
 				}
-				
-				ps.setInt(2, 1); // regular options
-				ps.setInt(3, _ensoulOptions[i].getId());
-				ps.setInt(4, i);
-				
-				ps.setInt(5, 1); // regular options
-				ps.setInt(6, _ensoulOptions[i].getId());
-				ps.setInt(7, i);
-				ps.execute();
+
+				DbItemSpecialAbility record = GetOrCreateSpecialAbility(ctx, itemObjectId, _ensoulOptions[i].getId());
+				record.Type = 1;
+				record.Position = (byte)i;
 			}
 			
 			for (int i = 0; i < _ensoulSpecialOptions.Length; i++)
@@ -2402,20 +2399,19 @@ public class Item: WorldObject
 				{
 					continue;
 				}
+
+				DbItemSpecialAbility record =
+					GetOrCreateSpecialAbility(ctx, itemObjectId, _ensoulSpecialOptions[i].getId());
 				
-				ps.setInt(2, 2); // special options
-				ps.setInt(3, _ensoulSpecialOptions[i].getId());
-				ps.setInt(4, i);
-				
-				ps.setInt(5, 2); // special options
-				ps.setInt(6, _ensoulSpecialOptions[i].getId());
-				ps.setInt(7, i);
-				ps.execute();
+				record.Type = 2;
+				record.Position = (byte)i;
 			}
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Item could not update item special abilities: " + e);
+			LOGGER.Error("Item could not update item special abilities: " + e);
 		}
 	}
 	
@@ -2431,7 +2427,7 @@ public class Item: WorldObject
 			return;
 		}
 		
-		foreach (Options op in _enchantOptions)
+		foreach (Options.Options op in _enchantOptions)
 		{
 			op.remove(player);
 		}
@@ -2451,7 +2447,7 @@ public class Item: WorldObject
 		
 		foreach (int id in getEnchantOptions())
 		{
-			Options options = OptionData.getInstance().getOptions(id);
+			Options.Options options = OptionData.getInstance().getOptions(id);
 			if (options != null)
 			{
 				options.apply(player);
@@ -2476,7 +2472,7 @@ public class Item: WorldObject
 	
 	public ItemVariables getVariables()
 	{
-		ItemVariables vars = getScript(ItemVariables.class);
+		ItemVariables vars = getScript<ItemVariables>();
 		return vars != null ? vars : addScript(new ItemVariables(getObjectId()));
 	}
 	
@@ -2494,11 +2490,11 @@ public class Item: WorldObject
 					Player player = getActingPlayer();
 					if (player != null)
 					{
-						if (!stone.getRaces().isEmpty() && !stone.getRaces().contains(player.getRace()))
+						if (!stone.getRaces().isEmpty() && !stone.getRaces().Contains(player.getRace()))
 						{
 							return 0;
 						}
-						if (!stone.getRacesNot().isEmpty() && stone.getRacesNot().contains(player.getRace()))
+						if (!stone.getRacesNot().isEmpty() && stone.getRacesNot().Contains(player.getRace()))
 						{
 							return 0;
 						}
@@ -2531,18 +2527,19 @@ public class Item: WorldObject
 		return getVariables().getInt(ItemVariables.VISUAL_APPEARANCE_STONE_ID, 0);
 	}
 	
-	public long getVisualLifeTime()
+	public DateTime? getVisualLifeTime()
 	{
-		return getVariables().getLong(ItemVariables.VISUAL_APPEARANCE_LIFE_TIME, 0);
+		DateTime time = getVariables().getDateTime(ItemVariables.VISUAL_APPEARANCE_LIFE_TIME, DateTime.MinValue);
+		return time == DateTime.MinValue ? null : time;
 	}
 	
 	public void scheduleVisualLifeTime()
 	{
 		ItemAppearanceTaskManager.getInstance().remove(this);
-		if (getVisualLifeTime() > 0)
+		if (getVisualLifeTime() != null)
 		{
-			long endTime = getVisualLifeTime();
-			if ((endTime - System.currentTimeMillis()) > 0)
+			DateTime endTime = getVisualLifeTime().Value;
+			if ((endTime - DateTime.UtcNow) > TimeSpan.Zero)
 			{
 				ItemAppearanceTaskManager.getInstance().add(this, endTime);
 			}
@@ -2571,8 +2568,7 @@ public class Item: WorldObject
 		Player player = getActingPlayer();
 		if (player != null)
 		{
-			InventoryUpdate iu = new InventoryUpdate();
-			iu.addModifiedItem(this);
+			InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(this, ItemChangeType.MODIFIED));
 			player.broadcastUserInfo(UserInfoType.APPAREANCE);
 			player.sendInventoryUpdate(iu);
 			
@@ -2580,11 +2576,15 @@ public class Item: WorldObject
 			{
 				if (isEnchanted())
 				{
-					player.sendPacket(new SystemMessage(SystemMessageId.S1_S2_THE_ITEM_S_TEMPORARY_APPEARANCE_HAS_BEEN_RESET).addInt(_enchantLevel).addItemName(this));
+					var sm = new SystemMessagePacket(SystemMessageId.S1_S2_THE_ITEM_S_TEMPORARY_APPEARANCE_HAS_BEEN_RESET);
+					sm.Params.addInt(_enchantLevel).addItemName(this);
+					player.sendPacket(sm);
 				}
 				else
 				{
-					player.sendPacket(new SystemMessage(SystemMessageId.S1_THE_ITEM_S_TEMPORARY_APPEARANCE_HAS_BEEN_RESET).addItemName(this));
+					var sm = new SystemMessagePacket(SystemMessageId.S1_THE_ITEM_S_TEMPORARY_APPEARANCE_HAS_BEEN_RESET);
+					sm.Params.addItemName(this);
+					player.sendPacket(sm);
 				}
 			}
 		}
@@ -2630,7 +2630,7 @@ public class Item: WorldObject
 					bool update = false;
 					foreach (ArmorSet armorSet in ArmorSetData.getInstance().getSets(stone.getVisualId()))
 					{
-						if ((armorSet.getPiecesCount(player, Item::getVisualId) - 1 /* not removed yet */) < armorSet.getMinimumPieces())
+						if ((armorSet.getPiecesCount(player, x => x.getVisualId()) - 1 /* not removed yet */) < armorSet.getMinimumPieces())
 						{
 							foreach (ArmorsetSkillHolder holder in armorSet.getSkills())
 							{
@@ -2673,7 +2673,7 @@ public class Item: WorldObject
 					bool updateTimeStamp = false;
 					foreach (ArmorSet armorSet in ArmorSetData.getInstance().getSets(stone.getVisualId()))
 					{
-						if (armorSet.getPiecesCount(player, Item::getVisualId) >= armorSet.getMinimumPieces())
+						if (armorSet.getPiecesCount(player, x => x.getVisualId()) >= armorSet.getMinimumPieces())
 						{
 							foreach (ArmorsetSkillHolder holder in armorSet.getSkills())
 							{
@@ -2706,7 +2706,10 @@ public class Item: WorldObject
 									// Active, non offensive, skills start with reuse on equip.
 									if (!skill.isBad() && !skill.isTransformation() && (Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
 									{
-										player.addTimeStamp(skill, skill.getReuseDelay() > 0 ? skill.getReuseDelay() : Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE);
+										player.addTimeStamp(skill,
+											skill.getReuseDelay() > TimeSpan.Zero
+												? skill.getReuseDelay()
+												: TimeSpan.FromMilliseconds(Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE));
 									}
 									
 									updateTimeStamp = true;
@@ -2717,7 +2720,7 @@ public class Item: WorldObject
 					
 					if (updateTimeStamp)
 					{
-						player.sendPacket(new SkillCoolTime(player));
+						player.sendPacket(new SkillCoolTimePacket(player));
 					}
 					
 					if (update)
@@ -2733,7 +2736,7 @@ public class Item: WorldObject
 	 * Returns the item in String format
 	 * @return String
 	 */
-	public override String toString()
+	public override String ToString()
 	{
 		StringBuilder sb = new StringBuilder();
 		sb.Append(_itemTemplate);

@@ -83,11 +83,15 @@ public class GameServerDbContext: DbContext
     public DbSet<OlympiadNoble> OlympiadNobles => Set<OlympiadNoble>();
     
     public DbSet<DbItem> Items => Set<DbItem>();
+    public DbSet<DbItemVariation> ItemVariations => Set<DbItemVariation>();
+    public DbSet<DbItemElemental> ItemElementals => Set<DbItemElemental>();
     public DbSet<ItemAuction> ItemAuctions => Set<ItemAuction>();
     public DbSet<ItemAuctionBid> ItemAuctionBids => Set<ItemAuctionBid>();
     public DbSet<ItemOnGround> ItemsOnGround => Set<ItemOnGround>();
     public DbSet<DbCommissionItem> CommissionItems => Set<DbCommissionItem>();
     public DbSet<ItemTransactionHistory> ItemTransactionHistory => Set<ItemTransactionHistory>();
+    public DbSet<DbItemVariable> ItemVariables => Set<DbItemVariable>();
+    public DbSet<DbItemSpecialAbility> ItemSpecialAbilities => Set<DbItemSpecialAbility>();
     public DbSet<WorldExchangeItem> WorldExchangeItems => Set<WorldExchangeItem>();
     
     public DbSet<Clan> Clans => Set<Clan>();

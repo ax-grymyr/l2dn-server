@@ -798,7 +798,7 @@ public class NpcData: DataReaderBase
 				int max = el.Attribute("max").GetInt32(0);
 				int respawnTime = el.Attribute("respawnTime").GetInt32();
 				int weightPoint = el.Attribute("weightPoint").GetInt32(0);
-				minions.add(new MinionHolder(id, count, max, respawnTime, weightPoint));
+				minions.add(new MinionHolder(id, count, max, TimeSpan.FromMilliseconds(respawnTime), weightPoint));
 			});
 					
 			if (!minions.isEmpty())

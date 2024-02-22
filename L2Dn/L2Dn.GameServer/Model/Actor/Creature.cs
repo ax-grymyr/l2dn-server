@@ -1125,7 +1125,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 				case WeaponType.BOW:
 				{
 					// Old method.
-					int reuse = Formulas.calculateReuseTime(this, weaponItem);
+					TimeSpan reuse = Formulas.calculateReuseTime(this, weaponItem);
 					// Try to do what is expected by having more attack speed.
 					// int reuse = (int) (Formulas.calculateReuseTime(this, weaponItem) / (Math.Max(1, _stat.getAttackSpeedMultiplier() - 1)));
 
@@ -1148,7 +1148,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 					}
 
 					// Calculate and set the disable delay of the bow in function of the Attack Speed
-					_disableRangedAttackEndTime = currentTime.AddMilliseconds(reuse);
+					_disableRangedAttackEndTime = currentTime + reuse;
 					// Precaution. It happened in the past for _attackEndTime. Will not risk it.
 					if (_disableRangedAttackEndTime < currentTime)
 					{
@@ -1161,8 +1161,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 				}
 				case WeaponType.PISTOLS:
 				{
-					int reuse = Formulas.calculateReuseTime(this, weaponItem);
-					_disableRangedAttackEndTime = currentTime.AddMilliseconds(reuse);
+					TimeSpan reuse = Formulas.calculateReuseTime(this, weaponItem);
+					_disableRangedAttackEndTime = currentTime + reuse;
 					// Precaution. It happened in the past for _attackEndTime. Will not risk it.
 					if (_disableRangedAttackEndTime < currentTime)
 					{
@@ -5306,9 +5306,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * Dummy method overriden in {@link Player}
 	 * @return the alliance id of current character.
 	 */
-	public virtual int getAllyId()
+	public virtual int? getAllyId()
 	{
-		return 0;
+		return null;
 	}
 	
 	/**
