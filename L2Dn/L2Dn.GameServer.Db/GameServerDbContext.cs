@@ -68,6 +68,7 @@ public class GameServerDbContext: DbContext
     public DbSet<CharacterRecipeShopList> CharacterRecipeShopLists => Set<CharacterRecipeShopList>();
     public DbSet<CharacterShortCut> CharacterShortCuts => Set<CharacterShortCut>();
     public DbSet<CharacterTeleportBookmark> CharacterTeleportBookmarks => Set<CharacterTeleportBookmark>();
+    public DbSet<CharacterRandomCraft> CharacterRandomCrafts => Set<CharacterRandomCraft>();
     public DbSet<CharacterSurveillance> CharacterSurveillances => Set<CharacterSurveillance>();
     public DbSet<CharacterPremiumItem> CharacterPremiumItems => Set<CharacterPremiumItem>();
     public DbSet<CharacterVariable> CharacterVariables => Set<CharacterVariable>();

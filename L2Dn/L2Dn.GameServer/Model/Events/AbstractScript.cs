@@ -34,6 +34,7 @@ using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Scripting;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
@@ -1529,6 +1530,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 					default:
 					{
 						LOGGER.Warn(GetType().Name+ ": Unhandled register type: " + registerType);
+						break;
 					}
 				}
 
@@ -1649,6 +1651,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 					default:
 					{
 						LOGGER.Warn(GetType().Name+ ": Unhandled register type: " + registerType);
+						break;
 					}
 				}
 			}
@@ -1767,7 +1770,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		{
 			return;
 		}
-		player.sendPacket(new ExShowScreenMessage(text, time));
+		player.sendPacket(new ExShowScreenMessagePacket(text, time));
 	}
 	
 	/**
@@ -1784,7 +1787,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		{
 			return;
 		}
-		player.sendPacket(new ExShowScreenMessage(npcString, position, time, @params));
+		player.sendPacket(new ExShowScreenMessagePacket(npcString, position, time, @params));
 	}
 	
 	/**
@@ -1802,7 +1805,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		{
 			return;
 		}
-		player.sendPacket(new ExShowScreenMessage(npcString, position, time, showEffect, @params));
+		player.sendPacket(new ExShowScreenMessagePacket(npcString, position, time, showEffect, @params));
 	}
 	
 	/**
@@ -1819,7 +1822,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		{
 			return;
 		}
-		player.sendPacket(new ExShowScreenMessage(systemMsg, position, time, @params));
+		player.sendPacket(new ExShowScreenMessagePacket(systemMsg, position, time, @params));
 	}
 	
 	/**
@@ -1832,7 +1835,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	public static Npc addSpawn(int npcId, IPositionable pos)
 	{
-		return addSpawn(npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), false, 0, false, 0);
+		return addSpawn(npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), false, TimeSpan.Zero, false, 0);
 	}
 	
 	/**
@@ -1860,7 +1863,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	public static Npc addSpawn(int npcId, IPositionable pos, bool isSummonSpawn)
 	{
-		return addSpawn(npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), false, 0, isSummonSpawn, 0);
+		return addSpawn(npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), false, TimeSpan.Zero, isSummonSpawn, 0);
 	}
 	
 	/**
@@ -1873,7 +1876,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @see #addSpawn(int, IPositionable, bool, long, bool, int)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, IPositionable pos, bool randomOffset, long despawnDelay)
+	public static Npc addSpawn(int npcId, IPositionable pos, bool randomOffset, TimeSpan despawnDelay)
 	{
 		return addSpawn(npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), randomOffset, despawnDelay, false, 0);
 	}
@@ -1889,7 +1892,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @see #addSpawn(int, IPositionable, bool, long, bool, int)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, IPositionable pos, bool randomOffset, long despawnDelay, bool isSummonSpawn)
+	public static Npc addSpawn(int npcId, IPositionable pos, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn)
 	{
 		return addSpawn(npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), randomOffset, despawnDelay, isSummonSpawn, 0);
 	}
@@ -1910,7 +1913,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	public static Npc addSpawn(Npc summoner, int npcId, IPositionable pos, bool randomOffset, int instanceId)
 	{
-		return addSpawn(summoner, npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), randomOffset, 0, false, instanceId);
+		return addSpawn(summoner, npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), randomOffset, TimeSpan.Zero, false, instanceId);
 	}
 	
 	/**
@@ -1928,7 +1931,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @see #addSpawn(int, IPositionable, bool, long, bool)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, IPositionable pos, bool randomOffset, long despawnDelay, bool isSummonSpawn, int instanceId)
+	public static Npc addSpawn(int npcId, IPositionable pos, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn, int instanceId)
 	{
 		return addSpawn(npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), randomOffset, despawnDelay, isSummonSpawn, instanceId);
 	}
@@ -1946,7 +1949,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @see #addSpawn(int, IPositionable, bool, long, bool, int)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, int x, int y, int z, int heading, bool randomOffset, long despawnDelay)
+	public static Npc addSpawn(int npcId, int x, int y, int z, int heading, bool randomOffset, TimeSpan despawnDelay)
 	{
 		return addSpawn(npcId, x, y, z, heading, randomOffset, despawnDelay, false, 0);
 	}
@@ -1965,7 +1968,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @see #addSpawn(int, IPositionable, bool, long, bool, int)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, int x, int y, int z, int heading, bool randomOffset, long despawnDelay, bool isSummonSpawn)
+	public static Npc addSpawn(int npcId, int x, int y, int z, int heading, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn)
 	{
 		return addSpawn(npcId, x, y, z, heading, randomOffset, despawnDelay, isSummonSpawn, 0);
 	}
@@ -1986,7 +1989,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @see #addSpawn(int, int, int, int, int, bool, long)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool)
 	 */
-	public static Npc addSpawn(int npcId, int x, int y, int z, int heading, bool randomOffset, long despawnDelay, bool isSummonSpawn, int instanceId)
+	public static Npc addSpawn(int npcId, int x, int y, int z, int heading, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn, int instanceId)
 	{
 		return addSpawn(null, npcId, x, y, z, heading, randomOffset, despawnDelay, isSummonSpawn, instanceId);
 	}
@@ -2043,7 +2046,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 			spawn.stopRespawn();
 			
 			Npc npc = spawn.doSpawn(isSummonSpawn);
-			if (despawnDelay > 0)
+			if (despawnDelay > TimeSpan.Zero)
 			{
 				npc.scheduleDespawn(despawnDelay);
 			}
@@ -2432,39 +2435,39 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		{
 			if (itemId == Inventory.ADENA_ID)
 			{
-				count *= Config.RATE_QUEST_REWARD_ADENA;
+				count = (long)(count * Config.RATE_QUEST_REWARD_ADENA);
 			}
 			else if (Config.RATE_QUEST_REWARD_USE_MULTIPLIERS)
 			{
-				if (item is EtcItem)
+				if (item is EtcItem etcItem)
 				{
-					switch (((EtcItem) item).getItemType())
+					switch (etcItem.getItemType().AsEtcItemType())
 					{
 						case EtcItemType.POTION:
 						{
-							count *= Config.RATE_QUEST_REWARD_POTION;
+							count = (long)(count * Config.RATE_QUEST_REWARD_POTION);
 							break;
 						}
 						case EtcItemType.ENCHT_WP:
 						case EtcItemType.ENCHT_AM:
 						case EtcItemType.SCROLL:
 						{
-							count *= Config.RATE_QUEST_REWARD_SCROLL;
+							count = (long)(count * Config.RATE_QUEST_REWARD_SCROLL);
 							break;
 						}
 						case EtcItemType.RECIPE:
 						{
-							count *= Config.RATE_QUEST_REWARD_RECIPE;
+							count = (long)(count * Config.RATE_QUEST_REWARD_RECIPE);
 							break;
 						}
 						case EtcItemType.MATERIAL:
 						{
-							count *= Config.RATE_QUEST_REWARD_MATERIAL;
+							count = (long)(count * Config.RATE_QUEST_REWARD_MATERIAL);
 							break;
 						}
 						default:
 						{
-							count *= Config.RATE_QUEST_REWARD;
+							count = (long)(count * Config.RATE_QUEST_REWARD);
 							break;
 						}
 					}
@@ -2472,7 +2475,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 			}
 			else
 			{
-				count *= Config.RATE_QUEST_REWARD;
+				count = (long)(count * Config.RATE_QUEST_REWARD);
 			}
 		}
 		catch (Exception e)
@@ -2501,27 +2504,27 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		// If item for reward is gold, send message of gold reward to client
 		if (item.getId() == Inventory.ADENA_ID)
 		{
-			SystemMessage smsg = new SystemMessage(SystemMessageId.YOU_HAVE_OBTAINED_S1_ADENA_2);
-			smsg.addLong(count);
+			SystemMessagePacket smsg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_ADENA_2);
+			smsg.Params.addLong(count);
 			player.sendPacket(smsg);
 		}
 		// Otherwise, send message of object reward to client
 		else if (count > 1)
 		{
-			SystemMessage smsg = new SystemMessage(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
-			smsg.addItemName(item);
-			smsg.addLong(count);
+			SystemMessagePacket smsg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
+			smsg.Params.addItemName(item);
+			smsg.Params.addLong(count);
 			player.sendPacket(smsg);
 		}
 		else
 		{
-			SystemMessage smsg = new SystemMessage(SystemMessageId.YOU_HAVE_ACQUIRED_S1);
-			smsg.addItemName(item);
+			SystemMessagePacket smsg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_ACQUIRED_S1);
+			smsg.Params.addItemName(item);
 			player.sendPacket(smsg);
 		}
 		// send packets
-		player.sendPacket(new ExUserInfoInvenWeight(player));
-		player.sendPacket(new ExAdenaInvenCount(player));
+		player.sendPacket(new ExUserInfoInventoryWeightPacket(player));
+		player.sendPacket(new ExAdenaInvenCountPacket(player));
 	}
 	
 	/**
@@ -2591,7 +2594,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		
 		if (playSound)
 		{
-			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			AbstractScript.playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		sendItemGetMessage(player, item, count);
 	}
@@ -2632,8 +2635,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				player.getStat().recalculateStats(true);
 			}
 			
-			InventoryUpdate iu = new InventoryUpdate();
-			iu.addModifiedItem(item);
+			InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(item, ItemChangeType.MODIFIED));
 			player.sendInventoryUpdate(iu);
 		}
 		
@@ -2707,14 +2709,14 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 			if ((itemId == Inventory.ADENA_ID) || (itemId == Inventory.ANCIENT_ADENA_ID))
 			{
 				dropChanceWithBonus *= Config.CHAMPION_ADENAS_REWARDS_CHANCE;
-				minAmountWithBonus *= Config.CHAMPION_ADENAS_REWARDS_AMOUNT;
-				maxAmountWithBonus *= Config.CHAMPION_ADENAS_REWARDS_AMOUNT;
+				minAmountWithBonus = (long)(minAmountWithBonus * Config.CHAMPION_ADENAS_REWARDS_AMOUNT);
+				maxAmountWithBonus = (long)(maxAmountWithBonus * Config.CHAMPION_ADENAS_REWARDS_AMOUNT);
 			}
 			else
 			{
 				dropChanceWithBonus *= Config.CHAMPION_REWARDS_CHANCE;
-				minAmountWithBonus *= Config.CHAMPION_REWARDS_AMOUNT;
-				maxAmountWithBonus *= Config.CHAMPION_REWARDS_AMOUNT;
+				minAmountWithBonus = (long)(minAmountWithBonus * Config.CHAMPION_REWARDS_AMOUNT);
+				maxAmountWithBonus = (long)(maxAmountWithBonus * Config.CHAMPION_REWARDS_AMOUNT);
 			}
 		}
 		
@@ -2736,14 +2738,14 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				{
 					if (playSound)
 					{
-						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						AbstractScript.playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					return true;
 				}
 				
 				if (playSound)
 				{
-					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					AbstractScript.playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				
 				// if there is no limit, return true every time an item is given
@@ -2787,11 +2789,13 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		// Destroy the quantity of items wanted
 		if (item.isEquipped())
 		{
-			InventoryUpdate iu = new InventoryUpdate();
+			List<ItemInfo> items = new List<ItemInfo>();
 			foreach (Item itm in player.getInventory().unEquipItemInBodySlotAndRecord(item.getTemplate().getBodyPart()))
 			{
-				iu.addModifiedItem(itm);
+				items.Add(new ItemInfo(itm, ItemChangeType.MODIFIED));
 			}
+
+			InventoryUpdatePacket iu = new InventoryUpdatePacket(items);
 			player.sendInventoryUpdate(iu);
 			player.broadcastUserInfo();
 		}
@@ -2873,7 +2877,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	
 	public static void playSound(Instance world, String sound)
 	{
-		world.broadcastPacket(new PlaySound(sound));
+		world.broadcastPacket().SendPackets(new PlaySoundPacket(sound));
 	}
 	
 	/**
@@ -2918,13 +2922,13 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		}
 		
 		long addExp = exp;
-		int addSp = sp;
+		long addSp = sp;
 		
 		// Premium rates
 		if (player.hasPremiumStatus())
 		{
-			addExp *= Config.PREMIUM_RATE_QUEST_XP;
-			addSp *= Config.PREMIUM_RATE_QUEST_SP;
+			addExp = (long)(addExp * Config.PREMIUM_RATE_QUEST_XP);
+			addSp = (long)(addSp * Config.PREMIUM_RATE_QUEST_SP);
 		}
 		
 		player.addExpAndSp((long) player.getStat().getValue(Stat.EXPSP_RATE, (addExp * Config.RATE_QUEST_REWARD_XP)), (int) player.getStat().getValue(Stat.EXPSP_RATE, (addSp * Config.RATE_QUEST_REWARD_SP)));
@@ -3260,7 +3264,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		{
 			return;
 		}
-		player.sendPacket(new SpecialCamera(creature, force, angle1, angle2, time, range, duration, relYaw, relPitch, isWide, relAngle));
+		player.sendPacket(new SpecialCameraPacket(creature, force, angle1, angle2, time, range, duration, relYaw, relPitch, isWide, relAngle));
 	}
 	
 	/**
@@ -3283,7 +3287,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		{
 			return;
 		}
-		player.sendPacket(new SpecialCamera(creature, player, force, angle1, angle2, time, duration, relYaw, relPitch, isWide, relAngle));
+		player.sendPacket(new SpecialCameraPacket(creature, player, force, angle1, angle2, time, duration, relYaw, relPitch, isWide, relAngle));
 	}
 	
 	/**
@@ -3308,12 +3312,12 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		{
 			return;
 		}
-		player.sendPacket(new SpecialCamera(creature, force, angle1, angle2, time, range, duration, relYaw, relPitch, isWide, relAngle, unk));
+		player.sendPacket(new SpecialCameraPacket(creature, force, angle1, angle2, time, range, duration, relYaw, relPitch, isWide, relAngle, unk));
 	}
 	
 	public static void specialCamera(Instance world, Creature creature, int force, int angle1, int angle2, int time, int range, int duration, int relYaw, int relPitch, int isWide, int relAngle, int unk)
 	{
-		world.broadcastPacket(new SpecialCamera(creature, force, angle1, angle2, time, range, duration, relYaw, relPitch, isWide, relAngle, unk));
+		world.broadcastPacket().SendPackets(new SpecialCameraPacket(creature, force, angle1, angle2, time, range, duration, relYaw, relPitch, isWide, relAngle, unk));
 	}
 	
 	/**
@@ -3369,7 +3373,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		{
 			return;
 		}
-		new MovieHolder(Arrays.asList(player), movie);
+
+		new MovieHolder([player], movie);
 	}
 	
 	/**

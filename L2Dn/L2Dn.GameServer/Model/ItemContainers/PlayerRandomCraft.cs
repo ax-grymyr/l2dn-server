@@ -5,6 +5,8 @@ using L2Dn.GameServer.Model.Actor.Request;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Network.OutgoingPackets.RandomCraft;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -31,45 +33,47 @@ public class PlayerRandomCraft
 	
 	public void restore()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM character_random_craft WHERE charId=?");
-			ps.setInt(1, _player.getObjectId());
-			try
+			int characterId = _player.getObjectId();
+			CharacterRandomCraft? record = ctx.CharacterRandomCrafts.SingleOrDefault(r => r.CharacterId == characterId);
+			if (record != null)
 			{
-				ResultSet rs = ps.executeQuery();
-				if (rs.next())
+				try
 				{
-					try
-					{
-						_fullCraftPoints = rs.getInt("random_craft_full_points");
-						_craftPoints = rs.getInt("random_craft_points");
-						_isSayhaRoll = rs.getBoolean("sayha_roll");
-						for (int i = 1; i <= 5; i++)
-						{
-							int itemId = rs.getInt("item_" + i + "_id");
-							long itemCount = rs.getLong("item_" + i + "_count");
-							bool itemLocked = rs.getBoolean("item_" + i + "_locked");
-							int itemLockLeft = rs.getInt("item_" + i + "_lock_left");
-							RandomCraftRewardItemHolder holder = new RandomCraftRewardItemHolder(itemId, itemCount, itemLocked, itemLockLeft);
-							_rewardList.add(i - 1, holder);
-						}
-					}
-					catch (Exception e)
-					{
-						LOGGER.Warn("Could not restore random craft for " + _player);
-					}
+					_fullCraftPoints = record.FullPoints;
+					_craftPoints = record.Points;
+					_isSayhaRoll = record.IsSayhaRoll;
+
+					CharacterRandomCraftItem item = record.Item1;
+					_rewardList.Add(new RandomCraftRewardItemHolder(item.Id, item.Count, item.Locked, item.LockLeft));
+
+					item = record.Item2;
+					_rewardList.Add(new RandomCraftRewardItemHolder(item.Id, item.Count, item.Locked, item.LockLeft));
+
+					item = record.Item3;
+					_rewardList.Add(new RandomCraftRewardItemHolder(item.Id, item.Count, item.Locked, item.LockLeft));
+
+					item = record.Item4;
+					_rewardList.Add(new RandomCraftRewardItemHolder(item.Id, item.Count, item.Locked, item.LockLeft));
+
+					item = record.Item5;
+					_rewardList.Add(new RandomCraftRewardItemHolder(item.Id, item.Count, item.Locked, item.LockLeft));
 				}
-				else
+				catch (Exception e)
 				{
-					storeNew();
+					LOGGER.Error("Could not restore random craft for " + _player);
 				}
+			}
+			else
+			{
+				storeNew();
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Could not restore random craft for " + _player + ": " + e);
+			LOGGER.Error("Could not restore random craft for " + _player + ": " + e);
 		}
 	}
 	
@@ -78,31 +82,34 @@ public class PlayerRandomCraft
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(
-				"UPDATE character_random_craft SET random_craft_full_points=?,random_craft_points=?,sayha_roll=?,item_1_id=?,item_1_count=?,item_1_locked=?,item_1_lock_left=?,item_2_id=?,item_2_count=?,item_2_locked=?,item_2_lock_left=?,item_3_id=?,item_3_count=?,item_3_locked=?,item_3_lock_left=?,item_4_id=?,item_4_count=?,item_4_locked=?,item_4_lock_left=?,item_5_id=?,item_5_count=?,item_5_locked=?,item_5_lock_left=? WHERE charId=?");
-			ps.setInt(1, _fullCraftPoints);
-			ps.setInt(2, _craftPoints);
-			ps.setBoolean(3, _isSayhaRoll);
-			for (int i = 0; i < 5; i++)
+			int characterId = _player.getObjectId();
+			CharacterRandomCraft? record = ctx.CharacterRandomCrafts.SingleOrDefault(r => r.CharacterId == characterId);
+			if (record is null)
 			{
-				if (_rewardList.Count >= (i + 1))
-				{
-					RandomCraftRewardItemHolder holder = _rewardList[i];
-					ps.setInt(4 + (i * 4), holder == null ? 0 : holder.getItemId());
-					ps.setLong(5 + (i * 4), holder == null ? 0 : holder.getItemCount());
-					ps.setBoolean(6 + (i * 4), (holder != null) && holder.isLocked());
-					ps.setInt(7 + (i * 4), holder == null ? 20 : holder.getLockLeft());
-				}
-				else
-				{
-					ps.setInt(4 + (i * 4), 0);
-					ps.setLong(5 + (i * 4), 0);
-					ps.setBoolean(6 + (i * 4), false);
-					ps.setInt(7 + (i * 4), 20);
-				}
+				record = new CharacterRandomCraft();
+				record.CharacterId = characterId;
+				ctx.CharacterRandomCrafts.Add(record);
 			}
-			ps.setInt(24, _player.getObjectId());
-			ps.execute();
+
+			record.FullPoints = _fullCraftPoints;
+			record.Points = _craftPoints;
+			record.IsSayhaRoll = _isSayhaRoll;
+
+			static CharacterRandomCraftItem GetRewardItem(RandomCraftRewardItemHolder? holder) => new()
+			{
+				Id = holder?.getItemId() ?? 0,
+				Count = holder?.getItemCount() ?? 0,
+				Locked = holder?.isLocked() ?? false,
+				LockLeft = holder?.getLockLeft() ?? 0
+			};
+
+			record.Item1 = GetRewardItem(_rewardList.Count > 0 ? _rewardList[0] : null);
+			record.Item2 = GetRewardItem(_rewardList.Count > 1 ? _rewardList[1] : null);
+			record.Item3 = GetRewardItem(_rewardList.Count > 2 ? _rewardList[2] : null);
+			record.Item4 = GetRewardItem(_rewardList.Count > 3 ? _rewardList[3] : null);
+			record.Item5 = GetRewardItem(_rewardList.Count > 4 ? _rewardList[4] : null);
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -115,21 +122,25 @@ public class PlayerRandomCraft
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement(
-					"INSERT INTO character_random_craft VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-			ps.setInt(1, _player.getObjectId());
-			ps.setInt(2, _fullCraftPoints);
-			ps.setInt(3, _craftPoints);
-			ps.setBoolean(4, _isSayhaRoll);
-			for (int i = 0; i < 5; i++)
+			int characterId = _player.getObjectId();
+			CharacterRandomCraft? record = ctx.CharacterRandomCrafts.SingleOrDefault(r => r.CharacterId == characterId);
+			if (record is null)
 			{
-				ps.setInt(5 + (i * 4), 0);
-				ps.setLong(6 + (i * 4), 0);
-				ps.setBoolean(7 + (i * 4), false);
-				ps.setInt(8 + (i * 4), 0);
+				record = new CharacterRandomCraft();
+				record.CharacterId = characterId;
+				ctx.CharacterRandomCrafts.Add(record);
 			}
-			ps.executeUpdate();
+
+			record.FullPoints = _fullCraftPoints;
+			record.Points = _craftPoints;
+			record.IsSayhaRoll = _isSayhaRoll;
+			record.Item1 = default;
+			record.Item2 = default;
+			record.Item3 = default;
+			record.Item4 = default;
+			record.Item5 = default;
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -147,15 +158,15 @@ public class PlayerRandomCraft
 		
 		if ((_fullCraftPoints > 0) && _player.reduceAdena("RandomCraft Refresh", Config.RANDOM_CRAFT_REFRESH_FEE, _player, true))
 		{
-			_player.sendPacket(new ExCraftInfo(_player));
-			_player.sendPacket(new ExCraftRandomRefresh());
+			_player.sendPacket(new ExCraftInfoPacket(_player));
+			_player.sendPacket(new ExCraftRandomRefreshPacket());
 			_fullCraftPoints--;
 			if (_isSayhaRoll)
 			{
 				_player.addItem("RandomCraft Roll", 91641, 2, _player, true);
 				_isSayhaRoll = false;
 			}
-			_player.sendPacket(new ExCraftInfo(_player));
+			_player.sendPacket(new ExCraftInfoPacket(_player));
 			
 			for (int i = 0; i < 5; i++)
 			{
@@ -182,7 +193,7 @@ public class PlayerRandomCraft
 					holder.decLock();
 				}
 			}
-			_player.sendPacket(new ExCraftRandomInfo(_player));
+			_player.sendPacket(new ExCraftRandomInfoPacket(_player));
 		}
 		
 		_player.removeRequest<RandomCraftRequest>();
@@ -230,11 +241,11 @@ public class PlayerRandomCraft
 			Item item = _player.addItem("RandomCraft Make", itemId, itemCount, _player, true);
 			if (RandomCraftData.getInstance().isAnnounce(itemId))
 			{
-				Broadcast.toAllOnlinePlayers(new ExItemAnnounce(_player, item, ExItemAnnounce.RANDOM_CRAFT));
+				Broadcast.toAllOnlinePlayers(new ExItemAnnouncePacket(_player, item, ExItemAnnouncePacket.RANDOM_CRAFT));
 			}
 			
-			_player.sendPacket(new ExCraftRandomMake(itemId, itemCount));
-			_player.sendPacket(new ExCraftRandomInfo(_player));
+			_player.sendPacket(new ExCraftRandomMakePacket(itemId, itemCount));
+			_player.sendPacket(new ExCraftRandomInfoPacket(_player));
 		}
 		
 		_player.removeRequest<RandomCraftRequest>();
@@ -268,14 +279,14 @@ public class PlayerRandomCraft
 		}
 		if (broadcast)
 		{
-			_player.sendPacket(new ExCraftInfo(_player));
+			_player.sendPacket(new ExCraftInfoPacket(_player));
 		}
 	}
 	
 	public void removeFullCraftPoints(int value)
 	{
 		_fullCraftPoints -= value;
-		_player.sendPacket(new ExCraftInfo(_player));
+		_player.sendPacket(new ExCraftInfoPacket(_player));
 	}
 	
 	public void addCraftPoints(int value)
@@ -295,10 +306,10 @@ public class PlayerRandomCraft
 			_craftPoints = MAX_CRAFT_POINTS;
 		}
 		
-		SystemMessage sm = new SystemMessage(SystemMessageId.CRAFT_POINTS_S1);
-		sm.addLong(value);
+		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.CRAFT_POINTS_S1);
+		sm.Params.addLong(value);
 		_player.sendPacket(sm);
-		_player.sendPacket(new ExCraftInfo(_player));
+		_player.sendPacket(new ExCraftInfoPacket(_player));
 	}
 	
 	public int getCraftPoints()
