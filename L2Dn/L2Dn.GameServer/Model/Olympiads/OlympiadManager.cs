@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
@@ -14,7 +15,7 @@ namespace L2Dn.GameServer.Model.Olympiads;
 public class OlympiadManager
 {
 	private readonly Set<int> _nonClassBasedRegisters = new();
-	private readonly Map<int, Set<int>> _classBasedRegisters = new();
+	private readonly Map<CharacterClass, Set<int>> _classBasedRegisters = new();
 
 	protected OlympiadManager()
 	{
@@ -30,7 +31,7 @@ public class OlympiadManager
 		return _nonClassBasedRegisters;
 	}
 
-	public Map<int, Set<int>> getRegisteredClassBased()
+	public Map<CharacterClass, Set<int>> getRegisteredClassBased()
 	{
 		return _classBasedRegisters;
 	}
@@ -215,11 +216,13 @@ public class OlympiadManager
 					    .tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, player,
 						    Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
 				{
-					NpcHtmlMessage message = new NpcHtmlMessage(player.getLastHtmlActionOriginId());
-					message.setFile(player, "data/html/mods/OlympiadIPRestriction.htm");
-					message.replace("%max%",
-						String.valueOf(AntiFeedManager.getInstance()
-							.getLimit(player, Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP)));
+					HtmlPacketHelper helper =
+						new HtmlPacketHelper(DataFileLocation.Data, "html/mods/OlympiadIPRestriction.htm");
+					
+					helper.Replace("%max%", AntiFeedManager.getInstance()
+						.getLimit(player, Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP).ToString());
+					
+					NpcHtmlMessagePacket message = new NpcHtmlMessagePacket(player.getLastHtmlActionOriginId(), helper);
 					player.sendPacket(message);
 					return false;
 				}
@@ -241,11 +244,14 @@ public class OlympiadManager
 					    .tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, player,
 						    Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
 				{
-					NpcHtmlMessage message = new NpcHtmlMessage(player.getLastHtmlActionOriginId());
-					message.setFile(player, "data/html/mods/OlympiadIPRestriction.htm");
-					message.replace("%max%",
-						String.valueOf(AntiFeedManager.getInstance()
-							.getLimit(player, Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP)));
+					HtmlPacketHelper helper =
+						new HtmlPacketHelper(DataFileLocation.Data, "html/mods/OlympiadIPRestriction.htm");
+
+					helper.Replace("%max%",
+						AntiFeedManager.getInstance()
+							.getLimit(player, Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP).ToString());
+					
+					NpcHtmlMessagePacket message = new NpcHtmlMessagePacket(player.getLastHtmlActionOriginId(), helper);
 					player.sendPacket(message);
 					return false;
 				}

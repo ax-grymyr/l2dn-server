@@ -47,7 +47,7 @@ public class OlympiadGameManager: Runnable
 		return _battleStarted;
 	}
 	
-	protected void startBattle()
+	public void startBattle()
 	{
 		_battleStarted = true;
 	}
@@ -223,6 +223,6 @@ public class OlympiadGameManager: Runnable
 	
 	private static class SingletonHolder
 	{
-		protected static OlympiadGameManager INSTANCE = new OlympiadGameManager();
+		public static OlympiadGameManager INSTANCE = new OlympiadGameManager();
 	}
 }

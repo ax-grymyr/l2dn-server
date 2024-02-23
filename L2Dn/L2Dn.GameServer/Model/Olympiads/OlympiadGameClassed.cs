@@ -21,7 +21,7 @@ public class OlympiadGameClassed: OlympiadGameNormal
 		return Config.ALT_OLY_DIVIDER_CLASSED;
 	}
 	
-	protected static OlympiadGameClassed createGame(int id, List<Set<int>> classList)
+	public static OlympiadGameClassed createGame(int id, List<Set<int>> classList)
 	{
 		if ((classList == null) || classList.isEmpty())
 		{

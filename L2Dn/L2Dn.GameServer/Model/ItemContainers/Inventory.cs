@@ -1,6 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
@@ -11,6 +12,7 @@ using L2Dn.GameServer.Model.Items.Appearance;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -113,7 +115,7 @@ public abstract class Inventory: ItemContainer
 	// used to quickly check for using of items of special type
 	private ItemTypeMask _wearedMask;
 	
-	private int _blockedItemSlotsMask;
+	private long _blockedItemSlotsMask;
 	
 	// Recorder of alterations in inventory
 	private class ChangeRecorder: PaperdollListener
@@ -125,7 +127,7 @@ public abstract class Inventory: ItemContainer
 		 * Constructor of the ChangeRecorder
 		 * @param inventory
 		 */
-		ChangeRecorder(Inventory inventory)
+		public ChangeRecorder(Inventory inventory)
 		{
 			_inventory = inventory;
 			_inventory.addPaperdollListener(this);
@@ -179,7 +181,7 @@ public abstract class Inventory: ItemContainer
 				return;
 			}
 			
-			switch (item.getWeaponItem().getWeaponType())
+			switch (item.getWeaponItem().getItemType().AsWeaponType())
 			{
 				case WeaponType.BOW:
 				case WeaponType.CROSSBOW:
@@ -376,8 +378,8 @@ public abstract class Inventory: ItemContainer
 							
 							if (skill.isActive() && !playable.hasSkillReuse(skill.getReuseHashCode()))
 							{
-								int equipDelay = item.getEquipReuseDelay();
-								if (equipDelay > 0)
+								TimeSpan equipDelay = item.getEquipReuseDelay();
+								if (equipDelay > TimeSpan.Zero)
 								{
 									playable.addTimeStamp(skill, equipDelay);
 									playable.disableSkill(skill, equipDelay);
@@ -486,7 +488,7 @@ public abstract class Inventory: ItemContainer
 			
 			if (updateTimestamp && playable.isPlayer())
 			{
-				playable.sendPacket(new SkillCoolTime(playable.getActingPlayer()));
+				playable.sendPacket(new SkillCoolTimePacket(playable.getActingPlayer()));
 			}
 			
 			if (item.isWeapon())
@@ -564,9 +566,14 @@ public abstract class Inventory: ItemContainer
 						}
 						
 						// Active, non offensive, skills start with reuse on equip.
-						if (skill.isActive() && !skill.isBad() && !skill.isTransformation() && (Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0) && playable.getActingPlayer().hasEnteredWorld())
+						if (skill.isActive() && !skill.isBad() && !skill.isTransformation() &&
+						    (Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0) && playable.getActingPlayer().hasEnteredWorld())
 						{
-							playable.addTimeStamp(skill, skill.getReuseDelay() > 0 ? skill.getReuseDelay() : Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE);
+							playable.addTimeStamp(skill,
+								skill.getReuseDelay() > TimeSpan.Zero
+									? skill.getReuseDelay()
+									: TimeSpan.FromMilliseconds(Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE));
+
 							updateTimestamp = true;
 						}
 					}
@@ -656,8 +663,8 @@ public abstract class Inventory: ItemContainer
 						{
 							if (!playable.hasSkillReuse(skill.getReuseHashCode()))
 							{
-								int equipDelay = item.getEquipReuseDelay();
-								if (equipDelay > 0)
+								TimeSpan equipDelay = item.getEquipReuseDelay();
+								if (equipDelay > TimeSpan.Zero)
 								{
 									playable.addTimeStamp(skill, equipDelay);
 									playable.disableSkill(skill, equipDelay);
@@ -667,7 +674,10 @@ public abstract class Inventory: ItemContainer
 							// Active, non offensive, skills start with reuse on equip.
 							if (!skill.isBad() && !skill.isTransformation() && (Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0) && playable.getActingPlayer().hasEnteredWorld())
 							{
-								playable.addTimeStamp(skill, skill.getReuseDelay() > 0 ? skill.getReuseDelay() : Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE);
+								playable.addTimeStamp(skill,
+									skill.getReuseDelay() > TimeSpan.Zero
+										? skill.getReuseDelay()
+										: TimeSpan.FromMilliseconds(Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE));
 							}
 							
 							updateTimestamp = true;
@@ -733,7 +743,10 @@ public abstract class Inventory: ItemContainer
 						// Active, non offensive, skills start with reuse on equip.
 						if (skill.isActive() && !skill.isBad() && !skill.isTransformation() && (Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0) && playable.getActingPlayer().hasEnteredWorld())
 						{
-							playable.addTimeStamp(skill, skill.getReuseDelay() > 0 ? skill.getReuseDelay() : Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE);
+							playable.addTimeStamp(skill,
+								skill.getReuseDelay() > TimeSpan.Zero
+									? skill.getReuseDelay()
+									: TimeSpan.FromMilliseconds(Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE));
 							updateTimestamp = true;
 						}
 					}
@@ -800,7 +813,7 @@ public abstract class Inventory: ItemContainer
 			
 			if (updateTimestamp && playable.isPlayer())
 			{
-				playable.sendPacket(new SkillCoolTime(playable.getActingPlayer()));
+				playable.sendPacket(new SkillCoolTimePacket(playable.getActingPlayer()));
 			}
 		}
 	}
@@ -822,13 +835,9 @@ public abstract class Inventory: ItemContainer
 			}
 			
 			Playable playable = (Playable) inventory.getOwner();
-			bool update = false;
+			bool update = verifyAndApply(playable, item, x => x.getId());
 			
 			// Verify and apply normal set
-			if (verifyAndApply(playable, item, Item::getId))
-			{
-				update = true;
-			}
 			
 			// Verify and apply visual set
 			int itemVisualId = item.getVisualId();
@@ -836,7 +845,7 @@ public abstract class Inventory: ItemContainer
 			{
 				int appearanceStoneId = item.getAppearanceStoneId();
 				AppearanceStone stone = AppearanceItemData.getInstance().getStone(appearanceStoneId > 0 ? appearanceStoneId : itemVisualId);
-				if ((stone != null) && (stone.getType() == AppearanceType.FIXED) && verifyAndApply(playable, item, Item::getVisualId))
+				if ((stone != null) && (stone.getType() == AppearanceType.FIXED) && verifyAndApply(playable, item, x => x.getVisualId()))
 				{
 					update = true;
 				}
@@ -887,8 +896,8 @@ public abstract class Inventory: ItemContainer
 						{
 							if ((item != null) && !playable.hasSkillReuse(itemSkill.getReuseHashCode()))
 							{
-								int equipDelay = item.getEquipReuseDelay();
-								if (equipDelay > 0)
+								TimeSpan equipDelay = item.getEquipReuseDelay();
+								if (equipDelay > TimeSpan.Zero)
 								{
 									playable.addTimeStamp(itemSkill, equipDelay);
 									playable.disableSkill(itemSkill, equipDelay);
@@ -898,7 +907,10 @@ public abstract class Inventory: ItemContainer
 							// Active, non offensive, skills start with reuse on equip.
 							if (!itemSkill.isBad() && !itemSkill.isTransformation() && (Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0) && playable.getActingPlayer().hasEnteredWorld())
 							{
-								playable.addTimeStamp(itemSkill, itemSkill.getReuseDelay() > 0 ? itemSkill.getReuseDelay() : Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE);
+								playable.addTimeStamp(itemSkill,
+									itemSkill.getReuseDelay() > TimeSpan.Zero
+										? itemSkill.getReuseDelay()
+										: TimeSpan.FromMilliseconds(Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE));
 							}
 							
 							updateTimeStamp = true;
@@ -909,7 +921,7 @@ public abstract class Inventory: ItemContainer
 				}
 				if (updateTimeStamp && playable.isPlayer())
 				{
-					playable.sendPacket(new SkillCoolTime(playable.getActingPlayer()));
+					playable.sendPacket(new SkillCoolTimePacket(playable.getActingPlayer()));
 				}
 				return update;
 			}
@@ -974,13 +986,9 @@ public abstract class Inventory: ItemContainer
 			}
 			
 			Playable playable = (Playable) inventory.getOwner();
-			bool remove = false;
+			bool remove = verifyAndRemove(playable, item, x => x.getId());
 			
 			// Verify and remove normal set bonus
-			if (verifyAndRemove(playable, item, Item::getId))
-			{
-				remove = true;
-			}
 			
 			// Verify and remove visual set bonus
 			int itemVisualId = item.getVisualId();
@@ -988,7 +996,7 @@ public abstract class Inventory: ItemContainer
 			{
 				int appearanceStoneId = item.getAppearanceStoneId();
 				AppearanceStone stone = AppearanceItemData.getInstance().getStone(appearanceStoneId > 0 ? appearanceStoneId : itemVisualId);
-				if ((stone != null) && (stone.getType() == AppearanceType.FIXED) && verifyAndRemove(playable, item, Item::getVisualId))
+				if ((stone != null) && (stone.getType() == AppearanceType.FIXED) && verifyAndRemove(playable, item, x => x.getVisualId()))
 				{
 					remove = true;
 				}
@@ -1216,7 +1224,7 @@ public abstract class Inventory: ItemContainer
 		
 		lock (item)
 		{
-			if (!_items.contains(item))
+			if (!_items.Contains(item))
 			{
 				return null;
 			}
@@ -1224,7 +1232,7 @@ public abstract class Inventory: ItemContainer
 			removeItem(item);
 			item.setOwnerId(process, 0, actor, reference);
 			item.setItemLocation(ItemLocation.VOID);
-			item.setLastChange(Item.REMOVED);
+			item.setLastChange(ItemChangeType.REMOVED);
 			
 			item.updateDatabase();
 			refreshWeight();
@@ -1251,7 +1259,7 @@ public abstract class Inventory: ItemContainer
 		
 		lock (item)
 		{
-			if (!_items.contains(item))
+			if (!_items.Contains(item))
 			{
 				return null;
 			}
@@ -1261,7 +1269,7 @@ public abstract class Inventory: ItemContainer
 			if (item.getCount() > count)
 			{
 				item.changeCount(process, -count, actor, reference);
-				item.setLastChange(Item.MODIFIED);
+				item.setLastChange(ItemChangeType.MODIFIED);
 				item.updateDatabase();
 				
 				Item newItem = ItemData.getInstance().createItem(process, item.getId(), count, actor, reference);
@@ -1556,10 +1564,10 @@ public abstract class Inventory: ItemContainer
 				
 				// Put old item from paperdoll slot to base location
 				old.setItemLocation(getBaseLocation());
-				old.setLastChange(Item.MODIFIED);
+				old.setLastChange(ItemChangeType.MODIFIED);
 				
 				// Get the mask for paperdoll
-				int mask = 0;
+				ItemTypeMask mask = ItemTypeMask.Zero;
 				for (int i = 0; i < PAPERDOLL_TOTALSLOTS; i++)
 				{
 					Item pi = _paperdoll[i];
@@ -1615,7 +1623,7 @@ public abstract class Inventory: ItemContainer
 				
 				// Put item to equip location
 				item.setItemLocation(getEquipLocation(), slot);
-				item.setLastChange(Item.MODIFIED);
+				item.setLastChange(ItemChangeType.MODIFIED);
 				
 				// Notify all paperdoll listener in order to equip item in slot
 				_wearedMask |= item.getTemplate().getItemMask();
@@ -1671,7 +1679,7 @@ public abstract class Inventory: ItemContainer
 			
 			if (getOwner().isPlayer())
 			{
-				getOwner().sendPacket(new ExUserInfoEquipSlot(getOwner().getActingPlayer()));
+				getOwner().sendPacket(new ExUserInfoEquipSlotPacket(getOwner().getActingPlayer()));
 			}
 		}
 		
@@ -1859,6 +1867,7 @@ public abstract class Inventory: ItemContainer
 			case PAPERDOLL_ARTIFACT21:
 			{
 				slot = ItemTemplate.SLOT_ARTIFACT;
+				break;
 			}
 		}
 		return slot;
@@ -2029,8 +2038,7 @@ public abstract class Inventory: ItemContainer
 		}
 		else
 		{
-			LOGGER.info("Unhandled slot type: " + slot);
-			LOGGER.info(CommonUtil.getTraceString(Thread.currentThread().getStackTrace()));
+			LOGGER.Info("Unhandled slot type: " + slot);
 		}
 		if (pdollSlot >= 0)
 		{
@@ -2280,7 +2288,7 @@ public abstract class Inventory: ItemContainer
 	protected override void refreshWeight()
 	{
 		long weight = 0;
-		foreach (Item item in _items.Keys)
+		foreach (Item item in _items)
 		{
 			if ((item != null) && (item.getTemplate() != null))
 			{
@@ -2323,7 +2331,7 @@ public abstract class Inventory: ItemContainer
 		}
 		
 		Item arrow = null;
-		foreach (Item item in _items.Keys)
+		foreach (Item item in _items)
 		{
 			if (item.isEtcItem() && (item.getEtcItem().getItemType() == EtcItemType.ARROW) && (item.getTemplate().getCrystalTypePlus() == bow.getCrystalTypePlus()))
 			{
@@ -2344,7 +2352,7 @@ public abstract class Inventory: ItemContainer
 	public Item findBoltForCrossBow(ItemTemplate crossbow)
 	{
 		Item bolt = null;
-		foreach (Item item in _items.Keys)
+		foreach (Item item in _items)
 		{
 			if (item.isEtcItem() && (item.getEtcItem().getItemType() == EtcItemType.BOLT) && (item.getTemplate().getCrystalTypePlus() == crossbow.getCrystalTypePlus()))
 			{
@@ -2365,7 +2373,7 @@ public abstract class Inventory: ItemContainer
 	public Item findElementalOrbForPistols(ItemTemplate pistols)
 	{
 		Item orb = null;
-		foreach (Item item in _items.Keys)
+		foreach (Item item in _items)
 		{
 			if (item.isEtcItem() && (item.getEtcItem().getItemType() == EtcItemType.ELEMENTAL_ORB) && (item.getTemplate().getCrystalTypePlus() == pistols.getCrystalTypePlus()))
 			{
@@ -2386,45 +2394,47 @@ public abstract class Inventory: ItemContainer
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement("SELECT * FROM items WHERE owner_id=? AND (loc=? OR loc=?) ORDER BY loc_data");
-			ps.setInt(1, getOwnerId());
-			ps.setString(2, getBaseLocation().name());
-			ps.setString(3, getEquipLocation().name());
+			int ownerId = getOwnerId();
+			ItemLocation baseLocation = getBaseLocation();
+			ItemLocation equipLocation = getEquipLocation();
+
+			var query = ctx.Items.Where(r =>
+					r.OwnerId == ownerId && (r.Location == (int)baseLocation || r.Location == (int)equipLocation))
+				.OrderBy(r => r.LocationData);
+
+			foreach (var record in query)
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
+				try
 				{
-					try
+					Item item = new Item(record);
+					if (getOwner().isPlayer())
 					{
-						Item item = new Item(rs);
-						if (getOwner().isPlayer())
+						Player player = (Player)getOwner();
+						if (!player.canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS) && !player.isHero() &&
+						    item.isHeroItem())
 						{
-							Player player = (Player) getOwner();
-							if (!player.canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS) && !player.isHero() && item.isHeroItem())
-							{
-								item.setItemLocation(ItemLocation.INVENTORY);
-							}
-						}
-						
-						World.getInstance().addObject(item);
-						
-						// If stackable item is found in inventory just add to current quantity
-						if (item.isStackable() && (getItemByItemId(item.getId()) != null))
-						{
-							addItem("Restore", item, getOwner().getActingPlayer(), null);
-						}
-						else
-						{
-							addItem(item);
+							item.setItemLocation(ItemLocation.INVENTORY);
 						}
 					}
-					catch (Exception e)
+
+					World.getInstance().addObject(item);
+
+					// If stackable item is found in inventory just add to current quantity
+					if (item.isStackable() && (getItemByItemId(item.getId()) != null))
 					{
-						LOGGER.Warn("Could not restore item " + rs.getInt("item_id") + " for " + getOwner());
+						addItem("Restore", item, getOwner().getActingPlayer(), null);
+					}
+					else
+					{
+						addItem(item);
 					}
 				}
+				catch (Exception e)
+				{
+					LOGGER.Warn("Could not restore item " + record.ItemId + " for " + getOwner());
+				}
 			}
+
 			refreshWeight();
 		}
 		catch (Exception e)
@@ -2635,7 +2645,7 @@ public abstract class Inventory: ItemContainer
 		
 		if (getOwner().isPlayer())
 		{
-			getOwner().sendPacket(new ExUserInfoEquipSlot(getOwner().getActingPlayer()));
+			getOwner().sendPacket(new ExUserInfoEquipSlotPacket(getOwner().getActingPlayer()));
 		}
 	}
 	
@@ -2686,7 +2696,7 @@ public abstract class Inventory: ItemContainer
 	/**
 	 * @param itemSlotsMask use 0 to unset all blocked item slots.
 	 */
-	public void setBlockedItemSlotsMask(int itemSlotsMask)
+	public void setBlockedItemSlotsMask(long itemSlotsMask)
 	{
 		_blockedItemSlotsMask = itemSlotsMask;
 	}

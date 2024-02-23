@@ -4,6 +4,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -212,7 +213,7 @@ public abstract class ItemContainer
 		}
 		else // If item hasn't be found in inventory, create new one
 		{
-			InventoryUpdate iu = new InventoryUpdate();
+			List<ItemInfo> items = new List<ItemInfo>();
 			for (int i = 0; i < count; i++)
 			{
 				ItemTemplate template = ItemData.getInstance().getTemplate(itemId);
@@ -231,9 +232,9 @@ public abstract class ItemContainer
 				addItem(item);
 				
 				// Add additional items to InventoryUpdate.
-				if ((count > 1) && (i < (count - 1)))
+				if (count > 1 && i < count - 1)
 				{
-					iu.addNewItem(item);
+					items.Add(new ItemInfo(item, ItemChangeType.ADDED));
 				}
 				
 				// If stackable, end loop as entire count is included in 1 instance of item
@@ -246,6 +247,7 @@ public abstract class ItemContainer
 			// If additional items where created send InventoryUpdate.
 			if ((count > 1) && (item != null) && !item.isStackable() && (item.getItemLocation() == ItemLocation.INVENTORY))
 			{
+				InventoryUpdatePacket iu = new InventoryUpdatePacket(items);
 				actor.sendInventoryUpdate(iu);
 			}
 		}
@@ -491,7 +493,7 @@ public abstract class ItemContainer
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public Item destroyItemByItemId(String process, int itemId, long count, Player actor, Object reference)
+	public virtual Item destroyItemByItemId(String process, int itemId, long count, Player actor, Object reference)
 	{
 		Item item = getItemByItemId(itemId);
 		return item == null ? null : destroyItem(process, item, count, actor, reference);
@@ -589,7 +591,7 @@ public abstract class ItemContainer
 	/**
 	 * Update database with items in inventory
 	 */
-	public void updateDatabase()
+	public virtual void updateDatabase()
 	{
 		if (getOwner() != null)
 		{
@@ -608,29 +610,27 @@ public abstract class ItemContainer
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM items WHERE owner_id=? AND (loc=?)");
-			ps.setInt(1, getOwnerId());
-			ps.setString(2, getBaseLocation().name());
+			int ownerId = getOwnerId();
+			ItemLocation location = getBaseLocation(); 
+			var query = ctx.Items.Where(r => r.OwnerId == ownerId && r.Location == (int)location);
+			foreach (var record in query)
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
+				Item item = new Item(record);
+				World.getInstance().addObject(item);
+
+				Player owner = getOwner() != null ? getOwner().getActingPlayer() : null;
+
+				// If stackable item is found in inventory just add to current quantity
+				if (item.isStackable() && (getItemByItemId(item.getId()) != null))
 				{
-					Item item = new Item(rs);
-					World.getInstance().addObject(item);
-					
-					Player owner = getOwner() != null ? getOwner().getActingPlayer() : null;
-					
-					// If stackable item is found in inventory just add to current quantity
-					if (item.isStackable() && (getItemByItemId(item.getId()) != null))
-					{
-						addItem("Restore", item, owner, null);
-					}
-					else
-					{
-						addItem(item);
-					}
+					addItem("Restore", item, owner, null);
+				}
+				else
+				{
+					addItem(item);
 				}
 			}
+
 			refreshWeight();
 		}
 		catch (Exception e)

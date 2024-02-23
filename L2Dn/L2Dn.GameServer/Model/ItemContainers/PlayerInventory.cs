@@ -440,15 +440,17 @@ public class PlayerInventory: Inventory
 				// Send inventory update packet
 				if (update)
 				{
-					InventoryUpdatePacket playerIU = new InventoryUpdatePacket();
+					List<ItemInfo> items = new List<ItemInfo>();
 					if (item.isStackable() && (item.getCount() > count))
 					{
-						playerIU.addModifiedItem(item);
+						items.Add(new ItemInfo(item, ItemChangeType.MODIFIED));
 					}
 					else
 					{
-						playerIU.addNewItem(item);
+						items.Add(new ItemInfo(item, ItemChangeType.ADDED));
 					}
+
+					InventoryUpdatePacket playerIU = new InventoryUpdatePacket(items);
 					actor.sendInventoryUpdate(playerIU);
 					
 					// Adena UI update.
@@ -813,23 +815,18 @@ public class PlayerInventory: Inventory
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(
-				"SELECT object_id,item_id,loc_data,enchant_level FROM items WHERE owner_id=? AND loc='PAPERDOLL'");
-			ps.setInt(1, objectId);
+			var query = ctx.Items.Where(r => r.OwnerId == objectId && r.Location == (int)ItemLocation.PAPERDOLL);
+			foreach (var record in query)
 			{
-				ResultSet invdata = ps.executeQuery();
-				while (invdata.next())
+				int slot = record.LocationData;
+				ItemVariables vars = new ItemVariables(record.ObjectId);
+				paperdoll[slot][0] = record.ObjectId;
+				paperdoll[slot][1] = record.ItemId;
+				paperdoll[slot][2] = record.EnchantLevel;
+				paperdoll[slot][3] = vars.getInt(ItemVariables.VISUAL_ID, 0);
+				if (paperdoll[slot][3] > 0) // fix for hair appearance conflicting with original model
 				{
-					int slot = invdata.getInt("loc_data");
-					ItemVariables vars = new ItemVariables(invdata.getInt("object_id"));
-					paperdoll[slot][0] = invdata.getInt("object_id");
-					paperdoll[slot][1] = invdata.getInt("item_id");
-					paperdoll[slot][2] = invdata.getInt("enchant_level");
-					paperdoll[slot][3] = vars.getInt(ItemVariables.VISUAL_ID, 0);
-					if (paperdoll[slot][3] > 0) // fix for hair appearance conflicting with original model
-					{
-						paperdoll[slot][1] = paperdoll[slot][3];
-					}
+					paperdoll[slot][1] = paperdoll[slot][3];
 				}
 			}
 		}
@@ -1104,7 +1101,7 @@ public class PlayerInventory: Inventory
 		}
 		
 		Item ammunition = null;
-		switch (weapon.getWeaponType())
+		switch (weapon.getItemType().AsWeaponType())
 		{
 			case WeaponType.BOW:
 			{

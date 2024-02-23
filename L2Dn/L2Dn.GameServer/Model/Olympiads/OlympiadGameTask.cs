@@ -1,6 +1,8 @@
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Olympiads;
 
@@ -11,66 +13,11 @@ public class OlympiadGameTask: Runnable
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(OlympiadGameTask));
 
-	private static readonly int[] TELEPORT_TO_ARENA_TIMES =
-	{
-		120,
-		60,
-		30,
-		15,
-		10,
-		5,
-		4,
-		3,
-		2,
-		1,
-		0
-	};
-
-	private static readonly int[] BATTLE_START_TIME_FIRST =
-	{
-		60,
-		55,
-		50,
-		40,
-		30,
-		20,
-		10,
-		0
-	};
-
-	private static readonly int[] BATTLE_START_TIME_SECOND =
-	{
-		10,
-		5,
-		4,
-		3,
-		2,
-		1,
-		0
-	};
-
-	private static readonly int[] BATTLE_END_TIME_SECOND =
-	{
-		120,
-		60,
-		30,
-		10,
-		5
-	};
-
-	private static readonly int[] TELEPORT_TO_TOWN_TIMES =
-	{
-		40,
-		30,
-		20,
-		10,
-		5,
-		4,
-		3,
-		2,
-		1,
-		0
-	};
+	private static readonly int[] TELEPORT_TO_ARENA_TIMES = [120, 60, 30, 15, 10, 5, 4, 3, 2, 1, 0];
+	private static readonly int[] BATTLE_START_TIME_FIRST = [60, 55, 50, 40, 30, 20, 10, 0];
+	private static readonly int[] BATTLE_START_TIME_SECOND = [10, 5, 4, 3, 2, 1, 0];
+	private static readonly int[] BATTLE_END_TIME_SECOND = [120, 60, 30, 10, 5];
+	private static readonly int[] TELEPORT_TO_TOWN_TIMES = [40, 30, 20, 10, 5, 4, 3, 2, 1, 0];
 
 	private readonly OlympiadStadium _stadium;
 	private AbstractOlympiadGame _game;
@@ -158,9 +105,9 @@ public class OlympiadGameTask: Runnable
 				{
 					if (_countDown > 0)
 					{
-						SystemMessage sm =
-							new SystemMessage(SystemMessageId.YOU_WILL_BE_TAKEN_TO_THE_OLYMPIC_STADIUM_IN_S1_SEC);
-						sm.addInt(_countDown);
+						SystemMessagePacket sm =
+							new SystemMessagePacket(SystemMessageId.YOU_WILL_BE_TAKEN_TO_THE_OLYMPIC_STADIUM_IN_S1_SEC);
+						sm.Params.addInt(_countDown);
 						_game.broadcastPacket(sm);
 					}
 
@@ -204,8 +151,8 @@ public class OlympiadGameTask: Runnable
 						}
 						else
 						{
-							SystemMessage sm = new SystemMessage(SystemMessageId.THE_MATCH_BEGINS_IN_S1_SEC);
-							sm.addInt(_countDown);
+							SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_MATCH_BEGINS_IN_S1_SEC);
+							sm.Params.addInt(_countDown);
 							_stadium.broadcastPacket(sm);
 						}
 					}
@@ -229,8 +176,8 @@ public class OlympiadGameTask: Runnable
 				{
 					if (_countDown > 0)
 					{
-						SystemMessage sm = new SystemMessage(SystemMessageId.THE_MATCH_BEGINS_IN_S1_SEC);
-						sm.addInt(_countDown);
+						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_MATCH_BEGINS_IN_S1_SEC);
+						sm.Params.addInt(_countDown);
 						_stadium.broadcastPacket(sm);
 					}
 
@@ -239,7 +186,7 @@ public class OlympiadGameTask: Runnable
 					{
 						_state = OlympiadGameState.BATTLE_STARTED;
 						_game.removePlayersInvul();
-						_stadium.broadcastPacket(new SystemMessage(SystemMessageId.HIDDEN_MSG_START_OLYMPIAD));
+						_stadium.broadcastPacket(new SystemMessagePacket(SystemMessageId.HIDDEN_MSG_START_OLYMPIAD));
 					}
 
 					break;
@@ -265,8 +212,8 @@ public class OlympiadGameTask: Runnable
 					{
 						if (announceTime == remaining)
 						{
-							SystemMessage sm = new SystemMessage(SystemMessageId.THE_GAME_ENDS_IN_S1_SEC);
-							sm.addInt(announceTime);
+							SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_GAME_ENDS_IN_S1_SEC);
+							sm.Params.addInt(announceTime);
 							_stadium.broadcastPacket(sm);
 							break;
 						}
@@ -293,9 +240,9 @@ public class OlympiadGameTask: Runnable
 				{
 					if (_countDown > 0)
 					{
-						SystemMessage sm =
-							new SystemMessage(SystemMessageId.YOU_WILL_BE_MOVED_BACK_TO_TOWN_IN_S1_SECOND_S);
-						sm.addInt(_countDown);
+						SystemMessagePacket sm =
+							new SystemMessagePacket(SystemMessageId.YOU_WILL_BE_MOVED_BACK_TO_TOWN_IN_S1_SECOND_S);
+						sm.Params.addInt(_countDown);
 						_game.broadcastPacket(sm);
 					}
 
@@ -417,7 +364,7 @@ public class OlympiadGameTask: Runnable
 			{
 				// game successfully started
 				_game.broadcastOlympiadInfo(_stadium);
-				_stadium.broadcastPacket(new SystemMessage(SystemMessageId.THE_MATCH_HAS_BEGUN_FIGHT));
+				_stadium.broadcastPacket(new SystemMessagePacket(SystemMessageId.THE_MATCH_HAS_BEGUN_FIGHT));
 				_stadium.updateZoneStatusForCharactersInside();
 				return true;
 			}

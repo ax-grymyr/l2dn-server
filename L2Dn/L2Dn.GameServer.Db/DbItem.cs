@@ -20,6 +20,6 @@ public class DbItem
     public int TimeOfUse { get; set; }
     public int CustomType1 { get; set; }
     public int CustomType2 { get; set; }
-    public TimeSpan? ManaLeft { get; set; }
+    public int? ManaLeft { get; set; }
     public DateTime? Time { get; set; }
 }

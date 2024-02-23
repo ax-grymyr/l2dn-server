@@ -17,7 +17,7 @@ public class Participant
 	private bool defaulted = false;
 	private readonly StatSet stats;
 	public String clanName;
-	public int clanId;
+	public int? clanId;
 
 	public Participant(Player plr, int olympiadSide)
 	{
@@ -85,7 +85,7 @@ public class Participant
 	/**
 	 * @return the name the player's id.
 	 */
-	public int getClanId()
+	public int? getClanId()
 	{
 		return clanId;
 	}

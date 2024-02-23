@@ -53,12 +53,14 @@ public abstract class AbstractEnchantItem
 	public AbstractEnchantItem(XElement element)
 	{
 		_id = element.Attribute("id").GetInt32();
-		if (getItem() == null)
+
+		ItemTemplate itemTemplate = getItem();
+		if (itemTemplate == null)
 		{
 			throw new InvalidOperationException();
 		}
 		
-		if (!ENCHANT_TYPES.Contains(getItem().getItemType()))
+		if (!itemTemplate.getItemType().IsEtcItem() || !ENCHANT_TYPES.Contains(itemTemplate.getItemType().AsEtcItemType()))
 		{
 			throw new InvalidOperationException();
 		}

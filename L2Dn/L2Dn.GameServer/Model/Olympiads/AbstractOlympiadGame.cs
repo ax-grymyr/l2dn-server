@@ -53,7 +53,7 @@ public abstract class AbstractOlympiadGame
 		return _stadiumId;
 	}
 	
-	protected virtual bool makeCompetitionStart()
+	public virtual bool makeCompetitionStart()
 	{
 		_startTime = DateTime.UtcNow;
 		return !_aborted;
@@ -444,44 +444,44 @@ public abstract class AbstractOlympiadGame
 	
 	public abstract void broadcastOlympiadInfo(OlympiadStadium stadium);
 	
-	protected abstract void broadcastPacket<TPacket>(TPacket packet)
+	public abstract void broadcastPacket<TPacket>(TPacket packet)
 		where TPacket: struct, IOutgoingPacket;
 	
-	protected abstract bool needBuffers();
+	public abstract bool needBuffers();
 	
-	protected abstract bool checkDefaulted();
+	public abstract bool checkDefaulted();
 	
-	protected abstract void removals();
+	public abstract void removals();
 	
-	protected abstract bool portPlayersToArena(List<Location> spawns, Instance instance);
+	public abstract bool portPlayersToArena(List<Location> spawns, Instance instance);
 	
-	protected abstract void cleanEffects();
+	public abstract void cleanEffects();
 	
-	protected abstract void portPlayersBack();
+	public abstract void portPlayersBack();
 	
-	protected abstract void playersStatusBack();
+	public abstract void playersStatusBack();
 	
-	protected abstract void clearPlayers();
+	public abstract void clearPlayers();
 	
 	public abstract void handleDisconnect(Player player);
 	
-	protected abstract void resetDamage();
+	public abstract void resetDamage();
 	
 	public abstract void addDamage(Player player, int damage);
 	
-	protected abstract bool checkBattleStatus();
+	public abstract bool checkBattleStatus();
 	
-	protected abstract bool haveWinner();
+	public abstract bool haveWinner();
 	
-	protected abstract void validateWinner(OlympiadStadium stadium);
+	public abstract void validateWinner(OlympiadStadium stadium);
 	
 	protected abstract int getDivider();
 	
-	protected abstract void healPlayers();
+	public abstract void healPlayers();
 	
-	protected abstract void untransformPlayers();
+	public abstract void untransformPlayers();
+
+	public abstract void makePlayersInvul();
 	
-	protected abstract void makePlayersInvul();
-	
-	protected abstract void removePlayersInvul();
+	public abstract void removePlayersInvul();
 }

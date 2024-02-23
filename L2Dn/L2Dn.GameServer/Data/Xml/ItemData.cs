@@ -232,8 +232,8 @@ public class ItemData: DataReaderBase
 			{
 				_etcItems.put(etcItem.getId(), etcItem);
 
-				if ((etcItem.getEtcItemType() == EtcItemType.ARROW) || (etcItem.getEtcItemType() == EtcItemType.BOLT) ||
-				    (etcItem.getEtcItemType() == EtcItemType.ELEMENTAL_ORB))
+				if ((etcItem.getItemType() == EtcItemType.ARROW) || (etcItem.getItemType() == EtcItemType.BOLT) ||
+				    (etcItem.getItemType() == EtcItemType.ELEMENTAL_ORB))
 				{
 					List<ItemSkillHolder> skills = item.getAllSkills();
 					if (skills != null)

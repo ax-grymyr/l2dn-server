@@ -1381,20 +1381,20 @@ public class Item: WorldObject
 	 * @param resetConsumingMana if forces a new consumption task if item is equipped
 	 * @param count how much mana decrease
 	 */
-	public void decreaseMana(bool resetConsumingMana, TimeSpan count)
+	public void decreaseMana(bool resetConsumingMana, int count)
 	{
 		if (!isShadowItem())
 		{
 			return;
 		}
 		
-		if ((_mana - count) >= TimeSpan.Zero)
+		if ((_mana - count) >= 0)
 		{
 			_mana -= count;
 		}
 		else
 		{
-			_mana = TimeSpan.Zero;
+			_mana = 0;
 		}
 		
 		if (_storedInDb)
@@ -1435,7 +1435,7 @@ public class Item: WorldObject
 				}
 			}
 			
-			if (_mana == TimeSpan.Zero) // The life time has expired
+			if (_mana == 0) // The life time has expired
 			{
 				sm = new SystemMessagePacket(SystemMessageId.S1_S_REMAINING_MANA_IS_NOW_0_AND_THE_ITEM_HAS_DISAPPEARED);
 				sm.Params.addItemName(_itemTemplate);
@@ -1909,7 +1909,7 @@ public class Item: WorldObject
 		}
 		else
 		{
-			ItemLifeTimeTaskManager.getInstance().add(this, getTime());
+			ItemLifeTimeTaskManager.getInstance().add(this, getTime().Value);
 		}
 	}
 	
@@ -2695,8 +2695,8 @@ public class Item: WorldObject
 								{
 									if (!player.hasSkillReuse(skill.getReuseHashCode()))
 									{
-										int equipDelay = getEquipReuseDelay();
-										if (equipDelay > 0)
+										TimeSpan equipDelay = getEquipReuseDelay();
+										if (equipDelay > TimeSpan.Zero)
 										{
 											player.addTimeStamp(skill, equipDelay);
 											player.disableSkill(skill, equipDelay);

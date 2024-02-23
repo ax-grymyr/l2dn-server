@@ -45,6 +45,25 @@ public record struct ItemType(int Value)
 
     public WeaponType AsWeaponType()
     {
+        if (Value < 0 || Value >= _weaponCount)
+            throw new InvalidOperationException("Item type is not weapon");
+        
         return (WeaponType)Value;
+    }
+
+    public ArmorType AsArmorType()
+    {
+        if (Value < _weaponCount || Value >= _weaponAndArmorCount)
+            throw new InvalidOperationException("Item type is not armor");
+
+        return (ArmorType)(Value - _weaponCount);
+    }
+
+    public EtcItemType AsEtcItemType()
+    {
+        if (Value < _weaponAndArmorCount)
+            throw new InvalidOperationException("Item type is not Etc Item");
+
+        return (EtcItemType)(Value - _weaponAndArmorCount);
     }
 }

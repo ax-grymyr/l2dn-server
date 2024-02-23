@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 
@@ -83,28 +84,22 @@ public class Mail: ItemContainer
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement =
-				con.prepareStatement("SELECT * FROM items WHERE owner_id=? AND loc=? AND loc_data=?");
-			statement.setInt(1, _ownerId);
-			statement.setString(2, getBaseLocation().name());
-			statement.setInt(3, _messageId);
-
+			int ownerId = getOwnerId();
+			ItemLocation location = getBaseLocation(); 
+			var query = ctx.Items.Where(r => r.OwnerId == ownerId && r.Location == (int)location && r.LocationData == _messageId);
+			foreach (var record in query)
 			{
-				ResultSet inv = statement.executeQuery();
-				while (inv.next())
+				Item item = new Item(record);
+				World.getInstance().addObject(item);
+
+				// If stackable item is found just add to current quantity
+				if (item.isStackable() && (getItemByItemId(item.getId()) != null))
 				{
-					Item item = new Item(inv);
-					World.getInstance().addObject(item);
-					
-					// If stackable item is found just add to current quantity
-					if (item.isStackable() && (getItemByItemId(item.getId()) != null))
-					{
-						addItem("Restore", item, null, null);
-					}
-					else
-					{
-						addItem(item);
-					}
+					addItem("Restore", item, null, null);
+				}
+				else
+				{
+					addItem(item);
 				}
 			}
 		}
