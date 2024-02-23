@@ -32,7 +32,7 @@ public class CommandChannelMatchingRoom: MatchingRoom
 		{
 			if (member != player)
 			{
-				member.sendPacket(new ExManageMpccRoomMember(member, this, ExManagePartyRoomMemberType.ADD_MEMBER));
+				member.sendPacket(new ExManageMpccRoomMemberPacket(member, this, ExManagePartyRoomMemberType.ADD_MEMBER));
 			}
 		}
 
@@ -48,16 +48,16 @@ public class CommandChannelMatchingRoom: MatchingRoom
 		}
 
 		// Update new player
-		player.sendPacket(new ExMPCCRoomInfo(this));
-		player.sendPacket(new ExMPCCRoomMember(player, this));
+		player.sendPacket(new ExMPCCRoomInfoPacket(this));
+		player.sendPacket(new ExMPCCRoomMemberPacket(player, this));
 	}
 
 	protected override void notifyRemovedMember(Player player, bool kicked, bool leaderChanged)
 	{
 		getMembers().forEach(p =>
 		{
-			p.sendPacket(new ExMPCCRoomInfo(this));
-			p.sendPacket(new ExMPCCRoomMember(player, this));
+			p.sendPacket(new ExMPCCRoomInfoPacket(this));
+			p.sendPacket(new ExMPCCRoomMemberPacket(player, this));
 		});
 
 		player.sendPacket(new SystemMessagePacket(kicked
@@ -70,7 +70,7 @@ public class CommandChannelMatchingRoom: MatchingRoom
 		getMembers().forEach(p =>
 		{
 			p.sendPacket(SystemMessageId.THE_COMMAND_CHANNEL_MATCHING_ROOM_WAS_CANCELLED);
-			p.sendPacket(ExDissmissMPCCRoom.STATIC_PACKET);
+			p.sendPacket(ExDissmissMPCCRoomPacket.STATIC_PACKET);
 			p.setMatchingRoom(null);
 			p.broadcastUserInfo(UserInfoType.CLAN);
 			MatchingRoomManager.getInstance().addToWaitingList(p);
