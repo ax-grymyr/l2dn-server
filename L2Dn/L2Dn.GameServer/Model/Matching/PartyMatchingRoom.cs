@@ -17,7 +17,7 @@ public class PartyMatchingRoom: MatchingRoom
 	protected override void onRoomCreation(Player player)
 	{
 		player.broadcastUserInfo(UserInfoType.CLAN);
-		player.sendPacket(new ListPartyWaiting(PartyMatchingRoomLevelType.ALL, -1, 1, player.getLevel()));
+		player.sendPacket(new ListPartyWaitingPacket(PartyMatchingRoomLevelType.ALL, -1, 1, player.getLevel()));
 		player.sendPacket(SystemMessageId.YOU_HAVE_CREATED_A_PARTY_ROOM);
 	}
 
@@ -33,13 +33,13 @@ public class PartyMatchingRoom: MatchingRoom
 		{
 			if (member != player)
 			{
-				member.sendPacket(new ExPartyRoomMember(member, this));
+				member.sendPacket(new ExPartyRoomMemberPacket(member, this));
 			}
 		}
 
 		// Send SystemMessage to other players
 		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_ENTERED_THE_PARTY_ROOM);
-		sm.addPcName(player);
+		sm.Params.addPcName(player);
 		foreach (Player member in getMembers())
 		{
 			if (member != player)
@@ -49,8 +49,8 @@ public class PartyMatchingRoom: MatchingRoom
 		}
 
 		// Update new player
-		player.sendPacket(new PartyRoomInfo(this));
-		player.sendPacket(new ExPartyRoomMember(player, this));
+		player.sendPacket(new PartyRoomInfoPacket(this));
+		player.sendPacket(new ExPartyRoomMemberPacket(player, this));
 	}
 
 	protected override void notifyRemovedMember(Player player, bool kicked, bool leaderChanged)
@@ -62,16 +62,16 @@ public class PartyMatchingRoom: MatchingRoom
 
 		getMembers().forEach(p =>
 		{
-			p.sendPacket(new PartyRoomInfo(this));
-			p.sendPacket(new ExPartyRoomMember(player, this));
+			p.sendPacket(new PartyRoomInfoPacket(this));
+			p.sendPacket(new ExPartyRoomMemberPacket(player, this));
 			p.sendPacket(sm);
 			p.sendPacket(SystemMessageId.THE_LEADER_OF_THE_PARTY_ROOM_HAS_CHANGED);
 		});
 
-		player.sendPacket(new SystemMessage(kicked
+		player.sendPacket(new SystemMessagePacket(kicked
 			? SystemMessageId.YOU_HAVE_BEEN_OUSTED_FROM_THE_PARTY_ROOM
 			: SystemMessageId.YOU_HAVE_EXITED_THE_PARTY_ROOM));
-		player.sendPacket(ExClosePartyRoom.STATIC_PACKET);
+		player.sendPacket(ExClosePartyRoomPacket.STATIC_PACKET);
 	}
 
 	public override void disbandRoom()
@@ -79,7 +79,7 @@ public class PartyMatchingRoom: MatchingRoom
 		getMembers().forEach(p =>
 		{
 			p.sendPacket(SystemMessageId.THE_PARTY_ROOM_HAS_BEEN_DISBANDED);
-			p.sendPacket(ExClosePartyRoom.STATIC_PACKET);
+			p.sendPacket(ExClosePartyRoomPacket.STATIC_PACKET);
 			p.setMatchingRoom(null);
 			p.broadcastUserInfo(UserInfoType.CLAN);
 			MatchingRoomManager.getInstance().addToWaitingList(p);
