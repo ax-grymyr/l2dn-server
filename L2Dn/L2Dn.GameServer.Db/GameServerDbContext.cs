@@ -135,4 +135,6 @@ public class GameServerDbContext: DbContext
     public DbSet<DbPunishment> Punishments => Set<DbPunishment>();
     public DbSet<GlobalVariable> GlobalVariables => Set<GlobalVariable>();
     public DbSet<DbBuyList> BuyLists => Set<DbBuyList>();
+
+    public DbSet<DbPartyMatchingHistory> PartyMatchingHistory => Set<DbPartyMatchingHistory>();
 }

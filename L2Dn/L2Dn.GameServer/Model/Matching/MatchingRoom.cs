@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Interfaces;
@@ -10,8 +11,6 @@ namespace L2Dn.GameServer.Model.Matching;
 public abstract class MatchingRoom: IIdentifiable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(MatchingRoom));
-
-	private const String INSERT_PARTY_HISTORY = "INSERT INTO party_matching_history (title,leader) values (?,?)";
 
 	private readonly int _id;
 	private String _title;
@@ -73,14 +72,17 @@ public abstract class MatchingRoom: IIdentifiable
 		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(INSERT_PARTY_HISTORY);
-			statement.setString(1, _title);
-			statement.setString(2, _leader.getName());
-			statement.execute();
+			ctx.PartyMatchingHistory.Add(new DbPartyMatchingHistory()
+			{
+				Title = _title,
+				Leader = _leader.getName()
+			});
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("MatchingRoom: Problem restoring room history!");
+			LOGGER.Error("MatchingRoom: Problem restoring room history!");
 		}
 	}
 
@@ -95,11 +97,11 @@ public abstract class MatchingRoom: IIdentifiable
 			}
 			else
 			{
-				Iterator<Player> iter = getMembers().iterator();
-				if (iter.hasNext())
+				Player? member = getMembers().FirstOrDefault();
+				if (member != null)
 				{
-					_leader = iter.next();
-					iter.remove();
+					_leader = member;
+					getMembers().remove(member);
 					leaderChanged = true;
 				}
 			}
