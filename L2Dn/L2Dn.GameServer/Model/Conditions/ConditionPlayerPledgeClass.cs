@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Skills;
@@ -10,13 +11,13 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public class ConditionPlayerPledgeClass : Condition
 {
-	private readonly int _pledgeClass;
+	private readonly SocialClass _pledgeClass;
 	
 	/**
 	 * Instantiates a new condition player pledge class.
 	 * @param pledgeClass the pledge class
 	 */
-	public ConditionPlayerPledgeClass(int pledgeClass)
+	public ConditionPlayerPledgeClass(SocialClass pledgeClass)
 	{
 		_pledgeClass = pledgeClass;
 	}
@@ -34,7 +35,7 @@ public class ConditionPlayerPledgeClass : Condition
 		}
 		
 		bool isClanLeader = player.isClanLeader();
-		if ((_pledgeClass == -1) && !isClanLeader)
+		if ((_pledgeClass == (SocialClass)(-1)) && !isClanLeader)
 		{
 			return false;
 		}

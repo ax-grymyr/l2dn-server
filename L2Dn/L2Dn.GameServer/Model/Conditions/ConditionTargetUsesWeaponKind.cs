@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 
 namespace L2Dn.GameServer.Model.Conditions;
@@ -10,13 +11,13 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public class ConditionTargetUsesWeaponKind : Condition
 {
-	private readonly int _weaponMask;
+	private readonly ItemTypeMask _weaponMask;
 	
 	/**
 	 * Instantiates a new condition target uses weapon kind.
 	 * @param weaponMask the weapon mask
 	 */
-	public ConditionTargetUsesWeaponKind(int weaponMask)
+	public ConditionTargetUsesWeaponKind(ItemTypeMask weaponMask)
 	{
 		_weaponMask = weaponMask;
 	}
@@ -34,6 +35,6 @@ public class ConditionTargetUsesWeaponKind : Condition
 			return false;
 		}
 		
-		return (weapon.getItemType().mask() & _weaponMask) != 0;
+		return (weapon.getItemMask() & _weaponMask) != ItemTypeMask.Zero;
 	}
 }

@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 
 namespace L2Dn.GameServer.Model.Conditions;
@@ -11,14 +12,14 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public class ConditionSlotItemType : ConditionInventory
 {
-	private readonly int _mask;
+	private readonly ItemTypeMask _mask;
 	
 	/**
 	 * Instantiates a new condition slot item type.
 	 * @param slot the slot
 	 * @param mask the mask
 	 */
-	public ConditionSlotItemType(int slot, int mask): base(slot)
+	public ConditionSlotItemType(int slot, ItemTypeMask mask): base(slot)
 	{
 		_mask = mask;
 	}
@@ -35,6 +36,6 @@ public class ConditionSlotItemType : ConditionInventory
 		{
 			return false;
 		}
-		return (itemSlot.getTemplate().getItemMask() & _mask) != 0;
+		return (itemSlot.getTemplate().getItemMask() & _mask) != ItemTypeMask.Zero;
 	}
 }

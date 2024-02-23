@@ -232,8 +232,8 @@ public class ItemData: DataReaderBase
 			{
 				_etcItems.put(etcItem.getId(), etcItem);
 
-				if ((item.getItemType() == EtcItemType.ARROW) || (item.getItemType() == EtcItemType.BOLT) ||
-				    (item.getItemType() == EtcItemType.ELEMENTAL_ORB))
+				if ((etcItem.getEtcItemType() == EtcItemType.ARROW) || (etcItem.getEtcItemType() == EtcItemType.BOLT) ||
+				    (etcItem.getEtcItemType() == EtcItemType.ELEMENTAL_ORB))
 				{
 					List<ItemSkillHolder> skills = item.getAllSkills();
 					if (skills != null)
@@ -476,7 +476,7 @@ public class ItemData: DataReaderBase
 				case "pledgeclass":
 				{
 					int pledgeClass = (int)attribute;
-					cond = joinAnd(cond, new ConditionPlayerPledgeClass(pledgeClass));
+					cond = joinAnd(cond, new ConditionPlayerPledgeClass((SocialClass)pledgeClass));
 					break;
 				}
 				case "clanhall":
@@ -952,7 +952,7 @@ public class ItemData: DataReaderBase
 				}
 				case "using":
 				{
-					int mask = 0;
+					ItemTypeMask mask = ItemTypeMask.Zero;
 					StringTokenizer st = new StringTokenizer((string)attribute, ",");
 					while (st.hasMoreTokens())
 					{
@@ -961,15 +961,16 @@ public class ItemData: DataReaderBase
 						{
 							if (wt.ToString().equals(item))
 							{
-								mask |= wt.GetMask();
+								mask |= wt;
 								break;
 							}
 						}
+						
 						foreach (ArmorType at in Enum.GetValues<ArmorType>())
 						{
 							if (at.ToString().equals(item))
 							{
-								mask |= at.GetMask();
+								mask |= at;
 								break;
 							}
 						}
@@ -1036,17 +1037,17 @@ public class ItemData: DataReaderBase
 			{
 				case "kind":
 				{
-					int mask = 0;
+					ItemTypeMask mask = ItemTypeMask.Zero;
 					StringTokenizer st = new StringTokenizer((string)attribute, ",");
 					while (st.hasMoreTokens())
 					{
-						int old = mask;
+						ItemTypeMask old = mask;
 						String item = st.nextToken().Trim();
 						foreach (WeaponType wt in Enum.GetValues<WeaponType>())
 						{
 							if (wt.ToString().equals(item))
 							{
-								mask |= wt.GetMask();
+								mask |= wt;
 							}
 						}
 						
@@ -1054,7 +1055,7 @@ public class ItemData: DataReaderBase
 						{
 							if (at.ToString().equals(item))
 							{
-								mask |= at.GetMask();
+								mask |= at;
 							}
 						}
 						

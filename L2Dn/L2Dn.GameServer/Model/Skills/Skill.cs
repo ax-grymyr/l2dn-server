@@ -112,7 +112,7 @@ public class Skill: IIdentifiable
 	
 	private readonly BasicProperty _basicProperty;
 	
-	private readonly int _minPledgeClass;
+	private readonly SocialClass _minPledgeClass;
 	private readonly int _lightSoulMaxConsume;
 	private readonly int _shadowSoulMaxConsume;
 	private readonly int _chargeConsume;
@@ -947,7 +947,7 @@ public class Skill: IIdentifiable
 		return hasEffectType(EffectType.FISHING);
 	}
 	
-	public int getMinPledgeClass()
+	public SocialClass getMinPledgeClass()
 	{
 		return _minPledgeClass;
 	}

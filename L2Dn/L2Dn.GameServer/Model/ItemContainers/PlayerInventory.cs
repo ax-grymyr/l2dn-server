@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
@@ -10,6 +11,8 @@ using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Network.OutgoingPackets.LimitShop;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -23,7 +26,7 @@ public class PlayerInventory: Inventory
 	private Item _adena;
 	private Item _ancientAdena;
 	private Item _beautyTickets;
-	private ICollection<int> _blockItems = null;
+	private ICollection<int> _blockItems;
 	private InventoryBlockType _blockMode = InventoryBlockType.NONE;
 	private int _questItemSize;
 	
@@ -37,7 +40,7 @@ public class PlayerInventory: Inventory
 		return _owner;
 	}
 	
-	protected override ItemLocation getBaseLocation()
+	public override ItemLocation getBaseLocation()
 	{
 		return ItemLocation.INVENTORY;
 	}
@@ -377,8 +380,7 @@ public class PlayerInventory: Inventory
 			if (actor != null)
 			{
 				// Send inventory update packet
-				InventoryUpdate playerIU = new InventoryUpdate();
-				playerIU.addItem(addedItem);
+				InventoryUpdatePacket playerIU = new InventoryUpdatePacket(addedItem);
 				actor.sendInventoryUpdate(playerIU);
 				
 				// Notify to scripts
@@ -438,7 +440,7 @@ public class PlayerInventory: Inventory
 				// Send inventory update packet
 				if (update)
 				{
-					InventoryUpdate playerIU = new InventoryUpdate();
+					InventoryUpdatePacket playerIU = new InventoryUpdatePacket();
 					if (item.isStackable() && (item.getCount() > count))
 					{
 						playerIU.addModifiedItem(item);
@@ -452,12 +454,12 @@ public class PlayerInventory: Inventory
 					// Adena UI update.
 					if (item.getId() == Inventory.ADENA_ID)
 					{
-						actor.sendPacket(new ExAdenaInvenCount(actor));
+						actor.sendPacket(new ExAdenaInvenCountPacket(actor));
 					}
 					// LCoin UI update.
 					else if (item.getId() == Inventory.LCOIN_ID)
 					{
-						actor.sendPacket(new ExBloodyCoinCount(actor));
+						actor.sendPacket(new ExBloodyCoinCountPacket(actor));
 					}
 				}
 				
@@ -554,12 +556,12 @@ public class PlayerInventory: Inventory
 			// Adena UI update.
 			if (destroyedItem.getId() == Inventory.ADENA_ID)
 			{
-				actor.sendPacket(new ExAdenaInvenCount(actor));
+				actor.sendPacket(new ExAdenaInvenCountPacket(actor));
 			}
 			// LCoin UI update.
 			else if (destroyedItem.getId() == Inventory.LCOIN_ID)
 			{
-				actor.sendPacket(new ExBloodyCoinCount(actor));
+				actor.sendPacket(new ExBloodyCoinCountPacket(actor));
 			}
 			
 			// Notify to scripts
@@ -621,15 +623,16 @@ public class PlayerInventory: Inventory
 		{
 			if (getInventoryItemCount(itemId, -1, false) >= count)
 			{
-				InventoryUpdate iu = new InventoryUpdate();
 				long destroyed = 0;
+				List<ItemInfo> itemInfos = new List<ItemInfo>();  
 				foreach (Item item in items)
 				{
-					if (!item.isEquipped() && (destroyItem(process, item, 1, actor, reference) != null))
+					if (!item.isEquipped() && (this.destroyItem(process, item, 1, actor, reference) != null))
 					{
-						iu.addRemovedItem(item);
+						itemInfos.add(new ItemInfo(item, ItemChangeType.REMOVED));
 						if (++destroyed == count)
 						{
+							InventoryUpdatePacket iu = new InventoryUpdatePacket(itemInfos);
 							_owner.sendInventoryUpdate(iu);
 							refreshWeight();
 							return item;
@@ -644,7 +647,7 @@ public class PlayerInventory: Inventory
 		}
 		
 		// Single item or stackable.
-		return destroyItem(process, destroyItem, count, actor, reference);
+		return this.destroyItem(process, destroyItem, count, actor, reference);
 	}
 	
 	/**
@@ -785,7 +788,7 @@ public class PlayerInventory: Inventory
 		
 		_owner.refreshOverloaded(true);
 		
-		StatusUpdate su = new StatusUpdate(_owner);
+		StatusUpdatePacket su = new StatusUpdatePacket(_owner);
 		su.addUpdate(StatusUpdateType.CUR_LOAD, _owner.getCurrentLoad());
 		_owner.sendPacket(su);
 	}
@@ -1101,7 +1104,7 @@ public class PlayerInventory: Inventory
 		}
 		
 		Item ammunition = null;
-		switch (weapon.getItemType())
+		switch (weapon.getWeaponType())
 		{
 			case WeaponType.BOW:
 			{
@@ -1145,7 +1148,7 @@ public class PlayerInventory: Inventory
 	 */
 	public bool updateItemCountNoDbUpdate(String process, Item item, long countDelta, Player creator, Object reference)
 	{
-		InventoryUpdate iu = new InventoryUpdate();
+		List<ItemInfo> items = new List<ItemInfo>();
 		long left = item.getCount() + countDelta;
 		try
 		{
@@ -1161,15 +1164,16 @@ public class PlayerInventory: Inventory
 					{
 						item.changeCountWithoutTrace(-1, creator, reference);
 					}
-					item.setLastChange(Item.MODIFIED);
+					
+					item.setLastChange(ItemChangeType.MODIFIED);
 					refreshWeight();
-					iu.addModifiedItem(item);
+					items.Add(new ItemInfo(item, ItemChangeType.MODIFIED));
 					return true;
 				}
 			}
 			else if (left == 0)
 			{
-				iu.addRemovedItem(item);
+				items.Add(new ItemInfo(item, ItemChangeType.REMOVED));
 				destroyItem(process, item, _owner, null);
 				return true;
 			}
@@ -1180,6 +1184,7 @@ public class PlayerInventory: Inventory
 		}
 		finally
 		{
+			InventoryUpdatePacket iu = new InventoryUpdatePacket();
 			_owner.sendInventoryUpdate(iu);
 		}
 	}

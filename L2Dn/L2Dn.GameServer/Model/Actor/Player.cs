@@ -2649,7 +2649,7 @@ public class Player: Playable
 	/**
 	 * @return the Clan Identifier of the Player.
 	 */
-	public override int getClanId()
+	public override int? getClanId()
 	{
 		return _clanId;
 	}

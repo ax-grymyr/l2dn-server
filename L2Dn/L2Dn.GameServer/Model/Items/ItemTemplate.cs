@@ -83,7 +83,6 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	
 	public const int SLOT_MULTI_ALLWEAPON = SLOT_LR_HAND | SLOT_R_HAND;
 	
-	private readonly ItemType _itemType;
 	private int _itemId;
 	private int _displayId;
 	private String _name;
@@ -146,9 +145,8 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	 * Constructor of the Item that fill class variables.
 	 * @param set : StatSet corresponding to a set of couples (key,value) for description of the item
 	 */
-	protected ItemTemplate(ItemType itemType, StatSet set)
+	protected ItemTemplate(StatSet set)
 	{
-		_itemType = itemType;
 		this.set(set);
 	}
 	
@@ -232,34 +230,27 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	 * Returns the itemType.
 	 * @return Enum
 	 */
-	public ItemType getItemType() => _itemType;
-	
+	public abstract ItemType getItemType();
+
+	public ItemTypeMask getItemMask() => getItemType().GetMask();
+
 	/**
 	 * Verifies if the item is an etc item.
 	 * @return {@code true} if the item is an etc item, {@code false} otherwise.
 	 */
-	public virtual bool isEtcItem()
-	{
-		return false;
-	}
-	
+	public bool isEtcItem() => getItemType().IsEtcItem();
+
 	/**
 	 * Verifies if the item is an armor.
 	 * @return {@code true} if the item is an armor, {@code false} otherwise.
 	 */
-	public virtual bool isArmor()
-	{
-		return false;
-	}
-	
+	public bool isArmor() => getItemType().IsArmor();
+
 	/**
 	 * Verifies if the item is a weapon.
 	 * @return {@code true} if the item is a weapon, {@code false} otherwise.
 	 */
-	public virtual bool isWeapon()
-	{
-		return false;
-	}
+	public bool isWeapon() => getItemType().IsWeapon();
 	
 	/**
 	 * Verifies if the item is a magic weapon.
@@ -666,21 +657,12 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	{
 		return _pvpItem;
 	}
+
+	public bool isPotion() => getItemType() == EtcItemType.POTION;
 	
-	public virtual bool isPotion()
-	{
-		return false;
-	}
+	public bool isElixir() => getItemType() == EtcItemType.ELIXIR;
 	
-	public virtual bool isElixir()
-	{
-		return false;
-	}
-	
-	public virtual bool isScroll()
-	{
-		return false;
-	}
+	public bool isScroll() => getItemType() == EtcItemType.SCROLL;
 	
 	/**
 	 * Add the FuncTemplate f to the list of functions used with the item
@@ -1042,11 +1024,8 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	{
 		return _defaultEnchantLevel;
 	}
-	
-	public virtual bool isPetItem()
-	{
-		return false;
-	}
+
+	public bool isPetItem() => getItemType() == EtcItemType.PET_COLLAR;
 	
 	/**
 	 * @param extractableProduct

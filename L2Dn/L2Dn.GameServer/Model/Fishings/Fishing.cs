@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.ItemContainers;
+using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Stats;
@@ -151,14 +152,14 @@ public class Fishing
 		}
 		
 		Item rod = _player.getActiveWeaponInstance();
-		if ((rod == null) || (rod.getItemType() != WeaponType.FISHINGROD))
+		if (rod == null || rod.getItemType() != WeaponType.FISHINGROD)
 		{
 			_player.sendPacket(SystemMessageId.YOU_DON_T_HAVE_A_FISHING_ROD_EQUIPPED);
 			_player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			stopFishing(FishingEndType.ERROR);
 			return;
 		}
-		
+
 		FishingRod rodData = FishingData.getInstance().getRodData(rod.getId());
 		if (rodData == null)
 		{

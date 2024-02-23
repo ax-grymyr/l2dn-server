@@ -2207,32 +2207,39 @@ public class Clan: IIdentifiable, INamable
 		{
 			return false;
 		}
-		if ((player.getAllyId() == 0) || !player.isClanLeader() || (player.getClanId() != player.getAllyId()))
+
+		int? playerAllyId = player.getAllyId(); 
+		if ((playerAllyId is null) || !player.isClanLeader() || (player.getClanId() != playerAllyId))
 		{
 			player.sendPacket(SystemMessageId.ACCESS_ONLY_FOR_THE_CHANNEL_FOUNDER);
 			return false;
 		}
+		
 		Clan leaderClan = player.getClan();
 		if ((leaderClan.getAllyPenaltyExpiryTime() > DateTime.UtcNow) && (leaderClan.getAllyPenaltyType() == PENALTY_TYPE_DISMISS_CLAN))
 		{
 			player.sendPacket(SystemMessageId.YOU_CAN_ACCEPT_A_NEW_CLAN_IN_THE_ALLIANCE_IN_24_H_AFTER_DISMISSING_ANOTHER_ONE);
 			return false;
 		}
+		
 		if (target == null)
 		{
 			player.sendPacket(SystemMessageId.THE_TARGET_CANNOT_BE_INVITED);
 			return false;
 		}
+		
 		if (player.getObjectId() == target.getObjectId())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ASK_YOURSELF_TO_APPLY_TO_A_CLAN);
 			return false;
 		}
+		
 		if (target.getClan() == null)
 		{
 			player.sendPacket(SystemMessageId.THE_TARGET_MUST_BE_A_CLAN_MEMBER);
 			return false;
 		}
+		
 		if (!target.isClanLeader())
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_IS_NOT_A_CLAN_LEADER);
@@ -2240,8 +2247,9 @@ public class Clan: IIdentifiable, INamable
 			player.sendPacket(sm);
 			return false;
 		}
+		
 		Clan targetClan = target.getClan();
-		if (target.getAllyId() != 0)
+		if (target.getAllyId() is not null)
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_CLAN_IS_ALREADY_A_MEMBER_OF_S2_ALLIANCE);
 			sm.Params.addString(targetClan.getName());
@@ -2249,6 +2257,7 @@ public class Clan: IIdentifiable, INamable
 			player.sendPacket(sm);
 			return false;
 		}
+		
 		if (targetClan.getAllyPenaltyExpiryTime() > DateTime.UtcNow)
 		{
 			if (targetClan.getAllyPenaltyType() == PENALTY_TYPE_CLAN_LEAVED)
@@ -2259,24 +2268,27 @@ public class Clan: IIdentifiable, INamable
 				player.sendPacket(sm);
 				return false;
 			}
+			
 			if (targetClan.getAllyPenaltyType() == PENALTY_TYPE_CLAN_DISMISSED)
 			{
 				player.sendPacket(SystemMessageId.A_CLAN_CAN_JOIN_ANOTHER_ALLIANCE_IN_24_H_AFTER_LEAVING_THE_PREVIOUS_ONE);
 				return false;
 			}
 		}
+		
 		if (player.isInsideZone(ZoneId.SIEGE) && target.isInsideZone(ZoneId.SIEGE))
 		{
 			player.sendPacket(SystemMessageId.THE_OPPOSING_CLAN_IS_PARTICIPATING_IN_A_SIEGE_BATTLE);
 			return false;
 		}
+		
 		if (leaderClan.isAtWarWith(targetClan.getId()))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_MAKE_AN_ALLIANCE_WITH_A_CLAN_YOU_ARE_IN_WAR_WITH);
 			return false;
 		}
 		
-		if (ClanTable.getInstance().getClanAllies(player.getAllyId()).size() >= Config.ALT_MAX_NUM_OF_CLANS_IN_ALLY)
+		if (ClanTable.getInstance().getClanAllies(playerAllyId.Value).size() >= Config.ALT_MAX_NUM_OF_CLANS_IN_ALLY)
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_LIMIT);
 			return false;
@@ -2844,9 +2856,12 @@ public class Clan: IIdentifiable, INamable
 		_atWarWith.remove(clanId);
 	}
 	
-	public ClanWar getWarWith(int clanId)
+	public ClanWar getWarWith(int? clanId)
 	{
-		return _atWarWith.get(clanId);
+		if (clanId is null)
+			return null;
+		
+		return _atWarWith.get(clanId.Value);
 	}
 	
 	[MethodImpl(MethodImplOptions.Synchronized)]

@@ -5270,9 +5270,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * Dummy method overriden in {@link Player}
 	 * @return the clan id of current character.
 	 */
-	public virtual int getClanId()
+	public virtual int? getClanId()
 	{
-		return 0;
+		return null;
 	}
 	
 	/**
@@ -5339,7 +5339,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		Weapon weapon = getActiveWeaponItem();
 		if (weapon != null)
 		{
-			return weapon.getItemType();
+			return weapon.getItemType().AsWeaponType();
 		}
 		
 		WeaponType defaultWeaponType = _template.getBaseAttackType();

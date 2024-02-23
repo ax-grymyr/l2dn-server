@@ -14,16 +14,16 @@ namespace L2Dn.GameServer.Model.Conditions;
 public class ConditionUsingItemType : Condition
 {
 	private readonly bool _armor;
-	private readonly int _mask;
+	private readonly ItemTypeMask _mask;
 	
 	/**
 	 * Instantiates a new condition using item type.
 	 * @param mask the mask
 	 */
-	public ConditionUsingItemType(int mask)
+	public ConditionUsingItemType(ItemTypeMask mask)
 	{
 		_mask = mask;
-		_armor = (_mask & (ArmorType.MAGIC.mask() | ArmorType.LIGHT.mask() | ArmorType.HEAVY.mask())) != 0;
+		_armor = (_mask & ((ItemTypeMask)ArmorType.MAGIC | ArmorType.LIGHT | ArmorType.HEAVY)) != ItemTypeMask.Zero;
 	}
 	
 	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
@@ -35,7 +35,7 @@ public class ConditionUsingItemType : Condition
 		
 		if (!effector.isPlayer())
 		{
-			return !_armor && ((_mask & effector.getAttackType().mask()) != 0);
+			return !_armor && (_mask & effector.getAttackType()) != ItemTypeMask.Zero;
 		}
 		
 		Inventory inv = effector.getInventory();
@@ -46,12 +46,13 @@ public class ConditionUsingItemType : Condition
 			Item chest = inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST);
 			if (chest == null)
 			{
-				return (ArmorType.NONE.mask() & _mask) == ArmorType.NONE.mask();
+				return (ArmorType.NONE & _mask) == ArmorType.NONE;
 			}
-			 int chestMask = chest.getTemplate().getItemMask();
+			
+			ItemTypeMask chestMask = chest.getTemplate().getItemMask();
 			
 			// If chest armor is different from the condition one return false
-			if ((_mask & chestMask) == 0)
+			if ((_mask & chestMask) == ItemTypeMask.Zero)
 			{
 				return false;
 			}
@@ -64,16 +65,20 @@ public class ConditionUsingItemType : Condition
 			{
 				return true;
 			}
+			
 			// check legs armor
 			Item legs = inv.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
 			if (legs == null)
 			{
-				return (ArmorType.NONE.mask() & _mask) == ArmorType.NONE.mask();
+				return (ArmorType.NONE & _mask) == ArmorType.NONE;
 			}
-			 int legMask = legs.getTemplate().getItemMask();
+			
+			ItemTypeMask legMask = legs.getTemplate().getItemMask();
+			
 			// return true if legs armor matches too
-			return (_mask & legMask) != 0;
+			return (_mask & legMask) != ItemTypeMask.Zero;
 		}
-		return (_mask & inv.getWearedMask()) != 0;
+		
+		return (_mask & inv.getWearedMask()) != ItemTypeMask.Zero;
 	}
 }

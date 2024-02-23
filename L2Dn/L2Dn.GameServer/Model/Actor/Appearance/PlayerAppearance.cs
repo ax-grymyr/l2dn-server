@@ -29,11 +29,11 @@ public class PlayerAppearance
 	/** The default title color is 0xECF9A2. */
 	private Color _titleColor = new(DEFAULT_TITLE_COLOR);
 	
-	private int _visibleClanId = -1;
-	private int _visibleClanCrestId = -1;
-	private int _visibleClanLargeCrestId = -1;
-	private int _visibleAllyId = -1;
-	private int _visibleAllyCrestId = -1;
+	private int? _visibleClanId;
+	private int? _visibleClanCrestId;
+	private int? _visibleClanLargeCrestId;
+	private int? _visibleAllyId;
+	private int? _visibleAllyCrestId;
 	
 	public PlayerAppearance(byte face, byte hColor, byte hStyle, Sex sex)
 	{
@@ -171,32 +171,32 @@ public class PlayerAppearance
 		return _owner;
 	}
 	
-	public int getVisibleClanId()
+	public int? getVisibleClanId()
 	{
-		return _visibleClanId != -1 ? _visibleClanId : _owner.isCursedWeaponEquipped() ? 0 : _owner.getClanId();
+		return _visibleClanId ?? (_owner.isCursedWeaponEquipped() ? null : _owner.getClanId());
 	}
 	
-	public int getVisibleClanCrestId()
+	public int? getVisibleClanCrestId()
 	{
-		return _visibleClanCrestId != -1 ? _visibleClanCrestId : _owner.isCursedWeaponEquipped() ? 0 : _owner.getClanCrestId();
+		return _visibleClanCrestId ?? (_owner.isCursedWeaponEquipped() ? null : _owner.getClanCrestId());
 	}
 	
-	public int getVisibleClanLargeCrestId()
+	public int? getVisibleClanLargeCrestId()
 	{
-		return _visibleClanLargeCrestId != -1 ? _visibleClanLargeCrestId : _owner.isCursedWeaponEquipped() ? 0 : _owner.getClanCrestLargeId();
+		return _visibleClanLargeCrestId ?? (_owner.isCursedWeaponEquipped() ? null : _owner.getClanCrestLargeId());
 	}
 	
-	public int getVisibleAllyId()
+	public int? getVisibleAllyId()
 	{
-		return _visibleAllyId != -1 ? _visibleAllyId : _owner.isCursedWeaponEquipped() ? 0 : _owner.getAllyId();
+		return _visibleAllyId ?? (_owner.isCursedWeaponEquipped() ? null : _owner.getAllyId());
 	}
 	
-	public int getVisibleAllyCrestId()
+	public int? getVisibleAllyCrestId()
 	{
-		return _visibleAllyCrestId != -1 ? _visibleAllyCrestId : (_owner == null) || _owner.isCursedWeaponEquipped() ? 0 : _owner.getAllyCrestId();
+		return _visibleAllyCrestId ?? ((_owner == null) || _owner.isCursedWeaponEquipped() ? null : _owner.getAllyCrestId());
 	}
 	
-	public void setVisibleClanData(int clanId, int clanCrestId, int clanLargeCrestId, int allyId, int allyCrestId)
+	public void setVisibleClanData(int? clanId, int? clanCrestId, int? clanLargeCrestId, int? allyId, int? allyCrestId)
 	{
 		_visibleClanId = clanId;
 		_visibleClanCrestId = clanCrestId;

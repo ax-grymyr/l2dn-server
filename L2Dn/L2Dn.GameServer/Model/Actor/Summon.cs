@@ -1054,14 +1054,14 @@ public abstract class Summon : Playable
 		}
 	}
 	
-	public override int getClanId()
+	public override int? getClanId()
 	{
-		return (_owner != null) ? _owner.getClanId() : 0;
+		return (_owner != null) ? _owner.getClanId() : null;
 	}
 	
-	public override int getAllyId()
+	public override int? getAllyId()
 	{
-		return (_owner != null) ? _owner.getAllyId() : 0;
+		return (_owner != null) ? _owner.getAllyId() : null;
 	}
 	
 	public void setSummonPoints(int summonPoints)

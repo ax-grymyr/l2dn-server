@@ -67,7 +67,7 @@ public class PetInventory: Inventory
 
     public bool validateWeight(Item item, long count)
     {
-        int weight = 0;
+        long weight = 0;
         ItemTemplate template = ItemData.getInstance().getTemplate(item.getId());
         if (template == null)
         {
@@ -83,7 +83,7 @@ public class PetInventory: Inventory
         return ((_totalWeight + weight) <= _owner.getMaxLoad());
     }
 
-    protected override ItemLocation getBaseLocation()
+    public override ItemLocation getBaseLocation()
     {
         return ItemLocation.PET;
     }

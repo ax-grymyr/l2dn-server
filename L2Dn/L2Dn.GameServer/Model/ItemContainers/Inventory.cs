@@ -111,7 +111,7 @@ public abstract class Inventory: ItemContainer
 	protected int _totalWeight;
 	
 	// used to quickly check for using of items of special type
-	private int _wearedMask;
+	private ItemTypeMask _wearedMask;
 	
 	private int _blockedItemSlotsMask;
 	
@@ -1691,7 +1691,7 @@ public abstract class Inventory: ItemContainer
 	/**
 	 * @return the mask of wore item
 	 */
-	public int getWearedMask()
+	public ItemTypeMask getWearedMask()
 	{
 		return _wearedMask;
 	}
@@ -2305,7 +2305,7 @@ public abstract class Inventory: ItemContainer
 	 * <li>Player</li><br>
 	 * @param type
 	 */
-	public void reduceAmmunitionCount(EtcItemType type)
+	public virtual void reduceAmmunitionCount(EtcItemType type)
 	{
 		// Default is to do nothing.
 	}

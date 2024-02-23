@@ -13,8 +13,7 @@ public class Armor: ItemTemplate
 	 * Constructor for Armor.
 	 * @param set the StatSet designating the set of couples (key,value) characterizing the armor.
 	 */
-	public Armor(StatSet set)
-		: base(ItemType.Armor, set)
+	public Armor(StatSet set): base(set)
 	{
 	}
 
@@ -51,13 +50,8 @@ public class Armor: ItemTemplate
 	/**
 	 * @return the type of the armor.
 	 */
-	public ArmorType getArmorType() => _type;
-
-	/**
-	 * @return {@code true} if the item is an armor, {@code false} otherwise
-	 */
-	public override bool isArmor()
+	public override ItemType getItemType()
 	{
-		return true;
+		return _type;
 	}
 }

@@ -21,7 +21,7 @@ public class EtcItem: ItemTemplate
  * Constructor for EtcItem.
  * @param set StatSet designating the set of couples (key,value) for description of the Etc
  */
-	public EtcItem(StatSet set): base(ItemType.Etc, set)
+	public EtcItem(StatSet set): base(set)
 	{
 	}
 
@@ -53,34 +53,9 @@ public class EtcItem: ItemTemplate
 		_isInfinite = set.getBoolean("is_infinite", false);
 	}
 
-	public EtcItemType getEtcItemType() => _type;
-
-	/**
- * @return {@code true} if the item is an etc item, {@code false} otherwise.
- */
-	public override bool isEtcItem()
+	public override ItemType getItemType()
 	{
-		return true;
-	}
-
-	public override bool isPotion()
-	{
-		return _type == EtcItemType.POTION;
-	}
-
-	public override bool isElixir()
-	{
-		return _type == EtcItemType.ELIXIR;
-	}
-
-	public override bool isScroll()
-	{
-		return _type == EtcItemType.SCROLL;
-	}
-
-	public override bool isPetItem()
-	{
-		return _type == EtcItemType.PET_COLLAR;
+		return _type;
 	}
 
 	/**

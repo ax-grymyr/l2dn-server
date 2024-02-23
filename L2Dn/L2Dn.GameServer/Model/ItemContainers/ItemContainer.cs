@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
@@ -47,7 +48,7 @@ public abstract class ItemContainer
 	 * Gets the items in inventory.
 	 * @return the items in inventory.
 	 */
-	public ICollection<Item> getItems()
+	public virtual ICollection<Item> getItems()
 	{
 		return _items;
 	}
@@ -169,7 +170,7 @@ public abstract class ItemContainer
 		{
 			long count = newItem.getCount();
 			olditem.changeCount(process, count, actor, reference);
-			olditem.setLastChange(Item.MODIFIED);
+			olditem.setLastChange(ItemChangeType.MODIFIED);
 			
 			// And destroys the item
 			ItemData.getInstance().destroyItem(process, newItem, actor, reference);
@@ -180,7 +181,7 @@ public abstract class ItemContainer
 		{
 			newItem.setOwnerId(process, getOwnerId(), actor, reference);
 			newItem.setItemLocation(getBaseLocation());
-			newItem.setLastChange((Item.ADDED));
+			newItem.setLastChange(ItemChangeType.ADDED);
 			
 			// Add item in inventory
 			addItem(newItem);
@@ -207,7 +208,7 @@ public abstract class ItemContainer
 		if ((item != null) && item.isStackable())
 		{
 			item.changeCount(process, count, actor, reference);
-			item.setLastChange(Item.MODIFIED);
+			item.setLastChange(ItemChangeType.MODIFIED);
 		}
 		else // If item hasn't be found in inventory, create new one
 		{
@@ -224,7 +225,7 @@ public abstract class ItemContainer
 				item = ItemData.getInstance().createItem(process, itemId, template.isStackable() ? count : 1, actor, reference);
 				item.setOwnerId(getOwnerId());
 				item.setItemLocation(getBaseLocation());
-				item.setLastChange(Item.ADDED);
+				item.setLastChange(ItemChangeType.ADDED);
 				
 				// Add item in inventory
 				addItem(item);
@@ -418,7 +419,7 @@ public abstract class ItemContainer
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public Item destroyItem(String process, Item item, Player actor, Object reference)
+	public virtual Item destroyItem(String process, Item item, Player actor, Object reference)
 	{
 		return destroyItem(process, item, item.getCount(), actor, reference);
 	}
@@ -440,7 +441,7 @@ public abstract class ItemContainer
 			if (item.getCount() > count)
 			{
 				item.changeCount(process, -count, actor, reference);
-				item.setLastChange(Item.MODIFIED);
+				item.setLastChange(ItemChangeType.MODIFIED);
 				refreshWeight();
 			}
 			else
@@ -475,7 +476,7 @@ public abstract class ItemContainer
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public Item destroyItem(String process, int objectId, long count, Player actor, Object reference)
+	public virtual Item destroyItem(String process, int objectId, long count, Player actor, Object reference)
 	{
 		Item item = getItemByObjectId(objectId);
 		return item == null ? null : destroyItem(process, item, count, actor, reference);
@@ -525,7 +526,7 @@ public abstract class ItemContainer
 		return 0;
 	}
 	
-	public long getBeautyTickets()
+	public virtual long getBeautyTickets()
 	{
 		foreach (Item item in _items)
 		{

@@ -84,7 +84,7 @@ public class Npc: Creature
 	private int _killingBlowWeaponId;
 	
 	private int _cloneObjId; // Used in NpcInfo packet to clone the specified player.
-	private int _clanId; // Used in NpcInfo packet to show the specified clan.
+	private int? _clanId; // Used in NpcInfo packet to show the specified clan.
 	
 	private NpcStringId? _titleString;
 	private NpcStringId? _nameString;
@@ -1619,7 +1619,7 @@ public class Npc: Creature
 	/**
 	 * @return The clan's object Id this NPC is displaying.
 	 */
-	public override int getClanId()
+	public override int? getClanId()
 	{
 		return _clanId;
 	}
@@ -1627,7 +1627,7 @@ public class Npc: Creature
 	/**
 	 * @param clanObjId object id of clan or 0 to disable it.
 	 */
-	public void setClanId(int clanObjId)
+	public void setClanId(int? clanObjId)
 	{
 		_clanId = clanObjId;
 	}

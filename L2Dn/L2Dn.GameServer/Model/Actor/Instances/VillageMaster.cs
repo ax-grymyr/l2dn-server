@@ -980,7 +980,7 @@ public class VillageMaster: Folk
 		return checkVillageMasterRace(pclass) && checkVillageMasterTeachType(pclass);
 	}
 	
-	private void dissolveClan(Player player, int clanId)
+	private void dissolveClan(Player player, int? clanId)
 	{
 		if (!player.isClanLeader())
 		{
@@ -1041,7 +1041,7 @@ public class VillageMaster: Folk
 		ClanTable.getInstance().scheduleRemoveClan(clan.getId());
 	}
 	
-	private void recoverClan(Player player, int clanId)
+	private void recoverClan(Player player, int? clanId)
 	{
 		if (!player.isClanLeader())
 		{

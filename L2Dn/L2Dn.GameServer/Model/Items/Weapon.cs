@@ -40,7 +40,7 @@ public class Weapon: ItemTemplate
 	 * Constructor for Weapon.
 	 * @param set the StatSet designating the set of couples (key,value) characterizing the weapon.
 	 */
-	public Weapon(StatSet set): base(ItemType.Weapon, set)
+	public Weapon(StatSet set): base(set)
 	{
 	}
 	
@@ -89,14 +89,9 @@ public class Weapon: ItemTemplate
 	/**
 	 * @return the type of Weapon
 	 */
-	public WeaponType getWeaponType() => _type;
-	
-	/**
-	 * @return {@code true} if the item is a weapon, {@code false} otherwise.
-	 */
-	public override bool isWeapon()
+	public override ItemType getItemType()
 	{
-		return true;
+		return _type;
 	}
 	
 	/**
