@@ -2,6 +2,8 @@ using L2Dn.GameServer.Model.Actor;
 
 namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
 
+using TeleportLocation = L2Dn.GameServer.Model.Teleporters.TeleportLocation;
+
 /**
  * Player teleport request listner - called from {@link TeleportHolder#doTeleport(Player, Npc, int)}
  * @author malyelfik

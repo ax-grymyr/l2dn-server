@@ -13,8 +13,8 @@ public class ItemAuctionInstance
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(ItemAuctionInstance));
 	private readonly SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("HH:mm:ss dd.MM.yy");
 	
-	private static readonly long START_TIME_SPACE = TimeUnit.MILLISECONDS.convert(1, TimeUnit.MINUTES);
-	private static readonly long FINISH_TIME_SPACE = TimeUnit.MILLISECONDS.convert(10, TimeUnit.MINUTES);
+	private static readonly TimeSpan START_TIME_SPACE = TimeSpan.FromMinutes(1);
+	private static readonly TimeSpan FINISH_TIME_SPACE = TimeSpan.FromMinutes(10);
 	
 	// SQL queries
 	private const String SELECT_AUCTION_ID_BY_INSTANCE_ID = "SELECT auctionId FROM item_auction WHERE instanceId = ?";

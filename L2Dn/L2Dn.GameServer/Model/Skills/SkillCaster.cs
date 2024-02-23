@@ -1030,7 +1030,7 @@ public class SkillCaster: Runnable
 		// Check if creature is already casting
 		if ((castingType != null) && caster.isCastingNow(castingType))
 		{
-			caster.sendPacket(ActionFailedPacket.get(castingType));
+			caster.sendPacket(new ActionFailedPacket(castingType));
 			return false;
 		}
 		

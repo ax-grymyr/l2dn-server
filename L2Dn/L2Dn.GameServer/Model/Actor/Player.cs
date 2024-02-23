@@ -14248,6 +14248,7 @@ public class Player: Playable
 		{
 			return new TerminateReturn(false, false, false);
 		}
+		
 		return new TerminateReturn(true, true, true);
 	}
 	

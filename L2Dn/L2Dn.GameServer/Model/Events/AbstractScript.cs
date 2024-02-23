@@ -39,7 +39,7 @@ using L2Dn.GameServer.Scripting;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using FortManager = L2Dn.GameServer.Model.Actor.Instances.FortManager;
+using FortManager = L2Dn.GameServer.InstanceManagers.FortManager;
 
 namespace L2Dn.GameServer.Model.Events;
 
@@ -116,19 +116,26 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 					            method.GetParameters().Length);
 					continue;
 				}
-				
-				if (!eventType.isEventClass(method.getParameterTypes()[0]))
+
+				if (eventType.GetEventClass() != method.GetParameters()[0].ParameterType)
 				{
-					LOGGER.Warn(GetType().Name + ": Non properly defined annotation listener on method: " + method.Name + " expected parameter to be type of: " + eventType.getEventClass().getSimpleName() + " but found: " + method.getParameterTypes()[0].getSimpleName());
+					LOGGER.Warn(GetType().Name + ": Non properly defined annotation listener on method: " +
+					            method.Name + " expected parameter to be type of: " +
+					            eventType.GetEventClass()?.FullName + " but found: " +
+					            method.GetParameters()[0].ParameterType.FullName);
+				
 					continue;
 				}
-				
-				if (!eventType.isReturnClass(method.getReturnType()))
+
+				if (!eventType.GetReturnTypes().Contains(method.ReturnType))
 				{
-					LOGGER.Warn(GetType().Name+ ": Non properly defined annotation listener on method: " + method.Name + " expected return type to be one of: " + Arrays.toString(eventType.getReturnClasses()) + " but found: " + method.getReturnType().getSimpleName());
+					LOGGER.Warn(GetType().Name + ": Non properly defined annotation listener on method: " +
+					            method.Name + " expected return type to be one of: " +
+					            string.Join(", ", eventType.GetReturnTypes().Select(t => t.FullName)) + " but found: " +
+					            method.ReturnType.FullName);
 					continue;
 				}
-				
+
 				int priority = 0;
 				
 				// Clear the list
@@ -1316,7 +1323,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	// --------------------------------------------------------------------------------------------------
 	// --------------------------------Default listener register methods---------------------------------
 	// --------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Method that registers Function type of listeners (Listeners that need parameters but doesn't return objects)
 	 * @param callback
@@ -1325,12 +1332,15 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> registerConsumer<TEvent>(Action<TEvent> callback, EventType type, ListenerRegisterType registerType, params int[] npcIds)
+	protected List<AbstractEventListener> registerConsumer<TEvent>(Action<TEvent> callback, EventType type,
+		ListenerRegisterType registerType, params int[] npcIds)
 		where TEvent: IBaseEvent
 	{
-		return registerListener(container => new ConsumerEventListener(container, type, callback, this), registerType, npcIds);
+		return registerListener(
+			container => new ConsumerEventListener(container, type, ev => callback((TEvent)ev), this), registerType,
+			npcIds);
 	}
-	
+
 	/**
 	 * Method that registers Function type of listeners (Listeners that need parameters but doesn't return objects)
 	 * @param callback
@@ -1339,12 +1349,15 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> registerConsumer<TEvent>(Action<TEvent> callback, EventType type, ListenerRegisterType registerType, IReadOnlyCollection<int> npcIds)
+	protected List<AbstractEventListener> registerConsumer<TEvent>(Action<TEvent> callback, EventType type,
+		ListenerRegisterType registerType, IReadOnlyCollection<int> npcIds)
 		where TEvent: IBaseEvent
 	{
-		return registerListener(container => new ConsumerEventListener(container, type, callback, this), registerType, npcIds);
+		return registerListener(
+			container => new ConsumerEventListener(container, type, ev => callback((TEvent)ev), this), registerType,
+			npcIds);
 	}
-	
+
 	/**
 	 * Method that registers Function type of listeners (Listeners that need parameters and return objects)
 	 * @param callback
@@ -1353,13 +1366,16 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> registerFunction<TEvent, TReturn>(Func<TEvent, TReturn> callback, EventType type, ListenerRegisterType registerType, params int[] npcIds)
+	protected List<AbstractEventListener> registerFunction<TEvent, TReturn>(Func<TEvent, TReturn> callback,
+		EventType type, ListenerRegisterType registerType, params int[] npcIds)
 		where TEvent: IBaseEvent
 		where TReturn: AbstractEventReturn
 	{
-		return registerListener(container => new FunctionEventListener(container, type, callback, this), registerType, npcIds);
+		return registerListener(
+			container => new FunctionEventListener(container, type, ev => callback((TEvent)ev), this), registerType,
+			npcIds);
 	}
-	
+
 	/**
 	 * Method that registers Function type of listeners (Listeners that need parameters and return objects)
 	 * @param callback
@@ -1372,9 +1388,11 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		where TEvent: IBaseEvent
 		where TReturn: AbstractEventReturn
 	{
-		return registerListener(container => new FunctionEventListener(container, type, callback, this), registerType, npcIds);
+		return registerListener(
+			container => new FunctionEventListener(container, type, ev => callback((TEvent)ev), this), registerType,
+			npcIds);
 	}
-	
+
 	/**
 	 * Method that registers runnable type of listeners (Listeners that doesn't needs parameters or return objects)
 	 * @param callback
@@ -1383,11 +1401,13 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> registerRunnable(Runnable callback, EventType type, ListenerRegisterType registerType, params int[] npcIds)
+	protected List<AbstractEventListener> registerRunnable(Runnable callback, EventType type,
+		ListenerRegisterType registerType, params int[] npcIds)
 	{
-		return registerListener(container => new RunnableEventListener(container, type, callback, this), registerType, npcIds);
+		return registerListener(container => new RunnableEventListener(container, type, callback, this), registerType,
+			npcIds);
 	}
-	
+
 	/**
 	 * Method that registers runnable type of listeners (Listeners that doesn't needs parameters or return objects)
 	 * @param callback
@@ -1396,11 +1416,29 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> registerRunnable(Runnable callback, EventType type, ListenerRegisterType registerType, IReadOnlyCollection<int> npcIds)
+	protected List<AbstractEventListener> registerRunnable(Runnable callback, EventType type,
+		ListenerRegisterType registerType, IReadOnlyCollection<int> npcIds)
 	{
-		return registerListener(container => new RunnableEventListener(container, type, callback, this), registerType, npcIds);
+		return registerListener(container => new RunnableEventListener(container, type, callback, this), registerType,
+			npcIds);
 	}
-	
+
+	// /**
+	//  * Method that registers runnable type of listeners (Listeners that doesn't needs parameters or return objects)
+	//  * @param callback
+	//  * @param type
+	//  * @param registerType
+	//  * @param priority
+	//  * @param npcIds
+	//  * @return
+	//  */
+	// protected List<AbstractEventListener> registerAnnotation(MethodInfo callback, EventType type,
+	// 	ListenerRegisterType registerType, int priority, params int[] npcIds)
+	// {
+	// 	return registerListener(container => new AnnotationEventListener(container, type, callback, this, priority),
+	// 		registerType, npcIds);
+	// }
+
 	/**
 	 * Method that registers runnable type of listeners (Listeners that doesn't needs parameters or return objects)
 	 * @param callback
@@ -1410,25 +1448,17 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> registerAnnotation(MethodInfo callback, EventType type, ListenerRegisterType registerType, int priority, params int[] npcIds)
+	protected List<AbstractEventListener> registerAnnotation(MethodInfo callback, EventType type,
+		ListenerRegisterType registerType, int priority, IReadOnlyCollection<int> npcIds)
 	{
-		return registerListener(container => new AnnotationEventListener(container, type, callback, this, priority), registerType, npcIds);
+		Func<object, IBaseEvent, object> func =
+			(Func<object, IBaseEvent, object>)Delegate.CreateDelegate(typeof(Func<object, IBaseEvent, object>),
+				callback);
+		
+		return registerListener(container => new AnnotationEventListener(container, type, func, this, priority),
+			registerType, npcIds);
 	}
-	
-	/**
-	 * Method that registers runnable type of listeners (Listeners that doesn't needs parameters or return objects)
-	 * @param callback
-	 * @param type
-	 * @param registerType
-	 * @param priority
-	 * @param npcIds
-	 * @return
-	 */
-	protected List<AbstractEventListener> registerAnnotation(MethodInfo callback, EventType type, ListenerRegisterType registerType, int priority, IReadOnlyCollection<int> npcIds)
-	{
-		return registerListener(container => new AnnotationEventListener(container, type, callback, this, priority), registerType, npcIds);
-	}
-	
+
 	/**
 	 * Method that registers dummy type of listeners (Listeners doesn't gets notification but just used to check if their type present or not)
 	 * @param type
@@ -1440,7 +1470,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	{
 		return registerListener(container => new DummyEventListener(container, type, this), registerType, npcIds);
 	}
-	
+
 	/**
 	 * Method that registers dummy type of listeners (Listeners doesn't gets notification but just used to check if their type present or not)
 	 * @param type
@@ -1448,11 +1478,12 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> registerDummy(EventType type, ListenerRegisterType registerType, IReadOnlyCollection<int> npcIds)
+	protected List<AbstractEventListener> registerDummy(EventType type, ListenerRegisterType registerType,
+		IReadOnlyCollection<int> npcIds)
 	{
 		return registerListener(container => new DummyEventListener(container, type, this), registerType, npcIds);
 	}
-	
+
 	// --------------------------------------------------------------------------------------------------
 	// --------------------------------------Register methods--------------------------------------------
 	// --------------------------------------------------------------------------------------------------
@@ -1574,7 +1605,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 			}
 		}
 		
-		_listeners.addAll(listeners);
+		foreach (var listener in listeners)
+			_listeners.Enqueue(listener);
+
 		return listeners;
 	}
 	
@@ -1694,7 +1727,10 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				}
 			}
 		}
-		_listeners.addAll(listeners);
+
+		foreach (var listener in listeners)
+			_listeners.Enqueue(listener);
+
 		return listeners;
 	}
 	
@@ -2885,13 +2921,14 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param player the player whom to send the packet
 	 * @param sound the name of the sound to play
 	 */
-	public static void playSound(Player player, String sound)
+	public static void playSound(Player player, string sound)
 	{
 		if (player.isSimulatingTalking())
 		{
 			return;
 		}
-		player.sendPacket(QuestSound.getSound(sound));
+		
+		player.sendPacket(new PlaySoundPacket(sound));
 	}
 	
 	/**
@@ -2905,7 +2942,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		{
 			return;
 		}
-		player.sendPacket(sound.getPacket());
+		
+		player.sendPacket(new PlaySoundPacket(sound.GetSoundName()));
 	}
 	
 	/**

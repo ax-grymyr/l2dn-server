@@ -1,6 +1,11 @@
-﻿using L2Dn.GameServer.Model.Actor;
+﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Packets;
 using NLog;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.ItemAuction;
 
@@ -12,11 +17,11 @@ public class ItemAuction
 	
 	private readonly int _auctionId;
 	private readonly int _instanceId;
-	private readonly long _startingTime;
-	private long _endingTime;
+	private readonly DateTime _startingTime;
+	private DateTime _endingTime;
 	private readonly AuctionItem _auctionItem;
 	private readonly List<ItemAuctionBid> _auctionBids;
-	private readonly Object _auctionStateLock;
+	private readonly object _auctionStateLock;
 	
 	private ItemAuctionState _auctionState;
 	private ItemAuctionExtendState _scheduledAuctionEndingExtendState;
@@ -28,14 +33,14 @@ public class ItemAuction
 	private int _lastBidPlayerObjId;
 	
 	// SQL
-	private const String DELETE_ITEM_AUCTION_BID = "DELETE FROM item_auction_bid WHERE auctionId = ? AND playerObjId = ?";
-	private const String INSERT_ITEM_AUCTION_BID = "INSERT INTO item_auction_bid (auctionId, playerObjId, playerBid) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE playerBid = ?";
+	private const string DELETE_ITEM_AUCTION_BID = "DELETE FROM item_auction_bid WHERE auctionId = ? AND playerObjId = ?";
+	private const string INSERT_ITEM_AUCTION_BID = "INSERT INTO item_auction_bid (auctionId, playerObjId, playerBid) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE playerBid = ?";
 	
-	public ItemAuction(int auctionId, int instanceId, long startingTime, long endingTime, AuctionItem auctionItem):this(auctionId, instanceId, startingTime, endingTime, auctionItem, new(), ItemAuctionState.CREATED) 
+	public ItemAuction(int auctionId, int instanceId, DateTime startingTime, DateTime endingTime, AuctionItem auctionItem):this(auctionId, instanceId, startingTime, endingTime, auctionItem, new(), ItemAuctionState.CREATED) 
 	{
 	}
 	
-	public ItemAuction(int auctionId, int instanceId, long startingTime, long endingTime, AuctionItem auctionItem, List<ItemAuctionBid> auctionBids, ItemAuctionState auctionState)
+	public ItemAuction(int auctionId, int instanceId, DateTime startingTime, DateTime endingTime, AuctionItem auctionItem, List<ItemAuctionBid> auctionBids, ItemAuctionState auctionState)
 	{
 		_auctionId = auctionId;
 		_instanceId = instanceId;
@@ -44,7 +49,7 @@ public class ItemAuction
 		_auctionItem = auctionItem;
 		_auctionBids = auctionBids;
 		_auctionState = auctionState;
-		_auctionStateLock = new Object();
+		_auctionStateLock = new object();
 		_scheduledAuctionEndingExtendState = ItemAuctionExtendState.INITIAL;
 		_auctionEndingExtendState = ItemAuctionExtendState.INITIAL;
 		
@@ -133,24 +138,26 @@ public class ItemAuction
 		_scheduledAuctionEndingExtendState = state;
 	}
 	
-	public long getStartingTime()
+	public DateTime getStartingTime()
 	{
 		return _startingTime;
 	}
 	
-	public long getEndingTime()
+	public DateTime getEndingTime()
 	{
 		return _endingTime;
 	}
-	
-	public long getStartingTimeRemaining()
+
+	public TimeSpan getStartingTimeRemaining()
 	{
-		return Math.Max(_endingTime - System.currentTimeMillis(), 0);
+		TimeSpan span = _endingTime - DateTime.UtcNow; // TODO maybe must be _startingTime here
+		return span < TimeSpan.Zero ? TimeSpan.Zero : span;
 	}
-	
-	public long getFinishingTimeRemaining()
+
+	public TimeSpan getFinishingTimeRemaining()
 	{
-		return Math.Max(_endingTime - System.currentTimeMillis(), 0);
+		TimeSpan span = _endingTime - DateTime.UtcNow;
+		return span < TimeSpan.Zero ? TimeSpan.Zero : span;
 	}
 	
 	public void storeMe()
@@ -165,8 +172,8 @@ public class ItemAuction
 			statement.setInt(3, _auctionItem.getAuctionItemId());
 			statement.setLong(4, _startingTime);
 			statement.setLong(5, _endingTime);
-			statement.setByte(6, _auctionState.getStateId());
-			statement.setByte(7, _auctionState.getStateId());
+			statement.setByte(6, _auctionState);
+			statement.setByte(7, _auctionState);
 			statement.execute();
 		}
 		catch (Exception e)
@@ -189,7 +196,7 @@ public class ItemAuction
 	
 	private void updatePlayerBidInternal(ItemAuctionBid bid, bool delete)
 	{
-		String query = delete ? DELETE_ITEM_AUCTION_BID : INSERT_ITEM_AUCTION_BID;
+		string query = delete ? DELETE_ITEM_AUCTION_BID : INSERT_ITEM_AUCTION_BID;
 		try 
 		{
 			using GameServerDbContext ctx = new();
@@ -283,8 +290,8 @@ public class ItemAuction
 			onPlayerBid(player, bid);
 			updatePlayerBid(bid, false);
 			
-			SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_SUBMITTED_A_BID_FOR_THE_AUCTION_OF_S1);
-			sm.addLong(newBid);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_SUBMITTED_A_BID_FOR_THE_AUCTION_OF_S1);
+			sm.Params.addLong(newBid);
 			player.sendPacket(sm);
 		}
 	}
@@ -314,7 +321,7 @@ public class ItemAuction
 				{
 					_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_5_MIN;
 					_endingTime += ENDING_TIME_EXTEND_5;
-					broadcastToAllBidders(new SystemMessage(SystemMessageId.BIDDER_EXISTS_THE_AUCTION_TIME_HAS_BEEN_EXTENDED_FOR_5_MIN));
+					broadcastToAllBidders(new SystemMessagePacket(SystemMessageId.BIDDER_EXISTS_THE_AUCTION_TIME_HAS_BEEN_EXTENDED_FOR_5_MIN));
 					break;
 				}
 				case ItemAuctionExtendState.EXTEND_BY_5_MIN:
@@ -323,7 +330,7 @@ public class ItemAuction
 					{
 						_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_3_MIN;
 						_endingTime += ENDING_TIME_EXTEND_3;
-						broadcastToAllBidders(new SystemMessage(SystemMessageId.BIDDER_EXISTS_AUCTION_TIME_HAS_BEEN_EXTENDED_FOR_3_MIN));
+						broadcastToAllBidders(new SystemMessagePacket(SystemMessageId.BIDDER_EXISTS_AUCTION_TIME_HAS_BEEN_EXTENDED_FOR_3_MIN));
 					}
 					break;
 				}
@@ -357,12 +364,14 @@ public class ItemAuction
 		}
 	}
 	
-	public void broadcastToAllBidders(ServerPacket packet)
+	public void broadcastToAllBidders<TPacket>(TPacket packet)
+		where TPacket: struct, IOutgoingPacket
 	{
 		ThreadPool.execute(() => broadcastToAllBiddersInternal(packet));
 	}
 	
-	public void broadcastToAllBiddersInternal(ServerPacket packet)
+	public void broadcastToAllBiddersInternal<TPacket>(TPacket packet)
+		where TPacket: struct, IOutgoingPacket
 	{
 		for (int i = _auctionBids.Count; i-- > 0;)
 		{

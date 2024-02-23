@@ -220,7 +220,7 @@ public class TeleportHolder
 		if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_TELEPORT_REQUEST, npc))
 		{
 			TerminateReturn term = EventDispatcher.getInstance()
-				.notifyEvent(new OnNpcTeleportRequest(player, npc, loc), npc, TerminateReturn.class);
+				.notifyEvent<TerminateReturn>(new OnNpcTeleportRequest(player, npc, loc), npc);
 			if ((term != null) && term.terminate())
 			{
 				return;
