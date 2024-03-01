@@ -10,18 +10,18 @@ public class ItemDeletionInfoManager
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(ItemDeletionInfoManager));
 	
-	private readonly Map<int, int> _itemDates = new();
+	private readonly Map<int, DateTime> _itemDates = new();
 	
 	protected ItemDeletionInfoManager()
 	{
 	}
 	
-	public void addItemDate(int itemId, int date)
+	public void addItemDate(int itemId, DateTime date)
 	{
 		_itemDates.put(itemId, date);
 	}
 	
-	public Map<int, int> getItemDates()
+	public Map<int, DateTime> getItemDates()
 	{
 		return _itemDates;
 	}

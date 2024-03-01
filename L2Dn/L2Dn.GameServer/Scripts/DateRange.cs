@@ -8,55 +8,46 @@ namespace L2Dn.GameServer.Scripts;
 public class DateRange
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(DateRange));
-	private readonly DateOnly _startDate;
-	private readonly DateOnly _endDate;
+	private readonly DateTime _startTime;
+	private readonly DateTime _endTime;
 	
-	public DateRange(DateOnly from, DateOnly to)
+	public DateRange(DateTime from, DateTime to)
 	{
-		_startDate = from;
-		_endDate = to;
+		if (from >= to)
+			throw new ArgumentException();
+			
+		_startTime = from;
+		_endTime = to;
 	}
 	
-	public static DateRange parse(String dateRange, string format)
+	public static DateRange parse(string dateRange, string format)
 	{
-		String[] date = dateRange.Split("-");
-		if (date.Length == 2)
-		{
-			try
-			{
-				return new DateRange(format.parse(date[0]), format.parse(date[1]));
-			}
-			catch (ParseException e)
-			{
-				LOGGER.Warn("Invalid Date Format: " + e);
-			}
-		}
-		return new DateRange(null, null);
+		string[] date = dateRange.Split("-");
+		if (date.Length != 2)
+			throw new FormatException();
+
+		DateTime from = DateTime.ParseExact(date[0], format, null);
+		DateTime to = DateTime.ParseExact(date[1], format, null);
+		return new DateRange(from, to);
 	}
 	
-	public bool isValid()
+	public bool isWithinRange(DateTime time)
 	{
-		return (_startDate != null) && (_endDate != null) && _startDate.before(_endDate);
+		return _startTime <= time && time <= _endTime;
 	}
 	
-	public bool isWithinRange(DateOnly date)
+	public DateTime getEndDate()
 	{
-		return (date.equals(_startDate) || date.after(_startDate)) //
-			&& (date.equals(_endDate) || date.before(_endDate));
+		return _endTime;
 	}
 	
-	public DateOnly getEndDate()
+	public DateTime getStartDate()
 	{
-		return _endDate;
-	}
-	
-	public DateOnly getStartDate()
-	{
-		return _startDate;
+		return _startTime;
 	}
 	
 	public override String ToString()
 	{
-		return "DateRange: From: " + _startDate + " To: " + _endDate;
+		return "DateRange: From: " + _startTime + " To: " + _endTime;
 	}
 }

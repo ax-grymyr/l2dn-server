@@ -1,4 +1,8 @@
+using System.Globalization;
+using System.Xml.Linq;
 using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.InstanceManagers.Events;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Announcements;
@@ -8,7 +12,9 @@ using L2Dn.GameServer.Model.Events.Listeners;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Scripts;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using L2Dn.Utilities;
+using Microsoft.EntityFrameworkCore;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Quests;
 
@@ -28,7 +34,12 @@ public class LongTimeEvent: Quest
 	protected String _onEnterMsg = "";
 	protected String _endMsg = "";
 	protected int _enterAnnounceId = -1;
-	
+
+	/**
+	 * Event spawns must initialize after server loads scripts.
+	 */
+	private Action<IBaseEvent> _spawnNpcs;
+
 	// NPCs to spawn and their spawn points
 	protected readonly List<NpcSpawn> _spawnList = new();
 	
@@ -40,11 +51,11 @@ public class LongTimeEvent: Quest
 	
 	protected class NpcSpawn
 	{
-		protected readonly  int npcId;
-		protected readonly  Location loc;
-		protected readonly  TimeSpan respawnTime;
+		public readonly  int npcId;
+		public readonly  Location loc;
+		public readonly  TimeSpan respawnTime;
 		
-		protected NpcSpawn(int spawnNpcId, Location spawnLoc, TimeSpan spawnRespawnTime)
+		public NpcSpawn(int spawnNpcId, Location spawnLoc, TimeSpan spawnRespawnTime)
 		{
 			npcId = spawnNpcId;
 			loc = spawnLoc;
@@ -54,19 +65,40 @@ public class LongTimeEvent: Quest
 	
 	public LongTimeEvent(): base(-1)
 	{
+		_spawnNpcs = ev =>
+		{
+			TimeSpan millisToEventEnd = _eventPeriod.getEndDate() - DateTime.Now;
+			foreach (NpcSpawn npcSpawn in _spawnList)
+			{
+				Npc npc = addSpawn(npcSpawn.npcId, npcSpawn.loc.getX(), npcSpawn.loc.getY(), npcSpawn.loc.getZ(),
+					npcSpawn.loc.getHeading(), false, millisToEventEnd, false);
+				TimeSpan respawnDelay = npcSpawn.respawnTime;
+				if (respawnDelay > TimeSpan.Zero)
+				{
+					Spawn spawn = npc.getSpawn();
+					spawn.setRespawnDelay(respawnDelay);
+					spawn.startRespawn();
+					ThreadPool.schedule(() => spawn.stopRespawn(), millisToEventEnd - respawnDelay);
+				}
+			}
+
+			Containers.Global().removeListenerIf(EventType.ON_SERVER_START, listener => listener.getOwner() == this);
+		};
+
 		loadConfig();
-		
+
 		if (_eventPeriod != null)
 		{
-			if (_eventPeriod.isWithinRange(new Date()))
+			DateTime today = DateTime.Now;
+			if (_eventPeriod.isWithinRange(today))
 			{
 				startEvent();
 				LOGGER.Info("Event " + _eventName + " active till " + _eventPeriod.getEndDate());
 			}
-			else if (_eventPeriod.getStartDate().after(new Date()))
+			else if (_eventPeriod.getStartDate() > today)
 			{
-				long delay = _eventPeriod.getStartDate().getTime() - System.currentTimeMillis();
-				ThreadPool.schedule(new ScheduleStart(), delay);
+				TimeSpan delay = _eventPeriod.getStartDate() - DateTime.Now;
+				ThreadPool.schedule(new ScheduleStart(this), delay);
 				LOGGER.Info("Event " + _eventName + " will be started at " + _eventPeriod.getStartDate());
 			}
 			else
@@ -77,217 +109,215 @@ public class LongTimeEvent: Quest
 			}
 		}
 	}
-	
+
 	/**
 	 * Load event configuration file
 	 */
 	private void loadConfig()
 	{
-		new IXmlReader()
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "scripts/events", getScriptName(), "config.xml");
+		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+		XDocument document = XDocument.Load(stream);
+
+		XElement? root = document.Element("event");
+		if (root == null)
 		{
-			public void load()
+			throw new InvalidOperationException("WARNING!!! " + getScriptName() + " event: bad config file!");
+		}
+
+		_eventName = root.Attribute("name").GetString();
+		_enableShrines = root.Attribute("enableShrines")?.GetBoolean() ?? false;
+		string period = root.Attribute("active").GetString();
+		if (period.Length == 21)
+		{
+			// dd MM yyyy-dd MM yyyy
+			_eventPeriod = DateRange.parse(period, "dd MM yyyy");
+		}
+		else if (period.Length == 11)
+		{
+			// dd MM-dd MM
+			string currentYear = DateTime.Today.Year.ToString();
+			String start = period.Split("-")[0] + " " + currentYear;
+			String end = period.Split("-")[1] + " " + currentYear;
+			String activePeriod = start + "-" + end;
+			_eventPeriod = DateRange.parse(activePeriod, "dd MM yyyy");
+		}
+
+		if (_eventPeriod == null)
+		{
+			throw new InvalidOperationException("WARNING!!! " + getName() + " event: illegal event period");
+		}
+
+		DateTime today = DateTime.Today;
+		if (_eventPeriod.getStartDate() > today || _eventPeriod.isWithinRange(today))
+		{
+			foreach (XElement n in root.Elements())
 			{
-				parseDatapackFile("data/scripts/events/" + getScriptName() + "/config.xml");
-			}
-			
-			public void parseDocument(Document doc, File f)
-			{
-				if (!doc.getDocumentElement().getNodeName().equalsIgnoreCase("event"))
+				// Loading droplist
+				if (n.Name.LocalName.equalsIgnoreCase("droplist"))
 				{
-					throw new NullPointerException("WARNING!!! " + getScriptName() + " event: bad config file!");
-				}
-				
-				_eventName = doc.getDocumentElement().getAttributes().getNamedItem("name").getNodeValue();
-				String currentYear = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
-				String period = doc.getDocumentElement().getAttributes().getNamedItem("active").getNodeValue();
-				if ((doc.getDocumentElement().getAttributes().getNamedItem("enableShrines") != null) && doc.getDocumentElement().getAttributes().getNamedItem("enableShrines").getNodeValue().equalsIgnoreCase("true"))
-				{
-					_enableShrines = true;
-				}
-				if (period.length() == 21)
-				{
-					// dd MM yyyy-dd MM yyyy
-					_eventPeriod = DateRange.parse(period, new SimpleDateFormat("dd MM yyyy", Locale.US));
-				}
-				else if (period.length() == 11)
-				{
-					// dd MM-dd MM
-					String start = period.split("-")[0].concat(" ").concat(currentYear);
-					String end = period.split("-")[1].concat(" ").concat(currentYear);
-					String activePeriod = start.concat("-").concat(end);
-					_eventPeriod = DateRange.parse(activePeriod, new SimpleDateFormat("dd MM yyyy", Locale.US));
-				}
-				
-				if (_eventPeriod == null)
-				{
-					throw new NullPointerException("WARNING!!! " + getName() + " event: illegal event period");
-				}
-				
-				Date today = new Date();
-				
-				if (_eventPeriod.getStartDate().after(today) || _eventPeriod.isWithinRange(today))
-				{
-					for (Node n = doc.getDocumentElement().getFirstChild(); n != null; n = n.getNextSibling())
+					foreach (XElement d in n.Elements())
 					{
-						// Loading droplist
-						if (n.getNodeName().equalsIgnoreCase("droplist"))
+						if (d.Name.LocalName.equalsIgnoreCase("add"))
 						{
-							for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+							try
 							{
-								if (d.getNodeName().equalsIgnoreCase("add"))
+								int itemId = d.Attribute("item").GetInt32();
+								int minCount = d.Attribute("min").GetInt32();
+								int maxCount = d.Attribute("max").GetInt32();
+								string chance = d.Attribute("chance").GetString();
+								double finalChance = !chance.isEmpty() && chance.endsWith("%")
+									? double.Parse(chance.Substring(0, chance.Length - 1))
+									: 0;
+								int minLevel = d.Attribute("minLevel")?.GetInt32() ?? 1;
+								int maxLevel = d.Attribute("maxLevel")?.GetInt32() ?? int.MaxValue;
+								string monsterIdsValue = d.Attribute("monsterIds")?.GetString();
+								Set<int> monsterIds = new();
+								if (monsterIdsValue != null)
 								{
-									try
+									foreach (string id in monsterIdsValue.Split(","))
 									{
-										int itemId = int.parseInt(d.getAttributes().getNamedItem("item").getNodeValue());
-										int minCount = int.parseInt(d.getAttributes().getNamedItem("min").getNodeValue());
-										int maxCount = int.parseInt(d.getAttributes().getNamedItem("max").getNodeValue());
-										String chance = d.getAttributes().getNamedItem("chance").getNodeValue();
-										double finalChance = !chance.isEmpty() && chance.endsWith("%") ? Double.parseDouble(chance.substring(0, chance.length() - 1)) : 0;
-										Node minLevelNode = d.getAttributes().getNamedItem("minLevel");
-										int minLevel = minLevelNode == null ? 1 : int.parseInt(minLevelNode.getNodeValue());
-										Node maxLevelNode = d.getAttributes().getNamedItem("maxLevel");
-										int maxLevel = maxLevelNode == null ? int.MAX_VALUE : int.parseInt(maxLevelNode.getNodeValue());
-										Node monsterIdsNode = d.getAttributes().getNamedItem("monsterIds");
-										Set<int> monsterIds = new HashSet<>();
-										if (monsterIdsNode != null)
-										{
-											for (String id : monsterIdsNode.getNodeValue().split(","))
-											{
-												monsterIds.add(int.parseInt(id));
-											}
-										}
-										
-										if (ItemData.getInstance().getTemplate(itemId) == null)
-										{
-											LOGGER.warning(getName() + " event: " + itemId + " is wrong item id, item was not added in droplist");
-											continue;
-										}
-										
-										if (minCount > maxCount)
-										{
-											LOGGER.warning(getName() + " event: item " + itemId + " - min greater than max, item was not added in droplist");
-											continue;
-										}
-										
-										if ((finalChance < 0) || (finalChance > 100))
-										{
-											LOGGER.warning(getName() + " event: item " + itemId + " - incorrect drop chance, item was not added in droplist");
-											continue;
-										}
-										
-										_dropList.add(new EventDropHolder(itemId, minCount, maxCount, finalChance, minLevel, maxLevel, monsterIds));
-									}
-									catch (NumberFormatException nfe)
-									{
-										LOGGER.warning("Wrong number format in config.xml droplist block for " + getName() + " event");
+										monsterIds.add(int.Parse(id));
 									}
 								}
+
+								if (ItemData.getInstance().getTemplate(itemId) == null)
+								{
+									LOGGER.Warn(getName() + " event: " + itemId +
+									            " is wrong item id, item was not added in droplist");
+									continue;
+								}
+
+								if (minCount > maxCount)
+								{
+									LOGGER.Warn(getName() + " event: item " + itemId +
+									            " - min greater than max, item was not added in droplist");
+									continue;
+								}
+
+								if ((finalChance < 0) || (finalChance > 100))
+								{
+									LOGGER.Warn(getName() + " event: item " + itemId +
+									            " - incorrect drop chance, item was not added in droplist");
+									continue;
+								}
+
+								_dropList.add(new EventDropHolder(itemId, minCount, maxCount, finalChance, minLevel,
+									maxLevel, monsterIds));
 							}
-						}
-						else if (n.getNodeName().equalsIgnoreCase("spawnlist"))
-						{
-							// Loading spawnlist
-							for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+							catch (FormatException nfe)
 							{
-								if (d.getNodeName().equalsIgnoreCase("add"))
-								{
-									try
-									{
-										int npcId = int.parseInt(d.getAttributes().getNamedItem("npc").getNodeValue());
-										int xPos = int.parseInt(d.getAttributes().getNamedItem("x").getNodeValue());
-										int yPos = int.parseInt(d.getAttributes().getNamedItem("y").getNodeValue());
-										int zPos = int.parseInt(d.getAttributes().getNamedItem("z").getNodeValue());
-										Node headingNode = d.getAttributes().getNamedItem("heading");
-										String headingValue = headingNode == null ? null : headingNode.getNodeValue();
-										int heading = headingValue != null ? int.parseInt(headingValue) : 0;
-										Node respawnTimeNode = d.getAttributes().getNamedItem("respawnTime");
-										String respawnTimeValue = respawnTimeNode == null ? null : respawnTimeNode.getNodeValue();
-										Duration respawnTime = TimeUtil.parseDuration(respawnTimeValue != null ? respawnTimeValue : "0sec");
-										
-										if (NpcData.getInstance().getTemplate(npcId) == null)
-										{
-											LOGGER.warning(getName() + " event: " + npcId + " is wrong NPC id, NPC was not added in spawnlist");
-											continue;
-										}
-										
-										_spawnList.add(new NpcSpawn(npcId, new Location(xPos, yPos, zPos, heading), respawnTime));
-									}
-									catch (NumberFormatException nfe)
-									{
-										LOGGER.warning("Wrong number format in config.xml spawnlist block for " + getName() + " event");
-									}
-								}
-							}
-						}
-						else if (n.getNodeName().equalsIgnoreCase("messages"))
-						{
-							// Loading Messages
-							for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-							{
-								if (d.getNodeName().equalsIgnoreCase("add"))
-								{
-									String msgType = d.getAttributes().getNamedItem("type").getNodeValue();
-									String msgText = d.getAttributes().getNamedItem("text").getNodeValue();
-									if ((msgType != null) && (msgText != null))
-									{
-										if (msgType.equalsIgnoreCase("onEnd"))
-										{
-											_endMsg = msgText;
-										}
-										else if (msgType.equalsIgnoreCase("onEnter"))
-										{
-											_onEnterMsg = msgText;
-										}
-									}
-								}
+								LOGGER.Warn("Wrong number format in config.xml droplist block for " + getName() +
+								            " event");
 							}
 						}
 					}
 				}
-				
-				// Load destroy item list at all times.
-				for (Node n = doc.getDocumentElement().getFirstChild(); n != null; n = n.getNextSibling())
+				else if (n.Name.LocalName.equalsIgnoreCase("spawnlist"))
 				{
-					if (n.getNodeName().equalsIgnoreCase("destroyItemsOnEnd"))
+					// Loading spawnlist
+					foreach (XElement d in n.Elements())
 					{
-						long endtime = _eventPeriod.getEndDate().getTime();
-						for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+						if (d.Name.LocalName.equalsIgnoreCase("add"))
 						{
-							if (d.getNodeName().equalsIgnoreCase("item"))
+							try
 							{
-								try
+								int npcId = d.Attribute("npc").GetInt32();
+								int xPos = d.Attribute("x").GetInt32();
+								int yPos = d.Attribute("y").GetInt32();
+								int zPos = d.Attribute("z").GetInt32();
+								int heading = d.Attribute("heading")?.GetInt32() ?? 0;
+								TimeSpan respawnTime =
+									d.Attribute("respawnTime")?.GetTimeSpan() ?? TimeSpan.Zero;
+
+								if (NpcData.getInstance().getTemplate(npcId) == null)
 								{
-									int itemId = int.parseInt(d.getAttributes().getNamedItem("id").getNodeValue());
-									if (ItemData.getInstance().getTemplate(itemId) == null)
-									{
-										LOGGER.warning(getScriptName() + " event: Item " + itemId + " does not exist.");
-										continue;
-									}
-									_destroyItemsOnEnd.add(itemId);
-									
-									// Add item deletion info to manager.
-									if (endtime > System.currentTimeMillis())
-									{
-										ItemDeletionInfoManager.getInstance().addItemDate(itemId, (int) (endtime / 1000));
-									}
+									LOGGER.Warn(getName() + " event: " + npcId +
+									            " is wrong NPC id, NPC was not added in spawnlist");
+									continue;
 								}
-								catch (NumberFormatException nfe)
+
+								_spawnList.add(
+									new NpcSpawn(npcId, new Location(xPos, yPos, zPos, heading), respawnTime));
+							}
+							catch (FormatException nfe)
+							{
+								LOGGER.Warn("Wrong number format in config.xml spawnlist block for " + getName() +
+								            " event");
+							}
+						}
+					}
+				}
+				else if (n.Name.LocalName.equalsIgnoreCase("messages"))
+				{
+					// Loading Messages
+					foreach (XElement d in n.Elements())
+					{
+						if (d.Name.LocalName.equalsIgnoreCase("add"))
+						{
+							String? msgType = d.Attribute("type")?.GetString();
+							String? msgText = d.Attribute("text")?.GetString();
+							if ((msgType != null) && (msgText != null))
+							{
+								if (msgType.equalsIgnoreCase("onEnd"))
 								{
-									LOGGER.warning("Wrong number format in config.xml destroyItemsOnEnd block for " + getScriptName() + " event");
+									_endMsg = msgText;
+								}
+								else if (msgType.equalsIgnoreCase("onEnter"))
+								{
+									_onEnterMsg = msgText;
 								}
 							}
 						}
 					}
 				}
 			}
-		}.load();
+		}
+
+		// Load destroy item list at all times.
+		foreach (XElement n in root.Elements("destroyItemsOnEnd"))
+		{
+			DateTime endtime = _eventPeriod.getEndDate();
+			foreach (XElement d in n.Elements("item"))
+			{
+				try
+				{
+					int itemId = d.Attribute("id").GetInt32();
+					if (ItemData.getInstance().getTemplate(itemId) == null)
+					{
+						LOGGER.Warn(getScriptName() + " event: Item " + itemId + " does not exist.");
+						continue;
+					}
+
+					_destroyItemsOnEnd.add(itemId);
+
+					// Add item deletion info to manager.
+					if (endtime > DateTime.UtcNow)
+					{
+						ItemDeletionInfoManager.getInstance().addItemDate(itemId, endtime);
+					}
+				}
+				catch (FormatException nfe)
+				{
+					LOGGER.Warn("Wrong number format in config.xml destroyItemsOnEnd block for " + getScriptName() +
+					            " event");
+				}
+			}
+		}
 	}
-	
+
 	protected class ScheduleStart: Runnable
 	{
+		private readonly LongTimeEvent _longTimeEvent;
+
+		public ScheduleStart(LongTimeEvent longTimeEvent)
+		{
+			_longTimeEvent = longTimeEvent;
+		}
+
 		public void run()
 		{
-			startEvent();
+			_longTimeEvent.startEvent();
 		}
 	}
 	
@@ -324,37 +354,22 @@ public class LongTimeEvent: Quest
 		}
 		
 		// Schedule event end.
-		Long millisToEventEnd = _eventPeriod.getEndDate().getTime() - System.currentTimeMillis();
-		ThreadPool.schedule(new ScheduleEnd(), millisToEventEnd);
+		TimeSpan millisToEventEnd = _eventPeriod.getEndDate() - DateTime.Now;
+		ThreadPool.schedule(new ScheduleEnd(this), millisToEventEnd);
 	}
-	
-	/**
-	 * Event spawns must initialize after server loads scripts.
-	 */
-	private Action<OnServerStart> _spawnNpcs = ev =>
-	{
-		Long millisToEventEnd = _eventPeriod.getEndDate().getTime() - System.currentTimeMillis();
-		foreach (NpcSpawn npcSpawn in _spawnList)
-		{
-			Npc npc = addSpawn(npcSpawn.npcId, npcSpawn.loc.getX(), npcSpawn.loc.getY(), npcSpawn.loc.getZ(), npcSpawn.loc.getHeading(), false, millisToEventEnd, false);
-			int respawnDelay = (int) npcSpawn.respawnTime.toMillis();
-			if (respawnDelay > 0)
-			{
-				Spawn spawn = npc.getSpawn();
-				spawn.setRespawnDelay(respawnDelay);
-				spawn.startRespawn();
-				ThreadPool.schedule(spawn::stopRespawn, millisToEventEnd - respawnDelay);
-			}
-		}
-		
-		Containers.Global().removeListenerIf(EventType.ON_SERVER_START, listener => listener.getOwner() == this);
-	};
 	
 	protected class ScheduleEnd: Runnable
 	{
+		private readonly LongTimeEvent _longTimeEvent;
+
+		public ScheduleEnd(LongTimeEvent longTimeEvent)
+		{
+			_longTimeEvent = longTimeEvent;
+		}
+		
 		public void run()
 		{
-			stopEvent();
+			_longTimeEvent.stopEvent();
 		}
 	}
 	
@@ -402,17 +417,16 @@ public class LongTimeEvent: Quest
 						player.destroyItemByItemId(_eventName, itemId, -1, player, true);
 					}
 				}
+				
 				// Update database.
 				try
 				{
 					using GameServerDbContext ctx = new();
-					PreparedStatement statement = con.prepareStatement("DELETE FROM items WHERE item_id=?");
-					statement.setInt(1, itemId);
-					statement.execute();
+					ctx.Items.Where(r => r.ItemId == itemId).ExecuteDelete();
 				}
 				catch (Exception e)
 				{
-					LOGGER.Warn(e);
+					LOGGER.Error(e);
 				}
 			}
 		}

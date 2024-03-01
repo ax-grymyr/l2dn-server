@@ -1,3 +1,5 @@
+using L2Dn.GameServer.Model.Quests.NewQuestData;
+
 namespace L2Dn.GameServer.Model.Holders;
 
 /**
@@ -7,10 +9,10 @@ public class TeleporterQuestRecommendationHolder
 {
 	private readonly int _npcId;
 	private readonly String _questName;
-	private readonly int[] _conditions; // -1 = all conditions
+	private readonly QuestCondType[] _conditions; // -1 = all conditions
 	private readonly String _html;
 
-	public TeleporterQuestRecommendationHolder(int npcId, String questName, int[] conditions, String html)
+	public TeleporterQuestRecommendationHolder(int npcId, String questName, QuestCondType[] conditions, String html)
 	{
 		_npcId = npcId;
 		_questName = questName;
@@ -28,7 +30,7 @@ public class TeleporterQuestRecommendationHolder
 		return _questName;
 	}
 
-	public int[] getConditions()
+	public QuestCondType[] getConditions()
 	{
 		return _conditions;
 	}

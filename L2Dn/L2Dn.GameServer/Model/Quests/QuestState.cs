@@ -1,4 +1,11 @@
+using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Events;
+using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Quests.NewQuestData;
+using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Network.OutgoingPackets.Quests;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -29,7 +36,7 @@ public class QuestState
 	private byte _state;
 	
 	/** The current condition of the quest */
-	private int _cond = 0;
+	private QuestCondType _cond = QuestCondType.NONE;
 	
 	/** Used for simulating Quest onTalk */
 	private bool _simulated = false;
@@ -158,7 +165,7 @@ public class QuestState
 			}
 		}
 		
-		_player.sendPacket(new QuestList(_player));
+		_player.sendPacket(new QuestListPacket(_player));
 	}
 	
 	/**
@@ -188,7 +195,7 @@ public class QuestState
 		{
 			try
 			{
-				_cond = int.Parse(value);
+				_cond = (QuestCondType)int.Parse(value);
 			}
 			catch (Exception ignored)
 			{
@@ -272,7 +279,7 @@ public class QuestState
 				{
 				}
 				
-				_cond = newCond;
+				_cond = (QuestCondType)newCond;
 				setCond(newCond, previousVal);
 				getQuest().sendNpcLogList(getPlayer());
 			}
@@ -332,14 +339,14 @@ public class QuestState
 			{
 				// set the most significant bit to 1 (indicates that there exist skipped states)
 				// also, ensure that the least significant bit is an 1 (the first step is never skipped, no matter what the cond says)
-				completedStateFlags = 0x80000001;
+				completedStateFlags = unchecked((int)0x80000001);
 				
 				// since no flag had been skipped until now, the least significant bits must all be set to 1, up until "old" number of bits.
 				completedStateFlags |= (1 << old) - 1;
 				
 				// now, just set the bit corresponding to the passed cond to 1 (current step)
 				completedStateFlags |= 1 << (cond - 1);
-				set("__compltdStateFlags", String.valueOf(completedStateFlags));
+				set("__compltdStateFlags", completedStateFlags.ToString());
 			}
 		}
 		// case 2: There were exist previously skipped steps
@@ -356,8 +363,8 @@ public class QuestState
 			{
 				// set the most significant bit back to 1 again, to correctly indicate that this skips states.
 				// also, ensure that the least significant bit is an 1 (the first step is never skipped, no matter what the cond says)
-				completedStateFlags |= 0x80000001;
-				set("__compltdStateFlags", String.valueOf(completedStateFlags));
+				completedStateFlags |= unchecked((int)0x80000001);
+				set("__compltdStateFlags", completedStateFlags.ToString());
 			}
 		}
 		// If this moves forward, it changes nothing on previously skipped steps.
@@ -365,12 +372,12 @@ public class QuestState
 		else
 		{
 			completedStateFlags |= 1 << (cond - 1);
-			set("__compltdStateFlags", String.valueOf(completedStateFlags));
+			set("__compltdStateFlags", completedStateFlags.ToString());
 		}
 		
 		// send a packet to the client to inform it of the quest progress (step change)
-		_player.sendPacket(new ExQuestUI(_player));
-		_player.sendPacket(new ExQuestNotificationAll(_player));
+		_player.sendPacket(new ExQuestUiPacket(_player));
+		_player.sendPacket(new ExQuestNotificationAllPacket(_player));
 	}
 	
 	/**
@@ -437,7 +444,7 @@ public class QuestState
 		{
 			varInt = int.Parse(varStr);
 		}
-		catch (NumberFormatException nfe)
+		catch (FormatException nfe)
 		{
 			LOGGER.Warn(
 				"Quest " + _questName + ", method getInt(" + variable + "), tried to parse a non-integer value (" +
@@ -453,43 +460,9 @@ public class QuestState
 	 * @return {@code true} if the quest condition is equal to {@code condition}, {@code false} otherwise
 	 * @see #getInt(String var)
 	 */
-	public bool isCond(int condition)
-	{
-		return _cond == condition;
-	}
-	
-	/**
-	 * Checks if the quest state progress ({@code cond}) is at the specified step.
-	 * @param condition the condition to check against
-	 * @return {@code true} if the quest condition is equal to {@code condition}, {@code false} otherwise
-	 * @see #getInt(String var)
-	 */
 	public bool isCond(QuestCondType condition)
 	{
-		return _cond == condition.getId();
-	}
-	
-	/**
-	 * Sets the quest state progress ({@code cond}) to the specified step.
-	 * @param condition the new condition of the quest state progress
-	 * @see #set(String var, String value)
-	 * @see #setCond(int, bool)
-	 */
-	public void setCond(int condition)
-	{
-		if (_simulated)
-		{
-			return;
-		}
-		
-		if (isStarted())
-		{
-			set(COND_VAR, int.toString(condition));
-			if (condition == QuestCondType.DONE.getId())
-			{
-				_player.sendPacket(QuestSound.ITEMSOUND_QUEST_MIDDLE.getPacket());
-			}
-		}
+		return _cond == condition;
 	}
 	
 	/**
@@ -500,13 +473,26 @@ public class QuestState
 	 */
 	public void setCond(QuestCondType condition)
 	{
-		setCond(condition.getId());
+		if (_simulated)
+		{
+			return;
+		}
+		
+		if (isStarted())
+		{
+			set(COND_VAR, condition.ToString());
+			if (condition == QuestCondType.DONE)
+			{
+				string soundName = QuestSound.ITEMSOUND_QUEST_MIDDLE.GetSoundName();
+				_player.sendPacket(new PlaySoundPacket(soundName));
+			}
+		}
 	}
 	
 	/**
 	 * @return the current quest progress ({@code cond})
 	 */
-	public int getCond()
+	public QuestCondType getCond()
 	{
 		if (isStarted())
 		{
@@ -575,11 +561,12 @@ public class QuestState
 			return;
 		}
 		
-		set(COND_VAR, String.valueOf(value));
+		set(COND_VAR, value.ToString());
 		
 		if (playQuestMiddle)
 		{
-			_player.sendPacket(QuestSound.ITEMSOUND_QUEST_MIDDLE.getPacket());
+			string soundName = QuestSound.ITEMSOUND_QUEST_MIDDLE.GetSoundName();
+			_player.sendPacket(new PlaySoundPacket(soundName));
 		}
 	}
 	
@@ -590,7 +577,7 @@ public class QuestState
 			return;
 		}
 		
-		set(MEMO_VAR, String.valueOf(value));
+		set(MEMO_VAR, value.ToString());
 	}
 	
 	/**
@@ -613,11 +600,13 @@ public class QuestState
 			return;
 		}
 		
-		set(COUNT_VAR, String.valueOf(value));
+		set(COUNT_VAR, value.ToString());
 		
-		_player.sendPacket(QuestSound.ITEMSOUND_QUEST_ITEMGET.getPacket());
-		_player.sendPacket(new ExQuestUI(_player));
-		_player.sendPacket(new ExQuestNotificationAll(_player));
+		string soundName = QuestSound.ITEMSOUND_QUEST_ITEMGET.GetSoundName();
+		_player.sendPacket(new PlaySoundPacket(soundName));
+		
+		_player.sendPacket(new ExQuestUiPacket(_player));
+		_player.sendPacket(new ExQuestNotificationAllPacket(_player));
 	}
 	
 	/**
@@ -665,7 +654,7 @@ public class QuestState
 			return;
 		}
 		
-		set(MEMO_EX_VAR + slot, String.valueOf(value));
+		set(MEMO_EX_VAR + slot, value.ToString());
 	}
 	
 	/**
@@ -716,11 +705,13 @@ public class QuestState
 			set(COND_VAR, "1");
 			set(COUNT_VAR, "0");
 			setState(State.STARTED);
-			_player.sendPacket(QuestSound.ITEMSOUND_QUEST_ACCEPT.getPacket());
-			_player.sendPacket(new ExQuestUI(_player));
-			_player.sendPacket(new ExQuestNotification(this));
-			_player.sendPacket(new ExQuestNotificationAll(_player));
-			_player.sendPacket(new ExQuestAcceptableList(_player));
+
+			string soundName = QuestSound.ITEMSOUND_QUEST_ACCEPT.GetSoundName();
+			_player.sendPacket(new PlaySoundPacket(soundName));
+			_player.sendPacket(new ExQuestUiPacket(_player));
+			_player.sendPacket(new ExQuestNotificationPacket(this));
+			_player.sendPacket(new ExQuestNotificationAllPacket(_player));
+			_player.sendPacket(new ExQuestAcceptableListPacket(_player));
 			
 			if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_QUEST_ACCEPT, _player, Containers.Players()))
 			{
@@ -746,7 +737,7 @@ public class QuestState
 		
 		switch (type)
 		{
-			case DAILY:
+			case QuestType.DAILY:
 			{
 				exitQuest(false);
 				setRestartTime();
@@ -787,10 +778,11 @@ public class QuestState
 		exitQuest(type);
 		if (playExitQuest)
 		{
-			_player.sendPacket(QuestSound.ITEMSOUND_QUEST_FINISH.getPacket());
+			string soundName = QuestSound.ITEMSOUND_QUEST_FINISH.GetSoundName();
+			_player.sendPacket(new PlaySoundPacket(soundName));
 		}
 		
-		_player.sendPacket(new ExQuestNotificationAll(getPlayer()));
+		_player.sendPacket(new ExQuestNotificationAllPacket(getPlayer()));
 	}
 	
 	/**
@@ -822,15 +814,15 @@ public class QuestState
 		if (repeatable)
 		{
 			_player.delQuestState(_questName);
-			_player.sendPacket(new ExQuestUI(_player));
+			_player.sendPacket(new ExQuestUiPacket(_player));
 		}
 		else
 		{
 			setState(State.COMPLETED);
 		}
 		
-		_player.sendPacket(new ExQuestNotificationAll(_player));
-		_player.sendPacket(new ExQuestUI(_player));
+		_player.sendPacket(new ExQuestNotificationAllPacket(_player));
+		_player.sendPacket(new ExQuestUiPacket(_player));
 		
 		_vars = null;
 	}
@@ -854,11 +846,12 @@ public class QuestState
 		exitQuest(repeatable);
 		if (playExitQuest)
 		{
-			_player.sendPacket(QuestSound.ITEMSOUND_QUEST_FINISH.getPacket());
+			string soundName = QuestSound.ITEMSOUND_QUEST_FINISH.GetSoundName();
+			_player.sendPacket(new PlaySoundPacket(soundName));
 		}
 		
-		_player.sendPacket(new ExQuestNotificationAll(_player));
-		_player.sendPacket(new ExQuestUI(_player));
+		_player.sendPacket(new ExQuestNotificationAllPacket(_player));
+		_player.sendPacket(new ExQuestUiPacket(_player));
 		
 		// Notify to scripts
 		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_QUEST_COMPLETE, _player))
@@ -879,14 +872,14 @@ public class QuestState
 			return;
 		}
 		
-		Calendar reDo = Calendar.getInstance();
-		if (reDo.get(Calendar.HOUR_OF_DAY) >= getQuest().getResetHour())
+		DateTime reDo = DateTime.Now;
+		if (reDo.Hour >= getQuest().getResetHour())
 		{
-			reDo.add(Calendar.DATE, 1);
+			reDo = reDo.AddDays(1);
 		}
-		reDo.set(Calendar.HOUR_OF_DAY, getQuest().getResetHour());
-		reDo.set(Calendar.MINUTE, getQuest().getResetMinutes());
-		set(RESTART_VAR, String.valueOf(reDo.getTimeInMillis()));
+
+		reDo = new DateTime(reDo.Year, reDo.Month, reDo.Day, getQuest().getResetHour(), getQuest().getResetMinutes(), 0);
+		set(RESTART_VAR, reDo.Ticks.ToString());
 	}
 	
 	/**
@@ -896,7 +889,7 @@ public class QuestState
 	public bool isNowAvailable()
 	{
 		String val = get(RESTART_VAR);
-		return (val != null) && (long.Parse(val) <= System.currentTimeMillis());
+		return (val != null) && (new DateTime(long.Parse(val)) <= DateTime.Now);
 	}
 	
 	public void setSimulated(bool simulated)

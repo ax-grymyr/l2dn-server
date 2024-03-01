@@ -13,7 +13,7 @@ public class QuestTimer
 	protected readonly bool _isRepeating;
 	protected ScheduledFuture _scheduler;
 	
-	public QuestTimer(Quest quest, String name, long time, Npc npc, Player player, bool repeating)
+	public QuestTimer(Quest quest, string name, TimeSpan time, Npc npc, Player player, bool repeating)
 	{
 		_quest = quest;
 		_name = name;
@@ -23,11 +23,11 @@ public class QuestTimer
 		
 		if (repeating)
 		{
-			_scheduler = ThreadPool.scheduleAtFixedRate(new ScheduleTimerTask(), time, time); // Prepare auto end task
+			_scheduler = ThreadPool.scheduleAtFixedRate(new ScheduleTimerTask(this), time, time); // Prepare auto end task
 		}
 		else
 		{
-			_scheduler = ThreadPool.schedule(new ScheduleTimerTask(), time); // Prepare auto end task
+			_scheduler = ThreadPool.schedule(new ScheduleTimerTask(this), time); // Prepare auto end task
 		}
 		
 		if (npc != null)
@@ -121,19 +121,26 @@ public class QuestTimer
 	
 	public class ScheduleTimerTask: Runnable
 	{
+		private readonly QuestTimer _questTimer;
+
+		public ScheduleTimerTask(QuestTimer questTimer)
+		{
+			_questTimer = questTimer;
+		}
+
 		public void run()
 		{
-			if (_scheduler == null)
+			if (_questTimer._scheduler == null)
 			{
 				return;
 			}
 			
-			if (!_isRepeating)
+			if (!_questTimer._isRepeating)
 			{
-				cancel();
+				_questTimer.cancel();
 			}
 			
-			_quest.notifyEvent(_name, _npc, _player);
+			_questTimer._quest.notifyEvent(_questTimer._name, _questTimer._npc, _questTimer._player);
 		}
 	}
 }

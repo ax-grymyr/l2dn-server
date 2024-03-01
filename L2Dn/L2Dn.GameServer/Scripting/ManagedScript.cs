@@ -25,7 +25,7 @@ public abstract class ManagedScript
      * Subclasses of this class should override this method to properly refresh their bindings when necessary.
      * @return true if and only if the script was reloaded, false otherwise.
      */
-    public bool reload()
+    public virtual bool reload()
     {
         try
         {
@@ -41,7 +41,7 @@ public abstract class ManagedScript
 
     public abstract bool unload();
 
-    public void setActive(bool status)
+    public virtual void setActive(bool status)
     {
         _isActive = status;
     }

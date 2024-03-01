@@ -1,6 +1,7 @@
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Quests;
+using L2Dn.GameServer.Model.Quests.NewQuestData;
 using L2Dn.GameServer.Network.Enums;
 
 namespace L2Dn.GameServer.Model.InstanceZones.Conditions;
@@ -34,7 +35,7 @@ public class ConditionQuest: Condition
 			return false;
 		}
 
-		int cond = getParameters().getInt("cond", -1);
-		return (cond == -1) || qs.isCond(cond);
+		QuestCondType cond = (QuestCondType)getParameters().getInt("cond", -1);
+		return (cond == (QuestCondType)(-1)) || qs.isCond(cond);
 	}
 }

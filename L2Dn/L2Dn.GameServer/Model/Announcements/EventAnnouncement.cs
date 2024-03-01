@@ -33,7 +33,7 @@ public class EventAnnouncement: IAnnouncement
 
     public bool isValid()
     {
-        return _range.isWithinRange(DateOnly.FromDateTime(DateTime.UtcNow));
+        return _range.isWithinRange(DateTime.Now);
     }
 
     public String getContent()

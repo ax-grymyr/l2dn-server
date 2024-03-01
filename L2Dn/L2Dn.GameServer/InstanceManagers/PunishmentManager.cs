@@ -41,7 +41,7 @@ public class PunishmentManager
 				String key = record.Key;
 				PunishmentAffect affect = (PunishmentAffect)record.Affect;
 				PunishmentType type = (PunishmentType)record.Type;
-				DateTime expirationTime = record.ExpirationTime;
+				DateTime? expirationTime = record.ExpirationTime;
 				String reason = record.Reason;
 				String punishedBy = record.PunishedBy;
 				if (DateTime.UtcNow > expirationTime) // expired task.

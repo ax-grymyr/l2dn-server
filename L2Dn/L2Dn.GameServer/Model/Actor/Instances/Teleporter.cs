@@ -5,6 +5,7 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Quests;
+using L2Dn.GameServer.Model.Quests.NewQuestData;
 using L2Dn.GameServer.Model.Teleporters;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -146,9 +147,9 @@ public class Teleporter: Npc
 					QuestState qs = player.getQuestState(rec.getQuestName());
 					if ((qs != null) && qs.isStarted())
 					{
-						foreach (int cond in rec.getConditions())
+						foreach (QuestCondType cond in rec.getConditions())
 						{
-							if ((cond == -1) || qs.isCond(cond))
+							if ((cond == (QuestCondType)(-1)) || qs.isCond(cond))
 							{
 								pom = rec.getHtml();
 								breakOuterLoop = true;

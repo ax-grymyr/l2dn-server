@@ -1,5 +1,9 @@
 using System.Globalization;
+using L2Dn.GameServer.Cache;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
@@ -14,7 +18,11 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Quests.NewQuestData;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Model.Zones;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Quests;
@@ -41,10 +49,8 @@ public class Quest: AbstractScript, IIdentifiable
 	
 	private readonly NewQuest _questData;
 	
-	private const String DEFAULT_NO_QUEST_MSG = "<html><body>You are either not on a quest that involves this NPC, or you don't meet this NPC's minimum quest requirements.</body></html>";
-	
-	private const String QUEST_DELETE_FROM_CHAR_QUERY = "DELETE FROM character_quests WHERE charId=? AND name=?";
-	private const String QUEST_DELETE_FROM_CHAR_QUERY_NON_REPEATABLE_QUERY = "DELETE FROM character_quests WHERE charId=? AND name=? AND var!=?";
+	private const String DEFAULT_NO_QUEST_MSG = "<html><body>You are either not on a quest that involves this NPC, " +
+	                                            "or you don't meet this NPC's minimum quest requirements.</body></html>";
 	
 	private const int RESET_HOUR = 6;
 	private const int RESET_MINUTES = 30;
@@ -91,7 +97,7 @@ public class Quest: AbstractScript, IIdentifiable
 			QuestManager.getInstance().addScript(this);
 		}
 		
-		_questData = NewQuestData.getInstance().getQuestById(questId);
+		_questData = Data.Xml.NewQuestData.getInstance().getQuestById(questId);
 		if (_questData != null)
 		{
 			addNewQuestConditions(_questData.getConditions(), null);
@@ -158,7 +164,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public int getNpcStringId()
 	{
-		return _questNameNpcStringId != null ? _questNameNpcStringId.getId() / 100 : (_questId > 10000 ? _questId - 5000 : _questId);
+		return _questNameNpcStringId != null ? (int)_questNameNpcStringId / 100 : (_questId > 10000 ? _questId - 5000 : _questId);
 	}
 	
 	public NpcStringId getQuestNameNpcStringId()
@@ -233,7 +239,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player the player associated with this timer (can be null)
 	 * @see #startQuestTimer(String, long, Npc, Player, bool)
 	 */
-	public void startQuestTimer(String name, long time, Npc npc, Player player)
+	public void startQuestTimer(String name, TimeSpan time, Npc npc, Player player)
 	{
 		startQuestTimer(name, time, npc, player, false);
 	}
@@ -256,7 +262,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param repeating indicates whether the timer is repeatable or one-time.<br>
 	 *            If {@code true}, the task is repeated every {@code time} milliseconds until explicitly stopped.
 	 */
-	public void startQuestTimer(String name, long time, Npc npc, Player player, bool repeating)
+	public void startQuestTimer(String name, TimeSpan time, Npc npc, Player player, bool repeating)
 	{
 		if (name == null)
 		{
@@ -377,7 +383,7 @@ public class Quest: AbstractScript, IIdentifiable
 			return;
 		}
 		
-		List<QuestTimer> timers = _questTimers.get(timer.toString());
+		List<QuestTimer> timers = _questTimers.get(timer.ToString());
 		if (timers != null)
 		{
 			timers.Remove(timer);
@@ -620,7 +626,7 @@ public class Quest: AbstractScript, IIdentifiable
 			}
 			
 			String startConditionHtml = getStartConditionHtml(player, npc);
-			if (startingQuests.contains(this) && (startConditionHtml != null))
+			if (startingQuests.Contains(this) && (startConditionHtml != null))
 			{
 				res = startConditionHtml;
 			}
@@ -1054,7 +1060,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param qs this parameter contains a reference to the quest state of the player who used the link or started the timer.
 	 * @return the text returned by the event (may be {@code null}, a filename or just text)
 	 */
-	public String onEvent(String event, QuestState qs)
+	public String onEvent(String @event, QuestState qs)
 	{
 		return null;
 	}
@@ -1132,7 +1138,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param event
 	 * @return
 	 */
-	public String onItemEvent(Item item, Player player, String event)
+	public String onItemEvent(Item item, Player player, String @event)
 	{
 		return null;
 	}
@@ -1452,7 +1458,7 @@ public class Quest: AbstractScript, IIdentifiable
 		LOGGER.Warn(getScriptFile() + " " + exception);
 		if ((player != null) && player.getAccessLevel().isGm())
 		{
-			String res = "<html><body><title>Script error</title>" + CommonUtil.getStackTrace(exception) + "</body></html>";
+			String res = "<html><body><title>Script error</title>" + exception + "</body></html>";
 			return showResult(player, res);
 		}
 		return false;
@@ -1496,14 +1502,16 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		else if (res.startsWith("<html>"))
 		{
-			NpcHtmlMessage npcReply = new NpcHtmlMessage(npc != null ? npc.getObjectId() : 0, res);
+			HtmlPacketHelper helper = new HtmlPacketHelper(res);
 			if (npc != null)
 			{
-				npcReply.replace("%objectId%", npc.getObjectId());
+				helper.Replace("%objectId%", npc.getObjectId().ToString());
 			}
-			npcReply.replace("%playername%", player.getName());
+			helper.Replace("%playername%", player.getName());
+
+			NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc != null ? npc.getObjectId() : 0, helper);
 			player.sendPacket(npcReply);
-			player.sendPacket(ActionFailed.STATIC_PACKET);
+			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
 		else
 		{
@@ -1518,80 +1526,81 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public static void playerEnter(Player player)
 	{
-		try 
+		try
 		{
+			int characterId = player.getObjectId();
 			using GameServerDbContext ctx = new();
-			PreparedStatement invalidQuestData = con.prepareStatement("DELETE FROM character_quests WHERE charId = ? AND name = ?");
-			PreparedStatement invalidQuestDataVar = con.prepareStatement("DELETE FROM character_quests WHERE charId = ? AND name = ? AND var = ?");
-			PreparedStatement ps1 =
-				con.prepareStatement("SELECT name, value FROM character_quests WHERE charId = ? AND var = ?");
+
 			// Get list of quests owned by the player from database
-			ps1.setInt(1, player.getObjectId());
-			ps1.setString(2, "<state>");
-			{
-				ResultSet rs = ps1.executeQuery();
-				while (rs.next())
+			var query = from q in ctx.CharacterQuests
+				where q.CharacterId == characterId && q.Variable == "<state>"
+				select new
 				{
-					// Get the ID of the quest and its state
-					String questId = rs.getString("name");
-					String statename = rs.getString("value");
-					
-					// Search quest associated with the ID
-					Quest q = QuestManager.getInstance().getQuest(questId);
-					if (q == null)
+					q.Name,
+					q.Value
+				};
+
+			foreach (var record in query)
+			{
+				// Get the ID of the quest and its state
+				String questId = record.Name;
+				String statename = record.Value;
+
+				// Search quest associated with the ID
+				Quest q = QuestManager.getInstance().getQuest(questId);
+				if (q == null)
+				{
+					LOGGER.Warn("Unknown quest " + questId + " for " + player);
+					if (Config.AUTODELETE_INVALID_QUEST_DATA)
 					{
-						LOGGER.Warn("Unknown quest " + questId + " for " + player);
-						if (Config.AUTODELETE_INVALID_QUEST_DATA)
-						{
-							invalidQuestData.setInt(1, player.getObjectId());
-							invalidQuestData.setString(2, questId);
-							invalidQuestData.executeUpdate();
-						}
-						continue;
+						ctx.CharacterQuests.Where(r => r.CharacterId == characterId && r.Name == questId)
+							.ExecuteDelete();
 					}
-					
-					// Create a new QuestState for the player that will be added to the player's list of quests
-					new QuestState(q, player, State.getStateId(statename));
+
+					continue;
 				}
+
+				// Create a new QuestState for the player that will be added to the player's list of quests
+				new QuestState(q, player, State.getStateId(statename));
 			}
-			
+
 			// Get list of quests owned by the player from the DB in order to add variables used in the quest.
-			try
-			{
-				PreparedStatement ps2 =
-					con.prepareStatement("SELECT name, var, value FROM character_quests WHERE charId = ? AND var <> ?");
-				ps2.setInt(1, player.getObjectId());
-				ps2.setString(2, "<state>");
+			var query2 = from q in ctx.CharacterQuests
+				where q.CharacterId == characterId && q.Variable != "<state>"
+				select new
 				{
-					ResultSet rs = ps2.executeQuery();
-					while (rs.next())
+					q.Name,
+					q.Variable,
+					q.Value
+				};
+
+			foreach (var record in query2)
+			{
+				String questId = record.Name;
+				String var = record.Variable;
+				String value = record.Value;
+				// Get the QuestState saved in the loop before
+				QuestState qs = player.getQuestState(questId);
+				if (qs == null)
+				{
+					LOGGER.Warn("Lost variable " + var + " in quest " + questId + " for " + player);
+					if (Config.AUTODELETE_INVALID_QUEST_DATA)
 					{
-						String questId = rs.getString("name");
-						String var = rs.getString("var");
-						String value = rs.getString("value");
-						// Get the QuestState saved in the loop before
-						QuestState qs = player.getQuestState(questId);
-						if (qs == null)
-						{
-							LOGGER.Warn("Lost variable " + var + " in quest " + questId + " for " + player);
-							if (Config.AUTODELETE_INVALID_QUEST_DATA)
-							{
-								invalidQuestDataVar.setInt(1, player.getObjectId());
-								invalidQuestDataVar.setString(2, questId);
-								invalidQuestDataVar.setString(3, var);
-								invalidQuestDataVar.executeUpdate();
-							}
-							continue;
-						}
-						// Add parameter to the quest
-						qs.setInternal(var, value);
+						ctx.CharacterQuests.Where(r =>
+								r.CharacterId == characterId && r.Name == questId && r.Variable == var)
+							.ExecuteDelete();
 					}
+
+					continue;
 				}
+
+				// Add parameter to the quest
+				qs.setInternal(var, value);
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("could not insert char quest:", e);
+			LOGGER.Error("could not insert char quest: " + e);
 		}
 	}
 	
@@ -1605,19 +1614,28 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		try 
 		{
+			int characterId = qs.getPlayer().getObjectId();
+			string questName = qs.getQuestName();
+				
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(
-				"INSERT INTO character_quests (charId,name,var,value) VALUES (?,?,?,?) ON DUPLICATE KEY UPDATE value=?");
-			statement.setInt(1, qs.getPlayer().getObjectId());
-			statement.setString(2, qs.getQuestName());
-			statement.setString(3, var);
-			statement.setString(4, value);
-			statement.setString(5, value);
-			statement.executeUpdate();
+			var record = ctx.CharacterQuests.SingleOrDefault(r =>
+				r.CharacterId == characterId && r.Name == questName && r.Variable == var);
+
+			if (record is null)
+			{
+				record = new CharacterQuest();
+				record.CharacterId = characterId;
+				record.Name = questName;
+				record.Variable = var;
+				ctx.CharacterQuests.Add(record);
+			}
+
+			record.Value = value;
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("could not insert char quest:", e);
+			LOGGER.Error("could not insert char quest: " + e);
 		}
 	}
 	
@@ -1629,21 +1647,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public static void updateQuestVarInDb(QuestState qs, String var, String value)
 	{
-		try 
-		{
-			using GameServerDbContext ctx = new();
-			PreparedStatement statement =
-				con.prepareStatement("UPDATE character_quests SET value=? WHERE charId=? AND name=? AND var = ?");
-			statement.setString(1, value);
-			statement.setInt(2, qs.getPlayer().getObjectId());
-			statement.setString(3, qs.getQuestName());
-			statement.setString(4, var);
-			statement.executeUpdate();
-		}
-		catch (Exception e)
-		{
-			LOGGER.Warn("could not update char quest:", e);
-		}
+		createQuestVarInDb(qs, var, value);
 	}
 	
 	/**
@@ -1655,17 +1659,16 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		try 
 		{
+			int characterId = qs.getPlayer().getObjectId();
+			string questName = qs.getQuestName();
+			
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement =
-				con.prepareStatement("DELETE FROM character_quests WHERE charId=? AND name=? AND var=?");
-			statement.setInt(1, qs.getPlayer().getObjectId());
-			statement.setString(2, qs.getQuestName());
-			statement.setString(3, var);
-			statement.executeUpdate();
+			ctx.CharacterQuests.Where(r => r.CharacterId == characterId && r.Name == questName && r.Variable == var)
+				.ExecuteDelete();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Unable to delete char quest!", e);
+			LOGGER.Error("Unable to delete char quest: " + e);
 		}
 	}
 	
@@ -1678,21 +1681,20 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		try 
 		{
+			int characterId = qs.getPlayer().getObjectId();
+			string questName = qs.getQuestName();
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(repeatable
-				? QUEST_DELETE_FROM_CHAR_QUERY
-				: QUEST_DELETE_FROM_CHAR_QUERY_NON_REPEATABLE_QUERY);
-			ps.setInt(1, qs.getPlayer().getObjectId());
-			ps.setString(2, qs.getQuestName());
+			IQueryable<CharacterQuest> query =
+				ctx.CharacterQuests.Where(r => r.CharacterId == characterId && r.Name == questName);
+
 			if (!repeatable)
-			{
-				ps.setString(3, "<state>");
-			}
-			ps.executeUpdate();
+				query = query.Where(r => r.Variable != "<state>");
+
+			query.ExecuteDelete();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("could not delete char quest:", e);
+			LOGGER.Error("could not delete char quest: " + e);
 		}
 	}
 	
@@ -1991,7 +1993,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void addSkillSeeId(IReadOnlyCollection<int> npcIds)
 	{
-		setNpcSkillSeeId(event => notifySkillSee(@event.getTarget(), @event.getCaster(), @event.getSkill(), @event.getTargets(), @event.isSummon()), npcIds);
+		setNpcSkillSeeId(@event => notifySkillSee(@event.getTarget(), @event.getCaster(), @event.getSkill(), @event.getTargets(), @event.isSummon()), npcIds);
 	}
 	
 	/**
@@ -2561,7 +2563,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param target the NPC to use for the distance check (can be null)
 	 * @return the {@link QuestState} object of the random party member or {@code null} if none matched the condition
 	 */
-	public QuestState getRandomPartyMemberState(Player player, int condition, int playerChance, Npc target)
+	public QuestState getRandomPartyMemberState(Player player, QuestCondType condition, int playerChance, Npc target)
 	{
 		if ((player == null) || (playerChance < 1))
 		{
@@ -2606,9 +2608,9 @@ public class Quest: AbstractScript, IIdentifiable
 		return !checkDistanceToTarget(qs.getPlayer(), target) ? null : qs;
 	}
 	
-	private bool checkPartyMemberConditions(QuestState qs, int condition, Npc npc)
+	private bool checkPartyMemberConditions(QuestState qs, QuestCondType condition, Npc npc)
 	{
-		return (qs != null) && ((condition == -1) ? qs.isStarted() : qs.isCond(condition)) && checkPartyMember(qs, npc);
+		return (qs != null) && ((condition == (QuestCondType)(-1)) ? qs.isStarted() : qs.isCond(condition)) && checkPartyMember(qs, npc);
 	}
 	
 	private static bool checkDistanceToTarget(Player player, Npc target)
@@ -2667,18 +2669,19 @@ public class Quest: AbstractScript, IIdentifiable
 			
 			if (questwindow && (_questId > 0) && (_questId < 20000) && (_questId != 999))
 			{
-				NpcQuestHtmlMessage npcReply = new NpcQuestHtmlMessage(npc != null ? npc.getObjectId() : 0, _questId);
-				npcReply.setHtml(content);
-				npcReply.replace("%playername%", player.getName());
+				HtmlPacketHelper helper = new HtmlPacketHelper(content);
+				helper.Replace("%playername%", player.getName());
+				NpcQuestHtmlMessagePacket npcReply = new NpcQuestHtmlMessagePacket(npc != null ? npc.getObjectId() : 0, _questId, helper);
 				player.sendPacket(npcReply);
 			}
 			else
 			{
-				NpcHtmlMessage npcReply = new NpcHtmlMessage(npc != null ? npc.getObjectId() : 0, content);
-				npcReply.replace("%playername%", player.getName());
+				HtmlPacketHelper helper = new HtmlPacketHelper(content);
+				helper.Replace("%playername%", player.getName());
+				NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc != null ? npc.getObjectId() : 0, helper);
 				player.sendPacket(npcReply);
 			}
-			player.sendPacket(ActionFailed.STATIC_PACKET);
+			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
 		
 		return content;
@@ -2841,8 +2844,12 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		if (player.getQuestState(getName()) != null)
 		{
-			ExQuestNpcLogList packet = new ExQuestNpcLogList(_questId);
-			getNpcLogList(player).forEach(packet::add);
+			ExQuestNpcLogListPacket packet = new ExQuestNpcLogListPacket(_questId);
+			foreach (NpcLogListHolder holder in getNpcLogList(player))
+			{
+				packet.add(holder);
+			}
+
 			player.sendPacket(packet);
 		}
 	}
@@ -2863,7 +2870,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public bool canStartQuest(Player player)
 	{
-		foreach (QuestCondition cond in _startCondition.Keys)
+		foreach (QuestCondition cond in _startCondition)
 		{
 			if (!cond.test(player))
 			{
@@ -2887,7 +2894,7 @@ public class Quest: AbstractScript, IIdentifiable
 			return null;
 		}
 		
-		foreach (QuestCondition cond in _startCondition.Keys)
+		foreach (QuestCondition cond in _startCondition)
 		{
 			if (!cond.test(player))
 			{
@@ -3065,7 +3072,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param classId the class ID
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondClassId(ClassId classId, String html)
+	public void addCondClassId(CharacterClass classId, String html)
 	{
 		addCondStart(p => p.getClassId() == classId, html);
 	}
@@ -3075,7 +3082,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param classId the class ID
 	 * @param pairs the HTML to display if the condition is not met per each npc
 	 */
-	public void addCondClassId(ClassId classId, params KeyValuePair<int, String>[] pairs)
+	public void addCondClassId(CharacterClass classId, params KeyValuePair<int, String>[] pairs)
 	{
 		addCondStart(p => p.getClassId() == classId, pairs);
 	}
@@ -3085,7 +3092,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param classIds the class ID
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondClassIds(List<ClassId> classIds, String html)
+	public void addCondClassIds(List<CharacterClass> classIds, String html)
 	{
 		addCondStart(p => classIds.Contains(p.getClassId()), html);
 	}
@@ -3125,7 +3132,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param classId the class ID
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondNotClassId(ClassId classId, String html)
+	public void addCondNotClassId(CharacterClass classId, String html)
 	{
 		addCondStart(p => p.getClassId() != classId, html);
 	}
@@ -3135,7 +3142,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param classId the class ID
 	 * @param pairs the HTML to display if the condition is not met per each npc
 	 */
-	public void addCondNotClassId(ClassId classId, params KeyValuePair<int, String>[] pairs)
+	public void addCondNotClassId(CharacterClass classId, params KeyValuePair<int, String>[] pairs)
 	{
 		addCondStart(p => p.getClassId() != classId, pairs);
 	}

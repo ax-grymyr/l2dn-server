@@ -71,6 +71,7 @@ public class GameServerDbContext: DbContext
     public DbSet<CharacterRandomCraft> CharacterRandomCrafts => Set<CharacterRandomCraft>();
     public DbSet<CharacterSurveillance> CharacterSurveillances => Set<CharacterSurveillance>();
     public DbSet<CharacterPremiumItem> CharacterPremiumItems => Set<CharacterPremiumItem>();
+    public DbSet<CharacterQuest> CharacterQuests => Set<CharacterQuest>();
     public DbSet<CharacterVariable> CharacterVariables => Set<CharacterVariable>();
 
     public DbSet<DbHero> Heroes => Set<DbHero>();

@@ -283,8 +283,8 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 		bool _pOneCrash = ((_playerOne.getPlayer() == null) || _playerOne.isDisconnected());
 		bool _pTwoCrash = ((_playerTwo.getPlayer() == null) || _playerTwo.isDisconnected());
 		
-		int playerOnePoints = _playerOne.getStats().getInt(POINTS);
-		int playerTwoPoints = _playerTwo.getStats().getInt(POINTS);
+		int playerOnePoints = _playerOne.getStats().OlympiadPoints;
+		int playerTwoPoints = _playerTwo.getStats().OlympiadPoints;
 		int pointDiff = Math.Min(playerOnePoints, playerTwoPoints) / getDivider();
 		if (pointDiff <= 0)
 		{
@@ -382,11 +382,11 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 					sm.Params.addString(_playerOne.getName());
 					stadium.broadcastPacket(sm);
 					
-					_playerOne.updateStat(COMP_WON, 1);
+					_playerOne.getStats().CompetitionsWon++;
 					addPointsToParticipant(_playerOne, pointDiff);
 					list1.add(new OlympiadInfo(_playerOne.getName(), _playerOne.getClanName(), _playerOne.getClanId(), _playerOne.getBaseClass(), _damageP1, playerOnePoints + pointDiff, pointDiff));
 					
-					_playerTwo.updateStat(COMP_LOST, 1);
+					_playerTwo.getStats().CompetitionsLost++;
 					removePointsFromParticipant(_playerTwo, pointDiff);
 					list2.add(new OlympiadInfo(_playerTwo.getName(), _playerTwo.getClanName(), _playerTwo.getClanId(), _playerTwo.getBaseClass(), _damageP2, playerTwoPoints - pointDiff, -pointDiff));
 					
@@ -411,11 +411,11 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 					sm.Params.addString(_playerTwo.getName());
 					stadium.broadcastPacket(sm);
 					
-					_playerTwo.updateStat(COMP_WON, 1);
+					_playerTwo.getStats().CompetitionsWon++;
 					addPointsToParticipant(_playerTwo, pointDiff);
 					list2.add(new OlympiadInfo(_playerTwo.getName(), _playerTwo.getClanName(), _playerTwo.getClanId(), _playerTwo.getBaseClass(), _damageP2, playerTwoPoints + pointDiff, pointDiff));
 					
-					_playerOne.updateStat(COMP_LOST, 1);
+					_playerOne.getStats().CompetitionsLost++;
 					removePointsFromParticipant(_playerOne, pointDiff);
 					list1.add(new OlympiadInfo(_playerOne.getName(), _playerOne.getClanName(), _playerOne.getClanId(), _playerOne.getBaseClass(), _damageP1, playerOnePoints - pointDiff, -pointDiff));
 					
@@ -438,11 +438,11 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				{
 					stadium.broadcastPacket(new SystemMessagePacket(SystemMessageId.THE_DUEL_HAS_ENDED_IN_A_TIE));
 					
-					_playerOne.updateStat(COMP_LOST, 1);
+					_playerOne.getStats().CompetitionsLost++;
 					removePointsFromParticipant(_playerOne, pointDiff);
 					list1.add(new OlympiadInfo(_playerOne.getName(), _playerOne.getClanName(), _playerOne.getClanId(), _playerOne.getBaseClass(), _damageP1, playerOnePoints - pointDiff, -pointDiff));
 					
-					_playerTwo.updateStat(COMP_LOST, 1);
+					_playerTwo.getStats().CompetitionsLost++;
 					removePointsFromParticipant(_playerTwo, pointDiff);
 					list2.add(new OlympiadInfo(_playerTwo.getName(), _playerTwo.getClanName(), _playerTwo.getClanId(), _playerTwo.getBaseClass(), _damageP2, playerTwoPoints - pointDiff, -pointDiff));
 					
@@ -454,10 +454,11 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 					}
 				}
 				
-				_playerOne.updateStat(COMP_DONE, 1);
-				_playerTwo.updateStat(COMP_DONE, 1);
-				_playerOne.updateStat(COMP_DONE_WEEK, 1);
-				_playerTwo.updateStat(COMP_DONE_WEEK, 1);
+				_playerOne.getStats().CompetitionsDone++;
+				_playerTwo.getStats().CompetitionsDone++;
+
+				_playerOne.getStats().CompetitionsDoneWeek++;
+				_playerTwo.getStats().CompetitionsDoneWeek++;
 				
 				ExOlympiadMatchResultPacket result;
 				if (winside == 1)
@@ -518,8 +519,8 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 			
 			if (((_playerOne.getPlayer() == null) || !_playerOne.getPlayer().isOnline()) && ((_playerTwo.getPlayer() == null) || !_playerTwo.getPlayer().isOnline()))
 			{
-				_playerOne.updateStat(COMP_DRAWN, 1);
-				_playerTwo.updateStat(COMP_DRAWN, 1);
+				_playerOne.getStats().CompetitionsDrawn++;
+				_playerTwo.getStats().CompetitionsDrawn++;
 				sm = new SystemMessagePacket(SystemMessageId.THE_DUEL_HAS_ENDED_IN_A_TIE);
 				stadium.broadcastPacket(sm);
 			}
@@ -528,9 +529,9 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				sm = new SystemMessagePacket(SystemMessageId.CONGRATULATIONS_C1_YOU_WIN_THE_MATCH);
 				sm.Params.addString(_playerOne.getName());
 				stadium.broadcastPacket(sm);
-				
-				_playerOne.updateStat(COMP_WON, 1);
-				_playerTwo.updateStat(COMP_LOST, 1);
+
+				_playerOne.getStats().CompetitionsWon++;
+				_playerTwo.getStats().CompetitionsLost++;
 				
 				addPointsToParticipant(_playerOne, pointDiff);
 				list1.add(new OlympiadInfo(_playerOne.getName(), _playerOne.getClanName(), _playerOne.getClanId(), _playerOne.getBaseClass(), _damageP1, playerOnePoints + pointDiff, pointDiff));
@@ -559,8 +560,8 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				sm.Params.addString(_playerTwo.getName());
 				stadium.broadcastPacket(sm);
 				
-				_playerTwo.updateStat(COMP_WON, 1);
-				_playerOne.updateStat(COMP_LOST, 1);
+				_playerTwo.getStats().CompetitionsWon++;
+				_playerOne.getStats().CompetitionsLost++;
 				
 				addPointsToParticipant(_playerTwo, pointDiff);
 				list2.add(new OlympiadInfo(_playerTwo.getName(), _playerTwo.getClanName(), _playerTwo.getClanId(), _playerTwo.getBaseClass(), _damageP2, playerTwoPoints + pointDiff, pointDiff));
@@ -603,10 +604,11 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				tie = true;
 			}
 			
-			_playerOne.updateStat(COMP_DONE, 1);
-			_playerTwo.updateStat(COMP_DONE, 1);
-			_playerOne.updateStat(COMP_DONE_WEEK, 1);
-			_playerTwo.updateStat(COMP_DONE_WEEK, 1);
+			_playerOne.getStats().CompetitionsDone++;
+			_playerTwo.getStats().CompetitionsDone++;
+
+			_playerOne.getStats().CompetitionsDoneWeek++;
+			_playerTwo.getStats().CompetitionsDoneWeek++;
 			
 			ExOlympiadMatchResultPacket result;
 			if (winside == 1)
