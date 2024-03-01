@@ -1,12 +1,22 @@
+using System.Globalization;
+using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
-using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Residences;
+using L2Dn.GameServer.Model.Zones.Types;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using FortManager = L2Dn.GameServer.Model.Actor.Instances.FortManager;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Sieges;
 
@@ -17,8 +27,8 @@ public class Fort: AbstractResidence
 	private readonly List<Door> _doors = new();
 	private StaticObject _flagPole = null;
 	private FortSiege _siege = null;
-	private Calendar _siegeDate;
-	private Calendar _lastOwnedTime;
+	private DateTime _siegeDate;
+	private DateTime _lastOwnedTime;
 	private SiegeZone _zone;
 	private Clan _fortOwner = null;
 	private int _fortType = 0;
@@ -26,7 +36,7 @@ public class Fort: AbstractResidence
 	private int _castleId = 0;
 	private int _supplyLvL = 0;
 	private readonly Map<int, FortFunction> _function = new();
-	private readonly ScheduledFuture<?>[] _fortUpdater = new ScheduledFuture<?>[2];
+	private readonly ScheduledFuture[] _fortUpdater = new ScheduledFuture[2];
 	
 	// Spawn Data
 	private bool _isSuspiciousMerchantSpawned = false;
@@ -141,7 +151,7 @@ public class Fort: AbstractResidence
 					if ((_fortOwner.getWarehouse().getAdena() >= _fee) || !_cwh)
 					{
 						int fee = _endDate == -1 ? _tempFee : _fee;
-						setEndTime(System.currentTimeMillis() + _rate);
+						setEndTime(DateTime.UtcNow + _rate);
 						dbSave();
 						if (_cwh)
 						{
@@ -324,15 +334,15 @@ public class Fort: AbstractResidence
 			return false;
 		}
 		
-		SystemMessage sm = new SystemMessage(SystemMessageId.THE_FORTRESS_BATTLE_OF_S1_HAS_FINISHED);
-		sm.addCastleId(getResidenceId());
+		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_FORTRESS_BATTLE_OF_S1_HAS_FINISHED);
+		sm.Params.addCastleId(getResidenceId());
 		getSiege().announceToPlayer(sm);
 		
 		Clan oldowner = _fortOwner;
 		if ((oldowner != null) && (clan != oldowner))
 		{
 			// Remove points from old owner
-			updateClansReputation(oldowner, true);
+			this.updateClansReputation(oldowner, true);
 			try
 			{
 				Player oldleader = oldowner.getLeader().getPlayer();
@@ -811,13 +821,13 @@ public class Fort: AbstractResidence
 			if (clan != null)
 			{
 				clan.setFortId(getResidenceId()); // Set has fort flag for new owner
-				SystemMessage sm;
-				sm = new SystemMessage(SystemMessageId.S1_IS_VICTORIOUS_IN_THE_FORTRESS_BATTLE_OF_S2);
-				sm.addString(clan.getName());
-				sm.addCastleId(getResidenceId());
-				World.getInstance().getPlayers().forEach(p -> p.sendPacket(sm));
-				clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
-				clan.broadcastToOnlineMembers(new PlaySound(1, "Siege_Victory", 0, 0, 0, 0, 0));
+				SystemMessagePacket sm;
+				sm = new SystemMessagePacket(SystemMessageId.S1_IS_VICTORIOUS_IN_THE_FORTRESS_BATTLE_OF_S2);
+				sm.Params.addString(clan.getName());
+				sm.Params.addCastleId(getResidenceId());
+				World.getInstance().getPlayers().forEach(p => p.sendPacket(sm));
+				clan.broadcastToOnlineMembers(new PledgeShowInfoUpdatePacket(clan));
+				clan.broadcastToOnlineMembers(new PlaySoundPacket(1, "Siege_Victory", 0, 0, 0, 0, 0));
 				if (_fortUpdater[0] != null)
 				{
 					_fortUpdater[0].cancel(false);
@@ -1262,7 +1272,7 @@ public class Fort: AbstractResidence
 		}
 	}
 	
-	protected void initResidenceZone()
+	protected override void initResidenceZone()
 	{
 		foreach (FortZone zone in ZoneManager.getInstance().getAllZones<FortZone>())
 		{

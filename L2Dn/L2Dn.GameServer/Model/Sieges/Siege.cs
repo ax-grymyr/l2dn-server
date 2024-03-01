@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
@@ -10,8 +11,10 @@ using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Sieges;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Sieges;
@@ -79,36 +82,36 @@ public class Siege: Siegable
 				TimeSpan timeRemaining = _siege._siegeEndDate - DateTime.Now;
 				if (timeRemaining > TimeSpan.FromHours(1))
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.THE_CASTLE_SIEGE_ENDS_IN_S1_H);
-					sm.addInt(2);
+					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_CASTLE_SIEGE_ENDS_IN_S1_H);
+					sm.Params.addInt(2);
 					_siege.announceToPlayer(sm, true);
 					ThreadPool.schedule(new ScheduleEndSiegeTask(_siege, _castleInst), timeRemaining.Subtract(TimeSpan.FromHours(1))); // Prepare task for 1 hr left.
 				}
 				else if ((timeRemaining <= TimeSpan.FromHours(1)) && (timeRemaining > TimeSpan.FromMinutes(10)))
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.THE_CASTLE_SIEGE_ENDS_IN_S1_MIN);
-					sm.addInt((int) timeRemaining / 60000);
+					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_CASTLE_SIEGE_ENDS_IN_S1_MIN);
+					sm.Params.addInt((int) timeRemaining / 60000);
 					_siege.announceToPlayer(sm, true);
 					ThreadPool.schedule(new ScheduleEndSiegeTask(_siege, _castleInst), timeRemaining.Subtract(TimeSpan.FromMinutes(10))); // Prepare task for 10 minute left.
 				}
 				else if ((timeRemaining <= TimeSpan.FromMinutes(10)) && (timeRemaining > TimeSpan.FromMinutes(5)))
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.THE_CASTLE_SIEGE_ENDS_IN_S1_MIN);
-					sm.addInt((int) timeRemaining / 60000);
+					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_CASTLE_SIEGE_ENDS_IN_S1_MIN);
+					sm.Params.addInt((int) timeRemaining / 60000);
 					_siege.announceToPlayer(sm, true);
 					ThreadPool.schedule(new ScheduleEndSiegeTask(_siege, _castleInst), timeRemaining.Subtract(TimeSpan.FromMinutes(5))); // Prepare task for 5 minute left.
 				}
 				else if ((timeRemaining <= TimeSpan.FromMinutes(5)) && (timeRemaining > TimeSpan.FromSeconds(10)))
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.THE_CASTLE_SIEGE_ENDS_IN_S1_MIN);
-					sm.addInt((int) timeRemaining / 60000);
+					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_CASTLE_SIEGE_ENDS_IN_S1_MIN);
+					sm.Params.addInt((int) timeRemaining / 60000);
 					_siege.announceToPlayer(sm, true);
 					ThreadPool.schedule(new ScheduleEndSiegeTask(_siege, _castleInst), timeRemaining.Subtract(TimeSpan.FromSeconds(10))); // Prepare task for 10 seconds count down
 				}
 				else if ((timeRemaining <= TimeSpan.FromSeconds(10)) && (timeRemaining > TimeSpan.Zero))
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.THE_CASTLE_SIEGE_ENDS_IN_S1_SEC);
-					sm.addInt((int) timeRemaining / 1000);
+					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_CASTLE_SIEGE_ENDS_IN_S1_SEC);
+					sm.Params.addInt((int) timeRemaining / 1000);
 					_siege.announceToPlayer(sm, true);
 					ThreadPool.schedule(new ScheduleEndSiegeTask(_siege, _castleInst), timeRemaining); // Prepare task for second count down
 				}
@@ -164,8 +167,8 @@ public class Siege: Siegable
 				}
 				else if ((timeRemaining <= 86400000) && (timeRemaining > 13600000))
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.THE_REGISTRATION_TERM_FOR_S1_HAS_ENDED);
-					sm.addCastleId(_castle.getResidenceId());
+					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_REGISTRATION_TERM_FOR_S1_HAS_ENDED);
+					sm.Params.addCastleId(_castle.getResidenceId());
 					Broadcast.toAllOnlinePlayers(sm);
 					_siege._isRegistrationOver = true;
 					clearSiegeWaitingClan();
@@ -199,20 +202,20 @@ public class Siege: Siegable
 		}
 	}
 	
-	public override void endSiege()
+	public void endSiege()
 	{
 		if (_isInProgress)
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.THE_S1_SIEGE_HAS_FINISHED);
-			sm.addCastleId(_castle.getResidenceId());
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_S1_SIEGE_HAS_FINISHED);
+			sm.Params.addCastleId(_castle.getResidenceId());
 			Broadcast.toAllOnlinePlayers(sm);
-			Broadcast.toAllOnlinePlayers(new PlaySound("systemmsg_eu.18"));
+			Broadcast.toAllOnlinePlayers(new PlaySoundPacket("systemmsg_eu.18"));
 			if (_castle.getOwnerId() > 0)
 			{
 				Clan clan = ClanTable.getInstance().getClan(getCastle().getOwnerId());
-				sm = new SystemMessage(SystemMessageId.CLAN_S1_IS_VICTORIOUS_OVER_S2_S_CASTLE_SIEGE);
-				sm.addString(clan.getName());
-				sm.addCastleId(_castle.getResidenceId());
+				sm = new SystemMessagePacket(SystemMessageId.CLAN_S1_IS_VICTORIOUS_OVER_S2_S_CASTLE_SIEGE);
+				sm.Params.addString(clan.getName());
+				sm.Params.addCastleId(_castle.getResidenceId());
 				Broadcast.toAllOnlinePlayers(sm);
 				
 				if (clan.getId() == _firstOwnerClanId)
@@ -238,8 +241,8 @@ public class Siege: Siegable
 			}
 			else
 			{
-				sm = new SystemMessage(SystemMessageId.THE_SIEGE_OF_S1_HAS_ENDED_IN_A_DRAW);
-				sm.addCastleId(_castle.getResidenceId());
+				sm = new SystemMessagePacket(SystemMessageId.THE_SIEGE_OF_S1_HAS_ENDED_IN_A_DRAW);
+				sm.Params.addCastleId(_castle.getResidenceId());
 				Broadcast.toAllOnlinePlayers(sm);
 			}
 			
@@ -308,7 +311,7 @@ public class Siege: Siegable
 	{
 		if (sc != null)
 		{
-			getDefenderClans().remove(sc);
+			getDefenderClans().Remove(sc);
 		}
 	}
 	
@@ -316,7 +319,7 @@ public class Siege: Siegable
 	{
 		if (sc != null)
 		{
-			getAttackerClans().remove(sc);
+			getAttackerClans().Remove(sc);
 		}
 	}
 	
@@ -327,7 +330,7 @@ public class Siege: Siegable
 			return;
 		}
 		sc.setType(type);
-		getDefenderClans().add(sc);
+		getDefenderClans().Add(sc);
 	}
 	
 	private void addAttacker(SiegeClan sc)
@@ -337,7 +340,7 @@ public class Siege: Siegable
 			return;
 		}
 		sc.setType(SiegeClanType.ATTACKER);
-		getAttackerClans().add(sc);
+		getAttackerClans().Add(sc);
 	}
 	
 	/**
@@ -353,7 +356,7 @@ public class Siege: Siegable
 			}
 			
 			if (getDefenderClans().isEmpty() && // If defender doesn't exist (Pc vs Npc)
-				(getAttackerClans().size() == 1 // Only 1 attacker
+				(getAttackerClans().Count == 1 // Only 1 attacker
 				))
 			{
 				SiegeClan scNewOwner = getAttackerClan(_castle.getOwnerId());
@@ -365,8 +368,8 @@ public class Siege: Siegable
 			if (_castle.getOwnerId() > 0)
 			{
 				// If defender doesn't exist (Pc vs Npc) and only an alliance attacks
-				int allyId = ClanTable.getInstance().getClan(getCastle().getOwnerId()).getAllyId();
-				if (getDefenderClans().isEmpty() && (allyId != 0))
+				int? allyId = ClanTable.getInstance().getClan(getCastle().getOwnerId()).getAllyId();
+				if (getDefenderClans().isEmpty() && (allyId != null))
 				{
 					bool allinsamealliance = true;
 					foreach (SiegeClan sc in getAttackerClans())
@@ -433,25 +436,25 @@ public class Siege: Siegable
 	/**
 	 * When siege starts.
 	 */
-	public override void startSiege()
+	public void startSiege()
 	{
 		if (!_isInProgress)
 		{
 			_firstOwnerClanId = _castle.getOwnerId();
 			if (getAttackerClans().isEmpty())
 			{
-				SystemMessage sm;
+				SystemMessagePacket sm;
 				if (_firstOwnerClanId <= 0)
 				{
-					sm = new SystemMessage(SystemMessageId.THE_SIEGE_OF_S1_HAS_BEEN_CANCELED_DUE_TO_LACK_OF_INTEREST);
+					sm = new SystemMessagePacket(SystemMessageId.THE_SIEGE_OF_S1_HAS_BEEN_CANCELED_DUE_TO_LACK_OF_INTEREST);
 				}
 				else
 				{
-					sm = new SystemMessage(SystemMessageId.S1_S_SIEGE_WAS_CANCELED_BECAUSE_THERE_WERE_NO_CLANS_THAT_PARTICIPATED);
+					sm = new SystemMessagePacket(SystemMessageId.S1_S_SIEGE_WAS_CANCELED_BECAUSE_THERE_WERE_NO_CLANS_THAT_PARTICIPATED);
 					Clan ownerClan = ClanTable.getInstance().getClan(_firstOwnerClanId);
 					ownerClan.increaseBloodAllianceCount();
 				}
-				sm.addCastleId(_castle.getResidenceId());
+				sm.Params.addCastleId(_castle.getResidenceId());
 				Broadcast.toAllOnlinePlayers(sm);
 				saveCastleSiege();
 				return;
@@ -478,10 +481,10 @@ public class Siege: Siegable
 			_siegeEndDate.add(Calendar.MINUTE, SiegeManager.getInstance().getSiegeLength());
 			ThreadPool.schedule(new ScheduleEndSiegeTask(_castle), 1000); // Prepare auto end task
 			
-			SystemMessage sm = new SystemMessage(SystemMessageId.S1_THE_SIEGE_HAS_BEGUN);
-			sm.addCastleId(_castle.getResidenceId());
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_THE_SIEGE_HAS_BEGUN);
+			sm.Params.addCastleId(_castle.getResidenceId());
 			Broadcast.toAllOnlinePlayers(sm);
-			Broadcast.toAllOnlinePlayers(new PlaySound("systemmsg_eu.17"));
+			Broadcast.toAllOnlinePlayers(new PlaySoundPacket("systemmsg_eu.17"));
 			foreach (Player player in World.getInstance().getPlayers())
 			{
 				SiegeManager.getInstance().sendSiegeInfo(player);
@@ -497,10 +500,10 @@ public class Siege: Siegable
 	
 	/**
 	 * Announce to player.
-	 * @param message The SystemMessage to send to player
+	 * @param message The SystemMessagePacket to send to player
 	 * @param bothSides True - broadcast to both attackers and defenders. False - only to defenders.
 	 */
-	public void announceToPlayer(SystemMessage message, bool bothSides)
+	public void announceToPlayer(SystemMessagePacket message, bool bothSides)
 	{
 		foreach (SiegeClan siegeClans in getDefenderClans())
 		{
@@ -573,7 +576,7 @@ public class Siege: Siegable
 					RelationCache oldrelation = member.getKnownRelations().get(player.getObjectId());
 					if ((oldrelation == null) || (oldrelation.getRelation() != relation) || (oldrelation.isAutoAttackable() != isAutoAttackable))
 					{
-						RelationChanged rc = new RelationChanged();
+						RelationChangedPacket rc = new RelationChangedPacket();
 						rc.addRelation(member, relation, isAutoAttackable);
 						if (member.hasSummon())
 						{
@@ -633,7 +636,7 @@ public class Siege: Siegable
 					RelationCache oldrelation = member.getKnownRelations().get(player.getObjectId());
 					if ((oldrelation == null) || (oldrelation.getRelation() != relation) || (oldrelation.isAutoAttackable() != isAutoAttackable))
 					{
-						RelationChanged rc = new RelationChanged();
+						RelationChangedPacket rc = new RelationChangedPacket();
 						rc.addRelation(member, relation, isAutoAttackable);
 						if (member.hasSummon())
 						{
@@ -736,8 +739,8 @@ public class Siege: Siegable
 				}
 			}
 			
-			getAttackerClans().clear();
-			getDefenderClans().clear();
+			getAttackerClans().Clear();
+			getDefenderClans().Clear();
 			_defenderWaitingClans.clear();
 		}
 		catch (Exception e)
@@ -878,7 +881,7 @@ public class Siege: Siegable
 		{
 			return;
 		}
-		int allyId = 0;
+		int? allyId = null;
 		if (_castle.getOwnerId() != 0)
 		{
 			allyId = ClanTable.getInstance().getClan(getCastle().getOwnerId()).getAllyId();
@@ -1091,7 +1094,7 @@ public class Siege: Siegable
 	 */
 	private void addAttacker(int clanId)
 	{
-		getAttackerClans().add(new SiegeClan(clanId, SiegeClanType.ATTACKER)); // Add registered attacker to attacker list
+		getAttackerClans().Add(new SiegeClan(clanId, SiegeClanType.ATTACKER)); // Add registered attacker to attacker list
 	}
 	
 	/**
@@ -1100,7 +1103,7 @@ public class Siege: Siegable
 	 */
 	private void addDefender(int clanId)
 	{
-		getDefenderClans().add(new SiegeClan(clanId, SiegeClanType.DEFENDER)); // Add registered defender to defender list
+		getDefenderClans().Add(new SiegeClan(clanId, SiegeClanType.DEFENDER)); // Add registered defender to defender list
 	}
 	
 	/**
@@ -1112,7 +1115,7 @@ public class Siege: Siegable
 	 */
 	private void addDefender(int clanId, SiegeClanType type)
 	{
-		getDefenderClans().add(new SiegeClan(clanId, type));
+		getDefenderClans().Add(new SiegeClan(clanId, type));
 	}
 	
 	/**
@@ -1133,8 +1136,8 @@ public class Siege: Siegable
 	{
 		if (_isRegistrationOver)
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.THE_DEADLINE_TO_REGISTER_FOR_THE_SIEGE_OF_S1_HAS_PASSED);
-			sm.addCastleId(_castle.getResidenceId());
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_DEADLINE_TO_REGISTER_FOR_THE_SIEGE_OF_S1_HAS_PASSED);
+			sm.Params.addCastleId(_castle.getResidenceId());
 			player.sendPacket(sm);
 		}
 		else if (_isInProgress)
@@ -1161,11 +1164,11 @@ public class Siege: Siegable
 		{
 			player.sendPacket(SystemMessageId.YOUR_APPLICATION_HAS_BEEN_DENIED_BECAUSE_YOU_HAVE_ALREADY_SUBMITTED_A_REQUEST_FOR_ANOTHER_CASTLE_SIEGE);
 		}
-		else if ((typeId == ATTACKER) && (getAttackerClans().size() >= SiegeManager.getInstance().getAttackerMaxClans()))
+		else if ((typeId == ATTACKER) && (getAttackerClans().Count >= SiegeManager.getInstance().getAttackerMaxClans()))
 		{
 			player.sendPacket(SystemMessageId.NO_MORE_REGISTRATIONS_MAY_BE_ACCEPTED_FOR_THE_ATTACKER_SIDE);
 		}
-		else if (((typeId == DEFENDER) || (typeId == DEFENDER_NOT_APPROVED) || (typeId == OWNER)) && ((getDefenderClans().size() + getDefenderWaitingClans().size()) >= SiegeManager.getInstance().getDefenderMaxClans()))
+		else if (((typeId == DEFENDER) || (typeId == DEFENDER_NOT_APPROVED) || (typeId == OWNER)) && ((getDefenderClans().Count + getDefenderWaitingClans().Count) >= SiegeManager.getInstance().getDefenderMaxClans()))
 		{
 			player.sendPacket(SystemMessageId.NO_MORE_REGISTRATIONS_MAY_BE_ACCEPTED_FOR_THE_DEFENDER_SIDE);
 		}
@@ -1385,12 +1388,12 @@ public class Siege: Siegable
 			using GameServerDbContext ctx = new();
 			if ((typeId == DEFENDER) || (typeId == DEFENDER_NOT_APPROVED) || (typeId == OWNER))
 			{
-				if ((getDefenderClans().size() + getDefenderWaitingClans().size()) >= SiegeManager.getInstance().getDefenderMaxClans())
+				if ((getDefenderClans().Count + getDefenderWaitingClans().Count) >= SiegeManager.getInstance().getDefenderMaxClans())
 				{
 					return;
 				}
 			}
-			else if (getAttackerClans().size() >= SiegeManager.getInstance().getAttackerMaxClans())
+			else if (getAttackerClans().Count >= SiegeManager.getInstance().getAttackerMaxClans())
 			{
 				return;
 			}
@@ -1469,7 +1472,7 @@ public class Siege: Siegable
 		{
 			CastleManager.getInstance().registerSiegeDate(getCastle().getResidenceId(), calendar.getTimeInMillis());
 			
-			Broadcast.toAllOnlinePlayers(new SystemMessage(SystemMessageId.S1_HAS_ANNOUNCED_THE_NEXT_CASTLE_SIEGE_TIME).addCastleId(_castle.getResidenceId()));
+			Broadcast.toAllOnlinePlayers(new SystemMessagePacket(SystemMessageId.S1_HAS_ANNOUNCED_THE_NEXT_CASTLE_SIEGE_TIME).addCastleId(_castle.getResidenceId()));
 			
 			// Allow registration for next siege
 			_isRegistrationOver = false;
@@ -1682,12 +1685,12 @@ public class Siege: Siegable
 		return _castle.isTimeRegistrationOver();
 	}
 	
-	public override Calendar getSiegeDate()
+	public DateTime getSiegeDate()
 	{
 		return _castle.getSiegeDate();
 	}
 	
-	public Calendar getTimeRegistrationOverDate()
+	public DateTime getTimeRegistrationOverDate()
 	{
 		return _castle.getTimeRegistrationOverDate();
 	}
@@ -1701,7 +1704,7 @@ public class Siege: Siegable
 		}
 	}
 	
-	public override Set<Npc> getFlag(Clan clan)
+	public Set<Npc> getFlag(Clan clan)
 	{
 		if (clan != null)
 		{
@@ -1719,22 +1722,22 @@ public class Siege: Siegable
 		return _controlTowerCount;
 	}
 	
-	public override bool giveFame()
+	public bool giveFame()
 	{
 		return true;
 	}
 	
-	public override int getFameFrequency()
+	public int getFameFrequency()
 	{
 		return Config.CASTLE_ZONE_FAME_TASK_FREQUENCY;
 	}
 	
-	public override int getFameAmount()
+	public int getFameAmount()
 	{
 		return Config.CASTLE_ZONE_FAME_AQUIRE_POINTS;
 	}
 	
-	public override void updateSiege()
+	public void updateSiege()
 	{
 	}
 }

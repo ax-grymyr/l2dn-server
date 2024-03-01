@@ -33,7 +33,7 @@ public interface Siegable
 	
 	Set<Npc> getFlag(Clan clan);
 	
-	Calendar getSiegeDate();
+	DateTime getSiegeDate();
 	
 	bool giveFame();
 	

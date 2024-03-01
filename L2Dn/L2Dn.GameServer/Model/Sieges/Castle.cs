@@ -11,12 +11,14 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones.Types;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
-using FortManager = L2Dn.GameServer.Model.Actor.Instances.FortManager;
-using ThreadPool = System.Threading.ThreadPool;
+using FortManager = L2Dn.GameServer.InstanceManagers.FortManager;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Sieges;
 
@@ -31,13 +33,13 @@ public class Castle: AbstractResidence
 	private DateTime _siegeDate;
 	private bool _isTimeRegistrationOver = true; // true if Castle Lords set the time, or 24h is elapsed after the siege
 	private DateTime _siegeTimeRegistrationEndDate; // last siege end date + 1 day
-	private CastleSide _castleSide = null;
+	private CastleSide _castleSide;
 	private long _treasury = 0;
 	private bool _showNpcCrest = false;
 	private SiegeZone _zone = null;
 	private ResidenceTeleportZone _teleZone;
 	private Clan _formerOwner = null;
-	private readonly Set<Artefact> _artefacts = new(1);
+	private readonly Set<Artefact> _artefacts = new();
 	private readonly Map<int, CastleFunction> _function = new();
 	private int _ticketBuyCount = 0;
 	private bool _isFirstMidVictory = false;
@@ -51,17 +53,19 @@ public class Castle: AbstractResidence
 	
 	public class CastleFunction
 	{
+		private readonly Castle _castle;
 		private readonly int _type;
 		private int _lvl;
 		protected int _fee;
 		protected int _tempFee;
-		private readonly long _rate;
-		long _endDate;
+		private readonly TimeSpan _rate;
+		private DateTime? _endDate;
 		protected bool _inDebt;
 		public bool _cwh;
 		
-		public CastleFunction(int type, int lvl, int lease, int tempLease, long rate, long time, bool cwh)
+		public CastleFunction(Castle castle, int type, int lvl, int lease, int tempLease, TimeSpan rate, DateTime? time, bool cwh)
 		{
+			_castle = castle;
 			_type = type;
 			_lvl = lvl;
 			_fee = lease;
@@ -86,12 +90,12 @@ public class Castle: AbstractResidence
 			return _fee;
 		}
 		
-		public long getRate()
+		public TimeSpan getRate()
 		{
 			return _rate;
 		}
 		
-		public long getEndTime()
+		public DateTime? getEndTime()
 		{
 			return _endDate;
 		}
@@ -106,63 +110,72 @@ public class Castle: AbstractResidence
 			_fee = lease;
 		}
 		
-		public void setEndTime(long time)
+		public void setEndTime(DateTime time)
 		{
 			_endDate = time;
 		}
 		
 		private void initializeTask(bool cwh)
 		{
-			if (_ownerId <= 0)
+			if (_castle._ownerId <= 0)
 			{
 				return;
 			}
 			
-			long currentTime = System.currentTimeMillis();
+			DateTime currentTime = DateTime.UtcNow;
 			if (_endDate > currentTime)
 			{
-				ThreadPool.schedule(new FunctionTask(cwh), _endDate - currentTime);
+				ThreadPool.schedule(new FunctionTask(_castle, this, cwh), _endDate.Value - currentTime);
 			}
 			else
 			{
-				ThreadPool.schedule(new FunctionTask(cwh), 0);
+				ThreadPool.schedule(new FunctionTask(_castle, this, cwh), 0);
 			}
 		}
 		
 		private class FunctionTask: Runnable
 		{
-			public FunctionTask(bool cwh)
+			private readonly Castle _castle;
+			private readonly CastleFunction _castleFunction;
+
+			public FunctionTask(Castle castle, CastleFunction castleFunction, bool cwh)
 			{
-				_cwh = cwh;
+				_castle = castle;
+				_castleFunction = castleFunction;
+				_castleFunction._cwh = cwh;
 			}
 			
 			public void run()
 			{
 				try
 				{
-					if (_ownerId <= 0)
+					if (_castle._ownerId <= 0)
 					{
 						return;
 					}
-					if ((ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getAdena() >= _fee) || !_cwh)
+
+					if ((ClanTable.getInstance().getClan(_castle.getOwnerId()).getWarehouse().getAdena() >=
+					     _castleFunction._fee) || !_castleFunction._cwh)
 					{
-						int fee = _fee;
-						if (_endDate == -1)
+						int fee = _castleFunction._fee;
+						if (_castleFunction._endDate is null)
 						{
-							fee = _tempFee;
+							fee = _castleFunction._tempFee;
 						}
-						
-						setEndTime(System.currentTimeMillis() + _rate);
-						dbSave();
-						if (_cwh)
+
+						_castleFunction.setEndTime(DateTime.UtcNow + _castleFunction._rate);
+						_castleFunction.dbSave();
+						if (_castleFunction._cwh)
 						{
-							ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().destroyItemByItemId("CS_function_fee", Inventory.ADENA_ID, fee, null, null);
+							ClanTable.getInstance().getClan(_castle.getOwnerId()).getWarehouse()
+								.destroyItemByItemId("CS_function_fee", Inventory.ADENA_ID, fee, null, null);
 						}
-						ThreadPool.schedule(new FunctionTask(true), _rate);
+
+						ThreadPool.schedule(new FunctionTask(_castle, _castleFunction, true), _castleFunction._rate);
 					}
 					else
 					{
-						removeFunction(_type);
+						_castle.removeFunction(_castleFunction._type);
 					}
 				}
 				catch (Exception e)
@@ -177,15 +190,21 @@ public class Castle: AbstractResidence
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				PreparedStatement ps = con.prepareStatement(
-					"REPLACE INTO castle_functions (castle_id, type, lvl, lease, rate, endTime) VALUES (?,?,?,?,?,?)");
-				ps.setInt(1, getResidenceId());
-				ps.setInt(2, _type);
-				ps.setInt(3, _lvl);
-				ps.setInt(4, _fee);
-				ps.setLong(5, _rate);
-				ps.setLong(6, _endDate);
-				ps.execute();
+				int castleId = _castle.getResidenceId();
+				var record = ctx.CastleFunctions.SingleOrDefault(r => r.CastleId == castleId && r.Type == _type);
+				if (record is null)
+				{
+					record = new DbCastleFunction();
+					record.CastleId = (byte)castleId;
+					record.Type = (byte)_type;
+					ctx.CastleFunctions.Add(record);
+				}
+				
+				record.Level = (short)_lvl;
+				record.Lease = _fee;
+				record.Rate = _rate;
+				record.EndTime = _endDate;
+				ctx.SaveChanges();
 			}
 			catch (Exception e)
 			{
@@ -224,15 +243,15 @@ public class Castle: AbstractResidence
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void engrave(Clan clan, WorldObject target, CastleSide side)
 	{
-		if (!_artefacts.contains(target))
+		if (!_artefacts.Contains(target))
 		{
 			return;
 		}
 		setSide(side);
 		setOwner(clan);
-		SystemMessage msg = new SystemMessage(SystemMessageId.CLAN_S1_HAS_SUCCEEDED_IN_S2);
-		msg.addString(clan.getName());
-		msg.addString(getName());
+		SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.CLAN_S1_HAS_SUCCEEDED_IN_S2);
+		msg.Params.addString(clan.getName());
+		msg.Params.addString(getName());
 		getSiege().announceToPlayer(msg, true);
 	}
 	
@@ -324,14 +343,12 @@ public class Castle: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("UPDATE castle SET treasury = ? WHERE id = ?");
-			ps.setLong(1, _treasury);
-			ps.setInt(2, getResidenceId());
-			ps.execute();
+			int castleId = getResidenceId();
+			ctx.Castles.Where(r => r.Id == castleId).ExecuteUpdate(s => s.SetProperty(r => r.Treasury, _treasury));
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn(e);
+			LOGGER.Error(e);
 		}
 		
 		return true;
@@ -376,7 +393,7 @@ public class Castle: AbstractResidence
 	
 	public override CastleZone getResidenceZone()
 	{
-		return (CastleZone) super.getResidenceZone();
+		return (CastleZone) base.getResidenceZone();
 	}
 	
 	public ResidenceTeleportZone getTeleZone()
@@ -552,7 +569,7 @@ public class Castle: AbstractResidence
 				member.sendSkillList();
 			}
 			clan.setCastleId(0);
-			clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
+			clan.broadcastToOnlineMembers(new PledgeShowInfoUpdatePacket(clan));
 		}
 		
 		setSide(CastleSide.NEUTRAL);
@@ -604,39 +621,30 @@ public class Castle: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps1 = con.prepareStatement("SELECT * FROM castle WHERE id = ?");
-			PreparedStatement ps2 = con.prepareStatement("SELECT clan_id FROM clan_data WHERE hasCastle = ?");
-			ps1.setInt(1, getResidenceId());
+			int castleId = getResidenceId();
+
+			var record = ctx.Castles.SingleOrDefault(r => r.Id == castleId);
+			if (record != null)
 			{
-				ResultSet rs = ps1.executeQuery();
-				while (rs.next())
-				{
-					setName(rs.getString("name"));
-					// _OwnerId = rs.getInt("ownerId");
-					_siegeDate = Calendar.getInstance();
-					_siegeDate.setTimeInMillis(rs.getLong("siegeDate"));
-					_siegeTimeRegistrationEndDate = Calendar.getInstance();
-					_siegeTimeRegistrationEndDate.setTimeInMillis(rs.getLong("regTimeEnd"));
-					_isTimeRegistrationOver = rs.getBoolean("regTimeOver");
-					_castleSide = Enum.valueOf(CastleSide.class, rs.getString("side"));
-					_treasury = rs.getLong("treasury");
-					_showNpcCrest = rs.getBoolean("showNpcCrest");
-					_ticketBuyCount = rs.getInt("ticketBuyCount");
-				}
+				setName(record.Name);
+				_siegeDate = record.SiegeTime;
+				_siegeTimeRegistrationEndDate = record.RegistrationEndTime;
+				_isTimeRegistrationOver = record.RegistrationTimeOver;
+				_castleSide = record.Side;
+				_treasury = record.Treasury;
+				_showNpcCrest = record.ShowNpcCrest;
+				_ticketBuyCount = record.TicketBuyCount;
 			}
-			
-			ps2.setInt(1, getResidenceId());
+
+			var record2 = ctx.Clans.SingleOrDefault(r => r.Castle == castleId);
+			if (record2 != null)
 			{
-				ResultSet rs = ps2.executeQuery();
-				while (rs.next())
-				{
-					_ownerId = rs.getInt("clan_id");
-				}
+				_ownerId = record2.Id;
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Exception: loadCastleData(): " + e);
+			LOGGER.Error("Exception: loadCastleData(): " + e);
 		}
 	}
 	
@@ -646,15 +654,13 @@ public class Castle: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM castle_functions WHERE castle_id = ?");
-			ps.setInt(1, getResidenceId());
-
+			int castleId = getResidenceId();
+			var query = ctx.CastleFunctions.Where(r => r.CastleId == castleId);
+			foreach (var record in query)
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
-				{
-					_function.put(rs.getInt("type"), new CastleFunction(rs.getInt("type"), rs.getInt("lvl"), rs.getInt("lease"), 0, rs.getLong("rate"), rs.getLong("endTime"), true));
-				}
+				_function.put(record.Type,
+					new CastleFunction(this, record.Type, record.Level, record.Lease, 0, record.Rate,
+						record.EndTime, true));
 			}
 		}
 		catch (Exception e)
@@ -673,10 +679,8 @@ public class Castle: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM castle_functions WHERE castle_id=? AND type=?");
-			ps.setInt(1, getResidenceId());
-			ps.setInt(2, functionType);
-			ps.execute();
+			int castleId = getResidenceId();
+			ctx.CastleFunctions.Where(r => r.CastleId == castleId && r.Type == functionType).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -684,7 +688,7 @@ public class Castle: AbstractResidence
 		}
 	}
 	
-	public bool updateFunctions(Player player, int type, int lvl, int lease, long rate, bool addNew)
+	public bool updateFunctions(Player player, int type, int lvl, int lease, TimeSpan rate, bool addNew)
 	{
 		if (player == null)
 		{
@@ -696,7 +700,7 @@ public class Castle: AbstractResidence
 		}
 		if (addNew)
 		{
-			_function.put(type, new CastleFunction(type, lvl, lease, 0, rate, 0, false));
+			_function.put(type, new CastleFunction(this, type, lvl, lease, 0, rate, null, false));
 		}
 		else if ((lvl == 0) && (lease == 0))
 		{
@@ -708,7 +712,7 @@ public class Castle: AbstractResidence
 			if (diffLease > 0)
 			{
 				_function.remove(type);
-				_function.put(type, new CastleFunction(type, lvl, lease, 0, rate, -1, false));
+				_function.put(type, new CastleFunction(this, type, lvl, lease, 0, rate, null, false));
 			}
 			else
 			{
@@ -743,19 +747,16 @@ public class Castle: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM castle_doorupgrade WHERE castleId=?");
-			ps.setInt(1, getResidenceId());
+			int castleId = getResidenceId();
+			var query = ctx.CastleDoorUpgrades.Where(r => r.CastleId == castleId);
+			foreach (var record in query)
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
-				{
-					setDoorUpgrade(rs.getInt("doorId"), rs.getInt("ratio"), false);
-				}
+				setDoorUpgrade(record.DoorId, record.Ratio, false);
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Exception: loadCastleDoorUpgrade(): " + e);
+			LOGGER.Error("Exception: loadCastleDoorUpgrade(): " + e);
 		}
 	}
 	
@@ -770,9 +771,8 @@ public class Castle: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM castle_doorupgrade WHERE castleId=?");
-			ps.setInt(1, getResidenceId());
-			ps.execute();
+			int castleId = getResidenceId();
+			ctx.CastleDoorUpgrades.Where(r => r.CastleId == castleId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -796,16 +796,21 @@ public class Castle: AbstractResidence
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				PreparedStatement ps =
-					con.prepareStatement("REPLACE INTO castle_doorupgrade (doorId, ratio, castleId) values (?,?,?)");
-				ps.setInt(1, doorId);
-				ps.setInt(2, ratio);
-				ps.setInt(3, getResidenceId());
-				ps.execute();
+				var record = ctx.CastleDoorUpgrades.SingleOrDefault(r => r.DoorId == doorId);
+				if (record is null)
+				{
+					record = new DbCastleDoorUpgrade();
+					record.DoorId = doorId;
+					ctx.CastleDoorUpgrades.Add(record);
+				}
+
+				record.CastleId = (byte)getResidenceId();
+				record.Ratio = (short)ratio;
+				ctx.SaveChanges();
 			}
 			catch (Exception e)
 			{
-				LOGGER.Warn("Exception: setDoorUpgrade(int doorId, int ratio, int castleId): " + e);
+				LOGGER.Error("Exception: setDoorUpgrade(int doorId, int ratio, int castleId): " + e);
 			}
 		}
 	}
@@ -825,31 +830,23 @@ public class Castle: AbstractResidence
 		try
 		{
 			using GameServerDbContext ctx = new();
-			// Need to remove has castle flag from clan_data, should be checked from castle table.
-			{
-				PreparedStatement ps = con.prepareStatement("UPDATE clan_data SET hasCastle = 0 WHERE hasCastle = ?");
-				ps.setInt(1, getResidenceId());
-				ps.execute();
-			}
+			int castleId = getResidenceId();
 
-			{
-				PreparedStatement ps = con.prepareStatement("UPDATE clan_data SET hasCastle = ? WHERE clan_id = ?");
-				ps.setInt(1, getResidenceId());
-				ps.setInt(2, _ownerId);
-				ps.execute();
-			}
+			// Need to remove has castle flag from clan_data, should be checked from castle table.
+			ctx.Clans.Where(c => c.Castle == castleId).ExecuteUpdate(s => s.SetProperty(r => r.Castle, (short?)null));
+			ctx.Clans.Where(c => c.Id == _ownerId).ExecuteUpdate(s => s.SetProperty(r => r.Castle, (short)castleId));
 			
 			// Announce to clan members
 			if (clan != null)
 			{
 				clan.setCastleId(getResidenceId()); // Set has castle flag for new owner
-				clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
+				clan.broadcastToOnlineMembers(new PledgeShowInfoUpdatePacket(clan));
 				clan.broadcastToOnlineMembers(new PlaySoundPacket(1, "Siege_Victory", 0, 0, 0, 0, 0));
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Exception: updateOwnerInDB(Pledge clan): " + e);
+			LOGGER.Error("Exception: updateOwnerInDB(Pledge clan): " + e);
 		}
 	}
 	
@@ -1018,14 +1015,13 @@ public class Castle: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("UPDATE castle SET showNpcCrest = ? WHERE id = ?");
-			ps.setString(1, String.valueOf(_showNpcCrest));
-			ps.setInt(2, getResidenceId());
-			ps.execute();
+			int castleId = getResidenceId();
+			ctx.Castles.Where(r => r.Id == castleId)
+				.ExecuteUpdate(s => s.SetProperty(r => r.ShowNpcCrest, _showNpcCrest));
 		}
 		catch (Exception e)
 		{
-			LOGGER.Info("Error saving showNpcCrest for castle " + getName() + ": " + e);
+			LOGGER.Error("Error saving showNpcCrest for castle " + getName() + ": " + e);
 		}
 	}
 	
@@ -1063,14 +1059,13 @@ public class Castle: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("UPDATE castle SET ticketBuyCount = ? WHERE id = ?");
-			ps.setInt(1, _ticketBuyCount);
-			ps.setInt(2, getResidenceId());
-			ps.execute();
+			int castleId = getResidenceId();
+			ctx.Castles.Where(r => r.Id == castleId)
+				.ExecuteUpdate(s => s.SetProperty(r => r.TicketBuyCount, _ticketBuyCount));
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn(e);
+			LOGGER.Error(e);
 		}
 	}
 	
@@ -1087,17 +1082,22 @@ public class Castle: AbstractResidence
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				PreparedStatement ps =
-					con.prepareStatement(
-						"REPLACE INTO castle_trapupgrade (castleId, towerIndex, level) values (?,?,?)");
-				ps.setInt(1, getResidenceId());
-				ps.setInt(2, towerIndex);
-				ps.setInt(3, level);
-				ps.execute();
+				int castleId = getResidenceId();
+				var record = ctx.CastleTrapUpgrades.SingleOrDefault(r => r.CastleId == castleId && r.TowerIndex == towerIndex);
+				if (record is null)
+				{
+					record = new CastleTrapUpgrade();
+					record.CastleId = (short)castleId;
+					record.TowerIndex = (short)towerIndex;
+					ctx.CastleTrapUpgrades.Add(record);
+				}
+
+				record.Level = (short)level;
+				ctx.SaveChanges();
 			}
 			catch (Exception e)
 			{
-				LOGGER.Warn("Exception: setTrapUpgradeLevel(int towerIndex, int level, int castleId): " + e);
+				LOGGER.Error("Exception: setTrapUpgradeLevel(int towerIndex, int level, int castleId): " + e);
 			}
 		}
 		TowerSpawn spawn = SiegeManager.getInstance().getFlameTowers(getResidenceId()).get(towerIndex);
@@ -1117,9 +1117,8 @@ public class Castle: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM castle_trapupgrade WHERE castleId=?");
-			ps.setInt(1, getResidenceId());
-			ps.execute();
+			int castleId = getResidenceId();
+			ctx.CastleTrapUpgrades.Where(r => r.CastleId == castleId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -1149,8 +1148,8 @@ public class Castle: AbstractResidence
 	public void removeResidentialSkills(Player player)
 	{
 		base.removeResidentialSkills(player);
-		player.removeSkill(CommonSkill.ABILITY_OF_DARKNESS.getId());
-		player.removeSkill(CommonSkill.ABILITY_OF_LIGHT.getId());
+		player.removeSkill((int)CommonSkill.ABILITY_OF_DARKNESS);
+		player.removeSkill((int)CommonSkill.ABILITY_OF_LIGHT);
 	}
 	
 	public void spawnSideNpcs()
@@ -1203,17 +1202,16 @@ public class Castle: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("UPDATE castle SET side = ? WHERE id = ?");
-			ps.setString(1, side.ToString());
-			ps.setInt(2, getResidenceId());
-			ps.execute();
+			int castleId = getResidenceId();
+			ctx.Castles.Where(r => r.Id == castleId)
+				.ExecuteUpdate(s => s.SetProperty(r => r.Side, side));
 		}
 		catch (Exception e)
 		{
 			LOGGER.Warn(e);
 		}
 		_castleSide = side;
-		Broadcast.toAllOnlinePlayers(new ExCastleState(this));
+		Broadcast.toAllOnlinePlayers(new ExCastleStatePacket(this));
 		spawnSideNpcs();
 	}
 	

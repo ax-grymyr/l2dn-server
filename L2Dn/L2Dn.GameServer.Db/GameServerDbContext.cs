@@ -128,9 +128,13 @@ public class GameServerDbContext: DbContext
     public DbSet<MonsterDerbyHistory> DerbyHistory => Set<MonsterDerbyHistory>();
     public DbSet<MonsterDerbyBet> DerbyBets => Set<MonsterDerbyBet>();
     public DbSet<DbAirShip> AirShips => Set<DbAirShip>();
+
     public DbSet<DbCastle> Castles => Set<DbCastle>();
+    public DbSet<DbCastleFunction> CastleFunctions => Set<DbCastleFunction>();
+    public DbSet<DbCastleDoorUpgrade> CastleDoorUpgrades => Set<DbCastleDoorUpgrade>();
     public DbSet<CastleManorProduction> CastleManorProduction => Set<CastleManorProduction>();
     public DbSet<CastleManorProcure> CastleManorProcure => Set<CastleManorProcure>();
+    
     public DbSet<DbCursedWeapon> CursedWeapons => Set<DbCursedWeapon>();
     public DbSet<DbCustomMail> CustomMails => Set<DbCustomMail>();
     public DbSet<NpcRespawn> NpcRespawns => Set<NpcRespawn>();

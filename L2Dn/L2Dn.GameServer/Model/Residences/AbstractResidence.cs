@@ -68,7 +68,7 @@ public abstract class AbstractResidence: ListenersContainer, INamable
 		_name = name;
 	}
 	
-	public ResidenceZone getResidenceZone()
+	public virtual ResidenceZone getResidenceZone()
 	{
 		return _zone;
 	}

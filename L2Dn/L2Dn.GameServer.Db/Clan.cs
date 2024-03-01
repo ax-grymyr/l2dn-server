@@ -18,7 +18,7 @@ public class Clan
     
     public int Reputation { get; set; }
     
-    public short? Castle { get; set; }
+    public short? Castle { get; set; } // TODO: must be Castle.OwnerClanId property 
 
     public short BloodAllianceCount { get; set; }
     public short BloodOathCount { get; set; }
