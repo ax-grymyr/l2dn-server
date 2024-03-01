@@ -16,7 +16,7 @@ public class DbPunishment
  
     public int Type { get; set; } // TODO enum PunishmentType
 
-    public DateTime ExpirationTime { get; set; }
+    public DateTime? ExpirationTime { get; set; }
     
     public string Reason { get; set; } = string.Empty;
  

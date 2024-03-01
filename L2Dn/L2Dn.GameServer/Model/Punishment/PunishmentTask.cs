@@ -1,6 +1,10 @@
-﻿using L2Dn.GameServer.Model.Actor;
+﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Handlers;
+using L2Dn.GameServer.InstanceManagers;
+using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -10,27 +14,22 @@ public class PunishmentTask: Runnable
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(PunishmentTask));
 
-	private const String INSERT_QUERY =
-		"INSERT INTO punishments (`key`, `affect`, `type`, `expiration`, `reason`, `punishedBy`) VALUES (?, ?, ?, ?, ?, ?)";
-
-	private const String UPDATE_QUERY = "UPDATE punishments SET expiration = ? WHERE id = ?";
-
 	private int _id;
 	private readonly string _key;
 	private readonly PunishmentAffect _affect;
 	private readonly PunishmentType _type;
-	private readonly DateTime _expirationTime;
+	private readonly DateTime? _expirationTime;
 	private readonly String _reason;
 	private readonly String _punishedBy;
 	private bool _isStored;
 	private ScheduledFuture _task = null;
 
-	public PunishmentTask(string key, PunishmentAffect affect, PunishmentType type, DateTime expirationTime, String reason,
+	public PunishmentTask(string key, PunishmentAffect affect, PunishmentType type, DateTime? expirationTime, String reason,
 		String punishedBy): this(0, key, affect, type, expirationTime, reason, punishedBy, false)
 	{
 	}
 
-	public PunishmentTask(int id, string key, PunishmentAffect affect, PunishmentType type, DateTime expirationTime,
+	public PunishmentTask(int id, string key, PunishmentAffect affect, PunishmentType type, DateTime? expirationTime,
 		String reason, String punishedBy, bool isStored)
 	{
 		_id = id;
@@ -47,7 +46,7 @@ public class PunishmentTask: Runnable
 	/**
 	 * @return affection value charId, account, ip, etc..
 	 */
-	public int getKey()
+	public string getKey()
 	{
 		return _key;
 	}
@@ -71,7 +70,7 @@ public class PunishmentTask: Runnable
 	/**
 	 * @return milliseconds to the end of the current punishment, -1 for infinity.
 	 */
-	public DateTime getExpirationTime()
+	public DateTime? getExpirationTime()
 	{
 		return _expirationTime;
 	}
@@ -119,9 +118,9 @@ public class PunishmentTask: Runnable
 		}
 
 		onStart();
-		if (_expirationTime > 0) // Has expiration?
+		if (_expirationTime != null) // Has expiration?
 		{
-			_task = ThreadPool.schedule(this, (_expirationTime - DateTime.UtcNow));
+			_task = ThreadPool.schedule(this, (_expirationTime.Value - DateTime.UtcNow));
 		}
 	}
 
@@ -160,22 +159,20 @@ public class PunishmentTask: Runnable
 			try
 			{
 				using GameServerDbContext ctx = new();
-				PreparedStatement st = con.prepareStatement(INSERT_QUERY, Statement.RETURN_GENERATED_KEYS);
-				st.setString(1, _key);
-				st.setString(2, _affect.name());
-				st.setString(3, _type.name());
-				st.setLong(4, _expirationTime);
-				st.setString(5, _reason);
-				st.setString(6, _punishedBy);
-				st.execute();
-
+				DbPunishment punishment = new DbPunishment()
 				{
-					ResultSet rset = st.getGeneratedKeys()
-					if (rset.next())
-					{
-						_id = rset.getInt(1);
-					}
-				}
+					Key = _key,
+					Affect = (int)_affect,
+					Type = (int)_type,
+					ExpirationTime = _expirationTime,
+					Reason = _reason,
+					PunishedBy = _punishedBy
+				}; 
+
+				ctx.Punishments.Add(punishment);
+				ctx.SaveChanges();
+                
+				_id = punishment.Id;
 				_isStored = true;
 			}
 			catch (Exception e)
@@ -201,14 +198,12 @@ public class PunishmentTask: Runnable
 			try
 			{
 				using GameServerDbContext ctx = new();
-				PreparedStatement st = con.prepareStatement(UPDATE_QUERY);
-				st.setLong(1, System.currentTimeMillis());
-				st.setLong(2, _id);
-				st.execute();
+				ctx.Punishments.Where(r => r.Id == _id)
+					.ExecuteUpdate(s => s.SetProperty(r => r.ExpirationTime, DateTime.UtcNow));
 			}
 			catch (Exception e)
 			{
-				LOGGER.Warn(
+				LOGGER.Error(
 					GetType().Name + ": Couldn't update punishment task for: " + _affect + " " + _key + " id: " + _id,
 					e);
 			}
