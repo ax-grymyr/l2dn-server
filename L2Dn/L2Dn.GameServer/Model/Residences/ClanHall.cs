@@ -1,12 +1,19 @@
+using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor.Instances;
-using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Zones.Types;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Residences;
 
@@ -29,12 +36,8 @@ public class ClanHall: AbstractResidence
 	private readonly Location _banishLocation;
 	// Dynamic parameters
 	Clan _owner = null;
-	long _paidUntil = 0;
+	DateTime _paidUntil;
 	protected ScheduledFuture _checkPaymentTask = null;
-	// Other
-	private const String INSERT_CLANHALL = "INSERT INTO clanhall (id, ownerId, paidUntil) VALUES (?,?,?)";
-	private const String LOAD_CLANHALL = "SELECT * FROM clanhall WHERE id=?";
-	private const String UPDATE_CLANHALL = "UPDATE clanhall SET ownerId=?,paidUntil=? WHERE id=?";
 
 	public ClanHall(int id, ClanHallGrade grade, ClanHallType type, int minBid, int lease, int deposit,
 		Location ownerLocation, Location banishLocation)
@@ -92,32 +95,28 @@ public class ClanHall: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement loadStatement = con.prepareStatement(LOAD_CLANHALL);
-			PreparedStatement insertStatement = con.prepareStatement(INSERT_CLANHALL);
-			loadStatement.setInt(1, getResidenceId());
-
+			int residenceId = getResidenceId();
+			var record = ctx.ClanHalls.SingleOrDefault(r => r.Id == residenceId);
+			if (record is not null)
 			{
-				ResultSet rset = loadStatement.executeQuery();
-				if (rset.next())
-				{
-					setPaidUntil(rset.getLong("paidUntil"));
-					setOwner(rset.getInt("ownerId"));
-				}
-				else
-				{
-					insertStatement.setInt(1, getResidenceId());
-					insertStatement.setInt(2, 0); // New clanhall should not have owner
-					insertStatement.setInt(3, 0); // New clanhall should not have paid until
-					if (insertStatement.execute())
-					{
-						LOGGER.Info("Clan Hall " + getName() + " (" + getResidenceId() + ") was sucessfully created.");
-					}
-				}
+				setPaidUntil(record.PaidUntil);
+				setOwner(record.OwnerId);
+			}
+			else
+			{
+				record = new DbClanHall();
+				record.Id = residenceId;
+				record.OwnerId = 0;
+				record.PaidUntil = DateTime.MinValue;
+				ctx.ClanHalls.Add(record);
+				ctx.SaveChanges();
+
+				LOGGER.Info("Clan Hall " + getName() + " (" + getResidenceId() + ") was sucessfully created.");
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Info("Failed loading clan hall: " + e);
+			LOGGER.Error("Failed loading clan hall: " + e);
 		}
 	}
 	
@@ -126,19 +125,17 @@ public class ClanHall: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(UPDATE_CLANHALL);
-			statement.setInt(1, getOwnerId());
-			statement.setLong(2, _paidUntil);
-			statement.setInt(3, getResidenceId());
-			statement.execute();
+			int residenceId = getResidenceId();
+			ctx.ClanHalls.Where(r => r.Id == residenceId).ExecuteUpdate(s =>
+				s.SetProperty(r => r.OwnerId, getOwnerId()).SetProperty(r => r.PaidUntil, _paidUntil));
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn(e);
+			LOGGER.Error(e);
 		}
 	}
 	
-	protected void initResidenceZone()
+	protected override void initResidenceZone()
 	{
 		foreach (ClanHallZone zone in ZoneManager.getInstance().getAllZones<ClanHallZone>())
 		{
@@ -152,8 +149,8 @@ public class ClanHall: AbstractResidence
 	
 	public int getCostFailDay()
 	{
-		Duration failDay = Duration.between(Instant.ofEpochMilli(_paidUntil), Instant.now());
-		return failDay.isNegative() ? 0 : (int) failDay.toDays();
+		TimeSpan failDay = _paidUntil - DateTime.UtcNow;
+		return failDay < TimeSpan.Zero ? 0 : (int)failDay.TotalDays;
 	}
 	
 	/**
@@ -170,7 +167,7 @@ public class ClanHall: AbstractResidence
 	 */
 	public void openCloseDoors(bool open)
 	{
-		_doors.forEach(door => door.Key.openCloseMe(open));
+		_doors.forEach(door => door.openCloseMe(open));
 	}
 	
 	/**
@@ -213,7 +210,7 @@ public class ClanHall: AbstractResidence
 	 * Gets the {@link Clan} ID which own this {@link ClanHall}.
 	 * @return the {@link Clan} ID which own this {@link ClanHall}
 	 */
-	public int getOwnerId()
+	public override int getOwnerId()
 	{
 		Clan owner = _owner;
 		return (owner != null) ? owner.getId() : 0;
@@ -238,26 +235,27 @@ public class ClanHall: AbstractResidence
 		{
 			_owner = clan;
 			clan.setHideoutId(getResidenceId());
-			clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
-			if (_paidUntil == 0)
+			clan.broadcastToOnlineMembers(new PledgeShowInfoUpdatePacket(clan));
+			if (_paidUntil == DateTime.MinValue)
 			{
-				setPaidUntil(Instant.now().plus(Duration.ofDays(7)).toEpochMilli());
+				setPaidUntil(DateTime.UtcNow.AddDays(7));
 			}
 			
 			int failDays = getCostFailDay();
-			long time = failDays > 0 ? (failDays > 8 ? Instant.now().toEpochMilli() : Instant.ofEpochMilli(_paidUntil).plus(Duration.ofDays(failDays + 1)).toEpochMilli()) : _paidUntil;
-			_checkPaymentTask = ThreadPool.schedule(new CheckPaymentTask(), Math.max(0, time - System.currentTimeMillis()));
+			DateTime time = failDays > 0 ? (failDays > 8 ? DateTime.UtcNow : _paidUntil.AddDays(failDays + 1)) : _paidUntil;
+			
+			_checkPaymentTask = ThreadPool.schedule(new CheckPaymentTask(this), Algorithms.Max(TimeSpan.Zero, time - DateTime.UtcNow));
 		}
 		else
 		{
 			if (_owner != null)
 			{
 				_owner.setHideoutId(0);
-				_owner.broadcastToOnlineMembers(new PledgeShowInfoUpdate(_owner));
+				_owner.broadcastToOnlineMembers(new PledgeShowInfoUpdatePacket(_owner));
 				removeFunctions();
 			}
 			_owner = null;
-			setPaidUntil(0);
+			setPaidUntil(DateTime.MinValue);
 			if (_checkPaymentTask != null)
 			{
 				_checkPaymentTask.cancel(true);
@@ -271,7 +269,7 @@ public class ClanHall: AbstractResidence
 	 * Gets the due date of clan hall payment
 	 * @return the due date of clan hall payment
 	 */
-	public long getPaidUntil()
+	public DateTime getPaidUntil()
 	{
 		return _paidUntil;
 	}
@@ -280,7 +278,7 @@ public class ClanHall: AbstractResidence
 	 * Set the due date of clan hall payment
 	 * @param paidUntil the due date of clan hall payment
 	 */
-	public void setPaidUntil(long paidUntil)
+	public void setPaidUntil(DateTime paidUntil)
 	{
 		_paidUntil = paidUntil;
 	}
@@ -289,9 +287,9 @@ public class ClanHall: AbstractResidence
 	 * Gets the next date of clan hall payment
 	 * @return the next date of clan hall payment
 	 */
-	public long getNextPayment()
+	public DateTime getNextPayment()
 	{
-		return (_checkPaymentTask != null) ? System.currentTimeMillis() + _checkPaymentTask.getDelay(TimeUnit.MILLISECONDS) : 0;
+		return (_checkPaymentTask != null) ? DateTime.UtcNow + _checkPaymentTask.getDelay() : DateTime.MinValue;
 	}
 	
 	public Location getOwnerLocation()
@@ -337,33 +335,40 @@ public class ClanHall: AbstractResidence
 		return _deposit;
 	}
 	
-	class CheckPaymentTask: Runnable
+	private class CheckPaymentTask: Runnable
 	{
+		private readonly ClanHall _clanHall;
+
+		public CheckPaymentTask(ClanHall clanHall)
+		{
+			_clanHall = clanHall;
+		}
+		
 		public void run()
 		{
-			if (_owner != null)
+			if (_clanHall._owner != null)
 			{
-				if (_owner.getWarehouse().getAdena() < _lease)
+				if (_clanHall._owner.getWarehouse().getAdena() < _clanHall._lease)
 				{
-					if (getCostFailDay() > 8)
+					if (_clanHall.getCostFailDay() > 8)
 					{
-						_owner.broadcastToOnlineMembers(new SystemMessage(SystemMessageId.THE_CLAN_HALL_FEE_IS_ONE_WEEK_OVERDUE_THEREFORE_THE_CLAN_HALL_OWNERSHIP_HAS_BEEN_REVOKED));
-						setOwner(null);
+						_clanHall._owner.broadcastToOnlineMembers(new SystemMessagePacket(SystemMessageId.THE_CLAN_HALL_FEE_IS_ONE_WEEK_OVERDUE_THEREFORE_THE_CLAN_HALL_OWNERSHIP_HAS_BEEN_REVOKED));
+						_clanHall.setOwner(null);
 					}
 					else
 					{
-						_checkPaymentTask = ThreadPool.schedule(new CheckPaymentTask(), 24 * 60 * 60 * 1000); // 1 day
-						SystemMessage sm = new SystemMessage(SystemMessageId.THE_PAYMENT_FOR_YOUR_CLAN_HALL_HAS_NOT_BEEN_MADE_PLEASE_DEPOSIT_THE_NECESSARY_AMOUNT_OF_ADENA_TO_YOUR_CLAN_WAREHOUSE_BY_S1_TOMORROW);
-						sm.addInt(_lease);
-						_owner.broadcastToOnlineMembers(sm);
+						_clanHall._checkPaymentTask = ThreadPool.schedule(new CheckPaymentTask(_clanHall), TimeSpan.FromDays(1));
+						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_PAYMENT_FOR_YOUR_CLAN_HALL_HAS_NOT_BEEN_MADE_PLEASE_DEPOSIT_THE_NECESSARY_AMOUNT_OF_ADENA_TO_YOUR_CLAN_WAREHOUSE_BY_S1_TOMORROW);
+						sm.Params.addInt(_clanHall._lease);
+						_clanHall._owner.broadcastToOnlineMembers(sm);
 					}
 				}
 				else
 				{
-					_owner.getWarehouse().destroyItem("Clan Hall Lease", Inventory.ADENA_ID, _lease, null, null);
-					setPaidUntil(Instant.ofEpochMilli(_paidUntil).plus(Duration.ofDays(7)).toEpochMilli());
-					_checkPaymentTask = ThreadPool.schedule(new CheckPaymentTask(), _paidUntil - System.currentTimeMillis());
-					updateDB();
+					_clanHall._owner.getWarehouse().destroyItem("Clan Hall Lease", Inventory.ADENA_ID, _clanHall._lease, null, null);
+					_clanHall.setPaidUntil(_clanHall._paidUntil.AddDays(7));
+					_clanHall._checkPaymentTask = ThreadPool.schedule(new CheckPaymentTask(_clanHall), _clanHall._paidUntil - DateTime.UtcNow);
+					_clanHall.updateDB();
 				}
 			}
 		}

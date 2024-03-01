@@ -1,7 +1,11 @@
-using L2Dn.GameServer.Model.Clans;
+using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
 namespace L2Dn.GameServer.Model.Residences;
 
@@ -13,7 +17,6 @@ public class ClanHallAuction
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ClanHallAuction));
 	
 	private readonly int _clanHallId;
-	private const String LOAD_CLANHALL_BIDDERS = "SELECT * FROM clanhall_auctions_bidders WHERE clanHallId=?";
 	private const String DELETE_CLANHALL_BIDDERS = "DELETE FROM clanhall_auctions_bidders WHERE clanHallId=?";
 	private const String INSERT_CLANHALL_BIDDER = "REPLACE INTO clanhall_auctions_bidders (clanHallId, clanId, bid, bidTime) VALUES (?,?,?,?)";
 	private const String DELETE_CLANHALL_BIDDER = "DELETE FROM clanhall_auctions_bidders WHERE clanId=?";
@@ -29,20 +32,16 @@ public class ClanHallAuction
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(LOAD_CLANHALL_BIDDERS);
-			ps.setInt(1, _clanHallId);
+			var query = ctx.ClanHallBidders.Where(r => r.ClanHallId == _clanHallId);
+			foreach (var record in query)
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
-				{
-					Clan clan = ClanTable.getInstance().getClan(rs.getInt("clanId"));
-					addBid(clan, rs.getLong("bid"), rs.getLong("bidTime"));
-				}
+				Clan clan = ClanTable.getInstance().getClan(record.ClanId);
+				addBid(clan, record.Bid, record.BidTime);
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Failed loading clan hall auctions bidder for clan hall " + _clanHallId + ": " + e);
+			LOGGER.Error("Failed loading clan hall auctions bidder for clan hall " + _clanHallId + ": " + e);
 		}
 	}
 	
@@ -55,10 +54,10 @@ public class ClanHallAuction
 	
 	public void addBid(Clan clan, long bid)
 	{
-		addBid(clan, bid, System.currentTimeMillis());
+		addBid(clan, bid, DateTime.UtcNow);
 	}
 	
-	public void addBid(Clan clan, long bid, long bidTime)
+	public void addBid(Clan clan, long bid, DateTime bidTime)
 	{
 		if (_bidders == null)
 		{
@@ -70,21 +69,25 @@ public class ClanHallAuction
 				}
 			}
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(INSERT_CLANHALL_BIDDER);
-			ps.setInt(1, _clanHallId);
-			ps.setInt(2, clan.getId());
-			ps.setLong(3, bid);
-			ps.setLong(4, bidTime);
-			ps.execute();
+			ctx.ClanHallBidders.Add(new DbClanHallBidder()
+			{
+				ClanHallId = _clanHallId,
+				ClanId = clan.getId(),
+				Bid = bid,
+				BidTime = bidTime
+			});
+			
+			ctx.SaveChanges();
 			_bidders.put(clan.getId(), new Bidder(clan, bid, bidTime));
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Failed insert clan hall auctions bidder " + clan.getName() + " for clan hall " + _clanHallId + ": " + e);
+			LOGGER.Error("Failed insert clan hall auctions bidder " + clan.getName() + " for clan hall " + _clanHallId +
+			            ": " + e);
 		}
 	}
 	
@@ -94,13 +97,12 @@ public class ClanHallAuction
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(DELETE_CLANHALL_BIDDER);
-			ps.setInt(1, clan.getId());
-			ps.execute();
+			int clanId = clan.getId();
+			ctx.ClanHallBidders.Where(c => c.ClanId == clanId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Failed clearing bidder " + clan.getName() + " for clan hall " + _clanHallId + ": " + e);
+			LOGGER.Error("Failed clearing bidder " + clan.getName() + " for clan hall " + _clanHallId + ": " + e);
 		}
 	}
 
@@ -145,9 +147,7 @@ public class ClanHallAuction
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				PreparedStatement ps = con.prepareStatement(DELETE_CLANHALL_BIDDERS);
-				ps.setInt(1, _clanHallId);
-				ps.execute();
+				ctx.ClanHallBidders.Where(r => r.ClanHallId == _clanHallId).ExecuteDelete();
 			}
 			catch (Exception e)
 			{

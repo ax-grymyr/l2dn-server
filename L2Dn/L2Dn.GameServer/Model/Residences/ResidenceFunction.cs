@@ -1,6 +1,11 @@
+using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Utilities;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Residences;
 
@@ -11,11 +16,11 @@ public class ResidenceFunction
 {
 	private readonly int _id;
 	private readonly int _level;
-	private long _expiration;
+	private DateTime _expiration;
 	private readonly AbstractResidence _residense;
-	private ScheduledFuture<?> _task;
+	private ScheduledFuture _task;
 
-	public ResidenceFunction(int id, int level, long expiration, AbstractResidence residense)
+	public ResidenceFunction(int id, int level, DateTime expiration, AbstractResidence residense)
 	{
 		_id = id;
 		_level = level;
@@ -29,7 +34,7 @@ public class ResidenceFunction
 		_id = id;
 		_level = level;
 		ResidenceFunctionTemplate template = getTemplate();
-		_expiration = Instant.now().toEpochMilli() + template.getDuration().toMillis();
+		_expiration = DateTime.UtcNow + template.getDuration();
 		_residense = residense;
 		init();
 	}
@@ -40,9 +45,9 @@ public class ResidenceFunction
 	private void init()
 	{
 		ResidenceFunctionTemplate template = getTemplate();
-		if ((template != null) && (_expiration > System.currentTimeMillis()))
+		if ((template != null) && (_expiration > DateTime.UtcNow))
 		{
-			_task = ThreadPool.schedule(this::onFunctionExpiration, _expiration - System.currentTimeMillis());
+			_task = ThreadPool.schedule(onFunctionExpiration, _expiration - DateTime.UtcNow);
 		}
 	}
 
@@ -65,7 +70,7 @@ public class ResidenceFunction
 	/**
 	 * @return the expiration of this function instance
 	 */
-	public long getExpiration()
+	public DateTime getExpiration()
 	{
 		return _expiration;
 	}
@@ -116,7 +121,7 @@ public class ResidenceFunction
 			Clan clan = ClanTable.getInstance().getClan(_residense.getOwnerId());
 			if (clan != null)
 			{
-				clan.broadcastToOnlineMembers(new AgitDecoInfo(_residense));
+				clan.broadcastToOnlineMembers(new AgitDecoInfoPacket(_residense));
 			}
 		}
 	}
@@ -147,7 +152,7 @@ public class ResidenceFunction
 
 		if (wh.destroyItem("FunctionFee", item, template.getCost().getCount(), null, this) != null)
 		{
-			_expiration = System.currentTimeMillis() + (template.getDuration().getSeconds() * 1000);
+			_expiration = DateTime.UtcNow + template.getDuration();
 			init();
 		}
 

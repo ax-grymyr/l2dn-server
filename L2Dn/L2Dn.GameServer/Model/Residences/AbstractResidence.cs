@@ -1,10 +1,12 @@
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Residences;
@@ -108,31 +110,28 @@ public abstract class AbstractResidence: ListenersContainer, INamable
 	 */
 	protected void initFunctions()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM residence_functions WHERE residenceId = ?");
-			ps.setInt(1, _residenceId);
+			var query = ctx.ResidenceFunctions.Where(r => r.ResidenceId == _residenceId);
+			foreach (var record in query)
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
+				int id = record.Id;
+				int level = record.Level;
+				DateTime expiration = record.Expiration;
+				ResidenceFunction func = new ResidenceFunction(id, level, expiration, this);
+				if ((expiration <= DateTime.UtcNow) && !func.reactivate())
 				{
-					int id = rs.getInt("id");
-					int level = rs.getInt("level");
-					long expiration = rs.getLong("expiration");
-					ResidenceFunction func = new ResidenceFunction(id, level, expiration, this);
-					if ((expiration <= System.currentTimeMillis()) && !func.reactivate())
-					{
-						removeFunction(func);
-						continue;
-					}
-					_functions.put(id, func);
+					removeFunction(func);
+					continue;
 				}
+
+				_functions.put(id, func);
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Failed to initialize functions for residence: " + _residenceId + ": " + e);
+			LOGGER.Error("Failed to initialize functions for residence: " + _residenceId + ": " + e);
 		}
 	}
 	
@@ -150,15 +149,21 @@ public abstract class AbstractResidence: ListenersContainer, INamable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(
-				"INSERT INTO residence_functions (id, level, expiration, residenceId) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE level = ?, expiration = ?");
-			ps.setInt(1, func.getId());
-			ps.setInt(2, func.getLevel());
-			ps.setLong(3, func.getExpiration());
-			ps.setInt(4, _residenceId);
-			ps.setInt(5, func.getLevel());
-			ps.setLong(6, func.getExpiration());
-			ps.execute();
+			int funcId = func.getId();
+			var record = ctx.ResidenceFunctions.SingleOrDefault(r =>
+				r.ResidenceId == _residenceId && r.Id == funcId);
+
+			if (record == null)
+			{
+				record = new DbResidenceFunction();
+				record.ResidenceId = _residenceId;
+				record.Id = funcId;
+				ctx.ResidenceFunctions.Add(record);
+			}
+
+			record.Level = func.getLevel();
+			record.Expiration = func.getExpiration();
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -183,15 +188,12 @@ public abstract class AbstractResidence: ListenersContainer, INamable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement("DELETE FROM residence_functions WHERE residenceId = ? and id = ?");
-			ps.setInt(1, _residenceId);
-			ps.setInt(2, func.getId());
-			ps.execute();
+			int funcId = func.getId();
+			ctx.ResidenceFunctions.Where(r => r.ResidenceId == _residenceId && r.Id == funcId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Failed to remove function: " + func.getId() + " residence: " + _residenceId + ": " + e);
+			LOGGER.Error("Failed to remove function: " + func.getId() + " residence: " + _residenceId + ": " + e);
 		}
 		finally
 		{
@@ -208,13 +210,11 @@ public abstract class AbstractResidence: ListenersContainer, INamable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM residence_functions WHERE residenceId = ?");
-			ps.setInt(1, _residenceId);
-			ps.execute();
+			ctx.ResidenceFunctions.Where(r => r.ResidenceId == _residenceId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Failed to remove functions for residence: " + _residenceId + ": " + e);
+			LOGGER.Error("Failed to remove functions for residence: " + _residenceId + ": " + e);
 		}
 		finally
 		{
@@ -303,10 +303,10 @@ public abstract class AbstractResidence: ListenersContainer, INamable
 	 * @param type
 	 * @return the expiration of function by type, -1 if not available
 	 */
-	public long getFunctionExpiration(ResidenceFunctionType type)
+	public DateTime? getFunctionExpiration(ResidenceFunctionType type)
 	{
 		ResidenceFunction function = null;
-		foreach (ResidenceFunction func  in  _functions.values())
+		foreach (ResidenceFunction func in _functions.values())
 		{
 			if (func.getTemplate().getType() == type)
 			{
@@ -314,7 +314,8 @@ public abstract class AbstractResidence: ListenersContainer, INamable
 				break;
 			}
 		}
-		return function != null ? function.getExpiration() : -1;
+
+		return function?.getExpiration();
 	}
 	
 	/**

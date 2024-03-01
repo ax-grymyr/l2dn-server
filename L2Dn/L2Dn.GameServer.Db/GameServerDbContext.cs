@@ -108,6 +108,8 @@ public class GameServerDbContext: DbContext
     public DbSet<ClanSubPledge> ClanSubPledges => Set<ClanSubPledge>();
     public DbSet<ClanNotice> ClanNotices => Set<ClanNotice>();
     public DbSet<ClanWar> ClanWars => Set<ClanWar>();
+    public DbSet<DbClanHall> ClanHalls => Set<DbClanHall>();
+    public DbSet<DbClanHallBidder> ClanHallBidders => Set<DbClanHallBidder>();
     public DbSet<PledgeApplicant> PledgeApplicants => Set<PledgeApplicant>();
     public DbSet<PledgeRecruit> PledgeRecruits => Set<PledgeRecruit>();
     public DbSet<PledgeWaitingList> PledgeWaitingLists => Set<PledgeWaitingList>();
@@ -145,4 +147,6 @@ public class GameServerDbContext: DbContext
     public DbSet<DbBuyList> BuyLists => Set<DbBuyList>();
 
     public DbSet<DbPartyMatchingHistory> PartyMatchingHistory => Set<DbPartyMatchingHistory>();
+
+    public DbSet<DbResidenceFunction> ResidenceFunctions => Set<DbResidenceFunction>();
 }

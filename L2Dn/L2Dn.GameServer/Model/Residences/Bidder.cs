@@ -1,5 +1,4 @@
 using L2Dn.GameServer.Model.Clans;
-using L2Dn.GameServer.Model.Zones;
 
 namespace L2Dn.GameServer.Model.Residences;
 
@@ -10,13 +9,13 @@ public class Bidder
 {
 	private readonly Clan _clan;
 	private readonly long _bid;
-	private readonly long _time;
+	private readonly DateTime _time;
 
-	public Bidder(Clan clan, long bid, long time)
+	public Bidder(Clan clan, long bid, DateTime time)
 	{
 		_clan = clan;
 		_bid = bid;
-		_time = time == 0 ? Instant.now().toEpochMilli() : time;
+		_time = time;
 	}
 
 	public Clan getClan()
@@ -39,14 +38,8 @@ public class Bidder
 		return _bid;
 	}
 
-	public long getTime()
+	public DateTime getTime()
 	{
 		return _time;
-	}
-
-	public String getFormattedTime()
-	{
-		return DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")
-			.format(Instant.ofEpochMilli(_time).atZone(ZoneId.systemDefault()));
 	}
 }
