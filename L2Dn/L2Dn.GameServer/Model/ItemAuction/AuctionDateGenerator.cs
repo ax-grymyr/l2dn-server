@@ -12,20 +12,20 @@ public class AuctionDateGenerator
 	private DateTime _calendar;
 	
 	private readonly int _interval;
-	private int _day_of_week;
-	private int _hour_of_day;
-	private int _minute_of_hour;
+	private DayOfWeek? _dayOfWeek;
+	private int _hourOfDay;
+	private int _minuteOfHour;
 	
 	public AuctionDateGenerator(StatSet config)
 	{
 		_calendar = DateTime.UtcNow;
 		_interval = config.getInt(FIELD_INTERVAL, -1);
 		// NC week start in Monday.
-		int fixedDayWeek = config.getInt(FIELD_DAY_OF_WEEK, -1) + 1;
-		_day_of_week = (fixedDayWeek > 7) ? 1 : fixedDayWeek;
-		_hour_of_day = config.getInt(FIELD_HOUR_OF_DAY, -1);
-		_minute_of_hour = config.getInt(FIELD_MINUTE_OF_HOUR, -1);
-		checkDayOfWeek(-1);
+		int fixedDayWeek = config.getInt(FIELD_DAY_OF_WEEK, -1);
+		_dayOfWeek = fixedDayWeek == -1 ? null : (DayOfWeek)fixedDayWeek;
+		_hourOfDay = config.getInt(FIELD_HOUR_OF_DAY, -1);
+		_minuteOfHour = config.getInt(FIELD_MINUTE_OF_HOUR, -1);
+		checkDayOfWeek(null);
 		checkHourOfDay(-1);
 		checkMinuteOfHour(0);
 	}
@@ -33,18 +33,23 @@ public class AuctionDateGenerator
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public DateTime nextDate(DateTime date)
 	{
-		_calendar = new DateTime(date.Year, date.Month, date.Day, _hour_of_day, _minute_of_hour, 0);
-		if (_day_of_week > 0)
+		_calendar = new DateTime(date.Year, date.Month, date.Day, _hourOfDay, _minuteOfHour, 0);
+		if (_dayOfWeek > 0)
 		{
-			_calendar.set(Calendar.DAY_OF_WEEK, _day_of_week);
-			return calcDestTime(_calendar.getTimeInMillis(), date, MILLIS_IN_WEEK);
+			while (_calendar.DayOfWeek != _dayOfWeek)
+			{
+				_calendar = _calendar.AddDays(1);
+			}
+
+			return calcDestTime(_calendar, date, TimeSpan.FromDays(7));
 		}
-		return calcDestTime(_calendar.getTimeInMillis(), date, TimeUnit.MILLISECONDS.convert(_interval, TimeUnit.DAYS));
+		
+		return calcDestTime(_calendar, date, TimeSpan.FromDays(_interval));
 	}
 	
-	private long calcDestTime(long timeValue, long date, long add)
+	private static DateTime calcDestTime(DateTime timeValue, DateTime date, TimeSpan add)
 	{
-		long time = timeValue;
+		DateTime time = timeValue;
 		if (time < date)
 		{
 			time += ((date - time) / add) * add;
@@ -53,18 +58,20 @@ public class AuctionDateGenerator
 				time += add;
 			}
 		}
+		
 		return time;
 	}
 	
-	private void checkDayOfWeek(int defaultValue)
+	private void checkDayOfWeek(DayOfWeek? defaultValue)
 	{
-		if ((_day_of_week < 1) || (_day_of_week > 7))
+		if ((_dayOfWeek < DayOfWeek.Sunday) || (_dayOfWeek > DayOfWeek.Saturday))
 		{
-			if ((defaultValue == -1) && (_interval < 1))
+			if ((defaultValue == null) && (_interval < 1))
 			{
-				throw new ArgumentException("Illegal params for '" + FIELD_DAY_OF_WEEK + "': " + (_day_of_week == -1 ? "not found" : _day_of_week));
+				throw new ArgumentException("Illegal params for '" + FIELD_DAY_OF_WEEK + "': " + (_dayOfWeek == null ? "not found" : _dayOfWeek));
 			}
-			_day_of_week = defaultValue;
+			
+			_dayOfWeek = defaultValue;
 		}
 		else if (_interval > 1)
 		{
@@ -74,25 +81,25 @@ public class AuctionDateGenerator
 	
 	private void checkHourOfDay(int defaultValue)
 	{
-		if ((_hour_of_day < 0) || (_hour_of_day > 23))
+		if ((_hourOfDay < 0) || (_hourOfDay > 23))
 		{
 			if (defaultValue == -1)
 			{
-				throw new ArgumentException("Illegal params for '" + FIELD_HOUR_OF_DAY + "': " + (_hour_of_day == -1 ? "not found" : _hour_of_day));
+				throw new ArgumentException("Illegal params for '" + FIELD_HOUR_OF_DAY + "': " + (_hourOfDay == -1 ? "not found" : _hourOfDay));
 			}
-			_hour_of_day = defaultValue;
+			_hourOfDay = defaultValue;
 		}
 	}
 	
 	private void checkMinuteOfHour(int defaultValue)
 	{
-		if ((_minute_of_hour < 0) || (_minute_of_hour > 59))
+		if ((_minuteOfHour < 0) || (_minuteOfHour > 59))
 		{
 			if (defaultValue == -1)
 			{
-				throw new ArgumentException("Illegal params for '" + FIELD_MINUTE_OF_HOUR + "': " + (_minute_of_hour == -1 ? "not found" : _minute_of_hour));
+				throw new ArgumentException("Illegal params for '" + FIELD_MINUTE_OF_HOUR + "': " + (_minuteOfHour == -1 ? "not found" : _minuteOfHour));
 			}
-			_minute_of_hour = defaultValue;
+			_minuteOfHour = defaultValue;
 		}
 	}
 }

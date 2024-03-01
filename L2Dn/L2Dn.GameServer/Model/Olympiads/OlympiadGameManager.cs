@@ -42,7 +42,7 @@ public class OlympiadGameManager: Runnable
 		LOGGER.Info("Olympiad System: Loaded " + _tasks.size() + " stadiums.");
 	}
 	
-	protected bool isBattleStarted()
+	public bool isBattleStarted()
 	{
 		return _battleStarted;
 	}

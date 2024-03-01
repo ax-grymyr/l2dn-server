@@ -19,7 +19,7 @@ public class ItemAuctionManager: DataReaderBase
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ItemAuctionManager));
 	
 	private readonly Map<int, ItemAuctionInstance> _managerInstances = new();
-	private int _auctionIds;
+	private AtomicInteger _auctionIds = new AtomicInteger();
 	
 	protected ItemAuctionManager()
 	{
@@ -32,7 +32,7 @@ public class ItemAuctionManager: DataReaderBase
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			_auctionIds = ctx.ItemAuctions.Select(a => a.AuctionId).OrderByDescending(a => a).FirstOrDefault();
+			_auctionIds.set(ctx.ItemAuctions.Select(a => a.AuctionId).OrderByDescending(a => a).FirstOrDefault());
 		}
 		catch (Exception e)
 		{
@@ -60,7 +60,7 @@ public class ItemAuctionManager: DataReaderBase
 			if (_managerInstances.containsKey(instanceId))
 				throw new Exception("Dublicated instanceId " + instanceId);
 			
-			ItemAuctionInstance instance = new ItemAuctionInstance(instanceId, ref _auctionIds, element);
+			ItemAuctionInstance instance = new ItemAuctionInstance(instanceId, _auctionIds, element);
 			_managerInstances.put(instanceId, instance);
 		}
 		catch (Exception e)
@@ -84,7 +84,7 @@ public class ItemAuctionManager: DataReaderBase
 	
 	public int getNextAuctionId()
 	{
-		return Interlocked.Increment(ref _auctionIds);
+		return _auctionIds.incrementAndGet();
 	}
 	
 	public static void deleteAuction(int auctionId)

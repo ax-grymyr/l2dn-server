@@ -1214,12 +1214,12 @@ public class Item: WorldObject
 			{
 				if (!_itemTemplate.getAttributes().isEmpty())
 				{
-					return _itemTemplate.getAttributes().iterator().next();
+					return _itemTemplate.getAttributes().First();
 				}
 			}
 			else if ((_elementals != null) && !_elementals.isEmpty())
 			{
-				return _elementals.values().iterator().next();
+				return _elementals.values().First();
 			}
 		}
 		return null;

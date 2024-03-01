@@ -15,7 +15,7 @@ public class Participant
 	private readonly CharacterClass baseClass;
 	private bool disconnected = false;
 	private bool defaulted = false;
-	private readonly StatSet stats;
+	private readonly NobleData stats;
 	public String clanName;
 	public int? clanId;
 
@@ -55,15 +55,6 @@ public class Participant
 		}
 
 		return (player != null);
-	}
-
-	/**
-	 * @param statName
-	 * @param increment
-	 */
-	public void updateStat(String statName, int increment)
-	{
-		stats.set(statName, Math.Max(stats.getInt(statName) + increment, 0));
 	}
 
 	/**
@@ -109,7 +100,7 @@ public class Participant
 	/**
 	 * @return the stats
 	 */
-	public StatSet getStats()
+	public NobleData getStats()
 	{
 		return stats;
 	}

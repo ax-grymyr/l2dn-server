@@ -47,7 +47,7 @@ public class WarehouseItem
 	private readonly ICollection<EnsoulOption> _soulCrystalOptions;
 	private readonly ICollection<EnsoulOption> _soulCrystalSpecialOptions;
 	
-	private readonly int _time;
+	private readonly TimeSpan? _time;
 	private readonly bool _isBlessed;
 	
 	public WarehouseItem(Item item)
@@ -64,7 +64,7 @@ public class WarehouseItem
 		_grade = item.getTemplate().getCrystalType();
 		_augmentation = item.getAugmentation();
 		_mana = item.getMana();
-		_time = item.isTimeLimitedItem() ? (int) (item.getRemainingTime() / 1000) : -1;
+		_time = item.isTimeLimitedItem() ? item.getRemainingTime() : null;
 		_elemAtkType = item.getAttackAttributeType();
 		_elemAtkPower = item.getAttackAttributePower();
 		foreach (AttributeType type in Enum.GetValues<AttributeType>())
@@ -267,7 +267,7 @@ public class WarehouseItem
 		return _soulCrystalSpecialOptions;
 	}
 	
-	public int getTime()
+	public TimeSpan? getTime()
 	{
 		return _time;
 	}

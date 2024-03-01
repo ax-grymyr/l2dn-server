@@ -106,9 +106,9 @@ public class InstanceManager: DataReaderBase
 			{
 				case "time":
 				{
-					template.setDuration(innerNode.Attribute("duration").GetInt32(-1));
-					template.setEmptyDestroyTime(innerNode.Attribute("empty").GetInt32(-1));
-					template.setEjectTime(innerNode.Attribute("eject").GetInt32(-1));
+					template.setDuration(TimeSpan.FromMinutes(innerNode.Attribute("duration").GetInt32(-1)));
+					template.setEmptyDestroyTime(TimeSpan.FromMinutes(innerNode.Attribute("empty").GetInt32(-1)));
+					template.setEjectTime(TimeSpan.FromMinutes(innerNode.Attribute("eject").GetInt32(-1)));
 					break;
 				}
 				case "misc":
@@ -225,7 +225,7 @@ public class InstanceManager: DataReaderBase
 						int time = e.Attribute("time").GetInt32(-1);
 						if (time > 0)
 						{
-							data.add(new InstanceReenterTimeHolder(time));
+							data.add(new InstanceReenterTimeHolder(TimeSpan.FromMinutes(time)));
 						}
 						else
 						{

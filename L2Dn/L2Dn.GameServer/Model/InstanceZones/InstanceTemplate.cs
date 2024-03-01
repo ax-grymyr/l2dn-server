@@ -24,7 +24,7 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 	private String _name = "UnknownInstance";
 	private TimeSpan _duration;
 	private TimeSpan _emptyDestroyTime;
-	private int _ejectTime = Config.EJECT_DEAD_PLAYER_TIME;
+	private TimeSpan _ejectTime = TimeSpan.FromMinutes(Config.EJECT_DEAD_PLAYER_TIME);
 	private int _maxWorldCount = -1;
 	private bool _isPvP = false;
 	private bool _allowPlayerSummon = false;
@@ -105,9 +105,9 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 	 * Default: {@link Config#EJECT_DEAD_PLAYER_TIME}
 	 * @param ejectTime time in minutes
 	 */
-	public void setEjectTime(int ejectTime)
+	public void setEjectTime(TimeSpan ejectTime)
 	{
-		if (ejectTime >= 0)
+		if (ejectTime >= TimeSpan.Zero)
 		{
 			_ejectTime = ejectTime;
 		}
@@ -389,7 +389,7 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 	 * Get time after dead player is ejected from instance world.
 	 * @return time in minutes
 	 */
-	public int getEjectTime()
+	public TimeSpan getEjectTime()
 	{
 		return _ejectTime;
 	}

@@ -159,10 +159,14 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 		_icon = set.getString("icon", null);
 		_weight = set.getInt("weight", 0);
 		_materialType = set.getEnum("material", MaterialType.STEEL);
-		_equipReuseDelay = set.getInt("equip_reuse_delay", 0) * 1000;
+		_equipReuseDelay = TimeSpan.FromSeconds(set.getInt("equip_reuse_delay", 0));
 		_duration = set.getInt("duration", -1);
-		_time = set.getInt("time", -1);
-		_autoDestroyTime = set.getInt("auto_destroy_time", -1) * 1000;
+		
+		int time = set.getInt("time", -1);
+		_time = time < 0 ? null : TimeSpan.FromMilliseconds(time);
+
+		int autoDestroyTime = set.getInt("auto_destroy_time", -1); 
+		_autoDestroyTime = autoDestroyTime < 0 ? null : TimeSpan.FromSeconds(autoDestroyTime);
 		_bodyPart = ItemData.SLOTS.get(set.getString("bodypart", "none"));
 		_referencePrice = set.getInt("price", 0);
 		_crystalType = set.getEnum("crystal_type", CrystalType.NONE);
@@ -290,7 +294,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	/**
 	 * @return the auto destroy time of the item in seconds: 0 or less - default
 	 */
-	public TimeSpan getAutoDestroyTime()
+	public TimeSpan? getAutoDestroyTime()
 	{
 		return _autoDestroyTime;
 	}

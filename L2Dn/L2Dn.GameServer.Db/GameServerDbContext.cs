@@ -72,6 +72,14 @@ public class GameServerDbContext: DbContext
     public DbSet<CharacterSurveillance> CharacterSurveillances => Set<CharacterSurveillance>();
     public DbSet<CharacterPremiumItem> CharacterPremiumItems => Set<CharacterPremiumItem>();
     public DbSet<CharacterVariable> CharacterVariables => Set<CharacterVariable>();
+
+    public DbSet<DbHero> Heroes => Set<DbHero>();
+    public DbSet<DbHeroDiary> HeroesDiary => Set<DbHeroDiary>();
+    public DbSet<DbOlympiadData> OlympiadData => Set<DbOlympiadData>();
+    public DbSet<DbOlympiadFight> OlympiadFights => Set<DbOlympiadFight>();
+    public DbSet<OlympiadNoble> OlympiadNobles => Set<OlympiadNoble>();
+    public DbSet<OlympiadNobleEom> OlympiadNoblesEom => Set<OlympiadNobleEom>();
+
     
     public DbSet<Pet> Pets => Set<Pet>();
     public DbSet<PetEvolve> PetEvolves => Set<PetEvolve>();
@@ -80,8 +88,6 @@ public class GameServerDbContext: DbContext
 
     public DbSet<DbSummonSkillReuse> SummonSkillReuses => Set<DbSummonSkillReuse>();
     
-    
-    public DbSet<OlympiadNoble> OlympiadNobles => Set<OlympiadNoble>();
     
     public DbSet<DbItem> Items => Set<DbItem>();
     public DbSet<DbItemVariation> ItemVariations => Set<DbItemVariation>();

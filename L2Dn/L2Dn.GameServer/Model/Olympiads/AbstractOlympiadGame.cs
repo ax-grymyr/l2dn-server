@@ -34,7 +34,7 @@ public abstract class AbstractOlympiadGame
 	protected const String COMP_DONE_WEEK_NON_CLASSED = "competitions_done_week_non_classed";
 	protected const String COMP_DONE_WEEK_TEAM = "competitions_done_week_team";
 	
-	protected DateTime? _startTime;
+	protected DateTime _startTime;
 	protected bool _aborted = false;
 	protected readonly int _stadiumId;
 	
@@ -61,7 +61,7 @@ public abstract class AbstractOlympiadGame
 	
 	protected void addPointsToParticipant(Participant par, int points)
 	{
-		par.updateStat(POINTS, points);
+		par.getStats().OlympiadPoints += points;
 		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_EARNED_OLYMPIAD_POINTS_X_S2);
 		sm.Params.addString(par.getName());
 		sm.Params.addInt(points);
@@ -70,7 +70,7 @@ public abstract class AbstractOlympiadGame
 	
 	protected void removePointsFromParticipant(Participant par, int points)
 	{
-		par.updateStat(POINTS, -points);
+		par.getStats().OlympiadPoints -= points;
 		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_LOST_OLYMPIAD_POINTS_X_S2);
 		sm.Params.addString(par.getName());
 		sm.Params.addInt(points);
@@ -400,7 +400,7 @@ public abstract class AbstractOlympiadGame
 		}
 	}
 	
-	public static void rewardParticipant(Player player, List<ItemHolder> list)
+	public static void rewardParticipant(Player player, IReadOnlyList<ItemHolder> list)
 	{
 		if ((player == null) || !player.isOnline() || (list == null))
 		{
@@ -430,7 +430,7 @@ public abstract class AbstractOlympiadGame
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn(e);
+			LOGGER.Error(e);
 		}
 	}
 	

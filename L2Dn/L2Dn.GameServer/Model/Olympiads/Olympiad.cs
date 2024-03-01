@@ -1,12 +1,18 @@
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using L2Dn.Configuration;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Olympiads;
 
@@ -18,38 +24,19 @@ public class Olympiad: ListenersContainer
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(Olympiad));
 	protected static readonly Logger LOGGER_OLYMPIAD = LogManager.GetLogger("olympiad");
 	
-	private static readonly Map<int, StatSet> NOBLES = new();
+	private static readonly Map<int, NobleData> NOBLES = new();
 	private static readonly Map<int, int> NOBLES_RANK = new();
 	
 	public const String OLYMPIAD_HTML_PATH = "data/html/olympiad/";
-	private const String OLYMPIAD_LOAD_DATA = "SELECT current_cycle, period, olympiad_end, validation_end, next_weekly_change FROM olympiad_data WHERE id = 0";
-	private const String OLYMPIAD_SAVE_DATA = "INSERT INTO olympiad_data (id, current_cycle, period, olympiad_end, validation_end, next_weekly_change) VALUES (0,?,?,?,?,?) ON DUPLICATE KEY UPDATE current_cycle=?, period=?, olympiad_end=?, validation_end=?, next_weekly_change=?";
-	private const String OLYMPIAD_LOAD_NOBLES = "SELECT olympiad_nobles.charId, olympiad_nobles.class_id, characters.char_name, olympiad_nobles.olympiad_points, olympiad_nobles.competitions_done, olympiad_nobles.competitions_won, olympiad_nobles.competitions_lost, olympiad_nobles.competitions_drawn, olympiad_nobles.competitions_done_week FROM olympiad_nobles, characters WHERE characters.charId = olympiad_nobles.charId";
-	private const String OLYMPIAD_SAVE_NOBLES = "INSERT INTO olympiad_nobles (`charId`,`class_id`,`olympiad_points`,`competitions_done`,`competitions_won`,`competitions_lost`,`competitions_drawn`, `competitions_done_week`) VALUES (?,?,?,?,?,?,?,?)";
-	private const String OLYMPIAD_UPDATE_NOBLES = "UPDATE olympiad_nobles SET olympiad_points = ?, competitions_done = ?, competitions_won = ?, competitions_lost = ?, competitions_drawn = ?, competitions_done_week = ? WHERE charId = ?";
-	private const String OLYMPIAD_GET_HEROS = "SELECT olympiad_nobles.charId, characters.char_name FROM olympiad_nobles, characters WHERE characters.charId = olympiad_nobles.charId AND olympiad_nobles.class_id in (?, ?) AND olympiad_nobles.competitions_done >= " + Config.ALT_OLY_MIN_MATCHES + " AND olympiad_nobles.competitions_won > 0 ORDER BY olympiad_nobles.olympiad_points DESC, olympiad_nobles.competitions_done DESC, olympiad_nobles.competitions_won DESC";
-	private const String OLYMPIAD_GET_LEGEND = "SELECT olympiad_nobles.charId FROM olympiad_nobles WHERE olympiad_nobles.competitions_done >=" + Config.ALT_OLY_MIN_MATCHES + " ORDER BY olympiad_nobles.olympiad_points DESC LIMIT 1";
-	private const String GET_ALL_CLASSIFIED_NOBLESS = "SELECT charId from olympiad_nobles_eom WHERE competitions_done >= " + Config.ALT_OLY_MIN_MATCHES + " ORDER BY olympiad_points DESC, competitions_done DESC, competitions_won DESC";
-	private const String GET_EACH_CLASS_LEADER = "SELECT characters.char_name from olympiad_nobles_eom, characters WHERE characters.charId = olympiad_nobles_eom.charId AND olympiad_nobles_eom.class_id = ? AND olympiad_nobles_eom.competitions_done >= " + Config.ALT_OLY_MIN_MATCHES + " ORDER BY olympiad_nobles_eom.olympiad_points DESC, olympiad_nobles_eom.competitions_done DESC, olympiad_nobles_eom.competitions_won DESC LIMIT 10";
-	private const String GET_EACH_CLASS_LEADER_CURRENT = "SELECT characters.char_name from olympiad_nobles, characters WHERE characters.charId = olympiad_nobles.charId AND olympiad_nobles.class_id = ? AND olympiad_nobles.competitions_done >= " + Config.ALT_OLY_MIN_MATCHES + " ORDER BY olympiad_nobles.olympiad_points DESC, olympiad_nobles.competitions_done DESC, olympiad_nobles.competitions_won DESC LIMIT 10";
-	private const String GET_EACH_CLASS_LEADER_SOULHOUND = "SELECT characters.char_name from olympiad_nobles_eom, characters WHERE characters.charId = olympiad_nobles_eom.charId AND (olympiad_nobles_eom.class_id = ? OR olympiad_nobles_eom.class_id = 133) AND olympiad_nobles_eom.competitions_done >= " + Config.ALT_OLY_MIN_MATCHES + " ORDER BY olympiad_nobles_eom.olympiad_points DESC, olympiad_nobles_eom.competitions_done DESC, olympiad_nobles_eom.competitions_won DESC LIMIT 10";
-	private const String GET_EACH_CLASS_LEADER_CURRENT_SOULHOUND = "SELECT characters.char_name from olympiad_nobles, characters WHERE characters.charId = olympiad_nobles.charId AND (olympiad_nobles.class_id = ? OR olympiad_nobles.class_id = 133) AND olympiad_nobles.competitions_done >= " + Config.ALT_OLY_MIN_MATCHES + " ORDER BY olympiad_nobles.olympiad_points DESC, olympiad_nobles.competitions_done DESC, olympiad_nobles.competitions_won DESC LIMIT 10";
-	
-	private const String REMOVE_UNCLAIMED_POINTS = "DELETE FROM character_variables WHERE charId=? AND var=?";
-	private const String INSERT_UNCLAIMED_POINTS = "INSERT INTO character_variables (charId, var, val) VALUES (?, ?, ?)";
 	public const String UNCLAIMED_OLYMPIAD_POINTS_VAR = "UNCLAIMED_OLYMPIAD_POINTS";
-	
-	private const String OLYMPIAD_DELETE_ALL = "TRUNCATE olympiad_nobles";
-	private const String OLYMPIAD_MONTH_CLEAR = "TRUNCATE olympiad_nobles_eom";
-	private const String OLYMPIAD_MONTH_CREATE = "INSERT INTO olympiad_nobles_eom SELECT charId, class_id, olympiad_points, competitions_done, competitions_won, competitions_lost, competitions_drawn FROM olympiad_nobles";
 	
 	private static readonly Set<int> HERO_IDS = CategoryData.getInstance().getCategoryByType(CategoryType.FOURTH_CLASS_GROUP);
 	
-	private static readonly int COMP_START = Config.ALT_OLY_START_TIME; // 6PM
-	private static readonly int COMP_MIN = Config.ALT_OLY_MIN; // 00 mins
-	private static readonly long COMP_PERIOD = Config.ALT_OLY_CPERIOD; // 6 hours
-	protected static readonly long WEEKLY_PERIOD = Config.ALT_OLY_WPERIOD; // 1 week
-	protected static readonly long VALIDATION_PERIOD = Config.ALT_OLY_VPERIOD; // 24 hours
+	private static readonly int COMP_START_HOUR = Config.ALT_OLY_START_TIME; // 6PM
+	private static readonly int COMP_START_MIN = Config.ALT_OLY_MIN; // 00 mins
+	private static readonly TimeSpan COMP_PERIOD = TimeSpan.FromMilliseconds(Config.ALT_OLY_CPERIOD); // 6 hours
+	protected static readonly TimeSpan WEEKLY_PERIOD = TimeSpan.FromMilliseconds(Config.ALT_OLY_WPERIOD); // 1 week
+	protected static readonly TimeSpan VALIDATION_PERIOD = TimeSpan.FromMilliseconds(Config.ALT_OLY_VPERIOD); // 24 hours
 	
 	public static readonly int DEFAULT_POINTS = Config.ALT_OLY_START_POINTS;
 	protected static readonly int WEEKLY_POINTS = Config.ALT_OLY_WEEKLY_POINTS;
@@ -64,8 +51,8 @@ public class Olympiad: ListenersContainer
 	public const String COMP_DRAWN = "competitions_drawn";
 	public const String COMP_DONE_WEEK = "competitions_done_week";
 	
-	protected long _olympiadEnd;
-	protected long _validationEnd;
+	protected DateTime _olympiadEnd;
+	protected DateTime _validationEnd;
 	
 	/**
 	 * The current period of the olympiad.<br>
@@ -73,10 +60,10 @@ public class Olympiad: ListenersContainer
 	 * <b>1 -</b> Validation Period
 	 */
 	protected int _period;
-	protected long _nextWeeklyChange;
+	protected DateTime _nextWeeklyChange;
 	protected int _currentCycle;
-	private long _compEnd;
-	private Calendar _compStart;
+	private DateTime _compEnd;
+	private DateTime _compStart;
 	public static bool _inCompPeriod;
 	protected static bool _compStarted = false;
 	protected ScheduledFuture _scheduledCompStart;
@@ -113,15 +100,14 @@ public class Olympiad: ListenersContainer
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(OLYMPIAD_LOAD_DATA);
-			ResultSet rset = statement.executeQuery();
-			while (rset.next())
+			var record = ctx.OlympiadData.SingleOrDefault(r => r.Id == 0);
+			if (record is not null)
 			{
-				_currentCycle = rset.getInt("current_cycle");
-				_period = rset.getInt("period");
-				_olympiadEnd = rset.getLong("olympiad_end");
-				_validationEnd = rset.getLong("validation_end");
-				_nextWeeklyChange = rset.getLong("next_weekly_change");
+				_currentCycle = record.CurrentCycle;
+				_period = record.Period;
+				_olympiadEnd = record.OlympiadEnd;
+				_validationEnd = record.ValidationEnd;
+				_nextWeeklyChange = record.NextWeeklyChange;
 				loaded = true;
 			}
 		}
@@ -133,12 +119,10 @@ public class Olympiad: ListenersContainer
 		if (!loaded)
 		{
 			// LOGGER.info("Olympiad System: Failed to load data from database, trying to load from file.");
-			
-			Properties olympiadProperties = new Properties();
+			ConfigurationParser parser = new ConfigurationParser();
 			try
 			{
-				InputStream @is = new FileInputStream(Config.OLYMPIAD_CONFIG_FILE);
-				olympiadProperties.load(@is);
+				parser.LoadConfig(Config.OLYMPIAD_CONFIG_FILE);
 			}
 			catch (Exception e)
 			{
@@ -146,19 +130,19 @@ public class Olympiad: ListenersContainer
 				return;
 			}
 			
-			_currentCycle = int.Parse(olympiadProperties.getProperty("CurrentCycle", "1"));
-			_period = int.Parse(olympiadProperties.getProperty("Period", "0"));
-			_olympiadEnd = long.Parse(olympiadProperties.getProperty("OlympiadEnd", "0"));
-			_validationEnd = long.Parse(olympiadProperties.getProperty("ValidationEnd", "0"));
-			_nextWeeklyChange = long.Parse(olympiadProperties.getProperty("NextWeeklyChange", "0"));
+			_currentCycle = parser.getInt("CurrentCycle", 1);
+			_period = parser.getInt("Period", 0);
+			_olympiadEnd = DateTime.MinValue; // parser.getLong("OlympiadEnd", 0);
+			_validationEnd = DateTime.MinValue; // parser.getLong("ValidationEnd", 0);
+			_nextWeeklyChange = DateTime.MinValue; // parser.getLong("NextWeeklyChange", 0);
 		}
 		
-		long currentTime = System.currentTimeMillis();
+		DateTime currentTime = DateTime.UtcNow;
 		switch (_period)
 		{
 			case 0:
 			{
-				if ((_olympiadEnd == 0) || (_olympiadEnd < currentTime))
+				if (_olympiadEnd < currentTime)
 				{
 					setNewOlympiadEnd();
 				}
@@ -173,7 +157,7 @@ public class Olympiad: ListenersContainer
 				if (_validationEnd > currentTime)
 				{
 					loadNoblesRank();
-					_scheduledValdationTask = ThreadPool.schedule(new ValidationEndTask(), getMillisToValidationEnd());
+					_scheduledValdationTask = ThreadPool.schedule(new ValidationEndTask(this), getMillisToValidationEnd());
 				}
 				else
 				{
@@ -194,28 +178,39 @@ public class Olympiad: ListenersContainer
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(OLYMPIAD_LOAD_NOBLES);
-			ResultSet rset = statement.executeQuery();
-			StatSet statData;
-			while (rset.next())
+			var query = from n in ctx.OlympiadNobles
+				from c in ctx.Characters
+				where n.CharacterId == c.Id
+				select new
+				{
+					n.CharacterId,
+					n.Class,
+					CharacterName = c.Name,
+					n.OlympiadPoints,
+					n.CompetitionsDone,
+					n.CompetitionsWon,
+					n.CompetitionsLost,
+					n.CompetitionsDrawn,
+					n.CompetitionsDoneWeek
+				};
+			
+			foreach (var record in query)
 			{
-				statData = new StatSet();
-				statData.set(CLASS_ID, rset.getInt(CLASS_ID));
-				statData.set(CHAR_NAME, rset.getString(CHAR_NAME));
-				statData.set(POINTS, rset.getInt(POINTS));
-				statData.set(COMP_DONE, rset.getInt(COMP_DONE));
-				statData.set(COMP_WON, rset.getInt(COMP_WON));
-				statData.set(COMP_LOST, rset.getInt(COMP_LOST));
-				statData.set(COMP_DRAWN, rset.getInt(COMP_DRAWN));
-				statData.set(COMP_DONE_WEEK, rset.getInt(COMP_DONE_WEEK));
-				statData.set("to_save", false);
-				
-				addNobleStats(rset.getInt(CHAR_ID), statData);
+				NobleData nobleData = new NobleData();
+				nobleData.Class = record.Class;
+				nobleData.CharacterName = record.CharacterName;
+				nobleData.OlympiadPoints = record.OlympiadPoints;
+				nobleData.CompetitionsDone = record.CompetitionsDone;
+				nobleData.CompetitionsWon = record.CompetitionsWon;
+				nobleData.CompetitionsLost = record.CompetitionsLost;
+				nobleData.CompetitionsDrawn = record.CompetitionsDrawn;
+				nobleData.CompetitionsDoneWeek = record.CompetitionsDoneWeek;
+				addNobleStats(record.CharacterId, nobleData);
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Olympiad System: Error loading noblesse data from database: ", e);
+			LOGGER.Error("Olympiad System: Error loading noblesse data from database: ", e);
 		}
 		
 		lock (this)
@@ -230,7 +225,7 @@ public class Olympiad: ListenersContainer
 				LOGGER.Info("Olympiad System: Currently in Validation Period");
 			}
 			
-			long milliToEnd;
+			TimeSpan milliToEnd;
 			if (_period == 0)
 			{
 				milliToEnd = getMillisToOlympiadEnd();
@@ -240,26 +235,12 @@ public class Olympiad: ListenersContainer
 				milliToEnd = getMillisToValidationEnd();
 			}
 			
-			double numSecs = (milliToEnd / 1000) % 60;
-			double countDown = ((milliToEnd / 1000.0) - numSecs) / 60;
-			int numMins = (int) Math.Floor(countDown % 60);
-			countDown = (countDown - numMins) / 60;
-			int numHours = (int) Math.Floor(countDown % 24);
-			int numDays = (int) Math.Floor((countDown - numHours) / 24);
-			
-			LOGGER.Info("Olympiad System: " + numDays + " days, " + numHours + " hours and " + numMins + " mins until period ends.");
+			LOGGER.Info("Olympiad System: " + milliToEnd.Days + " days, " + milliToEnd.Hours + " hours and " + milliToEnd.Minutes + " mins until period ends.");
 			
 			if (_period == 0)
 			{
 				milliToEnd = getMillisToWeekChange();
-				double numSecs2 = (milliToEnd / 1000) % 60;
-				double countDown2 = ((milliToEnd / 1000.) - numSecs2) / 60;
-				int numMins2 = (int) Math.Floor(countDown % 60);
-				countDown2 = (countDown2 - numMins) / 60;
-				int numHours2 = (int) Math.Floor(countDown2 % 24);
-				int numDays2 = (int) Math.Floor((countDown2 - numHours) / 24);
-				
-				LOGGER.Info("Olympiad System: Next weekly change is in " + numDays2 + " days, " + numHours2 + " hours and " + numMins2 + " mins.");
+				LOGGER.Info("Olympiad System: Next weekly change is in " + milliToEnd.Days + " days, " + milliToEnd.Hours + " hours and " + milliToEnd.Minutes + " mins.");
 			}
 		}
 		
@@ -278,12 +259,14 @@ public class Olympiad: ListenersContainer
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(GET_ALL_CLASSIFIED_NOBLESS);
-			ResultSet rset = statement.executeQuery();
+			var query = ctx.OlympiadNoblesEom.Where(r => r.CompetitionsDone >= Config.ALT_OLY_MIN_MATCHES)
+				.OrderByDescending(r => r.OlympiadPoints).ThenByDescending(r => r.CompetitionsDone)
+				.ThenByDescending(r => r.CompetitionsWon);
+			
 			int place = 1;
-			while (rset.next())
+			foreach (var record in query)
 			{
-				tmpPlace.put(rset.getInt(CHAR_ID), place++);
+				tmpPlace.put(record.CharacterId, place++);
 			}
 		}
 		catch (Exception e)
@@ -343,28 +326,31 @@ public class Olympiad: ListenersContainer
 					try 
 					{
 						using GameServerDbContext ctx = new();
-						PreparedStatement statement = con.prepareStatement(REMOVE_UNCLAIMED_POINTS);
-						statement.setInt(1, noblesId);
-						statement.setString(2, UNCLAIMED_OLYMPIAD_POINTS_VAR);
-						statement.execute();
+						ctx.CharacterVariables
+							.Where(r => r.CharacterId == noblesId && r.Name == UNCLAIMED_OLYMPIAD_POINTS_VAR)
+							.ExecuteDelete();
 					}
 					catch (Exception e)
 					{
-						LOGGER.Warn("Olympiad System: Couldn't remove unclaimed olympiad points from DB!");
+						LOGGER.Error("Olympiad System: Couldn't remove unclaimed olympiad points from DB! " + e);
 					}
+
 					// Add new value.
 					try 
 					{
 						using GameServerDbContext ctx = new();
-						PreparedStatement statement = con.prepareStatement(INSERT_UNCLAIMED_POINTS);
-						statement.setInt(1, noblesId);
-						statement.setString(2, UNCLAIMED_OLYMPIAD_POINTS_VAR);
-						statement.setString(3, points.ToString(CultureInfo.InvariantCulture));
-						statement.execute();
+						ctx.CharacterVariables.Add(new CharacterVariable()
+						{
+							CharacterId = noblesId,
+							Name = UNCLAIMED_OLYMPIAD_POINTS_VAR,
+							Value = points.ToString(CultureInfo.InvariantCulture)
+						});
+
+						ctx.SaveChanges();
 					}
 					catch (Exception e)
 					{
-						LOGGER.Warn("Olympiad System: Couldn't store unclaimed olympiad points to DB!");
+						LOGGER.Error("Olympiad System: Couldn't store unclaimed olympiad points to DB! " + e);
 					}
 				}
 			}
@@ -378,90 +364,90 @@ public class Olympiad: ListenersContainer
 			return;
 		}
 		
-		_compStart = Calendar.getInstance();
-		int currentDay = _compStart.get(Calendar.DAY_OF_WEEK);
-		bool dayFound = false;
-		int dayCounter = 0;
-		for (int i = currentDay; i < 8; i++)
+		DateTime compStart = DateTime.Now;
+
+		if (Config.ALT_OLY_COMPETITION_DAYS.Count != 0)
 		{
-			if (Config.ALT_OLY_COMPETITION_DAYS.contains(i))
+			DayOfWeek currentDay = compStart.DayOfWeek;
+			int dayCounter = 0;
+			while (!Config.ALT_OLY_COMPETITION_DAYS.Contains(currentDay))
 			{
-				dayFound = true;
-				break;
-			}
-			dayCounter++;
-		}
-		if (!dayFound)
-		{
-			for (int i = 1; i < 8; i++)
-			{
-				if (Config.ALT_OLY_COMPETITION_DAYS.contains(i))
-				{
-					break;
-				}
 				dayCounter++;
+				currentDay = currentDay == DayOfWeek.Saturday ? DayOfWeek.Sunday : currentDay + 1;
 			}
+
+			compStart = compStart.AddDays(dayCounter);
 		}
-		if (dayCounter > 0)
-		{
-			_compStart.add(Calendar.DAY_OF_MONTH, dayCounter);
-		}
-		_compStart.set(Calendar.HOUR_OF_DAY, COMP_START);
-		_compStart.set(Calendar.MINUTE, COMP_MIN);
-		_compEnd = _compStart.getTimeInMillis() + COMP_PERIOD;
+
+		_compStart = new DateTime(compStart.Year, compStart.Month, compStart.Day, COMP_START_HOUR, COMP_START_MIN, 0);
+		_compEnd = _compStart + COMP_PERIOD;
 		
 		if (_scheduledOlympiadEnd != null)
 		{
 			_scheduledOlympiadEnd.cancel(true);
 		}
 		
-		_scheduledOlympiadEnd = ThreadPool.schedule(new OlympiadEndTask(), getMillisToOlympiadEnd());
+		_scheduledOlympiadEnd = ThreadPool.schedule(new OlympiadEndTask(this), getMillisToOlympiadEnd());
 		
 		updateCompStatus();
 	}
 	
 	protected class OlympiadEndTask: Runnable
 	{
+		private readonly Olympiad _olympiad;
+
+		public OlympiadEndTask(Olympiad olympiad)
+		{
+			_olympiad = olympiad;
+		}
+		
 		public void run()
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.ROUND_S1_OF_THE_OLYMPIAD_HAS_NOW_ENDED);
-			sm.addInt(_currentCycle);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.ROUND_S1_OF_THE_OLYMPIAD_HAS_NOW_ENDED);
+			sm.Params.addInt(_olympiad._currentCycle);
 			
 			Broadcast.toAllOnlinePlayers(sm);
 			
-			if (_scheduledWeeklyTask != null)
+			if (_olympiad._scheduledWeeklyTask != null)
 			{
-				_scheduledWeeklyTask.cancel(true);
+				_olympiad._scheduledWeeklyTask.cancel(true);
 			}
 			
-			saveNobleData();
+			_olympiad.saveNobleData();
 			
-			_period = 1;
-			List<StatSet> heroesToBe = sortHerosToBe();
+			_olympiad._period = 1;
+			List<StatSet> heroesToBe = _olympiad.sortHerosToBe();
 			Hero.getInstance().resetData();
 			Hero.getInstance().computeNewHeroes(heroesToBe);
 			
-			saveOlympiadStatus();
-			updateMonthlyData();
+			_olympiad.saveOlympiadStatus();
+			_olympiad.updateMonthlyData();
 			
-			Calendar validationEnd = Calendar.getInstance();
-			_validationEnd = validationEnd.getTimeInMillis() + VALIDATION_PERIOD;
+			DateTime validationEnd = DateTime.UtcNow;
+			_olympiad._validationEnd = validationEnd + VALIDATION_PERIOD;
 			
-			loadNoblesRank();
-			_scheduledValdationTask = ThreadPool.schedule(new ValidationEndTask(), getMillisToValidationEnd());
+			_olympiad.loadNoblesRank();
+			_olympiad._scheduledValdationTask = ThreadPool.schedule(new ValidationEndTask(_olympiad), _olympiad.getMillisToValidationEnd());
 		}
 	}
 	
 	protected class ValidationEndTask: Runnable
 	{
+		private readonly Olympiad _olympiad;
+
+		public ValidationEndTask(Olympiad olympiad)
+		{
+			_olympiad = olympiad;
+		}
+		
 		public void run()
 		{
 			Broadcast.toAllOnlinePlayers("Olympiad Validation Period has ended");
-			_period = 0;
-			_currentCycle++;
-			deleteNobles();
-			setNewOlympiadEnd();
-			init();
+			_olympiad._period = 0;
+			_olympiad._currentCycle++;
+			_olympiad.deleteNobles();
+			_olympiad.setNewOlympiadEnd();
+			_olympiad.init();
 		}
 	}
 	
@@ -470,7 +456,7 @@ public class Olympiad: ListenersContainer
 		return NOBLES.size();
 	}
 	
-	public static StatSet getNobleStats(int playerId)
+	public static NobleData getNobleStats(int playerId)
 	{
 		return NOBLES.get(playerId);
 	}
@@ -483,38 +469,27 @@ public class Olympiad: ListenersContainer
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps1 = con.prepareStatement("DELETE FROM olympiad_nobles WHERE charId=?");
-			PreparedStatement ps2 = con.prepareStatement("DELETE FROM olympiad_nobles_eom WHERE charId=?");
-			ps1.setInt(1, playerId);
-			ps2.setInt(1, playerId);
-			ps1.execute();
-			ps2.execute();
+			ctx.OlympiadNobles.Where(r => r.CharacterId == playerId).ExecuteDelete();
+			ctx.OlympiadNoblesEom.Where(r => r.CharacterId == playerId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Olympiad System: Error removing noblesse data from database: " + e);
+			LOGGER.Error("Olympiad System: Error removing noblesse data from database: " + e);
 		}
 	}
 	
 	private void updateCompStatus()
 	{
-		// _compStarted = false;
-		
+		TimeSpan milliToStart;
 		lock (this)
 		{
-			long milliToStart = getMillisToCompBegin();
-			
-			double numSecs = (milliToStart / 1000) % 60;
-			double countDown = ((milliToStart / 1000.0) - numSecs) / 60;
-			int numMins = (int) Math.Floor(countDown % 60);
-			countDown = (countDown - numMins) / 60;
-			int numHours = (int) Math.Floor(countDown % 24);
-			int numDays = (int) Math.Floor((countDown - numHours) / 24);
-			
-			LOGGER.Info("Olympiad System: Competition Period Starts in " + numDays + " days, " + numHours + " hours and " + numMins + " mins.");
-			
-			LOGGER.Info("Olympiad System: Event starts/started: " + _compStart.getTime());
+			milliToStart = getMillisToCompBegin();
 		}
+
+		LOGGER.Info("Olympiad System: Competition Period Starts in " + milliToStart.Days + " days, " +
+		            milliToStart.Hours + " hours and " + milliToStart.Minutes + " mins.");
+		
+		LOGGER.Info("Olympiad System: Event starts/started: " + _compStart);
 		
 		_scheduledCompStart = ThreadPool.schedule(() =>
 		{
@@ -525,7 +500,7 @@ public class Olympiad: ListenersContainer
 			
 			_inCompPeriod = true;
 			
-			Broadcast.toAllOnlinePlayers(new SystemMessage(SystemMessageId.THE_OLYMPIAD_HAS_BEGAN));
+			Broadcast.toAllOnlinePlayers(new SystemMessagePacket(SystemMessageId.THE_OLYMPIAD_HAS_BEGAN));
 			LOGGER.Info("Olympiad System: Olympiad Games have started.");
 			LOGGER_OLYMPIAD.Info("Result,Player1,Player2,Player1 HP,Player2 HP,Player1 Damage,Player2 Damage,Points,Classed");
 			
@@ -535,10 +510,12 @@ public class Olympiad: ListenersContainer
 				_gameAnnouncer = ThreadPool.scheduleAtFixedRate(new OlympiadAnnouncer(), 30000, 500);
 			}
 			
-			long regEnd = getMillisToCompEnd() - 600000;
-			if (regEnd > 0)
+			TimeSpan regEnd = getMillisToCompEnd() - TimeSpan.FromMilliseconds(600000);
+			if (regEnd > TimeSpan.Zero)
 			{
-				ThreadPool.schedule(() => Broadcast.toAllOnlinePlayers(new SystemMessage(SystemMessageId.THE_OLYMPIAD_REGISTRATION_PERIOD_HAS_ENDED)), regEnd);
+				ThreadPool.schedule(
+					() => Broadcast.toAllOnlinePlayers(
+						new SystemMessagePacket(SystemMessageId.THE_OLYMPIAD_REGISTRATION_PERIOD_HAS_ENDED)), regEnd);
 			}
 			
 			_scheduledCompEnd = ThreadPool.schedule(() =>
@@ -548,7 +525,7 @@ public class Olympiad: ListenersContainer
 					return;
 				}
 				_inCompPeriod = false;
-				Broadcast.toAllOnlinePlayers(new SystemMessage(SystemMessageId.THE_OLYMPIAD_IS_OVER));
+				Broadcast.toAllOnlinePlayers(new SystemMessagePacket(SystemMessageId.THE_OLYMPIAD_IS_OVER));
 				LOGGER.Info("Olympiad System: Olympiad games have ended.");
 				
 				while (OlympiadGameManager.getInstance().isBattleStarted()) // cleared in game manager
@@ -583,10 +560,10 @@ public class Olympiad: ListenersContainer
 		}, getMillisToCompBegin());
 	}
 	
-	private long getMillisToOlympiadEnd()
+	private TimeSpan getMillisToOlympiadEnd()
 	{
 		// if (_olympiadEnd > System.currentTimeMillis())
-		return _olympiadEnd - System.currentTimeMillis();
+		return _olympiadEnd - DateTime.Now;
 		// return 10;
 	}
 	
@@ -597,17 +574,18 @@ public class Olympiad: ListenersContainer
 			_scheduledOlympiadEnd.cancel(true);
 		}
 		
-		_scheduledOlympiadEnd = ThreadPool.schedule(new OlympiadEndTask(), 0);
+		_scheduledOlympiadEnd = ThreadPool.schedule(new OlympiadEndTask(this), 0);
 	}
 	
-	protected long getMillisToValidationEnd()
+	protected TimeSpan getMillisToValidationEnd()
 	{
-		long currentTime = System.currentTimeMillis();
+		DateTime currentTime = DateTime.UtcNow;
 		if (_validationEnd > currentTime)
 		{
 			return _validationEnd - currentTime;
 		}
-		return 10;
+		
+		return TimeSpan.FromMilliseconds(10);
 	}
 	
 	public bool isOlympiadEnd()
@@ -617,64 +595,55 @@ public class Olympiad: ListenersContainer
 	
 	protected void setNewOlympiadEnd()
 	{
-		SystemMessage sm = new SystemMessage(SystemMessageId.ROUND_S1_OF_THE_OLYMPIAD_GAMES_HAS_STARTED);
-		sm.addInt(_currentCycle);
+		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.ROUND_S1_OF_THE_OLYMPIAD_GAMES_HAS_STARTED);
+		sm.Params.addInt(_currentCycle);
 		Broadcast.toAllOnlinePlayers(sm);
 		
-		Calendar currentTime = Calendar.getInstance();
-		currentTime.set(Calendar.AM_PM, Calendar.AM);
-		currentTime.set(Calendar.HOUR_OF_DAY, 12);
-		currentTime.set(Calendar.MINUTE, 0);
-		currentTime.set(Calendar.SECOND, 0);
-		
-		Calendar nextChange = Calendar.getInstance();
-		
+		DateTime currentTime = DateTime.Today;
+		DateTime nextChange = DateTime.Now;
+	
 		switch (Config.ALT_OLY_PERIOD)
 		{
 			case "DAY":
 			{
-				currentTime.add(Calendar.DAY_OF_MONTH, Config.ALT_OLY_PERIOD_MULTIPLIER);
-				currentTime.add(Calendar.DAY_OF_MONTH, -1); // last day is for validation
-				
+				currentTime = currentTime.AddDays(Config.ALT_OLY_PERIOD_MULTIPLIER);
 				if (Config.ALT_OLY_PERIOD_MULTIPLIER >= 14)
 				{
-					_nextWeeklyChange = nextChange.getTimeInMillis() + WEEKLY_PERIOD;
+					_nextWeeklyChange = nextChange + WEEKLY_PERIOD;
 				}
 				else if (Config.ALT_OLY_PERIOD_MULTIPLIER >= 7)
 				{
-					_nextWeeklyChange = nextChange.getTimeInMillis() + (WEEKLY_PERIOD / 2);
+					_nextWeeklyChange = nextChange + (WEEKLY_PERIOD / 2);
 				}
 				else
 				{
-					LOGGER.warning("Invalid config value for Config.ALT_OLY_PERIOD_MULTIPLIER, must be >= 7");
+					LOGGER.Warn("Invalid config value for Config.ALT_OLY_PERIOD_MULTIPLIER, must be >= 7");
 				}
 				break;
 			}
 			case "WEEK":
 			{
-				currentTime.add(Calendar.WEEK_OF_MONTH, Config.ALT_OLY_PERIOD_MULTIPLIER);
-				currentTime.add(Calendar.DAY_OF_MONTH, -1); // last day is for validation
+				currentTime = currentTime.AddDays(7 * Config.ALT_OLY_PERIOD_MULTIPLIER);
 				
 				if (Config.ALT_OLY_PERIOD_MULTIPLIER > 1)
 				{
-					_nextWeeklyChange = nextChange.getTimeInMillis() + WEEKLY_PERIOD;
+					_nextWeeklyChange = nextChange + WEEKLY_PERIOD;
 				}
 				else
 				{
-					_nextWeeklyChange = nextChange.getTimeInMillis() + (WEEKLY_PERIOD / 2);
+					_nextWeeklyChange = nextChange + (WEEKLY_PERIOD / 2);
 				}
 				break;
 			}
 			case "MONTH":
 			{
-				currentTime.add(Calendar.MONTH, Config.ALT_OLY_PERIOD_MULTIPLIER);
-				currentTime.add(Calendar.DAY_OF_MONTH, -1); // last day is for validation
-				
-				_nextWeeklyChange = nextChange.getTimeInMillis() + WEEKLY_PERIOD;
+				currentTime = currentTime.AddMonths(Config.ALT_OLY_PERIOD_MULTIPLIER);
+				_nextWeeklyChange = nextChange + WEEKLY_PERIOD;
 				break;
 			}
 		}
-		_olympiadEnd = currentTime.getTimeInMillis();
+
+		_olympiadEnd = currentTime;
 		
 		scheduleWeeklyChange();
 	}
@@ -684,36 +653,35 @@ public class Olympiad: ListenersContainer
 		return _inCompPeriod;
 	}
 	
-	private long getMillisToCompBegin()
+	private TimeSpan getMillisToCompBegin()
 	{
-		long currentTime = System.currentTimeMillis();
-		if ((_compStart.getTimeInMillis() < currentTime) && (_compEnd > currentTime))
+		DateTime currentTime = DateTime.Now;
+		if (_compStart < currentTime && _compEnd > currentTime)
 		{
-			return 10;
+			return TimeSpan.FromMilliseconds(10);
 		}
 		
-		if (_compStart.getTimeInMillis() > currentTime)
+		if (_compStart > currentTime)
 		{
-			return _compStart.getTimeInMillis() - currentTime;
+			return _compStart - currentTime;
 		}
 		
 		return setNewCompBegin();
 	}
 	
-	private long setNewCompBegin()
+	private TimeSpan setNewCompBegin()
 	{
-		_compStart = Calendar.getInstance();
+		DateTime compStart = DateTime.Now;
+		compStart = new DateTime(compStart.Year, compStart.Month, compStart.Day, COMP_START_HOUR, COMP_START_MIN, 0);
 		
-		int currentDay = _compStart.get(Calendar.DAY_OF_WEEK);
-		_compStart.set(Calendar.HOUR_OF_DAY, COMP_START);
-		_compStart.set(Calendar.MINUTE, COMP_MIN);
+		DayOfWeek currentDay = compStart.DayOfWeek;
 		
 		// Today's competitions ended, start checking from next day.
-		if (currentDay == _compStart.get(Calendar.DAY_OF_WEEK))
+		if (currentDay == compStart.DayOfWeek)
 		{
-			if (currentDay == Calendar.SATURDAY)
+			if (currentDay == DayOfWeek.Saturday)
 			{
-				currentDay = Calendar.SUNDAY;
+				currentDay = DayOfWeek.Sunday;
 			}
 			else
 			{
@@ -721,67 +689,52 @@ public class Olympiad: ListenersContainer
 			}
 		}
 		
-		bool dayFound = false;
 		int dayCounter = 0;
-		for (int i = currentDay; i < 8; i++)
+		if (Config.ALT_OLY_COMPETITION_DAYS.Count != 0)
 		{
-			if (Config.ALT_OLY_COMPETITION_DAYS.contains(i))
+			while (!Config.ALT_OLY_COMPETITION_DAYS.Contains(currentDay))
 			{
-				dayFound = true;
-				break;
-			}
-			dayCounter++;
-		}
-		if (!dayFound)
-		{
-			for (int i = 1; i < 8; i++)
-			{
-				if (Config.ALT_OLY_COMPETITION_DAYS.contains(i))
-				{
-					break;
-				}
+				currentDay = currentDay == DayOfWeek.Saturday ? DayOfWeek.Sunday : currentDay + 1;
 				dayCounter++;
 			}
 		}
-		if (dayCounter > 0)
-		{
-			_compStart.add(Calendar.DAY_OF_MONTH, dayCounter);
-		}
-		_compStart.add(Calendar.HOUR_OF_DAY, 24);
-		_compEnd = _compStart.getTimeInMillis() + COMP_PERIOD;
+
+		_compStart = compStart.AddDays(dayCounter + 1);
+		_compEnd = _compStart + COMP_PERIOD;
 		
-		LOGGER.Info("Olympiad System: New Schedule @ " + _compStart.getTime());
+		LOGGER.Info("Olympiad System: New Schedule @ " + _compStart);
 		
-		return _compStart.getTimeInMillis() - System.currentTimeMillis();
+		return _compStart - DateTime.Now;
 	}
 	
-	public long getMillisToCompEnd()
+	public TimeSpan getMillisToCompEnd()
 	{
 		// if (_compEnd > System.currentTimeMillis())
-		return _compEnd - System.currentTimeMillis();
+		return _compEnd - DateTime.Now;
 		// return 10;
 	}
 	
-	private long getMillisToWeekChange()
+	private TimeSpan getMillisToWeekChange()
 	{
-		long currentTime = System.currentTimeMillis();
+		DateTime currentTime = DateTime.Now;
 		if (_nextWeeklyChange > currentTime)
 		{
 			return _nextWeeklyChange - currentTime;
 		}
-		return 10;
+
+		return TimeSpan.FromMilliseconds(10);
 	}
 	
 	private void scheduleWeeklyChange()
 	{
-		_scheduledWeeklyTask = ThreadPool.scheduleAtFixedRate(() ->
+		_scheduledWeeklyTask = ThreadPool.scheduleAtFixedRate(() =>
 		{
 			addWeeklyPoints();
 			LOGGER.Info("Olympiad System: Added weekly points to nobles");
 			resetWeeklyMatches();
 			LOGGER.Info("Olympiad System: Reset weekly matches to nobles");
 			
-			_nextWeeklyChange = System.currentTimeMillis() + WEEKLY_PERIOD;
+			_nextWeeklyChange = DateTime.UtcNow + WEEKLY_PERIOD;
 		}, getMillisToWeekChange(), WEEKLY_PERIOD);
 	}
 	
@@ -793,12 +746,9 @@ public class Olympiad: ListenersContainer
 			return;
 		}
 		
-		int currentPoints;
-		foreach (StatSet nobleInfo in NOBLES.values())
+		foreach (NobleData nobleInfo in NOBLES.values())
 		{
-			currentPoints = nobleInfo.getInt(POINTS);
-			currentPoints += WEEKLY_POINTS;
-			nobleInfo.set(POINTS, currentPoints);
+			nobleInfo.OlympiadPoints += WEEKLY_POINTS;
 		}
 	}
 	
@@ -813,9 +763,9 @@ public class Olympiad: ListenersContainer
 			return;
 		}
 		
-		foreach (StatSet nobleInfo in NOBLES.values())
+		foreach (NobleData nobleInfo in NOBLES.values())
 		{
-			nobleInfo.set(COMP_DONE_WEEK, 0);
+			nobleInfo.CompetitionsDoneWeek = 0;
 		}
 	}
 	
@@ -850,52 +800,31 @@ public class Olympiad: ListenersContainer
 			using GameServerDbContext ctx = new();
 			foreach (var entry in NOBLES)
 			{
-				StatSet nobleInfo = entry.Value;
+				NobleData nobleInfo = entry.Value;
 				
 				if (nobleInfo == null)
 				{
 					continue;
 				}
-				
-				int charId = entry.Key;
-				int classId = nobleInfo.getInt(CLASS_ID);
-				int points = nobleInfo.getInt(POINTS);
-				int compDone = nobleInfo.getInt(COMP_DONE);
-				int compWon = nobleInfo.getInt(COMP_WON);
-				int compLost = nobleInfo.getInt(COMP_LOST);
-				int compDrawn = nobleInfo.getInt(COMP_DRAWN);
-				int compDoneWeek = nobleInfo.getInt(COMP_DONE_WEEK);
-				bool toSave = nobleInfo.getBoolean("to_save");
-				
+
+				var record = ctx.OlympiadNobles.SingleOrDefault(r => r.CharacterId == entry.Key);
+				if (record is null)
 				{
-					PreparedStatement statement =
-						con.prepareStatement(toSave ? OLYMPIAD_SAVE_NOBLES : OLYMPIAD_UPDATE_NOBLES);
-					if (toSave)
-					{
-						statement.setInt(1, charId);
-						statement.setInt(2, classId);
-						statement.setInt(3, points);
-						statement.setInt(4, compDone);
-						statement.setInt(5, compWon);
-						statement.setInt(6, compLost);
-						statement.setInt(7, compDrawn);
-						statement.setInt(8, compDoneWeek);
-						
-						nobleInfo.set("to_save", false);
-					}
-					else
-					{
-						statement.setInt(1, points);
-						statement.setInt(2, compDone);
-						statement.setInt(3, compWon);
-						statement.setInt(4, compLost);
-						statement.setInt(5, compDrawn);
-						statement.setInt(6, compDoneWeek);
-						statement.setInt(7, charId);
-					}
-					statement.execute();
+					record = new OlympiadNoble();
+					record.CharacterId = entry.Key;
+					ctx.OlympiadNobles.Add(record);
 				}
+
+				record.Class = nobleInfo.Class;
+				record.OlympiadPoints = nobleInfo.OlympiadPoints;
+				record.CompetitionsDone = nobleInfo.CompetitionsDone;
+				record.CompetitionsWon = nobleInfo.CompetitionsWon;
+				record.CompetitionsLost = nobleInfo.CompetitionsLost;
+				record.CompetitionsDrawn = nobleInfo.CompetitionsDrawn;
+				record.CompetitionsDoneWeek = nobleInfo.CompetitionsDoneWeek;
 			}
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -913,41 +842,28 @@ public class Olympiad: ListenersContainer
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(OLYMPIAD_SAVE_DATA);
-			statement.setInt(1, _currentCycle);
-			statement.setInt(2, _period);
-			statement.setLong(3, _olympiadEnd);
-			statement.setLong(4, _validationEnd);
-			statement.setLong(5, _nextWeeklyChange);
-			statement.setInt(6, _currentCycle);
-			statement.setInt(7, _period);
-			statement.setLong(8, _olympiadEnd);
-			statement.setLong(9, _validationEnd);
-			statement.setLong(10, _nextWeeklyChange);
-			statement.execute();
+			DbOlympiadData? record = ctx.OlympiadData.SingleOrDefault(r => r.Id == 0);
+			if (record is null)
+			{
+				record = new DbOlympiadData()
+				{
+					Id = 0,
+				};
+
+				ctx.OlympiadData.Add(record);
+			}
+			
+			record.CurrentCycle = (short)_currentCycle;
+			record.Period = (short)_period;
+			record.OlympiadEnd = _olympiadEnd;
+			record.ValidationEnd = _validationEnd;
+			record.NextWeeklyChange = _nextWeeklyChange;
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
 			LOGGER.Error("Olympiad System: Failed to save olympiad data to database: " + e);
 		}
-		//@formatter:off
-		/*
-		Properties OlympiadProperties = new Properties();
-		try (FileOutputStream fos = new FileOutputStream(new File("./" + OLYMPIAD_DATA_FILE)))
-		{
-			OlympiadProperties.setProperty("CurrentCycle", String.valueOf(_currentCycle));
-			OlympiadProperties.setProperty("Period", String.valueOf(_period));
-			OlympiadProperties.setProperty("OlympiadEnd", String.valueOf(_olympiadEnd));
-			OlympiadProperties.setProperty("ValdationEnd", String.valueOf(_validationEnd));
-			OlympiadProperties.setProperty("NextWeeklyChange", String.valueOf(_nextWeeklyChange));
-			OlympiadProperties.store(fos, "Olympiad Properties");
-		}
-		catch (Exception e)
-		{
-			LOGGER.warning("Olympiad System: Unable to save olympiad properties to file: ", e);
-		}
-		*/
-		//@formatter:on
 	}
 	
 	protected void updateMonthlyData()
@@ -955,10 +871,20 @@ public class Olympiad: ListenersContainer
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps1 = con.prepareStatement(OLYMPIAD_MONTH_CLEAR);
-			PreparedStatement ps2 = con.prepareStatement(OLYMPIAD_MONTH_CREATE);
-			ps1.execute();
-			ps2.execute();
+			ctx.OlympiadNoblesEom.ExecuteDelete();
+
+			ctx.OlympiadNoblesEom.AddRange(ctx.OlympiadNobles.Select(r => new OlympiadNobleEom()
+			{
+				CharacterId = r.CharacterId,
+				Class = r.Class,
+				CompetitionsDone = r.CompetitionsDone,
+				CompetitionsDrawn = r.CompetitionsDrawn,
+                CompetitionsLost = r.CompetitionsLost,
+                CompetitionsWon = r.CompetitionsWon,
+                OlympiadPoints = r.OlympiadPoints
+			}));
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -974,20 +900,19 @@ public class Olympiad: ListenersContainer
 		}
 		
 		LOGGER_OLYMPIAD.Info("Noble,charid,classid,compDone,points");
-		StatSet nobleInfo;
 		foreach (var entry in NOBLES)
 		{
-			nobleInfo = entry.Value;
+			NobleData nobleInfo = entry.Value;
 			if (nobleInfo == null)
 			{
 				continue;
 			}
 			
 			int charId = entry.Key;
-			int classId = nobleInfo.getInt(CLASS_ID);
-			String charName = nobleInfo.getString(CHAR_NAME);
-			int points = nobleInfo.getInt(POINTS);
-			int compDone = nobleInfo.getInt(COMP_DONE);
+			CharacterClass classId = nobleInfo.Class;
+			string charName = nobleInfo.CharacterName;
+			int points = nobleInfo.OlympiadPoints;
+			int compDone = nobleInfo.CompetitionsDone;
 			
 			LOGGER_OLYMPIAD.Info(charName + "," + charId + "," + classId + "," + compDone + "," + points);
 		}
@@ -995,81 +920,98 @@ public class Olympiad: ListenersContainer
 		List<StatSet> heroesToBe = new();
 		
 		int legendId = 0;
-		try 
+		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(OLYMPIAD_GET_LEGEND);
+
+			int? result = ctx.OlympiadNobles.Where(r => r.CompetitionsDone >= Config.ALT_OLY_MIN_MATCHES)
+				.OrderByDescending(r => r.OlympiadPoints).Select(r => (int?)r.CharacterId).FirstOrDefault();
+
+			if (result != null)
 			{
-				ResultSet rset = statement.executeQuery();
-				if (rset.next())
-				{
-					legendId = rset.getInt("charId");
-				}
+				legendId = result.Value;
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Olympiad System: Couldnt load legend from DB" + e);
+			LOGGER.Error("Olympiad System: Couldnt load legend from DB: " + e);
 		}
-		
+
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(OLYMPIAD_GET_HEROS);
-			StatSet hero;
-			foreach (int element in HERO_IDS.Keys)
+			foreach (int element in HERO_IDS)
 			{
 				// Classic can have 2nd and 3rd class competitors, but only 1 hero
-				ClassId parent = ClassListData.getInstance().getClass(element).getParentClassId();
-				statement.setInt(1, element);
-				statement.setInt(2, parent.getId());
+				CharacterClass heroClass = (CharacterClass)element; 
+				CharacterClass? parent = ClassListData.getInstance().getClass(heroClass).getParentClassId();
 
-				{
-					ResultSet rset = statement.executeQuery();
-					if (rset.next())
+				var query = (from n in ctx.OlympiadNobles
+					from c in ctx.Characters
+					where n.CharacterId == c.Id && n.CompetitionsDone >= Config.ALT_OLY_MIN_MATCHES &&
+					      n.CompetitionsWon > 0 && (n.Class == heroClass || n.Class == parent)
+					orderby n.OlympiadPoints descending, n.CompetitionsDone descending, n.CompetitionsWon descending
+					select new
 					{
-						hero = new StatSet();
-						int charId = rset.getInt(CHAR_ID);
-						hero.set(CLASS_ID, element); // save the 3rd class title
-						hero.set(CHAR_ID, charId);
-						hero.set(CHAR_NAME, rset.getString(CHAR_NAME));
-						hero.set("LEGEND", charId == legendId ? 1 : 0);
+						n.CharacterId,
+						c.Name,
+					}).FirstOrDefault();
+
+				if (query != null)
+				{
+					StatSet hero = new StatSet();
+					int charId = query.CharacterId;
+					hero.set(CLASS_ID, heroClass); // save the 3rd class title
+					hero.set(CHAR_ID, charId);
+					hero.set(CHAR_NAME, query.Name);
+					hero.set("LEGEND", charId == legendId ? 1 : 0);
 						
-						LOGGER_OLYMPIAD.Info("Hero " + hero.getString(CHAR_NAME) + "," + charId + "," + hero.getInt(CLASS_ID));
-						heroesToBe.add(hero);
-					}
+					LOGGER_OLYMPIAD.Info("Hero " + query.Name + "," + charId + "," + heroClass);
+					heroesToBe.add(hero);
 				}
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Olympiad System: Couldnt load heros from DB");
+			LOGGER.Error("Olympiad System: Couldnt load heros from DB: " + e);
 		}
 		
 		return heroesToBe;
 	}
 	
-	public List<String> getClassLeaderBoard(int classId)
+	public List<String> getClassLeaderBoard(CharacterClass classId)
 	{
 		List<String> names = new();
-		String query = Config.ALT_OLY_SHOW_MONTHLY_WINNERS ? ((classId == 132) ? GET_EACH_CLASS_LEADER_SOULHOUND : GET_EACH_CLASS_LEADER) : ((classId == 132) ? GET_EACH_CLASS_LEADER_CURRENT_SOULHOUND : GET_EACH_CLASS_LEADER_CURRENT);
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(query);
-			ps.setInt(1, classId);
 
+			IQueryable<string> query;
+			if (Config.ALT_OLY_SHOW_MONTHLY_WINNERS)
+				query = from n in ctx.OlympiadNoblesEom
+					from c in ctx.Characters
+					where n.CharacterId == c.Id &&
+					      (n.Class == classId || (classId == (CharacterClass)132 && n.Class == (CharacterClass)133)) &&
+					      n.CompetitionsDone >= Config.ALT_OLY_MIN_MATCHES
+					orderby n.OlympiadPoints descending, n.CompetitionsDone descending, n.CompetitionsWon descending
+					select c.Name;
+			else
+				query = from n in ctx.OlympiadNobles
+					from c in ctx.Characters
+					where n.CharacterId == c.Id &&
+					      (n.Class == classId || (classId == (CharacterClass)132 && n.Class == (CharacterClass)133)) &&
+					      n.CompetitionsDone >= Config.ALT_OLY_MIN_MATCHES
+					orderby n.OlympiadPoints descending, n.CompetitionsDone descending, n.CompetitionsWon descending
+					select c.Name;
+
+			foreach (string name in query.Take(10))
 			{
-				ResultSet rset = ps.executeQuery();
-				while (rset.next())
-				{
-					names.add(rset.getString(CHAR_NAME));
-				}
+				names.add(name);
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Olympiad System: Couldn't load olympiad leaders from DB!");
+			LOGGER.Error("Olympiad System: Couldn't load olympiad leaders from DB!");
 		}
 		return names;
 	}
@@ -1086,8 +1028,8 @@ public class Olympiad: ListenersContainer
 			return 0;
 		}
 		
-		StatSet noble = NOBLES.get(objectId);
-		if ((noble == null) || (noble.getInt(POINTS) == 0))
+		NobleData noble = NOBLES.get(objectId);
+		if ((noble == null) || (noble.OlympiadPoints == 0))
 		{
 			return 0;
 		}
@@ -1120,6 +1062,7 @@ public class Olympiad: ListenersContainer
 			default:
 			{
 				points += Config.ALT_OLY_RANK5_POINTS;
+				break;
 			}
 		}
 		
@@ -1127,7 +1070,7 @@ public class Olympiad: ListenersContainer
 		points += getCompetitionWon(objectId) > 0 ? 10 : 0;
 		
 		// This is a one time calculation.
-		noble.set(POINTS, 0);
+		noble.OlympiadPoints = 0;
 		
 		return points;
 	}
@@ -1136,43 +1079,38 @@ public class Olympiad: ListenersContainer
 	{
 		if (!NOBLES.containsKey(player.getObjectId()))
 		{
-			StatSet statDat = new StatSet();
-			statDat.set(CLASS_ID, player.getBaseClass());
-			statDat.set(CHAR_NAME, player.getName());
-			statDat.set(POINTS, DEFAULT_POINTS);
-			statDat.set(COMP_DONE, 0);
-			statDat.set(COMP_WON, 0);
-			statDat.set(COMP_LOST, 0);
-			statDat.set(COMP_DRAWN, 0);
-			statDat.set(COMP_DONE_WEEK, 0);
-			statDat.set("to_save", true);
-			addNobleStats(player.getObjectId(), statDat);
+			NobleData nobleData = new NobleData()
+			{
+				Class = player.getBaseClass(),
+				CharacterName = player.getName(),
+				OlympiadPoints = DEFAULT_POINTS
+			};
+
+			addNobleStats(player.getObjectId(), nobleData);
 		}
-		return NOBLES.get(player.getObjectId()).getInt(POINTS);
+		
+		return NOBLES.get(player.getObjectId()).OlympiadPoints;
 	}
 	
 	public int getLastNobleOlympiadPoints(int objId)
 	{
 		int result = 0;
-		try 
+		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement("SELECT olympiad_points FROM olympiad_nobles_eom WHERE charId = ?");
-			ps.setInt(1, objId);
+			var record = ctx.OlympiadNoblesEom.Where(r => r.CharacterId == objId).Select(r => (int?)r.OlympiadPoints)
+				.SingleOrDefault();
 
+			if (record != null)
 			{
-				ResultSet rs = ps.executeQuery();
-				if (rs.first())
-				{
-					result = rs.getInt(1);
-				}
+				result = record.Value;
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Olympiad System: Could not load last olympiad points: " + e);
+			LOGGER.Error("Olympiad System: Could not load last olympiad points: " + e);
 		}
+
 		return result;
 	}
 	
@@ -1182,7 +1120,7 @@ public class Olympiad: ListenersContainer
 		{
 			return 0;
 		}
-		return NOBLES.get(objId).getInt(COMP_DONE);
+		return NOBLES.get(objId).CompetitionsDone;
 	}
 	
 	public int getCompetitionWon(int objId)
@@ -1191,7 +1129,7 @@ public class Olympiad: ListenersContainer
 		{
 			return 0;
 		}
-		return NOBLES.get(objId).getInt(COMP_WON);
+		return NOBLES.get(objId).CompetitionsWon;
 	}
 	
 	public int getCompetitionLost(int objId)
@@ -1200,7 +1138,7 @@ public class Olympiad: ListenersContainer
 		{
 			return 0;
 		}
-		return NOBLES.get(objId).getInt(COMP_LOST);
+		return NOBLES.get(objId).CompetitionsLost;
 	}
 	
 	/**
@@ -1214,7 +1152,7 @@ public class Olympiad: ListenersContainer
 		{
 			return 0;
 		}
-		return NOBLES.get(objId).getInt(COMP_DONE_WEEK);
+		return NOBLES.get(objId).CompetitionsDoneWeek;
 	}
 	
 	/**
@@ -1232,8 +1170,7 @@ public class Olympiad: ListenersContainer
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(OLYMPIAD_DELETE_ALL);
-			statement.execute();
+			ctx.OlympiadNobles.ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -1247,9 +1184,9 @@ public class Olympiad: ListenersContainer
 	 * @param data the stats set data to add.
 	 * @return the old stats set if the noble is already present, null otherwise.
 	 */
-	public static StatSet addNobleStats(int charId, StatSet data)
+	public static void addNobleStats(int charId, NobleData data)
 	{
-		return NOBLES.put(charId, data);
+		NOBLES.put(charId, data);
 	}
 	
 	public static Olympiad getInstance()
@@ -1261,4 +1198,16 @@ public class Olympiad: ListenersContainer
 	{
 		public static readonly Olympiad INSTANCE = new Olympiad();
 	}
+}
+
+public class NobleData
+{
+	public CharacterClass Class { get; set; }
+	public string CharacterName { get; set; } = string.Empty;
+	public int OlympiadPoints { get; set; }
+	public short CompetitionsDone { get; set; }
+	public short CompetitionsWon { get; set; }
+	public short CompetitionsLost { get; set; }
+	public short CompetitionsDrawn { get; set; }
+	public short CompetitionsDoneWeek { get; set; }
 }

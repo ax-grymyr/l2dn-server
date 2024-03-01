@@ -167,7 +167,7 @@ public class OlympiadManager
 			return false;
 		}
 
-		if (Olympiad.getInstance().getMillisToCompEnd() < 1200000)
+		if (Olympiad.getInstance().getMillisToCompEnd() < TimeSpan.FromMilliseconds(1200000))
 		{
 			player.sendPacket(SystemMessageId
 				.GAME_PARTICIPATION_REQUEST_MUST_BE_FILED_NOT_EARLIER_THAN_10_MIN_AFTER_THE_GAME_ENDS);
@@ -186,19 +186,16 @@ public class OlympiadManager
 			return false;
 		}
 
-		StatSet statDat = Olympiad.getNobleStats(charId);
+		NobleData statDat = Olympiad.getNobleStats(charId);
 		if (statDat == null)
 		{
-			statDat = new StatSet();
-			statDat.set(Olympiad.CLASS_ID, player.getBaseClass());
-			statDat.set(Olympiad.CHAR_NAME, player.getName());
-			statDat.set(Olympiad.POINTS, Olympiad.DEFAULT_POINTS);
-			statDat.set(Olympiad.COMP_DONE, 0);
-			statDat.set(Olympiad.COMP_WON, 0);
-			statDat.set(Olympiad.COMP_LOST, 0);
-			statDat.set(Olympiad.COMP_DRAWN, 0);
-			statDat.set(Olympiad.COMP_DONE_WEEK, 0);
-			statDat.set("to_save", true);
+			statDat = new NobleData
+			{
+				Class = player.getBaseClass(),
+				CharacterName = player.getName(),
+				OlympiadPoints = Olympiad.DEFAULT_POINTS
+			};
+			
 			Olympiad.addNobleStats(charId, statDat);
 		}
 

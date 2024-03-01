@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Packets;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -31,10 +32,6 @@ public class ItemAuction
 	
 	private ItemAuctionBid _highestBid;
 	private int _lastBidPlayerObjId;
-	
-	// SQL
-	private const string DELETE_ITEM_AUCTION_BID = "DELETE FROM item_auction_bid WHERE auctionId = ? AND playerObjId = ?";
-	private const string INSERT_ITEM_AUCTION_BID = "INSERT INTO item_auction_bid (auctionId, playerObjId, playerBid) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE playerBid = ?";
 	
 	public ItemAuction(int auctionId, int instanceId, DateTime startingTime, DateTime endingTime, AuctionItem auctionItem):this(auctionId, instanceId, startingTime, endingTime, auctionItem, new(), ItemAuctionState.CREATED) 
 	{
@@ -165,20 +162,24 @@ public class ItemAuction
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(
-				"INSERT INTO item_auction (auctionId,instanceId,auctionItemId,startingTime,endingTime,auctionStateId) VALUES (?,?,?,?,?,?) ON DUPLICATE KEY UPDATE auctionStateId=?");
-			statement.setInt(1, _auctionId);
-			statement.setInt(2, _instanceId);
-			statement.setInt(3, _auctionItem.getAuctionItemId());
-			statement.setLong(4, _startingTime);
-			statement.setLong(5, _endingTime);
-			statement.setByte(6, _auctionState);
-			statement.setByte(7, _auctionState);
-			statement.execute();
+			Db.ItemAuction? record = ctx.ItemAuctions.SingleOrDefault(r => r.AuctionId == _auctionId);
+			if (record is null)
+			{
+				record = new Db.ItemAuction();
+				record.AuctionId = _auctionId;
+				ctx.ItemAuctions.Add(record);
+			}
+
+			record.InstanceId = _instanceId;
+			record.AuctionItemId = _auctionItem.getAuctionItemId();
+			record.StartingTime = _startingTime;
+			record.EndingTime = _endingTime;
+			record.AuctionStateId = (byte)_auctionState;
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn(e);
+			LOGGER.Error(e);
 		}
 	}
 	
@@ -196,23 +197,38 @@ public class ItemAuction
 	
 	private void updatePlayerBidInternal(ItemAuctionBid bid, bool delete)
 	{
-		string query = delete ? DELETE_ITEM_AUCTION_BID : INSERT_ITEM_AUCTION_BID;
-		try 
+		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(query);
-			ps.setInt(1, _auctionId);
-			ps.setInt(2, bid.getPlayerObjId());
-			if (!delete)
+			int playerObjId = bid.getPlayerObjId();
+
+			if (delete)
 			{
-				ps.setLong(3, bid.getLastBid());
-				ps.setLong(4, bid.getLastBid());
+				ctx.ItemAuctionBids.Where(r => r.AuctionId == _auctionId && r.CharacterId == playerObjId)
+					.ExecuteDelete();
 			}
-			ps.execute();
+			else
+			{
+				Db.ItemAuctionBid? record =
+					ctx.ItemAuctionBids.SingleOrDefault(r => r.AuctionId == _auctionId && r.CharacterId == playerObjId);
+				if (record is null)
+				{
+					record = new Db.ItemAuctionBid
+					{
+						AuctionId = _auctionId,
+						CharacterId = playerObjId
+					};
+					
+					ctx.ItemAuctionBids.Add(record);
+				}
+
+				record.Bid = bid.getLastBid();
+				ctx.SaveChanges();
+			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn(e);
+			LOGGER.Error(e);
 		}
 	}
 	
@@ -313,7 +329,7 @@ public class ItemAuction
 			_highestBid = bid;
 		}
 		
-		if ((_endingTime - System.currentTimeMillis()) <= (1000 * 60 * 10)) // 10 minutes
+		if ((_endingTime - DateTime.UtcNow) <= TimeSpan.FromMinutes(10)) // 10 minutes
 		{
 			switch (_auctionEndingExtendState)
 			{
@@ -339,7 +355,7 @@ public class ItemAuction
 					if ((Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID > 0) && (getAndSetLastBidPlayerObjectId(player.getObjectId()) != player.getObjectId()))
 					{
 						_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A;
-						_endingTime += Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID;
+						_endingTime += TimeSpan.FromMilliseconds(Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID);
 					}
 					break;
 				}
@@ -348,7 +364,7 @@ public class ItemAuction
 					if ((getAndSetLastBidPlayerObjectId(player.getObjectId()) != player.getObjectId()) && (_scheduledAuctionEndingExtendState == ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B))
 					{
 						_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B;
-						_endingTime += Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID;
+						_endingTime += TimeSpan.FromMilliseconds(Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID);
 					}
 					break;
 				}
@@ -356,9 +372,11 @@ public class ItemAuction
 				{
 					if ((getAndSetLastBidPlayerObjectId(player.getObjectId()) != player.getObjectId()) && (_scheduledAuctionEndingExtendState == ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A))
 					{
-						_endingTime += Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID;
+						_endingTime += TimeSpan.FromMilliseconds(Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID);
 						_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A;
 					}
+
+					break;
 				}
 			}
 		}
@@ -402,7 +420,7 @@ public class ItemAuction
 			}
 			case ItemAuctionState.FINISHED:
 			{
-				if (_startingTime < (System.currentTimeMillis() - TimeUnit.MILLISECONDS.convert(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER, TimeUnit.DAYS)))
+				if (_startingTime < (DateTime.UtcNow - TimeSpan.FromDays(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER)))
 				{
 					return false;
 				}

@@ -1,30 +1,30 @@
 ﻿using System.Xml.Linq;
+using L2Dn.Extensions;
+using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.ItemAuction;
 
 public class ItemAuctionInstance
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(ItemAuctionInstance));
-	private readonly SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("HH:mm:ss dd.MM.yy");
 	
 	private static readonly TimeSpan START_TIME_SPACE = TimeSpan.FromMinutes(1);
 	private static readonly TimeSpan FINISH_TIME_SPACE = TimeSpan.FromMinutes(10);
 	
-	// SQL queries
-	private const String SELECT_AUCTION_ID_BY_INSTANCE_ID = "SELECT auctionId FROM item_auction WHERE instanceId = ?";
-	private const String SELECT_AUCTION_INFO = "SELECT auctionItemId, startingTime, endingTime, auctionStateId FROM item_auction WHERE auctionId = ? ";
-	private const String DELETE_AUCTION_INFO_BY_AUCTION_ID = "DELETE FROM item_auction WHERE auctionId = ?";
-	private const String DELETE_AUCTION_BID_INFO_BY_AUCTION_ID = "DELETE FROM item_auction_bid WHERE auctionId = ?";
-	private const String SELECT_PLAYERS_ID_BY_AUCTION_ID = "SELECT playerObjId, playerBid FROM item_auction_bid WHERE auctionId = ?";
-	
 	private readonly int _instanceId;
-	private ref int _auctionIds;
+	private readonly AtomicInteger _auctionIds;
 	private readonly Map<int, ItemAuction> _auctions;
 	private readonly List<AuctionItem> _items;
 	private readonly AuctionDateGenerator _dateGenerator;
@@ -33,85 +33,63 @@ public class ItemAuctionInstance
 	private ItemAuction _nextAuction;
 	private ScheduledFuture _stateTask;
 	
-	public ItemAuctionInstance(int instanceId, ref int auctionIds, XElement element)
+	public ItemAuctionInstance(int instanceId, AtomicInteger auctionIds, XElement element)
 	{
 		_instanceId = instanceId;
 		_auctionIds = auctionIds;
 		_auctions = new();
 		_items = new();
 		
-		NamedNodeMap nanode = node.getAttributes();
-		StatSet generatorConfig = new StatSet();
-		for (int i = nanode.getLength(); i-- > 0;)
-		{
-			Node n = nanode.item(i);
-			if (n != null)
-			{
-				generatorConfig.set(n.getNodeName(), n.getNodeValue());
-			}
-		}
-		
+		StatSet generatorConfig = new StatSet(element);
 		_dateGenerator = new AuctionDateGenerator(generatorConfig);
-		
-		for (Node na = node.getFirstChild(); na != null; na = na.getNextSibling())
+
+		element.Elements("item").ForEach(el =>
 		{
 			try
 			{
-				if ("item".equalsIgnoreCase(na.getNodeName()))
+				int auctionItemId = el.Attribute("auctionItemId").GetInt32();
+				int auctionLength = el.Attribute("auctionLength").GetInt32();
+				long auctionInitBid = el.Attribute("auctionInitBid").GetInt32();
+
+				int itemId = el.Attribute("itemId").GetInt32();
+				int itemCount = el.Attribute("itemCount").GetInt32();
+
+				if (auctionLength < 1)
 				{
-					NamedNodeMap naa = na.getAttributes();
-					int auctionItemId = int.parseInt(naa.getNamedItem("auctionItemId").getNodeValue());
-					int auctionLength = int.parseInt(naa.getNamedItem("auctionLength").getNodeValue());
-					long auctionInitBid = int.parseInt(naa.getNamedItem("auctionInitBid").getNodeValue());
-					
-					int itemId = int.parseInt(naa.getNamedItem("itemId").getNodeValue());
-					int itemCount = int.parseInt(naa.getNamedItem("itemCount").getNodeValue());
-					
-					if (auctionLength < 1)
+					throw new ArgumentException(nameof(auctionLength),
+						"auctionLength < 1 for instanceId: " + _instanceId + ", itemId " + itemId);
+				}
+
+				StatSet itemExtra = new StatSet();
+				AuctionItem item = new AuctionItem(auctionItemId, auctionLength, auctionInitBid, itemId, itemCount,
+					itemExtra);
+
+				if (!item.checkItemExists())
+				{
+					throw new ArgumentException(nameof(itemId), "Item with id " + itemId + " not found");
+				}
+
+				foreach (AuctionItem tmp in _items)
+				{
+					if (tmp.getAuctionItemId() == auctionItemId)
 					{
-						throw new ArgumentException(nameof(auctionLength), "auctionLength < 1 for instanceId: " + _instanceId + ", itemId " + itemId);
-					}
-					
-					StatSet itemExtra = new StatSet();
-					AuctionItem item = new AuctionItem(auctionItemId, auctionLength, auctionInitBid, itemId, itemCount, itemExtra);
-					
-					if (!item.checkItemExists())
-					{
-						throw new ArgumentException(nameof(itemId), "Item with id " + itemId + " not found");
-					}
-					
-					foreach (AuctionItem tmp in _items)
-					{
-						if (tmp.getAuctionItemId() == auctionItemId)
-						{
-							throw new ArgumentException(nameof(auctionItemId), "Dublicated auction item id " + auctionItemId);
-						}
-					}
-					
-					_items.Add(item);
-					
-					for (Node nb = na.getFirstChild(); nb != null; nb = nb.getNextSibling())
-					{
-						if ("extra".equalsIgnoreCase(nb.getNodeName()))
-						{
-							NamedNodeMap nab = nb.getAttributes();
-							for (int i = nab.getLength(); i-- > 0;)
-							{
-								Node n = nab.item(i);
-								if (n != null)
-								{
-									itemExtra.set(n.getNodeName(), n.getNodeValue());
-								}
-							}
-						}
+						throw new ArgumentException(nameof(auctionItemId),
+							"Dublicated auction item id " + auctionItemId);
 					}
 				}
+
+				_items.Add(item);
+
+				el.Elements("extra").Attributes().ForEach(a =>
+				{
+					itemExtra.set(a.Name.LocalName, a.Value);
+				});
 			}
 			catch (ArgumentException e)
 			{
-				LOGGER.Warn(GetType().Name + ": Failed loading auction item: " + e);
+				LOGGER.Error(GetType().Name + ": Failed loading auction item: " + e);
 			}
-		}
+		});
 		
 		if (_items.isEmpty())
 		{
@@ -121,29 +99,25 @@ public class ItemAuctionInstance
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(SELECT_AUCTION_ID_BY_INSTANCE_ID);
-			ps.setInt(1, _instanceId);
-			ResultSet rset = ps.executeQuery();
+			var query = ctx.ItemAuctions.Where(r => r.InstanceId == _instanceId);
+			foreach (var record in query)
 			{
-				while (rset.next())
+				int auctionId = record.AuctionId;
+				try
 				{
-					int auctionId = rset.getInt(1);
-					try
+					ItemAuction auction = loadAuction(auctionId);
+					if (auction != null)
 					{
-						ItemAuction auction = loadAuction(auctionId);
-						if (auction != null)
-						{
-							_auctions.put(auctionId, auction);
-						}
-						else
-						{
-							ItemAuctionManager.deleteAuction(auctionId);
-						}
+						_auctions.put(auctionId, auction);
 					}
-					catch (Exception e)
+					else
 					{
-						LOGGER.Error(GetType().Name + ": Failed loading auction: " + auctionId, e);
+						ItemAuctionManager.deleteAuction(auctionId);
 					}
+				}
+				catch (Exception e)
+				{
+					LOGGER.Error(GetType().Name + ": Failed loading auction: " + auctionId, e);
 				}
 			}
 		}
@@ -169,7 +143,7 @@ public class ItemAuctionInstance
 	
 	public void shutdown()
 	{
-		ScheduledFuture<?> stateTask = _stateTask;
+		ScheduledFuture stateTask = _stateTask;
 		if (stateTask != null)
 		{
 			stateTask.cancel(false);
@@ -200,7 +174,7 @@ public class ItemAuctionInstance
 		{
 			case 0:
 			{
-				nextAuction = createAuction(System.currentTimeMillis() + START_TIME_SPACE);
+				nextAuction = createAuction(DateTime.UtcNow + START_TIME_SPACE);
 				break;
 			}
 			case 1:
@@ -209,10 +183,10 @@ public class ItemAuctionInstance
 				{
 					case ItemAuctionState.CREATED:
 					{
-						if (auctions[0].getStartingTime() < (System.currentTimeMillis() + START_TIME_SPACE))
+						if (auctions[0].getStartingTime() < (DateTime.UtcNow + START_TIME_SPACE))
 						{
 							currentAuction = auctions[0];
-							nextAuction = createAuction(System.currentTimeMillis() + START_TIME_SPACE);
+							nextAuction = createAuction(DateTime.UtcNow + START_TIME_SPACE);
 						}
 						else
 						{
@@ -223,13 +197,13 @@ public class ItemAuctionInstance
 					case ItemAuctionState.STARTED:
 					{
 						currentAuction = auctions[0];
-						nextAuction = createAuction(Math.max(currentAuction.getEndingTime() + FINISH_TIME_SPACE, System.currentTimeMillis() + START_TIME_SPACE));
+						nextAuction = createAuction(Algorithms.Max(currentAuction.getEndingTime() + FINISH_TIME_SPACE, DateTime.UtcNow + START_TIME_SPACE));
 						break;
 					}
 					case ItemAuctionState.FINISHED:
 					{
 						currentAuction = auctions[0];
-						nextAuction = createAuction(System.currentTimeMillis() + START_TIME_SPACE);
+						nextAuction = createAuction(DateTime.UtcNow + START_TIME_SPACE);
 						break;
 					}
 					default:
@@ -242,9 +216,9 @@ public class ItemAuctionInstance
 			
 			default:
 			{
-				Array.Sort(auctions, Comparator.comparingLong(ItemAuction::getStartingTime).reversed());
+				Array.Sort(auctions, (a, b) => -a.getStartingTime().CompareTo(b.getStartingTime()));
 				// just to make sure we won't skip any auction because of little different times
-				long currentTime = System.currentTimeMillis();
+				DateTime currentTime = DateTime.UtcNow;
 				foreach (ItemAuction auction in auctions)
 				{
 					if (auction.getAuctionState() == ItemAuctionState.STARTED)
@@ -268,7 +242,7 @@ public class ItemAuctionInstance
 				}
 				if (nextAuction == null)
 				{
-					nextAuction = createAuction(System.currentTimeMillis() + START_TIME_SPACE);
+					nextAuction = createAuction(DateTime.UtcNow + START_TIME_SPACE);
 				}
 				break;
 			}
@@ -278,23 +252,40 @@ public class ItemAuctionInstance
 		
 		_currentAuction = currentAuction;
 		_nextAuction = nextAuction;
-		
+
 		if ((currentAuction != null) && (currentAuction.getAuctionState() != ItemAuctionState.FINISHED))
 		{
 			if (currentAuction.getAuctionState() == ItemAuctionState.STARTED)
 			{
-				setStateTask(ThreadPool.schedule(new ScheduleAuctionTask(currentAuction), Math.Max(currentAuction.getEndingTime() - System.currentTimeMillis(), 0)));
+				TimeSpan delay = nextAuction.getEndingTime() - DateTime.UtcNow;
+				if (delay < TimeSpan.Zero)
+					delay = TimeSpan.Zero;
+
+				setStateTask(ThreadPool.schedule(new ScheduleAuctionTask(this, currentAuction), delay));
 			}
 			else
 			{
-				setStateTask(ThreadPool.schedule(new ScheduleAuctionTask(currentAuction), Math.Max(currentAuction.getStartingTime() - System.currentTimeMillis(), 0)));
+				TimeSpan delay = nextAuction.getStartingTime() - DateTime.UtcNow;
+				if (delay < TimeSpan.Zero)
+					delay = TimeSpan.Zero;
+
+				setStateTask(ThreadPool.schedule(new ScheduleAuctionTask(this, currentAuction), delay));
 			}
-			LOGGER.Info(GetType().Name + ": Schedule current auction " + currentAuction.getAuctionId() + " for instance " + _instanceId);
+
+			LOGGER.Info(GetType().Name + ": Schedule current auction " + currentAuction.getAuctionId() +
+			            " for instance " + _instanceId);
 		}
 		else
 		{
-			setStateTask(ThreadPool.schedule(new ScheduleAuctionTask(nextAuction), Math.Max(nextAuction.getStartingTime() - System.currentTimeMillis(), 0)));
-			LOGGER.Info(GetType().Name + ": Schedule next auction " + nextAuction.getAuctionId() + " on " + DATE_FORMAT.format(new Date(nextAuction.getStartingTime())) + " for instance " + _instanceId);
+			TimeSpan delay = nextAuction.getStartingTime() - DateTime.UtcNow;
+			if (delay < TimeSpan.Zero)
+				delay = TimeSpan.Zero;
+
+			setStateTask(ThreadPool.schedule(new ScheduleAuctionTask(this, nextAuction), delay));
+
+			LOGGER.Info(GetType().Name + ": Schedule next auction " + nextAuction.getAuctionId() + " on " +
+			            nextAuction.getStartingTime().ToString("HH:mm:ss dd.MM.yy") + " for instance " +
+			            _instanceId);
 		}
 	}
 	
@@ -335,10 +326,12 @@ public class ItemAuctionInstance
 	
 	private class ScheduleAuctionTask: Runnable
 	{
+		private readonly ItemAuctionInstance _instance;
 		private readonly ItemAuction _auction;
 		
-		public ScheduleAuctionTask(ItemAuction auction)
+		public ScheduleAuctionTask(ItemAuctionInstance instance, ItemAuction auction)
 		{
+			_instance = instance;
 			_auction = auction;
 		}
 		
@@ -366,7 +359,7 @@ public class ItemAuctionInstance
 						throw new InvalidOperationException("Could not set auction state: " + ItemAuctionState.STARTED + ", expected: " + state);
 					}
 					LOGGER.Info(GetType().Name + ": Auction " + _auction.getAuctionId() + " has started for instance " + _auction.getInstanceId());
-					checkAndSetCurrentAndNextAuction();
+					_instance.checkAndSetCurrentAndNextAuction();
 					break;
 				}
 				case ItemAuctionState.STARTED:
@@ -378,7 +371,7 @@ public class ItemAuctionInstance
 							if (_auction.getScheduledAuctionEndingExtendState() == ItemAuctionExtendState.INITIAL)
 							{
 								_auction.setScheduledAuctionEndingExtendState(ItemAuctionExtendState.EXTEND_BY_5_MIN);
-								setStateTask(ThreadPool.schedule(this, Math.Max(_auction.getEndingTime() - System.currentTimeMillis(), 0)));
+								_instance.setStateTask(ThreadPool.schedule(this, Algorithms.Max(_auction.getEndingTime() - DateTime.UtcNow, TimeSpan.Zero)));
 								return;
 							}
 							break;
@@ -388,7 +381,7 @@ public class ItemAuctionInstance
 							if (_auction.getScheduledAuctionEndingExtendState() != ItemAuctionExtendState.EXTEND_BY_3_MIN)
 							{
 								_auction.setScheduledAuctionEndingExtendState(ItemAuctionExtendState.EXTEND_BY_3_MIN);
-								setStateTask(ThreadPool.schedule(this, Math.Max(_auction.getEndingTime() - System.currentTimeMillis(), 0)));
+								_instance.setStateTask(ThreadPool.schedule(this, Algorithms.Max(_auction.getEndingTime() - DateTime.UtcNow, TimeSpan.Zero)));
 								return;
 							}
 							break;
@@ -398,7 +391,7 @@ public class ItemAuctionInstance
 							if (_auction.getScheduledAuctionEndingExtendState() != ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B)
 							{
 								_auction.setScheduledAuctionEndingExtendState(ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B);
-								setStateTask(ThreadPool.schedule(this, Math.Max(_auction.getEndingTime() - System.currentTimeMillis(), 0)));
+								_instance.setStateTask(ThreadPool.schedule(this, Algorithms.Max(_auction.getEndingTime() - DateTime.UtcNow, TimeSpan.Zero)));
 								return;
 							}
 							break;
@@ -408,19 +401,22 @@ public class ItemAuctionInstance
 							if (_auction.getScheduledAuctionEndingExtendState() != ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A)
 							{
 								_auction.setScheduledAuctionEndingExtendState(ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A);
-								setStateTask(ThreadPool.schedule(this, Math.Max(_auction.getEndingTime() - System.currentTimeMillis(), 0)));
+								_instance.setStateTask(ThreadPool.schedule(this, Algorithms.Max(_auction.getEndingTime() - DateTime.UtcNow, TimeSpan.Zero)));
 								return;
 							}
+
+							break;
 						}
 					}
 					
 					if (!_auction.setAuctionState(state, ItemAuctionState.FINISHED))
 					{
-						throw new IllegalStateException("Could not set auction state: " + ItemAuctionState.FINISHED + ", expected: " + state);
+						throw new InvalidOperationException("Could not set auction state: " +
+						                                    ItemAuctionState.FINISHED + ", expected: " + state);
 					}
 					
-					onAuctionFinished(_auction);
-					checkAndSetCurrentAndNextAuction();
+					_instance.onAuctionFinished(_auction);
+					_instance.checkAndSetCurrentAndNextAuction();
 					break;
 				}
 				
@@ -434,7 +430,9 @@ public class ItemAuctionInstance
 	
 	protected void onAuctionFinished(ItemAuction auction)
 	{
-		auction.broadcastToAllBiddersInternal(new SystemMessage(SystemMessageId.S1_S_AUCTION_HAS_ENDED).addInt(auction.getAuctionId()));
+		var sm = new SystemMessagePacket(SystemMessageId.S1_S_AUCTION_HAS_ENDED);
+		sm.Params.addInt(auction.getAuctionId());
+		auction.broadcastToAllBiddersInternal(sm);
 		
 		ItemAuctionBid bid = auction.getHighestBid();
 		if (bid != null)
@@ -467,9 +465,9 @@ public class ItemAuctionInstance
 		}
 	}
 	
-	protected void setStateTask(ScheduledFuture<?> future)
+	protected void setStateTask(ScheduledFuture future)
 	{
-		ScheduledFuture<?> stateTask = _stateTask;
+		ScheduledFuture stateTask = _stateTask;
 		if (stateTask != null)
 		{
 			stateTask.cancel(false);
@@ -478,11 +476,11 @@ public class ItemAuctionInstance
 		_stateTask = future;
 	}
 	
-	private ItemAuction createAuction(long after)
+	private ItemAuction createAuction(DateTime after)
 	{
 		AuctionItem auctionItem = _items[Rnd.get(_items.size())];
-		long startingTime = _dateGenerator.nextDate(after);
-		long endingTime = startingTime + TimeUnit.MILLISECONDS.convert(auctionItem.getAuctionLength(), TimeUnit.MINUTES);
+		DateTime startingTime = _dateGenerator.nextDate(after);
+		DateTime endingTime = startingTime + TimeSpan.FromMinutes(auctionItem.getAuctionLength());
 		ItemAuction auction = new ItemAuction(_auctionIds.getAndIncrement(), _instanceId, startingTime, endingTime, auctionItem);
 		auction.storeMe();
 		return auction;
@@ -493,81 +491,72 @@ public class ItemAuctionInstance
 		try
 		{
 			using GameServerDbContext ctx = new();
-			int auctionItemId = 0;
-			long startingTime = 0;
-			long endingTime = 0;
-			byte auctionStateId = 0;
-			PreparedStatement ps = con.prepareStatement(SELECT_AUCTION_INFO);
+			Db.ItemAuction? record = ctx.ItemAuctions.SingleOrDefault(r => r.AuctionId == auctionId);
+			if (record is null)
 			{
-				ps.setInt(1, auctionId);
-				ResultSet rset = ps.executeQuery();
-				{
-					if (!rset.next())
-					{
-						LOGGER.Warn(GetType().Name + ": Auction data not found for auction: " + auctionId);
-						return null;
-					}
-					auctionItemId = rset.getInt(1);
-					startingTime = rset.getLong(2);
-					endingTime = rset.getLong(3);
-					auctionStateId = rset.getByte(4);
-				}
+				LOGGER.Warn(GetType().Name + ": Auction data not found for auction: " + auctionId);
+				return null;
 			}
-			
+
+			int auctionItemId = record.AuctionItemId;
+			DateTime startingTime = record.StartingTime;
+			DateTime endingTime = record.EndingTime;
+			byte auctionStateId = record.AuctionStateId;
+
 			if (startingTime >= endingTime)
 			{
 				LOGGER.Warn(GetType().Name + ": Invalid starting/ending paramaters for auction: " + auctionId);
 				return null;
 			}
-			
+
 			AuctionItem auctionItem = getAuctionItem(auctionItemId);
 			if (auctionItem == null)
 			{
-				LOGGER.Warn(GetType().Name + ": AuctionItem: " + auctionItemId + ", not found for auction: " + auctionId);
+				LOGGER.Warn(
+					GetType().Name + ": AuctionItem: " + auctionItemId + ", not found for auction: " + auctionId);
 				return null;
 			}
-			
-			ItemAuctionState auctionState = ItemAuctionState.stateForStateId(auctionStateId);
-			if (auctionState == null)
+
+			ItemAuctionState auctionState = (ItemAuctionState)auctionStateId;
+			if (!Enum.IsDefined(auctionState))
 			{
-				LOGGER.Warn(GetType().Name + ": Invalid auctionStateId: " + auctionStateId + ", for auction: " + auctionId);
+				LOGGER.Warn(GetType().Name + ": Invalid auctionStateId: " + auctionStateId + ", for auction: " +
+				            auctionId);
 				return null;
 			}
-			
-			if ((auctionState == ItemAuctionState.FINISHED) && (startingTime < (System.currentTimeMillis() - TimeUnit.MILLISECONDS.convert(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER, TimeUnit.DAYS))))
+
+			if ((auctionState == ItemAuctionState.FINISHED) && (startingTime <
+			                                                    (DateTime.UtcNow -
+			                                                     TimeSpan.FromDays(
+				                                                     Config.ALT_ITEM_AUCTION_EXPIRED_AFTER))))
 			{
 				LOGGER.Info(GetType().Name + ": Clearing expired auction: " + auctionId);
-				{
-					PreparedStatement ps = con.prepareStatement(DELETE_AUCTION_INFO_BY_AUCTION_ID);
-					ps.setInt(1, auctionId);
-					ps.execute();
-				}
-				
-				{
-					PreparedStatement ps = con.prepareStatement(DELETE_AUCTION_BID_INFO_BY_AUCTION_ID);
-					ps.setInt(1, auctionId);
-					ps.execute();
-				}
+				ctx.ItemAuctions.Where(r => r.AuctionId == auctionId).ExecuteDelete();
+				ctx.ItemAuctionBids.Where(r => r.AuctionId == auctionId).ExecuteDelete();
 				return null;
 			}
-			
+
 			List<ItemAuctionBid> auctionBids = new();
-			try
+			const String SELECT_PLAYERS_ID_BY_AUCTION_ID =
+				"SELECT playerObjId, playerBid FROM item_auction_bid WHERE auctionId = ?";
+			var query = ctx.ItemAuctionBids.Where(r => r.AuctionId == auctionId)
+				.Select(r => new { r.CharacterId, r.Bid });
+
+			foreach (var record1 in query)
 			{
-				PreparedStatement ps = con.prepareStatement(SELECT_PLAYERS_ID_BY_AUCTION_ID);
-				ps.setInt(1, auctionId);
-				{
-					ResultSet rs = ps.executeQuery();
-					while (rs.next())
-					{
-						int playerObjId = rs.getInt(1);
-						long playerBid = rs.getLong(2);
-						ItemAuctionBid bid = new ItemAuctionBid(playerObjId, playerBid);
-						auctionBids.Add(bid);
-					}
-				}
+				int playerObjId = record1.CharacterId;
+				long playerBid = record1.Bid;
+				ItemAuctionBid bid = new ItemAuctionBid(playerObjId, playerBid);
+				auctionBids.Add(bid);
 			}
-			return new ItemAuction(auctionId, _instanceId, startingTime, endingTime, auctionItem, auctionBids, auctionState);
+
+			return new ItemAuction(auctionId, _instanceId, startingTime, endingTime, auctionItem, auctionBids,
+				auctionState);
+		}
+		catch (Exception exception)
+		{
+			LOGGER.Error(exception);
+			return null;
 		}
 	}
 }

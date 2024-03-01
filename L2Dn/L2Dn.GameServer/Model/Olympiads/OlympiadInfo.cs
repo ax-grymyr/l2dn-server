@@ -1,3 +1,5 @@
+using L2Dn.GameServer.Db;
+
 namespace L2Dn.GameServer.Model.Olympiads;
 
 /**
@@ -7,13 +9,13 @@ public class OlympiadInfo
 {
 	private readonly String _name;
 	private readonly String _clan;
-	private readonly int _clanId;
-	private readonly int _classId;
+	private readonly int? _clanId;
+	private readonly CharacterClass _classId;
 	private readonly int _dmg;
 	private readonly int _curPoints;
 	private readonly int _diffPoints;
 
-	public OlympiadInfo(String name, String clan, int clanId, int classId, int dmg, int curPoints, int diffPoints)
+	public OlympiadInfo(String name, String clan, int? clanId, CharacterClass classId, int dmg, int curPoints, int diffPoints)
 	{
 		_name = name;
 		_clan = clan;
@@ -43,7 +45,7 @@ public class OlympiadInfo
 	/**
 	 * @return the name the player's clan id.
 	 */
-	public int getClanId()
+	public int? getClanId()
 	{
 		return _clanId;
 	}
@@ -51,7 +53,7 @@ public class OlympiadInfo
 	/**
 	 * @return the name the player's class id.
 	 */
-	public int getClassId()
+	public CharacterClass getClassId()
 	{
 		return _classId;
 	}

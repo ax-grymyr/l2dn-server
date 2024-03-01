@@ -513,8 +513,8 @@ public class Config
 	public static int ALT_OLY_WEEKLY_POINTS;
 	public static int ALT_OLY_CLASSED;
 	public static int ALT_OLY_NONCLASSED;
-	public static ImmutableDictionary<int, int> ALT_OLY_WINNER_REWARD = ImmutableDictionary<int, int>.Empty;
-	public static ImmutableDictionary<int, int> ALT_OLY_LOSER_REWARD = ImmutableDictionary<int, int>.Empty;
+	public static ImmutableArray<ItemHolder> ALT_OLY_WINNER_REWARD = ImmutableArray<ItemHolder>.Empty;
+	public static ImmutableArray<ItemHolder> ALT_OLY_LOSER_REWARD = ImmutableArray<ItemHolder>.Empty;
 	public static int ALT_OLY_COMP_RITEM;
 	public static int ALT_OLY_MIN_MATCHES;
 	public static int ALT_OLY_MARK_PER_POINT;
@@ -537,7 +537,7 @@ public class Config
 	public static int ALT_OLY_WAIT_TIME;
 	public static string ALT_OLY_PERIOD;
 	public static int ALT_OLY_PERIOD_MULTIPLIER;
-	public static ImmutableSortedSet<int> ALT_OLY_COMPETITION_DAYS = ImmutableSortedSet<int>.Empty;
+	public static ImmutableSortedSet<DayOfWeek> ALT_OLY_COMPETITION_DAYS = ImmutableSortedSet<DayOfWeek>.Empty;
 	public static int ALT_MANOR_REFRESH_TIME;
 	public static int ALT_MANOR_REFRESH_MIN;
 	public static int ALT_MANOR_APPROVE_TIME;

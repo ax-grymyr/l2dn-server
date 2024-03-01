@@ -1007,11 +1007,11 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public void onDeath(Player player)
 	{
-		if (!player.isOnEvent() && (_template.getEjectTime() > 0))
+		if (!player.isOnEvent() && (_template.getEjectTime() > TimeSpan.Zero))
 		{
 			// Send message
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.IF_YOU_ARE_NOT_RESURRECTED_IN_S1_MIN_YOU_WILL_BE_TELEPORTED_OUT_OF_THE_INSTANCE_ZONE);
-			sm.Params.addInt(_template.getEjectTime());
+			sm.Params.addInt((int)_template.getEjectTime().TotalMinutes);
 			player.sendPacket(sm);
 			
 			// Start eject task
@@ -1021,7 +1021,7 @@ public class Instance : IIdentifiable, INamable
 				{
 					ejectPlayer(player.getActingPlayer());
 				}
-			}, _template.getEjectTime() * 60 * 1000)); // minutes to milliseconds
+			}, _template.getEjectTime())); // minutes to milliseconds
 		}
 	}
 	
