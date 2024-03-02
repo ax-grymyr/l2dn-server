@@ -1,6 +1,9 @@
 ﻿using System.Text;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 using StringTokenizer = Microsoft.Extensions.Primitives.StringTokenizer;
@@ -49,7 +52,7 @@ public class MacroList: IRestorable
 			}
 			registerMacroInDb(macro);
 		}
-		_owner.sendPacket(new SendMacroList(1, macro, updateType));
+		_owner.sendPacket(new SendMacroListPacket(1, macro, updateType));
 	}
 	
 	public void deleteMacro(int id)
@@ -67,25 +70,25 @@ public class MacroList: IRestorable
 				_owner.deleteShortCut(sc.getSlot(), sc.getPage());
 			}
 		}
-		_owner.sendPacket(new SendMacroList(0, removed, MacroUpdateType.DELETE));
+		_owner.sendPacket(new SendMacroListPacket(0, removed, MacroUpdateType.DELETE));
 	}
 	
 	public void sendAllMacros()
 	{
 		ICollection<Macro> allMacros = _macroses.values();
-		int count = allMacros.size();
+		int count = allMacros.Count;
 		
 		lock (_macroses)
 		{
 			if (allMacros.isEmpty())
 			{
-				_owner.sendPacket(new SendMacroList(0, null, MacroUpdateType.LIST));
+				_owner.sendPacket(new SendMacroListPacket(0, null, MacroUpdateType.LIST));
 			}
 			else
 			{
 				foreach (Macro m in allMacros)
 				{
-					_owner.sendPacket(new SendMacroList(count, m, MacroUpdateType.LIST));
+					_owner.sendPacket(new SendMacroListPacket(count, m, MacroUpdateType.LIST));
 				}
 			}
 		}
@@ -188,6 +191,7 @@ public class MacroList: IRestorable
 			LOGGER.Warn("could not store shortcuts:" + e);
 			return false;
 		}
+		
 		return true;
 	}
 }

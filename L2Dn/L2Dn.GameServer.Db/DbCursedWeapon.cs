@@ -13,5 +13,5 @@ public class DbCursedWeapon
     public int PlayerReputation { get; set; }
     public int PlayerPkKills { get; set; }
     public int NbKills { get; set; }
-    public DateTime? EndTime { get; set; }
+    public DateTime EndTime { get; set; }
 }

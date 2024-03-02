@@ -607,7 +607,7 @@ public class Duel
 	 * @param packet
 	 */
 	public void broadcastToTeam1<TPacket>(TPacket packet)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		if (_playerA == null)
 		{
@@ -632,7 +632,7 @@ public class Duel
 	 * @param packet
 	 */
 	public void broadcastToTeam2<TPacket>(TPacket packet)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		if (_playerB == null)
 		{

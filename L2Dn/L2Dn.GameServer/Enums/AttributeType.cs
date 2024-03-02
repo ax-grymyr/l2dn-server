@@ -1,4 +1,6 @@
-﻿namespace L2Dn.GameServer.Enums;
+﻿using System.Collections.Immutable;
+
+namespace L2Dn.GameServer.Enums;
 
 /**
  * An enum representing all attribute types.
@@ -15,4 +17,17 @@ public enum AttributeType
     EARTH = 3,
     HOLY = 4,
     DARK = 5
+}
+
+public static class AttributeTypeUtil
+{
+    public static readonly ImmutableArray<AttributeType> AttributeTypes =
+    [
+        AttributeType.FIRE,
+        AttributeType.WATER,
+        AttributeType.WIND,
+        AttributeType.EARTH,
+        AttributeType.HOLY,
+        AttributeType.DARK
+    ];
 }

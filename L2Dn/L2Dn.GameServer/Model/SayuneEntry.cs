@@ -50,7 +50,7 @@ public class SayuneEntry: ILocational
         return 0;
     }
 
-    public ILocational getLocation()
+    public Location getLocation()
     {
         return new Location(_x, _y, _z);
     }

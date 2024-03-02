@@ -17,7 +17,7 @@ public class TradeItem
 	private long _count;
 	private long _storeCount;
 	private long _price;
-	private byte _elemAtkType;
+	private AttributeType _elemAtkType;
 	private int _elemAtkPower;
 	private readonly int[] _elemDefAttr =
 	{
@@ -29,8 +29,8 @@ public class TradeItem
 		0
 	};
 	private readonly int[] _enchantOptions;
-	private Collection<EnsoulOption> _soulCrystalOptions;
-	private Collection<EnsoulOption> _soulCrystalSpecialOptions;
+	private ICollection<EnsoulOption> _soulCrystalOptions;
+	private ICollection<EnsoulOption> _soulCrystalSpecialOptions;
 	private int _visualId;
 	private int _augmentationOption1 = -1;
 	private int _augmentationOption2 = -1;
@@ -47,11 +47,11 @@ public class TradeItem
 		_type2 = item.getCustomType2();
 		_count = count;
 		_price = price;
-		_elemAtkType = item.getAttackAttributeType().getClientId();
+		_elemAtkType = item.getAttackAttributeType();
 		_elemAtkPower = item.getAttackAttributePower();
-		foreach (AttributeType type in AttributeType.ATTRIBUTE_TYPES)
+		foreach (AttributeType type in AttributeTypeUtil.AttributeTypes)
 		{
-			_elemDefAttr[type.getClientId()] = item.getDefenceAttribute(type);
+			_elemDefAttr[(int)type] = item.getDefenceAttribute(type);
 		}
 		_enchantOptions = item.getEnchantOptions();
 		_soulCrystalOptions = item.getSpecialAbilities();
@@ -77,11 +77,11 @@ public class TradeItem
 		_count = count;
 		_storeCount = count;
 		_price = price;
-		_elemAtkType = AttributeType.NONE.getClientId();
+		_elemAtkType = AttributeType.NONE;
 		_elemAtkPower = 0;
 		_enchantOptions = Item.DEFAULT_ENCHANT_OPTIONS;
-		_soulCrystalOptions = Collections.emptyList();
-		_soulCrystalSpecialOptions = Collections.emptyList();
+		_soulCrystalOptions = new List<EnsoulOption>();
+		_soulCrystalSpecialOptions = new List<EnsoulOption>();
 	}
 	
 	public TradeItem(TradeItem item, long count, long price)
@@ -176,10 +176,10 @@ public class TradeItem
 	
 	public void setAttackElementType(AttributeType attackElement)
 	{
-		_elemAtkType = attackElement.getClientId();
+		_elemAtkType = attackElement;
 	}
 	
-	public byte getAttackElementType()
+	public AttributeType getAttackElementType()
 	{
 		return _elemAtkType;
 	}
@@ -196,7 +196,7 @@ public class TradeItem
 	
 	public void setElementDefAttr(AttributeType element, int value)
 	{
-		_elemDefAttr[element.getClientId()] = value;
+		_elemDefAttr[(int)element] = value;
 	}
 	
 	public int getElementDefAttr(byte i)
@@ -209,24 +209,24 @@ public class TradeItem
 		return _enchantOptions;
 	}
 	
-	public void setSoulCrystalOptions(Collection<EnsoulOption> soulCrystalOptions)
+	public void setSoulCrystalOptions(ICollection<EnsoulOption> soulCrystalOptions)
 	{
 		_soulCrystalOptions = soulCrystalOptions;
 	}
 	
-	public Collection<EnsoulOption> getSoulCrystalOptions()
+	public ICollection<EnsoulOption> getSoulCrystalOptions()
 	{
-		return _soulCrystalOptions == null ? Collections.emptyList() : _soulCrystalOptions;
+		return _soulCrystalOptions == null ? new List<EnsoulOption>() : _soulCrystalOptions;
 	}
 	
-	public void setSoulCrystalSpecialOptions(Collection<EnsoulOption> soulCrystalSpecialOptions)
+	public void setSoulCrystalSpecialOptions(ICollection<EnsoulOption> soulCrystalSpecialOptions)
 	{
 		_soulCrystalSpecialOptions = soulCrystalSpecialOptions;
 	}
 	
-	public Collection<EnsoulOption> getSoulCrystalSpecialOptions()
+	public ICollection<EnsoulOption> getSoulCrystalSpecialOptions()
 	{
-		return _soulCrystalSpecialOptions == null ? Collections.emptyList() : _soulCrystalSpecialOptions;
+		return _soulCrystalSpecialOptions == null ? new List<EnsoulOption>() : _soulCrystalSpecialOptions;
 	}
 	
 	public void setAugmentation(int option1, int option2)

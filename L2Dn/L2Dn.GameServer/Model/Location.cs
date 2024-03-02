@@ -113,7 +113,7 @@ public class Location : Point2D, IPositionable
 		_heading = heading;
 	}
 	
-	public ILocational getLocation()
+	public Location getLocation()
 	{
 		return this;
 	}

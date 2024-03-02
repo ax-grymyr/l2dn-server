@@ -1,9 +1,12 @@
 ﻿using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using Microsoft.VisualBasic.FileIO;
 using NLog;
 
 namespace L2Dn.GameServer.Model;
@@ -65,17 +68,27 @@ public class ShortCuts : IRestorable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(
-				"REPLACE INTO character_shortcuts (charId,slot,page,type,shortcut_id,level,sub_level,class_index) values(?,?,?,?,?,?,?,?)");
-			statement.setInt(1, _owner.getObjectId());
-			statement.setInt(2, shortcut.getSlot());
-			statement.setInt(3, shortcut.getPage());
-			statement.setInt(4, shortcut.getType().ordinal());
-			statement.setInt(5, shortcut.getId());
-			statement.setInt(6, shortcut.getLevel());
-			statement.setInt(7, shortcut.getSubLevel());
-			statement.setInt(8, _owner.getClassIndex());
-			statement.execute();
+			int characterId = _owner.getObjectId();
+			int classIndex = _owner.getClassIndex();
+			int slot = shortcut.getSlot();
+			int page = shortcut.getPage();
+			var record = ctx.CharacterShortCuts.SingleOrDefault(r =>
+				r.CharacterId == characterId && r.ClassIndex == classIndex && r.Page == page && r.Slot == slot);
+			if (record == null)
+			{
+				record = new CharacterShortCut();
+				record.CharacterId = characterId;
+				record.ClassIndex = (byte)classIndex;
+				record.Slot = (byte)slot;
+				record.Page = (byte)page;
+				ctx.CharacterShortCuts.Add(record);
+			}
+
+			record.Type = (byte)shortcut.getType();
+			record.ShortCutId = shortcut.getId();
+			record.SkillLevel = (short)shortcut.getLevel();
+			record.SkillSubLevel = (short)shortcut.getSubLevel();
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{

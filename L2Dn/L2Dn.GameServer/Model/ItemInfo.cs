@@ -42,14 +42,14 @@ public class ItemInfo
 	private ItemChangeType _change;
 	
 	/** The mana of this item */
-	private int _mana;
-	private int _time;
+	private int? _mana;
+	private TimeSpan? _time;
 	private bool _isBlessed = false;
 	private bool _available = true;
 	
 	private int _location;
 	
-	private sbyte _elemAtkType = -2;
+	private AttributeType _elemAtkType = AttributeType.NONE;
 	private int _elemAtkPower = 0;
 	private readonly int[] _attributeDefence =
 	{
@@ -62,10 +62,10 @@ public class ItemInfo
 	};
 	
 	private int[] _option;
-	private List<EnsoulOption> _soulCrystalOptions;
-	private List<EnsoulOption> _soulCrystalSpecialOptions;
+	private ICollection<EnsoulOption> _soulCrystalOptions;
+	private ICollection<EnsoulOption> _soulCrystalSpecialOptions;
 	private int _visualId;
-	private long _visualExpiration;
+	private TimeSpan? _visualExpiration;
 	
 	private int _reuseDelay;
 	private Player _owner;
@@ -122,21 +122,21 @@ public class ItemInfo
 		
 		// Get shadow item mana
 		_mana = item.getMana();
-		_time = item.isTimeLimitedItem() ? (int) (item.getRemainingTime() / 1000) : -9999;
+		_time = item.isTimeLimitedItem() ? item.getRemainingTime() : null;
 		_available = item.isAvailable();
 		_location = item.getLocationSlot();
-		_elemAtkType = item.getAttackAttributeType().getClientId();
+		_elemAtkType = item.getAttackAttributeType();
 		_elemAtkPower = item.getAttackAttributePower();
-		foreach (AttributeType type in AttributeType.ATTRIBUTE_TYPES)
+		foreach (AttributeType type in AttributeTypeUtil.AttributeTypes)
 		{
-			_attributeDefence[type.getClientId()] = item.getDefenceAttribute(type);
+			_attributeDefence[(int)type] = item.getDefenceAttribute(type);
 		}
 		_isBlessed = item.isBlessed();
 		_option = item.getEnchantOptions();
 		_soulCrystalOptions = item.getSpecialAbilities();
 		_soulCrystalSpecialOptions = item.getAdditionalSpecialAbilities();
 		_visualId = item.getVisualId();
-		_visualExpiration = item.getVisualLifeTime() > 0 ? (item.getVisualLifeTime() - System.currentTimeMillis()) / 1000 : 0;
+		_visualExpiration = item.getVisualLifeTime() != null ? (item.getVisualLifeTime().Value - DateTime.UtcNow) : null;
 		_reuseDelay = item.getReuseDelay();
 		_owner = item.getActingPlayer();
 	}
@@ -144,7 +144,7 @@ public class ItemInfo
 	public ItemInfo(Item item, ItemChangeType change): this(item)
 	{
 		_change = change;
-		_visualExpiration = item.getVisualLifeTime() > 0 ? (item.getVisualLifeTime() - System.currentTimeMillis()) / 1000 : 0;
+		_visualExpiration = item.getVisualLifeTime() != null ? item.getVisualLifeTime().Value - DateTime.UtcNow : null;
 	}
 	
 	public ItemInfo(TradeItem item)
@@ -183,8 +183,8 @@ public class ItemInfo
 		_change = 0;
 		
 		// Get shadow item mana
-		_mana = -1;
-		_time = -9999;
+		_mana = null;
+		_time = null;
 		_location = item.getLocationSlot();
 		_elemAtkType = item.getAttackElementType();
 		_elemAtkPower = item.getAttackElementPower();
@@ -233,11 +233,11 @@ public class ItemInfo
 		_change = 0;
 		
 		// Get shadow item mana
-		_mana = -1;
-		_time = -9999;
+		_mana = null;
+		_time = null;
 		_location = 0;
-		_soulCrystalOptions = new();
-		_soulCrystalSpecialOptions = new();
+		_soulCrystalOptions = new List<EnsoulOption>();
+		_soulCrystalSpecialOptions = new List<EnsoulOption>();
 	}
 	
 	public ItemInfo(WarehouseItem item)
@@ -335,14 +335,14 @@ public class ItemInfo
 		return _change;
 	}
 	
-	public int getMana()
+	public int? getMana()
 	{
 		return _mana;
 	}
 	
-	public int getTime()
+	public TimeSpan? getTime()
 	{
-		return _time > 0 ? _time : _visualExpiration > 0 ? (int) _visualExpiration : -9999;
+		return _time ?? _visualExpiration;
 	}
 	
 	public bool isAvailable()
@@ -355,7 +355,7 @@ public class ItemInfo
 		return _location;
 	}
 	
-	public int getAttackElementType()
+	public AttributeType getAttackElementType()
 	{
 		return _elemAtkType;
 	}
@@ -380,9 +380,9 @@ public class ItemInfo
 		return _visualId;
 	}
 	
-	public List<EnsoulOption> getSoulCrystalOptions()
+	public ICollection<EnsoulOption> getSoulCrystalOptions()
 	{
-		return _soulCrystalOptions != null ? _soulCrystalOptions : new();
+		return _soulCrystalOptions != null ? _soulCrystalOptions : new List<EnsoulOption>();
 	}
 	
 	public bool soulCrystalOptionsMatch(EnsoulOption[] soulCrystalOptions)
@@ -412,9 +412,9 @@ public class ItemInfo
 		return true;
 	}
 	
-	public List<EnsoulOption> getSoulCrystalSpecialOptions()
+	public ICollection<EnsoulOption> getSoulCrystalSpecialOptions()
 	{
-		return _soulCrystalSpecialOptions != null ? _soulCrystalSpecialOptions : new();
+		return _soulCrystalSpecialOptions != null ? _soulCrystalSpecialOptions : new List<EnsoulOption>();
 	}
 	
 	public bool soulCrystalSpecialOptionsMatch(EnsoulOption[] soulCrystalSpecialOptions)
@@ -444,7 +444,7 @@ public class ItemInfo
 		return true;
 	}
 	
-	public long getVisualExpiration()
+	public TimeSpan? getVisualExpiration()
 	{
 		return _visualExpiration;
 	}

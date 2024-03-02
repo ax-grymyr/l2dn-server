@@ -1,13 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace L2Dn.GameServer.Db;
 
-public class GlobalVariable
+[PrimaryKey(nameof(Name))]
+public class GlobalVariable: DbVariable
 {
-    [Key]
-    [MaxLength(255)]
-    public string Name { get; set; } = string.Empty;
-
-    [MaxLength(255)]
-    public string? Value { get; set; }
 }

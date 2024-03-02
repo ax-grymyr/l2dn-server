@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Network.OutgoingPackets.ElementalSpirits;
 using NLog;
 
 namespace L2Dn.GameServer.Model;
@@ -14,7 +15,6 @@ namespace L2Dn.GameServer.Model;
 public class ElementalSpirit
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(ElementalSpirit));
-	private const String STORE_ELEMENTAL_SPIRIT_QUERY = "REPLACE INTO character_spirits (charId, type, level, stage, experience, attack_points, defense_points, crit_rate_points, crit_damage_points, in_use) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	
 	private readonly Player _owner;
 	private ElementalSpiritTemplateHolder _template;
@@ -42,15 +42,20 @@ public class ElementalSpirit
 		}
 		
 		_data.addExperience(experience);
-		_owner.sendPacket(new ExElementalSpiritGetExp(_data.getType(), _data.getExperience()));
-		_owner.sendPacket(new SystemMessagePacket(SystemMessageId.YOU_HAVE_ACQUIRED_S1_S2_ATTRIBUTE_XP).addInt(experience).addElementalSpirit(_data.getType()));
+		_owner.sendPacket(new ExElementalSpiritGetExpPacket(_data.getType(), _data.getExperience()));
+
+		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_ACQUIRED_S1_S2_ATTRIBUTE_XP);
+		sm.Params.addInt(experience).addElementalSpirit(_data.getType());
+		_owner.sendPacket(sm);
 		
 		if (_data.getExperience() > getExperienceToNextLevel())
 		{
 			levelUp();
-			_owner.sendPacket(new SystemMessagePacket(SystemMessageId.S1_ATTRIBUTE_SPIRIT_HAS_REACHED_LV_S2).addElementalSpirit(_data.getType()).addByte(_data.getLevel()));
-			_owner.sendPacket(new ElementalSpiritInfo(_owner, (byte) 0));
-			_owner.sendPacket(new ExElementalSpiritAttackType(_owner));
+			sm = new SystemMessagePacket(SystemMessageId.S1_ATTRIBUTE_SPIRIT_HAS_REACHED_LV_S2);
+			sm.Params.addElementalSpirit(_data.getType()).addByte(_data.getLevel());
+			_owner.sendPacket(sm);
+			_owner.sendPacket(new ElementalSpiritInfoPacket(_owner, 0));
+			_owner.sendPacket(new ExElementalSpiritAttackTypePacket(_owner));
 			UserInfoPacket userInfo = new UserInfoPacket(_owner);
 			userInfo.addComponentType(UserInfoType.ATT_SPIRITS);
 			_owner.sendPacket(userInfo);

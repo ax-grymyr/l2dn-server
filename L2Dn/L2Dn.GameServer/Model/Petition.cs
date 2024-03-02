@@ -116,7 +116,7 @@ public class Petition
 	}
 	
 	public void sendPetitionerPacket<TPacket>(TPacket responsePacket)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		if ((_petitioner == null) || !_petitioner.isOnline())
 		{
@@ -131,7 +131,7 @@ public class Petition
 	}
 	
 	public void sendResponderPacket<TPacket>(TPacket responsePacket)
-	where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		if ((_responder == null) || !_responder.isOnline())
 		{

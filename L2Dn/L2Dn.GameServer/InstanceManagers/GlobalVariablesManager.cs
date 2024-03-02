@@ -1,7 +1,5 @@
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Variables;
-using Microsoft.EntityFrameworkCore;
-using NLog;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -9,10 +7,8 @@ namespace L2Dn.GameServer.InstanceManagers;
  * Global Variables Manager.
  * @author xban1x
  */
-public class GlobalVariablesManager: AbstractVariables
+public class GlobalVariablesManager: AbstractVariables<GlobalVariable>
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(GlobalVariablesManager));
-	
 	// Public variable names
 	public static readonly String DAILY_TASK_RESET = "DAILY_TASK_RESET";
 	public static readonly String MONSTER_ARENA_VARIABLE = "MA_C";
@@ -25,68 +21,15 @@ public class GlobalVariablesManager: AbstractVariables
 	{
 		restoreMe();
 	}
-	
-	public bool restoreMe()
+
+	protected override IQueryable<GlobalVariable> GetQuery(GameServerDbContext ctx)
 	{
-		// Restore previous variables.
-		try 
-		{
-			using GameServerDbContext ctx = new();
-			foreach (GlobalVariable record in ctx.GlobalVariables)
-			{
-				set(record.Name, record.Value);
-			}
-		}
-		catch (Exception e)
-		{
-			LOGGER.Error(GetType().Name + ": Couldn't restore global variables.");
-			return false;
-		}
-		
-		LOGGER.Info(GetType().Name +": Loaded " + getSet().size() + " variables.");
-		return true;
+		return ctx.GlobalVariables;
 	}
-	
-	public bool storeMe()
+
+	protected override GlobalVariable CreateVar()
 	{
-		try 
-		{
-			using GameServerDbContext ctx = new();
-
-			// Clear previous entries.
-			ctx.GlobalVariables.ExecuteDelete();
-
-			ctx.GlobalVariables.AddRange(getSet().Select(pair => new GlobalVariable()
-			{
-				Name = pair.Key,
-				Value = pair.Value?.ToString()
-			}));
-
-			ctx.SaveChanges();
-		}
-		catch (Exception e)
-		{
-			LOGGER.Warn(GetType().Name + ": Couldn't save global variables to database." + e);
-			return false;
-		}
-		
-		LOGGER.Info(GetType().Name +": Stored " + getSet().size() + " variables.");
-		return true;
-	}
-	
-	public bool deleteMe()
-	{
-		try 
-		{
-			using GameServerDbContext ctx = new();
-			ctx.GlobalVariables.ExecuteDelete();
-		}
-		catch (Exception e)
-		{
-			LOGGER.Warn(GetType().Name + ": Couldn't delete global variables to database." + e);
-			return false;
-		}
-		return true;
+		return new GlobalVariable();
 	}
 	
 	/**

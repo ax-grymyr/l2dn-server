@@ -203,8 +203,8 @@ public class ClanTable
 			}
 		}
 		
-		int fortId = clan.getFortId();
-		if (fortId == 0)
+		int? fortId = clan.getFortId();
+		if (fortId == null || fortId == 0)
 		{
 			foreach (FortSiege siege in FortSiegeManager.getInstance().getSieges())
 			{
@@ -247,9 +247,9 @@ public class ClanTable
 			ctx.ClanWars.Where(c => c.Clan1Id == clanId || c.Clan2Id == clanId).ExecuteDelete();
 			ctx.ClanNotices.Where(c => c.ClanId == clanId).ExecuteDelete();
 			
-			if (fortId != 0)
+			if (fortId != null && fortId != 0)
 			{
-				Fort fort = FortManager.getInstance().getFortById(fortId);
+				Fort fort = FortManager.getInstance().getFortById(fortId.Value);
 				if (fort != null)
 				{
 					Clan owner = fort.getOwnerClan();

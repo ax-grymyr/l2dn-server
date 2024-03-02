@@ -70,7 +70,7 @@ public class EffectList
 	 */
 	public Set<BuffInfo> getPassives()
 	{
-		return Collections.unmodifiableSet(_passives);
+		return _passives;
 	}
 	
 	/**
@@ -79,16 +79,16 @@ public class EffectList
 	 */
 	public Set<BuffInfo> getOptions()
 	{
-		return Collections.unmodifiableSet(_options);
+		return _options;
 	}
 	
 	/**
 	 * Gets all the active effects on this effect list.
 	 * @return an unmodifiable set containing all the active effects on this effect list
 	 */
-	public Collection<BuffInfo> getEffects()
+	public ICollection<BuffInfo> getEffects()
 	{
-		return Collections.unmodifiableCollection(_actives);
+		return _actives;
 	}
 	
 	/**

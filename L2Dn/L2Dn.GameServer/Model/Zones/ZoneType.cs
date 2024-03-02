@@ -516,7 +516,7 @@ public abstract class ZoneType: ListenersContainer
 	 * @param packet
 	 */
 	public void broadcastPacket<TPacket>(TPacket packet)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		if (_characterList.isEmpty())
 		{

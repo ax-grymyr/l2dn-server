@@ -81,7 +81,7 @@ public class Territory
 	{
 		double dy1 = p1._y - y;
 		double dy2 = p2._y - y;
-		if (Math.Abs(Math.signum(dy1) - Math.signum(dy2)) <= 1e-6)
+		if (Math.Abs(Math.Sign(dy1) - Math.Sign(dy2)) <= 1e-6)
 		{
 			return false;
 		}
