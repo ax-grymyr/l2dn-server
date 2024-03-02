@@ -126,7 +126,7 @@ public class TeleportHolder
 			String confirmDesc = loc.getName();
 			if (loc.getNpcStringId() != null)
 			{
-				NpcStringId stringId = loc.getNpcStringId();
+				NpcStringId stringId = loc.getNpcStringId().Value;
 				finalName = "<fstring>" + stringId + "</fstring>";
 				confirmDesc = "F;" + stringId;
 			}

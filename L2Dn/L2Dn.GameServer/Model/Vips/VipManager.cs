@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
 using L2Dn.GameServer.Model.Events.Listeners;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Variables;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Vip;
 
 namespace L2Dn.GameServer.Model.Vips;
@@ -22,9 +23,9 @@ public class VipManager
 			return;
 		}
 		
-		_vipLoginListener = new ConsumerEventListener(null, EventType.ON_PLAYER_LOGIN, (Action<OnPlayerLogin>)onVipLogin, this);
+		_vipLoginListener = new ConsumerEventListener(null, EventType.ON_PLAYER_LOGIN, ev => onVipLogin((OnPlayerLogin)ev), this);
 	
-		Containers.Global().addListener(new ConsumerEventListener(Containers.Global(), EventType.ON_PLAYER_LOAD, (Action<OnPlayerLoad>)onPlayerLoaded, this));
+		Containers.Global().addListener(new ConsumerEventListener(Containers.Global(), EventType.ON_PLAYER_LOAD, ev => onPlayerLoaded((OnPlayerLoad)ev), this));
 	}
 	
 	private void onPlayerLoaded(OnPlayerLoad @event)
@@ -39,7 +40,7 @@ public class VipManager
 		else
 		{
 			player.sendPacket(new ReceiveVipInfoPacket(player));
-			player.sendPacket(new ExBRNewIconCashBtnWnd((byte) 0));
+			player.sendPacket(new ExBRNewIconCashBtnWndPacket(0));
 		}
 	}
 	
@@ -61,11 +62,11 @@ public class VipManager
 		Player player = @event.getPlayer();
 		if (canReceiveGift(player))
 		{
-			player.sendPacket(new ExBRNewIconCashBtnWnd((byte) 1));
+			player.sendPacket(new ExBRNewIconCashBtnWndPacket(1));
 		}
 		else
 		{
-			player.sendPacket(new ExBRNewIconCashBtnWnd((byte) 0));
+			player.sendPacket(new ExBRNewIconCashBtnWndPacket(0));
 		}
 		player.removeListener(_vipLoginListener);
 		player.sendPacket(new ReceiveVipInfoPacket(player));
@@ -102,14 +103,14 @@ public class VipManager
 		}
 	}
 	
-	public byte getVipTier(Player player)
+	public int getVipTier(Player player)
 	{
 		return getVipInfo(player).getTier();
 	}
 	
-	public byte getVipTier(long points)
+	public int getVipTier(long points)
 	{
-		byte temp = getVipInfo(points).getTier();
+		int temp = getVipInfo(points).getTier();
 		if (temp > VIP_MAX_TIER)
 		{
 			temp = VIP_MAX_TIER;
@@ -139,7 +140,7 @@ public class VipManager
 		return VipData.getInstance().getVipTiers().get(VIP_MAX_TIER);
 	}
 	
-	public long getPointsDepreciatedOnLevel(byte vipTier)
+	public long getPointsDepreciatedOnLevel(int vipTier)
 	{
 		VipInfo tier = VipData.getInstance().getVipTiers().get(vipTier);
 		if (tier == null)
@@ -161,11 +162,11 @@ public class VipManager
 	
 	public bool checkVipTierExpiration(Player player)
 	{
-		Instant now = Instant.now();
-		if (now.isAfter(Instant.ofEpochMilli(player.getVipTierExpiration())))
+		DateTime now = DateTime.UtcNow;
+		if (now > player.getVipTierExpiration())
 		{
 			player.updateVipPoints(-getPointsDepreciatedOnLevel(player.getVipTier()));
-			player.setVipTierExpiration(Instant.now().plus(30, ChronoUnit.DAYS).toEpochMilli());
+			player.setVipTierExpiration(DateTime.UtcNow.AddDays(30));
 			return true;
 		}
 		return false;

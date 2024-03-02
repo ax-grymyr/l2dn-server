@@ -551,7 +551,7 @@ public class Player: Playable
 	private ElementalSpirit[] _spirits;
 	private ElementalType _activeElementalSpiritType;
 	
-	private byte _vipTier = 0;
+	private int _vipTier = 0;
 	
 	private DateTime _attendanceDelay;
 	
@@ -14693,12 +14693,12 @@ public class Player: Playable
 		_attendanceDelay = DateTime.UtcNow + timeInMinutes;
 	}
 	
-	public byte getVipTier()
+	public int getVipTier()
 	{
 		return _vipTier;
 	}
 	
-	public void setVipTier(byte vipTier)
+	public void setVipTier(int vipTier)
 	{
 		_vipTier = vipTier;
 	}
@@ -14714,7 +14714,7 @@ public class Player: Playable
         return value == DateTime.MinValue ? null : value;
 	}
 	
-	public void setVipTierExpiration(long expiration)
+	public void setVipTierExpiration(DateTime expiration)
 	{
 		getAccountVariables().set(AccountVariables.VIP_EXPIRATION, expiration);
 	}
@@ -14727,7 +14727,7 @@ public class Player: Playable
 		}
 		int currentVipTier = VipManager.getInstance().getVipTier(getVipPoints());
 		getAccountVariables().set(AccountVariables.VIP_POINTS, getVipPoints() + points);
-		byte newTier = VipManager.getInstance().getVipTier(getVipPoints());
+		int newTier = VipManager.getInstance().getVipTier(getVipPoints());
 		if (newTier != currentVipTier)
 		{
 			_vipTier = newTier;

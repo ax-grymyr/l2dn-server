@@ -68,7 +68,7 @@ public class VipData: DataReaderBase
 		public static readonly VipData INSTANCE = new();
 	}
 	
-	public int getSkillId(byte tier)
+	public int getSkillId(int tier)
 	{
 		return _vipTiers.get(tier).getSkill();
 	}
