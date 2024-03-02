@@ -660,7 +660,7 @@ public static class StatUtil
 			return defaultValue(creature, baseValue, stat);
 		}
 	}
-	
+
 	public static double defaultValue(Creature creature, double? @base, Stat stat)
 	{
 		double mul = creature.getStat().getMul(stat);

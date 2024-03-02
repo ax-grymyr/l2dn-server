@@ -33,7 +33,7 @@ public class MEvasionRateFinalizer : StatFunction
 			}
 		}
 
-		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue), double.NegativeInfinity,
+		return validateValue(creature, StatUtil.defaultValue(creature, stat, baseValue), double.NegativeInfinity,
 			creature.isPlayable() ? Config.MAX_EVASION : double.MaxValue);
 	}
 	

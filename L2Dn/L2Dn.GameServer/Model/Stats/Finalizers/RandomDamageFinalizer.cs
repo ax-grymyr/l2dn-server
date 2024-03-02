@@ -11,6 +11,6 @@ public class RandomDamageFinalizer : StatFunction
 	{
 		throwIfPresent(@base);
 		
-		return Stat.defaultValue(creature, stat, calcWeaponBaseValue(creature, stat));
+		return StatUtil.defaultValue(creature, stat, calcWeaponBaseValue(creature, stat));
 	}
 }

@@ -6,9 +6,11 @@ using L2Dn.GameServer.Model.Actor.Transforms;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 
@@ -58,7 +60,7 @@ public class Formulas
 		
 		// Critical
 		double criticalMod = attacker.getStat().getValue(Stat.CRITICAL_DAMAGE, 1);
-		double criticalPositionMod = attacker.getStat().getPositionTypeValue(Stat.CRITICAL_DAMAGE, Position.getPosition(attacker, target));
+		double criticalPositionMod = attacker.getStat().getPositionTypeValue(Stat.CRITICAL_DAMAGE, PositionUtil.getPosition(attacker, target));
 		double criticalVulnMod = target.getStat().getValue(Stat.DEFENCE_CRITICAL_DAMAGE, 1);
 		double criticalAddMod = attacker.getStat().getValue(Stat.CRITICAL_DAMAGE_ADD, 0);
 		double criticalAddVuln = target.getStat().getValue(Stat.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
@@ -75,7 +77,7 @@ public class Formulas
 		double ssmod = ss ? 2 * attacker.getStat().getValue(Stat.SHOTS_BONUS) * target.getStat().getValue(Stat.SOULSHOT_RESISTANCE, 1) : 1; // 2.04 for dual weapon?
 		double cdMult = criticalMod * (((criticalPositionMod - 1) / 2) + 1) * (((criticalVulnMod - 1) / 2) + 1);
 		double cdPatk = (criticalAddMod + criticalAddVuln) * criticalSkillMod;
-		Position position = Position.getPosition(attacker, target);
+		Position position = PositionUtil.getPosition(attacker, target);
 		double isPosition = position == Position.BACK ? 0.2 : position == Position.SIDE ? 0.05 : 0;
 		
 		// Mobius: Manage level difference.
@@ -87,11 +89,11 @@ public class Formulas
 		double balanceMod = 1;
 		if (attacker.isPlayable())
 		{
-			balanceMod = target.isPlayable() ? Config.PVP_BLOW_SKILL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId().getId()] : Config.PVE_BLOW_SKILL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId().getId()];
+			balanceMod = target.isPlayable() ? Config.PVP_BLOW_SKILL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId()] : Config.PVE_BLOW_SKILL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId()];
 		}
 		if (target.isPlayable())
 		{
-			defence *= attacker.isPlayable() ? Config.PVP_BLOW_SKILL_DEFENCE_MULTIPLIERS[target.getActingPlayer().getClassId().getId()] : Config.PVE_BLOW_SKILL_DEFENCE_MULTIPLIERS[target.getActingPlayer().getClassId().getId()];
+			defence *= attacker.isPlayable() ? Config.PVP_BLOW_SKILL_DEFENCE_MULTIPLIERS[target.getActingPlayer().getClassId()] : Config.PVE_BLOW_SKILL_DEFENCE_MULTIPLIERS[target.getActingPlayer().getClassId()];
 		}
 		
 		double skillPower = power + attacker.getStat().getValue(Stat.SKILL_POWER_ADD, 0);
@@ -140,9 +142,9 @@ public class Formulas
 				}
 				else
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.C1_HAS_RESISTED_YOUR_S2);
-					sm.addString(target.getName());
-					sm.addSkillName(skill);
+					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_RESISTED_YOUR_S2);
+					sm.Params.addString(target.getName());
+					sm.Params.addSkillName(skill);
 					attacker.sendPacket(sm);
 					damage = 1;
 				}
@@ -150,8 +152,8 @@ public class Formulas
 			
 			if (target.isPlayer())
 			{
-				SystemMessage sm = (skill.hasEffectType(EffectType.HP_DRAIN)) ? new SystemMessage(SystemMessageId.YOU_RESISTED_C1_S_DRAIN) : new SystemMessage(SystemMessageId.YOU_RESISTED_C1_S_MAGIC);
-				sm.addString(attacker.getName());
+				SystemMessagePacket sm = (skill.hasEffectType(EffectType.HP_DRAIN)) ? new SystemMessagePacket(SystemMessageId.YOU_RESISTED_C1_S_DRAIN) : new SystemMessagePacket(SystemMessageId.YOU_RESISTED_C1_S_MAGIC);
+				sm.Params.addString(attacker.getName());
 				target.sendPacket(sm);
 			}
 		}
@@ -180,6 +182,7 @@ public class Formulas
 	public static bool calcCrit(double rateValue, Creature creature, Creature target, Skill skill)
 	{
 		double rate = rateValue;
+		double balanceMod;
 		
 		if (skill != null)
 		{
@@ -192,10 +195,10 @@ public class Formulas
 					return Math.Min(rate, 320) > Rnd.get(1000);
 				}
 				
-				double balanceMod = 1;
+				balanceMod = 1;
 				if (creature.isPlayable())
 				{
-					balanceMod = target.isPlayable() ? Config.PVP_MAGICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS[creature.getActingPlayer().getClassId().getId()] : Config.PVE_MAGICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS[creature.getActingPlayer().getClassId().getId()];
+					balanceMod = target.isPlayable() ? Config.PVP_MAGICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS[creature.getActingPlayer().getClassId()] : Config.PVE_MAGICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS[creature.getActingPlayer().getClassId()];
 				}
 				
 				double finalRate = target.getStat().getValue(Stat.DEFENCE_MAGIC_CRITICAL_RATE, rate) + target.getStat().getValue(Stat.DEFENCE_MAGIC_CRITICAL_RATE_ADD, 0);
@@ -213,10 +216,11 @@ public class Formulas
 			
 			// There is a chance that activeChar has altered base stat for skill critical.
 			byte skillCritRateStat = (byte) creature.getStat().getValue(Stat.STAT_BONUS_SKILL_CRITICAL);
-			if ((skillCritRateStat >= 0) && (skillCritRateStat < BaseStat.values().length))
+			BaseStat[] baseStats = Enum.GetValues<BaseStat>();
+			if ((skillCritRateStat >= 0) && (skillCritRateStat < baseStats.Length))
 			{
 				// Best tested.
-				statBonus = BaseStat.values()[skillCritRateStat].calcBonus(creature);
+				statBonus = baseStats[skillCritRateStat].calcBonus(creature);
 			}
 			else
 			{
@@ -227,10 +231,10 @@ public class Formulas
 			double rateBonus = creature.getStat().getMul(Stat.CRITICAL_RATE_SKILL, 1);
 			double rateDefenceBonus = target.getStat().getValue(Stat.DEFENCE_PHYSICAL_SKILL_CRITICAL_RATE, 1) + (target.getStat().getValue(Stat.DEFENCE_PHYSICAL_SKILL_CRITICAL_RATE_ADD, 0) / 100);
 			
-			double balanceMod = 1;
+			balanceMod = 1;
 			if (creature.isPlayable())
 			{
-				balanceMod = target.isPlayable() ? Config.PVP_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS[creature.getActingPlayer().getClassId().getId()] : Config.PVE_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS[creature.getActingPlayer().getClassId().getId()];
+				balanceMod = target.isPlayable() ? Config.PVP_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS[creature.getActingPlayer().getClassId()] : Config.PVE_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS[creature.getActingPlayer().getClassId()];
 			}
 			
 			return CommonUtil.constrain(rate * statBonus * rateBonus * rateDefenceBonus * balanceMod, 5, 90) > Rnd.get(100);
@@ -253,10 +257,10 @@ public class Formulas
 		// Autoattack critical rate is limited between 3%-97%.
 		rate = CommonUtil.constrain(rate, 3, 97);
 		
-		double balanceMod = 1;
+		balanceMod = 1;
 		if (creature.isPlayable())
 		{
-			balanceMod = target.isPlayable() ? Config.PVP_PHYSICAL_ATTACK_CRITICAL_CHANCE_MULTIPLIERS[creature.getActingPlayer().getClassId().getId()] : Config.PVE_PHYSICAL_ATTACK_CRITICAL_CHANCE_MULTIPLIERS[creature.getActingPlayer().getClassId().getId()];
+			balanceMod = target.isPlayable() ? Config.PVP_PHYSICAL_ATTACK_CRITICAL_CHANCE_MULTIPLIERS[creature.getActingPlayer().getClassId()] : Config.PVE_PHYSICAL_ATTACK_CRITICAL_CHANCE_MULTIPLIERS[creature.getActingPlayer().getClassId()];
 		}
 		
 		return (rate * balanceMod) > Rnd.get(100);
@@ -271,13 +275,13 @@ public class Formulas
 	public static double calcCriticalPositionBonus(Creature creature, Creature target)
 	{
 		// Position position = activeChar.getStat().has(Stats.ATTACK_BEHIND) ? Position.BACK : Position.getPosition(activeChar, target);
-		switch (Position.getPosition(creature, target))
+		switch (PositionUtil.getPosition(creature, target))
 		{
-			case SIDE: // 10% Critical Chance bonus when attacking from side.
+			case Position.SIDE: // 10% Critical Chance bonus when attacking from side.
 			{
 				return 1.1 * creature.getStat().getPositionTypeValue(Stat.CRITICAL_RATE, Position.SIDE);
 			}
-			case BACK: // 30% Critical Chance bonus when attacking from back.
+			case Position.BACK: // 30% Critical Chance bonus when attacking from back.
 			{
 				return 1.3 * creature.getStat().getPositionTypeValue(Stat.CRITICAL_RATE, Position.BACK);
 			}
@@ -314,7 +318,7 @@ public class Formulas
 				defenceCriticalDamage = target.getStat().getValue(Stat.DEFENCE_MAGIC_CRITICAL_DAMAGE, 1);
 				if (attacker.isPlayable())
 				{
-					balanceMod = target.isPlayable() ? Config.PVP_MAGICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId().getId()] : Config.PVE_MAGICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId().getId()];
+					balanceMod = target.isPlayable() ? Config.PVP_MAGICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId()] : Config.PVE_MAGICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId()];
 				}
 			}
 			else
@@ -323,18 +327,18 @@ public class Formulas
 				defenceCriticalDamage = target.getStat().getValue(Stat.DEFENCE_PHYSICAL_SKILL_CRITICAL_DAMAGE, 1);
 				if (attacker.isPlayable())
 				{
-					balanceMod = target.isPlayable() ? Config.PVP_PHYSICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId().getId()] : Config.PVE_PHYSICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId().getId()];
+					balanceMod = target.isPlayable() ? Config.PVP_PHYSICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId()] : Config.PVE_PHYSICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId()];
 				}
 			}
 		}
 		else
 		{
 			// Autoattack critical damage.
-			criticalDamage = attacker.getStat().getValue(Stat.CRITICAL_DAMAGE, 1) * attacker.getStat().getPositionTypeValue(Stat.CRITICAL_DAMAGE, Position.getPosition(attacker, target));
+			criticalDamage = attacker.getStat().getValue(Stat.CRITICAL_DAMAGE, 1) * attacker.getStat().getPositionTypeValue(Stat.CRITICAL_DAMAGE, PositionUtil.getPosition(attacker, target));
 			defenceCriticalDamage = target.getStat().getValue(Stat.DEFENCE_CRITICAL_DAMAGE, 1);
 			if (attacker.isPlayable())
 			{
-				balanceMod = target.isPlayable() ? Config.PVP_PHYSICAL_ATTACK_CRITICAL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId().getId()] : Config.PVE_PHYSICAL_ATTACK_CRITICAL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId().getId()];
+				balanceMod = target.isPlayable() ? Config.PVP_PHYSICAL_ATTACK_CRITICAL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId()] : Config.PVE_PHYSICAL_ATTACK_CRITICAL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId()];
 			}
 		}
 		
@@ -440,19 +444,44 @@ public class Formulas
 	{
 		if (skill.isMagic())
 		{
-			return (int) ((skillTime / attacker.getMAtkSpd()) * 333);
+			return skillTime / attacker.getMAtkSpd() * 333;
 		}
-		return (int) ((skillTime / attacker.getPAtkSpd()) * 300);
+		
+		return skillTime / attacker.getPAtkSpd() * 300;
 	}
 	
 	public static double calcAtkSpdMultiplier(Creature creature)
 	{
 		double armorBonus = 1; // EquipedArmorSpeedByCrystal TODO: Implement me!
 		double dexBonus = BaseStat.DEX.calcBonus(creature);
-		double weaponAttackSpeed = Stat.weaponBaseValue(creature, Stat.PHYSICAL_ATTACK_SPEED) / armorBonus; // unk868
+		double weaponAttackSpeed = calcWeaponBaseValue(creature, Stat.PHYSICAL_ATTACK_SPEED) / armorBonus; // unk868
 		double attackSpeedPerBonus = creature.getStat().getMul(Stat.PHYSICAL_ATTACK_SPEED);
 		double attackSpeedDiffBonus = creature.getStat().getAdd(Stat.PHYSICAL_ATTACK_SPEED);
 		return (dexBonus * (weaponAttackSpeed / 333) * attackSpeedPerBonus) + (attackSpeedDiffBonus / 333);
+	}
+
+	public static double calcWeaponBaseValue(Creature creature, Stat stat)
+	{
+		double baseTemplateValue = creature.getTemplate().getBaseValue(stat, 0);
+		double baseValue = creature.getTransformation()?.getStats(creature, stat, baseTemplateValue) ??
+		                   baseTemplateValue;
+		if (creature.isPet())
+		{
+			Pet pet = (Pet)creature;
+			Item weapon = pet.getActiveWeaponInstance();
+			double baseVal = stat == Stat.PHYSICAL_ATTACK ? pet.getPetLevelData().getPetPAtk() :
+				stat == Stat.MAGIC_ATTACK ? pet.getPetLevelData().getPetMAtk() : baseTemplateValue;
+			baseValue = baseVal + (weapon != null ? weapon.getTemplate().getStats(stat, baseVal) : 0);
+		}
+		else if (creature.isPlayer() && (!creature.isTransformed() ||
+		                                 (creature.getTransformation()?.getType() == TransformType.COMBAT) ||
+		                                 (creature.getTransformation()?.getType() == TransformType.MODE_CHANGE)))
+		{
+			Item weapon = creature.getActiveWeaponInstance();
+			baseValue = (weapon != null ? weapon.getTemplate().getStats(stat, baseTemplateValue) : baseTemplateValue);
+		}
+
+		return baseValue;
 	}
 	
 	public static double calcMAtkSpdMultiplier(Creature creature)
@@ -620,15 +649,15 @@ public class Formulas
 		
 		double attack = 2 * actor.getMAtk() * calcGeneralTraitBonus(actor, target, skill.getTraitType(), false);
 		double d = (attack - defence) / (attack + defence);
-		d += 0.5 * Rnd.nextGaussian();
+		d += 0.5 * Rnd.nextDouble(); // TODO nextGaussian
 		return d > 0;
 	}
 	
 	public static double calcLvlBonusMod(Creature attacker, Creature target, Skill skill)
 	{
 		int attackerLvl = skill.getMagicLevel() > 0 ? skill.getMagicLevel() : attacker.getLevel();
-		double skillLevelBonusRateMod = 1 + (skill.getLvlBonusRate() / 100.);
-		double lvlMod = 1 + ((attackerLvl - target.getLevel()) / 100.);
+		double skillLevelBonusRateMod = 1 + (skill.getLvlBonusRate() / 100.0);
+		double lvlMod = 1 + ((attackerLvl - target.getLevel()) / 100.0);
 		return skillLevelBonusRateMod * lvlMod;
 	}
 	
@@ -649,7 +678,7 @@ public class Formulas
 		
 		if (skill.isDebuff())
 		{
-			bool resisted = target.isCastingNow(s => s.getSkill().getAbnormalResists().contains(skill.getAbnormalType()));
+			bool resisted = target.isCastingNow(s => s.getSkill().getAbnormalResists().Contains(skill.getAbnormalType()));
 			if (!resisted)
 			{
 				if (target.getAbnormalShieldBlocks() > 0)
@@ -670,11 +699,11 @@ public class Formulas
 			
 			if (resisted)
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.C1_HAS_RESISTED_YOUR_S2);
-				sm.addString(target.getName());
-				sm.addSkillName(skill);
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_RESISTED_YOUR_S2);
+				sm.Params.addString(target.getName());
+				sm.Params.addSkillName(skill);
 				attacker.sendPacket(sm);
-				attacker.sendPacket(new ExMagicAttackInfo(attacker.getObjectId(), target.getObjectId(), ExMagicAttackInfo.RESISTED));
+				attacker.sendPacket(new ExMagicAttackInfoPacket(attacker.getObjectId(), target.getObjectId(), ExMagicAttackInfoPacket.RESISTED));
 				return false;
 			}
 		}
@@ -702,11 +731,11 @@ public class Formulas
 		
 		if ((finalRate <= Rnd.get(100)) && (target != attacker))
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.C1_HAS_RESISTED_YOUR_S2);
-			sm.addString(target.getName());
-			sm.addSkillName(skill);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_RESISTED_YOUR_S2);
+			sm.Params.addString(target.getName());
+			sm.Params.addSkillName(skill);
 			attacker.sendPacket(sm);
-			attacker.sendPacket(new ExMagicAttackInfo(attacker.getObjectId(), target.getObjectId(), ExMagicAttackInfo.RESISTED));
+			attacker.sendPacket(new ExMagicAttackInfoPacket(attacker.getObjectId(), target.getObjectId(), ExMagicAttackInfoPacket.RESISTED));
 			return false;
 		}
 		return true;
@@ -715,7 +744,7 @@ public class Formulas
 	public static bool calcMagicSuccess(Creature attacker, Creature target, Skill skill)
 	{
 		double lvlModifier = 1;
-		float targetModifier = 1;
+		double targetModifier = 1;
 		int mAccModifier = 1;
 		if (attacker.isAttackable() || target.isAttackable())
 		{
@@ -724,9 +753,9 @@ public class Formulas
 			if ((attacker.getActingPlayer() != null) && !target.isRaid() && !target.isRaidMinion() && (target.getLevel() >= Config.MIN_NPC_LEVEL_MAGIC_PENALTY) && ((target.getLevel() - attacker.getActingPlayer().getLevel()) >= 3))
 			{
 				int levelDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 2;
-				if (levelDiff >= Config.NPC_SKILL_CHANCE_PENALTY.length)
+				if (levelDiff >= Config.NPC_SKILL_CHANCE_PENALTY.Length)
 				{
-					targetModifier = Config.NPC_SKILL_CHANCE_PENALTY[Config.NPC_SKILL_CHANCE_PENALTY.length - 1];
+					targetModifier = Config.NPC_SKILL_CHANCE_PENALTY[Config.NPC_SKILL_CHANCE_PENALTY.Length - 1];
 				}
 				else
 				{
@@ -758,7 +787,7 @@ public class Formulas
 		
 		// general magic resist
 		double resModifier = target.getStat().getMul(Stat.MAGIC_SUCCESS_RES, 1);
-		int rate = 100 - Math.Round((float) (mAccModifier * lvlModifier * targetModifier * resModifier));
+		int rate = (int)(100 - Math.Round(mAccModifier * lvlModifier * targetModifier * resModifier));
 		
 		return (Rnd.get(100) < rate);
 	}
@@ -786,9 +815,9 @@ public class Formulas
 		// Bonus Spiritshot
 		double shotsBonus = attacker.getStat().getValue(Stat.SHOTS_BONUS) * target.getStat().getValue(Stat.SPIRITSHOT_RESISTANCE, 1);
 		double sapphireBonus = 0;
-		if (attacker.isPlayer() && (attacker.getActingPlayer().getActiveShappireJewel() != null))
+		if (attacker.isPlayer())
 		{
-			sapphireBonus = attacker.getActingPlayer().getActiveShappireJewel().getBonus();
+			sapphireBonus = attacker.getActingPlayer().getActiveShappireJewel()?.getBonus() ?? 0;
 		}
 		mAtk *= bss ? 4 * (shotsBonus + sapphireBonus) : sps ? 2 * (shotsBonus + sapphireBonus) : 1;
 		
@@ -801,18 +830,18 @@ public class Formulas
 		{
 			if (attacker.isPlayer())
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.C1_HAS_RESISTED_C2_S_MAGIC_DAMAGE_IS_DECREASED);
-				sm.addString(target.getName());
-				sm.addString(attacker.getName());
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_RESISTED_C2_S_MAGIC_DAMAGE_IS_DECREASED);
+				sm.Params.addString(target.getName());
+				sm.Params.addString(attacker.getName());
 				attacker.sendPacket(sm);
 				damage /= 2;
 			}
 			
 			if (target.isPlayer())
 			{
-				SystemMessage sm2 = new SystemMessage(SystemMessageId.C1_WEAKLY_RESISTED_C2_S_MAGIC);
-				sm2.addString(target.getName());
-				sm2.addString(attacker.getName());
+				SystemMessagePacket sm2 = new SystemMessagePacket(SystemMessageId.C1_WEAKLY_RESISTED_C2_S_MAGIC);
+				sm2.Params.addString(target.getName());
+				sm2.Params.addString(attacker.getName());
 				target.sendPacket(sm2);
 			}
 		}
@@ -851,14 +880,14 @@ public class Formulas
 		{
 			if (creature.isPlayer())
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.C1_DODGED_THE_ATTACK);
-				sm.addString(target.getName());
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_DODGED_THE_ATTACK);
+				sm.Params.addString(target.getName());
 				creature.getActingPlayer().sendPacket(sm);
 			}
 			if (target.isPlayer())
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_DODGED_C1_S_ATTACK);
-				sm.addString(creature.getName());
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_DODGED_C1_S_ATTACK);
+				sm.Params.addString(creature.getName());
 				target.getActingPlayer().sendPacket(sm);
 			}
 			return true;
@@ -879,10 +908,11 @@ public class Formulas
 		{
 			return false;
 		}
+
+		BaseStat[] baseStats = Enum.GetValues<BaseStat>();
+		double chance = baseStats[val].calcBonus(actor) * actor.getStat().getMul(Stat.SKILL_MASTERY_RATE, 1);
 		
-		double chance = BaseStat.values()[val].calcBonus(actor) * actor.getStat().getMul(Stat.SKILL_MASTERY_RATE, 1);
-		
-		return ((Rnd.nextDouble() * 100.0) < (chance * Config.SKILL_MASTERY_CHANCE_MULTIPLIERS[actor.getActingPlayer().getClassId().getId()]));
+		return ((Rnd.nextDouble() * 100.0) < (chance * Config.SKILL_MASTERY_CHANCE_MULTIPLIERS[actor.getActingPlayer().getClassId()]));
 	}
 	
 	/**
@@ -939,14 +969,14 @@ public class Formulas
 		{
 			if (target.isPlayer())
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.YOU_COUNTERED_C1_S_ATTACK);
-				sm.addString(attacker.getName());
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_COUNTERED_C1_S_ATTACK);
+				sm.Params.addString(attacker.getName());
 				target.sendPacket(sm);
 			}
 			if (attacker.isPlayer())
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.C1_IS_PERFORMING_A_COUNTERATTACK);
-				sm.addString(target.getName());
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_IS_PERFORMING_A_COUNTERATTACK);
+				sm.Params.addString(target.getName());
 				attacker.sendPacket(sm);
 			}
 			
@@ -1089,13 +1119,18 @@ public class Formulas
 		}
 		return canceled;
 	}
-	
+
 	public static bool calcCancelSuccess(BuffInfo info, int cancelMagicLvl, int rate, Skill skill, Creature target)
 	{
-		int chance = (int) (rate + ((cancelMagicLvl - info.getSkill().getMagicLevel()) * 2) + ((info.getAbnormalTime() / 120) * target.getStat().getValue(Stat.RESIST_DISPEL_BUFF, 1)));
-		return Rnd.get(100) < CommonUtil.constrain(chance, 25, 75); // TODO: i_dispel_by_slot_probability Min = 40, Max = 95.
+		int abnormalTimeSeconds = (int)(info.getAbnormalTime() ?? TimeSpan.Zero).TotalSeconds;
+		int chance = (int)(rate + ((cancelMagicLvl - info.getSkill().getMagicLevel()) * 2) +
+		                   ((abnormalTimeSeconds / 120) * target.getStat().getValue(Stat.RESIST_DISPEL_BUFF, 1)));
+
+		return
+			Rnd.get(100) <
+			CommonUtil.constrain(chance, 25, 75); // TODO: i_dispel_by_slot_probability Min = 40, Max = 95.
 	}
-	
+
 	/**
 	 * Calculates the abnormal time for an effect.<br>
 	 * The abnormal time is taken from the skill definition, and it's global for all effects present in the skills.
@@ -1242,7 +1277,7 @@ public class Formulas
 	public static double calcWeaknessBonus(Creature attacker, Creature target, TraitType traitType)
 	{
 		double result = 1;
-		foreach (TraitType trait in TraitType.getAllWeakness())
+		foreach (TraitType trait in TraitTypeUtil.getAllWeakness())
 		{
 			if ((traitType != trait) && target.getStat().hasDefenceTrait(trait) && attacker.getStat().hasAttackTrait(trait) && !target.getStat().isInvulnerableTrait(traitType))
 			{
@@ -1254,7 +1289,7 @@ public class Formulas
 	
 	public static double calcWeaponTraitBonus(Creature attacker, Creature target)
 	{
-		return Math.Max(0.22, 1.0 - target.getStat().getDefenceTrait(attacker.getAttackType().getTraitType()));
+		return Math.Max(0.22, 1.0 - target.getStat().getDefenceTrait(attacker.getAttackType().GetTraitType()));
 	}
 	
 	public static double calcAttackTraitBonus(Creature attacker, Creature target)
@@ -1266,7 +1301,7 @@ public class Formulas
 		}
 		
 		double weaknessBonus = 1.0;
-		foreach (TraitType traitType in TraitType.values())
+		foreach (TraitType traitType in Enum.GetValues<TraitType>())
 		{
 			if (traitType.getType() == 2)
 			{
@@ -1347,7 +1382,7 @@ public class Formulas
 		double critMod = crit ? (isRanged ? 0.5 : 1) : 0;
 		double ssBonus = ss ? (ssBlessed ? 2.15 : 2) * shotsBonus : 1;
 		double randomDamage = attacker.getRandomDamageMultiplier();
-		double proxBonus = (attacker.isInFrontOf(target) ? 0 : (attacker.isBehind(target) ? 0.2 : 0.05)) * attacker.getPAtk();
+		double proxBonus = (((ILocational)attacker).isInFrontOf(target) ? 0 : (((ILocational)attacker).isBehind(target) ? 0.2 : 0.05)) * attacker.getPAtk();
 		double attack = (attacker.getPAtk() * randomDamage) + proxBonus;
 		
 		// ....................______________Critical Section___________________...._______Non-Critical Section______
@@ -1476,17 +1511,17 @@ public class Formulas
 	{
 		if (weapon == null)
 		{
-			return 0;
+			return TimeSpan.Zero;
 		}
 		
-		WeaponType defaultAttackType = weapon.getItemType();
+		WeaponType defaultAttackType = weapon.getItemType().AsWeaponType();
 		Transform? transform = creature.getTransformation();
 		WeaponType weaponType = transform != null ? transform.getBaseAttackType(creature, defaultAttackType) : defaultAttackType;
 		
 		// Only ranged weapons should continue for now.
 		if (!weaponType.isRanged())
 		{
-			return 0;
+			return TimeSpan.Zero;
 		}
 		
 		return TimeSpan.FromMilliseconds(900000) / creature.getStat().getPAtkSpd();
@@ -1507,21 +1542,21 @@ public class Formulas
 				if (skill.isMagic())
 				{
 					// Magical Skill PvP
-					pvpAttack = attacker.getStat().getMul(Stat.PVP_MAGICAL_SKILL_DAMAGE, 1) * Config.PVP_MAGICAL_SKILL_DAMAGE_MULTIPLIERS[attackerPlayer.getClassId().getId()];
-					pvpDefense = target.getStat().getMul(Stat.PVP_MAGICAL_SKILL_DEFENCE, 1) * Config.PVP_MAGICAL_SKILL_DEFENCE_MULTIPLIERS[targetPlayer.getClassId().getId()];
+					pvpAttack = attacker.getStat().getMul(Stat.PVP_MAGICAL_SKILL_DAMAGE, 1) * Config.PVP_MAGICAL_SKILL_DAMAGE_MULTIPLIERS[attackerPlayer.getClassId()];
+					pvpDefense = target.getStat().getMul(Stat.PVP_MAGICAL_SKILL_DEFENCE, 1) * Config.PVP_MAGICAL_SKILL_DEFENCE_MULTIPLIERS[targetPlayer.getClassId()];
 				}
 				else
 				{
 					// Physical Skill PvP
-					pvpAttack = attacker.getStat().getMul(Stat.PVP_PHYSICAL_SKILL_DAMAGE, 1) * Config.PVP_PHYSICAL_SKILL_DAMAGE_MULTIPLIERS[attackerPlayer.getClassId().getId()];
-					pvpDefense = target.getStat().getMul(Stat.PVP_PHYSICAL_SKILL_DEFENCE, 1) * Config.PVP_PHYSICAL_SKILL_DEFENCE_MULTIPLIERS[targetPlayer.getClassId().getId()];
+					pvpAttack = attacker.getStat().getMul(Stat.PVP_PHYSICAL_SKILL_DAMAGE, 1) * Config.PVP_PHYSICAL_SKILL_DAMAGE_MULTIPLIERS[attackerPlayer.getClassId()];
+					pvpDefense = target.getStat().getMul(Stat.PVP_PHYSICAL_SKILL_DEFENCE, 1) * Config.PVP_PHYSICAL_SKILL_DEFENCE_MULTIPLIERS[targetPlayer.getClassId()];
 				}
 			}
 			else
 			{
 				// Autoattack PvP
-				pvpAttack = attacker.getStat().getMul(Stat.PVP_PHYSICAL_ATTACK_DAMAGE, 1) * Config.PVP_PHYSICAL_ATTACK_DAMAGE_MULTIPLIERS[attackerPlayer.getClassId().getId()];
-				pvpDefense = target.getStat().getMul(Stat.PVP_PHYSICAL_ATTACK_DEFENCE, 1) * Config.PVP_PHYSICAL_ATTACK_DEFENCE_MULTIPLIERS[targetPlayer.getClassId().getId()];
+				pvpAttack = attacker.getStat().getMul(Stat.PVP_PHYSICAL_ATTACK_DAMAGE, 1) * Config.PVP_PHYSICAL_ATTACK_DAMAGE_MULTIPLIERS[attackerPlayer.getClassId()];
+				pvpDefense = target.getStat().getMul(Stat.PVP_PHYSICAL_ATTACK_DEFENCE, 1) * Config.PVP_PHYSICAL_ATTACK_DEFENCE_MULTIPLIERS[targetPlayer.getClassId()];
 			}
 			
 			return Math.Max(0.05, 1 + (pvpAttack - pvpDefense)); // Bonus should not be negative.
@@ -1539,9 +1574,9 @@ public class Formulas
 			if (!target.isRaid() && !target.isRaidMinion() && (target.getLevel() >= Config.MIN_NPC_LEVEL_DMG_PENALTY) && (attackerPlayer != null) && ((target.getLevel() - attackerPlayer.getLevel()) >= 2))
 			{
 				int levelDiff = target.getLevel() - attackerPlayer.getLevel() - 1;
-				if (levelDiff >= Config.NPC_SKILL_DMG_PENALTY.length)
+				if (levelDiff >= Config.NPC_SKILL_DMG_PENALTY.Length)
 				{
-					pvePenalty = Config.NPC_SKILL_DMG_PENALTY[Config.NPC_SKILL_DMG_PENALTY.length - 1];
+					pvePenalty = Config.NPC_SKILL_DMG_PENALTY[Config.NPC_SKILL_DMG_PENALTY.Length - 1];
 				}
 				else
 				{
@@ -1554,16 +1589,16 @@ public class Formulas
 				if (skill.isMagic())
 				{
 					// Magical Skill PvE
-					pveAttack = attacker.getStat().getMul(Stat.PVE_MAGICAL_SKILL_DAMAGE, 1) * (attackerPlayer == null ? 1 : Config.PVE_MAGICAL_SKILL_DAMAGE_MULTIPLIERS[attackerPlayer.getClassId().getId()]);
-					pveDefense = target.getStat().getMul(Stat.PVE_MAGICAL_SKILL_DEFENCE, 1) * (targetPlayer == null ? 1 : Config.PVE_MAGICAL_SKILL_DEFENCE_MULTIPLIERS[targetPlayer.getClassId().getId()]);
+					pveAttack = attacker.getStat().getMul(Stat.PVE_MAGICAL_SKILL_DAMAGE, 1) * (attackerPlayer == null ? 1 : Config.PVE_MAGICAL_SKILL_DAMAGE_MULTIPLIERS[attackerPlayer.getClassId()]);
+					pveDefense = target.getStat().getMul(Stat.PVE_MAGICAL_SKILL_DEFENCE, 1) * (targetPlayer == null ? 1 : Config.PVE_MAGICAL_SKILL_DEFENCE_MULTIPLIERS[targetPlayer.getClassId()]);
 					pveRaidAttack = attacker.isRaid() ? attacker.getStat().getMul(Stat.PVE_RAID_MAGICAL_SKILL_DAMAGE, 1) : 1;
 					pveRaidDefense = attacker.isRaid() ? attacker.getStat().getMul(Stat.PVE_RAID_MAGICAL_SKILL_DEFENCE, 1) : 1;
 				}
 				else
 				{
 					// Physical Skill PvE
-					pveAttack = attacker.getStat().getMul(Stat.PVE_PHYSICAL_SKILL_DAMAGE, 1) * (attackerPlayer == null ? 1 : Config.PVE_PHYSICAL_SKILL_DAMAGE_MULTIPLIERS[attackerPlayer.getClassId().getId()]);
-					pveDefense = target.getStat().getMul(Stat.PVE_PHYSICAL_SKILL_DEFENCE, 1) * (targetPlayer == null ? 1 : Config.PVE_PHYSICAL_SKILL_DEFENCE_MULTIPLIERS[targetPlayer.getClassId().getId()]);
+					pveAttack = attacker.getStat().getMul(Stat.PVE_PHYSICAL_SKILL_DAMAGE, 1) * (attackerPlayer == null ? 1 : Config.PVE_PHYSICAL_SKILL_DAMAGE_MULTIPLIERS[attackerPlayer.getClassId()]);
+					pveDefense = target.getStat().getMul(Stat.PVE_PHYSICAL_SKILL_DEFENCE, 1) * (targetPlayer == null ? 1 : Config.PVE_PHYSICAL_SKILL_DEFENCE_MULTIPLIERS[targetPlayer.getClassId()]);
 					pveRaidAttack = attacker.isRaid() ? attacker.getStat().getMul(Stat.PVE_RAID_PHYSICAL_SKILL_DAMAGE, 1) : 1;
 					pveRaidDefense = attacker.isRaid() ? attacker.getStat().getMul(Stat.PVE_RAID_PHYSICAL_SKILL_DEFENCE, 1) : 1;
 				}
@@ -1571,8 +1606,8 @@ public class Formulas
 			else
 			{
 				// Autoattack PvE
-				pveAttack = attacker.getStat().getMul(Stat.PVE_PHYSICAL_ATTACK_DAMAGE, 1) * (attackerPlayer == null ? 1 : Config.PVE_PHYSICAL_ATTACK_DAMAGE_MULTIPLIERS[attackerPlayer.getClassId().getId()]);
-				pveDefense = target.getStat().getMul(Stat.PVE_PHYSICAL_ATTACK_DEFENCE, 1) * (targetPlayer == null ? 1 : Config.PVE_PHYSICAL_ATTACK_DEFENCE_MULTIPLIERS[targetPlayer.getClassId().getId()]);
+				pveAttack = attacker.getStat().getMul(Stat.PVE_PHYSICAL_ATTACK_DAMAGE, 1) * (attackerPlayer == null ? 1 : Config.PVE_PHYSICAL_ATTACK_DAMAGE_MULTIPLIERS[attackerPlayer.getClassId()]);
+				pveDefense = target.getStat().getMul(Stat.PVE_PHYSICAL_ATTACK_DEFENCE, 1) * (targetPlayer == null ? 1 : Config.PVE_PHYSICAL_ATTACK_DEFENCE_MULTIPLIERS[targetPlayer.getClassId()]);
 				pveRaidAttack = attacker.isRaid() ? attacker.getStat().getMul(Stat.PVE_RAID_PHYSICAL_ATTACK_DAMAGE, 1) : 1;
 				pveRaidDefense = attacker.isRaid() ? attacker.getStat().getMul(Stat.PVE_RAID_PHYSICAL_ATTACK_DEFENCE, 1) : 1;
 			}
@@ -1588,7 +1623,7 @@ public class Formulas
 		if (attacker.isPlayer())
 		{
 			Player attackerPlayer = attacker.getActingPlayer();
-			ElementalType type = ElementalType.of(attackerPlayer.getActiveElementalSpiritType());
+			ElementalType type = attackerPlayer.getActiveElementalSpiritType();
 			if (ElementalType.NONE == type)
 			{
 				return false;
@@ -1606,7 +1641,7 @@ public class Formulas
 		if (attacker.isPlayer())
 		{
 			Player attackerPlayer = attacker.getActingPlayer();
-			ElementalType type = ElementalType.of(attackerPlayer.getActiveElementalSpiritType());
+			ElementalType type = attackerPlayer.getActiveElementalSpiritType();
 			if (ElementalType.NONE == type)
 			{
 				return 0;

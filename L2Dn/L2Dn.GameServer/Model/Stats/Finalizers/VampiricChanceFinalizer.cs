@@ -13,6 +13,6 @@ public class VampiricChanceFinalizer: StatFunction
 
 		double amount = creature.getStat().getValue(Stat.ABSORB_DAMAGE_PERCENT, 0) * 100;
 		double vampiricSum = creature.getStat().getVampiricSum();
-		return amount > 0 ? Stat.defaultValue(creature, stat, Math.Min(1, vampiricSum / amount / 100)) : 0;
+		return amount > 0 ? StatUtil.defaultValue(creature, stat, Math.Min(1, vampiricSum / amount / 100)) : 0;
 	}
 }

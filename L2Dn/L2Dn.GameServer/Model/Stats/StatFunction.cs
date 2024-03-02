@@ -53,8 +53,7 @@ public abstract class StatFunction: IStatFunction
     protected double calcWeaponBaseValue(Creature creature, Stat stat)
     {
         double baseTemplateValue = creature.getTemplate().getBaseValue(stat, 0);
-        double baseValue = creature.getTransformation()
-            .map(transform => transform.getStats(creature, stat, baseTemplateValue)).orElse(baseTemplateValue);
+        double baseValue = creature.getTransformation()?.getStats(creature, stat, baseTemplateValue) ?? baseTemplateValue;
 		
         if (creature.isPet())
         {
@@ -65,8 +64,8 @@ public abstract class StatFunction: IStatFunction
             baseValue = baseVal + (weapon != null ? weapon.getTemplate().getStats(stat, baseVal) : 0);
         }
         else if (creature.isPlayer() && (!creature.isTransformed() ||
-                                         (creature.getTransformation().get().getType() == TransformType.COMBAT) ||
-                                         (creature.getTransformation().get().getType() == TransformType.MODE_CHANGE)))
+                                         (creature.getTransformation().getType() == TransformType.COMBAT) ||
+                                         (creature.getTransformation().getType() == TransformType.MODE_CHANGE)))
         {
             Item weapon = creature.getActiveWeaponInstance();
             baseValue = (weapon != null ? weapon.getTemplate().getStats(stat, baseTemplateValue) : baseTemplateValue);
@@ -78,8 +77,11 @@ public abstract class StatFunction: IStatFunction
     protected double calcWeaponPlusBaseValue(Creature creature, Stat stat)
     {
         double baseTemplateValue = creature.getTemplate().getBaseValue(stat, 0);
-        double baseValue = creature.getTransformation().filter(transform => !transform.isStance())
-            .map(transform => transform.getStats(creature, stat, baseTemplateValue)).orElse(baseTemplateValue);
+
+        Transform? transform = creature.getTransformation();
+        double baseValue = transform != null && !transform.isStance()
+            ? transform.getStats(creature, stat, baseTemplateValue)
+            : baseTemplateValue;
 
         if (creature.isPlayable())
         {

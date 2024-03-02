@@ -69,7 +69,7 @@ public class Clan: IIdentifiable, INamable
 	private int? _allyId;
 	private int _level;
 	private int? _castleId;
-	private int _fortId;
+	private int? _fortId;
 	private int _hideoutId;
 	private int _hiredGuards;
 	private int? _crestId;
@@ -732,7 +732,7 @@ public class Clan: IIdentifiable, INamable
 	/**
 	 * @return the fort Id for this clan if owns a fort, zero otherwise.
 	 */
-	public int getFortId()
+	public int? getFortId()
 	{
 		return _fortId;
 	}
@@ -804,7 +804,7 @@ public class Clan: IIdentifiable, INamable
 	/**
 	 * @param fortId the fort Id to set.
 	 */
-	public void setFortId(int fortId)
+	public void setFortId(int? fortId)
 	{
 		_fortId = fortId;
 	}

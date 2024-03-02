@@ -68,6 +68,6 @@ public class AttributeFinalizer: StatFunction
 			}
 		}
 		
-		return Stat.defaultValue(creature, stat, baseValue);
+		return StatUtil.defaultValue(creature, stat, baseValue);
 	}
 }

@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
 using L2Dn.GameServer.Model.Events.Listeners;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Variables;
+using L2Dn.GameServer.Network.OutgoingPackets.Vip;
 
 namespace L2Dn.GameServer.Model.Vips;
 
@@ -37,7 +38,7 @@ public class VipManager
 		}
 		else
 		{
-			player.sendPacket(new ReceiveVipInfo(player));
+			player.sendPacket(new ReceiveVipInfoPacket(player));
 			player.sendPacket(new ExBRNewIconCashBtnWnd((byte) 0));
 		}
 	}
@@ -67,14 +68,14 @@ public class VipManager
 			player.sendPacket(new ExBRNewIconCashBtnWnd((byte) 0));
 		}
 		player.removeListener(_vipLoginListener);
-		player.sendPacket(new ReceiveVipInfo(player));
+		player.sendPacket(new ReceiveVipInfoPacket(player));
 	}
 	
 	public void manageTier(Player player)
 	{
 		if (!checkVipTierExpiration(player))
 		{
-			player.sendPacket(new ReceiveVipInfo(player));
+			player.sendPacket(new ReceiveVipInfoPacket(player));
 		}
 		
 		if (player.getVipTier() > 1)

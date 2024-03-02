@@ -40,7 +40,7 @@ public class CursedWeapon : INamable
 	private ScheduledFuture _removeTask;
 	
 	private int _nbKills = 0;
-	private DateTime? _endTime;
+	private DateTime _endTime;
 	
 	private int _playerId = 0;
 	protected Player _player = null;
@@ -138,7 +138,7 @@ public class CursedWeapon : INamable
 		cancelTask();
 		_isActivated = false;
 		_isDropped = false;
-		_endTime = null;
+		_endTime = DateTime.MinValue;
 		_player = null;
 		_playerId = 0;
 		_playerReputation = 0;
@@ -188,8 +188,8 @@ public class CursedWeapon : INamable
 			_item.setDropTime(null); // Prevent item from being removed by ItemsAutoDestroy
 			
 			// RedSky and Earthquake
-			ExRedSky rs = new ExRedSky(10);
-			Earthquake eq = new Earthquake(player.getX(), player.getY(), player.getZ(), 14, 3);
+			ExRedSkyPacket rs = new ExRedSkyPacket(10);
+			EarthquakePacket eq = new EarthquakePacket(player.getX(), player.getY(), player.getZ(), 14, 3);
 			Broadcast.toAllOnlinePlayers(rs);
 			Broadcast.toAllOnlinePlayers(eq);
 		}
@@ -236,9 +236,8 @@ public class CursedWeapon : INamable
 		
 		CursedWeapon cw = CursedWeaponsManager.getInstance().getCursedWeapon(_player.getCursedWeaponEquippedId());
 		SystemMessagePacket msg2 = new SystemMessagePacket(SystemMessageId.S1_HAS_S2_MIN_OF_USAGE_TIME_REMAINING);
-		int timeLeft = (int) (cw.getTimeLeft() / 60000);
 		msg2.Params.addItemName(_player.getCursedWeaponEquippedId());
-		msg2.Params.addInt(timeLeft);
+		msg2.Params.addInt((int)cw.getTimeLeft().TotalMinutes);
 		_player.sendPacket(msg2);
 	}
 	
@@ -388,22 +387,23 @@ public class CursedWeapon : INamable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement del = con.prepareStatement("DELETE FROM cursed_weapons WHERE itemId = ?");
-			PreparedStatement ps = con.prepareStatement(
-				"INSERT INTO cursed_weapons (itemId, charId, playerReputation, playerPkKills, nbKills, endTime) VALUES (?, ?, ?, ?, ?, ?)");
+
 			// Delete previous datas
-			del.setInt(1, _itemId);
-			del.executeUpdate();
-			
+			ctx.CursedWeapons.Where(r => r.ItemId == _itemId).ExecuteDelete();
+
 			if (_isActivated)
 			{
-				ps.setInt(1, _itemId);
-				ps.setInt(2, _playerId);
-				ps.setInt(3, _playerReputation);
-				ps.setInt(4, _playerPkKills);
-				ps.setInt(5, _nbKills);
-				ps.setLong(6, _endTime);
-				ps.executeUpdate();
+				ctx.CursedWeapons.Add(new DbCursedWeapon()
+				{
+					ItemId = _itemId,
+					CharacterId = _playerId,
+					PlayerReputation = _playerReputation,
+					PlayerPkKills = _playerPkKills,
+					NbKills = _nbKills,
+					EndTime = _endTime
+				});
+
+				ctx.SaveChanges();
 			}
 		}
 		catch (Exception e)
@@ -448,6 +448,7 @@ public class CursedWeapon : INamable
 				giveSkill();
 			}
 		}
+		
 		// Reduce time-to-live
 		_endTime = _endTime.AddMilliseconds(_durationLost * -60000);
 		saveData();
@@ -599,7 +600,7 @@ public class CursedWeapon : INamable
 	
 	public TimeSpan getTimeLeft()
 	{
-		return _endTime - DateTime.Now;
+		return _endTime - DateTime.UtcNow;
 	}
 	
 	public void goTo(Player player)

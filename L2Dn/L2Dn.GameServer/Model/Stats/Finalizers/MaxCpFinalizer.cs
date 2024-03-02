@@ -20,6 +20,6 @@ public class MaxCpFinalizer : StatFunction
 		
 		double conBonus = creature.getCON() > 0 ? BaseStat.CON.calcBonus(creature) : 1;
 		baseValue *= conBonus;
-		return Stat.defaultValue(creature, stat, baseValue);
+		return StatUtil.defaultValue(creature, stat, baseValue);
 	}
 }

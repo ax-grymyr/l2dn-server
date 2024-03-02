@@ -1,7 +1,9 @@
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Items.Instances;
 
 namespace L2Dn.GameServer.Model.Stats.Finalizers;
 

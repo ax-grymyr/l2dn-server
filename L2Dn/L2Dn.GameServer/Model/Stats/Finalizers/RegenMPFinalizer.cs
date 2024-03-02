@@ -1,9 +1,12 @@
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Model.Zones.Types;
+using FortManager = L2Dn.GameServer.InstanceManagers.FortManager;
 
 namespace L2Dn.GameServer.Model.Stats.Finalizers;
 
@@ -49,10 +52,10 @@ public class RegenMPFinalizer: StatFunction
 			{
 				CastleZone zone = ZoneManager.getInstance().getZone<CastleZone>(player);
 				int posCastleIndex = zone == null ? -1 : zone.getResidenceId();
-				int castleIndex = player.getClan().getCastleId();
+				int? castleIndex = player.getClan().getCastleId();
 				if ((castleIndex > 0) && (castleIndex == posCastleIndex))
 				{
-					Castle castle = CastleManager.getInstance().getCastleById(player.getClan().getCastleId());
+					Castle castle = CastleManager.getInstance().getCastleById(castleIndex.Value);
 					if (castle != null)
 					{
 						Castle.CastleFunction func = castle.getCastleFunction(Castle.FUNC_RESTORE_MP);
@@ -68,10 +71,10 @@ public class RegenMPFinalizer: StatFunction
 			{
 				FortZone zone = ZoneManager.getInstance().getZone<FortZone>(player);
 				int posFortIndex = zone == null ? -1 : zone.getResidenceId();
-				int fortIndex = player.getClan().getFortId();
+				int? fortIndex = player.getClan().getFortId();
 				if ((fortIndex > 0) && (fortIndex == posFortIndex))
 				{
-					Fort fort = FortManager.getInstance().getFortById(player.getClan().getCastleId());
+					Fort fort = FortManager.getInstance().getFortById(fortIndex.Value);
 					if (fort != null)
 					{
 						Fort.FortFunction func = fort.getFortFunction(Fort.FUNC_RESTORE_MP);
@@ -113,6 +116,6 @@ public class RegenMPFinalizer: StatFunction
 			baseValue = ((Pet)creature).getPetLevelData().getPetRegenMP() * Config.PET_MP_REGEN_MULTIPLIER;
 		}
 
-		return Stat.defaultValue(creature, stat, baseValue);
+		return StatUtil.defaultValue(creature, stat, baseValue);
 	}
 }

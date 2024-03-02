@@ -21,10 +21,10 @@ public class BaseStatFinalizer: StatFunction
 			Player player = creature.getActingPlayer();
 			
 			// Armor sets calculation
-			baseValue += player.getInventory().getPaperdollCache().getBaseStatValue(player, BaseStat.valueOf(stat));
+			baseValue += player.getInventory().getPaperdollCache().getBaseStatValue(player, (BaseStat)stat);
 			
 			// Henna calculation
-			baseValue += player.getHennaValue(BaseStat.valueOf(stat));
+			baseValue += player.getHennaValue((BaseStat)stat);
 			
 			// Bonus stats
 			switch (stat)
@@ -62,6 +62,6 @@ public class BaseStatFinalizer: StatFunction
 			}
 		}
 		
-		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue), 1, BaseStat.MAX_STAT_VALUE - 1);
+		return validateValue(creature, StatUtil.defaultValue(creature, stat, baseValue), 1, BaseStatUtil.MAX_STAT_VALUE - 1);
 	}
 }

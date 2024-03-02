@@ -32,7 +32,7 @@ public class PCriticalRateFinalizer: StatFunction
 			maxPhysicalCritRate = double.MaxValue;
 		}
 
-		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue * dexBonus * 10), 0,
+		return validateValue(creature, StatUtil.defaultValue(creature, stat, baseValue * dexBonus * 10), 0,
 			maxPhysicalCritRate);
 	}
 

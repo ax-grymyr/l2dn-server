@@ -18,7 +18,7 @@ public class MAccuracyFinalizer: StatFunction
 			// Enchanted gloves bonus
 			baseValue += calcEnchantBodyPart(creature, ItemTemplate.SLOT_GLOVES);
 		}
-		return Stat.defaultValue(creature, stat, baseValue + (Math.Sqrt(creature.getWIT()) * 3) + (creature.getLevel() * 2));
+		return StatUtil.defaultValue(creature, stat, baseValue + (Math.Sqrt(creature.getWIT()) * 3) + (creature.getLevel() * 2));
 	}
 	
 	protected override double calcEnchantBodyPartBonus(int enchantLevel, bool isBlessed)

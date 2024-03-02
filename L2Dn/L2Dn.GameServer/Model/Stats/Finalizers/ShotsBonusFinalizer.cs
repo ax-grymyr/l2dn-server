@@ -48,10 +48,10 @@ public class ShotsBonusFinalizer: StatFunction
 
 			if (player.getActiveRubyJewel() != null)
 			{
-				baseValue += player.getActiveRubyJewel().getBonus();
+				baseValue += player.getActiveRubyJewel()?.getBonus() ?? 0;
 			}
 		}
 
-		return Stat.defaultValue(creature, stat, baseValue);
+		return StatUtil.defaultValue(creature, stat, baseValue);
 	}
 }

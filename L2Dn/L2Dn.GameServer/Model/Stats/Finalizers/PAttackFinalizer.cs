@@ -36,7 +36,7 @@ public class PAttackFinalizer : StatFunction
 			baseValue *= Config.RAID_PATTACK_MULTIPLIER;
 		}
 		baseValue *= BaseStat.STR.calcBonus(creature) * creature.getLevelMod();
-		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue), 0, creature.isPlayable() ? Config.MAX_PATK : double.MaxValue);
+		return validateValue(creature, StatUtil.defaultValue(creature, stat, baseValue), 0, creature.isPlayable() ? Config.MAX_PATK : double.MaxValue);
 	}
 	
 	protected override double calcEnchantBodyPartBonus(int enchantLevel, bool isBlessed)

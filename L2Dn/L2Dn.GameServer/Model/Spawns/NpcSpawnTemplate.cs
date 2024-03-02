@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Data.Xml;
+﻿using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
@@ -58,8 +59,8 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		_group = group;
 		_id = set.getInt("id");
 		_count = set.getInt("count", 1);
-		_respawnTime = set.getDuration("respawnTime", null);
-		_respawnTimeRandom = set.getDuration("respawnRandom", null);
+		_respawnTime = set.Contains("respawnTime") ? set.getDuration("respawnTime", TimeSpan.Zero) : null;
+		_respawnTimeRandom = set.getDuration("respawnRandom", TimeSpan.Zero);
 		String pattern = set.getString("respawnPattern", null);
 		_respawnPattern = (pattern == null) || pattern.isEmpty() ? null : new SchedulingPattern(pattern);
 		_chaseRange = set.getInt("chaseRange", 0);
@@ -377,23 +378,23 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		spawn.setXYZ(loc);
 		spawn.setHeading(loc.getHeading());
 		spawn.setLocation(loc);
-		int respawn = 0;
-		int respawnRandom = 0;
+		TimeSpan respawn = TimeSpan.Zero;
+		TimeSpan respawnRandom = TimeSpan.Zero;
 		SchedulingPattern respawnPattern = null;
 		if (_respawnTime != null)
 		{
-			respawn = (int) _respawnTime.Value.TotalSeconds;
+			respawn = _respawnTime.Value;
 		}
 		if (_respawnTimeRandom != null)
 		{
-			respawnRandom = (int) _respawnTimeRandom.TotalSeconds;
+			respawnRandom = _respawnTimeRandom;
 		}
 		if (_respawnPattern != null)
 		{
 			respawnPattern = _respawnPattern;
 		}
 		
-		if ((respawn > 0) || (respawnPattern != null))
+		if ((respawn > TimeSpan.Zero) || (respawnPattern != null))
 		{
 			spawn.setRespawnDelay(respawn, respawnRandom);
 			spawn.setRespawnPattern(respawnPattern);

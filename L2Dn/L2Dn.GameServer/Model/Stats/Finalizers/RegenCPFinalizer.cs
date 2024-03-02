@@ -31,6 +31,6 @@ public class RegenCPFinalizer: StatFunction
 			baseValue *= 0.7; // Running
 		}
 
-		return Stat.defaultValue(player, stat, baseValue);
+		return StatUtil.defaultValue(player, stat, baseValue);
 	}
 }

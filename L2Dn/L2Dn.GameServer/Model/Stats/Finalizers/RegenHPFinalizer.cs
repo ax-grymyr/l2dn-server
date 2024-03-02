@@ -1,8 +1,13 @@
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Model.Zones.Types;
+using L2Dn.GameServer.Utilities;
+using FortManager = L2Dn.GameServer.InstanceManagers.FortManager;
 
 namespace L2Dn.GameServer.Model.Stats.Finalizers;
 
@@ -57,15 +62,15 @@ public class RegenHPFinalizer: StatFunction
 			if (player.isInsideZone(ZoneId.CASTLE) && (player.getClan() != null) &&
 			    (player.getClan().getCastleId() > 0))
 			{
-				CastleZone zone = ZoneManager.getInstance().getZone(player, CastleZone.class);
+				CastleZone zone = ZoneManager.getInstance().getZone<CastleZone>(player);
 				int posCastleIndex = zone == null ? -1 : zone.getResidenceId();
-				int castleIndex = player.getClan().getCastleId();
+				int? castleIndex = player.getClan().getCastleId();
 				if ((castleIndex > 0) && (castleIndex == posCastleIndex))
 				{
-					Castle castle = CastleManager.getInstance().getCastleById(player.getClan().getCastleId());
+					Castle castle = CastleManager.getInstance().getCastleById(castleIndex.Value);
 					if (castle != null)
 					{
-						CastleFunction func = castle.getCastleFunction(Castle.FUNC_RESTORE_HP);
+						Castle.CastleFunction func = castle.getCastleFunction(Castle.FUNC_RESTORE_HP);
 						if (func != null)
 						{
 							baseValue *= (func.getLvl() / 100);
@@ -76,15 +81,15 @@ public class RegenHPFinalizer: StatFunction
 
 			if (player.isInsideZone(ZoneId.FORT) && (player.getClan() != null) && (player.getClan().getFortId() > 0))
 			{
-				FortZone zone = ZoneManager.getInstance().getZone(player, FortZone.class);
+				FortZone zone = ZoneManager.getInstance().getZone<FortZone>(player);
 				int posFortIndex = zone == null ? -1 : zone.getResidenceId();
-				int fortIndex = player.getClan().getFortId();
+				int? fortIndex = player.getClan().getFortId();
 				if ((fortIndex > 0) && (fortIndex == posFortIndex))
 				{
-					Fort fort = FortManager.getInstance().getFortById(player.getClan().getCastleId());
+					Fort fort = FortManager.getInstance().getFortById(fortIndex.Value);
 					if (fort != null)
 					{
-						FortFunction func = fort.getFortFunction(Fort.FUNC_RESTORE_HP);
+						Fort.FortFunction func = fort.getFortFunction(Fort.FUNC_RESTORE_HP);
 						if (func != null)
 						{
 							baseValue *= (func.getLvl() / 100);
@@ -96,7 +101,7 @@ public class RegenHPFinalizer: StatFunction
 			// Mother Tree effect is calculated at last
 			if (player.isInsideZone(ZoneId.MOTHER_TREE))
 			{
-				MotherTreeZone zone = ZoneManager.getInstance().getZone(player, MotherTreeZone.class);
+				MotherTreeZone zone = ZoneManager.getInstance().getZone<MotherTreeZone>(player);
 				int hpBonus = zone == null ? 0 : zone.getHpRegenBonus();
 				baseValue += hpBonus;
 			}
@@ -123,7 +128,7 @@ public class RegenHPFinalizer: StatFunction
 			baseValue = ((Pet)creature).getPetLevelData().getPetRegenHP() * Config.PET_HP_REGEN_MULTIPLIER;
 		}
 
-		return Stat.defaultValue(creature, stat, baseValue);
+		return StatUtil.defaultValue(creature, stat, baseValue);
 	}
 
 	private static double calcSiegeRegenModifier(Player player)

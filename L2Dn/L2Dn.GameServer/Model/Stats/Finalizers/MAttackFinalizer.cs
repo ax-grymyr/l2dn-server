@@ -39,7 +39,7 @@ public class MAttackFinalizer: StatFunction
 		// Calculate modifiers Magic Attack
 		double physicalBonus = (creature.getStat().getMul(Stat.MAGIC_ATTACK_BY_PHYSICAL_ATTACK, 1) - 1) * creature.getPAtk();
 		baseValue *= Math.Pow(BaseStat.INT.calcBonus(creature) * creature.getLevelMod(), 2.2072);
-		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue + physicalBonus), 0,
+		return validateValue(creature, StatUtil.defaultValue(creature, stat, baseValue + physicalBonus), 0,
 			creature.isPlayable() ? Config.MAX_MATK : double.MaxValue);
 	}
 	

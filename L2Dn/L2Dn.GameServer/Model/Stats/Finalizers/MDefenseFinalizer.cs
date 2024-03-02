@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.GameServer.Model.Actor.Transforms;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 
@@ -47,7 +48,7 @@ public class MDefenseFinalizer : StatFunction
 				if (!player.getInventory().isPaperdollSlotEmpty(slot))
 				{
 					int defaultStatValue = player.getTemplate().getBaseDefBySlot(slot);
-					baseValue -= creature.getTransformation().map(transform => transform.getBaseDefBySlot(player, slot)).orElse(defaultStatValue);
+					baseValue -= creature.getTransformation()?.getBaseDefBySlot(player, slot) ?? defaultStatValue;
 				}
 			}
 		}

@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using L2Dn.GameServer.Db;
+using NLog;
 
 namespace L2Dn.GameServer.Model.Variables;
 

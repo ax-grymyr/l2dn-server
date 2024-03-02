@@ -1,4 +1,6 @@
-﻿namespace L2Dn.GameServer.Model.Stats;
+﻿using System.Collections.Immutable;
+
+namespace L2Dn.GameServer.Model.Stats;
 
 public enum TraitType
 {
@@ -75,6 +77,114 @@ public enum TraitType
 	FEAR,
 	SILENCE,
 	INFECTION
+}
+
+public static class TraitTypeUtil
+{
+	private static readonly ImmutableArray<TraitType> _weaknesses =
+	[
+		TraitType.BUG_WEAKNESS,
+		TraitType.ANIMAL_WEAKNESS,
+		TraitType.PLANT_WEAKNESS,
+		TraitType.BEAST_WEAKNESS,
+		TraitType.DRAGON_WEAKNESS,
+		TraitType.GIANT_WEAKNESS,
+		TraitType.CONSTRUCT_WEAKNESS,
+		TraitType.VALAKAS,
+		TraitType.ANESTHESIA,
+		TraitType.DEMONIC_WEAKNESS,
+		TraitType.DIVINE_WEAKNESS,
+		TraitType.ELEMENTAL_WEAKNESS,
+		TraitType.FAIRY_WEAKNESS,
+		TraitType.HUMAN_WEAKNESS,
+		TraitType.HUMANOID_WEAKNESS,
+		TraitType.UNDEAD_WEAKNESS,
+		TraitType.EMBRYO_WEAKNESS,
+		TraitType.SPIRIT_WEAKNESS,
+	];
+
+	public static ImmutableArray<TraitType> getAllWeakness() => _weaknesses;
+	
+	public static int getType(this TraitType traitType) =>
+		traitType switch
+		{
+			// 1 = weapon, 2 = weakness, 3 = resistance
+			TraitType.NONE => 0,
+			TraitType.SWORD => 1,
+			TraitType.BLUNT => 1,
+			TraitType.DAGGER => 1,
+			TraitType.POLE => 1,
+			TraitType.FIST => 1,
+			TraitType.BOW => 1,
+			TraitType.ETC => 1,
+			TraitType.UNK_8 => 0,
+			TraitType.POISON => 3,
+			TraitType.HOLD => 3,
+			TraitType.BLEED => 3,
+			TraitType.SLEEP => 3,
+			TraitType.SHOCK => 3,
+			TraitType.DERANGEMENT => 3,
+			TraitType.BUG_WEAKNESS => 2,
+			TraitType.ANIMAL_WEAKNESS => 2,
+			TraitType.PLANT_WEAKNESS => 2,
+			TraitType.BEAST_WEAKNESS => 2,
+			TraitType.DRAGON_WEAKNESS => 2,
+			TraitType.PARALYZE => 3,
+			TraitType.DUAL => 1,
+			TraitType.DUALFIST => 1,
+			TraitType.BOSS => 3,
+			TraitType.GIANT_WEAKNESS => 2,
+			TraitType.CONSTRUCT_WEAKNESS => 2,
+			TraitType.DEATH => 3,
+			TraitType.VALAKAS => 2,
+			TraitType.ANESTHESIA => 2,
+			TraitType.CRITICAL_POISON => 3,
+			TraitType.ROOT_PHYSICALLY => 3,
+			TraitType.ROOT_MAGICALLY => 3,
+			TraitType.RAPIER => 1,
+			TraitType.CROSSBOW => 1,
+			TraitType.ANCIENTSWORD => 1,
+			TraitType.TURN_STONE => 3,
+			TraitType.GUST => 3,
+			TraitType.PHYSICAL_BLOCKADE => 3,
+			TraitType.TARGET => 3,
+			TraitType.PHYSICAL_WEAKNESS => 3,
+			TraitType.MAGICAL_WEAKNESS => 3,
+			TraitType.DUALDAGGER => 1,
+			TraitType.DEMONIC_WEAKNESS => 2, // CT26_P4
+			TraitType.DIVINE_WEAKNESS => 2,
+			TraitType.ELEMENTAL_WEAKNESS => 2,
+			TraitType.FAIRY_WEAKNESS => 2,
+			TraitType.HUMAN_WEAKNESS => 2,
+			TraitType.HUMANOID_WEAKNESS => 2,
+			TraitType.UNDEAD_WEAKNESS => 2,
+			
+			// The values from below are custom.
+			TraitType.DUALBLUNT => 1,
+			TraitType.KNOCKBACK => 3,
+			TraitType.KNOCKDOWN => 3,
+			TraitType.PULL => 3,
+			TraitType.HATE => 3,
+			TraitType.AGGRESSION => 3,
+			TraitType.AIRBIND => 3,
+			TraitType.DISARM => 3,
+			TraitType.DEPORT => 3,
+			TraitType.CHANGEBODY => 3,
+			TraitType.TWOHANDCROSSBOW => 1,
+			TraitType.ZONE => 3,
+			TraitType.PSYCHIC => 3,
+			TraitType.EMBRYO_WEAKNESS => 2,
+			TraitType.SPIRIT_WEAKNESS => 2,
+			TraitType.PISTOLS => 1,
+			TraitType.ANOMALY => 3,
+			TraitType.SUPPRESSION => 3,
+			TraitType.IMPRISON => 3,
+			TraitType.FEAR => 3,
+			TraitType.SILENCE => 3,
+			TraitType.INFECTION => 3,
+			
+			_ => 0
+		};
 }
 //
 // public enum TraitType

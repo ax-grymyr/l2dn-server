@@ -1,6 +1,8 @@
+using System.Reflection;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Conditions;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Stats.Functions;
 
@@ -20,14 +22,14 @@ public class FuncTemplate
 	public FuncTemplate(Condition attachCond, Condition applayCond, String functionName, int order, Stat stat,
 		double value)
 	{
-		StatFunction function = StatFunction.valueOf(functionName.toUpperCase());
+		Enums.StatFunction function = Enum.Parse<Enums.StatFunction>(functionName.toUpperCase());
 		if (order >= 0)
 		{
 			_order = order;
 		}
 		else
 		{
-			_order = function.getOrder();
+			_order = (int)function;
 		}
 
 		_attachCond = attachCond;
@@ -35,14 +37,9 @@ public class FuncTemplate
 		_stat = stat;
 		_value = value;
 
-		try
-		{
-			_functionClass = Class.forName("org.l2jmobius.gameserver.model.stats.functions.Func" + function.getName());
-		}
-		catch (ClassNotFoundException e)
-		{
-			throw new RuntimeException(e);
-		}
+		string? ns = GetType().Namespace;
+		_functionClass = Assembly.GetExecutingAssembly().GetType($"{ns}.Func{function}") ??
+		                 throw new InvalidOperationException($"Invalid function: {functionName}");
 	}
 
 	public Type getFunctionClass()

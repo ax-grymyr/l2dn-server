@@ -1,3 +1,5 @@
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Zones;
@@ -21,10 +23,11 @@ public class SpeedFinalizer: StatFunction
 			baseValue += calcEnchantBodyPart(creature, ItemTemplate.SLOT_FEET);
 		}
 
-		byte speedStat = (byte)creature.getStat().getAdd(Stat.STAT_BONUS_SPEED, -1);
-		if ((speedStat >= 0) && (speedStat < BaseStat.values().length))
+		int speedStat = (int)creature.getStat().getAdd(Stat.STAT_BONUS_SPEED, -1);
+		BaseStat[] baseStats = Enum.GetValues<BaseStat>();
+		if ((speedStat >= 0) && (speedStat < baseStats.Length))
 		{
-			BaseStat baseStat = BaseStat.values()[speedStat];
+			BaseStat baseStat = baseStats[speedStat];
 			double bonusDex = Math.Max(0, baseStat.calcValue(creature) - 55);
 			baseValue += bonusDex;
 		}
@@ -43,7 +46,7 @@ public class SpeedFinalizer: StatFunction
 			maxSpeed = double.MaxValue;
 		}
 
-		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue), 1, maxSpeed);
+		return validateValue(creature, StatUtil.defaultValue(creature, stat, baseValue), 1, maxSpeed);
 	}
 
 	protected override double calcEnchantBodyPartBonus(int enchantLevel, bool isBlessed)

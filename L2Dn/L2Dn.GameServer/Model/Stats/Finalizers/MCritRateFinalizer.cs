@@ -32,7 +32,7 @@ public class MCritRateFinalizer : StatFunction
 			maxMagicalCritRate = double.MaxValue;
 		}
 		
-		return validateValue(creature, Stat.defaultValue(creature, stat, (baseValue * witBonus * 10) + physicalBonus), 0, maxMagicalCritRate);
+		return validateValue(creature, StatUtil.defaultValue(creature, stat, (baseValue * witBonus * 10) + physicalBonus), 0, maxMagicalCritRate);
 	}
 	
 	protected override double calcEnchantBodyPartBonus(int enchantLevel, bool isBlessed)

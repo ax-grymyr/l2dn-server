@@ -11,6 +11,6 @@ public class ShieldDefenceRateFinalizer : StatFunction
 	{
 		throwIfPresent(@base);
 		
-		return Stat.defaultValue(creature, stat, calcWeaponPlusBaseValue(creature, stat));
+		return StatUtil.defaultValue(creature, stat, calcWeaponPlusBaseValue(creature, stat));
 	}
 }

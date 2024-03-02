@@ -54,8 +54,7 @@ public class PDefenseFinalizer: StatFunction
 					      ItemTemplate.SLOT_FULL_ARMOR)))
 					{
 						int defaultStatValue = player.getTemplate().getBaseDefBySlot(slot);
-						baseValue -= creature.getTransformation()
-							.map(transform => transform.getBaseDefBySlot(player, slot)).orElse(defaultStatValue);
+						baseValue -= creature.getTransformation()?.getBaseDefBySlot(player, slot) ?? defaultStatValue;
 					}
 				}
 			}

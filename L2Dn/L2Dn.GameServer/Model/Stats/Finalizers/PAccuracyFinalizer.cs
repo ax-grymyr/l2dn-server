@@ -48,7 +48,7 @@ public class PAccuracyFinalizer : StatFunction
 			baseValue += calcEnchantBodyPart(creature, ItemTemplate.SLOT_GLOVES);
 		}
 		
-		return Stat.defaultValue(creature, stat, baseValue);
+		return StatUtil.defaultValue(creature, stat, baseValue);
 	}
 	
 	protected override double calcEnchantBodyPartBonus(int enchantLevel, bool isBlessed)

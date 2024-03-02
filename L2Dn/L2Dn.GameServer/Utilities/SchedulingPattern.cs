@@ -4,6 +4,13 @@
 // need to decide what to do: rewrite original class from L2J or find 3rd party library
 public class SchedulingPattern
 {
+    private readonly string _pattern;
+
+    public SchedulingPattern(string pattern)
+    {
+        _pattern = pattern;
+    }
+
     public DateTime next(DateTime utcNow)
     {
         throw new NotImplementedException();
