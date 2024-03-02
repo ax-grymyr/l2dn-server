@@ -117,7 +117,7 @@ public class Npc: Creature
 		setInstanceType(InstanceType.Npc);
 		initCharStatusUpdateValues();
 		setTargetable(getTemplate().isTargetable());
-		
+
 		_isTalkable = getTemplate().isTalkable();
 		_isQuestMonster = getTemplate().isQuestMonster();
 		_isFakePlayer = getTemplate().isFakePlayer();
@@ -1413,7 +1413,7 @@ public class Npc: Creature
 	public NpcVariables getVariables()
 	{
 		NpcVariables vars = getScript<NpcVariables>();
-		return vars != null ? vars : addScript(new NpcVariables());
+		return vars != null ? vars : addScript(new NpcVariables(getTemplate().getId()));
 	}
 	
 	/**

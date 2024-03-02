@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Model.Actor;
+﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Model.Actor;
 
 namespace L2Dn.GameServer.Model.Variables;
 
@@ -6,26 +7,31 @@ namespace L2Dn.GameServer.Model.Variables;
  * NPC Variables implementation.
  * @author GKR
  */
-public class NpcVariables: AbstractVariables
+public class NpcVariables: AbstractVariables<DbNpcVariable>
 {
+    private readonly int _npcId;
+
+    public NpcVariables(int npcId)
+    {
+        _npcId = npcId;
+    }
+    
     public override int getInt(String key)
     {
         return base.getInt(key, 0);
     }
 
-    public override bool restoreMe()
+    protected override IQueryable<DbNpcVariable> GetQuery(GameServerDbContext ctx)
     {
-        return true;
+        return ctx.NpcVariables.Where(r => r.NpcId == _npcId);
     }
 
-    public override bool storeMe()
+    protected override DbNpcVariable CreateVar()
     {
-        return true;
-    }
-
-    public override bool deleteMe()
-    {
-        return true;
+        return new DbNpcVariable()
+        {
+            NpcId = _npcId
+        };
     }
 
     /**

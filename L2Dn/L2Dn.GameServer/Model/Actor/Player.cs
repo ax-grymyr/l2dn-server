@@ -13817,7 +13817,7 @@ public class Player: Playable
 	public AccountVariables getAccountVariables()
 	{
 		AccountVariables vars = getScript<AccountVariables>();
-		return vars != null ? vars : addScript(new AccountVariables(getAccountName()));
+		return vars != null ? vars : addScript(new AccountVariables(getAccountId()));
 	}
 	
 	public override int getId()

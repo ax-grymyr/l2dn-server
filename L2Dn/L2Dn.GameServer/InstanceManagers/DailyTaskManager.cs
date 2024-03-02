@@ -431,7 +431,7 @@ public class DailyTaskManager
 	private void resetVip()
 	{
 		// Delete all entries for received gifts
-		AccountVariables.deleteVipPurchases(AccountVariables.VIP_ITEM_BOUGHT);
+		AccountVariables.deleteVariable(AccountVariables.VIP_ITEM_BOUGHT);
 		
 		// Checks the tier expiration for online players
 		// offline players get handled on next time they log in.

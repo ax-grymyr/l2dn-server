@@ -101,6 +101,8 @@ public class GameServerDbContext: DbContext
     public DbSet<DbItemVariable> ItemVariables => Set<DbItemVariable>();
     public DbSet<DbItemSpecialAbility> ItemSpecialAbilities => Set<DbItemSpecialAbility>();
     public DbSet<WorldExchangeItem> WorldExchangeItems => Set<WorldExchangeItem>();
+
+    public DbSet<DbNpcVariable> NpcVariables => Set<DbNpcVariable>();
     
     public DbSet<Clan> Clans => Set<Clan>();
     public DbSet<ClanPrivileges> ClanPrivileges => Set<ClanPrivileges>();
@@ -108,6 +110,7 @@ public class GameServerDbContext: DbContext
     public DbSet<ClanSubPledge> ClanSubPledges => Set<ClanSubPledge>();
     public DbSet<ClanNotice> ClanNotices => Set<ClanNotice>();
     public DbSet<ClanWar> ClanWars => Set<ClanWar>();
+    public DbSet<DbClanVariable> ClanVariables => Set<DbClanVariable>();
     public DbSet<DbClanHall> ClanHalls => Set<DbClanHall>();
     public DbSet<DbClanHallBidder> ClanHallBidders => Set<DbClanHallBidder>();
     public DbSet<PledgeApplicant> PledgeApplicants => Set<PledgeApplicant>();

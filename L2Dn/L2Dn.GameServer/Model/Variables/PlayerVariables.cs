@@ -1,16 +1,9 @@
-﻿using NLog;
+﻿using L2Dn.GameServer.Db;
 
 namespace L2Dn.GameServer.Model.Variables;
 
-public class PlayerVariables: AbstractVariables
+public class PlayerVariables: AbstractVariables<CharacterVariable>
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PlayerVariables));
-
-	// SQL Queries.
-	private const String SELECT_QUERY = "SELECT * FROM character_variables WHERE charId = ?";
-	private const String DELETE_QUERY = "DELETE FROM character_variables WHERE charId = ?";
-	private const String INSERT_QUERY = "INSERT INTO character_variables (charId, var, val) VALUES (?, ?, ?)";
-
 	// Public variable names.
 	public const String INSTANCE_ORIGIN = "INSTANCE_ORIGIN";
 	public const String HAIR_ACCESSORY_VARIABLE_NAME = "HAIR_ACCESSORY_ENABLED";
@@ -81,94 +74,16 @@ public class PlayerVariables: AbstractVariables
 		restoreMe();
 	}
 
-	public override bool restoreMe()
+	protected override IQueryable<CharacterVariable> GetQuery(GameServerDbContext ctx)
 	{
-		// Restore previous variables.
-		try
-		{
-			using GameServerDbContext ctx = new();
-			PreparedStatement st = con.prepareStatement(SELECT_QUERY);
-			st.setInt(1, _objectId);
-			ResultSet rset = st.executeQuery();
-			while (rset.next())
-			{
-				set(rset.getString("var"), rset.getString("val"));
-			}
-		}
-		catch (Exception e)
-		{
-			LOGGER.Warn(GetType().Name + ": Couldn't restore variables for: " + _objectId + ": " + e);
-			return false;
-		}
-		finally
-		{
-			compareAndSetChanges(true, false);
-		}
-
-		return true;
+		return ctx.CharacterVariables.Where(r => r.CharacterId == _objectId);
 	}
 
-	public override bool storeMe()
+	protected override CharacterVariable CreateVar()
 	{
-		// No changes, nothing to store.
-		if (!hasChanges())
+		return new CharacterVariable()
 		{
-			return false;
-		}
-
-		try
-		{
-			using GameServerDbContext ctx = new();
-			// Clear previous entries.
-			PreparedStatement st1 = con.prepareStatement(DELETE_QUERY);
-			st1.setInt(1, _objectId);
-			st1.execute();
-
-			// Insert all variables.
-			PreparedStatement st = con.prepareStatement(INSERT_QUERY);
-			st.setInt(1, _objectId);
-			foreach (Entry<String, Object> entry in getSet().entrySet())
-			{
-				st.setString(2, entry.getKey());
-				st.setString(3, String.valueOf(entry.getValue()));
-				st.addBatch();
-			}
-
-			st.executeBatch();
-		}
-		catch (Exception e)
-		{
-			LOGGER.Warn(GetType().Name + ": Couldn't update variables for: " + _objectId + ": " + e);
-			return false;
-		}
-		finally
-		{
-			compareAndSetChanges(true, false);
-		}
-
-		return true;
-	}
-
-	public override bool deleteMe()
-	{
-		try
-		{
-			using GameServerDbContext ctx = new();
-			// Clear previous entries.
-			PreparedStatement st = con.prepareStatement(DELETE_QUERY);
-			st.setInt(1, _objectId);
-			st.execute();
-
-
-			// Clear all entries
-			getSet().clear();
-		}
-		catch (Exception e)
-		{
-			LOGGER.Warn(GetType().Name + ": Couldn't delete variables for: " + _objectId + ": " + e);
-			return false;
-		}
-
-		return true;
+			CharacterId = _objectId
+		};
 	}
 }
