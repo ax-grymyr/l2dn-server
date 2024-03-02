@@ -31,7 +31,7 @@ public readonly struct DiePacket: IOutgoingPacket
 			{
 				if (effect.getSkill().getId() == (int)CommonSkill.FEATHER_OF_BLESSING)
 				{
-					_delayFeather = effect.getTime();
+					_delayFeather = effect.getTime() ?? TimeSpan.Zero;
 					break;
 				}
 			}
@@ -199,7 +199,7 @@ public readonly struct DiePacket: IOutgoingPacket
 			
 			int getValue = maxResTime <= originalValue ? maxResTime : originalValue + 1;
 			ResurrectByPaymentHolder rbph = Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES[level][getValue];
-			writer.WriteInt32((int) (rbph.getAmount() * _player.getStat().getValue(Stat.RESURRECTION_FEE_MODIFIER, 1))); // L-Coin resurrection
+			writer.WriteInt32((int)(rbph.getAmount() * _player.getStat().getValue(Stat.RESURRECTION_FEE_MODIFIER, 1))); // L-Coin resurrection
 			writer.WriteInt32((int)rbph.getResurrectPercent()); // L-Coin count%
 			break;
 		}

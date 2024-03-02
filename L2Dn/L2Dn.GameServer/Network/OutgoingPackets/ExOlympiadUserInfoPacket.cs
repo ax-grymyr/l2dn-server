@@ -67,7 +67,7 @@ public readonly struct ExOlympiadUserInfoPacket: IOutgoingPacket
             writer.WriteByte((byte)_par.getSide());
             writer.WriteInt32(_par.getObjectId());
             writer.WriteString(_par.getName());
-            writer.WriteInt32(_par.getBaseClass());
+            writer.WriteInt32((int)_par.getBaseClass());
         }
 
         writer.WriteInt32(_curHp);

@@ -4,7 +4,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model;
 
@@ -25,7 +25,7 @@ public class WorldRegion
 	private readonly int _regionX;
 	private readonly  int _regionY;
 	private bool _active = Config.GRIDS_ALWAYS_ON;
-	private ScheduledFuture<?> _neighborsTask = null;
+	private ScheduledFuture _neighborsTask = null;
 	private readonly AtomicInteger _activeNeighbors = new AtomicInteger();
 	
 	public WorldRegion(int regionX, int regionY)
@@ -131,7 +131,7 @@ public class WorldRegion
 			WorldRegion worldRegion = _surroundingRegions[i];
 			if (worldRegion.isActive())
 			{
-				Collection<WorldObject> regionObjects = worldRegion.getVisibleObjects();
+				ICollection<WorldObject> regionObjects = worldRegion.getVisibleObjects();
 				if (regionObjects.isEmpty())
 				{
 					continue;
@@ -314,7 +314,7 @@ public class WorldRegion
 		}
 	}
 	
-	public Collection<WorldObject> getVisibleObjects()
+	public ICollection<WorldObject> getVisibleObjects()
 	{
 		return _visibleObjects;
 	}

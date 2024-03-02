@@ -8,7 +8,7 @@ public class TeleportLocation: Location
 {
     private readonly int _id;
     private readonly String _name;
-    private readonly NpcStringId _npcStringId;
+    private readonly NpcStringId? _npcStringId;
     private readonly int _questZoneId;
     private readonly int _feeId;
     private readonly long _feeCount;
@@ -18,7 +18,8 @@ public class TeleportLocation: Location
     {
         _id = id;
         _name = set.getString("name", null);
-        _npcStringId = NpcStringId.getNpcStringIdOrDefault(set.getInt("npcStringId", -1), null);
+        int npcStringId = set.getInt("npcStringId", -1); 
+        _npcStringId = npcStringId == -1 ? null : (NpcStringId)npcStringId;
         _questZoneId = set.getInt("questZoneId", 0);
         _feeId = set.getInt("feeId", Inventory.ADENA_ID);
         _feeCount = set.getLong("feeCount", 0);
@@ -52,7 +53,7 @@ public class TeleportLocation: Location
         return _name;
     }
 
-    public NpcStringId getNpcStringId()
+    public NpcStringId? getNpcStringId()
     {
         return _npcStringId;
     }

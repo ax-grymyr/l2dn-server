@@ -39,7 +39,7 @@ public readonly struct ExAbnormalStatusUpdateFromTargetPacket: IOutgoingPacket
             if (skill.isAura())
                 writer.WriteVariableInt(-1);
             else
-                writer.WriteVariableInt((int)info.getTime().TotalSeconds);
+                writer.WriteVariableInt((int)(info.getTime() ?? TimeSpan.Zero).TotalSeconds);
             
             writer.WriteInt32(info.getEffectorObjectId());
         }

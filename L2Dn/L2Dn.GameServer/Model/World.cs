@@ -4,6 +4,7 @@ using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
@@ -135,8 +136,9 @@ public sealed class World
 			Player existingPlayer = _allPlayers.GetOrAdd(@object.getObjectId(), newPlayer);
 			if (existingPlayer != newPlayer)
 			{
-				Disconnection.of(existingPlayer).defaultSequence(LeaveWorld.STATIC_PACKET);
-				Disconnection.of(newPlayer).defaultSequence(LeaveWorld.STATIC_PACKET);
+				LeaveWorldPacket packet = LeaveWorldPacket.STATIC_PACKET;
+				Disconnection.of(existingPlayer).defaultSequence(ref packet);
+				Disconnection.of(newPlayer).defaultSequence(ref packet);
 				LOGGER.Warn(GetType().Name + ": Duplicate character!? Disconnected both characters (" + newPlayer.getName() + ")");
 			}
 			else if (Config.FACTION_SYSTEM_ENABLED)
@@ -399,7 +401,7 @@ public sealed class World
 		WorldRegion[] surroundingRegions = oldRegion.getSurroundingRegions();
 		for (int i = 0; i < surroundingRegions.Length; i++)
 		{
-			Collection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
+			ICollection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
 			if (visibleObjects.isEmpty())
 			{
 				continue;
@@ -472,7 +474,7 @@ public sealed class World
 				continue;
 			}
 			
-			Collection<WorldObject> visibleObjects = worldRegion.getVisibleObjects();
+			ICollection<WorldObject> visibleObjects = worldRegion.getVisibleObjects();
 			if (visibleObjects.isEmpty())
 			{
 				continue;
@@ -536,7 +538,7 @@ public sealed class World
 				continue;
 			}
 			
-			Collection<WorldObject> visibleObjects = worldRegion.getVisibleObjects();
+			ICollection<WorldObject> visibleObjects = worldRegion.getVisibleObjects();
 			if (visibleObjects.isEmpty())
 			{
 				continue;
@@ -626,7 +628,7 @@ public sealed class World
 		WorldRegion[] surroundingRegions = worldRegion.getSurroundingRegions();
 		for (int i = 0; i < surroundingRegions.Length; i++)
 		{
-			Collection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
+			ICollection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
 			if (visibleObjects.isEmpty())
 			{
 				continue;
@@ -688,7 +690,7 @@ public sealed class World
 		WorldRegion[] surroundingRegions = worldRegion.getSurroundingRegions();
 		for (int i = 0; i < surroundingRegions.Length; i++)
 		{
-			Collection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
+			ICollection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
 			if (visibleObjects.isEmpty())
 			{
 				continue;

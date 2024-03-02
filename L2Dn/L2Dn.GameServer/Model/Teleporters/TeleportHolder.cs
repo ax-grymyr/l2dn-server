@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
@@ -9,6 +10,7 @@ using L2Dn.GameServer.Model.Events.Returns;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -154,9 +156,9 @@ public class TeleportHolder
 		sbF.Append(sb.ToString());
 
 		// Send html message
-		NpcHtmlMessage msg = new NpcHtmlMessage(npc.getObjectId());
-		msg.setFile(player, "data/html/teleporter/teleports.htm");
-		msg.replace("%locations%", sbF.ToString());
+		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/teleporter/teleports.htm");
+		helper.Replace("%locations%", sbF.ToString());
+		NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(npc.getObjectId(), helper);
 		player.sendPacket(msg);
 	}
 
@@ -199,8 +201,8 @@ public class TeleportHolder
 		{
 			if (!Config.TELEPORT_WHILE_SIEGE_IN_PROGRESS && npc.getCastle().getSiege().isInProgress())
 			{
-				NpcHtmlMessage msg = new NpcHtmlMessage(npc.getObjectId());
-				msg.setFile(player, "data/html/teleporter/castleteleporter-busy.htm");
+				HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/teleporter/castleteleporter-busy.htm");
+				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(npc.getObjectId(), helper);
 				player.sendPacket(msg);
 				return;
 			}
@@ -276,10 +278,10 @@ public class TeleportHolder
 				return 0;
 			}
 
-			Calendar cal = Calendar.getInstance();
-			int hour = cal.get(Calendar.HOUR_OF_DAY);
-			int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
-			if ((hour >= 20) && ((dayOfWeek >= Calendar.MONDAY) && (dayOfWeek <= Calendar.TUESDAY)))
+			DateTime cal = DateTime.UtcNow;
+			int hour = cal.Hour;
+			DayOfWeek dayOfWeek = cal.DayOfWeek;
+			if ((hour >= 20) && ((dayOfWeek >= DayOfWeek.Monday) && (dayOfWeek <= DayOfWeek.Tuesday)))
 			{
 				return loc.getFeeCount() / 2;
 			}
@@ -319,7 +321,7 @@ public class TeleportHolder
 			return item.getName();
 		}
 
-		SpecialItemType specialItem = SpecialItemType.getByClientId(itemId);
+		SpecialItemType specialItem = (SpecialItemType)itemId;
 		if (specialItem != null)
 		{
 			switch (specialItem)

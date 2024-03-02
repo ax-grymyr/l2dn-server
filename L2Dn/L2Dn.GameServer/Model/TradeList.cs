@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -181,7 +182,7 @@ public class TradeList
 			return null;
 		}
 		
-		if ((MAX_ADENA / count) < price)
+		if ((Inventory.MAX_ADENA / count) < price)
 		{
 			return null;
 		}
@@ -236,7 +237,7 @@ public class TradeList
 			return null;
 		}
 		
-		if ((MAX_ADENA / count) < price)
+		if ((Inventory.MAX_ADENA / count) < price)
 		{
 			LOGGER.Warn(_owner.getName() + ": Attempt to overflow adena !");
 			return null;
@@ -450,7 +451,7 @@ public class TradeList
 	 * @param partnerIU
 	 * @return
 	 */
-	private bool TransferItems(Player partner, InventoryUpdate ownerIU, InventoryUpdate partnerIU)
+	private bool TransferItems(Player partner, InventoryUpdatePacket ownerIU, InventoryUpdatePacket partnerIU)
 	{
 		foreach (TradeItem titem in _items)
 		{
@@ -467,28 +468,22 @@ public class TradeList
 			}
 			
 			// Add changes to inventory update packets
-			if (ownerIU != null)
+			if ((oldItem.getCount() > 0) && (oldItem != newItem))
 			{
-				if ((oldItem.getCount() > 0) && (oldItem != newItem))
-				{
-					ownerIU.addModifiedItem(oldItem);
-				}
-				else
-				{
-					ownerIU.addRemovedItem(oldItem);
-				}
+				ownerIU.addModifiedItem(oldItem);
+			}
+			else
+			{
+				ownerIU.addRemovedItem(oldItem);
 			}
 			
-			if (partnerIU != null)
+			if (newItem.getCount() > titem.getCount())
 			{
-				if (newItem.getCount() > titem.getCount())
-				{
-					partnerIU.addModifiedItem(newItem);
-				}
-				else
-				{
-					partnerIU.addNewItem(newItem);
-				}
+				partnerIU.addModifiedItem(newItem);
+			}
+			else
+			{
+				partnerIU.addNewItem(newItem);
 			}
 		}
 		return true;
@@ -498,9 +493,9 @@ public class TradeList
 	 * @param partner
 	 * @return items slots count
 	 */
-	private int countItemsSlots(Player partner)
+	private long countItemsSlots(Player partner)
 	{
-		int slots = 0;
+		long slots = 0;
 		foreach (TradeItem item in _items)
 		{
 			if (item == null)
@@ -569,8 +564,8 @@ public class TradeList
 		else
 		{
 			// Prepare inventory update packet
-			InventoryUpdate ownerIU = new InventoryUpdate();
-			InventoryUpdate partnerIU = new InventoryUpdate();
+			InventoryUpdatePacket ownerIU = new InventoryUpdatePacket();
+			InventoryUpdatePacket partnerIU = new InventoryUpdatePacket();
 			
 			// Transfer items
 			partnerList.TransferItems(_owner, partnerIU, ownerIU);
@@ -617,8 +612,8 @@ public class TradeList
 			return 1;
 		}
 		
-		int slots = 0;
-		int weight = 0;
+		long slots = 0;
+		long weight = 0;
 		long totalPrice = 0;
 		
 		PlayerInventory ownerInventory = _owner.getInventory();
@@ -655,7 +650,7 @@ public class TradeList
 			}
 			
 			// check for overflow in the single item
-			if ((MAX_ADENA / item.getCount()) < item.getPrice())
+			if ((Inventory.MAX_ADENA / item.getCount()) < item.getPrice())
 			{
 				// private store attempting to overflow - disable it
 				@lock();
@@ -664,7 +659,7 @@ public class TradeList
 			
 			totalPrice += item.getCount() * item.getPrice();
 			// check for overflow of the total price
-			if ((MAX_ADENA < totalPrice) || (totalPrice < 0))
+			if ((Inventory.MAX_ADENA < totalPrice) || (totalPrice < 0))
 			{
 				// private store attempting to overflow - disable it
 				@lock();
@@ -715,8 +710,8 @@ public class TradeList
 		}
 		
 		// Prepare inventory update packets
-		InventoryUpdate ownerIU = new InventoryUpdate();
-		InventoryUpdate playerIU = new InventoryUpdate();
+		InventoryUpdatePacket ownerIU = new InventoryUpdatePacket();
+		InventoryUpdatePacket playerIU = new InventoryUpdatePacket();
 		Item adenaItem = playerInventory.getAdenaInstance();
 		if (!playerInventory.reduceAdena("PrivateStore", totalPrice, player, _owner))
 		{
@@ -778,32 +773,32 @@ public class TradeList
 			// Send messages about the transaction to both players
 			if (newItem.isStackable())
 			{
-				SystemMessage msg = new SystemMessage(SystemMessageId.C1_PURCHASED_S3_S2_S);
-				msg.addString(player.getName());
-				msg.addItemName(newItem);
-				msg.addLong(item.getCount());
+				SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.C1_PURCHASED_S3_S2_S);
+				msg.Params.addString(player.getName());
+				msg.Params.addItemName(newItem);
+				msg.Params.addLong(item.getCount());
 				_owner.sendPacket(msg);
 				
-				msg = new SystemMessage(SystemMessageId.YOU_HAVE_PURCHASED_S3_S2_S_FROM_C1);
-				msg.addString(_owner.getName());
-				msg.addItemName(newItem);
-				msg.addLong(item.getCount());
+				msg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_PURCHASED_S3_S2_S_FROM_C1);
+				msg.Params.addString(_owner.getName());
+				msg.Params.addItemName(newItem);
+				msg.Params.addLong(item.getCount());
 				player.sendPacket(msg);
 			}
 			else
 			{
-				SystemMessage msg = new SystemMessage(SystemMessageId.C1_PURCHASED_S2);
-				msg.addString(player.getName());
-				msg.addItemName(newItem);
+				SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.C1_PURCHASED_S2);
+				msg.Params.addString(player.getName());
+				msg.Params.addItemName(newItem);
 				_owner.sendPacket(msg);
 				
-				msg = new SystemMessage(SystemMessageId.YOU_HAVE_PURCHASED_S2_FROM_C1);
-				msg.addString(_owner.getName());
-				msg.addItemName(newItem);
+				msg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_PURCHASED_S2_FROM_C1);
+				msg.Params.addString(_owner.getName());
+				msg.Params.addItemName(newItem);
 				player.sendPacket(msg);
 			}
 			
-			_owner.sendPacket(new ExPrivateStoreSellingResult(item.getObjectId(), item.getCount(), player.getAppearance().getVisibleName()));
+			_owner.sendPacket(new ExPrivateStoreSellingResultPacket(item.getObjectId(), item.getCount(), player.getAppearance().getVisibleName()));
 		}
 		
 		// Send inventory update packet
@@ -837,8 +832,8 @@ public class TradeList
 		PlayerInventory playerInventory = player.getInventory();
 		
 		// Prepare inventory update packet
-		InventoryUpdate ownerIU = new InventoryUpdate();
-		InventoryUpdate playerIU = new InventoryUpdate();
+		InventoryUpdatePacket ownerIU = new InventoryUpdatePacket();
+		InventoryUpdatePacket playerIU = new InventoryUpdatePacket();
 		long totalPrice = 0;
 		
 		TradeItem[] sellerItems = _items.ToArray();
@@ -871,17 +866,17 @@ public class TradeList
 			}
 			
 			// check for overflow in the single item
-			if ((MAX_ADENA / item.getCount()) < item.getPrice())
+			if ((Inventory.MAX_ADENA / item.getCount()) < item.getPrice())
 			{
-				lock();
+				@lock();
 				break;
 			}
 			
 			long _totalPrice = totalPrice + (item.getCount() * item.getPrice());
 			// check for overflow of the total price
-			if ((MAX_ADENA < _totalPrice) || (_totalPrice < 0))
+			if ((Inventory.MAX_ADENA < _totalPrice) || (_totalPrice < 0))
 			{
-				lock();
+				@lock();
 				break;
 			}
 			
@@ -967,32 +962,32 @@ public class TradeList
 			// Send messages about the transaction to both players
 			if (newItem.isStackable())
 			{
-				SystemMessage msg = new SystemMessage(SystemMessageId.YOU_HAVE_PURCHASED_S3_S2_S_FROM_C1);
-				msg.addString(player.getName());
-				msg.addItemName(newItem);
-				msg.addLong(item.getCount());
+				SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_PURCHASED_S3_S2_S_FROM_C1);
+				msg.Params.addString(player.getName());
+				msg.Params.addItemName(newItem);
+				msg.Params.addLong(item.getCount());
 				_owner.sendPacket(msg);
 				
-				msg = new SystemMessage(SystemMessageId.C1_PURCHASED_S3_S2_S);
-				msg.addString(_owner.getName());
-				msg.addItemName(newItem);
-				msg.addLong(item.getCount());
+				msg = new SystemMessagePacket(SystemMessageId.C1_PURCHASED_S3_S2_S);
+				msg.Params.addString(_owner.getName());
+				msg.Params.addItemName(newItem);
+				msg.Params.addLong(item.getCount());
 				player.sendPacket(msg);
 			}
 			else
 			{
-				SystemMessage msg = new SystemMessage(SystemMessageId.YOU_HAVE_PURCHASED_S2_FROM_C1);
-				msg.addString(player.getName());
-				msg.addItemName(newItem);
+				SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_PURCHASED_S2_FROM_C1);
+				msg.Params.addString(player.getName());
+				msg.Params.addItemName(newItem);
 				_owner.sendPacket(msg);
 				
-				msg = new SystemMessage(SystemMessageId.C1_PURCHASED_S2);
-				msg.addString(_owner.getName());
-				msg.addItemName(newItem);
+				msg = new SystemMessagePacket(SystemMessageId.C1_PURCHASED_S2);
+				msg.Params.addString(_owner.getName());
+				msg.Params.addItemName(newItem);
 				player.sendPacket(msg);
 			}
 			
-			_owner.sendPacket(new ExPrivateStoreBuyingResult(item.getObjectId(), item.getCount(), player.getAppearance().getVisibleName()));
+			_owner.sendPacket(new ExPrivateStoreBuyingResultPacket(item.getObjectId(), item.getCount(), player.getAppearance().getVisibleName()));
 		}
 		
 		if (totalPrice > 0)

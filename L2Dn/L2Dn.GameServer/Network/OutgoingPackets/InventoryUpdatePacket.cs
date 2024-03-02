@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Model;
+﻿using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.Packets;
@@ -31,6 +32,26 @@ public struct InventoryUpdatePacket: IOutgoingPacket
     {
         _helper = new();
         _helper.Items.AddRange(items);
+    }
+
+    public void addModifiedItem(Item item)
+    {
+        _helper.Items.Add(new ItemInfo(item, ItemChangeType.MODIFIED));
+    }
+
+    public void addRemovedItem(Item item)
+    {
+        _helper.Items.Add(new ItemInfo(item, ItemChangeType.REMOVED));
+    }
+
+    public void addNewItem(Item item)
+    {
+        _helper.Items.Add(new ItemInfo(item, ItemChangeType.ADDED));
+    }
+
+    public void addItem(Item item)
+    {
+        _helper.Items.Add(new ItemInfo(item));
     }
     
     public void WriteContent(PacketBitWriter writer)
