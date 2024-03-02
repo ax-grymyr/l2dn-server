@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -65,7 +66,7 @@ public class Skill: IIdentifiable
 	/** Abnormal type: local effect "group". */
 	private readonly AbnormalType _subordinationAbnormalType;
 	/** Abnormal time: global effect duration time. */
-	private readonly int _abnormalTime;
+	private readonly TimeSpan? _abnormalTime;
 	/** Abnormal visual effect: the visual effect displayed ingame. */
 	private Set<AbnormalVisualEffect> _abnormalVisualEffects;
 	/** If {@code true} this skill's effect should stay after death. */
@@ -76,8 +77,8 @@ public class Skill: IIdentifiable
 	private readonly int _refId;
 	// all times in milliseconds
 	private readonly TimeSpan _hitTime;
-	private readonly double _hitCancelTime;
-	private readonly int _coolTime;
+	private readonly TimeSpan _hitCancelTime;
+	private readonly TimeSpan _coolTime;
 	private readonly long _reuseHashCode;
 	private readonly TimeSpan _reuseDelay;
 	private readonly int _reuseDelayGroup;
@@ -137,8 +138,8 @@ public class Skill: IIdentifiable
 	
 	// Channeling data
 	private readonly int _channelingSkillId;
-	private readonly long _channelingStart;
-	private readonly long _channelingTickInterval;
+	private readonly TimeSpan _channelingStart;
+	private readonly TimeSpan _channelingTickInterval;
 	
 	// Mentoring
 	private readonly bool _isMentoring;
@@ -190,7 +191,7 @@ public class Skill: IIdentifiable
 		_abnormalLevel = set.getInt("abnormalLevel", 0);
 		_abnormalType = set.getEnum("abnormalType", AbnormalType.NONE);
 		_subordinationAbnormalType = set.getEnum("subordinationAbnormalType", AbnormalType.NONE);
-		int abnormalTime = set.getInt("abnormalTime", 0);
+		TimeSpan abnormalTime = TimeSpan.FromMilliseconds(set.getInt("abnormalTime", 0));
 		if (Config.ENABLE_MODIFY_SKILL_DURATION && Config.SKILL_DURATION_LIST.ContainsKey(_id) && (_operateType != SkillOperateType.T))
 		{
 			if ((_level < 100) || (_level > 140))
@@ -206,9 +207,9 @@ public class Skill: IIdentifiable
 		_isAbnormalInstant = set.getBoolean("abnormalInstant", false);
 		parseAbnormalVisualEffect(set.getString("abnormalVisualEffect", null));
 		_stayAfterDeath = set.getBoolean("stayAfterDeath", false);
-		_hitTime = set.getInt("hitTime", 0);
-		_hitCancelTime = set.getDouble("hitCancelTime", 0);
-		_coolTime = set.getInt("coolTime", 0);
+		_hitTime = TimeSpan.FromMilliseconds(set.getInt("hitTime", 0));
+		_hitCancelTime = TimeSpan.FromMilliseconds(set.getDouble("hitCancelTime", 0));
+		_coolTime = TimeSpan.FromMilliseconds(set.getInt("coolTime", 0));
 		_isDebuff = set.getBoolean("isDebuff", false);
 		_isRecoveryHerb = set.getBoolean("isRecoveryHerb", false);
 		if (Config.ENABLE_MODIFY_SKILL_REUSE && Config.SKILL_REUSE_LIST.ContainsKey(_id))
@@ -217,7 +218,7 @@ public class Skill: IIdentifiable
 		}
 		else
 		{
-			_reuseDelay = set.getInt("reuseDelay", 0);
+			_reuseDelay = TimeSpan.FromMilliseconds(set.getInt("reuseDelay", 0));
 		}
 		
 		_reuseDelayGroup = set.getInt("reuseDelayGroup", -1);
@@ -288,16 +289,16 @@ public class Skill: IIdentifiable
 		_activateRate = set.getInt("activateRate", -1);
 		_minChance = set.getInt("minChance", Config.MIN_ABNORMAL_STATE_SUCCESS_RATE);
 		_maxChance = set.getInt("maxChance", Config.MAX_ABNORMAL_STATE_SUCCESS_RATE);
-		_nextAction = set.getEnum("nextAction", NextActionType.class, NextActionType.NONE);
+		_nextAction = set.getEnum("nextAction", NextActionType.NONE);
 		_removedOnAnyActionExceptMove = set.getBoolean("removedOnAnyActionExceptMove", false);
 		_removedOnDamage = set.getBoolean("removedOnDamage", false);
 		_removedOnUnequipWeapon = set.getBoolean("removedOnUnequipWeapon", false);
 		_blockedInOlympiad = set.getBoolean("blockedInOlympiad", false);
-		_attributeType = set.getEnum("attributeType", AttributeType.class, AttributeType.NONE);
+		_attributeType = set.getEnum("attributeType", AttributeType.NONE);
 		_attributeValue = set.getInt("attributeValue", 0);
-		_basicProperty = set.getEnum("basicProperty", BasicProperty.class, BasicProperty.NONE);
+		_basicProperty = set.getEnum("basicProperty", BasicProperty.NONE);
 		_isSuicideAttack = set.getBoolean("isSuicideAttack", false);
-		_minPledgeClass = set.getInt("minPledgeClass", 0);
+		_minPledgeClass = (SocialClass)set.getInt("minPledgeClass", 0);
 		_lightSoulMaxConsume = set.getInt("lightSoulMaxConsume", 0);
 		_shadowSoulMaxConsume = set.getInt("shadowSoulMaxConsume", 0);
 		_chargeConsume = set.getInt("chargeConsume", 0);
@@ -308,8 +309,8 @@ public class Skill: IIdentifiable
 		_withoutAction = set.getBoolean("withoutAction", false);
 		_icon = set.getString("icon", "icon.skill0000");
 		_channelingSkillId = set.getInt("channelingSkillId", 0);
-		_channelingTickInterval = (long) set.getFloat("channelingTickInterval", 2000f) * 1000;
-		_channelingStart = (long) (set.getFloat("channelingStart", 0f) * 1000);
+		_channelingTickInterval = TimeSpan.FromMilliseconds(set.getFloat("channelingTickInterval", 2000f) * 1000);
+		_channelingStart = TimeSpan.FromMilliseconds(set.getFloat("channelingStart", 0f) * 1000);
 		_isMentoring = set.getBoolean("isMentoring", false);
 		_doubleCastSkill = set.getInt("doubleCastSkill", 0);
 		_canDoubleCast = set.getBoolean("canDoubleCast", false);
@@ -321,7 +322,8 @@ public class Skill: IIdentifiable
 		_blockActionUseSkill = set.getBoolean("blockActionUseSkill", false);
 		_toggleGroupId = set.getInt("toggleGroupId", -1);
 		_attachToggleGroupId = set.getInt("attachToggleGroupId", -1);
-		_attachSkills = set.getList<StatSet>("attachSkillList", Collections.emptyList()).stream().map(AttachSkillHolder::fromStatSet).collect(Collectors.toList());
+		_attachSkills = set.getList<StatSet>("attachSkillList", new List<StatSet>())
+			.Select(AttachSkillHolder.fromStatSet).ToList();
 		
 		String abnormalResist = set.getString("abnormalResists", null);
 		if (abnormalResist != null)
@@ -443,7 +445,7 @@ public class Skill: IIdentifiable
 	 * Is the base to calculate the duration of the continuous effects of this skill.
 	 * @return the abnormal time
 	 */
-	public TimeSpan getAbnormalTime()
+	public TimeSpan? getAbnormalTime()
 	{
 		return _abnormalTime;
 	}
@@ -778,7 +780,7 @@ public class Skill: IIdentifiable
 		return _hitTime;
 	}
 	
-	public double getHitCancelTime()
+	public TimeSpan getHitCancelTime()
 	{
 		return _hitCancelTime;
 	}
@@ -786,7 +788,7 @@ public class Skill: IIdentifiable
 	/**
 	 * @return the cool time
 	 */
-	public int getCoolTime()
+	public TimeSpan getCoolTime()
 	{
 		return _coolTime;
 	}
@@ -1010,18 +1012,18 @@ public class Skill: IIdentifiable
 		
 		if (creature.isPlayer() && creature.getActingPlayer().isMounted() && isBad() && !MountEnabledSkillList.contains(_id))
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
-			sm.addSkillName(_id);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
+			sm.Params.addSkillName(_id);
 			creature.sendPacket(sm);
 			return false;
 		}
 		
-		if (!checkConditions(SkillConditionScope.GENERAL, creature, @object) || !checkConditions(SkillConditionScope.TARGET, creature, object))
+		if (!checkConditions(SkillConditionScope.GENERAL, creature, @object) || !checkConditions(SkillConditionScope.TARGET, creature, @object))
 		{
 			if (sendMessage && !((creature == @object) && isBad())) // Self targeted bad skills should not send a message.
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
-				sm.addSkillName(_id);
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
+				sm.Params.addSkillName(_id);
 				creature.sendPacket(sm);
 			}
 			return false;
@@ -1087,7 +1089,7 @@ public class Skill: IIdentifiable
 			try
 			{
 				List<WorldObject> result = new();
-				handler.forEachAffected(creature, target, this, x => x.add());
+				handler.forEachAffected<WorldObject>(creature, target, this, x => result.Add(x));
 				return result;
 			}
 			catch (Exception e)
@@ -1169,11 +1171,11 @@ public class Skill: IIdentifiable
 	 * @param applyInstantEffects if {@code true} instant effects will be applied to the effected
 	 * @param addContinuousEffects if {@code true} continuous effects will be applied to the effected
 	 */
-	public void applyEffectScope(EffectScope effectScope, BuffInfo info, bool applyInstantEffects, bool addContinuousEffects)
+	public void applyEffectScope(EffectScope? effectScope, BuffInfo info, bool applyInstantEffects, bool addContinuousEffects)
 	{
-		if ((effectScope != null) && hasEffects(effectScope))
+		if ((effectScope != null) && hasEffects(effectScope.Value))
 		{
-			foreach (AbstractEffect effect in getEffects(effectScope))
+			foreach (AbstractEffect effect in getEffects(effectScope.Value))
 			{
 				if (effect.isInstant())
 				{
@@ -1213,7 +1215,7 @@ public class Skill: IIdentifiable
 	 */
 	public void applyEffects(Creature effector, Creature effected)
 	{
-		applyEffects(effector, effected, false, false, true, 0, null);
+		applyEffects(effector, effected, false, false, true, TimeSpan.Zero, null);
 	}
 	
 	/**
@@ -1225,7 +1227,7 @@ public class Skill: IIdentifiable
 	 */
 	public void applyEffects(Creature effector, Creature effected, Item item)
 	{
-		applyEffects(effector, effected, false, false, true, 0, item);
+		applyEffects(effector, effected, false, false, true, TimeSpan.Zero, item);
 	}
 	
 	/**
@@ -1275,7 +1277,7 @@ public class Skill: IIdentifiable
 			
 			applyEffectScope(EffectScope.GENERAL, info, instant, addContinuousEffects);
 			
-			EffectScope pvpOrPveEffectScope = effector.isPlayable() && effected.isAttackable() ? EffectScope.PVE : effector.isPlayable() && effected.isPlayable() ? EffectScope.PVP : null;
+			EffectScope? pvpOrPveEffectScope = effector.isPlayable() && effected.isAttackable() ? EffectScope.PVE : effector.isPlayable() && effected.isPlayable() ? EffectScope.PVP : null;
 			applyEffectScope(pvpOrPveEffectScope, info, instant, addContinuousEffects);
 			if (addContinuousEffects)
 			{
@@ -1303,11 +1305,11 @@ public class Skill: IIdentifiable
 			{
 				if (effected.hasServitors())
 				{
-					effected.getServitors().values().ForEach(s => applyEffects(effector, s, _isRecoveryHerb, 0));
+					effected.getServitors().values().ForEach(s => applyEffects(effector, s, _isRecoveryHerb, TimeSpan.Zero));
 				}
 				if (effected.hasPet())
 				{
-					applyEffects(effector, effector.getPet(), _isRecoveryHerb, 0);
+					applyEffects(effector, effector.getPet(), _isRecoveryHerb, TimeSpan.Zero);
 				}
 			}
 		}
@@ -1317,7 +1319,7 @@ public class Skill: IIdentifiable
 			addContinuousEffects = !passive && (_operateType.isToggle() || (_operateType.isSelfContinuous() && Formulas.calcEffectSuccess(effector, effector, this)));
 			
 			BuffInfo info = new BuffInfo(effector, effector, this, !instant, item, null);
-			if (addContinuousEffects && (abnormalTime > 0))
+			if (addContinuousEffects && (abnormalTime > TimeSpan.Zero))
 			{
 				info.setAbnormalTime(abnormalTime);
 			}
@@ -1341,7 +1343,7 @@ public class Skill: IIdentifiable
 			// Avoiding Servitor Share since it's implementation already "shares" the effect.
 			if (addContinuousEffects && _isSharedWithSummon && info.getEffected().isPlayer() && isContinuous() && !_isDebuff && info.getEffected().hasServitors())
 			{
-				info.getEffected().getServitors().values().forEach(s => applyEffects(effector, s, false, 0));
+				info.getEffected().getServitors().values().forEach(s => applyEffects(effector, s, false, TimeSpan.Zero));
 			}
 		}
 		
@@ -1405,12 +1407,12 @@ public class Skill: IIdentifiable
 			{
 				// if skill is reflected instant effects should be casted on target
 				// and continuous effects on caster
-				applyEffects(target, caster, false, 0);
+				applyEffects(target, caster, false, TimeSpan.Zero);
 				
 				BuffInfo info = new BuffInfo(caster, target, this, false, item, null);
 				applyEffectScope(EffectScope.GENERAL, info, true, false);
 				
-				EffectScope pvpOrPveEffectScope = caster.isPlayable() && target.isAttackable() ? EffectScope.PVE : caster.isPlayable() && target.isPlayable() ? EffectScope.PVP : null;
+				EffectScope? pvpOrPveEffectScope = caster.isPlayable() && target.isAttackable() ? EffectScope.PVE : caster.isPlayable() && target.isPlayable() ? EffectScope.PVP : null;
 				applyEffectScope(pvpOrPveEffectScope, info, true, false);
 			}
 			else
@@ -1426,7 +1428,7 @@ public class Skill: IIdentifiable
 			{
 				caster.stopSkillEffects(SkillFinishType.REMOVED, _id);
 			}
-			applyEffects(caster, caster, true, false, true, 0, item);
+			applyEffects(caster, caster, true, false, true, TimeSpan.Zero, item);
 		}
 		
 		if (!caster.isCubic())
@@ -1508,7 +1510,8 @@ public class Skill: IIdentifiable
 	 */
 	public bool canBeStolen()
 	{
-		return !isPassive() && !isToggle() && !_isDebuff && !_irreplacableBuff && !isHeroSkill() && !isGMSkill() && !(isStatic() && (getId() != CommonSkill.CARAVANS_SECRET_MEDICINE.getId())) && _canBeDispelled;
+		return !isPassive() && !isToggle() && !_isDebuff && !_irreplacableBuff && !isHeroSkill() && !isGMSkill() &&
+		       !(isStatic() && (getId() != (int)CommonSkill.CARAVANS_SECRET_MEDICINE)) && _canBeDispelled;
 	}
 	
 	public bool isClanSkill()
@@ -1643,12 +1646,12 @@ public class Skill: IIdentifiable
 		return _icon;
 	}
 	
-	public long getChannelingTickInterval()
+	public TimeSpan getChannelingTickInterval()
 	{
 		return _channelingTickInterval;
 	}
 	
-	public long getChannelingTickInitialDelay()
+	public TimeSpan getChannelingTickInitialDelay()
 	{
 		return _channelingStart;
 	}

@@ -7,6 +7,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Skills;
 
@@ -30,7 +31,7 @@ public class BuffInfo
 	private Map<AbstractEffect, EffectTaskInfo> _tasks;
 	// Time and ticks
 	/** Abnormal time. */
-	private TimeSpan _abnormalTime;
+	private TimeSpan? _abnormalTime;
 	/** The game ticks at the start of this effect. */
 	private int _periodStartTicks;
 	// Misc
@@ -126,7 +127,7 @@ public class BuffInfo
 	 * Gets the calculated abnormal time.
 	 * @return the abnormal time
 	 */
-	public TimeSpan getAbnormalTime()
+	public TimeSpan? getAbnormalTime()
 	{
 		return _abnormalTime;
 	}
@@ -135,7 +136,7 @@ public class BuffInfo
 	 * Sets the abnormal time.
 	 * @param abnormalTime the abnormal time to set
 	 */
-	public void setAbnormalTime(TimeSpan abnormalTime)
+	public void setAbnormalTime(TimeSpan? abnormalTime)
 	{
 		_abnormalTime = abnormalTime;
 	}
@@ -169,9 +170,10 @@ public class BuffInfo
 	 * Get the remaining time in seconds for this buff info.
 	 * @return the elapsed time
 	 */
-	public TimeSpan getTime()
+	public TimeSpan? getTime()
 	{
-		return _abnormalTime - ((GameTimeTaskManager.getInstance().getGameTicks() - _periodStartTicks) / GameTimeTaskManager.TICKS_PER_SECOND);
+		int ticks = GameTimeTaskManager.getInstance().getGameTicks() - _periodStartTicks;
+		return _abnormalTime - TimeSpan.FromSeconds(1.0 * ticks / GameTimeTaskManager.TICKS_PER_SECOND);
 	}
 	
 	/**
@@ -289,7 +291,7 @@ public class BuffInfo
 		}
 		
 		// Creates a task that will stop all the effects.
-		if (_abnormalTime > 0)
+		if (_abnormalTime > TimeSpan.Zero)
 		{
 			_effected.addBuffInfoTime(this);
 		}
@@ -315,7 +317,10 @@ public class BuffInfo
 			{
 				// The task for the effect ticks.
 				EffectTickTask effectTask = new EffectTickTask(this, effect);
-				ScheduledFuture scheduledFuture = ThreadPool.scheduleAtFixedRate(effectTask, effect.getTicks() * Config.EFFECT_TICK_RATIO, effect.getTicks() * Config.EFFECT_TICK_RATIO);
+				ScheduledFuture scheduledFuture = ThreadPool.scheduleAtFixedRate(effectTask,
+					effect.getTicks() * TimeSpan.FromMilliseconds(Config.EFFECT_TICK_RATIO),
+					effect.getTicks() * TimeSpan.FromMilliseconds(Config.EFFECT_TICK_RATIO));
+				
 				// Adds the task for ticking.
 				addTask(effect, new EffectTaskInfo(effectTask, scheduledFuture));
 			}
@@ -407,9 +412,9 @@ public class BuffInfo
 		}
 	}
 	
-	public void resetAbnormalTime(int abnormalTime)
+	public void resetAbnormalTime(TimeSpan? abnormalTime)
 	{
-		if (_abnormalTime > 0)
+		if (_abnormalTime > TimeSpan.Zero)
 		{
 			_periodStartTicks = GameTimeTaskManager.getInstance().getGameTicks();
 			_abnormalTime = abnormalTime;

@@ -9,4 +9,12 @@ public static class Algorithms
     {
         return arg1.CompareTo(arg2) > 0 ? arg1 : arg2;
     }
+ 
+    public static TimeSpan Abs(TimeSpan arg)
+    {
+        if (arg < TimeSpan.Zero)
+            return -arg;
+        
+        return arg;
+    }
 }

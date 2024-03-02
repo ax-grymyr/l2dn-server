@@ -1,6 +1,9 @@
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Geo;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -191,7 +194,7 @@ public class SkillChannelizer: Runnable
 
 					if (!skill.isToggle())
 					{
-						_channelizer.broadcastPacket(new MagicSkillLaunched(_channelizer, skill.getId(),
+						_channelizer.broadcastPacket(new MagicSkillLaunchedPacket(_channelizer, skill.getId(),
 							skill.getLevel(), SkillCastingType.NORMAL, creature));
 					}
 				}

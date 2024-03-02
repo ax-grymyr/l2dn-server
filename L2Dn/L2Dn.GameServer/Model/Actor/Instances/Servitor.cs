@@ -316,7 +316,7 @@ public class Servitor : Summon, Runnable
 						ctx.SummonSkillReuses.Add(record);
 					}
 
-					record.RemainingTime = info.getTime();
+					record.RemainingTime = info.getTime() ?? TimeSpan.Zero; // TODO ???
 					++buffIndex;
 					record.BuffIndex = (byte)buffIndex;
 
@@ -342,7 +342,7 @@ public class Servitor : Summon, Runnable
 					}
 
 					SummonEffectTable.getInstance().getServitorEffects(getOwner()).get(getReferenceSkill())
-						.Add(new SummonEffectTable.SummonEffect(skill, info.getTime()));
+						.Add(new SummonEffectTable.SummonEffect(skill, info.getTime() ?? TimeSpan.Zero)); // TODO ???
 				}
 
 				ctx.SaveChanges();

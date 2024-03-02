@@ -19,7 +19,7 @@ public class BuffFinishTask
 			foreach (var entry in _buffInfos)
 			{
 				BuffInfo info = entry.Key;
-				if ((info.getEffected() != null) && (entry.Value.incrementAndGet() > info.getAbnormalTime()))
+				if ((info.getEffected() != null) && (TimeSpan.FromSeconds(entry.Value.incrementAndGet()) > info.getAbnormalTime()))
 				{
 					info.getEffected().getEffectList()
 						.stopSkillEffects(SkillFinishType.NORMAL, info.getSkill().getId());

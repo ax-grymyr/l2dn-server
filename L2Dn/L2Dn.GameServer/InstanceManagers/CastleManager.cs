@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
@@ -16,7 +17,7 @@ public class CastleManager
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CastleManager));
 	
 	private readonly Map<int, Castle> _castles = new();
-	private readonly Map<int, long> _castleSiegeDate = new();
+	private readonly Map<int, DateTime> _castleSiegeDate = new();
 	
 	private static readonly int[] _castleCirclets =
 	{
@@ -221,9 +222,9 @@ public class CastleManager
 	public int getSiegeDates(DateTime siegeDate)
 	{
 		int count = 0;
-		foreach (long date in _castleSiegeDate.values())
+		foreach (DateTime date in _castleSiegeDate.values())
 		{
-			if (Math.Abs(date - siegeDate) < 1000)
+			if (Algorithms.Abs(date - siegeDate) < TimeSpan.FromMilliseconds(1000))
 			{
 				count++;
 			}

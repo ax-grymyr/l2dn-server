@@ -1137,13 +1137,13 @@ public class Pet: Summon
 						SkillId = skill.getId(),
 						SkillLevel = (short)skill.getLevel(),
 						SkillSubLevel = (short)skill.getSubLevel(),
-						RemainingTime = info.getTime(),
+						RemainingTime = info.getTime() ?? TimeSpan.Zero, // TODO ???
 						BuffIndex = (byte)buffIndex
 					});
 					
 					SummonEffectTable.getInstance().getPetEffects()
 						.computeIfAbsent(getControlObjectId(), k => new List<SummonEffectTable.SummonEffect>())
-						.Add(new SummonEffectTable.SummonEffect(skill, info.getTime()));
+						.Add(new SummonEffectTable.SummonEffect(skill, info.getTime() ?? TimeSpan.Zero)); // TODO ???
 				}
 
 				ctx.SaveChanges();

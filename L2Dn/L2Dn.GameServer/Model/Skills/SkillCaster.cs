@@ -1,6 +1,7 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
@@ -9,7 +10,6 @@ using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
 using L2Dn.GameServer.Model.Events.Returns;
-using L2Dn.GameServer.Model.Geo;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -21,8 +21,9 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Skills;
 
@@ -39,29 +40,30 @@ public class SkillCaster: Runnable
 	private readonly Item _item;
 	private readonly SkillCastingType _castingType;
 	private readonly bool _shiftPressed;
-	private int _hitTime;
-	private int _cancelTime;
-	private int _coolTime;
+	private TimeSpan _hitTime;
+	private TimeSpan _cancelTime;
+	private TimeSpan _coolTime;
 	private ICollection<WorldObject> _targets;
 	private ScheduledFuture _task;
 	private int _phase;
-	
-	private SkillCaster(Creature caster, WorldObject target, Skill skill, Item item, SkillCastingType castingType, bool ctrlPressed, bool shiftPressed, int castTime)
+
+	private SkillCaster(Creature caster, WorldObject target, Skill skill, Item item, SkillCastingType castingType,
+		bool ctrlPressed, bool shiftPressed, TimeSpan? castTime)
 	{
 		Objects.requireNonNull(caster);
 		Objects.requireNonNull(skill);
 		Objects.requireNonNull(castingType);
-		
+
 		_caster = new WeakReference<Creature>(caster);
 		_target = new WeakReference<WorldObject>(target);
 		_skill = skill;
 		_item = item;
 		_castingType = castingType;
 		_shiftPressed = shiftPressed;
-		
+
 		calcSkillTiming(caster, skill, castTime);
 	}
-	
+
 	/**
 	 * Checks if the caster can cast the specified skill on the given target with the selected parameters.
 	 * @param caster the creature trying to cast
@@ -81,7 +83,7 @@ public class SkillCaster: Runnable
 			return null;
 		}
 		
-		return castSkill(caster, target, skill, item, castingType, ctrlPressed, shiftPressed, -1);
+		return castSkill(caster, target, skill, item, castingType, ctrlPressed, shiftPressed, null);
 	}
 	
 	/**
@@ -96,7 +98,7 @@ public class SkillCaster: Runnable
 	 * @param castTime custom cast time in milliseconds or -1 for default.
 	 * @return {@code SkillCaster} object containing casting data if casting has started or {@code null} if casting was not started.
 	 */
-	public static SkillCaster castSkill(Creature caster, WorldObject worldObject, Skill skill, Item item, SkillCastingType castingType, bool ctrlPressed, bool shiftPressed, int castTime)
+	public static SkillCaster castSkill(Creature caster, WorldObject worldObject, Skill skill, Item item, SkillCastingType castingType, bool ctrlPressed, bool shiftPressed, TimeSpan? castTime)
 	{
 		if ((caster == null) || (skill == null) || (castingType == null))
 		{
@@ -144,7 +146,7 @@ public class SkillCaster: Runnable
 			return;
 		}
 		
-		long nextTaskDelay = 0;
+		TimeSpan nextTaskDelay = TimeSpan.Zero;
 		bool hasNextPhase = false;
 		switch (_phase++)
 		{
@@ -191,7 +193,7 @@ public class SkillCaster: Runnable
 		}
 		
 		_coolTime = Formulas.calcAtkSpd(caster, _skill, _skill.getCoolTime()); // TODO Get proper formula of this.
-		int displayedCastTime = _hitTime + _cancelTime; // For client purposes, it must be displayed to player the skill casting time + launch time.
+		TimeSpan displayedCastTime = _hitTime + _cancelTime; // For client purposes, it must be displayed to player the skill casting time + launch time.
 		bool instantCast = (_castingType == SkillCastingType.SIMULTANEOUS) || _skill.isAbnormalInstant() || _skill.isWithoutAction();
 		
 		// Add this SkillCaster to the creature so it can be marked as casting.
@@ -201,17 +203,17 @@ public class SkillCaster: Runnable
 		}
 		
 		// Disable the skill during the re-use delay and create a task EnableSkill with Medium priority to enable it at the end of the re-use delay
-		int reuseDelay = caster.getStat().getReuseTime(_skill);
-		if (reuseDelay > 10)
+		TimeSpan reuseDelay = caster.getStat().getReuseTime(_skill);
+		if (reuseDelay > TimeSpan.FromMilliseconds(10))
 		{
 			// Skill mastery doesn't affect static skills / A2 and item skills on reuse.
 			if (Formulas.calcSkillMastery(caster, _skill) && !_skill.isStatic() && (_skill.getReferenceItemId() == 0) && (_skill.getOperateType() == SkillOperateType.A1))
 			{
-				reuseDelay = 100;
+				reuseDelay = TimeSpan.FromMilliseconds(100);
 				caster.sendPacket(SystemMessageId.A_SKILL_IS_READY_TO_BE_USED_AGAIN);
 			}
 			
-			if (reuseDelay > 3000)
+			if (reuseDelay > TimeSpan.FromMilliseconds(3000))
 			{
 				caster.addTimeStamp(_skill, reuseDelay);
 			}
@@ -250,12 +252,12 @@ public class SkillCaster: Runnable
 		{
 			// Face the target
 			caster.setHeading(Util.calculateHeadingFrom(caster, target));
-			caster.broadcastPacket(new ExRotation(caster.getObjectId(), caster.getHeading())); // TODO: Not sent in retail. Probably moveToPawn is enough
+			caster.broadcastPacket(new ExRotationPacket(caster.getObjectId(), caster.getHeading())); // TODO: Not sent in retail. Probably moveToPawn is enough
 			
 			// Send MoveToPawn packet to trigger Blue Bubbles on target become Red, but don't do it while (double) casting, because that will screw up animation... some fucked up stuff, right?
 			if (caster.isPlayer() && !caster.isCastingNow() && target.isCreature())
 			{
-				caster.sendPacket(new MoveToPawn(caster, target, (int) caster.calculateDistance2D(target)));
+				caster.sendPacket(new MoveToPawnPacket(caster, target, (int) caster.calculateDistance2D(target)));
 				caster.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			}
 		}
@@ -277,7 +279,7 @@ public class SkillCaster: Runnable
 			}
 			
 			caster.getStatus().reduceMp(initmpcons);
-			StatusUpdate su = new StatusUpdate(caster);
+			StatusUpdatePacket su = new StatusUpdatePacket(caster);
 			su.addUpdate(StatusUpdateType.CUR_MP, (int) caster.getCurrentMp());
 			caster.sendPacket(su);
 		}
@@ -286,7 +288,7 @@ public class SkillCaster: Runnable
 		int actionId = caster.isSummon() ? ActionData.getInstance().getSkillActionId(_skill.getId()) : -1;
 		if (!_skill.isNotBroadcastable())
 		{
-			caster.broadcastPacket(new MagicSkillUse(caster, target, _skill.getDisplayId(), _skill.getDisplayLevel(), displayedCastTime, reuseDelay, _skill.getReuseDelayGroup(), actionId, _castingType));
+			caster.broadcastPacket(new MagicSkillUsePacket(caster, target, _skill.getDisplayId(), _skill.getDisplayLevel(), displayedCastTime, reuseDelay, _skill.getReuseDelayGroup(), actionId, _castingType));
 			if (caster.isPlayer() && (_skill.getTargetType() == TargetType.GROUND) && (_skill.getAffectScope() == AffectScope.FAN_PB))
 			{
 				Player player = caster.getActingPlayer();
@@ -294,7 +296,7 @@ public class SkillCaster: Runnable
 				if (worldPosition != null)
 				{
 					Location location = new Location(worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(), worldPosition.getHeading());
-					ThreadPool.schedule(() => player.broadcastPacket(new ExMagicSkillUseGround(player.getObjectId(), _skill.getDisplayId(), location)), 100);
+					ThreadPool.schedule(() => player.broadcastPacket(new ExMagicSkillUseGroundPacket(player.getObjectId(), _skill.getDisplayId(), location)), 100);
 				}
 			}
 		}
@@ -304,11 +306,20 @@ public class SkillCaster: Runnable
 			// Send a system message to the player.
 			if (!_skill.isHidingMessages())
 			{
-				caster.sendPacket(_skill.getId() != 2046 ? new SystemMessage(SystemMessageId.YOU_VE_USED_S1).addSkillName(_skill) : new SystemMessage(SystemMessageId.SUMMONING_YOUR_PET));
+				SystemMessagePacket sm;
+				if (_skill.getId() != 2046)
+				{
+					sm = new SystemMessagePacket(SystemMessageId.YOU_VE_USED_S1);
+					sm.Params.addSkillName(_skill);
+				}
+				else
+					sm = new SystemMessagePacket(SystemMessageId.SUMMONING_YOUR_PET);
+				
+				caster.sendPacket(sm);
 			}
 			
 			// Show the gauge bar for casting.
-			caster.sendPacket(new SetupGauge(caster.getObjectId(), SetupGauge.BLUE, displayedCastTime));
+			caster.sendPacket(new SetupGaugePacket(caster.getObjectId(), SetupGaugePacket.BLUE, displayedCastTime));
 		}
 		
 		// Consume reagent item.
@@ -336,8 +347,8 @@ public class SkillCaster: Runnable
 				}
 				player.setFame(player.getFame() - _skill.getFamePointConsume());
 				
-				SystemMessage msg = new SystemMessage(SystemMessageId.S1_FAME_HAS_BEEN_CONSUMED);
-				msg.addInt(_skill.getFamePointConsume());
+				SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.S1_FAME_HAS_BEEN_CONSUMED);
+				msg.Params.addInt(_skill.getFamePointConsume());
 				player.sendPacket(msg);
 			}
 			
@@ -352,8 +363,8 @@ public class SkillCaster: Runnable
 				}
 				clan.takeReputationScore(_skill.getClanRepConsume());
 				
-				SystemMessage msg = new SystemMessage(SystemMessageId.S1_CLAN_REPUTATION_POINTS_SPENT);
-				msg.addInt(_skill.getClanRepConsume());
+				SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.S1_CLAN_REPUTATION_POINTS_SPENT);
+				msg.Params.addInt(_skill.getClanRepConsume());
 				player.sendPacket(msg);
 			}
 		}
@@ -417,7 +428,7 @@ public class SkillCaster: Runnable
 		// Display animation of launching skill upon targets.
 		if (!_skill.isNotBroadcastable())
 		{
-			caster.broadcastPacket(new MagicSkillLaunched(caster, _skill.getDisplayId(), _skill.getDisplayLevel(), _castingType, _targets));
+			caster.broadcastPacket(new MagicSkillLaunchedPacket(caster, _skill.getDisplayId(), _skill.getDisplayLevel(), _castingType, _targets));
 		}
 		return true;
 	}
@@ -434,10 +445,10 @@ public class SkillCaster: Runnable
 		
 		if (_targets == null)
 		{
-			_targets = Collections.singletonList(target);
+			_targets = [target];
 		}
 		
-		StatusUpdate su = new StatusUpdate(caster);
+		StatusUpdatePacket su = new StatusUpdatePacket(caster);
 		
 		// Consume the required MP or stop casting if not enough.
 		double mpConsume = _skill.getMpConsume() > 0 ? caster.getStat().getMpConsume(_skill) : 0;
@@ -493,7 +504,7 @@ public class SkillCaster: Runnable
 		}
 		
 		// Consume skill reduced item on success.
-		if ((_item != null) && (_item.getTemplate().getDefaultAction() == ActionType.SKILL_REDUCE_ON_SKILL_SUCCESS) && (_skill.getItemConsumeId() > 0) && (_skill.getItemConsumeCount() > 0) && !caster.destroyItem(_skill.toString(), _item.getObjectId(), _skill.getItemConsumeCount(), target, true))
+		if ((_item != null) && (_item.getTemplate().getDefaultAction() == ActionType.SKILL_REDUCE_ON_SKILL_SUCCESS) && (_skill.getItemConsumeId() > 0) && (_skill.getItemConsumeCount() > 0) && !caster.destroyItem(_skill.ToString(), _item.getObjectId(), _skill.getItemConsumeCount(), target, true))
 		{
 			return false;
 		}
@@ -509,7 +520,7 @@ public class SkillCaster: Runnable
 			caster.onCreatureSkillFinishCast.setTarget(target);
 			caster.onCreatureSkillFinishCast.setSkill(_skill);
 			caster.onCreatureSkillFinishCast.setSimultaneously(_skill.isWithoutAction());
-			EventDispatcher.getInstance().notifyEvent(caster.onCreatureSkillFinishCast, caster);
+			EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(caster.onCreatureSkillFinishCast, caster);
 		}
 		
 		// Call the skill's effects and AI interraction and stuff.
@@ -647,7 +658,7 @@ public class SkillCaster: Runnable
 					{
 						// Supporting monsters or players results in pvpflag.
 						if (((skill.getEffectPoint() > 0) && obj.isMonster()) //
-							|| (obj.isPlayable() && ((obj.getActingPlayer().getPvpFlag() > 0) //
+							|| (obj.isPlayable() && ((obj.getActingPlayer().getPvpFlag()) //
 								|| (((Creature) obj).getReputation() < 0) //
 							)))
 						{
@@ -738,8 +749,8 @@ public class SkillCaster: Runnable
 		// If aborted, broadcast casting aborted.
 		if (aborted)
 		{
-			caster.broadcastPacket(new MagicSkillCanceled(caster.getObjectId())); // broadcast packet to stop animations client-side
-			caster.sendPacket(ActionFailed.get(_castingType)); // send an "action failed" packet to the caster
+			caster.broadcastPacket(new MagicSkillCanceledPacket(caster.getObjectId())); // broadcast packet to stop animations client-side
+			caster.sendPacket(new ActionFailedPacket(_castingType)); // send an "action failed" packet to the caster
 		}
 		
 		// If there is a queued skill, launch it and wipe the queue.
@@ -780,14 +791,14 @@ public class SkillCaster: Runnable
 		}
 	}
 	
-	private void calcSkillTiming(Creature creature, Skill skill, int castTime)
+	private void calcSkillTiming(Creature creature, Skill skill, TimeSpan? castTime)
 	{
 		double timeFactor = Formulas.calcSkillTimeFactor(creature, skill);
-		double cancelTime = Formulas.calcSkillCancelTime(creature, skill);
+		TimeSpan cancelTime = Formulas.calcSkillCancelTime(creature, skill);
 		if (skill.getOperateType().isChanneling())
 		{
-			_hitTime = (int) Math.Max(skill.getHitTime() - cancelTime, 0);
-			_cancelTime = 2866;
+			_hitTime = Algorithms.Max(skill.getHitTime() - cancelTime, TimeSpan.Zero);
+			_cancelTime = TimeSpan.FromMilliseconds(2866);
 		}
 		else
 		{
@@ -824,17 +835,18 @@ public class SkillCaster: Runnable
 				}
 			}
 			
-			if (castTime > -1)
+			if (castTime != null)
 			{
-				_hitTime = (int) Math.Max((castTime / timeFactor) - cancelTime, 0) + addedTime;
+				_hitTime = Algorithms.Max((castTime.Value / timeFactor) - cancelTime, TimeSpan.Zero) + TimeSpan.FromMilliseconds(addedTime);
 			}
 			else
 			{
-				_hitTime = (int) Math.Max((skill.getHitTime() / timeFactor) - cancelTime, 0) + addedTime;
+				_hitTime = Algorithms.Max((skill.getHitTime() / timeFactor) - cancelTime, TimeSpan.Zero) + TimeSpan.FromMilliseconds(addedTime);
 			}
-			_cancelTime = (int) cancelTime;
+			_cancelTime = cancelTime;
 		}
-		_coolTime = (int) (skill.getCoolTime() / timeFactor); // cooltimeMillis / timeFactor
+		
+		_coolTime = (skill.getCoolTime() / timeFactor); // cooltimeMillis / timeFactor
 	}
 	
 	public static void triggerCast(Creature creature, Creature target, Skill skill)
@@ -858,7 +870,7 @@ public class SkillCaster: Runnable
 					return;
 				}
 				
-				if (skill.getReuseDelay() > 0)
+				if (skill.getReuseDelay() > TimeSpan.Zero)
 				{
 					creature.disableSkill(skill, skill.getReuseDelay());
 				}
@@ -884,7 +896,7 @@ public class SkillCaster: Runnable
 				
 				if (!skill.isNotBroadcastable())
 				{
-					creature.broadcastPacket(new MagicSkillUse(creature, currentTarget, skill.getDisplayId(), skill.getLevel(), 0, 0));
+					creature.broadcastPacket(new MagicSkillUsePacket(creature, currentTarget, skill.getDisplayId(), skill.getLevel(), TimeSpan.Zero, TimeSpan.Zero));
 				}
 				
 				// Launch the magic skill and calculate its effects
@@ -901,7 +913,7 @@ public class SkillCaster: Runnable
 					creature.onCreatureSkillFinishCast.setTarget(target);
 					creature.onCreatureSkillFinishCast.setSkill(skill);
 					creature.onCreatureSkillFinishCast.setSimultaneously(skill.isWithoutAction());
-					EventDispatcher.getInstance().notifyEvent(creature.onCreatureSkillFinishCast, creature);
+					EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(creature.onCreatureSkillFinishCast, creature);
 				}
 			}
 		}
@@ -1019,7 +1031,7 @@ public class SkillCaster: Runnable
 			caster.onCreatureSkillUse.setCaster(caster);
 			caster.onCreatureSkillUse.setSkill(skill);
 			caster.onCreatureSkillUse.setSimultaneously(skill.isWithoutAction());
-			TerminateReturn term = EventDispatcher.getInstance().notifyEvent(caster.onCreatureSkillUse, caster, TerminateReturn.class);
+			TerminateReturn term = EventDispatcher.getInstance().notifyEvent<TerminateReturn>(caster.onCreatureSkillUse, caster);
 			if ((term != null) && term.terminate())
 			{
 				caster.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -1103,14 +1115,14 @@ public class SkillCaster: Runnable
 			{
 				if (skill.hasEffectType(EffectType.SUMMON))
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.SUMMONING_A_SERVITOR_COSTS_S2_S1);
-					sm.addItemName(skill.getItemConsumeId());
-					sm.addInt(skill.getItemConsumeCount());
+					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.SUMMONING_A_SERVITOR_COSTS_S2_S1);
+					sm.Params.addItemName(skill.getItemConsumeId());
+					sm.Params.addInt(skill.getItemConsumeCount());
 					caster.sendPacket(sm);
 				}
 				else
 				{
-					caster.sendPacket(new SystemMessage(SystemMessageId.THERE_ARE_NOT_ENOUGH_NECESSARY_ITEMS_TO_USE_THE_SKILL));
+					caster.sendPacket(new SystemMessagePacket(SystemMessageId.THERE_ARE_NOT_ENOUGH_NECESSARY_ITEMS_TO_USE_THE_SKILL));
 				}
 				return false;
 			}
@@ -1139,8 +1151,8 @@ public class SkillCaster: Runnable
 			// Check if not in AirShip
 			if (player.isInAirShip() && !skill.hasEffectType(EffectType.REFUEL_AIRSHIP))
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
-				sm.addSkillName(skill);
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
+				sm.Params.addSkillName(skill);
 				player.sendPacket(sm);
 				return false;
 			}
@@ -1165,8 +1177,8 @@ public class SkillCaster: Runnable
 			// Check for skill reuse (fixes macro right click press exploit).
 			if (caster.hasSkillReuse(skill.getReuseHashCode()))
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_NOT_AVAILABLE_AT_THIS_TIME_BEING_PREPARED_FOR_REUSE);
-				sm.addSkillName(skill);
+				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_IS_NOT_AVAILABLE_AT_THIS_TIME_BEING_PREPARED_FOR_REUSE);
+				sm.Params.addSkillName(skill);
 				caster.sendPacket(sm);
 				return false;
 			}
@@ -1249,7 +1261,7 @@ public class SkillCaster: Runnable
 		Location destination = creature.isFlying() ? new Location(x, y, z) : GeoEngine.getInstance().getValidLocation(creature.getX(), creature.getY(), creature.getZ(), x, y, z, creature.getInstanceWorld());
 		
 		creature.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		creature.broadcastPacket(new FlyToLocation(creature, destination, flyType, 0, 0, 333));
+		creature.broadcastPacket(new FlyToLocationPacket(creature, destination, flyType, 0, 0, 333));
 		creature.setXYZ(destination);
 		creature.revalidateZone(true);
 	}

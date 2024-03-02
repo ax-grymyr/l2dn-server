@@ -118,9 +118,9 @@ public class Config
 	public static double RESPAWN_RESTORE_HP;
 	public static double RESPAWN_RESTORE_MP;
 	public static bool ENABLE_MODIFY_SKILL_DURATION;
-	public static ImmutableDictionary<int, int> SKILL_DURATION_LIST = ImmutableDictionary<int, int>.Empty;
+	public static ImmutableDictionary<int, TimeSpan> SKILL_DURATION_LIST = ImmutableDictionary<int, TimeSpan>.Empty;
 	public static bool ENABLE_MODIFY_SKILL_REUSE;
-	public static ImmutableDictionary<int, int> SKILL_REUSE_LIST = ImmutableDictionary<int, int>.Empty;
+	public static ImmutableDictionary<int, TimeSpan> SKILL_REUSE_LIST = ImmutableDictionary<int, TimeSpan>.Empty;
 	public static bool AUTO_LEARN_SKILLS;
 	public static bool AUTO_LEARN_SKILLS_WITHOUT_ITEMS;
 	public static bool AUTO_LEARN_FS_SKILLS;
@@ -315,19 +315,19 @@ public class Config
 	// --------------------------------------------------
 	// Fortress Settings
 	// --------------------------------------------------
-	public static long FS_TELE_FEE_RATIO;
+	public static TimeSpan FS_TELE_FEE_RATIO;
 	public static int FS_TELE1_FEE;
 	public static int FS_TELE2_FEE;
-	public static long FS_MPREG_FEE_RATIO;
+	public static TimeSpan FS_MPREG_FEE_RATIO;
 	public static int FS_MPREG1_FEE;
 	public static int FS_MPREG2_FEE;
-	public static long FS_HPREG_FEE_RATIO;
+	public static TimeSpan FS_HPREG_FEE_RATIO;
 	public static int FS_HPREG1_FEE;
 	public static int FS_HPREG2_FEE;
-	public static long FS_EXPREG_FEE_RATIO;
+	public static TimeSpan FS_EXPREG_FEE_RATIO;
 	public static int FS_EXPREG1_FEE;
 	public static int FS_EXPREG2_FEE;
-	public static long FS_SUPPORT_FEE_RATIO;
+	public static TimeSpan FS_SUPPORT_FEE_RATIO;
 	public static int FS_SUPPORT1_FEE;
 	public static int FS_SUPPORT2_FEE;
 	public static int FS_BLOOD_OATH_COUNT;

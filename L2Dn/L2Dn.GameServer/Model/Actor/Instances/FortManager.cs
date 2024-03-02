@@ -124,17 +124,15 @@ public class FortManager : Merchant
 					helper.Replace("%objectId%", getObjectId().ToString());
 					if (Config.FS_MAX_OWN_TIME > 0)
 					{
-						int hour = getFort().getTimeTillRebelArmy() / 3600;
-						int minutes = (getFort().getTimeTillRebelArmy() - (hour * 3600)) / 60;
-						helper.Replace("%hr%", hour.ToString());
-						helper.Replace("%min%", minutes.ToString());
+						TimeSpan time = getFort().getTimeTillRebelArmy() ?? TimeSpan.Zero; 
+						helper.Replace("%hr%", time.Hours.ToString());
+						helper.Replace("%min%", time.Minutes.ToString());
 					}
 					else
 					{
-						int hour = getFort().getOwnedTime() / 3600;
-						int minutes = (getFort().getOwnedTime() - (hour * 3600)) / 60;
-						helper.Replace("%hr%", hour.ToString());
-						helper.Replace("%min%", minutes.ToString());
+						TimeSpan time = getFort().getOwnedTime() ?? TimeSpan.Zero; 
+						helper.Replace("%hr%", time.Hours.ToString());
+						helper.Replace("%min%", time.Minutes.ToString());
 					}
 
 					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
@@ -146,28 +144,23 @@ public class FortManager : Merchant
 						new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/foreman-castlereport.htm"); 
 
 					helper.Replace("%objectId%", getObjectId().ToString());
-					int hour;
-					int minutes;
 					if (Config.FS_MAX_OWN_TIME > 0)
 					{
-						hour = getFort().getTimeTillRebelArmy() / 3600;
-						minutes = (getFort().getTimeTillRebelArmy() - (hour * 3600)) / 60;
-						helper.Replace("%hr%", hour.ToString());
-						helper.Replace("%min%", minutes.ToString());
+						TimeSpan time = getFort().getTimeTillRebelArmy() ?? TimeSpan.Zero; 
+						helper.Replace("%hr%", time.Hours.ToString());
+						helper.Replace("%min%", time.Minutes.ToString());
 					}
 					else
 					{
-						hour = getFort().getOwnedTime() / 3600;
-						minutes = (getFort().getOwnedTime() - (hour * 3600)) / 60;
-						helper.Replace("%hr%", hour.ToString());
-						helper.Replace("%min%", minutes.ToString());
+						TimeSpan time = getFort().getOwnedTime() ?? TimeSpan.Zero; 
+						helper.Replace("%hr%", time.Hours.ToString());
+						helper.Replace("%min%", time.Minutes.ToString());
 					}
 					
-					hour = (int)(getFort().getTimeTillNextFortUpdate() / 3600);
-					minutes = (int)((getFort().getTimeTillNextFortUpdate() - (hour * 3600)) / 60);
+					TimeSpan time2 = getFort().getTimeTillNextFortUpdate(); 
 					helper.Replace("%castle%", getFort().getContractedCastle().getName());
-					helper.Replace("%hr2%", hour.ToString());
-					helper.Replace("%min2%", minutes.ToString());
+					helper.Replace("%hr2%", time2.Hours.ToString());
+					helper.Replace("%min2%", time2.Minutes.ToString());
 					
 					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
 					player.sendPacket(html);
@@ -517,13 +510,15 @@ public class FortManager : Merchant
 											break;
 										}
 									}
-									
-									if (!getFort().updateFunctions(player, Fort.FUNC_RESTORE_HP, percent, fee, Config.FS_HPREG_FEE_RATIO, (getFort().getFortFunction(Fort.FUNC_RESTORE_HP) == null)))
+
+									if (!getFort().updateFunctions(player, Fort.FUNC_RESTORE_HP, percent, fee,
+										    Config.FS_HPREG_FEE_RATIO,
+										    (getFort().getFortFunction(Fort.FUNC_RESTORE_HP) == null)))
 									{
 										helper = new HtmlPacketHelper(DataFileLocation.Data,
 											"html/fortress/low_adena.htm");
 									}
-									
+
 									sendHtmlMessage(player, helper);
 								}
 								return;
@@ -570,12 +565,15 @@ public class FortManager : Merchant
 											break;
 										}
 									}
-									if (!getFort().updateFunctions(player, Fort.FUNC_RESTORE_MP, percent, fee, Config.FS_MPREG_FEE_RATIO, (getFort().getFortFunction(Fort.FUNC_RESTORE_MP) == null)))
+
+									if (!getFort().updateFunctions(player, Fort.FUNC_RESTORE_MP, percent, fee,
+										    Config.FS_MPREG_FEE_RATIO,
+										    (getFort().getFortFunction(Fort.FUNC_RESTORE_MP) == null)))
 									{
 										helper = new HtmlPacketHelper(DataFileLocation.Data,
 											"html/fortress/low_adena.htm");
 									}
-									
+
 									sendHtmlMessage(player, helper);
 								}
 								return;
@@ -623,12 +621,15 @@ public class FortManager : Merchant
 											break;
 										}
 									}
-									if (!getFort().updateFunctions(player, Fort.FUNC_RESTORE_EXP, percent, fee, Config.FS_EXPREG_FEE_RATIO, (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP) == null)))
+
+									if (!getFort().updateFunctions(player, Fort.FUNC_RESTORE_EXP, percent, fee,
+										    Config.FS_EXPREG_FEE_RATIO,
+										    (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP) == null)))
 									{
 										helper = new HtmlPacketHelper(DataFileLocation.Data,
 											"html/fortress/low_adena.htm");
 									}
-									
+
 									sendHtmlMessage(player, helper);
 								}
 								return;
@@ -652,7 +653,7 @@ public class FortManager : Merchant
 									(Config.FS_HPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
 								helper.Replace("%hp_period%",
 									"Withdraw the fee for the next time at " +
-									getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getEndTime().ToString("dd/MM/yyyy HH:mm"));
+									getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getEndTime()?.ToString("dd/MM/yyyy HH:mm"));
 								helper.Replace("%change_hp%",
 									"[<a action=\"bypass -h npc_%objectId%_manage recovery hp_cancel\">Deactivate</a>]" +
 									hp);
@@ -673,7 +674,7 @@ public class FortManager : Merchant
 									(Config.FS_EXPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
 								helper.Replace("%exp_period%",
 									"Withdraw the fee for the next time at " +
-									getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getEndTime().ToString("dd/MM/yyyy HH:mm"));
+									getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getEndTime()?.ToString("dd/MM/yyyy HH:mm"));
 								helper.Replace("%change_exp%",
 									"[<a action=\"bypass -h npc_%objectId%_manage recovery exp_cancel\">Deactivate</a>]" +
 									exp);
@@ -694,7 +695,7 @@ public class FortManager : Merchant
 									(Config.FS_MPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
 								helper.Replace("%mp_period%",
 									"Withdraw the fee for the next time at " +
-									getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getEndTime().ToString("dd/MM/yyyy HH:mm"));
+									getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getEndTime()?.ToString("dd/MM/yyyy HH:mm"));
 								helper.Replace("%change_mp%",
 									"[<a action=\"bypass -h npc_%objectId%_manage recovery mp_cancel\">Deactivate</a>]" +
 									mp);
@@ -835,7 +836,10 @@ public class FortManager : Merchant
 											break;
 										}
 									}
-									if (!getFort().updateFunctions(player, Fort.FUNC_TELEPORT, level, fee, Config.FS_TELE_FEE_RATIO, (getFort().getFortFunction(Fort.FUNC_TELEPORT) == null)))
+
+									if (!getFort().updateFunctions(player, Fort.FUNC_TELEPORT, level, fee,
+										    Config.FS_TELE_FEE_RATIO,
+										    (getFort().getFortFunction(Fort.FUNC_TELEPORT) == null)))
 									{
 										helper = new HtmlPacketHelper(DataFileLocation.Data,
 											"html/fortress/low_adena.htm");
@@ -890,7 +894,9 @@ public class FortManager : Merchant
 										}
 									}
 
-									if (!getFort().updateFunctions(player, Fort.FUNC_SUPPORT, level, fee, Config.FS_SUPPORT_FEE_RATIO, (getFort().getFortFunction(Fort.FUNC_SUPPORT) == null)))
+									if (!getFort().updateFunctions(player, Fort.FUNC_SUPPORT, level, fee,
+										    Config.FS_SUPPORT_FEE_RATIO,
+										    (getFort().getFortFunction(Fort.FUNC_SUPPORT) == null)))
 									{
 										helper = new HtmlPacketHelper(DataFileLocation.Data,
 											"html/fortress/low_adena.htm");
@@ -919,7 +925,7 @@ public class FortManager : Merchant
 									(Config.FS_TELE_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
 								helper.Replace("%tele_period%",
 									"Withdraw the fee for the next time at " +
-									getFort().getFortFunction(Fort.FUNC_TELEPORT).getEndTime().ToString("dd/MM/yyyy HH:mm"));
+									getFort().getFortFunction(Fort.FUNC_TELEPORT).getEndTime()?.ToString("dd/MM/yyyy HH:mm"));
 								helper.Replace("%change_tele%",
 									"[<a action=\"bypass -h npc_%objectId%_manage other tele_cancel\">Deactivate</a>]" +
 									tele);
@@ -940,7 +946,7 @@ public class FortManager : Merchant
 									(Config.FS_SUPPORT_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
 								helper.Replace("%support_period%",
 									"Withdraw the fee for the next time at " +
-									getFort().getFortFunction(Fort.FUNC_SUPPORT).getEndTime().ToString("dd/MM/yyyy HH:mm"));
+									getFort().getFortFunction(Fort.FUNC_SUPPORT).getEndTime()?.ToString("dd/MM/yyyy HH:mm"));
 								helper.Replace("%change_support%",
 									"[<a action=\"bypass -h npc_%objectId%_manage other support_cancel\">Deactivate</a>]" +
 									support);

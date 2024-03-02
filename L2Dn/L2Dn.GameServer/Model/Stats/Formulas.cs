@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
@@ -9,6 +10,7 @@ using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Stats;
 
@@ -434,7 +436,7 @@ public class Formulas
 	 * @param skillTime
 	 * @return
 	 */
-	public static int calcAtkSpd(Creature attacker, Skill skill, double skillTime)
+	public static TimeSpan calcAtkSpd(Creature attacker, Skill skill, TimeSpan skillTime)
 	{
 		if (skill.isMagic())
 		{
@@ -496,9 +498,9 @@ public class Formulas
 		return Math.Max(0.01, factor);
 	}
 	
-	public static double calcSkillCancelTime(Creature creature, Skill skill)
+	public static TimeSpan calcSkillCancelTime(Creature creature, Skill skill)
 	{
-		return Math.Max((skill.getHitCancelTime() * 1000) / calcSkillTimeFactor(creature, skill), SKILL_LAUNCH_TIME);
+		return Algorithms.Max(skill.getHitCancelTime() / calcSkillTimeFactor(creature, skill), TimeSpan.FromMilliseconds(SKILL_LAUNCH_TIME));
 	}
 	
 	/**
@@ -509,7 +511,7 @@ public class Formulas
 	 */
 	public static bool calcHitMiss(Creature attacker, Creature target)
 	{
-		int chance = (80 + (2 * (attacker.getAccuracy() - target.getEvasionRate()))) * 10;
+		double chance = (80 + (2 * (attacker.getAccuracy() - target.getEvasionRate()))) * 10;
 		
 		// Get additional bonus from the conditions when you are attacking
 		chance *= HitConditionBonusData.getInstance().getConditionBonus(attacker, target);
@@ -1102,9 +1104,9 @@ public class Formulas
 	 * @param skill the skill
 	 * @return the time that the effect will last
 	 */
-	public static int calcEffectAbnormalTime(Creature caster, Creature target, Skill skill)
+	public static TimeSpan? calcEffectAbnormalTime(Creature caster, Creature target, Skill skill)
 	{
-		int time = (skill == null) || skill.isPassive() || skill.isToggle() ? -1 : skill.getAbnormalTime();
+		TimeSpan? time = (skill == null) || skill.isPassive() || skill.isToggle() ? null : skill.getAbnormalTime();
 		
 		// If the skill is a mastery skill, the effect will last twice the default time.
 		if ((skill != null) && !skill.isStatic() && calcSkillMastery(caster, skill))
