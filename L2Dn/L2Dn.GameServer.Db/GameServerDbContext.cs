@@ -134,15 +134,21 @@ public class GameServerDbContext: DbContext
     public DbSet<DbCastleDoorUpgrade> CastleDoorUpgrades => Set<DbCastleDoorUpgrade>();
     public DbSet<CastleManorProduction> CastleManorProduction => Set<CastleManorProduction>();
     public DbSet<CastleManorProcure> CastleManorProcure => Set<CastleManorProcure>();
+    public DbSet<CastleTrapUpgrade> CastleTrapUpgrades => Set<CastleTrapUpgrade>();
+    public DbSet<CastleSiegeGuard> CastleSiegeGuards => Set<CastleSiegeGuard>();
+    public DbSet<DbCastleSiegeClan> CastleSiegeClans => Set<DbCastleSiegeClan>();
+
+    public DbSet<DbFort> Forts => Set<DbFort>();
+    public DbSet<DbFortFunction> FortFunctions => Set<DbFortFunction>();
+    public DbSet<DbFortDoorUpgrade> FortDoorUpgrades => Set<DbFortDoorUpgrade>();
+    public DbSet<DbFortSpawn> FortSpawns => Set<DbFortSpawn>();
+    public DbSet<DbFortSiegeGuard> FortSiegeGuards => Set<DbFortSiegeGuard>();
     
     public DbSet<DbCursedWeapon> CursedWeapons => Set<DbCursedWeapon>();
     public DbSet<DbCustomMail> CustomMails => Set<DbCustomMail>();
     public DbSet<NpcRespawn> NpcRespawns => Set<NpcRespawn>();
-    public DbSet<DbFort> Forts => Set<DbFort>();
     public DbSet<FortSiegeClan> FortSiegeClans => Set<FortSiegeClan>();
     public DbSet<SiegeClan> SiegeClans => Set<SiegeClan>();
-    public DbSet<CastleTrapUpgrade> CastleTrapUpgrades => Set<CastleTrapUpgrade>();
-    public DbSet<CastleSiegeGuard> CastleSiegeGuards => Set<CastleSiegeGuard>();
     public DbSet<HuntPass> HuntPasses => Set<HuntPass>();
     public DbSet<DbGrandBoss> GrandBosses => Set<DbGrandBoss>();
     public DbSet<DbMailMessage> MailMessages => Set<DbMailMessage>();

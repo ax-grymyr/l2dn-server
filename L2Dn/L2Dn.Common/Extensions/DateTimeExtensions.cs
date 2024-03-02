@@ -4,6 +4,10 @@ public static class DateTimeExtensions
 {
     public static int getEpochSecond(this DateTime time)
     {
-        return (int)(time - DateTime.UnixEpoch).TotalSeconds;
+        var diff = time - DateTime.UnixEpoch;
+        if (diff == TimeSpan.Zero)
+            return 0;
+        
+        return (int)diff.TotalSeconds;
     }
 }

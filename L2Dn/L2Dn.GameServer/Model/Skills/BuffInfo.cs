@@ -4,9 +4,9 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Skills;
 
@@ -160,7 +160,7 @@ public class BuffInfo
 	/**
 	 * @return the options that issued this effect
 	 */
-	public Options getOption()
+	public Options.Options getOption()
 	{
 		return _option;
 	}
@@ -216,15 +216,15 @@ public class BuffInfo
 			{
 				if (!_hideStartMessage && !_skill.isAura() && isDisplayedForEffected())
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.YOU_VE_USED_S1);
-					sm.addSkillName(_skill);
+					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_VE_USED_S1);
+					sm.Params.addSkillName(_skill);
 					_effected.sendPacket(sm);
 				}
 			}
 			else
 			{
-				SystemMessage sm = new SystemMessage(_skill.isToggle() ? SystemMessageId.S1_HAS_BEEN_ABORTED : SystemMessageId.THE_EFFECT_OF_S1_HAS_BEEN_REMOVED);
-				sm.addSkillName(_skill);
+				SystemMessagePacket sm = new SystemMessagePacket(_skill.isToggle() ? SystemMessageId.S1_HAS_BEEN_ABORTED : SystemMessageId.THE_EFFECT_OF_S1_HAS_BEEN_REMOVED);
+				sm.Params.addSkillName(_skill);
 				_effected.sendPacket(sm);
 			}
 		}
@@ -283,8 +283,8 @@ public class BuffInfo
 		// When effects are initialized, the successfully landed.
 		if (!_hideStartMessage && _effected.isPlayer() && !_skill.isHidingMessages() && !_skill.isAura() && isDisplayedForEffected())
 		{
-			SystemMessage sm = new SystemMessage(_skill.isToggle() ? SystemMessageId.YOU_VE_USED_S1 : SystemMessageId.YOU_FEEL_THE_S1_EFFECT);
-			sm.addSkillName(_skill);
+			SystemMessagePacket sm = new SystemMessagePacket(_skill.isToggle() ? SystemMessageId.YOU_VE_USED_S1 : SystemMessageId.YOU_FEEL_THE_S1_EFFECT);
+			sm.Params.addSkillName(_skill);
 			_effected.sendPacket(sm);
 		}
 		
@@ -315,7 +315,7 @@ public class BuffInfo
 			{
 				// The task for the effect ticks.
 				EffectTickTask effectTask = new EffectTickTask(this, effect);
-				ScheduledFuture<?> scheduledFuture = ThreadPool.scheduleAtFixedRate(effectTask, effect.getTicks() * Config.EFFECT_TICK_RATIO, effect.getTicks() * Config.EFFECT_TICK_RATIO);
+				ScheduledFuture scheduledFuture = ThreadPool.scheduleAtFixedRate(effectTask, effect.getTicks() * Config.EFFECT_TICK_RATIO, effect.getTicks() * Config.EFFECT_TICK_RATIO);
 				// Adds the task for ticking.
 				addTask(effect, new EffectTaskInfo(effectTask, scheduledFuture));
 			}
@@ -342,7 +342,7 @@ public class BuffInfo
 			EffectTaskInfo task = getEffectTask(effect);
 			if (task != null)
 			{
-				ScheduledFuture<?> schedule = task.getScheduledFuture();
+				ScheduledFuture schedule = task.getScheduledFuture();
 				if ((schedule != null) && !schedule.isCancelled() && !schedule.isDone())
 				{
 					schedule.cancel(true); // Don't allow to finish current run.
@@ -359,7 +359,7 @@ public class BuffInfo
 		{
 			foreach (EffectTaskInfo effectTask in _tasks.values())
 			{
-				ScheduledFuture<?> schedule = effectTask.getScheduledFuture();
+				ScheduledFuture schedule = effectTask.getScheduledFuture();
 				if ((schedule != null) && !schedule.isCancelled() && !schedule.isDone())
 				{
 					schedule.cancel(true); // Don't allow to finish current run.
@@ -380,7 +380,7 @@ public class BuffInfo
 		// Set the proper system message.
 		if ((_skill != null) && !(_effected.isSummon() && !((Summon) _effected).getOwner().hasSummon()) && !_skill.isHidingMessages())
 		{
-			SystemMessageId smId = null;
+			SystemMessageId? smId = null;
 			if ((_finishType == SkillFinishType.SILENT) || !isDisplayedForEffected())
 			{
 				// smId is null.
@@ -400,8 +400,8 @@ public class BuffInfo
 			
 			if ((smId != null) && (_effected.getActingPlayer() != null) && _effected.getActingPlayer().isOnline())
 			{
-				SystemMessage sm = new SystemMessage(smId);
-				sm.addSkillName(_skill);
+				SystemMessagePacket sm = new SystemMessagePacket(smId.Value);
+				sm.Params.addSkillName(_skill);
 				_effected.sendPacket(sm);
 			}
 		}

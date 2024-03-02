@@ -213,12 +213,12 @@ public class CastleManager
 		}
 	}
 	
-	public void registerSiegeDate(int castleId, long siegeDate)
+	public void registerSiegeDate(int castleId, DateTime siegeDate)
 	{
 		_castleSiegeDate.put(castleId, siegeDate);
 	}
 	
-	public int getSiegeDates(long siegeDate)
+	public int getSiegeDates(DateTime siegeDate)
 	{
 		int count = 0;
 		foreach (long date in _castleSiegeDate.values())

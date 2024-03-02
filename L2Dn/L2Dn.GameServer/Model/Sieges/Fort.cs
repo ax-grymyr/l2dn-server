@@ -13,9 +13,10 @@ using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
-using FortManager = L2Dn.GameServer.Model.Actor.Instances.FortManager;
+using FortManager = L2Dn.GameServer.InstanceManagers.FortManager;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Sieges;
@@ -28,9 +29,9 @@ public class Fort: AbstractResidence
 	private StaticObject _flagPole = null;
 	private FortSiege _siege = null;
 	private DateTime _siegeDate;
-	private DateTime _lastOwnedTime;
+	private DateTime? _lastOwnedTime;
 	private SiegeZone _zone;
-	private Clan _fortOwner = null;
+	private Clan? _fortOwner = null;
 	private int _fortType = 0;
 	private int _state = 0;
 	private int _castleId = 0;
@@ -56,17 +57,19 @@ public class Fort: AbstractResidence
 	
 	public class FortFunction
 	{
+		private readonly Fort _fort;
 		private readonly int _type;
 		private int _lvl;
 		protected int _fee;
 		protected int _tempFee;
-		private readonly long _rate;
-		long _endDate;
+		private readonly TimeSpan _rate;
+		DateTime? _endDate;
 		protected bool _inDebt;
 		public bool _cwh;
 		
-		public FortFunction(int type, int lvl, int lease, int tempLease, long rate, long time, bool cwh)
+		public FortFunction(Fort fort, int type, int lvl, int lease, int tempLease, TimeSpan rate, DateTime? time, bool cwh)
 		{
+			_fort = fort;
 			_type = type;
 			_lvl = lvl;
 			_fee = lease;
@@ -91,12 +94,12 @@ public class Fort: AbstractResidence
 			return _fee;
 		}
 		
-		public long getRate()
+		public TimeSpan getRate()
 		{
 			return _rate;
 		}
 		
-		public long getEndTime()
+		public DateTime? getEndTime()
 		{
 			return _endDate;
 		}
@@ -111,57 +114,63 @@ public class Fort: AbstractResidence
 			_fee = lease;
 		}
 		
-		public void setEndTime(long time)
+		public void setEndTime(DateTime? time)
 		{
 			_endDate = time;
 		}
 		
 		private void initializeTask(bool cwh)
 		{
-			if (_fortOwner == null)
+			if (_fort._fortOwner == null)
 			{
 				return;
 			}
-			long currentTime = System.currentTimeMillis();
+			
+			DateTime currentTime = DateTime.UtcNow;
 			if (_endDate > currentTime)
 			{
-				ThreadPool.schedule(new FunctionTask(cwh), _endDate - currentTime);
+				ThreadPool.schedule(new FunctionTask(_fort, this, cwh), _endDate.Value - currentTime);
 			}
 			else
 			{
-				ThreadPool.schedule(new FunctionTask(cwh), 0);
+				ThreadPool.schedule(new FunctionTask(_fort, this, cwh), 0);
 			}
 		}
 		
 		private class FunctionTask: Runnable
 		{
-			public FunctionTask(bool cwh)
+			private readonly Fort _fort;
+			private readonly FortFunction _fortFunction;
+
+			public FunctionTask(Fort fort, FortFunction fortFunction, bool cwh)
 			{
-				_cwh = cwh;
+				_fort = fort;
+				_fortFunction = fortFunction;
+				_fortFunction._cwh = cwh;
 			}
 			
 			public void run()
 			{
 				try
 				{
-					if (_fortOwner == null)
+					if (_fort._fortOwner == null)
 					{
 						return;
 					}
-					if ((_fortOwner.getWarehouse().getAdena() >= _fee) || !_cwh)
+					if ((_fort._fortOwner.getWarehouse().getAdena() >= _fortFunction._fee) || !_fortFunction._cwh)
 					{
-						int fee = _endDate == -1 ? _tempFee : _fee;
-						setEndTime(DateTime.UtcNow + _rate);
-						dbSave();
-						if (_cwh)
+						int fee = _fortFunction._endDate is null ? _fortFunction._tempFee : _fortFunction._fee;
+						_fortFunction.setEndTime(DateTime.UtcNow + _fortFunction._rate);
+						_fortFunction.dbSave();
+						if (_fortFunction._cwh)
 						{
-							_fortOwner.getWarehouse().destroyItemByItemId("CS_function_fee", Inventory.ADENA_ID, fee, null, null);
+							_fort._fortOwner.getWarehouse().destroyItemByItemId("CS_function_fee", Inventory.ADENA_ID, fee, null, null);
 						}
-						ThreadPool.schedule(new FunctionTask(true), _rate);
+						ThreadPool.schedule(new FunctionTask(_fort, _fortFunction, true), _fortFunction._rate);
 					}
 					else
 					{
-						removeFunction(_type);
+						_fort.removeFunction(_fortFunction._type);
 					}
 				}
 				catch (Exception t)
@@ -174,18 +183,24 @@ public class Fort: AbstractResidence
 		
 		public void dbSave()
 		{
-			try 
+			try
 			{
+				int fortId = _fort.getResidenceId();
 				using GameServerDbContext ctx = new();
-				PreparedStatement ps = con.prepareStatement(
-					"REPLACE INTO fort_functions (fort_id, type, lvl, lease, rate, endTime) VALUES (?,?,?,?,?,?)");
-				ps.setInt(1, getResidenceId());
-				ps.setInt(2, _type);
-				ps.setInt(3, _lvl);
-				ps.setInt(4, _fee);
-				ps.setLong(5, _rate);
-				ps.setLong(6, _endDate);
-				ps.execute();
+				var record = ctx.FortFunctions.SingleOrDefault(r => r.FortId == fortId && r.Type == _type);
+				if (record is null)
+				{
+					record = new DbFortFunction();
+					record.FortId = (byte)fortId;
+					record.Type = (byte)_type;
+					ctx.FortFunctions.Add(record);
+				}
+
+				record.Level = (short)_lvl;
+				record.Lease = _fee;
+				record.Rate = _rate;
+				record.EndTime = _endDate;
+				ctx.SaveChanges();
 			}
 			catch (Exception e)
 			{
@@ -366,14 +381,14 @@ public class Fort: AbstractResidence
 		// if clan already have castle, don't store him in fortress
 		if (clan.getCastleId() > 0)
 		{
-			getSiege().announceToPlayer(new SystemMessage(SystemMessageId.THE_REBEL_ARMY_RECAPTURED_THE_FORTRESS));
+			getSiege().announceToPlayer(new SystemMessagePacket(SystemMessageId.THE_REBEL_ARMY_RECAPTURED_THE_FORTRESS));
 			return false;
 		}
 		
 		// Give points to new owner
 		if (updateClansReputation)
 		{
-			updateClansReputation(clan, false);
+			this.updateClansReputation(clan, false);
 		}
 		
 		spawnSpecialEnvoys();
@@ -412,7 +427,7 @@ public class Fort: AbstractResidence
 				member.sendSkillList();
 			}
 			clan.setFortId(0);
-			clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
+			clan.broadcastToOnlineMembers(new PledgeShowInfoUpdatePacket(clan));
 			setOwnerClan(null);
 			setSupplyLvL(0);
 			saveFortVariables();
@@ -451,14 +466,12 @@ public class Fort: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("UPDATE fort SET supplyLvL=? WHERE id = ?");
-			ps.setInt(1, _supplyLvL);
-			ps.setInt(2, getResidenceId());
-			ps.execute();
+			int fortId = getResidenceId();
+			ctx.Forts.Where(r => r.Id == fortId).ExecuteUpdate(s => s.SetProperty(r => r.SupplyLevel, _supplyLvL));
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Exception: saveFortVariables(): " + e);
+			LOGGER.Error("Exception: saveFortVariables(): " + e);
 		}
 	}
 	
@@ -559,49 +572,52 @@ public class Fort: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM fort WHERE id = ?");
-			ps.setInt(1, getResidenceId());
-			int ownerId = 0;
+			int fortId = getResidenceId();
+			int? ownerId = null;
+			var record = ctx.Forts.SingleOrDefault(r => r.Id == fortId);
+			if (record is not null)
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
-				{
-					setName(rs.getString("name"));
+				setName(record.Name);
 					
-					_siegeDate = Calendar.getInstance();
-					_lastOwnedTime = Calendar.getInstance();
-					_siegeDate.setTimeInMillis(rs.getLong("siegeDate"));
-					_lastOwnedTime.setTimeInMillis(rs.getLong("lastOwnedTime"));
-					ownerId = rs.getInt("owner");
-					_fortType = rs.getInt("fortType");
-					_state = rs.getInt("state");
-					_castleId = rs.getInt("castleId");
-					_supplyLvL = rs.getInt("supplyLvL");
-				}
+				_siegeDate = record.SiegeDate;
+				_lastOwnedTime = record.LastOwnedTime;
+				ownerId = record.OwnerId;
+				_fortType = record.Type;
+				_state = record.State;
+				_castleId = record.CastleId;
+				_supplyLvL = record.SupplyLevel;
 			}
-			if (ownerId > 0)
+
+			if (ownerId != null)
 			{
-				Clan clan = ClanTable.getInstance().getClan(ownerId); // Try to find clan instance
+				Clan clan = ClanTable.getInstance().getClan(ownerId.Value); // Try to find clan instance
 				clan.setFortId(getResidenceId());
 				setOwnerClan(clan);
-				int runCount = getOwnedTime() / (Config.FS_UPDATE_FRQ * 60);
-				long initial = System.currentTimeMillis() - _lastOwnedTime.getTimeInMillis();
-				while (initial > (Config.FS_UPDATE_FRQ * 60000))
+				TimeSpan period = TimeSpan.FromSeconds(Config.FS_UPDATE_FRQ * 60);
+				int runCount = (int)((getOwnedTime() ?? TimeSpan.Zero) / period);
+				TimeSpan initial = _lastOwnedTime is null ? TimeSpan.Zero : DateTime.UtcNow - _lastOwnedTime.Value;
+				if (initial > period)
 				{
-					initial -= Config.FS_UPDATE_FRQ * 60000;
+					initial = TimeSpan.FromTicks(initial.Ticks % period.Ticks);
 				}
-				initial = (Config.FS_UPDATE_FRQ * 60000) - initial;
-				if ((Config.FS_MAX_OWN_TIME <= 0) || (getOwnedTime() < (Config.FS_MAX_OWN_TIME * 3600)))
+
+				initial = period - initial;
+				if ((Config.FS_MAX_OWN_TIME <= 0) || (getOwnedTime() < TimeSpan.FromSeconds(Config.FS_MAX_OWN_TIME * 3600)))
 				{
-					_fortUpdater[0] = ThreadPool.scheduleAtFixedRate(new FortUpdater(this, clan, runCount, FortUpdaterType.PERIODIC_UPDATE), initial, Config.FS_UPDATE_FRQ * 60000); // Schedule owner tasks to start running
+					_fortUpdater[0] = ThreadPool.scheduleAtFixedRate(
+						new FortUpdater(this, clan, runCount, FortUpdaterType.PERIODIC_UPDATE), initial,
+						period); // Schedule owner tasks to start running
 					if (Config.FS_MAX_OWN_TIME > 0)
 					{
-						_fortUpdater[1] = ThreadPool.scheduleAtFixedRate(new FortUpdater(this, clan, runCount, FortUpdaterType.MAX_OWN_TIME), 3600000, 3600000); // Schedule owner tasks to remove owener
+						_fortUpdater[1] = ThreadPool.scheduleAtFixedRate(
+							new FortUpdater(this, clan, runCount, FortUpdaterType.MAX_OWN_TIME), 3600000,
+							3600000); // Schedule owner tasks to remove owner
 					}
 				}
 				else
 				{
-					_fortUpdater[1] = ThreadPool.schedule(new FortUpdater(this, clan, 0, FortUpdaterType.MAX_OWN_TIME), 60000); // Schedule owner tasks to remove owner
+					_fortUpdater[1] = ThreadPool.schedule(new FortUpdater(this, clan, 0, FortUpdaterType.MAX_OWN_TIME),
+						60000); // Schedule owner tasks to remove owner
 				}
 			}
 			else
@@ -611,7 +627,7 @@ public class Fort: AbstractResidence
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Exception: loadFortData(): " + e);
+			LOGGER.Error("Exception: loadFortData(): " + e);
 		}
 	}
 	
@@ -621,14 +637,11 @@ public class Fort: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM fort_functions WHERE fort_id = ?");
-			ps.setInt(1, getResidenceId());
+			int fortId = getResidenceId();
+			var query = ctx.FortFunctions.Where(r => r.FortId == fortId);
+			foreach (var record in query)
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
-				{
-					_function.put(rs.getInt("type"), new FortFunction(rs.getInt("type"), rs.getInt("lvl"), rs.getInt("lease"), 0, rs.getLong("rate"), rs.getLong("endTime"), true));
-				}
+				_function.put(record.Type, new FortFunction(this, record.Type, record.Level, record.Lease, 0, record.Rate, record.EndTime, true));
 			}
 		}
 		catch (Exception e)
@@ -647,10 +660,8 @@ public class Fort: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM fort_functions WHERE fort_id=? AND type=?");
-			ps.setInt(1, getResidenceId());
-			ps.setInt(2, functionType);
-			ps.execute();
+			int fortId = getResidenceId();
+			ctx.FortFunctions.Where(r => r.FortId == fortId && r.Type == functionType).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -669,7 +680,7 @@ public class Fort: AbstractResidence
 		}
 	}
 	
-	public bool updateFunctions(Player player, int type, int lvl, int lease, long rate, bool addNew)
+	public bool updateFunctions(Player player, int type, int lvl, int lease, TimeSpan rate, bool addNew)
 	{
 		if (player == null)
 		{
@@ -681,7 +692,7 @@ public class Fort: AbstractResidence
 		}
 		if (addNew)
 		{
-			_function.put(type, new FortFunction(type, lvl, lease, 0, rate, 0, false));
+			_function.put(type, new FortFunction(this, type, lvl, lease, 0, rate, null, false));
 		}
 		else if ((lvl == 0) && (lease == 0))
 		{
@@ -690,7 +701,7 @@ public class Fort: AbstractResidence
 		else if ((lease - _function.get(type).getLease()) > 0)
 		{
 			_function.remove(type);
-			_function.put(type, new FortFunction(type, lvl, lease, 0, rate, -1, false));
+			_function.put(type, new FortFunction(this, type, lvl, lease, 0, rate, null, false));
 		}
 		else
 		{
@@ -740,20 +751,16 @@ public class Fort: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM fort_doorupgrade WHERE fortId = ?");
-			ps.setInt(1, getResidenceId());
-
+			int fortId = getResidenceId();
+			var query = ctx.FortDoorUpgrades.Where(r => r.FortId == fortId);
+			foreach (var record in query)
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
-				{
-					upgradeDoor(rs.getInt("id"), rs.getInt("hp"), rs.getInt("pDef"), rs.getInt("mDef"));
-				}
+				upgradeDoor(record.DoorId, record.Hp, record.PDef, record.MDef);
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Exception: loadFortDoorUpgrade(): " + e);
+			LOGGER.Error("Exception: loadFortDoorUpgrade(): " + e);
 		}
 	}
 	
@@ -762,13 +769,12 @@ public class Fort: AbstractResidence
 		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM fort_doorupgrade WHERE fortId = ?");
-			ps.setInt(1, getResidenceId());
-			ps.execute();
+			int fortId = getResidenceId();
+			ctx.FortDoorUpgrades.Where(r => r.FortId == fortId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Exception: removeDoorUpgrade(): " + e);
+			LOGGER.Error("Exception: removeDoorUpgrade(): " + e);
 		}
 	}
 	
@@ -777,45 +783,54 @@ public class Fort: AbstractResidence
 		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement("INSERT INTO fort_doorupgrade (doorId, hp, pDef, mDef) VALUES (?,?,?,?)");
-			ps.setInt(1, doorId);
-			ps.setInt(2, hp);
-			ps.setInt(3, pDef);
-			ps.setInt(4, mDef);
-			ps.execute();
+			ctx.FortDoorUpgrades.Add(new DbFortDoorUpgrade()
+			{
+				DoorId = doorId,
+				FortId = (byte)getResidenceId(),
+				Hp = hp,
+				PDef = pDef,
+				MDef = mDef
+			});
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Exception: saveDoorUpgrade(int doorId, int hp, int pDef, int mDef): " + e);
+			LOGGER.Error("Exception: saveDoorUpgrade(int doorId, int hp, int pDef, int mDef): " + e);
 		}
 	}
 	
 	private void updateOwnerInDB()
 	{
 		Clan clan = _fortOwner;
-		int clanId = 0;
+		int? clanId = null;
 		if (clan != null)
 		{
 			clanId = clan.getId();
-			_lastOwnedTime.setTimeInMillis(System.currentTimeMillis());
+			_lastOwnedTime = DateTime.UtcNow;;
 		}
 		else
 		{
-			_lastOwnedTime.setTimeInMillis(0);
+			_lastOwnedTime = null;
 		}
 		
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement("UPDATE fort SET owner=?,lastOwnedTime=?,state=?,castleId=? WHERE id = ?");
-			ps.setInt(1, clanId);
-			ps.setLong(2, _lastOwnedTime.getTimeInMillis());
-			ps.setInt(3, 0);
-			ps.setInt(4, 0);
-			ps.setInt(5, getResidenceId());
-			ps.execute();
+			int fortId = getResidenceId();
+			var record = ctx.Forts.SingleOrDefault(r => r.Id == fortId);
+			if (record == null)
+			{
+				record = new DbFort();
+				record.Id = fortId;
+				ctx.Forts.Add(record);
+			}
+
+			record.OwnerId = clanId;
+			record.LastOwnedTime = _lastOwnedTime;
+			record.State = 0;
+			record.CastleId = 0;
+			ctx.SaveChanges();
 			
 			// Announce to clan members
 			if (clan != null)
@@ -921,29 +936,35 @@ public class Fort: AbstractResidence
 		return _siege;
 	}
 	
-	public Calendar getSiegeDate()
+	public DateTime getSiegeDate()
 	{
 		return _siegeDate;
 	}
 	
-	public void setSiegeDate(Calendar siegeDate)
+	public void setSiegeDate(DateTime siegeDate)
 	{
 		_siegeDate = siegeDate;
 	}
 	
-	public int getOwnedTime()
+	/// <summary>
+	/// Seconds
+	/// </summary>
+	/// <returns></returns>
+	public TimeSpan? getOwnedTime()
 	{
-		return _lastOwnedTime.getTimeInMillis() == 0 ? 0 : (int) ((System.currentTimeMillis() - _lastOwnedTime.getTimeInMillis()) / 1000);
+		return _lastOwnedTime is null ? null : DateTime.UtcNow - _lastOwnedTime.Value;
 	}
 	
-	public int getTimeTillRebelArmy()
+	public TimeSpan? getTimeTillRebelArmy()
 	{
-		return _lastOwnedTime.getTimeInMillis() == 0 ? 0 : (int) (((_lastOwnedTime.getTimeInMillis() + (Config.FS_MAX_OWN_TIME * 3600000)) - System.currentTimeMillis()) / 1000);
+		return _lastOwnedTime is null
+			? null
+			: _lastOwnedTime + TimeSpan.FromMilliseconds(Config.FS_MAX_OWN_TIME * 3600000) - DateTime.UtcNow;
 	}
 	
-	public long getTimeTillNextFortUpdate()
+	public TimeSpan getTimeTillNextFortUpdate()
 	{
-		return _fortUpdater[0] == null ? 0 : _fortUpdater[0].getDelay(TimeUnit.SECONDS);
+		return _fortUpdater[0] == null ? TimeSpan.Zero : _fortUpdater[0].getDelay();
 	}
 	
 	public void updateClansReputation(Clan owner, bool removePoints)
@@ -980,7 +1001,7 @@ public class Fort: AbstractResidence
 			}
 			catch (Exception e)
 			{
-				LOGGER.Warn("Exception in endFortressSiege " + e);
+				LOGGER.Error("Exception in endFortressSiege " + e);
 			}
 		}
 	}
@@ -1012,15 +1033,23 @@ public class Fort: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("UPDATE fort SET state=?,castleId=? WHERE id = ?");
-			ps.setInt(1, _state);
-			ps.setInt(2, _castleId);
-			ps.setInt(3, getResidenceId());
-			ps.execute();
+			int fortId = getResidenceId();
+			var record = ctx.Forts.SingleOrDefault(r => r.Id == fortId);
+			if (record == null)
+			{
+				record = new DbFort();
+				record.Id = fortId;
+				ctx.Forts.Add(record);
+			}
+
+			record.LastOwnedTime = _lastOwnedTime;
+			record.State = 0;
+			record.CastleId = 0;
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Exception: setFortState(int state, int castleId): " + e);
+			LOGGER.Error("Exception: setFortState(int state, int castleId): " + e);
 		}
 	}
 	
@@ -1145,32 +1174,26 @@ public class Fort: AbstractResidence
 	
 	private void initNpcs()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement("SELECT * FROM fort_spawnlist WHERE fortId = ? AND spawnType = ?");
-			ps.setInt(1, getResidenceId());
-			ps.setInt(2, 0);
-
+			int fortId = getResidenceId();
+			var query = ctx.FortSpawns.Where(r => r.FortId == fortId && r.Type == 0);
+			foreach (var record in query)
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
-				{
-					Spawn spawnDat = new Spawn(rs.getInt("npcId"));
-					spawnDat.setAmount(1);
-					spawnDat.setXYZ(rs.getInt("x"), rs.getInt("y"), rs.getInt("z"));
-					spawnDat.setHeading(rs.getInt("heading"));
-					spawnDat.setRespawnDelay(60);
-					SpawnTable.getInstance().addNewSpawn(spawnDat, false);
-					spawnDat.doSpawn(false);
-					spawnDat.startRespawn();
-				}
+				Spawn spawnDat = new Spawn(record.NpcId);
+				spawnDat.setAmount(1);
+				spawnDat.setXYZ(record.X, record.Y, record.Z);
+				spawnDat.setHeading(record.Heading);
+				spawnDat.setRespawnDelay(TimeSpan.FromSeconds(60));
+				SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+				spawnDat.doSpawn(false);
+				spawnDat.startRespawn();
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Fort " + getResidenceId() + " initNpcs: Spawn could not be initialized: " + e);
+			LOGGER.Error("Fort " + getResidenceId() + " initNpcs: Spawn could not be initialized: " + e);
 		}
 	}
 	
@@ -1180,27 +1203,21 @@ public class Fort: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(
-				"SELECT id, npcId, x, y, z, heading FROM fort_spawnlist WHERE fortId = ? AND spawnType = ? ORDER BY id");
-			ps.setInt(1, getResidenceId());
-			ps.setInt(2, 2);
-
+			int fortId = getResidenceId();
+			var query = ctx.FortSpawns.Where(r => r.FortId == fortId && r.Type == 2);
+			foreach (var record in query)
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
-				{
-					Spawn spawnDat = new Spawn(rs.getInt("npcId"));
-					spawnDat.setAmount(1);
-					spawnDat.setXYZ(rs.getInt("x"), rs.getInt("y"), rs.getInt("z"));
-					spawnDat.setHeading(rs.getInt("heading"));
-					spawnDat.setRespawnDelay(60);
-					_siegeNpcs.add(spawnDat);
-				}
+				Spawn spawnDat = new Spawn(record.NpcId);
+				spawnDat.setAmount(1);
+				spawnDat.setXYZ(record.X, record.Y, record.Z);
+				spawnDat.setHeading(record.Heading);
+				spawnDat.setRespawnDelay(TimeSpan.FromSeconds(60));
+				_siegeNpcs.add(spawnDat);
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Fort " + getResidenceId() + " initSiegeNpcs: Spawn could not be initialized: " + e);
+			LOGGER.Error("Fort " + getResidenceId() + " initSiegeNpcs: Spawn could not be initialized: " + e);
 		}
 	}
 	
@@ -1210,28 +1227,22 @@ public class Fort: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(
-				"SELECT id, npcId, x, y, z, heading FROM fort_spawnlist WHERE fortId = ? AND spawnType = ? ORDER BY id");
-			ps.setInt(1, getResidenceId());
-			ps.setInt(2, 1);
-
+			int fortId = getResidenceId();
+			var query = ctx.FortSpawns.Where(r => r.FortId == fortId && r.Type == 1);
+			foreach (var record in query)
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
-				{
-					Spawn spawnDat = new Spawn(rs.getInt("npcId"));
-					spawnDat.setAmount(1);
-					spawnDat.setXYZ(rs.getInt("x"), rs.getInt("y"), rs.getInt("z"));
-					spawnDat.setHeading(rs.getInt("heading"));
-					spawnDat.setRespawnDelay(60);
-					_npcCommanders.add(spawnDat);
-				}
+				Spawn spawnDat = new Spawn(record.NpcId);
+				spawnDat.setAmount(1);
+				spawnDat.setXYZ(record.X, record.Y, record.Z);
+				spawnDat.setHeading(record.Heading);
+				spawnDat.setRespawnDelay(TimeSpan.FromSeconds(60));
+				_npcCommanders.add(spawnDat);
 			}
 		}
 		catch (Exception e)
 		{
 			// problem with initializing spawn, go to next one
-			LOGGER.Warn("Fort " + getResidenceId() + " initNpcCommanders: Spawn could not be initialized: " + e);
+			LOGGER.Error("Fort " + getResidenceId() + " initNpcCommanders: Spawn could not be initialized: " + e);
 		}
 	}
 	
@@ -1243,32 +1254,25 @@ public class Fort: AbstractResidence
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(
-				"SELECT id, npcId, x, y, z, heading, castleId FROM fort_spawnlist WHERE fortId = ? AND spawnType = ? ORDER BY id");
-			ps.setInt(1, getResidenceId());
-			ps.setInt(2, 3);
-			try
+			int fortId = getResidenceId();
+			var query = ctx.FortSpawns.Where(r => r.FortId == fortId && r.Type == 3);
+			foreach (var record in query)
 			{
-				ResultSet rs = ps.executeQuery();
-				while (rs.next())
-				{
-					int castleId = rs.getInt("castleId");
-					int npcId = rs.getInt("npcId");
-					Spawn spawnDat = new Spawn(npcId);
-					spawnDat.setAmount(1);
-					spawnDat.setXYZ(rs.getInt("x"), rs.getInt("y"), rs.getInt("z"));
-					spawnDat.setHeading(rs.getInt("heading"));
-					spawnDat.setRespawnDelay(60);
-					_specialEnvoys.add(spawnDat);
-					_envoyCastles.put(npcId, castleId);
-					_availableCastles.add(castleId);
-				}
+				Spawn spawnDat = new Spawn(record.NpcId);
+				spawnDat.setAmount(1);
+				spawnDat.setXYZ(record.X, record.Y, record.Z);
+				spawnDat.setHeading(record.Heading);
+				spawnDat.setRespawnDelay(TimeSpan.FromSeconds(60));
+
+				_specialEnvoys.add(spawnDat);
+				_envoyCastles.put(record.NpcId, record.CastleId);
+				_availableCastles.add(record.CastleId);
 			}
 		}
 		catch (Exception e)
 		{
 			// problem with initializing spawn, go to next one
-			LOGGER.Warn("Fort " + getResidenceId() + " initSpecialEnvoys: Spawn could not be initialized: " + e);
+			LOGGER.Error("Fort " + getResidenceId() + " initSpecialEnvoys: Spawn could not be initialized: " + e);
 		}
 	}
 	

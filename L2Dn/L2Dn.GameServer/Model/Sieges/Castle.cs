@@ -32,7 +32,7 @@ public class Castle: AbstractResidence
 	private Siege _siege = null;
 	private DateTime _siegeDate;
 	private bool _isTimeRegistrationOver = true; // true if Castle Lords set the time, or 24h is elapsed after the siege
-	private DateTime _siegeTimeRegistrationEndDate; // last siege end date + 1 day
+	private DateTime? _siegeTimeRegistrationEndDate; // last siege end date + 1 day
 	private CastleSide _castleSide;
 	private long _treasury = 0;
 	private bool _showNpcCrest = false;
@@ -930,7 +930,12 @@ public class Castle: AbstractResidence
 			_siegeTimeRegistrationEndDate = DateTime.UtcNow;
 		}
 		
-		return _siegeTimeRegistrationEndDate;
+		return _siegeTimeRegistrationEndDate.Value;
+	}
+	
+	public void setTimeRegistrationOverDate(DateTime time)
+	{
+		_siegeTimeRegistrationEndDate = time;
 	}
 	
 	public int getTaxPercent(TaxType type)

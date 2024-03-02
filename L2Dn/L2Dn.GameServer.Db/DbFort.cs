@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace L2Dn.GameServer.Db;
 
-[Index(nameof(OwnerId), IsUnique = true)]
+[Index(nameof(OwnerId))]
 public class DbFort
 {
     public int Id { get; set; }
@@ -12,8 +12,8 @@ public class DbFort
     public string Name { get; set; } = string.Empty;
 
     public DateTime SiegeDate { get; set; }
-    public DateTime LastOwnedTime { get; set; }
-    public int OwnerId { get; set; }
+    public DateTime? LastOwnedTime { get; set; }
+    public int? OwnerId { get; set; }
     public int Type { get; set; }
     public int State { get; set; }
     public int CastleId { get; set; }

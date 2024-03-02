@@ -67,7 +67,7 @@ public class FortUpdater: Runnable
 						return;
 					}
 
-					if (_fort.getOwnedTime() > (Config.FS_MAX_OWN_TIME * 3600))
+					if (_fort.getOwnedTime() > TimeSpan.FromSeconds(Config.FS_MAX_OWN_TIME * 3600))
 					{
 						_fort.removeOwner(true);
 						_fort.setFortState(0, 0);
