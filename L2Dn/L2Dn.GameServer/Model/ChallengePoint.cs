@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
@@ -42,77 +43,86 @@ public class ChallengePoint
 		{
 			return;
 		}
-		
-		try 
-		{
-			Connection conn = DatabaseFactory.getConnection();
-			PreparedStatement ps1 = conn.prepareStatement(INSERT_CHALLENGE_POINTS);
-				foreach (var entry in _challengePoints.entrySet())
-				{
-					ps1.setInt(1, _owner.getObjectId());
-					ps1.setInt(2, entry.getKey());
-					ps1.setInt(3, entry.getValue());
-					ps1.addBatch();
-				}
-				ps1.executeBatch();
 
-				PreparedStatement ps2 = conn.prepareStatement(INSERT_CHALLENGE_POINTS_RECHARGES);
-				foreach (Entry<int, Map<int, int>> entry in _challengePointsRecharges.entrySet())
+		try
+		{
+			// TODO: server is the owner of the database, so it should track the records to add or update
+			using GameServerDbContext ctx = new();
+			int characterId = _owner.getObjectId();
+			foreach (var pair in _challengePoints)
+			{
+				var record =
+					ctx.EnchantChallengePoints.SingleOrDefault(r =>
+						r.CharacterId == characterId && r.GroupId == pair.Key);
+
+				if (record is null)
 				{
-					foreach (Entry<int, int> entry2 in entry.getValue().entrySet())
-					{
-						ps2.setInt(1, _owner.getObjectId());
-						ps2.setInt(2, entry.getKey());
-						ps2.setInt(3, entry2.getKey());
-						ps2.setInt(4, entry2.getValue());
-						ps2.addBatch();
-					}
+					record = new DbEnchantChallengePoint();
+					record.CharacterId = characterId;
+					record.GroupId = pair.Key;
+					ctx.EnchantChallengePoints.Add(record);
 				}
-				ps2.executeBatch();
+
+				record.Points = pair.Value;
+			}
+
+			foreach (var pair in _challengePointsRecharges)
+			{
+				foreach (var pair2 in pair.Value)
+				{
+					var record =
+						ctx.EnchantChallengePointRecharges.SingleOrDefault(r =>
+							r.CharacterId == characterId && r.GroupId == pair.Key && r.OptionIndex == pair2.Key);
+
+					if (record is null)
+					{
+						record = new DbEnchantChallengePointRecharge();
+						record.CharacterId = characterId;
+						record.GroupId = pair.Key;
+						record.OptionIndex = pair2.Key;
+						ctx.EnchantChallengePointRecharges.Add(record);
+					}
+
+					record.Count = pair2.Value;
+				}
+			}
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Could not store Challenge Points for " + _owner + " " + e);
+			LOGGER.Error("Could not store Challenge Points for " + _owner + " " + e);
 		}
 	}
 	
 	public void restoreChallengePoints()
 	{
 		_challengePoints.clear();
+		_challengePointsRecharges.clear();
+
 		try
 		{
 			using GameServerDbContext ctx = new();
+			int characterId = _owner.getObjectId();
+			foreach (var record in ctx.EnchantChallengePoints.Where(r => r.CharacterId == characterId))
 			{
-				PreparedStatement ps = con.prepareStatement(RESTORE_CHALLENGE_POINTS);
-				ps.setInt(1, _owner.getObjectId());
-				ResultSet rs = ps.executeQuery()
-				while (rs.next())
-				{
-					final int groupId = rs.getInt("groupId");
-					final int points = rs.getInt("points");
-					_challengePoints.put(groupId, points);
-				}
+				int groupId = record.GroupId;
+				int points = record.Points;
+				_challengePoints.put(groupId, points);
 			}
 
-			_challengePointsRecharges.clear();
-			
+			foreach (var record in ctx.EnchantChallengePointRecharges.Where(r => r.CharacterId == characterId))
 			{
-				PreparedStatement ps = con.prepareStatement(RESTORE_CHALLENGE_POINTS_RECHARGES);
-				ps.setInt(1, _owner.getObjectId());
-				ResultSet rs = ps.executeQuery();
-					while (rs.next())
-					{
-						int groupId = rs.getInt("groupId");
-						int optionIndex = rs.getInt("optionIndex");
-						int count = rs.getInt("count");
-						Map<int, int> options = _challengePointsRecharges.get(groupId);
-						if (options == null)
-						{
-							options = new HashMap<>();
-							_challengePointsRecharges.put(groupId, options);
-						}
-						options.put(optionIndex, count);
-					}
+				int groupId = record.GroupId;
+				int optionIndex = record.OptionIndex;
+				int count = record.Count;
+				Map<int, int> options = _challengePointsRecharges.get(groupId);
+				if (options == null)
+				{
+					options = new();
+					_challengePointsRecharges.put(groupId, options);
+				}
+				options.put(optionIndex, count);
 			}
 		}
 		catch (Exception e)
@@ -191,10 +201,10 @@ public class ChallengePoint
 		Map<int, int> challengePoints = getChallengePoints();
 		ChallengePointInfoHolder[] info = new ChallengePointInfoHolder[challengePoints.size()];
 		int i = 0;
-		foreach (Entry<int, int> entry in challengePoints.entrySet())
+		foreach (var entry in challengePoints)
 		{
-			int groupId = entry.getKey();
-			info[i] = new ChallengePointInfoHolder(groupId, entry.getValue(), //
+			int groupId = entry.Key;
+			info[i] = new ChallengePointInfoHolder(groupId, entry.Value, //
 				getChallengePointsRecharges(groupId, 0), //
 				getChallengePointsRecharges(groupId, 1), //
 				getChallengePointsRecharges(groupId, 2), //

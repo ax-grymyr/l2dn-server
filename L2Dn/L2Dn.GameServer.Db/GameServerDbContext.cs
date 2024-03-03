@@ -163,4 +163,6 @@ public class GameServerDbContext: DbContext
 
     public DbSet<DbResidenceFunction> ResidenceFunctions => Set<DbResidenceFunction>();
     public DbSet<DbAchievementBox> AchievementBoxes => Set<DbAchievementBox>();
+    public DbSet<DbEnchantChallengePoint> EnchantChallengePoints => Set<DbEnchantChallengePoint>();
+    public DbSet<DbEnchantChallengePointRecharge> EnchantChallengePointRecharges => Set<DbEnchantChallengePointRecharge>();
 }
