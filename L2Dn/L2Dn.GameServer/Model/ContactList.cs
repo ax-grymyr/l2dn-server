@@ -1,7 +1,10 @@
 ﻿using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.Model;
@@ -37,22 +40,18 @@ public class ContactList
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(QUERY_LOAD);
-			statement.setInt(1, _player.getObjectId());
-			ResultSet rset = statement.executeQuery();
-				int contactId;
-				String contactName;
-				while (rset.next())
+			int characterId = _player.getObjectId();
+			var query = ctx.CharacterContacts.Where(r => r.CharacterId == characterId).Select(r => r.ContactId);
+			foreach (var contactId in query)
+			{
+				string contactName = CharInfoTable.getInstance().getNameById(contactId);
+				if ((contactName == null) || contactName.equals(_player.getName()) || (contactId == _player.getObjectId()))
 				{
-					contactId = rset.getInt(1);
-					contactName = CharInfoTable.getInstance().getNameById(contactId);
-					if ((contactName == null) || contactName.equals(_player.getName()) || (contactId == _player.getObjectId()))
-					{
-						continue;
-					}
-					
-					_contacts.add(contactName);
+					continue;
 				}
+					
+				_contacts.add(contactName);
+			}
 		}
 		catch (Exception e)
 		{
@@ -62,10 +61,10 @@ public class ContactList
 	
 	public bool add(String name)
 	{
-		SystemMessage sm;
+		SystemMessagePacket sm;
 		
 		int contactId = CharInfoTable.getInstance().getIdByName(name);
-		if (_contacts.contains(name))
+		if (_contacts.Contains(name))
 		{
 			_player.sendPacket(SystemMessageId.THE_CHARACTER_IS_ALREADY_IN_THE_LIST);
 			return false;
@@ -82,8 +81,8 @@ public class ContactList
 		}
 		else if (contactId < 1)
 		{
-			sm = new SystemMessage(SystemMessageId.THE_NAME_S1_DOESN_T_EXIST_PLEASE_TRY_ANOTHER_NAME);
-			sm.addString(name);
+			sm = new SystemMessagePacket(SystemMessageId.THE_NAME_S1_DOESN_T_EXIST_PLEASE_TRY_ANOTHER_NAME);
+			sm.Params.addString(name);
 			_player.sendPacket(sm);
 			return false;
 		}
@@ -102,15 +101,18 @@ public class ContactList
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(QUERY_ADD);
-			statement.setInt(1, _player.getObjectId());
-			statement.setInt(2, contactId);
-			statement.execute();
+			ctx.CharacterContacts.Add(new DbCharacterContact()
+			{
+				CharacterId = _player.getObjectId(),
+				ContactId = contactId
+			});
+
+			ctx.SaveChanges();
 			
 			_contacts.add(name);
 			
-			sm = new SystemMessage(SystemMessageId.S1_WAS_SUCCESSFULLY_ADDED_TO_YOUR_CONTACT_LIST);
-			sm.addString(name);
+			sm = new SystemMessagePacket(SystemMessageId.S1_WAS_SUCCESSFULLY_ADDED_TO_YOUR_CONTACT_LIST);
+			sm.Params.addString(name);
 			_player.sendPacket(sm);
 		}
 		catch (Exception e)
@@ -123,7 +125,7 @@ public class ContactList
 	public void remove(String name)
 	{
 		int contactId = CharInfoTable.getInstance().getIdByName(name);
-		if (!_contacts.contains(name))
+		if (!_contacts.Contains(name))
 		{
 			_player.sendPacket(SystemMessageId.THE_NAME_IS_NOT_CURRENTLY_REGISTERED);
 			return;
@@ -139,13 +141,11 @@ public class ContactList
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(QUERY_REMOVE);
-			statement.setInt(1, _player.getObjectId());
-			statement.setInt(2, contactId);
-			statement.execute();
+			int characterId = _player.getObjectId();
+			ctx.CharacterContacts.Where(r => r.CharacterId == characterId && r.ContactId == contactId).ExecuteDelete();
 			
-			SystemMessage sm = new SystemMessage(SystemMessageId.S1_WAS_SUCCESSFULLY_DELETED_FROM_YOUR_CONTACT_LIST);
-			sm.addString(name);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_WAS_SUCCESSFULLY_DELETED_FROM_YOUR_CONTACT_LIST);
+			sm.Params.addString(name);
 			_player.sendPacket(sm);
 		}
 		catch (Exception e)
