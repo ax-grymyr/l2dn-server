@@ -76,11 +76,11 @@ public readonly struct ExFriendDetailInfoPacket: IOutgoingPacket
 			writer.WriteInt32(_friend.getObjectId());
 			writer.WriteInt16((short)_friend.getLevel());
 			writer.WriteInt16((short)_friend.getClassId());
-			writer.WriteInt32(_friend.getClanId());
-			writer.WriteInt32(_friend.getClanCrestId());
+			writer.WriteInt32(_friend.getClanId() ?? 0);
+			writer.WriteInt32(_friend.getClanCrestId() ?? 0);
 			writer.WriteString(_friend.getClan() != null ? _friend.getClan().getName() : "");
-			writer.WriteInt32(_friend.getAllyId());
-			writer.WriteInt32(_friend.getAllyCrestId());
+			writer.WriteInt32(_friend.getAllyId() ?? 0);
+			writer.WriteInt32(_friend.getAllyCrestId() ?? 0);
 			writer.WriteString(_friend.getClan() != null ? _friend.getClan().getAllyName() : "");
 			
 			DateTime createDate = _friend.getCreateDate();

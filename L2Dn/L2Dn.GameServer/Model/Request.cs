@@ -1,6 +1,8 @@
 ﻿using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model;
 
@@ -84,8 +86,8 @@ public class Request
 		}
 		if (partner.getRequest().isProcessingRequest())
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.C1_IS_ON_ANOTHER_TASK_PLEASE_TRY_AGAIN_LATER);
-			sm.addString(partner.getName());
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_IS_ON_ANOTHER_TASK_PLEASE_TRY_AGAIN_LATER);
+			sm.Params.addString(partner.getName());
 			_player.sendPacket(sm);
 			return false;
 		}
@@ -108,7 +110,7 @@ public class Request
 	{
 		_isRequestor = isRequestor;
 		_isAnswerer = !isRequestor;
-		ThreadPool.schedule(this::clear, REQUEST_TIMEOUT * 1000);
+		ThreadPool.schedule(clear, REQUEST_TIMEOUT * 1000);
 	}
 	
 	/**

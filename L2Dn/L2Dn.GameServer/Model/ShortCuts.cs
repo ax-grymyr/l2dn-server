@@ -6,7 +6,7 @@ using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
-using Microsoft.VisualBasic.FileIO;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.Model;
@@ -132,18 +132,17 @@ public class ShortCuts : IRestorable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement =
-				con.prepareStatement(
-					"DELETE FROM character_shortcuts WHERE charId=? AND slot=? AND page=? AND class_index=?");
-			statement.setInt(1, _owner.getObjectId());
-			statement.setInt(2, shortcut.getSlot());
-			statement.setInt(3, shortcut.getPage());
-			statement.setInt(4, _owner.getClassIndex());
-			statement.execute();
+			int characterId = _owner.getObjectId();
+			int slot = shortcut.getSlot();
+			int page = shortcut.getPage();
+			int classIndex = _owner.getClassIndex();
+			ctx.CharacterShortCuts.Where(r =>
+					r.CharacterId == characterId && r.Slot == slot && r.Page == page && r.ClassIndex == classIndex)
+				.ExecuteDelete();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Could not delete character shortcut: " + e);
+			LOGGER.Error("Could not delete character shortcut: " + e);
 		}
 	}
 	
@@ -153,21 +152,18 @@ public class ShortCuts : IRestorable
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			using PreparedStatement statement = con.prepareStatement(
-				"SELECT charId, slot, page, type, shortcut_id, level, sub_level FROM character_shortcuts WHERE charId=? AND class_index=?");
-			statement.setInt(1, _owner.getObjectId());
-			statement.setInt(2, _owner.getClassIndex());
-			
-			using ResultSet rset = statement.executeQuery();
-			while (rset.next())
+			int characterId = _owner.getObjectId();
+			int classIndex = _owner.getClassIndex();
+			var query = ctx.CharacterShortCuts.Where(r => r.CharacterId == characterId && r.ClassIndex == classIndex);
+			foreach (var record in query)
 			{
-				int slot = rset.getInt("slot");
-				int page = rset.getInt("page");
-				int type = rset.getInt("type");
-				int id = rset.getInt("shortcut_id");
-				int level = rset.getInt("level");
-				int subLevel = rset.getInt("sub_level");
-				_shortCuts.put(slot + (page * MAX_SHORTCUTS_PER_BAR), new Shortcut(slot, page, ShortcutType.values()[type], id, level, subLevel, 1));
+				int slot = record.Slot;
+				int page = record.Page;
+				ShortcutType type = (ShortcutType)record.Type;
+				int id = record.ShortCutId;
+				int level = record.SkillLevel;
+				int subLevel = record.SkillSubLevel;
+				_shortCuts.put(slot + (page * MAX_SHORTCUTS_PER_BAR), new Shortcut(slot, page, type, id, level, subLevel, 1));
 			}
 		}
 		catch (Exception e)
