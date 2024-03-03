@@ -111,7 +111,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteSizedString(_player.getName());
 			writer.WriteByte(_player.isGM());
 			writer.WriteByte((byte)_player.getRace());
-			writer.WriteByte(_player.getAppearance().isFemale()); // sex
+			writer.WriteByte((byte)_player.getAppearance().getSex()); // sex
 			writer.WriteInt32((int)_player.getBaseTemplate().getClassId().GetRootClass());
 			writer.WriteInt32((int)_player.getClassId());
 			writer.WriteInt32(_player.getLevel()); // 270
@@ -248,13 +248,13 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteInt16((short)(32 + (_title.Length * 2)));
 			writer.WriteSizedString(_title);
 			writer.WriteInt16((short)_player.getPledgeType());
-			writer.WriteInt32(_player.getClanId());
-			writer.WriteInt32(_player.getClanCrestLargeId());
-			writer.WriteInt32(_player.getClanCrestId());
+			writer.WriteInt32(_player.getClanId() ?? 0);
+			writer.WriteInt32(_player.getClanCrestLargeId() ?? 0);
+			writer.WriteInt32(_player.getClanCrestId() ?? 0);
 			writer.WriteInt32((int)_player.getClanPrivileges());
 			writer.WriteByte(_player.isClanLeader());
-			writer.WriteInt32(_player.getAllyId());
-			writer.WriteInt32(_player.getAllyCrestId());
+			writer.WriteInt32(_player.getAllyId() ?? 0);
+			writer.WriteInt32(_player.getAllyCrestId() ?? 0);
 			writer.WriteByte(_player.isInMatchingRoom());
 		}
 		if (_helper.HasComponent(UserInfoType.SOCIAL))

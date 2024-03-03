@@ -7,16 +7,16 @@ public class RankingHistoryDataHolder
 {
 	private readonly int _rank;
 	private readonly long _exp;
-	private readonly long _day;
+	private readonly DateOnly _day;
 
-	public RankingHistoryDataHolder(long day, int rank, long exp)
+	public RankingHistoryDataHolder(DateOnly day, int rank, long exp)
 	{
 		_day = day;
 		_rank = rank;
 		_exp = exp;
 	}
 
-	public long getDay()
+	public DateOnly getDay()
 	{
 		return _day;
 	}

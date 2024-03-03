@@ -1,4 +1,6 @@
-﻿using L2Dn.GameServer.Model.Actor;
+﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Model.Actor;
+using L2Dn.Packets;
 using NLog;
 
 namespace L2Dn.GameServer.Model;
@@ -9,7 +11,7 @@ public class Mentee
 	
     private readonly int _objectId;
     private String _name;
-    private int _classId;
+    private CharacterClass _classId;
     private int _currentLevel;
 	
     public Mentee(int objectId)
@@ -26,16 +28,13 @@ public class Mentee
             try 
             {
                 using GameServerDbContext ctx = new();
-                using PreparedStatement statement =
-                    con.prepareStatement("SELECT char_name, level, base_class FROM characters WHERE charId = ?");
-                statement.setInt(1, _objectId);
-                    using ResultSet rset = statement.executeQuery();
-                    if (rset.next())
-                    {
-                        _name = rset.getString("char_name");
-                        _classId = rset.getInt("base_class");
-                        _currentLevel = rset.getInt("level");
-                    }
+                var record = ctx.Characters.SingleOrDefault(r => r.Id == _objectId);
+                if (record != null)
+                {
+                    _name = record.Name;
+                    _classId = record.BaseClass;
+                    _currentLevel = record.Level;
+                }
             }
             catch (Exception e)
             {
@@ -60,11 +59,11 @@ public class Mentee
         return _name;
     }
 	
-    public int getClassId()
+    public CharacterClass getClassId()
     {
-        if (isOnline() && (getPlayer().getClassId().getId() != _classId))
+        if (isOnline() && (getPlayer().getClassId() != _classId))
         {
-            _classId = getPlayer().getClassId().getId();
+            _classId = getPlayer().getClassId();
         }
         return _classId;
     }
@@ -85,15 +84,16 @@ public class Mentee
 	
     public bool isOnline()
     {
-        return (getPlayer() != null) && (getPlayer().isOnlineInt() > 0);
+        return (getPlayer() != null) && (getPlayer().isOnline());
     }
 	
-    public int isOnlineInt()
+    public CharacterOnlineStatus isOnlineInt()
     {
-        return isOnline() ? getPlayer().isOnlineInt() : 0;
+        return isOnline() ? getPlayer().getOnlineStatus() : CharacterOnlineStatus.Offline;
     }
 	
-    public void sendPacket(ServerPacket packet)
+    public void sendPacket<TPacket>(TPacket packet)
+        where TPacket: struct, IOutgoingPacket
     {
         if (isOnline())
         {

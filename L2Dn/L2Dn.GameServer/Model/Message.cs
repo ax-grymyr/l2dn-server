@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
@@ -255,7 +256,7 @@ public class Message
 	
 	public int getExpirationSeconds()
 	{
-		return (int) (_expiration / 1000);
+		return _expiration.getEpochSecond(); // TODO: can be wrong
 	}
 	
 	public bool isUnread()

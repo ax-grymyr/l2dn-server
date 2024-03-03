@@ -1,6 +1,8 @@
-﻿using L2Dn.GameServer.InstanceManagers;
+﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.Model;
@@ -13,7 +15,7 @@ public class RankingHistory
 	
 	private readonly Player _player;
 	private readonly List<RankingHistoryDataHolder> _data = new();
-	private long _nextUpdate = 0;
+	private DateTime _nextUpdate;
 	
 	public RankingHistory(Player player)
 	{
@@ -24,65 +26,65 @@ public class RankingHistory
 	{
 		int ranking = RankManager.getInstance().getPlayerGlobalRank(_player);
 		long exp = _player.getExp();
-		int today = (int) (System.currentTimeMillis() / 86400000L);
-		int oldestDay = (today - NUM_HISTORY_DAYS) + 1;
+		DateOnly today = DateOnly.FromDateTime(DateTime.Today);
+		DateOnly oldestDay = today.AddDays(-NUM_HISTORY_DAYS + 1);
 		
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			using PreparedStatement statement = con.prepareStatement(
-				"INSERT INTO character_ranking_history (charId, day, ranking, exp) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE ranking = ?, exp = ?");
-			using PreparedStatement deleteSt =
-				con.prepareStatement("DELETE FROM character_ranking_history WHERE charId = ? AND day < ?");
-			statement.setInt(1, _player.getObjectId());
-			statement.setInt(2, today);
-			statement.setInt(3, ranking);
-			statement.setLong(4, exp);
-			statement.setInt(5, ranking); // update
-			statement.setLong(6, exp); // update
-			statement.execute();
+			int characterId = _player.getObjectId();
+			var record = ctx.CharacterRankingHistory.SingleOrDefault(r => r.CharacterId == characterId && r.Date == today);
+			if (record is null)
+			{
+				record = new DbCharacterRankingHistory();
+				record.CharacterId = characterId;
+				record.Date = today;
+				ctx.CharacterRankingHistory.Add(record);
+			}
+
+			record.Ranking = ranking;
+			record.Exp = exp;
+			ctx.SaveChanges();
 			
 			// Delete old records
-			deleteSt.setInt(1, _player.getObjectId());
-			deleteSt.setInt(2, oldestDay);
-			deleteSt.execute();
+			ctx.CharacterRankingHistory.Where(r => r.CharacterId == characterId && r.Date < oldestDay).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Could not insert RankingCharHistory data: " + e);
+			LOGGER.Error("Could not insert RankingCharHistory data: " + e);
 		}
 	}
 	
 	public List<RankingHistoryDataHolder> getData()
 	{
-		long currentTime = System.currentTimeMillis();
+		DateTime currentTime = DateTime.UtcNow;
 		if (currentTime > _nextUpdate)
 		{
 			_data.Clear();
-			if (_nextUpdate == 0)
+			if (_nextUpdate == DateTime.MinValue) // TODO: wrong logic?
 			{
 				store(); // to update
 			}
-			_nextUpdate = currentTime + Config.CHAR_DATA_STORE_INTERVAL;
+			_nextUpdate = currentTime.AddMilliseconds(Config.CHAR_DATA_STORE_INTERVAL);
+			
 			try 
 			{
 				using GameServerDbContext ctx = new();
-				using PreparedStatement statement =
-					con.prepareStatement("SELECT * FROM character_ranking_history WHERE charId = ? ORDER BY day DESC");
-				statement.setInt(1, _player.getObjectId());
-				using ResultSet rset = statement.executeQuery();
-					while (rset.next())
-					{
-						int day = rset.getInt("day");
-						long timestamp = (day * 86400000L) + 86400000L;
-						int ranking = rset.getInt("ranking");
-						long exp = rset.getLong("exp");
-						_data.Add(new RankingHistoryDataHolder(timestamp / 1000, ranking, exp));
-					}
+				int characterId = _player.getObjectId();
+				var query = ctx.CharacterRankingHistory.Where(r => r.CharacterId == characterId)
+					.OrderByDescending(r => r.Date);
+
+				foreach (var record in query)
+				{
+					DateOnly day = record.Date;
+					int ranking = record.Ranking;
+					long exp = record.Exp;
+					_data.Add(new RankingHistoryDataHolder(day, ranking, exp));
+				}
 			}
 			catch (Exception e)
 			{
-				LOGGER.Warn("Could not get RankingCharHistory data: " + e);
+				LOGGER.Error("Could not get RankingCharHistory data: " + e);
 			}
 		}
 		return _data;

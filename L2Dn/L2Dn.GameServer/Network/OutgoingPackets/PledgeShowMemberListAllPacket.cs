@@ -55,7 +55,7 @@ public readonly struct PledgeShowMemberListAllPacket: IOutgoingPacket
         writer.WriteInt32(_clan.getCastleId() ?? 0);
         writer.WriteInt32(0);
         writer.WriteInt32(_clan.getHideoutId());
-        writer.WriteInt32(_clan.getFortId());
+        writer.WriteInt32(_clan.getFortId() ?? 0);
         writer.WriteInt32(_clan.getRank());
         writer.WriteInt32(_clan.getReputationScore());
         writer.WriteInt32(0); // 0
