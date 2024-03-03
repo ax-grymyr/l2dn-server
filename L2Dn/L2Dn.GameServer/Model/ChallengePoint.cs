@@ -11,12 +11,6 @@ public class ChallengePoint
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ChallengePoint));
 	
-	// Character enchant challenge points.
-	private const String INSERT_CHALLENGE_POINTS = "REPLACE INTO enchant_challenge_points (`charId`, `groupId`, `points`) VALUES (?, ?, ?)";
-	private const String RESTORE_CHALLENGE_POINTS = "SELECT * FROM enchant_challenge_points WHERE charId=?";
-	private const String INSERT_CHALLENGE_POINTS_RECHARGES = "REPLACE INTO enchant_challenge_points_recharges (`charId`, `groupId`, `optionIndex`, `count`) VALUES (?, ?, ?, ?)";
-	private const String RESTORE_CHALLENGE_POINTS_RECHARGES = "SELECT * FROM enchant_challenge_points_recharges WHERE charId=?";
-	
 	private readonly Player _owner;
 	private int _nowGroup;
 	private int _nowPoint;

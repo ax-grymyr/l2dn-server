@@ -21,11 +21,18 @@ public class ClientSettings
 		_player = player;
 		
 		String variable = _player.getVariables().getString(PlayerVariables.CLIENT_SETTINGS, "");
-		StatSet settings = variable.isEmpty()
-			? new StatSet()
-			: new StatSet(Arrays.stream(variable.Split(",")).map(entry => entry.split("=")).collect(
-				Collectors.toMap(entry => entry[0].replace("{", "").replace(" ", ""),
-					entry => entry[1].replace("}", "").replace(" ", ""))));
+
+		StatSet settings = new StatSet();
+		if (!string.IsNullOrEmpty(variable))
+		{
+			var values = variable.Split(",").Select(entry => entry.Split("=")).Select(entry =>
+				(entry[0].Replace("{", "").Replace(" ", ""), entry[1].Replace("}", "").Replace(" ", "")));
+
+			foreach (var val in values)
+			{
+				settings.set(val.Item1, val.Item2);
+			}
+		}
 		
 		_announceEnabled = settings.getBoolean("ANNOUNCE_ENABLED", true);
 		_partyRequestRestrictedFromOthers = settings.getBoolean("PARTY_REQUEST_RESTRICTED_FROM_OTHERS", false);
