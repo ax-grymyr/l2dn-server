@@ -1,5 +1,7 @@
 ﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.Model;
@@ -13,29 +15,24 @@ public class Couple
 	private int _player2Id = 0;
 	private bool _maried = false;
 	private DateTime _affiancedDate;
-	private DateTime _weddingDate;
+	private DateTime? _weddingDate;
 	
 	public Couple(int coupleId)
 	{
 		_id = coupleId;
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM mods_wedding WHERE id = ?");
-			ps.setInt(1, _id);
-			ResultSet rs = ps.executeQuery();
-				while (rs.next())
-				{
-					_player1Id = rs.getInt("player1Id");
-					_player2Id = rs.getInt("player2Id");
-					_maried = rs.getBoolean("married");
-					_affiancedDate = Calendar.getInstance();
-					_affiancedDate.setTimeInMillis(rs.getLong("affianceDate"));
-					
-					_weddingDate = Calendar.getInstance();
-					_weddingDate.setTimeInMillis(rs.getLong("weddingDate"));
-				}
+			var record = ctx.CharacterCouples.SingleOrDefault(r => r.Id == _id);
+			if (record != null)
+			{
+				_player1Id = record.Character1Id;
+				_player2Id = record.Character2Id;
+				_maried = record.Married;
+				_affiancedDate = record.AffianceDate;
+				_weddingDate = record.WeddingDate;
+			}
 		}
 		catch (Exception e)
 		{
@@ -45,29 +42,28 @@ public class Couple
 	
 	public Couple(Player player1, Player player2)
 	{
-		long currentTime = System.currentTimeMillis();
 		_player1Id = player1.getObjectId();
 		_player2Id = player2.getObjectId();
 		
-		_affiancedDate = Calendar.getInstance();
-		_affiancedDate.setTimeInMillis(currentTime);
-		
-		_weddingDate = Calendar.getInstance();
-		_weddingDate.setTimeInMillis(currentTime);
+		_affiancedDate = DateTime.UtcNow;
+		_weddingDate = null;
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(
-				"INSERT INTO mods_wedding (id, player1Id, player2Id, married, affianceDate, weddingDate) VALUES (?, ?, ?, ?, ?, ?)");
 			_id = IdManager.getInstance().getNextId();
-			ps.setInt(1, _id);
-			ps.setInt(2, _player1Id);
-			ps.setInt(3, _player2Id);
-			ps.setBoolean(4, false);
-			ps.setLong(5, _affiancedDate.getTimeInMillis());
-			ps.setLong(6, _weddingDate.getTimeInMillis());
-			ps.execute();
+
+			using GameServerDbContext ctx = new();
+			ctx.CharacterCouples.Add(new DbCharacterCouple()
+			{
+				Id = _id,
+				Character1Id = _player1Id,
+				Character2Id = _player2Id,
+				Married = false,
+				AffianceDate = _affiancedDate,
+				WeddingDate = _weddingDate
+			});
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -79,15 +75,12 @@ public class Couple
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement("UPDATE mods_wedding set married = ?, weddingDate = ? where id = ?");
-			ps.setBoolean(1, true);
-			_weddingDate = Calendar.getInstance();
-			ps.setLong(2, _weddingDate.getTimeInMillis());
-			ps.setInt(3, _id);
-			ps.execute();
+			_weddingDate = DateTime.UtcNow;
 			_maried = true;
+
+			using GameServerDbContext ctx = new();
+			ctx.CharacterCouples.Where(r => r.Id == _id).ExecuteUpdate(s =>
+				s.SetProperty(r => r.Married, true).SetProperty(r => r.WeddingDate, _weddingDate));
 		}
 		catch (Exception e)
 		{
@@ -100,9 +93,7 @@ public class Couple
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM mods_wedding WHERE id=?");
-			ps.setInt(1, _id);
-			ps.execute();
+			ctx.CharacterCouples.Where(r => r.Id == _id).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
@@ -135,7 +126,7 @@ public class Couple
 		return _affiancedDate;
 	}
 	
-	public DateTime getWeddingDate()
+	public DateTime? getWeddingDate()
 	{
 		return _weddingDate;
 	}
