@@ -1,40 +1,45 @@
 ﻿using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
-internal readonly struct NewCharacterSuccessPacket(CharacterClass[] classes): IOutgoingPacket
+public readonly struct NewCharacterSuccessPacket: IOutgoingPacket
 {
+    private readonly List<PlayerTemplate> _templates;
+
+    public NewCharacterSuccessPacket(List<PlayerTemplate> templates)
+    {
+        _templates = templates;
+    }
+
     public void WriteContent(PacketBitWriter writer)
     {
-        writer.WriteByte(0x0D); // packet code
+        writer.WritePacketCode(OutgoingPacketCodes.NEW_CHARACTER_SUCCESS);
 
-        writer.WriteInt32(classes.Length);
-        foreach (CharacterClass characterClass in classes)
+        writer.WriteInt32(_templates.Count);
+        foreach (PlayerTemplate chr in _templates)
         {
-            CharacterClassInfo classInfo = StaticData.Templates[characterClass];
-            CharacterSpecData spec = StaticData.Templates[classInfo.Race][classInfo.Spec];
-            CharacterBaseStats baseStats = spec.BaseStats;
-
-            writer.WriteInt32((int)classInfo.Race);
-            writer.WriteInt32((int)characterClass);
+            // TODO: Unhardcode these
+            writer.WriteInt32((int)chr.getRace());
+            writer.WriteInt32((int)chr.getClassId());
             writer.WriteInt32(99);
-            writer.WriteInt32(baseStats.Str);
+            writer.WriteInt32(chr.getBaseSTR());
             writer.WriteInt32(1);
             writer.WriteInt32(99);
-            writer.WriteInt32(baseStats.Dex);
+            writer.WriteInt32(chr.getBaseDEX());
             writer.WriteInt32(1);
             writer.WriteInt32(99);
-            writer.WriteInt32(baseStats.Con);
+            writer.WriteInt32(chr.getBaseCON());
             writer.WriteInt32(1);
             writer.WriteInt32(99);
-            writer.WriteInt32(baseStats.Int);
+            writer.WriteInt32(chr.getBaseINT());
             writer.WriteInt32(1);
             writer.WriteInt32(99);
-            writer.WriteInt32(baseStats.Wit);
+            writer.WriteInt32(chr.getBaseWIT());
             writer.WriteInt32(1);
             writer.WriteInt32(99);
-            writer.WriteInt32(baseStats.Men);
+            writer.WriteInt32(chr.getBaseMEN());
             writer.WriteInt32(1);
         }
     }

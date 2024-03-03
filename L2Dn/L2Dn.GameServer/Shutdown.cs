@@ -332,7 +332,7 @@ public class Shutdown
 		// ensure all services are stopped
 		try
 		{
-			GameTimeTaskManager.getInstance().interrupt();
+			GameTimeTaskManager.getInstance().stop();
 			LOGGER.Info("Game Time Task Manager: Thread interruped(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		}
 		catch (Exception t)
@@ -492,7 +492,8 @@ public class Shutdown
 	{
 		foreach (Player player in World.getInstance().getPlayers())
 		{
-			Disconnection.of(player).defaultSequence(ServerClose.STATIC_PACKET);
+			ServerClosePacket packet = ServerClosePacket.STATIC_PACKET;
+			Disconnection.of(player).defaultSequence(ref packet);
 		}
 	}
 	

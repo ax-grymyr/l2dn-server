@@ -130,7 +130,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 		writer.WriteInt32(_objId); // Confirmed
 		writer.WriteString(_player.getAppearance().getVisibleName()); // Confirmed
 		writer.WriteInt16((short)_player.getRace()); // Confirmed
-		writer.WriteByte(_player.getAppearance().isFemale()); // Confirmed
+		writer.WriteByte((byte)_player.getAppearance().getSex()); // Confirmed
 		writer.WriteInt32((int)_player.getBaseTemplate().getClassId().GetRootClass());
 
 		foreach (int slot in PAPERDOLL_ORDER)
@@ -172,10 +172,10 @@ public struct CharacterInfoPacket: IOutgoingPacket
 		writer.WriteInt32(_player.getVisualHairColor());
 		writer.WriteInt32(_player.getVisualFace());
 		writer.WriteString(_gmSeeInvis ? "Invisible" : _player.getAppearance().getVisibleTitle());
-		writer.WriteInt32(_player.getAppearance().getVisibleClanId());
-		writer.WriteInt32(_player.getAppearance().getVisibleClanCrestId());
-		writer.WriteInt32(_player.getAppearance().getVisibleAllyId());
-		writer.WriteInt32(_player.getAppearance().getVisibleAllyCrestId());
+		writer.WriteInt32(_player.getAppearance().getVisibleClanId() ?? 0);
+		writer.WriteInt32(_player.getAppearance().getVisibleClanCrestId() ?? 0);
+		writer.WriteInt32(_player.getAppearance().getVisibleAllyId() ?? 0);
+		writer.WriteInt32(_player.getAppearance().getVisibleAllyCrestId() ?? 0);
 		writer.WriteByte(!_player.isSitting()); // Confirmed
 		writer.WriteByte(_player.isRunning()); // Confirmed
 		writer.WriteByte(_player.isInCombat()); // Confirmed
@@ -198,7 +198,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 		writer.WriteInt32(0); // TODO: Find me!
 		writer.WriteByte((byte)(_player.isMounted() ? 0 : _enchantLevel)); // Confirmed
 		writer.WriteByte((byte)_player.getTeam()); // Confirmed
-		writer.WriteInt32(_player.getClanCrestLargeId());
+		writer.WriteInt32(_player.getClanCrestLargeId() ?? 0);
 		writer.WriteByte(_player.isNoble()); // Confirmed
 		writer.WriteByte((byte)(_player.isHero() || (_player.isGM() && Config.GM_HERO_AURA)
 			? 2
@@ -219,11 +219,11 @@ public struct CharacterInfoPacket: IOutgoingPacket
 			writer.WriteInt32(0);
 		}
 
-		writer.WriteInt32(_player.getAppearance().getNameColor()); // Confirmed
+		writer.WriteInt32(_player.getAppearance().getNameColor().Value); // Confirmed
 		writer.WriteInt32(_heading); // Confirmed
 		writer.WriteByte((byte)_player.getPledgeClass());
 		writer.WriteInt16((short)_player.getPledgeType());
-		writer.WriteInt32(_player.getAppearance().getTitleColor()); // Confirmed
+		writer.WriteInt32(_player.getAppearance().getTitleColor().Value); // Confirmed
 		writer.WriteByte((byte)(_player.isCursedWeaponEquipped()
 			? CursedWeaponsManager.getInstance().getLevel(_player.getCursedWeaponEquippedId())
 			: 0));

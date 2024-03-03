@@ -196,15 +196,15 @@ public class TaskManager // TODO: needs to be completely rewritten
 			{
 				try
 				{
-					Date desired = DateFormat.getInstance().parse(task.getParams()[0]);
-					TimeSpan diff = desired.getTime() - DateTime.UtcNow;
+					DateTime desired = DateTime.Parse(task.getParams()[0]);
+					TimeSpan diff = desired - DateTime.UtcNow;
 					if (diff >= TimeSpan.Zero)
 					{
 						task.scheduled = ThreadPool.schedule(task, diff);
 						return true;
 					}
 					
-					LOGGER.Info(GetType().Name + ": Task " + task.getId() + " is obsoleted.");
+					LOGGER.Info(GetType().Name + ": Task " + task.getId() + " is obsolete.");
 				}
 				catch (Exception e)
 				{
@@ -233,7 +233,7 @@ public class TaskManager // TODO: needs to be completely rewritten
 					return false;
 				}
 				
-				DateTime check = task.getLastActivation() + interval;
+				DateTime check = task.getLastActivation() ?? DateTime.UtcNow + interval;
 				
 				DateTime min = DateTime.Now;
 				try
@@ -253,6 +253,7 @@ public class TaskManager // TODO: needs to be completely rewritten
 				{
 					delay += interval;
 				}
+				
 				task.scheduled = ThreadPool.scheduleAtFixedRate(task, delay, interval);
 				return true;
 			}

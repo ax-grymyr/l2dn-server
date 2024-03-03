@@ -1,4 +1,6 @@
-﻿using L2Dn.GameServer.Model.ItemContainers;
+﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Variables;
 
 namespace L2Dn.GameServer.Model;
@@ -11,37 +13,37 @@ namespace L2Dn.GameServer.Model;
 public class CharSelectInfoPackage
 {
 	private String _name;
-	private int _objectId = 0;
-	private long _exp = 0;
-	private long _sp = 0;
-	private int _clanId = 0;
-	private int _race = 0;
-	private int _classId = 0;
-	private int _baseClassId = 0;
-	private long _deleteTimer = 0;
-	private long _lastAccess = 0;
-	private int _face = 0;
-	private int _hairStyle = 0;
-	private int _hairColor = 0;
-	private int _sex = 0;
+	private int _objectId;
+	private long _exp;
+	private long _sp;
+	private int? _clanId;
+	private Race _race;
+	private CharacterClass _classId;
+	private CharacterClass _baseClassId;
+	private DateTime? _deleteTimer;
+	private DateTime? _lastAccess;
+	private int _face;
+	private int _hairStyle;
+	private int _hairColor;
+	private Sex _sex;
 	private int _level = 1;
-	private int _maxHp = 0;
-	private double _currentHp = 0;
-	private int _maxMp = 0;
-	private double _currentMp = 0;
+	private int _maxHp;
+	private double _currentHp;
+	private int _maxMp;
+	private double _currentMp;
 	private readonly int[][] _paperdoll;
-	private int _reputation = 0;
-	private int _pkKills = 0;
-	private int _pvpKills = 0;
+	private int _reputation;
+	private int _pkKills;
+	private int _pvpKills;
 	private VariationInstance _augmentation;
-	private int _x = 0;
-	private int _y = 0;
-	private int _z = 0;
-	private String _htmlPrefix = null;
-	private bool _isGood = false;
-	private bool _isEvil = false;
-	private int _vitalityPoints = 0;
-	private int _accessLevel = 0;
+	private int _x;
+	private int _y;
+	private int _z;
+	private String _htmlPrefix;
+	private bool _isGood;
+	private bool _isEvil;
+	private int _vitalityPoints;
+	private int _accessLevel;
 	private bool _isNoble;
 	private readonly PlayerVariables _vars;
 
@@ -109,62 +111,62 @@ public class CharSelectInfoPackage
 		_isEvil = true;
 	}
 
-	public int getClanId()
+	public int? getClanId()
 	{
 		return _clanId;
 	}
 
-	public void setClanId(int clanId)
+	public void setClanId(int? clanId)
 	{
 		_clanId = clanId;
 	}
 
-	public int getClassId()
+	public CharacterClass getClassId()
 	{
 		return _classId;
 	}
 
-	public int getBaseClassId()
+	public CharacterClass getBaseClassId()
 	{
 		return _baseClassId;
 	}
 
-	public void setClassId(int classId)
+	public void setClassId(CharacterClass classId)
 	{
 		_classId = classId;
 	}
 
-	public void setBaseClassId(int baseClassId)
+	public void setBaseClassId(CharacterClass baseClassId)
 	{
 		// DK Human
-		if ((baseClassId >= 196) && (baseClassId <= 199))
+		if ((baseClassId >= (CharacterClass)196) && (baseClassId <= (CharacterClass)199))
 		{
-			_baseClassId = 196;
+			_baseClassId = (CharacterClass)196;
 		}
 		// DK Elf
-		else if ((baseClassId >= 200) && (baseClassId <= 203))
+		else if ((baseClassId >= (CharacterClass)200) && (baseClassId <= (CharacterClass)203))
 		{
-			_baseClassId = 200;
+			_baseClassId = (CharacterClass)200;
 		}
 		// DK Dark Elf
-		else if ((baseClassId >= 204) && (baseClassId <= 207))
+		else if ((baseClassId >= (CharacterClass)204) && (baseClassId <= (CharacterClass)207))
 		{
-			_baseClassId = 204;
+			_baseClassId = (CharacterClass)204;
 		}
 		// Vanguard
-		else if ((baseClassId >= 217) && (baseClassId <= 220))
+		else if ((baseClassId >= (CharacterClass)217) && (baseClassId <= (CharacterClass)220))
 		{
-			_baseClassId = 217;
+			_baseClassId = (CharacterClass)217;
 		}
 		// Assassin Male
-		else if ((baseClassId >= 221) && (baseClassId <= 224))
+		else if ((baseClassId >= (CharacterClass)221) && (baseClassId <= (CharacterClass)224))
 		{
-			_baseClassId = 221;
+			_baseClassId = (CharacterClass)221;
 		}
 		// Assassin Female
-		else if ((baseClassId >= 225) && (baseClassId <= 228))
+		else if ((baseClassId >= (CharacterClass)225) && (baseClassId <= (CharacterClass)228))
 		{
-			_baseClassId = 225;
+			_baseClassId = (CharacterClass)225;
 		}
 		// Other Classes
 		else
@@ -193,22 +195,22 @@ public class CharSelectInfoPackage
 		_currentMp = currentMp;
 	}
 
-	public long getDeleteTimer()
+	public DateTime? getDeleteTimer()
 	{
 		return _deleteTimer;
 	}
 
-	public void setDeleteTimer(long deleteTimer)
+	public void setDeleteTimer(DateTime? deleteTimer)
 	{
 		_deleteTimer = deleteTimer;
 	}
 
-	public long getLastAccess()
+	public DateTime? getLastAccess()
 	{
 		return _lastAccess;
 	}
 
-	public void setLastAccess(long lastAccess)
+	public void setLastAccess(DateTime? lastAccess)
 	{
 		_lastAccess = lastAccess;
 	}
@@ -308,22 +310,22 @@ public class CharSelectInfoPackage
 		_name = name;
 	}
 
-	public int getRace()
+	public Race getRace()
 	{
 		return _race;
 	}
 
-	public void setRace(int race)
+	public void setRace(Race race)
 	{
 		_race = race;
 	}
 
-	public int getSex()
+	public Sex getSex()
 	{
 		return _sex;
 	}
 
-	public void setSex(int sex)
+	public void setSex(Sex sex)
 	{
 		_sex = sex;
 	}

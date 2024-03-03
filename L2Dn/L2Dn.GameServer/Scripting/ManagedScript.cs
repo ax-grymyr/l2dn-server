@@ -11,13 +11,13 @@ public abstract class ManagedScript
     private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ManagedScript));
 
     private readonly string _scriptFile; // path
-    private long _lastLoadTime;
+    private DateTime _lastLoadTime;
     private bool _isActive;
 
     public ManagedScript()
     {
         _scriptFile = ScriptEngineManager.getInstance().getCurrentLoadingScript();
-        setLastLoadTime(System.currentTimeMillis());
+        setLastLoadTime(DateTime.UtcNow);
     }
 
     /**
@@ -62,7 +62,7 @@ public abstract class ManagedScript
     /**
      * @param lastLoadTime The lastLoadTime to set.
      */
-    protected void setLastLoadTime(long lastLoadTime)
+    protected void setLastLoadTime(DateTime lastLoadTime)
     {
         _lastLoadTime = lastLoadTime;
     }
@@ -70,7 +70,7 @@ public abstract class ManagedScript
     /**
      * @return Returns the lastLoadTime.
      */
-    protected long getLastLoadTime()
+    protected DateTime getLastLoadTime()
     {
         return _lastLoadTime;
     }

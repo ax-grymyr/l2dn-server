@@ -1,6 +1,6 @@
 ﻿namespace L2Dn.GameServer.Network.OutgoingPackets;
 
-internal enum CharacterDeleteFailReason
+public enum CharacterDeleteFailReason
 {
     None,
     Unknown,

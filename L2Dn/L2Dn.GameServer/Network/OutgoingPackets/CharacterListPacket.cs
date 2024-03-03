@@ -1,58 +1,184 @@
-﻿using L2Dn.GameServer.Model;
+﻿using L2Dn.Extensions;
+using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.ItemContainers;
+using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.Packets;
+using NLog;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
-internal readonly struct CharacterListPacket(
-	string login,
-	int playKey1,
-	List<Character> characters,
-	Character? lastSelectedCharacter): IOutgoingPacket
+public readonly struct CharacterListPacket: IOutgoingPacket
 {
+	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CharacterListPacket));
+	
+	private static readonly  int[] PAPERDOLL_ORDER = new int[]
+	{
+		Inventory.PAPERDOLL_UNDER,
+		Inventory.PAPERDOLL_REAR,
+		Inventory.PAPERDOLL_LEAR,
+		Inventory.PAPERDOLL_NECK,
+		Inventory.PAPERDOLL_RFINGER,
+		Inventory.PAPERDOLL_LFINGER,
+		Inventory.PAPERDOLL_HEAD,
+		Inventory.PAPERDOLL_RHAND,
+		Inventory.PAPERDOLL_LHAND,
+		Inventory.PAPERDOLL_GLOVES,
+		Inventory.PAPERDOLL_CHEST,
+		Inventory.PAPERDOLL_LEGS,
+		Inventory.PAPERDOLL_FEET,
+		Inventory.PAPERDOLL_CLOAK,
+		Inventory.PAPERDOLL_RHAND,
+		Inventory.PAPERDOLL_HAIR,
+		Inventory.PAPERDOLL_HAIR2,
+		Inventory.PAPERDOLL_RBRACELET,
+		Inventory.PAPERDOLL_LBRACELET,
+		Inventory.PAPERDOLL_AGATHION1, // 152
+		Inventory.PAPERDOLL_AGATHION2, // 152
+		Inventory.PAPERDOLL_AGATHION3, // 152
+		Inventory.PAPERDOLL_AGATHION4, // 152
+		Inventory.PAPERDOLL_AGATHION5, // 152
+		Inventory.PAPERDOLL_DECO1,
+		Inventory.PAPERDOLL_DECO2,
+		Inventory.PAPERDOLL_DECO3,
+		Inventory.PAPERDOLL_DECO4,
+		Inventory.PAPERDOLL_DECO5,
+		Inventory.PAPERDOLL_DECO6,
+		Inventory.PAPERDOLL_BELT,
+		Inventory.PAPERDOLL_BROOCH,
+		Inventory.PAPERDOLL_BROOCH_JEWEL1,
+		Inventory.PAPERDOLL_BROOCH_JEWEL2,
+		Inventory.PAPERDOLL_BROOCH_JEWEL3,
+		Inventory.PAPERDOLL_BROOCH_JEWEL4,
+		Inventory.PAPERDOLL_BROOCH_JEWEL5,
+		Inventory.PAPERDOLL_BROOCH_JEWEL6,
+		Inventory.PAPERDOLL_ARTIFACT_BOOK, // 152
+		Inventory.PAPERDOLL_ARTIFACT1, // 152
+		Inventory.PAPERDOLL_ARTIFACT2, // 152
+		Inventory.PAPERDOLL_ARTIFACT3, // 152
+		Inventory.PAPERDOLL_ARTIFACT4, // 152
+		Inventory.PAPERDOLL_ARTIFACT5, // 152
+		Inventory.PAPERDOLL_ARTIFACT6, // 152
+		Inventory.PAPERDOLL_ARTIFACT7, // 152
+		Inventory.PAPERDOLL_ARTIFACT8, // 152
+		Inventory.PAPERDOLL_ARTIFACT9, // 152
+		Inventory.PAPERDOLL_ARTIFACT10, // 152
+		Inventory.PAPERDOLL_ARTIFACT11, // 152
+		Inventory.PAPERDOLL_ARTIFACT12, // 152
+		Inventory.PAPERDOLL_ARTIFACT13, // 152
+		Inventory.PAPERDOLL_ARTIFACT14, // 152
+		Inventory.PAPERDOLL_ARTIFACT15, // 152
+		Inventory.PAPERDOLL_ARTIFACT16, // 152
+		Inventory.PAPERDOLL_ARTIFACT17, // 152
+		Inventory.PAPERDOLL_ARTIFACT18, // 152
+		Inventory.PAPERDOLL_ARTIFACT19, // 152
+		Inventory.PAPERDOLL_ARTIFACT20, // 152
+		Inventory.PAPERDOLL_ARTIFACT21 // 152
+	};
+	private static readonly int[] PAPERDOLL_ORDER_VISUAL_ID = new int[]
+	{
+		Inventory.PAPERDOLL_RHAND,
+		Inventory.PAPERDOLL_LHAND,
+		Inventory.PAPERDOLL_GLOVES,
+		Inventory.PAPERDOLL_CHEST,
+		Inventory.PAPERDOLL_LEGS,
+		Inventory.PAPERDOLL_FEET,
+		Inventory.PAPERDOLL_RHAND,
+		Inventory.PAPERDOLL_HAIR,
+		Inventory.PAPERDOLL_HAIR2,
+	};
+
+	private readonly int _accountId;
+	private readonly string _accountName;
+	private readonly int _sessionId;
+	private readonly int _activeId;
+	private readonly List<CharSelectInfoPackage> _characterPackages;
+	
+	/**
+	 * Constructor for CharSelectionInfo.
+	 * @param loginName
+	 * @param sessionId
+	 */
+	public CharacterListPacket(int accountId, string accountName, int sessionId)
+	{
+		_accountId = accountId;
+		_accountName = accountName;
+		_sessionId = sessionId;
+		_characterPackages = loadCharacterSelectInfo(accountId);
+		_activeId = -1;
+	}
+	
+	public CharacterListPacket(int accountId, string accountName, int sessionId, int activeId)
+	{
+		_accountId = accountId;
+		_accountName = accountName;
+		_sessionId = sessionId;
+		_characterPackages = loadCharacterSelectInfo(accountId);
+		_activeId = activeId;
+	}
+	
+	public List<CharSelectInfoPackage> getCharInfo()
+	{
+		return _characterPackages;
+	}
+	
 	public void WriteContent(PacketBitWriter writer)
 	{
-		writer.WriteByte(0x09); // packet code (0x13 in C4)
-
-		writer.WriteInt32(characters.Count); // character count
-
-		// Can prevent players from creating new characters (if 0); (if 1, the client will ask if chars may be created (0x13) Response: (0x0D) )
-		writer.WriteInt32(7); // max characters per account
-		writer.WriteByte(0); // if 1 can't create new char
-		writer.WriteByte(2); // 0=can't play, 1=can play free until level 85, 2=100% free play
+		writer.WritePacketCode(OutgoingPacketCodes.CHARACTER_SELECTION_INFO);
+		
+		int size = _characterPackages.Count;
+		writer.WriteInt32(size); // Created character count
+		writer.WriteInt32(Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT); // Can prevent players from creating new characters (if 0); (if 1, the client will ask if chars may be created (0x13) Response: (0x0D) )
+		writer.WriteByte(size == Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT); // if 1 can't create new char
+		writer.WriteByte(1); // 0=can't play, 1=can play free until level 85, 2=100% free play
 		writer.WriteInt32(2); // if 1, Korean client
 		writer.WriteByte(0); // Gift message for inactive accounts // 152
 		writer.WriteByte(0); // Balthus Knights, if 1 suggests premium account
-
-		foreach (Character character in characters)
+		
+		DateTime? lastAccess = default;
+		int activeId = _activeId;
+		if (activeId == -1)
 		{
-			bool selected = character == lastSelectedCharacter;
-			CharacterClass characterClass = character.Class;
-			CharacterClassInfo classInfo = StaticData.Templates[characterClass];
-			(int level, decimal percents) = StaticData.Levels.GetLevelForExp(character.Exp);
-
-			writer.WriteString(character.Name); // character name
-			writer.WriteInt32(character.Id); // character id
-			writer.WriteString(login); // login
-			writer.WriteInt32(playKey1);
-			writer.WriteInt32(0); // clan id
-			writer.WriteInt32(0); // builder level ???
-			writer.WriteInt32((int)character.Sex); // sex
-			writer.WriteInt32((int)classInfo.Race); // race
-			writer.WriteInt32((int)classInfo.BaseClass.Class); // base class id
-			writer.WriteInt32(1); // server id
-
-			writer.WriteInt32(character.LocationX); // x
-			writer.WriteInt32(character.LocationY); // y
-			writer.WriteInt32(character.LocationZ); // z
-			writer.WriteDouble(character.CurrentHp); // current HP
-			writer.WriteDouble(character.CurrentMp); // current MP
-			writer.WriteInt64(character.Sp); // SP
-			writer.WriteInt64(character.Exp); // EXP
-			writer.WriteDouble((double)percents); // percents
-			writer.WriteInt32(level); // level
-			writer.WriteInt32(character.Reputation); // karma
-			writer.WriteInt32(character.PkCounter); // pk kills
-			writer.WriteInt32(character.PvpCounter); // pvp kills
+			for (int i = 0; i < size; i++)
+			{
+				if (lastAccess < _characterPackages[i].getLastAccess())
+				{
+					lastAccess = _characterPackages[i].getLastAccess();
+					activeId = i;
+				}
+			}
+		}
+		
+		for (int i = 0; i < size; i++)
+		{
+			CharSelectInfoPackage charInfoPackage = _characterPackages[i];
+			writer.WriteString(charInfoPackage.getName()); // Character name
+			writer.WriteInt32(charInfoPackage.getObjectId()); // Character ID
+			writer.WriteString(_accountName); // Account name
+			writer.WriteInt32(_sessionId); // Account ID
+			writer.WriteInt32(0); // Clan ID
+			writer.WriteInt32(0); // Builder level
+			writer.WriteInt32((int)charInfoPackage.getSex()); // Sex
+			writer.WriteInt32((int)charInfoPackage.getRace()); // Race
+			writer.WriteInt32((int)charInfoPackage.getBaseClassId());
+			writer.WriteInt32(Config.SERVER_ID);
+			writer.WriteInt32(charInfoPackage.getX());
+			writer.WriteInt32(charInfoPackage.getY());
+			writer.WriteInt32(charInfoPackage.getZ());
+			writer.WriteDouble(charInfoPackage.getCurrentHp());
+			writer.WriteDouble(charInfoPackage.getCurrentMp());
+			writer.WriteInt64(charInfoPackage.getSp());
+			writer.WriteInt64(charInfoPackage.getExp());
+			writer.WriteDouble((float) (charInfoPackage.getExp() - ExperienceData.getInstance().getExpForLevel(charInfoPackage.getLevel())) / (ExperienceData.getInstance().getExpForLevel(charInfoPackage.getLevel() + 1) - ExperienceData.getInstance().getExpForLevel(charInfoPackage.getLevel())));
+			writer.WriteInt32(charInfoPackage.getLevel());
+			writer.WriteInt32(charInfoPackage.getReputation());
+			writer.WriteInt32(charInfoPackage.getPkKills());
+			writer.WriteInt32(charInfoPackage.getPvPKills());
 			writer.WriteInt32(0);
 			writer.WriteInt32(0);
 			writer.WriteInt32(0);
@@ -62,84 +188,221 @@ internal readonly struct CharacterListPacket(
 			writer.WriteInt32(0);
 			writer.WriteInt32(0); // Ertheia
 			writer.WriteInt32(0); // Ertheia
-
-			for (int i = 0; i < 60; i++)
-				writer.WriteInt32(0); // clothes
-
-			for (int i = 0; i < 9; i++)
-				writer.WriteInt32(0); // clothes
-
-			// writer.WriteInt32(charInfoPackage.getPaperdollObjectId(Inventory.PAPERDOLL_UNDER));
-			// writer.WriteInt32(charInfoPackage.getPaperdollObjectId(Inventory.PAPERDOLL_REAR));
-			// writer.WriteInt32(charInfoPackage.getPaperdollObjectId(Inventory.PAPERDOLL_LEAR));
-			// writer.WriteInt32(charInfoPackage.getPaperdollObjectId(Inventory.PAPERDOLL_NECK));
-			// writer.WriteInt32(charInfoPackage.getPaperdollObjectId(Inventory.PAPERDOLL_RFINGER));
-			// writer.WriteInt32(charInfoPackage.getPaperdollObjectId(Inventory.PAPERDOLL_LFINGER));
-			// writer.WriteInt32(charInfoPackage.getPaperdollObjectId(Inventory.PAPERDOLL_HEAD));
-			// writer.WriteInt32(charInfoPackage.getPaperdollObjectId(Inventory.PAPERDOLL_RHAND));
-			// writer.WriteInt32(charInfoPackage.getPaperdollObjectId(Inventory.PAPERDOLL_LHAND));
-			// writer.WriteInt32(charInfoPackage.getPaperdollObjectId(Inventory.PAPERDOLL_GLOVES));
-			// writer.WriteInt32(charInfoPackage.getPaperdollObjectId(Inventory.PAPERDOLL_CHEST));
-			// writer.WriteInt32(charInfoPackage.getPaperdollObjectId(Inventory.PAPERDOLL_LEGS));
-			// writer.WriteInt32(charInfoPackage.getPaperdollObjectId(Inventory.PAPERDOLL_FEET));
-			// writer.WriteInt32(charInfoPackage.getPaperdollObjectId(Inventory.PAPERDOLL_BACK));
-			// writer.WriteInt32(charInfoPackage.getPaperdollObjectId(Inventory.PAPERDOLL_LRHAND));
-			// writer.WriteInt32(charInfoPackage.getPaperdollObjectId(Inventory.PAPERDOLL_HAIR));
-			// writer.WriteInt32(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_UNDER));
-			// writer.WriteInt32(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_REAR));
-			// writer.WriteInt32(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_LEAR));
-			// writer.WriteInt32(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_NECK));
-			// writer.WriteInt32(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_RFINGER));
-			// writer.WriteInt32(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_LFINGER));
-			// writer.WriteInt32(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_HEAD));
-			// writer.WriteInt32(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_RHAND));
-			// writer.WriteInt32(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_LHAND));
-			// writer.WriteInt32(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_GLOVES));
-			// writer.WriteInt32(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_CHEST));
-			// writer.WriteInt32(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_LEGS));
-			// writer.WriteInt32(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_FEET));
-			// writer.WriteInt32(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_BACK));
-			// writer.WriteInt32(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_LRHAND));
-			// writer.WriteInt32(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_HAIR));
-
-			writer.WriteInt16(0); // Upper Body enchant level
-			writer.WriteInt16(0); // Lower Body enchant level
-			writer.WriteInt16(0); // Headgear enchant level
-			writer.WriteInt16(0); // Gloves enchant level
-			writer.WriteInt16(0); // Boots enchant level
-
-			writer.WriteInt32(character.HairStyle); // hair style
-			writer.WriteInt32(character.HairColor); // hair color
-			writer.WriteInt32(character.Face); // face
-			writer.WriteDouble(character.MaxHp); // hp max
-			writer.WriteDouble(character.MaxMp); // mp max
-			writer.WriteInt32(0); // seconds left before character deletion (0 - not deleting, -1 - char banned)
-			writer.WriteInt32((int)characterClass); // class id
-			writer.WriteInt32(selected ? 1 : 0); // 1 - selected, 0 - not selected (c3 auto-select char)
-			writer.WriteByte(0); // enchant effect 0..127
-			writer.WriteInt32(0); // augmentation options 1
-			writer.WriteInt32(0); // augmentation options 2
-			writer.WriteInt32(
-				0); // Transformation: Currently on retail when you are on character select you don't see your transformation.
+			foreach (int slot in PAPERDOLL_ORDER)
+			{
+				writer.WriteInt32(charInfoPackage.getPaperdollItemId(slot));
+			}
+			foreach (int slot in PAPERDOLL_ORDER_VISUAL_ID)
+			{
+				writer.WriteInt32(charInfoPackage.getPaperdollItemVisualId(slot));
+			}
+			
+			writer.WriteInt16((short)charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_CHEST)); // Upper Body enchant level
+			writer.WriteInt16((short)charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_LEGS)); // Lower Body enchant level
+			writer.WriteInt16((short)charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_HEAD)); // Headgear enchant level
+			writer.WriteInt16((short)charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_GLOVES)); // Gloves enchant level
+			writer.WriteInt16((short)charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_FEET)); // Boots enchant level
+			writer.WriteInt32(charInfoPackage.getHairStyle());
+			writer.WriteInt32(charInfoPackage.getHairColor());
+			writer.WriteInt32(charInfoPackage.getFace());
+			writer.WriteDouble(charInfoPackage.getMaxHp()); // Maximum HP
+			writer.WriteDouble(charInfoPackage.getMaxMp()); // Maximum MP
+			writer.WriteInt32(charInfoPackage.getDeleteTimer() != null ? (int)(charInfoPackage.getDeleteTimer().Value - DateTime.UtcNow).TotalSeconds : 0);
+			writer.WriteInt32((int)charInfoPackage.getClassId());
+			writer.WriteInt32(i == _activeId);
+			writer.WriteByte((byte)(charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_RHAND) > 127 ? 127 : charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_RHAND)));
+			writer.WriteInt32(charInfoPackage.getAugmentation() != null ? charInfoPackage.getAugmentation().getOption1Id() : 0);
+			writer.WriteInt32(charInfoPackage.getAugmentation() != null ? charInfoPackage.getAugmentation().getOption2Id() : 0);
+			writer.WriteInt32(0); // Transformation: Currently on retail when you are on character select you don't see your transformation.
 			writer.WriteInt32(0); // Pet NpcId
 			writer.WriteInt32(0); // Pet level
 			writer.WriteInt32(0); // Pet Food
 			writer.WriteInt32(0); // Pet Food Level
 			writer.WriteDouble(0); // Current pet HP
 			writer.WriteDouble(0); // Current pet MP
-			writer.WriteInt32(0); // Vitality points
-			writer.WriteInt32(0); // Vitality Percent : 100% for example
-			writer.WriteInt32(0); // Remaining vitality item uses
-			writer.WriteInt32(1); // Char is active or not
-			writer.WriteBoolean(false);
-			writer.WriteByte(0); // Hero glow: 2 - yes, 0 - no
-			writer.WriteBoolean(true); // Show hair accessory if enabled
+			writer.WriteInt32(charInfoPackage.getVitalityPoints()); // Vitality
+			writer.WriteInt32((int) Config.RATE_VITALITY_EXP_MULTIPLIER * 100); // Vitality Percent
+			writer.WriteInt32(charInfoPackage.getVitalityItemsUsed()); // Remaining vitality item uses
+			writer.WriteInt32(charInfoPackage.getAccessLevel() != -100); // Char is active or not
+			writer.WriteByte(charInfoPackage.isNoble());
+			writer.WriteByte((byte)(Hero.getInstance().isHero(charInfoPackage.getObjectId()) ? 2 : 0)); // Hero glow
+			writer.WriteByte(charInfoPackage.isHairAccessoryEnabled()); // Show hair accessory if enabled
 			writer.WriteInt32(0); // 235 - ban time left
-			writer.WriteInt32(0); // 235 - last play time  =((int) (charInfoPackage.getLastAccess() / 1000)
+			writer.WriteInt32(charInfoPackage.getLastAccess()?.getEpochSecond() ?? 0); // 235 - last play time
 			writer.WriteByte(0); // 338
-			writer.WriteInt32(1); // 338 - DK color (hair color + 1)
-			writer.WriteByte(
-				0); // 362: charInfoPackage.getClassId() == 217 ? 1 : charInfoPackage.getClassId() == 218 ? 2 : charInfoPackage.getClassId() == 219 ? 3 : charInfoPackage.getClassId() == 220 ? 4 : 0
+			writer.WriteInt32(charInfoPackage.getHairColor() + 1); // 338 - DK color.
+			writer.WriteByte((byte)(charInfoPackage.getClassId() == (CharacterClass)217 ? 1 : charInfoPackage.getClassId() == (CharacterClass)218 ? 2 : charInfoPackage.getClassId() == (CharacterClass)219 ? 3 : charInfoPackage.getClassId() == (CharacterClass)220 ? 4 : 0)); // 362
 		}
+	}
+	
+	private static List<CharSelectInfoPackage> loadCharacterSelectInfo(int accountId)
+	{
+		List<CharSelectInfoPackage> characterList = new();
+		try
+		{
+			using GameServerDbContext ctx = new();
+			var records = ctx.Characters.Where(r => r.AccountId == accountId).OrderBy(r => r.Created).ToList();
+				foreach (var record in records)
+				{
+					CharSelectInfoPackage? charInfopackage = restoreChar(ctx, record);
+					if (charInfopackage != null)
+					{
+						characterList.Add(charInfopackage);
+						
+						// Disconnect offline trader.
+						if (Config.OFFLINE_DISCONNECT_SAME_ACCOUNT)
+						{
+							Player player = World.getInstance().getPlayer(charInfopackage.getObjectId());
+							if (player != null)
+							{
+								Disconnection.of(player).storeMe().deleteMe();
+							}
+						}
+					}
+				}
+		}
+		catch (Exception e)
+		{
+			LOGGER.Error("Could not restore char info: " + e);
+		}
+		
+		return characterList;
+	}
+	
+	private static void loadCharacterSubclassInfo(GameServerDbContext ctx, CharSelectInfoPackage charInfopackage, int objectId, CharacterClass activeClassId)
+	{
+		try
+		{
+			CharacterSubClass? record =
+				ctx.CharacterSubClasses.SingleOrDefault(r => r.CharacterId == objectId && r.SubClass == activeClassId);
+
+			if (record != null)
+			{
+				charInfopackage.setExp(record.Exp);
+				charInfopackage.setSp(record.Sp);
+				charInfopackage.setLevel(record.Level);
+				charInfopackage.setVitalityPoints(record.VitalityPoints);
+			}
+		}
+		catch (Exception e)
+		{
+			LOGGER.Error("Could not restore char subclass info: " + e);
+		}
+	}
+	
+	private static CharSelectInfoPackage restoreChar(GameServerDbContext ctx, Character chardata)
+	{
+		int objectId = chardata.Id;
+		String name = chardata.Name;
+		
+		// See if the char must be deleted
+		DateTime? deletetime = chardata.DeleteTime;
+		if ((deletetime != null) && (DateTime.UtcNow > deletetime))
+		{
+			if (chardata.ClanId != null)
+			{
+				Clan clan = ClanTable.getInstance().getClan(chardata.ClanId.Value);
+				if (clan != null)
+				{
+					clan.removeClanMember(objectId, null);
+				}
+			}
+
+			//GameClient.deleteCharByObjId(objectId); // TODO: delete char
+			return null;
+		}
+		
+		CharSelectInfoPackage charInfopackage = new CharSelectInfoPackage(objectId, name);
+		charInfopackage.setAccessLevel(chardata.AccessLevel);
+		charInfopackage.setLevel(chardata.Level);
+		charInfopackage.setMaxHp(chardata.MaxHp);
+		charInfopackage.setCurrentHp(chardata.CurrentHp);
+		charInfopackage.setMaxMp(chardata.MaxMp);
+		charInfopackage.setCurrentMp(chardata.CurrentMp);
+		charInfopackage.setReputation(chardata.Reputation);
+		charInfopackage.setPkKills(chardata.PkKills);
+		charInfopackage.setPvPKills(chardata.PvpKills);
+		charInfopackage.setFace(chardata.Face);
+		charInfopackage.setHairStyle(chardata.HairStyle);
+		charInfopackage.setHairColor(chardata.HairColor);
+		charInfopackage.setSex(chardata.Sex);
+		charInfopackage.setExp(chardata.Exp);
+		charInfopackage.setSp(chardata.Sp);
+		charInfopackage.setVitalityPoints(chardata.VitalityPoints);
+		charInfopackage.setClanId(chardata.ClanId);
+		charInfopackage.setRace(chardata.Class.GetRace());
+		CharacterClass baseClassId = chardata.BaseClass;
+		CharacterClass activeClassId = chardata.Class;
+		charInfopackage.setX(chardata.X);
+		charInfopackage.setY(chardata.Y);
+		charInfopackage.setZ(chardata.Z);
+		int? faction = chardata.Faction;
+		if (faction == 1)
+		{
+			charInfopackage.setGood();
+		}
+		if (faction == 2)
+		{
+			charInfopackage.setEvil();
+		}
+		
+		if (Config.MULTILANG_ENABLE)
+		{
+			String lang = chardata.Language;
+			if (!Config.MULTILANG_ALLOWED.Contains(lang))
+			{
+				lang = Config.MULTILANG_DEFAULT;
+			}
+			
+			charInfopackage.setHtmlPrefix("data/lang/" + lang + "/");
+		}
+		// if is in subclass, load subclass exp, sp, level info
+		if (baseClassId != activeClassId)
+		{
+			loadCharacterSubclassInfo(ctx, charInfopackage, objectId, activeClassId);
+		}
+		
+		charInfopackage.setClassId(activeClassId);
+		// Get the augmentation id for equipped weapon
+		int weaponObjId = charInfopackage.getPaperdollObjectId(Inventory.PAPERDOLL_RHAND);
+		if (weaponObjId < 1)
+		{
+			weaponObjId = charInfopackage.getPaperdollObjectId(Inventory.PAPERDOLL_RHAND);
+		}
+		if (weaponObjId > 0)
+		{
+			try
+			{
+				DbItemVariation? record = ctx.ItemVariations.SingleOrDefault(r => r.ItemId == weaponObjId);
+				if (record != null)
+				{
+					int mineralId = record.MineralId;
+					int option1 = record.Option1;
+					int option2 = record.Option2;
+					if ((option1 != -1) && (option2 != -1))
+					{
+						charInfopackage.setAugmentation(new VariationInstance(mineralId, option1, option2));
+					}
+				}
+			}
+			catch (Exception e)
+			{
+				LOGGER.Error("Could not restore augmentation info: " + e);
+			}
+		}
+		// Check if the base class is set to zero and also doesn't match with the current active class, otherwise send the base class ID. This prevents chars created before base class was introduced from being displayed incorrectly.
+		if ((baseClassId == 0) && (activeClassId > 0))
+		{
+			charInfopackage.setBaseClassId(activeClassId);
+		}
+		else
+		{
+			charInfopackage.setBaseClassId(baseClassId);
+		}
+		
+		charInfopackage.setDeleteTimer(deletetime);
+		charInfopackage.setLastAccess(chardata.LastAccess);
+		charInfopackage.setNoble(chardata.IsNobless);
+		return charInfopackage;
 	}
 }

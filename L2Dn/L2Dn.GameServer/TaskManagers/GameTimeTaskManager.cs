@@ -8,7 +8,7 @@ namespace L2Dn.GameServer.TaskManagers;
  * GameTime task manager class.
  * @author Forsaiken, Mobius
  */
-public class GameTimeTaskManager: Thread
+public class GameTimeTaskManager
 {
 	public const int TICKS_PER_SECOND = 10; // Not able to change this without checking through code.
 	public const int MILLIS_IN_TICK = 1000 / TICKS_PER_SECOND;
@@ -17,32 +17,33 @@ public class GameTimeTaskManager: Thread
 	public const int SECONDS_PER_IG_DAY = MILLIS_PER_IG_DAY / 1000;
 	public const int TICKS_PER_IG_DAY = SECONDS_PER_IG_DAY * TICKS_PER_SECOND;
 	
-	private readonly long _referenceTime;
+	private readonly DateTime _referenceTime;
 	private bool _isNight;
 	private int _gameTicks;
 	private int _gameTime;
 	private int _gameHour;
+	private bool _stopRequested;
 	
-	protected GameTimeTaskManager(): base("GameTimeTaskManager")
+	public GameTimeTaskManager()
 	{
-		base.setDaemon(true);
-		base.setPriority(MAX_PRIORITY);
-		
-		Calendar c = Calendar.getInstance();
-		c.set(Calendar.HOUR_OF_DAY, 0);
-		c.set(Calendar.MINUTE, 0);
-		c.set(Calendar.SECOND, 0);
-		c.set(Calendar.MILLISECOND, 0);
-		_referenceTime = c.getTimeInMillis();
-		
-		super.start();
+		//base.setPriority(MAX_PRIORITY); // Max priority thread
+
+		DateTime now = DateTime.Today;
+		_referenceTime = now;
+
+		System.Threading.Tasks.Task.Run(() => run()); // TODO: run as task for now 
 	}
 	
-	public void run()
+	public void stop()
 	{
-		while (true)
+		_stopRequested = true;
+	}
+
+	private async void run()
+	{
+		while (!_stopRequested)
 		{
-			_gameTicks = (int) ((System.currentTimeMillis() - _referenceTime) / MILLIS_IN_TICK);
+			_gameTicks = (int)((DateTime.Now - _referenceTime).TotalMilliseconds / MILLIS_IN_TICK);
 			_gameTime = (_gameTicks % TICKS_PER_IG_DAY) / MILLIS_IN_TICK;
 			_gameHour = _gameTime / 60;
 			
@@ -58,9 +59,9 @@ public class GameTimeTaskManager: Thread
 			
 			try
 			{
-				Thread.Sleep(MILLIS_IN_TICK);
+				await System.Threading.Tasks.Task.Delay(MILLIS_IN_TICK);
 			}
-			catch (InterruptedException e)
+			catch (TaskCanceledException)
 			{
 				// Ignore.
 			}

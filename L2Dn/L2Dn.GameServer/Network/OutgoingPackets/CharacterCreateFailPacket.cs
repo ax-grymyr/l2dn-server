@@ -2,11 +2,11 @@
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
-internal readonly struct CharacterCreateFailPacket(CharacterCreateFailReason reason): IOutgoingPacket
+public readonly struct CharacterCreateFailPacket(CharacterCreateFailReason reason): IOutgoingPacket
 {
     public void WriteContent(PacketBitWriter writer)
     {
-        writer.WriteByte(0x10); // packet code
+        writer.WritePacketCode(OutgoingPacketCodes.CHARACTER_CREATE_FAIL);
 
         writer.WriteInt32((int)reason);
     }

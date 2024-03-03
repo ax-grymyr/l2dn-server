@@ -1,6 +1,6 @@
 ﻿namespace L2Dn.GameServer.Network.OutgoingPackets;
 
-internal enum CharacterCreateFailReason
+public enum CharacterCreateFailReason
 {
     /// <summary>
     /// Your character creation has failed.

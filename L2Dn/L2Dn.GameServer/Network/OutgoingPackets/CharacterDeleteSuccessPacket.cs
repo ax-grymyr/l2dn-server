@@ -2,10 +2,10 @@
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
-internal readonly struct CharacterDeleteSuccessPacket: IOutgoingPacket
+public readonly struct CharacterDeleteSuccessPacket: IOutgoingPacket
 {
     public void WriteContent(PacketBitWriter writer)
     {
-        writer.WriteByte(0x1D); // packet code
+        writer.WritePacketCode(OutgoingPacketCodes.CHARACTER_DELETE_SUCCESS);
     }
 }
