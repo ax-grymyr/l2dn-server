@@ -47,7 +47,7 @@ public class Party : AbstractPlayerGroup
 	private int _itemLastLoot = 0;
 	private CommandChannel _commandChannel = null;
 	private ScheduledFuture _positionBroadcastTask = null;
-	protected PartyMemberPosition _positionPacket;
+	protected PartyMemberPositionPacket? _positionPacket;
 	private bool _disbanding = false;
 	private Map<int, Creature> _tacticalSigns = null;
 	private static readonly int[] TACTICAL_SYS_STRINGS =
@@ -204,8 +204,8 @@ public class Party : AbstractPlayerGroup
 		{
 			if (member != null)
 			{
-				member.sendPacket(PartySmallWindowDeleteAll.STATIC_PACKET);
-				member.sendPacket(new PartySmallWindowAll(member, this));
+				member.sendPacket(PartySmallWindowDeleteAllPacket.STATIC_PACKET);
+				member.sendPacket(new PartySmallWindowAllPacket(member, this));
 				member.broadcastUserInfo();
 			}
 		}
@@ -217,7 +217,7 @@ public class Party : AbstractPlayerGroup
 	 * @param packet
 	 */
 	public void broadcastToPartyMembers<TPacket>(Player player, TPacket packet)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		foreach (Player member in _members)
 		{
@@ -249,19 +249,20 @@ public class Party : AbstractPlayerGroup
 		
 		// sends new member party window for all members
 		// we do all actions before adding member to a list, this speeds things up a little
-		player.sendPacket(new PartySmallWindowAll(player, this));
+		player.sendPacket(new PartySmallWindowAllPacket(player, this));
 		
 		// sends pets/summons of party members
+		Summon pet;
 		foreach (Player pMember in _members)
 		{
 			if (pMember != null)
 			{
-				Summon pet = pMember.getPet();
+				pet = pMember.getPet();
 				if (pet != null)
 				{
-					player.sendPacket(new ExPartyPetWindowAdd(pet));
+					player.sendPacket(new ExPartyPetWindowAddPacket(pet));
 				}
-				pMember.getServitors().values().forEach(s => player.sendPacket(new ExPartyPetWindowAdd(s)));
+				pMember.getServitors().values().forEach(s => player.sendPacket(new ExPartyPetWindowAddPacket(s)));
 			}
 		}
 		
@@ -276,7 +277,7 @@ public class Party : AbstractPlayerGroup
 		{
 			if (member != player)
 			{
-				member.sendPacket(new PartySmallWindowAdd(player, this));
+				member.sendPacket(new PartySmallWindowAddPacket(player, this));
 			}
 		}
 		
@@ -286,13 +287,13 @@ public class Party : AbstractPlayerGroup
 		// broadcastToPartyMembers(player, new PartyMemberPosition(this));
 		
 		// if member has pet/summon add it to other as well
-		Summon pet = player.getPet();
+		pet = player.getPet();
 		if (pet != null)
 		{
-			broadcastPacket(new ExPartyPetWindowAdd(pet));
+			broadcastPacket(new ExPartyPetWindowAddPacket(pet));
 		}
 		
-		player.getServitors().values().forEach(s => broadcastPacket(new ExPartyPetWindowAdd(s)));
+		player.getServitors().values().forEach(s => broadcastPacket(new ExPartyPetWindowAddPacket(s)));
 		
 		// adjust party level
 		if (player.getLevel() > _partyLvl)
@@ -301,7 +302,7 @@ public class Party : AbstractPlayerGroup
 		}
 		
 		// status update for hp bar display
-		StatusUpdate su = new StatusUpdate(player);
+		StatusUpdatePacket su = new StatusUpdatePacket(player);
 		su.addUpdate(StatusUpdateType.MAX_HP, player.getMaxHp());
 		su.addUpdate(StatusUpdateType.CUR_HP, (int) player.getCurrentHp());
 		
@@ -318,7 +319,7 @@ public class Party : AbstractPlayerGroup
 				{
 					summon.updateEffectIcons();
 				}
-				member.getServitors().values().forEach(Summon.updateEffectIcons);
+				member.getServitors().values().forEach(x => x.updateEffectIcons());
 				
 				// send hp status update
 				member.sendPacket(su);
@@ -328,7 +329,7 @@ public class Party : AbstractPlayerGroup
 		// open the CCInformationwindow
 		if (isInCommandChannel())
 		{
-			player.sendPacket(ExOpenMPCC.STATIC_PACKET);
+			player.sendPacket(ExOpenMPCCPacket.STATIC_PACKET);
 		}
 		
 		if (_positionBroadcastTask == null)
@@ -337,14 +338,14 @@ public class Party : AbstractPlayerGroup
 			{
 				if (_positionPacket == null)
 				{
-					_positionPacket = new PartyMemberPosition(this);
+					_positionPacket = new PartyMemberPositionPacket(this);
 				}
 				else
 				{
-					_positionPacket.reuse(this);
+					_positionPacket.Value.reuse(this);
 				}
-				broadcastPacket(_positionPacket);
-			}, PARTY_POSITION_BROADCAST_INTERVAL.toMillis() / 2, PARTY_POSITION_BROADCAST_INTERVAL.toMillis());
+				broadcastPacket(_positionPacket.Value);
+			}, PARTY_POSITION_BROADCAST_INTERVAL / 2, PARTY_POSITION_BROADCAST_INTERVAL);
 		}
 		applyTacticalSigns(player, false);
 		World.getInstance().incrementPartyMember();
@@ -358,7 +359,7 @@ public class Party : AbstractPlayerGroup
 			{
 				if (_tacticalSigns == null)
 				{
-					_tacticalSigns = new ConcurrentHashMap<>(1);
+					_tacticalSigns = new();
 				}
 			}
 		}
@@ -372,7 +373,7 @@ public class Party : AbstractPlayerGroup
 			return;
 		}
 		
-		_tacticalSigns.entrySet().forEach(entry => player.sendPacket(new ExTacticalSign(entry.getValue(), remove ? 0 : entry.getKey())));
+		_tacticalSigns.forEach(entry => player.sendPacket(new ExTacticalSignPacket(entry.Value, remove ? 0 : entry.Key)));
 	}
 	
 	public void addTacticalSign(Player player, int tacticalSignId, Creature target)
@@ -381,19 +382,21 @@ public class Party : AbstractPlayerGroup
 		if (tacticalTarget == null)
 		{
 			// if the new sign is applied to an existing target, remove the old sign from map
-			_tacticalSigns.values().remove(target);
+			var pair = _tacticalSigns.FirstOrDefault(p => p.Value == target);
+			if (pair.Value == target)
+				_tacticalSigns.remove(pair.Key);
 			
 			// Add the new sign
 			_tacticalSigns.put(tacticalSignId, target);
 			
-			final SystemMessage sm = new SystemMessage(SystemMessageId.C1_USED_S3_ON_C2);
-			sm.addPcName(player);
-			sm.addString(target.getName());
-			sm.addSystemString(TACTICAL_SYS_STRINGS[tacticalSignId]);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_USED_S3_ON_C2);
+			sm.Params.addPcName(player);
+			sm.Params.addString(target.getName());
+			sm.Params.addSystemString(TACTICAL_SYS_STRINGS[tacticalSignId]);
 			
 			_members.forEach(m =>
 			{
-				m.sendPacket(new ExTacticalSign(target, tacticalSignId));
+				m.sendPacket(new ExTacticalSignPacket(target, tacticalSignId));
 				m.sendPacket(sm);
 			});
 		}
@@ -402,22 +405,22 @@ public class Party : AbstractPlayerGroup
 			// Sign already assigned
 			// If the sign is applied on the same target, remove it
 			_tacticalSigns.remove(tacticalSignId);
-			_members.forEach(m => m.sendPacket(new ExTacticalSign(tacticalTarget, 0)));
+			_members.forEach(m => m.sendPacket(new ExTacticalSignPacket(tacticalTarget, 0)));
 		}
 		else
 		{
 			// Otherwise, delete the old sign, and apply it to the new target
 			_tacticalSigns.replace(tacticalSignId, target);
 			
-			SystemMessage sm = new SystemMessage(SystemMessageId.C1_USED_S3_ON_C2);
-			sm.addPcName(player);
-			sm.addString(target.getName());
-			sm.addSystemString(TACTICAL_SYS_STRINGS[tacticalSignId]);
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_USED_S3_ON_C2);
+			sm.Params.addPcName(player);
+			sm.Params.addString(target.getName());
+			sm.Params.addSystemString(TACTICAL_SYS_STRINGS[tacticalSignId]);
 			
 			_members.ForEach(m =>
 			{
-				m.sendPacket(new ExTacticalSign(tacticalTarget, 0));
-				m.sendPacket(new ExTacticalSign(target, tacticalSignId));
+				m.sendPacket(new ExTacticalSignPacket(tacticalTarget, 0));
+				m.sendPacket(new ExTacticalSignPacket(target, tacticalSignId));
 				m.sendPacket(sm);
 			});
 		}
@@ -456,7 +459,7 @@ public class Party : AbstractPlayerGroup
 	{
 		if (_members.Contains(player))
 		{
-			bool isLeader = isLeader(player);
+			bool isLeader = this.isLeader(player);
 			if (!_disbanding && ((_members.Count == 2) || (isLeader && !Config.ALT_LEAVE_PARTY_LEADER && (type != PartyMessageType.DISCONNECTED))))
 			{
 				disbandParty();
@@ -507,20 +510,20 @@ public class Party : AbstractPlayerGroup
 			World.getInstance().decrementPartyMember();
 			
 			// UI update.
-			player.sendPacket(PartySmallWindowDeleteAll.STATIC_PACKET);
+			player.sendPacket(PartySmallWindowDeleteAllPacket.STATIC_PACKET);
 			player.setParty(null);
-			broadcastPacket(new PartySmallWindowDelete(player));
+			broadcastPacket(new PartySmallWindowDeletePacket(player));
 			Summon pet = player.getPet();
 			if (pet != null)
 			{
-				broadcastPacket(new ExPartyPetWindowDelete(pet));
+				broadcastPacket(new ExPartyPetWindowDeletePacket(pet));
 			}
-			player.getServitors().values().forEach(s => player.sendPacket(new ExPartyPetWindowDelete(s)));
+			player.getServitors().values().forEach(s => player.sendPacket(new ExPartyPetWindowDeletePacket(s)));
 			
 			// Close the CCInfoWindow
 			if (isInCommandChannel())
 			{
-				player.sendPacket(ExCloseMPCC.STATIC_PACKET);
+				player.sendPacket(ExCloseMPCCPacket.STATIC_PACKET);
 			}
 			if (isLeader && (_members.size() > 1) && (Config.ALT_LEAVE_PARTY_LEADER || (type == PartyMessageType.DISCONNECTED)))
 			{
@@ -1066,7 +1069,7 @@ public class Party : AbstractPlayerGroup
 		_changeRequestDistributionType = partyDistributionType;
 		_changeDistributionTypeAnswers = new();
 		_changeDistributionTypeRequestTask = ThreadPool.schedule(() => finishLootRequest(false), PARTY_DISTRIBUTION_TYPE_REQUEST_TIMEOUT);
-		broadcastToPartyMembers(getLeader(), new ExAskModifyPartyLooting(getLeader().getName(), partyDistributionType));
+		broadcastToPartyMembers(getLeader(), new ExAskModifyPartyLootingPacket(getLeader().getName(), partyDistributionType));
 		
 		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.REQUESTING_APPROVAL_FOR_CHANGING_PARTY_LOOT_TO_S1);
 		sm.Params.addSystemString(partyDistributionType.getSysStringId());
@@ -1113,15 +1116,15 @@ public class Party : AbstractPlayerGroup
 		}
 		if (success)
 		{
-			broadcastPacket(new ExSetPartyLooting(1, _changeRequestDistributionType));
+			broadcastPacket(new ExSetPartyLootingPacket(1, _changeRequestDistributionType.Value));
 			_distributionType = _changeRequestDistributionType.Value;
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.PARTY_LOOTING_METHOD_WAS_CHANGED_TO_S1);
-			sm.Params.addSystemString(_changeRequestDistributionType.getSysStringId());
+			sm.Params.addSystemString(_changeRequestDistributionType.Value.getSysStringId());
 			broadcastPacket(sm);
 		}
 		else
 		{
-			broadcastPacket(new ExSetPartyLooting(0, _distributionType));
+			broadcastPacket(new ExSetPartyLootingPacket(0, _distributionType));
 			broadcastPacket(new SystemMessagePacket(SystemMessageId.PARTY_LOOT_CHANGE_WAS_CANCELLED));
 		}
 

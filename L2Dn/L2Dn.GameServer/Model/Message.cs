@@ -170,14 +170,14 @@ public class Message
 			_enchantLvl = item.getEnchantLevel();
 			if (item.isArmor())
 			{
-				foreach (AttributeType type in AttributeType.ATTRIBUTE_TYPES)
+				foreach (AttributeType type in AttributeTypeUtil.AttributeTypes)
 				{
-					_elementals[type.getClientId()] = item.getDefenceAttribute(type);
+					_elementals[(int)type] = item.getDefenceAttribute(type);
 				}
 			}
 			else if (item.isWeapon() && (item.getAttackAttributeType() != AttributeType.NONE))
 			{
-				_elementals[item.getAttackAttributeType().getClientId()] = item.getAttackAttributePower();
+				_elementals[(int)item.getAttackAttributeType()] = item.getAttackAttributePower();
 			}
 		}
 		else if (mailType == MailType.COMMISSION_ITEM_RETURNED)
