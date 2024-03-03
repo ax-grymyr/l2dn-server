@@ -3,6 +3,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -22,7 +23,7 @@ public class EffectList
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EffectList));
 	/** Queue containing all effects from buffs for this effect list. */
-	private readonly Queue<BuffInfo> _actives = new();
+	private readonly List<BuffInfo> _actives = new();
 	/** List containing all passives for this effect list. They bypass most of the actions and they are not included in most operations. */
 	private readonly Set<BuffInfo> _passives = new();
 	/** List containing all options for this effect list. They bypass most of the actions and they are not included in most operations. */
@@ -283,7 +284,7 @@ public class EffectList
 	 */
 	public Set<AbnormalType> getBlockedAbnormalTypes()
 	{
-		return Collections.unmodifiableSet(_blockedAbnormalTypes);
+		return _blockedAbnormalTypes;
 	}
 	
 	/**
@@ -297,11 +298,12 @@ public class EffectList
 			_shortBuff = info;
 			if (info == null)
 			{
-				_owner.sendPacket(ShortBuffStatusUpdate.RESET_SHORT_BUFF);
+				_owner.sendPacket(ShortBuffStatusUpdatePacket.RESET_SHORT_BUFF);
 			}
 			else
 			{
-				_owner.sendPacket(new ShortBuffStatusUpdate(info.getSkill().getId(), info.getSkill().getLevel(), info.getSkill().getSubLevel(), info.getTime()));
+				_owner.sendPacket(new ShortBuffStatusUpdatePacket(info.getSkill().getId(), info.getSkill().getLevel(),
+					info.getSkill().getSubLevel(), (int)(info.getTime() ?? TimeSpan.Zero).TotalSeconds));
 			}
 		}
 	}
@@ -313,7 +315,7 @@ public class EffectList
 	 */
 	public int getBuffCount()
 	{
-		return !_actives.isEmpty() ? (_buffCount.get() - _hiddenBuffs.get()) : 0;
+		return _actives.Count != 0 ? (_buffCount.get() - _hiddenBuffs.get()) : 0;
 	}
 	
 	/**
@@ -784,7 +786,7 @@ public class EffectList
 		if (_actives.Count != 0)
 		{
 			// Removes the buff from the given effect list.
-			_actives.remove(info);
+			_actives.Remove(info);
 			
 			// Remove short buff.
 			if (info == _shortBuff)
@@ -976,7 +978,7 @@ public class EffectList
 		
 		// After removing old buff (same ID) or stacked buff (same abnormal type),
 		// Add the buff to the end of the effect list.
-		_actives.add(info);
+		_actives.Add(info);
 		// Initialize effects.
 		info.initializeEffects();
 	}
@@ -1048,10 +1050,10 @@ public class EffectList
 				if (player != null)
 				{
 					Party party = player.getParty();
-					Optional<AbnormalStatusUpdate> asu = (_owner.isPlayer() && _updateAbnormalStatus.get()) ? Optional.of(new AbnormalStatusUpdate()) : Optional.empty();
-					Optional<PartySpelled> ps = ((party != null) || _owner.isSummon()) ? Optional.of(new PartySpelled(_owner)) : Optional.empty();
-					Optional<ExOlympiadSpelledInfo> os = (player.isInOlympiadMode() && player.isOlympiadStart()) ? Optional.of(new ExOlympiadSpelledInfo(player)) : Optional.empty();
-					if (!_actives.isEmpty())
+					AbnormalStatusUpdatePacket? asu = (_owner.isPlayer() && _updateAbnormalStatus.get()) ? new AbnormalStatusUpdatePacket() : null;
+					PartySpelledPacket? ps = ((party != null) || _owner.isSummon()) ? new PartySpelledPacket(_owner) : null;
+					ExOlympiadSpelledInfoPacket? os = (player.isInOlympiadMode() && player.isOlympiadStart()) ? new ExOlympiadSpelledInfoPacket(player) : null;
+					if (_actives.Count != 0)
 					{
 						foreach (BuffInfo info in _actives)
 						{
@@ -1063,40 +1065,49 @@ public class EffectList
 								}
 								else if (info.isDisplayedForEffected())
 								{
-									asu.ifPresent(a => a.addSkill(info));
-									ps.filter(p => !info.getSkill().isToggle()).ifPresent(p => p.addSkill(info));
-									os.ifPresent(o => o.addSkill(info));
+									if (asu != null)
+										asu.Value.addSkill(info);
+
+									if (ps != null && !info.getSkill().isToggle())
+										ps.Value.addSkill(info);
+									
+									if (os != null)
+										os.Value.addSkill(info);
 								}
 							}
 						}
 					}
 					
 					// Send icon update for player buff bar.
-					asu.ifPresent(x => _owner.sendPacket(x));
+					if (asu != null)
+						_owner.sendPacket(asu.Value);
 					
 					// Player or summon is in party. Broadcast packet to everyone in the party.
-					if (party != null)
+					if (ps != null)
 					{
-						ps.ifPresent(x => party.broadcastPacket(x));
+						if (party != null)
+						{
+							party.broadcastPacket(ps.Value);
+						}
+						else // Not in party, then its a summon info for its owner.
+						{
+							player.sendPacket(ps.Value);
+						}
 					}
-					else // Not in party, then its a summon info for its owner.
-					{
-						ps.ifPresent(x => player.sendPacket(x));
-					}
-					
+
 					// Send icon update to all olympiad observers.
-					if (os.isPresent())
+					if (os != null)
 					{
 						OlympiadGameTask game = OlympiadGameManager.getInstance().getOlympiadTask(player.getOlympiadGameId());
 						if ((game != null) && game.isBattleStarted())
 						{
-							os.ifPresent(x => game.getStadium().broadcastPacketToObservers(x));
+							game.getStadium().broadcastPacketToObservers(os.Value);
 						}
 					}
 				}
 				
 				// Update effect icons for everyone targeting this owner.
-				ExAbnormalStatusUpdateFromTarget upd = new ExAbnormalStatusUpdateFromTarget(_owner);
+				ExAbnormalStatusUpdateFromTargetPacket upd = new ExAbnormalStatusUpdateFromTargetPacket(_owner);
 				foreach (Creature creature in _owner.getStatus().getStatusListener())
 				{
 					if ((creature != null) && creature.isPlayer())

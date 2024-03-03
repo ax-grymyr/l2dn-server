@@ -12,6 +12,11 @@ public readonly struct AbnormalStatusUpdatePacket: IOutgoingPacket
         _effects = effects;
     }
 
+    public void addSkill(BuffInfo info)
+    {
+        _effects.Add(info);
+    }
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.ABNORMAL_STATUS_UPDATE);
@@ -27,7 +32,7 @@ public readonly struct AbnormalStatusUpdatePacket: IOutgoingPacket
                 writer.WriteInt32((int)info.getSkill().getAbnormalType());
                 writer.WriteVariableInt(info.getSkill().isAura() || info.getSkill().isToggle()
                     ? -1
-                    : (int)info.getTime().TotalSeconds);
+                    : (int)(info.getTime() ?? TimeSpan.Zero).TotalSeconds);
             }
         }
     }
