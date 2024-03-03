@@ -131,7 +131,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	private List<ItemSkillHolder> _skills;
 	
 	private int _useSkillDisTime;
-	protected int _reuseDelay;
+	protected TimeSpan _reuseDelay;
 	private int _sharedReuseGroup;
 	
 	private CommissionItemType _commissionItemType;
@@ -205,7 +205,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 		_defaultAction = set.getEnum("default_action", ActionType.NONE);
 		_useSkillDisTime = set.getInt("useSkillDisTime", 0);
 		_defaultEnchantLevel = set.getInt("enchanted", 0);
-		_reuseDelay = set.getInt("reuse_delay", 0);
+		_reuseDelay = TimeSpan.FromMilliseconds(set.getInt("reuse_delay", 0));
 		_sharedReuseGroup = set.getInt("shared_reuse_group", 0);
 		_commissionItemType = set.getEnum("commissionItemType", CommissionItemType.OTHER_ITEM);
 		_common = ((_itemId >= 11605) && (_itemId <= 12361));
@@ -995,7 +995,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	 * Gets the item reuse delay time in seconds.
 	 * @return the reuse delay time
 	 */
-	public int getReuseDelay()
+	public TimeSpan getReuseDelay()
 	{
 		return _reuseDelay;
 	}

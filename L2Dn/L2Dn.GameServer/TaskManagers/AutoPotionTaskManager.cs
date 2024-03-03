@@ -1,8 +1,9 @@
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.TaskManagers;
 
@@ -31,7 +32,7 @@ public class AutoPotionTaskManager: Runnable
 		{
 			foreach (Player player in PLAYERS)
 			{
-				if ((player == null) || player.isAlikeDead() || (player.isOnlineInt() != 1) || (!Config.AUTO_POTIONS_IN_OLYMPIAD && player.isInOlympiadMode()))
+				if ((player == null) || player.isAlikeDead() || (player.getOnlineStatus() != CharacterOnlineStatus.Online) || (!Config.AUTO_POTIONS_IN_OLYMPIAD && player.isInOlympiadMode()))
 				{
 					remove(player);
 					continue; // player

@@ -690,7 +690,8 @@ public class StatSet : IParserAdvUtils
 		{
 			throw new InvalidCastException("String value required, but not specified");
 		}
-		return TimeUtil.parseDuration(String.valueOf(val));
+		
+		return TimeUtil.ParseDuration(val.ToString());
 	}
 	
 	public TimeSpan getDuration(String key, TimeSpan defaultValue)
@@ -700,7 +701,8 @@ public class StatSet : IParserAdvUtils
 		{
 			return defaultValue;
 		}
-		return TimeUtil.parseDuration(String.valueOf(val));
+
+		return TimeUtil.ParseDuration(val.ToString());
 	}
 	
 	public T getEnum<T>(String key)
@@ -849,16 +851,7 @@ public class StatSet : IParserAdvUtils
 		{
 			return null;
 		}
-		
-		List<Object> originalList = (List<Object>) obj;
-		if (!originalList.isEmpty() && (obj.getClass().getGenericInterfaces()[0] != clazz) && originalList.stream().allMatch(name => Util.isEnum(name.toString(), clazz)))
-		{
-			List<T> convertedList = originalList.stream().map(Object::toString).map(name => Enum.valueOf(clazz, name)).map(clazz::cast).collect(Collectors.toList());
-			
-			// Overwrite the existing list with proper generic type
-			_set.put(key, convertedList);
-			return convertedList;
-		}
+
 		return (List<T>) obj;
 	}
 	
@@ -868,31 +861,9 @@ public class StatSet : IParserAdvUtils
 	 * @param clazz
 	 * @return
 	 */
-	private List<T> convertList<T>(List<object> originalList)
+	private static List<T> convertList<T>(List<object> originalList)
 	{
-		
-		if (clazz == Integer.class)
-		{
-			if (originalList.stream().map(Object::toString).allMatch(Util::isInteger))
-			{
-				return originalList.stream().map(Object::toString).map(Integer::valueOf).map(clazz::cast).collect(Collectors.toList());
-			}
-		}
-		else if (clazz == Float.class)
-		{
-			if (originalList.stream().map(Object::toString).allMatch(Util::isFloat))
-			{
-				return originalList.stream().map(Object::toString).map(Float::valueOf).map(clazz::cast).collect(Collectors.toList());
-			}
-		}
-		else if (clazz == Double.class)
-		{
-			if (originalList.stream().map(Object::toString).allMatch(Util::isDouble))
-			{
-				return originalList.stream().map(Object::toString).map(Double::valueOf).map(clazz::cast).collect(Collectors.toList());
-			}
-		}
-		return null;
+		throw new NotImplementedException();		
 	}
 	
 	public Map<K, V> getMap<K, V>(String key)

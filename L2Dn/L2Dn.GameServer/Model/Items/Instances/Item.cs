@@ -722,7 +722,7 @@ public class Item: WorldObject
 	/**
 	 * @return the reuse delay of this item.
 	 */
-	public int getReuseDelay()
+	public TimeSpan getReuseDelay()
 	{
 		return _itemTemplate.getReuseDelay();
 	}

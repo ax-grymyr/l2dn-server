@@ -7,10 +7,10 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Zones;
+using L2Dn.GameServer.Network.OutgoingPackets.AutoPlay;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.TaskManagers;
 
@@ -33,10 +33,12 @@ public class AutoPlayTaskManager
 	
 	private class AutoPlay: Runnable
 	{
+		private readonly AutoPlayTaskManager _autoPlayTaskManager;
 		private readonly Set<Player> _players;
 		
-		public AutoPlay(Set<Player> players)
+		public AutoPlay(AutoPlayTaskManager autoPlayTaskManager, Set<Player> players)
 		{
+			_autoPlayTaskManager = autoPlayTaskManager;
 			_players = players;
 		}
 		
@@ -51,7 +53,7 @@ public class AutoPlayTaskManager
 			{
 				if (!player.isOnline() || (player.isInOfflineMode() && !player.isOfflinePlay()) || !Config.ENABLE_AUTO_PLAY)
 				{
-					stopAutoPlay(player);
+					_autoPlayTaskManager.stopAutoPlay(player);
 					continue; // play
 				}
 				
@@ -65,9 +67,10 @@ public class AutoPlayTaskManager
 				
 				// Skip thinking.
 				WorldObject target = player.getTarget();
+				Creature creature;
 				if ((target != null) && target.isCreature())
 				{
-					Creature creature = (Creature) target;
+					creature = (Creature) target;
 					if (creature.isAlikeDead() || !isTargetModeValid(targetMode, player, creature))
 					{
 						player.setTarget(null);
@@ -76,13 +79,13 @@ public class AutoPlayTaskManager
 					{
 						// Pet Attack.
 						Pet pet = player.getPet();
-						if ((pet != null) && player.getAutoUseSettings().getAutoActions().contains(PET_ATTACK_ACTION) && pet.hasAI() && !pet.isMoving() && !pet.isDisabled() && (pet.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && (pet.getAI().getIntention() != CtrlIntention.AI_INTENTION_CAST) && creature.isAutoAttackable(player) && GeoEngine.getInstance().canSeeTarget(player, creature))
+						if ((pet != null) && player.getAutoUseSettings().getAutoActions().Contains(PET_ATTACK_ACTION) && pet.hasAI() && !pet.isMoving() && !pet.isDisabled() && (pet.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && (pet.getAI().getIntention() != CtrlIntention.AI_INTENTION_CAST) && creature.isAutoAttackable(player) && GeoEngine.getInstance().canSeeTarget(player, creature))
 						{
 							pet.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, creature);
 						}
 						
 						// Summon Attack.
-						if (player.hasSummon() && player.getAutoUseSettings().getAutoActions().contains(SUMMON_ATTACK_ACTION))
+						if (player.hasSummon() && player.getAutoUseSettings().getAutoActions().Contains(SUMMON_ATTACK_ACTION))
 						{
 							foreach (Summon summon in player.getServitors().values())
 							{
@@ -199,7 +202,7 @@ public class AutoPlayTaskManager
 				}
 				
 				// Find target.
-				Creature creature = null;
+				creature = null;
 				Party party = player.getParty();
 				Player leader = party == null ? null : party.getLeader();
 				if (Config.ENABLE_AUTO_ASSIST && (party != null) && (leader != null) && (leader != player) && !leader.isDead())
@@ -264,7 +267,7 @@ public class AutoPlayTaskManager
 						continue;
 					}
 					
-					player.sendPacket(ExAutoPlayDoMacro.STATIC_PACKET);
+					player.sendPacket(ExAutoPlayDoMacroPacket.STATIC_PACKET);
 				}
 			}
 		}
@@ -274,7 +277,7 @@ public class AutoPlayTaskManager
 			// On Essence auto attack is enabled via the Auto Attack action.
 			if (Config.AUTO_PLAY_ATTACK_ACTION)
 			{
-				return !player.getAutoUseSettings().getAutoActions().contains(AUTO_ATTACK_ACTION);
+				return !player.getAutoUseSettings().getAutoActions().Contains(AUTO_ATTACK_ACTION);
 			}
 			
 			// Non Essence like.
@@ -335,7 +338,7 @@ public class AutoPlayTaskManager
 		Set<Player> pool1 = new();
 		player.onActionRequest();
 		pool1.add(player);
-		ThreadPool.scheduleAtFixedRate(new AutoPlay(pool1), TASK_DELAY, TASK_DELAY);
+		ThreadPool.scheduleAtFixedRate(new AutoPlay(this, pool1), TASK_DELAY, TASK_DELAY);
 		POOLS.add(pool1);
 	}
 	

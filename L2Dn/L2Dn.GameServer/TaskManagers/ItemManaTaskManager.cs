@@ -29,18 +29,15 @@ public class ItemManaTaskManager: Runnable
 		
 		if (!ITEMS.isEmpty())
 		{
-			DateTime currentTime = DateTime.Now;
-			Iterator<Entry<Item, long>> iterator = ITEMS.entrySet().iterator();
-			Entry<Item, long> entry;
-			
-			while (iterator.hasNext())
+			DateTime currentTime = DateTime.UtcNow;
+			List<Item> toRemove = new List<Item>();
+			foreach (var entry in ITEMS)
 			{
-				entry = iterator.next();
-				if (currentTime > entry.getValue())
+				if (currentTime > entry.Value)
 				{
-					iterator.remove();
+					Item item = entry.Key;
+					toRemove.Add(item);
 					
-					Item item = entry.getKey();
 					Player player = item.getActingPlayer();
 					if ((player == null) || player.isInOfflineMode())
 					{
@@ -49,6 +46,11 @@ public class ItemManaTaskManager: Runnable
 					
 					item.decreaseMana(item.isEquipped());
 				}
+			}
+
+			foreach (Item item in toRemove)
+			{
+				ITEMS.remove(item);
 			}
 		}
 		

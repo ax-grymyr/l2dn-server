@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
@@ -37,25 +38,28 @@ public class MovementTaskManager
 			{
 				return;
 			}
-			
-			Creature creature;
-			Iterator<Creature> iterator = _creatures.iterator();
-			while (iterator.hasNext())
+
+			List<Creature> toRemove = new List<Creature>(); // TODO figure out if it is possible to remove item during enumeration
+			foreach (Creature creature in _creatures)
 			{
-				creature = iterator.next();
 				try
 				{
 					if (creature.updatePosition())
 					{
-						iterator.remove();
+						toRemove.Add(creature);
 						creature.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED);
 					}
 				}
 				catch (Exception e)
 				{
-					iterator.remove();
+					toRemove.Add(creature);
 					LOGGER.Warn("MovementTaskManager: Problem updating position of " + creature + ": " + e);
 				}
+			}
+
+			foreach (Creature creature in toRemove)
+			{
+				_creatures.remove(creature);
 			}
 		}
 	}

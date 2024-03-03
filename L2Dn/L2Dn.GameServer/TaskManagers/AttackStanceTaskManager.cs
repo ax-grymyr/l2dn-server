@@ -1,7 +1,8 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.TaskManagers;
 
@@ -29,6 +30,7 @@ public class AttackStanceTaskManager: Runnable
 		{
 			return;
 		}
+		
 		_working = true;
 		
 		if (!CREATURE_ATTACK_STANCES.isEmpty())
@@ -36,19 +38,15 @@ public class AttackStanceTaskManager: Runnable
 			try
 			{
 				DateTime currentTime = DateTime.Now;
-				Iterator<Entry<Creature, long>> iterator = CREATURE_ATTACK_STANCES.entrySet().iterator();
-				Entry<Creature, long> entry;
-				Creature creature;
-				
-				while (iterator.hasNext())
+				List<Creature> toRemove = new List<Creature>();
+				foreach (var entry in CREATURE_ATTACK_STANCES)
 				{
-					entry = iterator.next();
-					if ((currentTime - entry.getValue()) > COMBAT_TIME)
+					if ((currentTime - entry.Value) > COMBAT_TIME)
 					{
-						creature = entry.getKey();
+						Creature creature = entry.Key;
 						if (creature != null)
 						{
-							creature.broadcastPacket(new AutoAttackStop(creature.getObjectId()));
+							creature.broadcastPacket(new AutoAttackStopPacket(creature.getObjectId()));
 							creature.getAI().setAutoAttacking(false);
 							if (creature.isPlayer() && creature.hasSummon())
 							{
@@ -56,19 +54,25 @@ public class AttackStanceTaskManager: Runnable
 								Summon pet = creature.getPet();
 								if (pet != null)
 								{
-									pet.broadcastPacket(new AutoAttackStop(pet.getObjectId()));
+									pet.broadcastPacket(new AutoAttackStopPacket(pet.getObjectId()));
 								}
-								creature.getServitors().values().forEach(s => s.broadcastPacket(new AutoAttackStop(s.getObjectId())));
+								creature.getServitors().values().forEach(s => s.broadcastPacket(new AutoAttackStopPacket(s.getObjectId())));
 							}
+
+							toRemove.Add(creature);
 						}
-						iterator.remove();
 					}
+				}
+
+				foreach (Creature creature in toRemove)
+				{
+					CREATURE_ATTACK_STANCES.remove(creature);
 				}
 			}
 			catch (Exception e)
 			{
 				// Unless caught here, players remain in attack positions.
-				LOGGER.Warn("Error in AttackStanceTaskManager: " + e);
+				LOGGER.Error("Error in AttackStanceTaskManager: " + e);
 			}
 		}
 		

@@ -91,6 +91,7 @@ public class Character
     
     // Some data
     public DateTime Created { get; set; }
+    public short BirthDay { get; set; } // MMdd, for example 812 - 12th of August 
     public DateTime? LastAccess { get; set; }
     public TimeSpan OnlineTime { get; set; }
     public CharacterOnlineStatus OnlineStatus { get; set; }

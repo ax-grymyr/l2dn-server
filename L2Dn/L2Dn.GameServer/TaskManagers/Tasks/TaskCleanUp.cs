@@ -12,9 +12,9 @@ public class TaskCleanUp : Task
 		return NAME;
 	}
 	
-	public override void onTimeElapsed(ExecutedTask task)
+	public override void onTimeElapsed(TaskManager.ExecutedTask task)
 	{
-		System.runFinalization();
-		System.gc();
+		GC.Collect(); // TODO: probably not needed
+		GC.Collect();
 	}
 }

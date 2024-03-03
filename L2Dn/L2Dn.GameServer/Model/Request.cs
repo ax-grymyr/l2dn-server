@@ -18,7 +18,7 @@ public class Request
 	protected Player _partner;
 	protected bool _isRequestor;
 	protected bool _isAnswerer;
-	protected ClientPacket _requestPacket;
+	protected object _requestPacket;
 	
 	public Request(Player player)
 	{
@@ -56,7 +56,7 @@ public class Request
 	 * @param packet
 	 */
 	[MethodImpl(MethodImplOptions.Synchronized)]
-	private void setRequestPacket(ClientPacket packet)
+	private void setRequestPacket(object packet)
 	{
 		_requestPacket = packet;
 	}
@@ -65,7 +65,7 @@ public class Request
 	 * Return the packet originally the came from requester.
 	 * @return
 	 */
-	public ClientPacket getRequestPacket()
+	public object getRequestPacket()
 	{
 		return _requestPacket;
 	}
@@ -77,7 +77,7 @@ public class Request
 	 * @return
 	 */
 	[MethodImpl(MethodImplOptions.Synchronized)]
-	public bool setRequest(Player partner, ClientPacket packet)
+	public bool setRequest(Player partner, object packet)
 	{
 		if (partner == null)
 		{

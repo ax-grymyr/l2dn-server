@@ -2,6 +2,7 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -30,22 +31,17 @@ public class MessageDeletionTaskManager: Runnable
 		
 		if (!PENDING_MESSAGES.isEmpty())
 		{
-			DateTime currentTime = DateTime.Now;
-			Iterator<Entry<int, long>> iterator = PENDING_MESSAGES.entrySet().iterator();
-			Entry<int, long> entry;
-			int messageId;
-			Message message;
-			
-			while (iterator.hasNext())
+			DateTime currentTime = DateTime.UtcNow;
+			List<int> toRemove = new List<int>();
+			foreach (var entry in PENDING_MESSAGES)
 			{
-				entry = iterator.next();
-				if (currentTime > entry.getValue())
+				if (currentTime > entry.Value)
 				{
-					messageId = entry.getKey();
-					message = MailManager.getInstance().getMessage(messageId);
+					int messageId = entry.Key;
+					Message message = MailManager.getInstance().getMessage(messageId);
 					if (message == null)
 					{
-						iterator.remove();
+						toRemove.Add(messageId);
 						continue;
 					}
 					
@@ -67,13 +63,18 @@ public class MessageDeletionTaskManager: Runnable
 						Player receiver = World.getInstance().getPlayer(message.getReceiverId());
 						if (receiver != null)
 						{
-							receiver.sendPacket(new SystemMessage(SystemMessageId.THE_MAIL_WAS_RETURNED_DUE_TO_THE_EXCEEDED_WAITING_TIME));
+							receiver.sendPacket(new SystemMessagePacket(SystemMessageId.THE_MAIL_WAS_RETURNED_DUE_TO_THE_EXCEEDED_WAITING_TIME));
 						}
 					}
 					
 					MailManager.getInstance().deleteMessageInDb(messageId);
-					iterator.remove();
+					toRemove.Add(messageId);
 				}
+			}
+
+			foreach (int messageId in toRemove)
+			{
+				PENDING_MESSAGES.remove(messageId);
 			}
 		}
 		

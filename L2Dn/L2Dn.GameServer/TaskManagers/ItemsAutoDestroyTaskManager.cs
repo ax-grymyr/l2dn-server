@@ -22,31 +22,30 @@ public class ItemsAutoDestroyTaskManager: Runnable
 			return;
 		}
 		
-		DateTime currentTime = DateTime.Now;
-		Iterator<Item> iterator = ITEMS.iterator();
-		Item itemInstance;
-		
-		while (iterator.hasNext())
+		DateTime currentTime = DateTime.UtcNow;
+		List<Item> toRemove = new List<Item>();
+		foreach (Item itemInstance in ITEMS)
 		{
-			itemInstance = iterator.next();
-			if ((itemInstance.getDropTime() == 0) || (itemInstance.getItemLocation() != ItemLocation.VOID))
+			if ((itemInstance.getDropTime() is null) || (itemInstance.getItemLocation() != ItemLocation.VOID))
 			{
-				iterator.remove();
+				toRemove.Add(itemInstance);
 			}
 			else
 			{
-				long autoDestroyTime;
-				if (itemInstance.getTemplate().getAutoDestroyTime() > 0)
+				TimeSpan autoDestroyTime;
+				if (itemInstance.getTemplate().getAutoDestroyTime() > TimeSpan.Zero)
 				{
-					autoDestroyTime = itemInstance.getTemplate().getAutoDestroyTime();
+					autoDestroyTime = itemInstance.getTemplate().getAutoDestroyTime().Value;
 				}
 				else if (itemInstance.getTemplate().hasExImmediateEffect())
 				{
-					autoDestroyTime = Config.HERB_AUTO_DESTROY_TIME;
+					autoDestroyTime = TimeSpan.FromMilliseconds(Config.HERB_AUTO_DESTROY_TIME);
 				}
 				else
 				{
-					autoDestroyTime = ((Config.AUTODESTROY_ITEM_AFTER == 0) ? 3600000 : Config.AUTODESTROY_ITEM_AFTER * 1000);
+					autoDestroyTime = ((Config.AUTODESTROY_ITEM_AFTER == 0)
+						? TimeSpan.FromMilliseconds(3600000)
+						: TimeSpan.FromMilliseconds(Config.AUTODESTROY_ITEM_AFTER * 1000));
 				}
 				
 				if ((currentTime - itemInstance.getDropTime()) > autoDestroyTime)
@@ -56,9 +55,15 @@ public class ItemsAutoDestroyTaskManager: Runnable
 					{
 						ItemsOnGroundManager.getInstance().removeObject(itemInstance);
 					}
-					iterator.remove();
+
+					toRemove.Add(itemInstance);
 				}
 			}
+		}
+
+		foreach (Item item in toRemove)
+		{
+			ITEMS.remove(item);
 		}
 	}
 	

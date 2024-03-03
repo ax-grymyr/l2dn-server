@@ -169,4 +169,5 @@ public class GameServerDbContext: DbContext
     public DbSet<DbAchievementBox> AchievementBoxes => Set<DbAchievementBox>();
     public DbSet<DbEnchantChallengePoint> EnchantChallengePoints => Set<DbEnchantChallengePoint>();
     public DbSet<DbEnchantChallengePointRecharge> EnchantChallengePointRecharges => Set<DbEnchantChallengePointRecharge>();
+    public DbSet<DbGlobalTask> GlobalTasks => Set<DbGlobalTask>();
 }

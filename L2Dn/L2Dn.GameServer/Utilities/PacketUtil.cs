@@ -114,13 +114,13 @@ public static class PacketUtil
     {
         if (item != null)
         {
-            writer.WriteByte((byte)item.getSoulCrystalOptions().size()); // Size of regular soul crystal options.
+            writer.WriteByte((byte)item.getSoulCrystalOptions().Count); // Size of regular soul crystal options.
             foreach (EnsoulOption option in item.getSoulCrystalOptions())
             {
                 writer.WriteInt32(option.getId()); // Regular Soul Crystal Ability ID.
             }
 
-            writer.WriteByte((byte)item.getSoulCrystalSpecialOptions().size()); // Size of special soul crystal options.
+            writer.WriteByte((byte)item.getSoulCrystalSpecialOptions().Count); // Size of special soul crystal options.
             foreach (EnsoulOption option in item.getSoulCrystalSpecialOptions())
             {
                 writer.WriteInt32(option.getId()); // Special Soul Crystal Ability ID.

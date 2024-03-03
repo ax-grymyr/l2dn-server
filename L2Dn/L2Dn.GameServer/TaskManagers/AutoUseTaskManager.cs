@@ -16,7 +16,7 @@ using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.TaskManagers;
 
@@ -36,10 +36,12 @@ public class AutoUseTaskManager
 	
 	private class AutoUse: Runnable
 	{
+		private readonly AutoUseTaskManager _autoUseTaskManager;
 		private readonly Set<Player> _players;
 		
-		public AutoUse(Set<Player> players)
+		public AutoUse(AutoUseTaskManager autoUseTaskManager, Set<Player> players)
 		{
+			_autoUseTaskManager = autoUseTaskManager;
 			_players = players;
 		}
 		
@@ -54,15 +56,17 @@ public class AutoUseTaskManager
 			{
 				if (player.getAutoUseSettings().isEmpty() || !player.isOnline() || (player.isInOfflineMode() && !player.isOfflinePlay()))
 				{
-					stopAutoUseTask(player);
+					_autoUseTaskManager.stopAutoUseTask(player);
 					continue;
 				}
-				
-				if (player.isSitting() || player.hasBlockActions() || player.isControlBlocked() || player.isAlikeDead() || player.isMounted() || (player.isTransformed() && player.getTransformation().get().isRiding()))
+
+				if (player.isSitting() || player.hasBlockActions() || player.isControlBlocked() ||
+				    player.isAlikeDead() || player.isMounted() ||
+				    (player.isTransformed() && (player.getTransformation()?.isRiding() ?? false)))
 				{
 					continue;
 				}
-				
+
 				bool isInPeaceZone = player.isInsideZone(ZoneId.PEACE) || player.isInsideZone(ZoneId.SAYUNE);
 				
 				if (Config.ENABLE_AUTO_ITEM && !isInPeaceZone)
@@ -78,7 +82,7 @@ public class AutoUseTaskManager
 						Item item = player.getInventory().getItemByItemId(itemId);
 						if (item == null)
 						{
-							player.getAutoUseSettings().getAutoSupplyItems().remove(itemId);
+							player.getAutoUseSettings().getAutoSupplyItems().Remove(itemId);
 							continue;
 						}
 						
@@ -122,14 +126,14 @@ public class AutoUseTaskManager
 							}
 						}
 						
-						int reuseDelay = item.getReuseDelay();
-						if ((reuseDelay <= 0) || (player.getItemRemainingReuseTime(item.getObjectId()) <= 0))
+						TimeSpan reuseDelay = item.getReuseDelay();
+						if ((reuseDelay <= TimeSpan.Zero) || (player.getItemRemainingReuseTime(item.getObjectId()) <= TimeSpan.Zero))
 						{
 							EtcItem etcItem = item.getEtcItem();
 							IItemHandler handler = ItemHandler.getInstance().getHandler(etcItem);
 							if ((handler != null) && handler.useItem(player, item, false))
 							{
-								if (reuseDelay > 0)
+								if (reuseDelay > TimeSpan.Zero)
 								{
 									player.addTimeStampItem(item, reuseDelay);
 								}
@@ -156,14 +160,14 @@ public class AutoUseTaskManager
 						}
 						else
 						{
-							int reuseDelay = item.getReuseDelay();
-							if ((reuseDelay <= 0) || (player.getItemRemainingReuseTime(item.getObjectId()) <= 0))
+							TimeSpan reuseDelay = item.getReuseDelay();
+							if ((reuseDelay <= TimeSpan.Zero) || (player.getItemRemainingReuseTime(item.getObjectId()) <= TimeSpan.Zero))
 							{
 								EtcItem etcItem = item.getEtcItem();
 								IItemHandler handler = ItemHandler.getInstance().getHandler(etcItem);
 								if ((handler != null) && handler.useItem(player, item, false))
 								{
-									if (reuseDelay > 0)
+									if (reuseDelay > TimeSpan.Zero)
 									{
 										player.addTimeStampItem(item, reuseDelay);
 									}
@@ -197,12 +201,12 @@ public class AutoUseTaskManager
 								}
 								else
 								{
-									int reuseDelay = item.getReuseDelay();
-									if ((reuseDelay <= 0) || (player.getItemRemainingReuseTime(item.getObjectId()) <= 0))
+									TimeSpan reuseDelay = item.getReuseDelay();
+									if ((reuseDelay <= TimeSpan.Zero) || (player.getItemRemainingReuseTime(item.getObjectId()) <= TimeSpan.Zero))
 									{
 										EtcItem etcItem = item.getEtcItem();
 										IItemHandler handler = ItemHandler.getInstance().getHandler(etcItem);
-										if ((handler != null) && handler.useItem(player, item, false) && (reuseDelay > 0))
+										if ((handler != null) && handler.useItem(player, item, false) && (reuseDelay > TimeSpan.Zero))
 										{
 											player.addTimeStampItem(item, reuseDelay);
 										}
@@ -258,7 +262,7 @@ public class AutoUseTaskManager
 							}
 							if (skill == null)
 							{
-								player.getAutoUseSettings().getAutoBuffs().remove(skillId);
+								player.getAutoUseSettings().getAutoBuffs().Remove(skillId);
 								continue;
 							}
 						}
@@ -277,7 +281,7 @@ public class AutoUseTaskManager
 							
 							// Playable target cast.
 							Playable caster = pet != null ? pet : player;
-							if ((target != null) && target.isPlayable() && (target.getActingPlayer().getPvpFlag() == 0) && (target.getActingPlayer().getReputation() >= 0))
+							if ((target != null) && target.isPlayable() && (!target.getActingPlayer().getPvpFlag()) && (target.getActingPlayer().getReputation() >= 0))
 							{
 								caster.doCast(skill);
 							}
@@ -340,7 +344,7 @@ public class AutoUseTaskManager
 							}
 							if (skill == null)
 							{
-								player.getAutoUseSettings().getAutoSkills().remove(skillId);
+								player.getAutoUseSettings().getAutoSkills().Remove(skillId);
 								player.getAutoUseSettings().resetSkillOrder();
 								break;
 							}
@@ -399,7 +403,7 @@ public class AutoUseTaskManager
 						// Do not allow to do some action if player is transformed.
 						if (player.isTransformed())
 						{
-							TransformTemplate transformTemplate = player.getTransformation().get().getTemplate(player);
+							TransformTemplate transformTemplate = player.getTransformation()?.getTemplate(player);
 							int[] allowedActions = transformTemplate.getBasicActionList();
 							if ((allowedActions == null) || (Array.BinarySearch(allowedActions, actionId) < 0))
 							{
@@ -483,7 +487,7 @@ public class AutoUseTaskManager
 			{
 				if (buffInfo != null)
 				{
-					return (abnormalBuffInfo.getSkill().getId() == buffInfo.getSkill().getId()) && ((buffInfo.getTime() <= REUSE_MARGIN_TIME) || (buffInfo.getSkill().getLevel() < skill.getLevel()));
+					return (abnormalBuffInfo.getSkill().getId() == buffInfo.getSkill().getId()) && ((buffInfo.getTime() <= TimeSpan.FromSeconds(REUSE_MARGIN_TIME)) || (buffInfo.getSkill().getLevel() < skill.getLevel()));
 				}
 				return (abnormalBuffInfo.getSkill().getAbnormalLevel() < skill.getAbnormalLevel()) || abnormalBuffInfo.isAbnormalType(AbnormalType.NONE);
 			}
@@ -522,7 +526,7 @@ public class AutoUseTaskManager
 			}
 			
 			int mpConsume = skill.getMpConsume() + skill.getMpInitialConsume();
-			if ((((mpConsume != 0) && (mpConsume > (int) Math.Floor(summon.getCurrentMp()))) || ((skill.getHpConsume() != 0) && (skill.getHpConsume() > (int) Math.floor(summon.getCurrentHp())))))
+			if ((((mpConsume != 0) && (mpConsume > (int) Math.Floor(summon.getCurrentMp()))) || ((skill.getHpConsume() != 0) && (skill.getHpConsume() > (int) Math.Floor(summon.getCurrentHp())))))
 			{
 				return false;
 			}
@@ -545,10 +549,10 @@ public class AutoUseTaskManager
 			if (skill.getTargetType()==TargetType.SELF || skill.getTargetType()==TargetType.SUMMON)
 			{
 				BuffInfo summonInfo = summon.getEffectList().getBuffInfoBySkillId(skill.getId());
-				return (summonInfo != null) && (summonInfo.getTime() >= REUSE_MARGIN_TIME);
+				return (summonInfo != null) && (summonInfo.getTime() >= TimeSpan.FromSeconds(REUSE_MARGIN_TIME));
 			}
 			
-			if ((skill.getEffects(EffectScope.GENERAL) != null) && skill.getEffects(EffectScope.GENERAL).stream().anyMatch(a -> a.getEffectType().equals(EffectType.MANAHEAL_BY_LEVEL)) && (player.getCurrentMpPercent() > 80))
+			if ((skill.getEffects(EffectScope.GENERAL) != null) && skill.getEffects(EffectScope.GENERAL).Any(a => a.getEffectType() == EffectType.MANAHEAL_BY_LEVEL) && (player.getCurrentMpPercent() > 80))
 			{
 				return false;
 			}
@@ -559,7 +563,7 @@ public class AutoUseTaskManager
 			{
 				if (buffInfo != null)
 				{
-					return (abnormalBuffInfo.getSkill().getId() == buffInfo.getSkill().getId()) && ((buffInfo.getTime() <= REUSE_MARGIN_TIME) || (buffInfo.getSkill().getLevel() < skill.getLevel()));
+					return (abnormalBuffInfo.getSkill().getId() == buffInfo.getSkill().getId()) && ((buffInfo.getTime() <= TimeSpan.FromSeconds(REUSE_MARGIN_TIME)) || (buffInfo.getSkill().getLevel() < skill.getLevel()));
 				}
 				return (abnormalBuffInfo.getSkill().getAbnormalLevel() < skill.getAbnormalLevel()) || abnormalBuffInfo.isAbnormalType(AbnormalType.NONE);
 			}
@@ -590,7 +594,7 @@ public class AutoUseTaskManager
 		
 		Set<Player> pool1 = new();
 		pool1.add(player);
-		ThreadPool.scheduleAtFixedRate(new AutoUse(pool1), TASK_DELAY, TASK_DELAY);
+		ThreadPool.scheduleAtFixedRate(new AutoUse(this, pool1), TASK_DELAY, TASK_DELAY);
 		POOLS.add(pool1);
 	}
 	
@@ -611,13 +615,13 @@ public class AutoUseTaskManager
 	
 	public void addAutoSupplyItem(Player player, int itemId)
 	{
-		player.getAutoUseSettings().getAutoSupplyItems().add(itemId);
+		player.getAutoUseSettings().getAutoSupplyItems().Add(itemId);
 		startAutoUseTask(player);
 	}
 	
 	public void removeAutoSupplyItem(Player player, int itemId)
 	{
-		player.getAutoUseSettings().getAutoSupplyItems().remove(itemId);
+		player.getAutoUseSettings().getAutoSupplyItems().Remove(itemId);
 		stopAutoUseTask(player);
 	}
 	
@@ -647,13 +651,13 @@ public class AutoUseTaskManager
 	
 	public void addAutoBuff(Player player, int skillId)
 	{
-		player.getAutoUseSettings().getAutoBuffs().add(skillId);
+		player.getAutoUseSettings().getAutoBuffs().Add(skillId);
 		startAutoUseTask(player);
 	}
 	
 	public void removeAutoBuff(Player player, int skillId)
 	{
-		player.getAutoUseSettings().getAutoBuffs().remove(skillId);
+		player.getAutoUseSettings().getAutoBuffs().Remove(skillId);
 		stopAutoUseTask(player);
 	}
 	
@@ -665,19 +669,19 @@ public class AutoUseTaskManager
 	
 	public void removeAutoSkill(Player player, int skillId)
 	{
-		player.getAutoUseSettings().getAutoSkills().remove(skillId);
+		player.getAutoUseSettings().getAutoSkills().Remove(skillId);
 		stopAutoUseTask(player);
 	}
 	
 	public void addAutoAction(Player player, int actionId)
 	{
-		player.getAutoUseSettings().getAutoActions().add(actionId);
+		player.getAutoUseSettings().getAutoActions().Add(actionId);
 		startAutoUseTask(player);
 	}
 	
 	public void removeAutoAction(Player player, int actionId)
 	{
-		player.getAutoUseSettings().getAutoActions().remove(actionId);
+		player.getAutoUseSettings().getAutoActions().Remove(actionId);
 		stopAutoUseTask(player);
 	}
 	

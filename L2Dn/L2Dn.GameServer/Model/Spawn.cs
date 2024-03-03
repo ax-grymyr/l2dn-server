@@ -1,12 +1,17 @@
-﻿using L2Dn.GameServer.Data.Xml;
+﻿using System.Collections.Concurrent;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Geo;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
-using L2Dn.GameServer.Model.Geo;
+using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Spawns;
+using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Model;
@@ -42,12 +47,10 @@ public class Spawn : Location, IIdentifiable, INamable
 	private TimeSpan _respawnMaxDelay;
 	/** Respawn Pattern **/
 	private SchedulingPattern _respawnPattern;
-	/** The generic constructor of Npc managed by this Spawn */
-	private Constructor<? extends Npc> _constructor;
 	/** If True an Npc is respawned each time that another is killed */
 	private bool _doRespawn = true;
-	private readonly Deque<Npc> _spawnedNpcs = new ConcurrentLinkedDeque<>();
-	private bool _randomWalk = false; // Is no random walk
+	private readonly ConcurrentQueue<Npc> _spawnedNpcs = new();
+    private bool _randomWalk = false; // Is no random walk
 	private NpcSpawnTemplate _spawnTemplate;
 	
 	/**
@@ -81,11 +84,6 @@ public class Spawn : Location, IIdentifiable, INamable
 		{
 			return;
 		}
-		
-		String className = "org.l2jmobius.gameserver.model.actor.instance." + _template.getType();
-		
-		// Create the generic constructor of Npc managed by this Spawn
-		_constructor = Class.forName(className).asSubclass(Npc.class).getConstructor(NpcTemplate.class);
 	}
 	
 	/**
@@ -97,12 +95,9 @@ public class Spawn : Location, IIdentifiable, INamable
 	 */
 	public Spawn(int npcId) : base(0, 0, -10000)
 	{
-		_template = Objects.requireNonNull(NpcData.getInstance().getTemplate(npcId), "NpcTemplate not found for NPC ID: " + npcId);
-		
-		string className = "org.l2jmobius.gameserver.model.actor.instance." + _template.getType();
-		
-		// Create the generic constructor of Npc managed by this Spawn
-		_constructor = Class.forName(className).asSubclass(Npc.class).getConstructor(NpcTemplate.class);
+		_template = NpcData.getInstance().getTemplate(npcId);
+		if (_template is null)
+			throw new ArgumentException("NpcTemplate not found for NPC ID: " + npcId);
 	}
 	
 	/**
@@ -193,7 +188,7 @@ public class Spawn : Location, IIdentifiable, INamable
 	 * Set Minimum Respawn Delay.
 	 * @param date
 	 */
-	public void setRespawnMinDelay(int date)
+	public void setRespawnMinDelay(TimeSpan date)
 	{
 		_respawnMinDelay = date;
 	}
@@ -202,7 +197,7 @@ public class Spawn : Location, IIdentifiable, INamable
 	 * Set Maximum Respawn Delay.
 	 * @param date
 	 */
-	public void setRespawnMaxDelay(int date)
+	public void setRespawnMaxDelay(TimeSpan date)
 	{
 		_respawnMaxDelay = date;
 	}
@@ -236,7 +231,7 @@ public class Spawn : Location, IIdentifiable, INamable
 			_scheduledCount++;
 			
 			// Schedule the next respawn.
-			RespawnTaskManager.getInstance().add(oldNpc, System.currentTimeMillis() + (hasRespawnRandom() ? Rnd.get(_respawnMinDelay, _respawnMaxDelay) : _respawnMinDelay));
+			RespawnTaskManager.getInstance().add(oldNpc, DateTime.UtcNow + (hasRespawnRandom() ? Rnd.get(_respawnMinDelay, _respawnMaxDelay) : _respawnMinDelay));
 		}
 	}
 	
@@ -250,7 +245,7 @@ public class Spawn : Location, IIdentifiable, INamable
 		{
 			doSpawn();
 		}
-		_doRespawn = _respawnMinDelay > 0;
+		_doRespawn = _respawnMinDelay > TimeSpan.Zero;
 		
 		return _currentCount;
 	}
@@ -320,7 +315,7 @@ public class Spawn : Location, IIdentifiable, INamable
 			}
 			
 			// Call the constructor of the Npc
-			Npc npc = _constructor.newInstance(_template);
+			Npc npc = _template.CreateInstance();
 			npc.setInstanceById(_instanceId); // Must be done before object is spawned into visible world
 			if (isSummonSpawn)
 			{
@@ -331,7 +326,7 @@ public class Spawn : Location, IIdentifiable, INamable
 		}
 		catch (Exception e)
 		{
-			LOGGER.log(Level.WARNING, "Error while spawning " + _template.getId(), e);
+			LOGGER.Warn("Error while spawning " + _template.getId() + ": " + e);
 		}
 		return null;
 	}
@@ -369,10 +364,10 @@ public class Spawn : Location, IIdentifiable, INamable
 		}
 		
 		// Check if npc is in water.
-		WaterZone water = ZoneManager.getInstance().getZone(newlocx, newlocy, newlocz, WaterZone.class);
+		WaterZone water = ZoneManager.getInstance().getZone<WaterZone>(newlocx, newlocy, newlocz);
 		
 		// If random spawn system is enabled.
-		if (Config.ENABLE_RANDOM_MONSTER_SPAWNS && (getHeading() != -1) && npc.isMonster() && !npc.isQuestMonster() && !WalkingManager.getInstance().isTargeted(npc) && (getInstanceId() == 0) && !getTemplate().isUndying() && !npc.isRaid() && !npc.isRaidMinion() && !npc.isFlying() && (water == null) && !Config.MOBS_LIST_NOT_RANDOM.contains(npc.getId()))
+		if (Config.ENABLE_RANDOM_MONSTER_SPAWNS && (getHeading() != -1) && npc.isMonster() && !npc.isQuestMonster() && !WalkingManager.getInstance().isTargeted(npc) && (getInstanceId() == 0) && !getTemplate().isUndying() && !npc.isRaid() && !npc.isRaidMinion() && !npc.isFlying() && (water == null) && !Config.MOBS_LIST_NOT_RANDOM.Contains(npc.getId()))
 		{
 			int randX = newlocx + Rnd.get(Config.MOB_MIN_SPAWN_RANGE, Config.MOB_MAX_SPAWN_RANGE);
 			int randY = newlocy + Rnd.get(Config.MOB_MIN_SPAWN_RANGE, Config.MOB_MAX_SPAWN_RANGE);
@@ -440,7 +435,7 @@ public class Spawn : Location, IIdentifiable, INamable
 			_spawnTemplate.notifySpawnNpc(npc);
 		}
 		
-		_spawnedNpcs.add(npc);
+		_spawnedNpcs.Enqueue(npc);
 		
 		// Increase the current number of Npcs managed by this Spawn
 		_currentCount++;
@@ -468,16 +463,16 @@ public class Spawn : Location, IIdentifiable, INamable
 				LOGGER.Error("respawn delay is negative for spawn:" + this);
 			}
 			
-			TimeSpan minDelay = delay - randomInterval;
-			TimeSpan maxDelay = delay + randomInterval;
+			TimeSpan minDelay = delay.Value - (randomInterval ?? TimeSpan.Zero);
+			TimeSpan maxDelay = delay.Value + (randomInterval ?? TimeSpan.Zero);
 			
-			_respawnMinDelay = Math.Max(10, minDelay) * 1000;
-			_respawnMaxDelay = Math.Max(10, maxDelay) * 1000;
+			_respawnMinDelay = Algorithms.Max(TimeSpan.FromSeconds(10), minDelay);
+			_respawnMaxDelay = Algorithms.Max(TimeSpan.FromSeconds(10), maxDelay);
 		}
 		else
 		{
-			_respawnMinDelay = 0;
-			_respawnMaxDelay = 0;
+			_respawnMinDelay = TimeSpan.Zero;
+			_respawnMaxDelay = TimeSpan.Zero;
 		}
 	}
 	
@@ -488,10 +483,10 @@ public class Spawn : Location, IIdentifiable, INamable
 	
 	public void setRespawnDelay(TimeSpan delay)
 	{
-		setRespawnDelay(delay, 0);
+		setRespawnDelay(delay, TimeSpan.Zero);
 	}
 	
-	public int getRespawnDelay()
+	public TimeSpan getRespawnDelay()
 	{
 		return (_respawnMinDelay + _respawnMaxDelay) / 2;
 	}
@@ -512,20 +507,19 @@ public class Spawn : Location, IIdentifiable, INamable
 	
 	public Npc getLastSpawn()
 	{
-		if (!_spawnedNpcs.isEmpty())
-		{
-			return _spawnedNpcs.peekLast();
-		}
-		
-		return null;
+		_spawnedNpcs.TryPeek(out Npc? npc);
+		return npc;
 	}
 	
 	public bool deleteLastNpc()
 	{
-		return !_spawnedNpcs.isEmpty() && _spawnedNpcs.getLast().deleteMe();
+		if (_spawnedNpcs.TryDequeue(out Npc? npc))
+			return npc.deleteMe();
+			
+		return false;
 	}
 	
-	public Deque<Npc> getSpawnedNpcs()
+	public ConcurrentQueue<Npc> getSpawnedNpcs()
 	{
 		return _spawnedNpcs;
 	}

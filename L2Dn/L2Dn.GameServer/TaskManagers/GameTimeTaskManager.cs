@@ -58,7 +58,7 @@ public class GameTimeTaskManager: Thread
 			
 			try
 			{
-				Thread.sleep(MILLIS_IN_TICK);
+				Thread.Sleep(MILLIS_IN_TICK);
 			}
 			catch (InterruptedException e)
 			{

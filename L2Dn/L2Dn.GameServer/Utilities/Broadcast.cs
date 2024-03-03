@@ -29,7 +29,7 @@ public static class Broadcast
 	 * @param packet
 	 */
 	public static void toPlayersTargettingMyself<TPacket>(Creature creature, TPacket packet)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		World.getInstance().forEachVisibleObject<Player>(creature, player =>
 		{
@@ -52,7 +52,7 @@ public static class Broadcast
 	 * @param packet
 	 */
 	public static void toKnownPlayers<TPacket>(Creature creature, TPacket packet)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		World.getInstance().forEachVisibleObject<Player>(creature, player =>
 		{
@@ -105,7 +105,7 @@ public static class Broadcast
 	 * @param radiusValue
 	 */
 	public static void toKnownPlayersInRadius<TPacket>(Creature creature, TPacket packet, int radiusValue)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		int radius = radiusValue;
 		if (radius < 0)
@@ -127,7 +127,7 @@ public static class Broadcast
 	 * @param packet
 	 */
 	public static void toSelfAndKnownPlayers<TPacket>(Creature creature, TPacket packet)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		if (creature.isPlayer())
 		{
@@ -139,7 +139,7 @@ public static class Broadcast
 	
 	// To improve performance we are comparing values of radius^2 instead of calculating sqrt all the time
 	public static void toSelfAndKnownPlayersInRadius<TPacket>(Creature creature, TPacket packet, int radiusValue)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		int radius = radiusValue;
 		if (radius < 0)
@@ -165,7 +165,7 @@ public static class Broadcast
 	 * @param packet
 	 */
 	public static void toAllOnlinePlayers<TPacket>(TPacket packet)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		foreach (Player player in World.getInstance().getPlayers())
 		{
@@ -217,7 +217,7 @@ public struct PacketSendUtil // TODO: refactor this later
 	}
 
 	public void SendPackets<TPacket>(TPacket packet)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		foreach (Creature? creature in _creatures)
 		{
@@ -229,8 +229,8 @@ public struct PacketSendUtil // TODO: refactor this later
 	}
 
 	public void SendPackets<TPacket1, TPacket2>(TPacket1 packet1, TPacket2 packet2)
-		where TPacket1: IOutgoingPacket
-		where TPacket2: IOutgoingPacket
+		where TPacket1: struct, IOutgoingPacket
+		where TPacket2: struct, IOutgoingPacket
 	{
 		foreach (Creature? creature in _creatures)
 		{
@@ -243,9 +243,9 @@ public struct PacketSendUtil // TODO: refactor this later
 	}
 
 	public void SendPackets<TPacket1, TPacket2, TPacket3>(TPacket1 packet1, TPacket2 packet2, TPacket3 packet3)
-		where TPacket1: IOutgoingPacket
-		where TPacket2: IOutgoingPacket
-		where TPacket3: IOutgoingPacket
+		where TPacket1: struct, IOutgoingPacket
+		where TPacket2: struct, IOutgoingPacket
+		where TPacket3: struct, IOutgoingPacket
 	{
 		foreach (Creature? creature in _creatures)
 		{
@@ -260,10 +260,10 @@ public struct PacketSendUtil // TODO: refactor this later
 
 	public void SendPackets<TPacket1, TPacket2, TPacket3, TPacket4>(TPacket1 packet1, TPacket2 packet2,
 		TPacket3 packet3, TPacket4 packet4)
-		where TPacket1: IOutgoingPacket
-		where TPacket2: IOutgoingPacket
-		where TPacket3: IOutgoingPacket
-		where TPacket4: IOutgoingPacket
+		where TPacket1: struct, IOutgoingPacket
+		where TPacket2: struct, IOutgoingPacket
+		where TPacket3: struct, IOutgoingPacket
+		where TPacket4: struct, IOutgoingPacket
 	{
 		foreach (Creature? creature in _creatures)
 		{
@@ -279,14 +279,14 @@ public struct PacketSendUtil // TODO: refactor this later
 
 	public void SendPackets<TPacket1, TPacket2, TPacket3, TPacket4, TPacket5, TPacket6, TPacket7, TPacket8>(TPacket1 packet1, TPacket2 packet2,
 		TPacket3 packet3, TPacket4 packet4, TPacket5 packet5, TPacket6 packet6, TPacket7 packet7, TPacket8 packet8)
-		where TPacket1: IOutgoingPacket
-		where TPacket2: IOutgoingPacket
-		where TPacket3: IOutgoingPacket
-		where TPacket4: IOutgoingPacket
-		where TPacket5: IOutgoingPacket
-		where TPacket6: IOutgoingPacket
-		where TPacket7: IOutgoingPacket
-		where TPacket8: IOutgoingPacket
+		where TPacket1: struct, IOutgoingPacket
+		where TPacket2: struct, IOutgoingPacket
+		where TPacket3: struct, IOutgoingPacket
+		where TPacket4: struct, IOutgoingPacket
+		where TPacket5: struct, IOutgoingPacket
+		where TPacket6: struct, IOutgoingPacket
+		where TPacket7: struct, IOutgoingPacket
+		where TPacket8: struct, IOutgoingPacket
 	{
 		foreach (Creature? creature in _creatures)
 		{

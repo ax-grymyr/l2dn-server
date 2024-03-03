@@ -10,7 +10,7 @@ using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = System.Threading.ThreadPool;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer;
 
@@ -70,6 +70,11 @@ public class Shutdown
 	{
 		_secondsShut = Math.Max(0, seconds);
 		_shutdownMode = restart ? GM_RESTART : GM_SHUTDOWN;
+	}
+
+	public void start()
+	{
+		System.Threading.Tasks.Task.Run(() => run());
 	}
 	
 	/**
@@ -266,6 +271,7 @@ public class Shutdown
 					case 1:
 					{
 						sendServerQuit(_secondsShut);
+						break;
 					}
 				}
 				

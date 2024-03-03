@@ -1,3 +1,6 @@
+using L2Dn.GameServer.Db;
+using Microsoft.EntityFrameworkCore;
+
 namespace L2Dn.GameServer.TaskManagers.Tasks;
 
 /**
@@ -12,28 +15,14 @@ public class TaskRecom : Task
 		return NAME;
 	}
 	
-	public override void onTimeElapsed(ExecutedTask task)
+	public override void onTimeElapsed(TaskManager.ExecutedTask task)
 	{
 		try
 		{
 			using GameServerDbContext ctx = new();
-
-			{
-				PreparedStatement ps = con.prepareStatement(
-					"UPDATE character_reco_bonus SET rec_left=?, time_left=?, rec_have=0 WHERE rec_have <=  20");
-				ps.setInt(1, 20); // Rec left = 20
-				ps.setInt(2, 3600000); // Timer = 1 hour
-				ps.execute();
-			}
-
-
-			{
-				PreparedStatement ps = con.prepareStatement(
-					"UPDATE character_reco_bonus SET rec_left=?, time_left=?, rec_have=GREATEST(rec_have-20,0) WHERE rec_have > 20");
-				ps.setInt(1, 20); // Rec left = 20
-				ps.setInt(2, 3600000); // Timer = 1 hour
-				ps.execute();
-			}
+			ctx.CharacterRecoBonuses.ExecuteUpdate(s =>
+				s.SetProperty(r => r.RecLeft, 20).SetProperty(r => r.RecHave, r => r.RecHave > 20 ? r.RecHave - 20 : 0)
+					.SetProperty(r => r.TimeLeft, TimeSpan.FromHours(1)));
 		}
 		catch (Exception e)
 		{

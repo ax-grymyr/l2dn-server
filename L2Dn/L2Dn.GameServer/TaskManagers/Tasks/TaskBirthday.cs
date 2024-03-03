@@ -1,4 +1,4 @@
-using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
@@ -12,7 +12,6 @@ namespace L2Dn.GameServer.TaskManagers.Tasks;
 public class TaskBirthday: Task
 {
 	private const string NAME = "birthday";
-	private const string QUERY = "SELECT charId, createDate FROM characters WHERE createDate LIKE ?";
 	private int _count = 0;
 	
 	public override String getName()
@@ -20,74 +19,75 @@ public class TaskBirthday: Task
 		return NAME;
 	}
 	
-	public override void onTimeElapsed(ExecutedTask task)
+	public override void onTimeElapsed(TaskManager.ExecutedTask task)
 	{
-		Calendar lastExecDate = Calendar.getInstance();
-		long lastActivation = task.getLastActivation();
-		if (lastActivation > 0)
+		DateTime today = DateTime.Today;
+		DateTime lastExecDate = today;
+		DateTime? lastActivation = task.getLastActivation();
+		if (lastActivation != null)
 		{
-			lastExecDate.setTimeInMillis(lastActivation);
+			lastExecDate = lastActivation.Value;
 		}
+
 		
-		String rangeDate = "[" + Util.getDateString(lastExecDate.getTime()) + "] - [" + Util.getDateString(TODAY.getTime()) + "]";
-		for (; !TODAY.before(lastExecDate); lastExecDate.add(Calendar.DATE, 1))
+		string rangeDate = $"[{lastExecDate:MMM-dd}] - [{today:MMM-dd}]";
+		while (lastExecDate <= today)
 		{
-			checkBirthday(lastExecDate.get(Calendar.YEAR), lastExecDate.get(Calendar.MONTH), lastExecDate.get(Calendar.DATE));
+			checkBirthday(lastExecDate.Month * 100 + lastExecDate.Day);
+			lastExecDate = lastExecDate.AddDays(1);
 		}
 		
 		LOGGER.Info("BirthdayManager: " + _count + " gifts sent. " + rangeDate);
 	}
 	
-	private void checkBirthday(int year, int month, int day)
+	private void checkBirthday(int day)
 	{
-		try 
+		try
 		{
+			// If character birthday is 29-Feb and year isn't leap, send gift on 28-feb
+			bool include29February = day == 228 && DateTime.IsLeapYear(DateTime.Today.Year);
+			
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement = con.prepareStatement(QUERY);
-			statement.setString(1, "%-" + getNum(month + 1) + "-" + getNum(day));
-
-			{
-				ResultSet rset = statement.executeQuery();
-				while (rset.next())
+			var query = ctx.Characters.Where(r => r.BirthDay == day || (include29February && r.BirthDay == 229)).Select(
+				r => new
 				{
-					int playerId = rset.getInt("charId");
-					Calendar createDate = Calendar.getInstance();
-					createDate.setTime(rset.getDate("createDate"));
-					
-					int age = year - createDate.get(Calendar.YEAR);
-					if (age <= 0)
-					{
-						continue;
-					}
-					
-					String text = Config.ALT_BIRTHDAY_MAIL_TEXT;
-					if (text.Contains("$c1"))
-					{
-						text = text.Replace("$c1", CharInfoTable.getInstance().getNameById(playerId));
-					}
-					if (text.Contains("$s1"))
-					{
-						text = text.Replace("$s1", age.ToString());
-					}
-					
-					Message msg = new Message(playerId, Config.ALT_BIRTHDAY_MAIL_SUBJECT, text, MailType.BIRTHDAY);
-					Mail attachments = msg.createAttachments();
-					attachments.addItem("Birthday", Config.ALT_BIRTHDAY_GIFT, 1, null, null);
-					MailManager.getInstance().sendMessage(msg);
-					_count++;
+					r.Id,
+					r.Created,
+					r.Name
+				});
+
+			foreach (var record in query)
+			{
+				int playerId = record.Id;
+				DateTime createDate = record.Created;
+
+				int age = record.Created.Year - createDate.Year;
+				if (age <= 0)
+				{
+					continue;
 				}
+
+				String text = Config.ALT_BIRTHDAY_MAIL_TEXT;
+				if (text.Contains("$c1"))
+				{
+					text = text.Replace("$c1", record.Name);
+				}
+
+				if (text.Contains("$s1"))
+				{
+					text = text.Replace("$s1", age.ToString());
+				}
+
+				Message msg = new Message(playerId, Config.ALT_BIRTHDAY_MAIL_SUBJECT, text, MailType.BIRTHDAY);
+				Mail attachments = msg.createAttachments();
+				attachments.addItem("Birthday", Config.ALT_BIRTHDAY_GIFT, 1, null, null);
+				MailManager.getInstance().sendMessage(msg);
+				_count++;
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Error checking birthdays: " + e);
-		}
-		
-		// If character birthday is 29-Feb and year isn't leap, send gift on 28-feb
-		GregorianCalendar calendar = new GregorianCalendar();
-		if ((month == Calendar.FEBRUARY) && (day == 28) && !calendar.isLeapYear(TODAY.get(Calendar.YEAR)))
-		{
-			checkBirthday(year, Calendar.FEBRUARY, 29);
+			LOGGER.Error("Error checking birthdays: " + e);
 		}
 	}
 	

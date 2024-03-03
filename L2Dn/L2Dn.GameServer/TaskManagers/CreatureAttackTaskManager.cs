@@ -38,20 +38,15 @@ public class CreatureAttackTaskManager
 				return;
 			}
 			
-			DateTime currentTime = DateTime.Now;
-			Iterator<Entry<Creature, ScheduledAttack>> iterator = _creatureAttackData.entrySet().iterator();
-			Entry<Creature, ScheduledAttack> entry;
-			ScheduledAttack scheduledAttack;
-			
-			while (iterator.hasNext())
+			DateTime currentTime = DateTime.UtcNow;
+			List<Creature> toRemove = new List<Creature>();
+			foreach (var entry in _creatureAttackData)
 			{
-				entry = iterator.next();
-				scheduledAttack = entry.getValue();
-				
+				ScheduledAttack scheduledAttack = entry.Value;
 				if (currentTime >= scheduledAttack.endTime)
 				{
-					iterator.remove();
-					Creature creature = entry.getKey();
+					Creature creature = entry.Key;
+					toRemove.add(creature);
 					switch (scheduledAttack.type)
 					{
 						case ScheduledAttackType.NORMAL:
@@ -72,6 +67,11 @@ public class CreatureAttackTaskManager
 					}
 				}
 			}
+
+			foreach (Creature creature in toRemove)
+			{
+				_creatureAttackData.remove(creature);
+			}
 		}
 	}
 	
@@ -91,22 +91,23 @@ public class CreatureAttackTaskManager
 				return;
 			}
 			
-			long currentTime = System.currentTimeMillis();
-			Iterator<Entry<Creature, ScheduledFinish>> iterator = _creatureFinishData.entrySet().iterator();
-			Entry<Creature, ScheduledFinish> entry;
-			ScheduledFinish scheduledFinish;
-			
-			while (iterator.hasNext())
+			DateTime currentTime = DateTime.UtcNow;
+			List<Creature> toRemove = new List<Creature>();
+			foreach (var entry in _creatureFinishData)
 			{
-				entry = iterator.next();
-				scheduledFinish = entry.getValue();
+				ScheduledFinish scheduledFinish = entry.Value;
 				
 				if (currentTime >= scheduledFinish.endTime)
 				{
-					iterator.remove();
-					Creature creature = entry.getKey();
+					Creature creature = entry.Key;
+					toRemove.Add(creature);
 					creature.onAttackFinish(scheduledFinish.attack);
 				}
+			}
+
+			foreach (Creature creature in toRemove)
+			{
+				_creatureFinishData.remove(creature);
 			}
 		}
 	}
