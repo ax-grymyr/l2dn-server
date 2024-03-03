@@ -5,8 +5,8 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
-using StringTokenizer = Microsoft.Extensions.Primitives.StringTokenizer;
 
 namespace L2Dn.GameServer.Model;
 
@@ -98,97 +98,96 @@ public class MacroList: IRestorable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
-			using PreparedStatement ps = con.prepareStatement(
-				"INSERT INTO character_macroses (charId,id,icon,name,descr,acronym,commands) values(?,?,?,?,?,?,?)");
-			ps.setInt(1, _owner.getObjectId());
-			ps.setInt(2, macro.getId());
-			ps.setInt(3, macro.getIcon());
-			ps.setString(4, macro.getName());
-			ps.setString(5, macro.getDescr());
-			ps.setString(6, macro.getAcronym());
 			StringBuilder sb = new StringBuilder(1255);
 			foreach (MacroCmd cmd in macro.getCommands())
 			{
-				sb.append(cmd.getType().ordinal() + "," + cmd.getD1() + "," + cmd.getD2());
-				if ((cmd.getCmd() != null) && (cmd.getCmd().length() > 0))
+				sb.Append((int)cmd.getType() + "," + cmd.getD1() + "," + cmd.getD2());
+				if ((cmd.getCmd() != null) && (cmd.getCmd().Length > 0))
 				{
-					sb.append("," + cmd.getCmd());
+					sb.Append("," + cmd.getCmd());
 				}
-				sb.append(';');
+				sb.Append(';');
 			}
-			
-			if (sb.length() > 1000)
+
+			string text = sb.Length > 1000 ? sb.ToString(0, 1000) : sb.ToString();
+            
+			using GameServerDbContext ctx = new();
+			ctx.CharacterMacros.Add(new DbCharacterMacros()
 			{
-				sb.setLength(1000);
-			}
-			
-			ps.setString(7, sb.toString());
-			ps.execute();
+				CharacterId = _owner.getObjectId(),
+				Id = macro.getId(),
+				Icon = macro.getIcon(),
+				Name = macro.getName(),
+				Description = macro.getDescr(),
+				Acronym = macro.getAcronym(), Commands = text,
+			});
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("could not store macro:" + e);
+			LOGGER.Error("could not store macro:" + e);
 		}
 	}
-	
+
 	private void deleteMacroFromDb(Macro macro)
 	{
-		try 
-		{using GameServerDbContext ctx = new();
-			using PreparedStatement ps = con.prepareStatement("DELETE FROM character_macroses WHERE charId=? AND id=?");
-			ps.setInt(1, _owner.getObjectId());
-			ps.setInt(2, macro.getId());
-			ps.execute();
+		try
+		{
+			using GameServerDbContext ctx = new();
+			int characterId = _owner.getObjectId();
+			int macroId = macro.getId();
+			ctx.CharacterMacros.Where(r => r.CharacterId == characterId && r.Id == macroId).ExecuteDelete();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("could not delete macro:" + e);
+			LOGGER.Error("could not delete macro:" + e);
 		}
 	}
-	
+
 	public bool restoreMe()
 	{
 		_macroses.clear();
 		try
 		{
 			using GameServerDbContext ctx = new();
-			using PreparedStatement ps = con.prepareStatement(
-				"SELECT charId, id, icon, name, descr, acronym, commands FROM character_macroses WHERE charId=?");
-			ps.setInt(1, _owner.getObjectId());
-				using ResultSet rset = ps.executeQuery();
-				while (rset.next())
+			int characterId = _owner.getObjectId();
+			var query = ctx.CharacterMacros.Where(r => r.CharacterId == characterId);
+			foreach (var record in query)
+			{
+				int id = record.Id;
+				int? icon = record.Icon;
+				String name = record.Name;
+				String descr = record.Description;
+				String acronym = record.Acronym;
+				List<MacroCmd> commands = new();
+				StringTokenizer st1 = new StringTokenizer(record.Commands, ";");
+				while (st1.hasMoreTokens())
 				{
-					int id = rset.getInt("id");
-					int icon = rset.getInt("icon");
-					String name = rset.getString("name");
-					String descr = rset.getString("descr");
-					String acronym = rset.getString("acronym");
-					List<MacroCmd> commands = new ArrayList<>();
-					StringTokenizer st1 = new StringTokenizer(rset.getString("commands"), ";");
-					while (st1.hasMoreTokens())
+					StringTokenizer st = new StringTokenizer(st1.nextToken(), ",");
+					if (st.countTokens() < 3)
 					{
-						StringTokenizer st = new StringTokenizer(st1.nextToken(), ",");
-						if (st.countTokens() < 3)
-						{
-							continue;
-						}
-						MacroType type = MacroType.values()[Integer.parseInt(st.nextToken())];
-						int d1 = Integer.parseInt(st.nextToken());
-						int d2 = Integer.parseInt(st.nextToken());
-						String cmd = "";
-						if (st.hasMoreTokens())
-						{
-							cmd = st.nextToken();
-						}
-						commands.add(new MacroCmd(commands.size(), type, d1, d2, cmd));
+						continue;
 					}
-					_macroses.put(id, new Macro(id, icon, name, descr, acronym, commands));
+
+					MacroType type = (MacroType)int.Parse(st.nextToken());
+					int d1 = int.Parse(st.nextToken());
+					int d2 = int.Parse(st.nextToken());
+					String cmd = "";
+					if (st.hasMoreTokens())
+					{
+						cmd = st.nextToken();
+					}
+
+					commands.add(new MacroCmd(commands.size(), type, d1, d2, cmd));
 				}
+
+				_macroses.put(id, new Macro(id, icon, name, descr, acronym, commands));
+			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("could not store shortcuts:" + e);
+			LOGGER.Error("could not read macros:" + e);
 			return false;
 		}
 		

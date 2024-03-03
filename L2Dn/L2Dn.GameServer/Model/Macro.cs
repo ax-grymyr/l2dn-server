@@ -5,7 +5,7 @@ namespace L2Dn.GameServer.Model;
 public class Macro: IIdentifiable, INamable
 {
     private int _id;
-    private readonly int _icon;
+    private readonly int? _icon;
     private readonly String _name;
     private readonly String _descr;
     private readonly String _acronym;
@@ -20,7 +20,7 @@ public class Macro: IIdentifiable, INamable
      * @param acronym the macro acronym
      * @param list the macro command list
      */
-    public Macro(int id, int icon, String name, String descr, String acronym, List<MacroCmd> list)
+    public Macro(int id, int? icon, String name, String descr, String acronym, List<MacroCmd> list)
     {
         _id = id;
         _icon = icon;
@@ -52,7 +52,7 @@ public class Macro: IIdentifiable, INamable
      * Gets the macro icon ID.
      * @return the icon
      */
-    public int getIcon()
+    public int? getIcon()
     {
         return _icon;
     }

@@ -74,6 +74,7 @@ public class GameServerDbContext: DbContext
     public DbSet<CharacterQuest> CharacterQuests => Set<CharacterQuest>();
     public DbSet<DbCharacterContact> CharacterContacts => Set<DbCharacterContact>();
     public DbSet<DbCharacterCouple> CharacterCouples => Set<DbCharacterCouple>();
+    public DbSet<DbCharacterMacros> CharacterMacros => Set<DbCharacterMacros>();
     public DbSet<CharacterVariable> CharacterVariables => Set<CharacterVariable>();
 
     public DbSet<DbHero> Heroes => Set<DbHero>();

@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets.HuntPasses;
 using L2Dn.GameServer.Utilities;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -11,9 +12,6 @@ namespace L2Dn.GameServer.Model;
 public class HuntPass
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(HuntPass));
-	
-	private const String INSERT_SEASONPASS = "REPLACE INTO huntpass (`account_name`, `current_step`, `points`, `reward_step`, `is_premium`, `premium_reward_step`, `sayha_points_available`, `sayha_points_used`, `unclaimed_reward`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-	private const String RESTORE_SEASONPASS = "SELECT * FROM huntpass WHERE account_name=?";
 	
 	private readonly Player _user;
 	private int _availableSayhaTime;
@@ -30,7 +28,7 @@ public class HuntPass
 	private DateTime? _toggleStartTime;
 	private int _usedSayhaTime;
 	
-	private static int _dayEnd = 0;
+	private static DateTime _dayEnd;
 	
 	public HuntPass(Player user)
 	{
@@ -114,24 +112,21 @@ public class HuntPass
 		}
 	}
 	
-	public int getHuntPassDayEnd()
+	public DateTime getHuntPassDayEnd()
 	{
 		return _dayEnd;
 	}
 	
 	public void huntPassDayEnd()
 	{
-		Calendar calendar = Calendar.getInstance();
-		calendar.setTimeInMillis(System.currentTimeMillis());
-		calendar.set(Calendar.DAY_OF_MONTH, Config.HUNT_PASS_PERIOD);
-		calendar.set(Calendar.HOUR_OF_DAY, 6);
-		calendar.set(Calendar.MINUTE, 30);
-		if (calendar.getTimeInMillis() < System.currentTimeMillis())
+		DateTime calendar = DateTime.Now;
+		calendar = new DateTime(calendar.Year, calendar.Month, Config.HUNT_PASS_PERIOD, 6, 30, 0);
+		if (calendar < DateTime.Now)
 		{
-			calendar.add(Calendar.MONTH, 1);
+			calendar = calendar.AddMonths(1);
 		}
 		
-		_dayEnd = (int) (calendar.getTimeInMillis() / 1000);
+		_dayEnd = calendar;
 	}
 	
 	public bool toggleSayha()
@@ -174,7 +169,7 @@ public class HuntPass
 		if (hasNewLevel)
 		{
 			setRewardAlert(true);
-			_user.sendPacket(new HuntPassSimpleInfo(_user));
+			_user.sendPacket(new HuntPassSimpleInfoPacket(_user));
 		}
 	}
 	
@@ -291,14 +286,14 @@ public class HuntPass
 				_sayhasSustentionTask = null;
 			}
 			_user.sendPacket(SystemMessageId.SAYHA_S_GRACE_SUSTENTION_EFFECT_OF_THE_SEASON_PASS_IS_ACTIVATED_AVAILABLE_SAYHA_S_GRACE_SUSTENTION_TIME_IS_BEING_CONSUMED);
-			_sayhasSustentionTask = ThreadPool.schedule(onSayhaEndTime, Math.Max(0, getAvailableSayhaTime() - getUsedSayhaTime()) * 1000L);
+			_sayhasSustentionTask = ThreadPool.schedule(onSayhaEndTime, Math.Max(0, getAvailableSayhaTime() - getUsedSayhaTime()) * 1000);
 		}
 		else
 		{
 			if (_sayhasSustentionTask != null)
 			{
-				addSayhasSustentionTimeUsed((int) ((System.currentTimeMillis() / 1000) - _toggleStartTime));
-				_toggleStartTime = 0;
+				addSayhasSustentionTimeUsed((int)(DateTime.UtcNow - _toggleStartTime ?? TimeSpan.Zero).TotalSeconds); // TODO: time arithmetic
+				_toggleStartTime = null;
 				_sayhasSustentionTask.cancel(true);
 				_sayhasSustentionTask = null;
 				_user.sendPacket(SystemMessageId.SAYHA_S_GRACE_SUSTENTION_EFFECT_OF_THE_SEASON_PASS_HAS_BEEN_DEACTIVATED_THE_SUSTENTION_TIME_YOU_HAVE_DOES_NOT_DECREASE);
