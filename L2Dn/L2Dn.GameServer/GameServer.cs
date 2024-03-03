@@ -9,11 +9,14 @@ namespace L2Dn.GameServer;
 public class GameServer
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(GameServer));
+    private static DateTime _serverStarted;
     private readonly CancellationTokenSource _cancellationTokenSource = new();
     private Listener<GameSession>? _clientListener;
     private Connector<AuthServerSession>? _authServerConnector;
     private Task? _clientListenerTask;
 
+    public static DateTime ServerStarted => _serverStarted;
+    
     public void Start()
     {
         ClientListenerConfig clientListenerConfig = ServerConfig.Instance.ClientListener;
@@ -29,6 +32,7 @@ public class GameServer
             new AuthServerPacketHandler(), authServerConnectionConfig.Address, authServerConnectionConfig.Port);
         
         _authServerConnector.Start(_cancellationTokenSource.Token);
+        _serverStarted = DateTime.UtcNow;
     }
 
     public async Task StopAsync()

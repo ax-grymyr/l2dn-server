@@ -76,7 +76,7 @@ public class NoRestartZone: ZoneType
 		}
 		
 		if (DateTime.UtcNow - player.getLastAccess() > _restartTime && 
-		    DateTime.UtcNow - GameServer.dateTimeServerStarted.getTimeInMillis() > _restartAllowedTime)
+		    DateTime.UtcNow - GameServer.ServerStarted > _restartAllowedTime)
 		{
 			player.teleToLocation(TeleportWhereType.TOWN);
 		}

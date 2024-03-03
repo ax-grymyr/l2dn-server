@@ -26,7 +26,7 @@ public abstract class ZoneForm
 	
     protected bool lineSegmentsIntersect(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2)
     {
-        return java.awt.geom.Line2D.linesIntersect(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2);
+        return Line2D.linesIntersect(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2);
     }
 	
     public abstract void visualizeZone(int z);

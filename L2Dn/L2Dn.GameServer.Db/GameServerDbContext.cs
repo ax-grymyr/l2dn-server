@@ -162,4 +162,5 @@ public class GameServerDbContext: DbContext
     public DbSet<DbPartyMatchingHistory> PartyMatchingHistory => Set<DbPartyMatchingHistory>();
 
     public DbSet<DbResidenceFunction> ResidenceFunctions => Set<DbResidenceFunction>();
+    public DbSet<DbAchievementBox> AchievementBoxes => Set<DbAchievementBox>();
 }

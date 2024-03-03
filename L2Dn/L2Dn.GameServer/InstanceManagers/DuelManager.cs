@@ -155,7 +155,7 @@ public class DuelManager
 	 * @param packet
 	 */
 	public void broadcastToOppositTeam<TPacket>(Player player, TPacket packet)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		if ((player == null) || !player.isInDuel())
 		{

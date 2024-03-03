@@ -4,6 +4,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
+using L2Dn.GameServer.Network.OutgoingPackets.SteadyBoxes;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -13,17 +14,17 @@ public class AchievementBox
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AchievementBox));
 	
-	private const int ACHIEVEMENT_BOX_2H = 7200000;
-	private const int ACHIEVEMENT_BOX_6H = 21600000;
-	private const int ACHIEVEMENT_BOX_12H = 43200000;
+	private static readonly TimeSpan ACHIEVEMENT_BOX_2H = TimeSpan.FromHours(2);
+	private static readonly TimeSpan ACHIEVEMENT_BOX_6H = TimeSpan.FromHours(6);
+	private static readonly TimeSpan ACHIEVEMENT_BOX_12H = TimeSpan.FromHours(12);
 	
 	private readonly Player _owner;
 	private int _boxOwned = 1;
 	private int _monsterPoints = 0;
 	private int _pvpPoints = 0;
 	private int _pendingBoxSlotId = 0;
-	private int _pvpEndDate;
-	private long _boxTimeForOpen;
+	private DateTime _pvpEndDate;
+	private DateTime? _boxTimeForOpen;
 	private readonly List<AchievementBoxHolder> _achievementBox = new();
 	private ScheduledFuture _boxOpenTask;
 	
@@ -32,7 +33,7 @@ public class AchievementBox
 		_owner = owner;
 	}
 	
-	public int pvpEndDate()
+	public DateTime pvpEndDate()
 	{
 		return _pvpEndDate;
 	}
@@ -77,44 +78,53 @@ public class AchievementBox
 	{
 		tryFinishBox();
 		refreshPvpEndDate();
-		try 
+		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM achievement_box WHERE charId=?");
-			ps.setInt(1, _owner.getObjectId());
+			int characterId = _owner.getObjectId();
+			var record = ctx.AchievementBoxes.SingleOrDefault(r => r.CharacterId == characterId);
+			if (record != null)
 			{
-				ResultSet rs = ps.executeQuery();
-				if (rs.next())
+				try
 				{
-					try
-					{
-						_boxOwned = rs.getInt("box_owned");
-						_monsterPoints = rs.getInt("monster_point");
-						_pvpPoints = rs.getInt("pvp_point");
-						_pendingBoxSlotId = rs.getInt("pending_box");
-						_boxTimeForOpen = rs.getLong("open_time");
-						for (int i = 1; i <= 4; i++)
-						{
-							int state = rs.getInt("box_state_slot_" + i);
-							int type = rs.getInt("boxtype_slot_" + i);
-							if ((i == 1) && (state == 0))
-							{
-								state = 1;
-							}
-							AchievementBoxHolder holder = new AchievementBoxHolder(i, state, type);
-							_achievementBox.add(i - 1, holder);
-						}
-					}
-					catch (Exception e)
-					{
-						LOGGER.Error("Could not restore Achievement box for " + _owner);
-					}
+					_boxOwned = record.BoxOwned;
+					_monsterPoints = record.MonsterPoint;
+					_pvpPoints = record.PvpPoint;
+					_pendingBoxSlotId = record.PendingBox;
+					_boxTimeForOpen = record.OpenTime;
+
+					AchievementBoxState state = (AchievementBoxState)record.BoxStateSlot1;
+					AchievementBoxType type = (AchievementBoxType)record.BoxTypeSlot1;
+					if (state == AchievementBoxState.LOCKED)
+						state = AchievementBoxState.AVAILABLE;
+
+					AchievementBoxHolder holder = new AchievementBoxHolder(0, state, type);
+					_achievementBox.add(0, holder);
+
+					state = (AchievementBoxState)record.BoxStateSlot2;
+					type = (AchievementBoxType)record.BoxTypeSlot2;
+					holder = new AchievementBoxHolder(1, state, type);
+					_achievementBox.add(1, holder);
+
+					state = (AchievementBoxState)record.BoxStateSlot3;
+					type = (AchievementBoxType)record.BoxTypeSlot3;
+					holder = new AchievementBoxHolder(2, state, type);
+					_achievementBox.add(2, holder);
+
+					state = (AchievementBoxState)record.BoxStateSlot4;
+					type = (AchievementBoxType)record.BoxTypeSlot4;
+					holder = new AchievementBoxHolder(3, state, type);
+					_achievementBox.add(3, holder);
 				}
-				else
+				catch (Exception e)
 				{
-					storeNew();
-					_achievementBox.add(0, new AchievementBoxHolder(1, 1, 0));
+					LOGGER.Error("Could not restore Achievement box for " + _owner);
 				}
+			}
+			else
+			{
+				storeNew();
+				_achievementBox.add(0, new AchievementBoxHolder(1, AchievementBoxState.AVAILABLE, AchievementBoxType.LOCKED));
 			}
 		}
 		catch (Exception e)
@@ -128,20 +138,17 @@ public class AchievementBox
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps =
-				con.prepareStatement("INSERT INTO achievement_box VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-			ps.setInt(1, _owner.getObjectId());
-			ps.setInt(2, _boxOwned);
-			ps.setInt(3, _monsterPoints);
-			ps.setInt(4, _pvpPoints);
-			ps.setInt(5, _pendingBoxSlotId);
-			ps.setLong(6, _boxTimeForOpen);
-			for (int i = 0; i < 4; i++)
+			ctx.AchievementBoxes.Add(new DbAchievementBox()
 			{
-				ps.setInt(7 + (i * 2), 0);
-				ps.setInt(8 + (i * 2), 0);
-			}
-			ps.executeUpdate();
+				CharacterId = _owner.getObjectId(),
+				BoxOwned = _boxOwned,
+				MonsterPoint = _monsterPoints,
+				PvpPoint = _pvpPoints,
+				PendingBox = _pendingBoxSlotId,
+				OpenTime = _boxTimeForOpen
+			});
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -154,29 +161,34 @@ public class AchievementBox
 		try 
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement ps = con.prepareStatement(
-				"UPDATE achievement_box SET box_owned=?,monster_point=?,pvp_point=?,pending_box=?,open_time=?,box_state_slot_1=?,boxtype_slot_1=?,box_state_slot_2=?,boxtype_slot_2=?,box_state_slot_3=?,boxtype_slot_3=?,box_state_slot_4=?,boxtype_slot_4=? WHERE charId=?");
-			ps.setInt(1, getBoxOwned());
-			ps.setInt(2, getMonsterPoints());
-			ps.setInt(3, getPvpPoints());
-			ps.setInt(4, getPendingBoxSlotId());
-			ps.setLong(5, getBoxOpenTime());
-			for (int i = 0; i < 4; i++)
+			int characterId = _owner.getObjectId();
+			var record = ctx.AchievementBoxes.SingleOrDefault(r => r.CharacterId == characterId);
+			if (record is null)
 			{
-				if (_achievementBox.size() >= (i + 1))
-				{
-					AchievementBoxHolder holder = _achievementBox.get(i);
-					ps.setInt(6 + (i * 2), holder == null ? 0 : holder.getState().ordinal());
-					ps.setInt(7 + (i * 2), holder == null ? 0 : holder.getType().ordinal());
-				}
-				else
-				{
-					ps.setInt(6 + (i * 2), 0);
-					ps.setInt(7 + (i * 2), 0);
-				}
+				record = new DbAchievementBox();
+				record.CharacterId = characterId;
+				ctx.AchievementBoxes.Add(record);
 			}
-			ps.setInt(14, _owner.getObjectId());
-			ps.execute();
+
+			record.BoxOwned = getBoxOwned();
+			record.MonsterPoint = getMonsterPoints();
+			record.PvpPoint = getPvpPoints();
+			record.PendingBox = getPendingBoxSlotId();
+			record.OpenTime = getBoxOpenTime();
+
+			record.BoxStateSlot1 = _achievementBox.Count > 0 ? (int)_achievementBox[0].getState() : 0;
+			record.BoxTypeSlot1 = _achievementBox.Count > 0 ? (int)_achievementBox[0].getType() : 0;
+
+			record.BoxStateSlot2 = _achievementBox.Count > 1 ? (int)_achievementBox[1].getState() : 0;
+			record.BoxTypeSlot2 = _achievementBox.Count > 1 ? (int)_achievementBox[1].getType() : 0;
+
+			record.BoxStateSlot3 = _achievementBox.Count > 2 ? (int)_achievementBox[2].getState() : 0;
+			record.BoxTypeSlot3 = _achievementBox.Count > 2 ? (int)_achievementBox[2].getType() : 0;
+
+			record.BoxStateSlot4 = _achievementBox.Count > 3 ? (int)_achievementBox[3].getState() : 0;
+			record.BoxTypeSlot4 = _achievementBox.Count > 3 ? (int)_achievementBox[3].getType() : 0;
+			
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
@@ -233,7 +245,7 @@ public class AchievementBox
 		}
 		
 		AchievementBoxHolder holder = getAchievementBox().get(slotId - 1);
-		if ((holder == null) || (_boxTimeForOpen != 0))
+		if ((holder == null) || (_boxTimeForOpen != null))
 		{
 			return;
 		}
@@ -290,20 +302,20 @@ public class AchievementBox
 		}
 	}
 	
-	public bool setBoxTimeForOpen(long time)
+	public bool setBoxTimeForOpen(TimeSpan time)
 	{
 		if ((_boxOpenTask != null) && !(_boxOpenTask.isDone() || _boxOpenTask.isCancelled()))
 		{
 			return false;
 		}
 		
-		_boxTimeForOpen = System.currentTimeMillis() + time;
+		_boxTimeForOpen = DateTime.UtcNow + time;
 		return true;
 	}
 	
 	public void tryFinishBox()
 	{
-		if ((_boxTimeForOpen == 0) || (_boxTimeForOpen >= System.currentTimeMillis()))
+		if ((_boxTimeForOpen == null) || (_boxTimeForOpen >= DateTime.UtcNow))
 		{
 			return;
 		}
@@ -340,7 +352,7 @@ public class AchievementBox
 		return _pendingBoxSlotId;
 	}
 	
-	public long getBoxOpenTime()
+	public DateTime? getBoxOpenTime()
 	{
 		return _boxTimeForOpen;
 	}
@@ -354,7 +366,7 @@ public class AchievementBox
 		
 		if (_pendingBoxSlotId == id)
 		{
-			_boxTimeForOpen = 0;
+			_boxTimeForOpen = null;
 			_pendingBoxSlotId = 0;
 		}
 		
@@ -364,7 +376,7 @@ public class AchievementBox
 	
 	public void sendBoxUpdate()
 	{
-		_owner.sendPacket(new ExSteadyAllBoxUpdate(_owner));
+		_owner.sendPacket(new ExSteadyAllBoxUpdatePacket(_owner));
 	}
 	
 	public void cancelTask()
@@ -417,7 +429,7 @@ public class AchievementBox
 		if (paidSlot)
 		{
 			_boxOwned = slotId;
-			AchievementBoxHolder holder = new AchievementBoxHolder(slotId, 1, 0);
+			AchievementBoxHolder holder = new AchievementBoxHolder(slotId, AchievementBoxState.AVAILABLE, AchievementBoxType.LOCKED);
 			holder.setState(AchievementBoxState.AVAILABLE);
 			holder.setType(AchievementBoxType.LOCKED);
 			getAchievementBox().add(slotId - 1, holder);
@@ -505,22 +517,19 @@ public class AchievementBox
 		if (reward != null)
 		{
 			_owner.addItem("Chest unlock", reward, _owner, true);
-			_owner.sendPacket(new ExSteadyBoxReward(slotId, reward.getId(), reward.getCount()));
+			_owner.sendPacket(new ExSteadyBoxRewardPacket(slotId, reward.getId(), reward.getCount()));
 		}
 	}
 	
 	public void refreshPvpEndDate()
 	{
-		long currentTime = System.currentTimeMillis();
-		Calendar calendar = Calendar.getInstance();
-		calendar.setTimeInMillis(currentTime);
-		calendar.set(Calendar.DAY_OF_MONTH, 1);
-		calendar.set(Calendar.HOUR_OF_DAY, 6);
-		if (calendar.getTimeInMillis() < currentTime)
+		DateTime currentTime = DateTime.Now;
+		DateTime calendar = new DateTime(currentTime.Year, currentTime.Month, 1, 6, 0, 0, 0);
+		if (calendar < DateTime.Now)
 		{
-			calendar.add(Calendar.MONTH, 1);
+			calendar = calendar.AddMonths(1);
 		}
 		
-		_pvpEndDate = (int) (calendar.getTimeInMillis() / 1000);
+		_pvpEndDate = calendar;
 	}
 }
