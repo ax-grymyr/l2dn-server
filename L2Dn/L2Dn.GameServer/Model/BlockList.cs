@@ -1,8 +1,10 @@
 ﻿using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.Model;
@@ -46,28 +48,26 @@ public class BlockList
 	private static Set<int> loadList(int objId)
 	{
 		Set<int> list = new();
-		try 
+		try
 		{
 			using GameServerDbContext ctx = new();
-			PreparedStatement statement =
-				con.prepareStatement("SELECT friendId FROM character_friends WHERE charId=? AND relation=1");
-			statement.setInt(1, objId);
-			ResultSet rset = statement.executeQuery();
-				int friendId;
-				while (rset.next())
+			var query = ctx.CharacterFriends.Where(r => r.CharacterId == objId && r.Relation == 1);
+			foreach (var record in query)
+			{
+				int friendId = record.FriendId;
+				if (friendId == objId)
 				{
-					friendId = rset.getInt("friendId");
-					if (friendId == objId)
-					{
-						continue;
-					}
-					list.add(friendId);
+					continue;
 				}
+
+				list.add(friendId);
+			}
 		}
 		catch (Exception e)
 		{
 			LOGGER.Error("Error found in " + objId + " FriendList while loading BlockList: " + e);
 		}
+
 		return list;
 	}
 	
@@ -78,20 +78,22 @@ public class BlockList
 			using GameServerDbContext ctx = new();
 			if (state) // add
 			{
-				PreparedStatement statement =
-					con.prepareStatement("INSERT INTO character_friends (charId, friendId, relation) VALUES (?, ?, 1)");
-					statement.setInt(1, _owner.getObjectId());
-					statement.setInt(2, targetId);
-					statement.execute();
+				ctx.CharacterFriends.Add(new CharacterFriend()
+				{
+					CharacterId = _owner.getObjectId(),
+					FriendId = targetId,
+					Relation = 1
+				});
+
+				ctx.SaveChanges();
 			}
 			else
 			// remove
 			{
-				PreparedStatement statement =
-					con.prepareStatement("DELETE FROM character_friends WHERE charId=? AND friendId=? AND relation=1");
-					statement.setInt(1, _owner.getObjectId());
-					statement.setInt(2, targetId);
-					statement.execute();
+				int characterId = _owner.getObjectId();
+				ctx.CharacterFriends
+					.Where(r => r.CharacterId == characterId && r.FriendId == targetId && r.Relation == 1)
+					.ExecuteDelete();
 			}
 		}
 		catch (Exception e)
