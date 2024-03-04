@@ -5,12 +5,11 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 /// <summary>
 /// 0x00 - KeyPacket
 /// </summary>
-internal readonly struct KeyPacket(bool isProtocolOk, int serverId, byte[]? encryptionKey): IOutgoingPacket
+public readonly struct KeyPacket(bool isProtocolOk, int serverId, byte[]? encryptionKey): IOutgoingPacket
 {
     public void WriteContent(PacketBitWriter writer)
     {
-        // 0x00 in C4
-        writer.WriteByte(0x2E); // packet code
+        writer.WritePacketCode(OutgoingPacketCodes.VERSION_CHECK);
 
         writer.WriteByte(isProtocolOk);
         
