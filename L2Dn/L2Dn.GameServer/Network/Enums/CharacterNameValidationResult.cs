@@ -1,6 +1,6 @@
 ﻿namespace L2Dn.GameServer.Network.OutgoingPackets;
 
-internal enum CharacterNameValidationResult
+public enum CharacterNameValidationResult
 {
     Ok = -1,
     CharacterCreateFailed = 1,
@@ -8,5 +8,4 @@ internal enum CharacterNameValidationResult
     InvalidLength = 3,
     InvalidName = 4,
     CannotCreateOnServer = 5,
-
 }
