@@ -1565,7 +1565,7 @@ public class FortSiege: ListenersContainer, Siegable
 			foreach (Spawn spawnDat in _siegeGuards)
 			{
 				spawnDat.doSpawn(false);
-				if (spawnDat.getRespawnDelay() == 0)
+				if (spawnDat.getRespawnDelay() == TimeSpan.Zero)
 				{
 					spawnDat.stopRespawn();
 				}

@@ -28,7 +28,7 @@ public class GameServer
         _clientListenerTask = _clientListener.Start(_cancellationTokenSource.Token);
 
         AuthServerConnectionConfig authServerConnectionConfig = ServerConfig.Instance.AuthServerConnection;
-        _authServerConnector = new Connector<AuthServerSession>(new AuthServerSession(), new AuthServerPacketEncoder(),
+        _authServerConnector = new Connector<AuthServerSession>(AuthServerSession.Instance, new AuthServerPacketEncoder(),
             new AuthServerPacketHandler(), authServerConnectionConfig.Address, authServerConnectionConfig.Port);
         
         _authServerConnector.Start(_cancellationTokenSource.Token);

@@ -67,7 +67,7 @@ public class ItemInfo
 	private int _visualId;
 	private TimeSpan? _visualExpiration;
 	
-	private int _reuseDelay;
+	private TimeSpan _reuseDelay;
 	private Player _owner;
 	
 	/**
@@ -454,7 +454,7 @@ public class ItemInfo
 		return _isBlessed;
 	}
 	
-	public int getReuseDelay()
+	public TimeSpan getReuseDelay()
 	{
 		return _reuseDelay;
 	}

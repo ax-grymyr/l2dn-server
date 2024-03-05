@@ -136,7 +136,7 @@ public class BoatManager
 	 * @param packet
 	 */
 	public void broadcastPacket<TPacket>(VehiclePathPoint point1, VehiclePathPoint point2, TPacket packet)
-		where TPacket: IOutgoingPacket
+		where TPacket: struct, IOutgoingPacket
 	{
 		broadcastPacketsToPlayers(point1, point2).SendPackets(packet);
 	}

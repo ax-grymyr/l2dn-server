@@ -338,7 +338,7 @@ public class SiegeGuardManager
 				if (spawn != null)
 				{
 					spawn.init();
-					if (isHired || (spawn.getRespawnDelay() == 0))
+					if (isHired || (spawn.getRespawnDelay() == TimeSpan.Zero))
 					{
 						spawn.stopRespawn();
 					}

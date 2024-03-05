@@ -119,7 +119,7 @@ public class TimedHuntingZoneData: DataReaderBase
 		element.Elements("zonePremiumUserOnly").ForEach(el => zonePremiumUserOnly = (bool)el);
 
 		_timedHuntingZoneData.put(id,
-			new TimedHuntingZoneHolder(id, name, initialTime, maxAddedTime, resetDelay, entryItemId, entryFee, minLevel,
+			new TimedHuntingZoneHolder(id, name, initialTime, maxAddedTime, TimeSpan.FromMilliseconds(resetDelay), entryItemId, entryFee, minLevel,
 				maxLevel, remainRefillTime, refillTimeMax, pvpZone, noPvpZone, instanceId, soloInstance, weekly,
 				useWorldPrefix, zonePremiumUserOnly, enterLocation, subEnterLocation1, subEnterLocation2,
 				subEnterLocation3, exitLocation));

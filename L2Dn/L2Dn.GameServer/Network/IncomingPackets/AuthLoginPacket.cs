@@ -1,12 +1,13 @@
 ﻿using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.NetworkAuthServer;
 using L2Dn.Network;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
-internal struct AuthLoginPacket: IIncomingPacket<GameSession>
+public struct AuthLoginPacket: IIncomingPacket<GameSession>
 {
-    private string _userName;
+    private string? _accountName;
     private int _loginKey1;
     private int _loginKey2;
     private int _playKey1;
@@ -14,16 +15,22 @@ internal struct AuthLoginPacket: IIncomingPacket<GameSession>
 
     public void ReadContent(PacketBitReader reader)
     {
-        _userName = reader.ReadString();
+        _accountName = reader.ReadString();
         _playKey2 = reader.ReadInt32();
         _playKey1 = reader.ReadInt32();
         _loginKey1 = reader.ReadInt32();
         _loginKey2 = reader.ReadInt32();
     }
 
-    public async ValueTask ProcessAsync(Connection<GameSession> connection)
+    public async ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        GameSession session = connection.Session;
+        if (string.IsNullOrWhiteSpace(_accountName) || !session.IsProtocolOk || session.AccountId != 0)
+        {
+            connection.Close();
+            return;
+        }
+        
+        AuthServerSession.Instance.
         int serverId = session.Config.GameServer.Id;
         int? accountId = await DbUtility.VerifyAuthDataAsync(_userName, serverId, _loginKey1,
             _loginKey2, _playKey1, _playKey2);

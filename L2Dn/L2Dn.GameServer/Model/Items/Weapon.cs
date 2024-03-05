@@ -80,9 +80,9 @@ public class Weapon: ItemTemplate
 		_useWeaponSkillsOnly = set.getBoolean("useWeaponSkillsOnly", false);
 		
 		// Check if ranged weapon reuse delay is missing.
-		if ((_reuseDelay == 0) && _type.isRanged())
+		if ((_reuseDelay == TimeSpan.Zero) && _type.isRanged())
 		{
-			_reuseDelay = 1500;
+			_reuseDelay = TimeSpan.FromMilliseconds(1500);
 		}
 	}
 

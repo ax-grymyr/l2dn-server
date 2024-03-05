@@ -1,11 +1,10 @@
 ﻿using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.Logging;
 using L2Dn.Network;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
-internal struct ProtocolVersionPacket: IIncomingPacket<GameSession>
+public struct ProtocolVersionPacket: IIncomingPacket<GameSession>
 {
     private int _protocolVersion;
 
@@ -14,9 +13,8 @@ internal struct ProtocolVersionPacket: IIncomingPacket<GameSession>
         _protocolVersion = reader.ReadInt32();
     }
 
-    public ValueTask ProcessAsync(Connection<GameSession> connection)
+    public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        Logger.Trace($"S({connection.Session.Id})  Protocol version {_protocolVersion}");
         if (_protocolVersion == -2)
         {
             // Ping attempt from the client
@@ -24,14 +22,15 @@ internal struct ProtocolVersionPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        GameSession session = connection.Session;
         session.State = GameSessionState.Authorization;
 
-        bool isProtocolOk = _protocolVersion == session.Config.Protocol.Version;
-        int serverId = session.Config.GameServer.Id;
+        bool isProtocolOk = Config.PROTOCOL_LIST.Contains(_protocolVersion);
+        session.ProtocolVersion = _protocolVersion;
+        session.IsProtocolOk = isProtocolOk;
+        int serverId = session.Config.GameServerParams.ServerId;
 
-        KeyPacket keyPacket = new(isProtocolOk, serverId, connection.Session.EncryptionKey);
-        connection.Send(ref keyPacket);
+        KeyPacket keyPacket = new(isProtocolOk, serverId, session.EncryptionKey);
+        connection.Send(ref keyPacket, isProtocolOk ? SendPacketOptions.None : SendPacketOptions.CloseAfterSending);
 
         return ValueTask.CompletedTask;
     }
