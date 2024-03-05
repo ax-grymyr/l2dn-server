@@ -196,9 +196,9 @@ public class EnchantScroll: AbstractEnchantItem
 			return EnchantResultType.ERROR;
 		}
 
-		CrystalType crystalLevel = enchantItem.getTemplate().getCrystalType().getlevel();
+		CrystalType crystalLevel = enchantItem.getTemplate().getCrystalType().getLevel();
 		double enchantRateStat =
-			(crystalLevel > CrystalType.NONE.getlevel()) && (crystalLevel < CrystalType.EVENT.getlevel())
+			(crystalLevel > CrystalType.NONE.getLevel()) && (crystalLevel < CrystalType.EVENT.getLevel())
 				? player.getStat().getValue(Stat.ENCHANT_RATE)
 				: 0;
 		double bonusRate = getBonusRate();

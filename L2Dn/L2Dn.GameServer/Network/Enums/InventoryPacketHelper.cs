@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Model.BuyList;
 using L2Dn.GameServer.Model.Ensoul;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -33,9 +34,19 @@ public class InventoryPacketHelper
         WriteItem(writer, new ItemInfo(item));
     }
 
+    public static void WriteItem(PacketBitWriter writer, Product product)
+    {
+        WriteItem(writer, new ItemInfo(product));
+    }
+
     public static void WriteItem(PacketBitWriter writer, TradeItem item)
     {
         WriteItem(writer, new ItemInfo(item));
+    }
+
+    public static void WriteItem(PacketBitWriter writer, TradeItem item, long count)
+    {
+        WriteItem(writer, new ItemInfo(item), count);
     }
 
     public static void WriteItem(PacketBitWriter writer, ItemInfo item)
@@ -83,6 +94,57 @@ public class InventoryPacketHelper
         
         if (mask.HasFlag(ItemListType.BLESSED))
             writer.WriteByte(1);
+    }
+    
+    public static void WriteItem(PacketBitWriter writer, ItemInfo item, long count)
+    {
+        ItemListType mask = CalculateMask(item);
+        writer.WriteInt16((short)mask);
+        writer.WriteInt32(item.getObjectId()); // ObjectId
+        writer.WriteInt32(item.getItem().getDisplayId()); // ItemId
+        writer.WriteByte((byte)(item.getItem().isQuestItem() || (item.getEquipped() == 1) ? 0xFF : item.getLocation())); // T1
+        writer.WriteInt64(count); // Quantity
+        writer.WriteByte((byte)item.getItem().getType2()); // Item Type 2 : 00-weapon, 01-shield/armor, 02-ring/earring/necklace, 03-questitem, 04-adena, 05-item
+        writer.WriteByte((byte)item.getCustomType1()); // Filler (always 0)
+        writer.WriteInt16((short)item.getEquipped()); // Equipped : 00-No, 01-yes
+        writer.WriteInt64(item.getItem().getBodyPart()); // Slot : 0006-lr.ear, 0008-neck, 0030-lr.finger, 0040-head, 0100-l.hand, 0200-gloves, 0400-chest, 0800-pants, 1000-feet, 4000-r.hand, 8000-r.hand
+        writer.WriteInt16((short)item.getEnchantLevel()); // Enchant level (pet level shown in control item)
+        writer.WriteInt32(item.getMana() ?? -1);
+        writer.WriteByte(0); // 270 protocol
+        writer.WriteInt32((int?)item.getTime()?.TotalSeconds ?? -9999);
+        writer.WriteByte(item.isAvailable()); // GOD Item enabled = 1 disabled (red) = 0
+        writer.WriteInt16(0); // 140 - locked
+        if (mask.HasFlag(ItemListType.AUGMENT_BONUS))
+        {
+            WriteItemAugment(writer, item);
+        }
+        if (mask.HasFlag(ItemListType.ELEMENTAL_ATTRIBUTE))
+        {
+            WriteItemElemental(writer, item);
+        }
+        // 362 - Removed
+        // if (containsMask(mask, ItemListType.ENCHANT_EFFECT))
+        // {
+        // writeItemEnchantEffect(item);
+        // }
+        if (mask.HasFlag(ItemListType.VISUAL_ID))
+        {
+            writer.WriteInt32(item.getVisualId()); // Item remodel visual ID
+        }
+        if (mask.HasFlag(ItemListType.SOUL_CRYSTAL))
+        {
+            WriteItemEnsoulOptions(writer, item);
+        }
+        // TODO:
+        // if (containsMask(mask, ItemListType.REUSE_DELAY))
+        // {
+        // final Player owner = item.getOwner();
+        // writer.WriteInt32(owner == null ? 0 : (int) (owner.getItemRemainingReuseTime(item.getObjectId()) / 1000));
+        // }
+        if (mask.HasFlag(ItemListType.BLESSED))
+        {
+            writer.WriteByte(1);
+        }
     }
 
     public static void WriteInventoryBlock(PacketBitWriter writer, PlayerInventory inventory)
@@ -221,4 +283,61 @@ public class InventoryPacketHelper
 
         return mask;
     }
+	
+	public static int CalculatePacketSize(ItemInfo item)
+	{
+		ItemListType mask = CalculateMask(item);
+		int size = 0;
+		size += 2; // writeShort(mask);
+		size += 4; // writer.WriteInt32(item.getObjectId()); // ObjectId
+		size += 4; // writer.WriteInt32(item.getItem().getDisplayId()); // ItemId
+		size += 1; // writeByte(item.getItem().isQuestItem() || (item.getEquipped() == 1) ? 0xFF : item.getLocation()); // T1
+		size += 8; // writeLong(item.getCount()); // Quantity
+		size += 1; // writeByte(item.getItem().getType2()); // Item Type 2 : 00-weapon, 01-shield/armor, 02-ring/earring/necklace, 03-questitem, 04-adena, 05-item
+		size += 1; // writeByte(item.getCustomType1()); // Filler (always 0)
+		size += 2; // writeShort(item.getEquipped()); // Equipped : 00-No, 01-yes
+		size += 8; // writeLong(item.getItem().getBodyPart()); // Slot : 0006-lr.ear, 0008-neck, 0030-lr.finger, 0040-head, 0100-l.hand, 0200-gloves, 0400-chest, 0800-pants, 1000-feet, 4000-r.hand, 8000-r.hand
+		size += 2; // writeShort(item.getEnchantLevel()); // Enchant level (pet level shown in control item)
+		size += 4; // writer.WriteInt32(item.getMana());
+		size += 1; // writeByte(0); // 270 protocol
+		size += 4; // writer.WriteInt32(item.getTime());
+		size += 1; // writeByte(item.isAvailable()); // GOD Item enabled = 1 disabled (red) = 0
+		size += 2; // writeShort(0); // 140 - locked
+		
+		if (mask.HasFlag(ItemListType.AUGMENT_BONUS))
+		{
+			size += 8;
+		}
+		if (mask.HasFlag(ItemListType.ELEMENTAL_ATTRIBUTE))
+		{
+			size += 16;
+		}
+		// 362 - Removed
+		// if (containsMask(mask, ItemListType.ENCHANT_EFFECT))
+		// {
+		// size += (item.getEnchantOptions().length * 4);
+		// }
+		if (mask.HasFlag(ItemListType.VISUAL_ID))
+		{
+			size += 4;
+		}
+		if (mask.HasFlag(ItemListType.SOUL_CRYSTAL))
+		{
+			size += 1;
+			size += (item.getSoulCrystalOptions().Count * 4);
+			size += 1;
+			size += (item.getSoulCrystalSpecialOptions().Count * 4);
+		}
+		// TODO:
+		// if (containsMask(mask, ItemListType.REUSE_DELAY))
+		// {
+		// size += 4;
+		// }
+		if (mask.HasFlag(ItemListType.BLESSED))
+		{
+			size += 1;
+		}
+		
+		return size;
+	}
 }

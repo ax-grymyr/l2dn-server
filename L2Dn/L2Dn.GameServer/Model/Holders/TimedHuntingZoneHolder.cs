@@ -9,7 +9,7 @@ public class TimedHuntingZoneHolder
 	private readonly String _name;
 	private readonly int _initialTime;
 	private readonly int _maximumAddedTime;
-	private readonly int _resetDelay;
+	private readonly TimeSpan _resetDelay;
 	private readonly int _entryItemId;
 	private readonly int _entryFee;
 	private readonly int _minLevel;
@@ -30,7 +30,7 @@ public class TimedHuntingZoneHolder
 	private readonly Location _exitLocation;
 	private readonly List<MapHolder> _maps = new();
 
-	public TimedHuntingZoneHolder(int id, String name, int initialTime, int maximumAddedTime, int resetDelay,
+	public TimedHuntingZoneHolder(int id, String name, int initialTime, int maximumAddedTime, TimeSpan resetDelay,
 		int entryItemId, int entryFee, int minLevel, int maxLevel, int remainRefillTime, int refillTimeMax,
 		bool pvpZone, bool noPvpZone, int instanceId, bool soloInstance, bool weekly, bool useWorldPrefix,
 		bool zonePremiumUserOnly, Location enterLocation, Location subEnterLocation1, Location subEnterLocation2,
@@ -106,7 +106,7 @@ public class TimedHuntingZoneHolder
 		return _maximumAddedTime;
 	}
 
-	public int getResetDelay()
+	public TimeSpan getResetDelay()
 	{
 		return _resetDelay;
 	}

@@ -7729,7 +7729,7 @@ public class Player: Playable
 					isInInventory = false;
 				}
 					
-				if ((item != null) && (item.getId() == itemId) && (item.getReuseDelay() > 0))
+				if ((item != null) && (item.getId() == itemId) && (item.getReuseDelay() > TimeSpan.Zero))
 				{
 					remainingTime = systime - currentTime;
 					if (remainingTime > TimeSpan.FromMilliseconds(10))
@@ -9017,7 +9017,7 @@ public class Player: Playable
 	{
 		foreach (int itemId in _activeSoulShots)
 		{
-			if (ItemData.getInstance().getTemplate(itemId).getCrystalType().getlevel() == crystalType)
+			if (ItemData.getInstance().getTemplate(itemId).getCrystalType().getLevel() == crystalType)
 			{
 				disableAutoShot(itemId);
 			}
@@ -15279,9 +15279,9 @@ public class Player: Playable
 		return Math.Max(getVariables().getInt(PlayerVariables.HUNTING_ZONE_TIME + zoneId, 0), 0);
 	}
 	
-	public long getTimedHuntingZoneInitialEntry(int zoneId)
+	public DateTime getTimedHuntingZoneInitialEntry(int zoneId)
 	{
-		return Math.Max(getVariables().getLong(PlayerVariables.HUNTING_ZONE_ENTRY + zoneId, 0), 0);
+		return getVariables().getDateTime(PlayerVariables.HUNTING_ZONE_ENTRY + zoneId, DateTime.MinValue);
 	}
 	
 	private void restoreRandomCraft()

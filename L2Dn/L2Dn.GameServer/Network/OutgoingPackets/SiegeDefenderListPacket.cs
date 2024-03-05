@@ -77,10 +77,11 @@ public readonly struct SiegeDefenderListPacket: IOutgoingPacket
 			{
 				writer.WriteInt32((int)SiegeClanType.DEFENDER_PENDING + 1);
 			}
+			
 			writer.WriteInt32(clan.getAllyId() ?? 0);
-			if (clan.getAllyId() != 0)
+			if (clan.getAllyId() != null)
 			{
-				AllianceInfo info = new AllianceInfo(clan.getAllyId());
+				AllianceInfoPacket info = new AllianceInfoPacket(clan.getAllyId().Value);
 				writer.WriteString(info.getName());
 				writer.WriteString(info.getLeaderP()); // Ally leader name.
 				writer.WriteInt32(clan.getAllyCrestId() ?? 0);
