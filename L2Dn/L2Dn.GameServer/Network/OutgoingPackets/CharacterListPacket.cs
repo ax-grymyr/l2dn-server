@@ -1,15 +1,12 @@
-﻿using L2Dn.Extensions;
-using L2Dn.GameServer.Data.Sql;
+﻿using System.Collections.Immutable;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
-using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
-using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.Packets;
 using NLog;
-using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -17,8 +14,8 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CharacterListPacket));
 	
-	private static readonly  int[] PAPERDOLL_ORDER = new int[]
-	{
+	private static readonly int[] PAPERDOLL_ORDER =
+	[
 		Inventory.PAPERDOLL_UNDER,
 		Inventory.PAPERDOLL_REAR,
 		Inventory.PAPERDOLL_LEAR,
@@ -79,9 +76,9 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 		Inventory.PAPERDOLL_ARTIFACT19, // 152
 		Inventory.PAPERDOLL_ARTIFACT20, // 152
 		Inventory.PAPERDOLL_ARTIFACT21 // 152
-	};
-	private static readonly int[] PAPERDOLL_ORDER_VISUAL_ID = new int[]
-	{
+	];
+	private static readonly int[] PAPERDOLL_ORDER_VISUAL_ID =
+	[
 		Inventory.PAPERDOLL_RHAND,
 		Inventory.PAPERDOLL_LHAND,
 		Inventory.PAPERDOLL_GLOVES,
@@ -90,48 +87,28 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 		Inventory.PAPERDOLL_FEET,
 		Inventory.PAPERDOLL_RHAND,
 		Inventory.PAPERDOLL_HAIR,
-		Inventory.PAPERDOLL_HAIR2,
-	};
+		Inventory.PAPERDOLL_HAIR2
+	];
 
 	private readonly int _accountId;
 	private readonly string _accountName;
-	private readonly int _sessionId;
 	private readonly int _activeId;
-	private readonly List<CharSelectInfoPackage> _characterPackages;
-	
-	/**
-	 * Constructor for CharSelectionInfo.
-	 * @param loginName
-	 * @param sessionId
-	 */
-	public CharacterListPacket(int accountId, string accountName, int sessionId)
+	private readonly ImmutableArray<CharSelectInfoPackage> _characterPackages;
+
+	public CharacterListPacket(int accountId, string accountName, ImmutableArray<CharSelectInfoPackage> characters,
+		int activeId = -1)
 	{
 		_accountId = accountId;
 		_accountName = accountName;
-		_sessionId = sessionId;
-		_characterPackages = loadCharacterSelectInfo(accountId);
-		_activeId = -1;
-	}
-	
-	public CharacterListPacket(int accountId, string accountName, int sessionId, int activeId)
-	{
-		_accountId = accountId;
-		_accountName = accountName;
-		_sessionId = sessionId;
-		_characterPackages = loadCharacterSelectInfo(accountId);
+		_characterPackages = characters;
 		_activeId = activeId;
 	}
-	
-	public List<CharSelectInfoPackage> getCharInfo()
-	{
-		return _characterPackages;
-	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.CHARACTER_SELECTION_INFO);
 		
-		int size = _characterPackages.Count;
+		int size = _characterPackages.Length;
 		writer.WriteInt32(size); // Created character count
 		writer.WriteInt32(Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT); // Can prevent players from creating new characters (if 0); (if 1, the client will ask if chars may be created (0x13) Response: (0x0D) )
 		writer.WriteByte(size == Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT); // if 1 can't create new char
@@ -160,7 +137,7 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 			writer.WriteString(charInfoPackage.getName()); // Character name
 			writer.WriteInt32(charInfoPackage.getObjectId()); // Character ID
 			writer.WriteString(_accountName); // Account name
-			writer.WriteInt32(_sessionId); // Account ID
+			writer.WriteInt32(_accountId); // Account ID
 			writer.WriteInt32(0); // Clan ID
 			writer.WriteInt32(0); // Builder level
 			writer.WriteInt32((int)charInfoPackage.getSex()); // Sex
@@ -209,7 +186,7 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 			writer.WriteDouble(charInfoPackage.getMaxMp()); // Maximum MP
 			writer.WriteInt32(charInfoPackage.getDeleteTimer() != null ? (int)(charInfoPackage.getDeleteTimer().Value - DateTime.UtcNow).TotalSeconds : 0);
 			writer.WriteInt32((int)charInfoPackage.getClassId());
-			writer.WriteInt32(i == _activeId);
+			writer.WriteInt32(i == activeId);
 			writer.WriteByte((byte)(charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_RHAND) > 127 ? 127 : charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_RHAND)));
 			writer.WriteInt32(charInfoPackage.getAugmentation() != null ? charInfoPackage.getAugmentation().getOption1Id() : 0);
 			writer.WriteInt32(charInfoPackage.getAugmentation() != null ? charInfoPackage.getAugmentation().getOption2Id() : 0);
@@ -233,176 +210,5 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 			writer.WriteInt32(charInfoPackage.getHairColor() + 1); // 338 - DK color.
 			writer.WriteByte((byte)(charInfoPackage.getClassId() == (CharacterClass)217 ? 1 : charInfoPackage.getClassId() == (CharacterClass)218 ? 2 : charInfoPackage.getClassId() == (CharacterClass)219 ? 3 : charInfoPackage.getClassId() == (CharacterClass)220 ? 4 : 0)); // 362
 		}
-	}
-	
-	private static List<CharSelectInfoPackage> loadCharacterSelectInfo(int accountId)
-	{
-		List<CharSelectInfoPackage> characterList = new();
-		try
-		{
-			using GameServerDbContext ctx = new();
-			var records = ctx.Characters.Where(r => r.AccountId == accountId).OrderBy(r => r.Created).ToList();
-				foreach (var record in records)
-				{
-					CharSelectInfoPackage? charInfopackage = restoreChar(ctx, record);
-					if (charInfopackage != null)
-					{
-						characterList.Add(charInfopackage);
-						
-						// Disconnect offline trader.
-						if (Config.OFFLINE_DISCONNECT_SAME_ACCOUNT)
-						{
-							Player player = World.getInstance().getPlayer(charInfopackage.getObjectId());
-							if (player != null)
-							{
-								Disconnection.of(player).storeMe().deleteMe();
-							}
-						}
-					}
-				}
-		}
-		catch (Exception e)
-		{
-			LOGGER.Error("Could not restore char info: " + e);
-		}
-		
-		return characterList;
-	}
-	
-	private static void loadCharacterSubclassInfo(GameServerDbContext ctx, CharSelectInfoPackage charInfopackage, int objectId, CharacterClass activeClassId)
-	{
-		try
-		{
-			CharacterSubClass? record =
-				ctx.CharacterSubClasses.SingleOrDefault(r => r.CharacterId == objectId && r.SubClass == activeClassId);
-
-			if (record != null)
-			{
-				charInfopackage.setExp(record.Exp);
-				charInfopackage.setSp(record.Sp);
-				charInfopackage.setLevel(record.Level);
-				charInfopackage.setVitalityPoints(record.VitalityPoints);
-			}
-		}
-		catch (Exception e)
-		{
-			LOGGER.Error("Could not restore char subclass info: " + e);
-		}
-	}
-	
-	private static CharSelectInfoPackage restoreChar(GameServerDbContext ctx, Character chardata)
-	{
-		int objectId = chardata.Id;
-		String name = chardata.Name;
-		
-		// See if the char must be deleted
-		DateTime? deletetime = chardata.DeleteTime;
-		if ((deletetime != null) && (DateTime.UtcNow > deletetime))
-		{
-			if (chardata.ClanId != null)
-			{
-				Clan clan = ClanTable.getInstance().getClan(chardata.ClanId.Value);
-				if (clan != null)
-				{
-					clan.removeClanMember(objectId, null);
-				}
-			}
-
-			//GameClient.deleteCharByObjId(objectId); // TODO: delete char
-			return null;
-		}
-		
-		CharSelectInfoPackage charInfopackage = new CharSelectInfoPackage(objectId, name);
-		charInfopackage.setAccessLevel(chardata.AccessLevel);
-		charInfopackage.setLevel(chardata.Level);
-		charInfopackage.setMaxHp(chardata.MaxHp);
-		charInfopackage.setCurrentHp(chardata.CurrentHp);
-		charInfopackage.setMaxMp(chardata.MaxMp);
-		charInfopackage.setCurrentMp(chardata.CurrentMp);
-		charInfopackage.setReputation(chardata.Reputation);
-		charInfopackage.setPkKills(chardata.PkKills);
-		charInfopackage.setPvPKills(chardata.PvpKills);
-		charInfopackage.setFace(chardata.Face);
-		charInfopackage.setHairStyle(chardata.HairStyle);
-		charInfopackage.setHairColor(chardata.HairColor);
-		charInfopackage.setSex(chardata.Sex);
-		charInfopackage.setExp(chardata.Exp);
-		charInfopackage.setSp(chardata.Sp);
-		charInfopackage.setVitalityPoints(chardata.VitalityPoints);
-		charInfopackage.setClanId(chardata.ClanId);
-		charInfopackage.setRace(chardata.Class.GetRace());
-		CharacterClass baseClassId = chardata.BaseClass;
-		CharacterClass activeClassId = chardata.Class;
-		charInfopackage.setX(chardata.X);
-		charInfopackage.setY(chardata.Y);
-		charInfopackage.setZ(chardata.Z);
-		int? faction = chardata.Faction;
-		if (faction == 1)
-		{
-			charInfopackage.setGood();
-		}
-		if (faction == 2)
-		{
-			charInfopackage.setEvil();
-		}
-		
-		if (Config.MULTILANG_ENABLE)
-		{
-			String lang = chardata.Language;
-			if (!Config.MULTILANG_ALLOWED.Contains(lang))
-			{
-				lang = Config.MULTILANG_DEFAULT;
-			}
-			
-			charInfopackage.setHtmlPrefix("data/lang/" + lang + "/");
-		}
-		// if is in subclass, load subclass exp, sp, level info
-		if (baseClassId != activeClassId)
-		{
-			loadCharacterSubclassInfo(ctx, charInfopackage, objectId, activeClassId);
-		}
-		
-		charInfopackage.setClassId(activeClassId);
-		// Get the augmentation id for equipped weapon
-		int weaponObjId = charInfopackage.getPaperdollObjectId(Inventory.PAPERDOLL_RHAND);
-		if (weaponObjId < 1)
-		{
-			weaponObjId = charInfopackage.getPaperdollObjectId(Inventory.PAPERDOLL_RHAND);
-		}
-		if (weaponObjId > 0)
-		{
-			try
-			{
-				DbItemVariation? record = ctx.ItemVariations.SingleOrDefault(r => r.ItemId == weaponObjId);
-				if (record != null)
-				{
-					int mineralId = record.MineralId;
-					int option1 = record.Option1;
-					int option2 = record.Option2;
-					if ((option1 != -1) && (option2 != -1))
-					{
-						charInfopackage.setAugmentation(new VariationInstance(mineralId, option1, option2));
-					}
-				}
-			}
-			catch (Exception e)
-			{
-				LOGGER.Error("Could not restore augmentation info: " + e);
-			}
-		}
-		// Check if the base class is set to zero and also doesn't match with the current active class, otherwise send the base class ID. This prevents chars created before base class was introduced from being displayed incorrectly.
-		if ((baseClassId == 0) && (activeClassId > 0))
-		{
-			charInfopackage.setBaseClassId(activeClassId);
-		}
-		else
-		{
-			charInfopackage.setBaseClassId(baseClassId);
-		}
-		
-		charInfopackage.setDeleteTimer(deletetime);
-		charInfopackage.setLastAccess(chardata.LastAccess);
-		charInfopackage.setNoble(chardata.IsNobless);
-		return charInfopackage;
 	}
 }

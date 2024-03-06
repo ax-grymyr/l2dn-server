@@ -39,6 +39,12 @@ public abstract class Connection
     
     public bool Closed => _closed;
 
+    public void Send<T>(T packet, SendPacketOptions options = SendPacketOptions.None)
+        where T: struct, IOutgoingPacket
+    {
+        Send(ref packet, options);
+    }
+
     public void Send<T>(ref T packet, SendPacketOptions options = SendPacketOptions.None)
         where T: struct, IOutgoingPacket
     {

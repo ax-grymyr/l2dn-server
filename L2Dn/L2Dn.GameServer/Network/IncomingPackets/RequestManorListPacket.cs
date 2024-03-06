@@ -4,15 +4,15 @@ using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
-internal struct RequestManorListPacket: IIncomingPacket<GameSession>
+public struct RequestManorListPacket: IIncomingPacket<GameSession>
 {
     public void ReadContent(PacketBitReader reader)
     {
     }
 
-    public ValueTask ProcessAsync(Connection<GameSession> connection)
+    public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        ManorListPacket manorListPacket = new();
+        ExSendManorListPacket manorListPacket = new();
         connection.Send(ref manorListPacket);
 
         return ValueTask.CompletedTask;

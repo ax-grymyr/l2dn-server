@@ -7,6 +7,7 @@ internal readonly struct UpdateStatusPacket(ushort playerCount): IOutgoingPacket
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.UpdateStatus);
+        
         writer.WriteUInt16(playerCount);
     }
 }

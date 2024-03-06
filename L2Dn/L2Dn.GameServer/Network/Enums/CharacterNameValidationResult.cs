@@ -1,4 +1,4 @@
-﻿namespace L2Dn.GameServer.Network.OutgoingPackets;
+﻿namespace L2Dn.GameServer.Network.Enums;
 
 public enum CharacterNameValidationResult
 {

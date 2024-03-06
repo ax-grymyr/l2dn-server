@@ -4,17 +4,16 @@ using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
-internal readonly struct RequestBRVersionPacket: IIncomingPacket<GameSession>
+public struct RequestBRVersionPacket: IIncomingPacket<GameSession>
 {
     public void ReadContent(PacketBitReader reader)
     {
     }
 
-    public ValueTask ProcessAsync(Connection<GameSession> connection)
+    public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        // if enabled world exchange
-        ExBRVersionPacket exBRVersionPacket = new();
-        connection.Send(ref exBRVersionPacket);
+        ExBRVersionPacket exBrVersionPacket = new();
+        connection.Send(ref exBrVersionPacket);
 
         return ValueTask.CompletedTask;
     }

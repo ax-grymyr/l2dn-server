@@ -1,4 +1,6 @@
-﻿using L2Dn.GameServer.Configuration;
+﻿using System.Collections.Immutable;
+using L2Dn.GameServer.Configuration;
+using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.Network;
 
@@ -14,7 +16,9 @@ public sealed class GameSession(byte[]? encryptionKey): Session
     public string AccountName { get; set; } = string.Empty;
     public int ProtocolVersion { get; set; }
     public bool IsProtocolOk { get; set; }
+    public ImmutableArray<CharSelectInfoPackage> Characters { get; set; } = ImmutableArray<CharSelectInfoPackage>.Empty;
     public Player? Player { get; set; }
+    public object PlayerLock { get; } = new();
     public string? MacAddress { get; set; }
     public bool IsDetached { get; set; }
 }

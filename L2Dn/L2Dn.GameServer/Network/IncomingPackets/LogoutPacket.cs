@@ -4,13 +4,13 @@ using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
-internal readonly struct RequestLogoutPacket: IIncomingPacket<GameSession>
+public readonly struct LogoutPacket: IIncomingPacket<GameSession>
 {
     public void ReadContent(PacketBitReader reader)
     {
     }
 
-    public ValueTask ProcessAsync(Connection<GameSession> connection)
+    public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
         LeaveWorldPacket leaveWorldPacket = new();
         connection.Send(ref leaveWorldPacket, SendPacketOptions.CloseAfterSending);

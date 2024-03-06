@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Network.OutgoingPackets;
+﻿using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.NetworkAuthServer;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -22,40 +23,41 @@ public struct AuthLoginPacket: IIncomingPacket<GameSession>
         _loginKey2 = reader.ReadInt32();
     }
 
-    public async ValueTask ProcessAsync(Connection connection, GameSession session)
+    public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
         if (string.IsNullOrWhiteSpace(_accountName) || !session.IsProtocolOk || session.AccountId != 0)
         {
             connection.Close();
-            return;
+            return ValueTask.CompletedTask;
         }
         
-        AuthServerSession.Instance.
-        int serverId = session.Config.GameServer.Id;
-        int? accountId = await DbUtility.VerifyAuthDataAsync(_userName, serverId, _loginKey1,
-            _loginKey2, _playKey1, _playKey2);
-
-        if (accountId is null)
+        // TODO: wait for login data
+        if (AuthServerSession.Instance.Logins.TryRemove(_accountName, out AuthServerLoginData? loginData))
         {
-            AuthLoginFailedPacket authLoginFailedPacket = new(0, AuthFailedReason.AccessFailedTryLater);
-            connection.Send(ref authLoginFailedPacket, SendPacketOptions.CloseAfterSending);
-            return;
+            DateTime now = DateTime.UtcNow;
+            if (loginData.TimeStamp <= now && loginData.TimeStamp >= now.AddMinutes(1) &&
+                _loginKey1 == loginData.LoginKey1 && _loginKey2 == loginData.LoginKey2 &&
+                _playKey1 == loginData.PlayKey1 && _playKey2 == loginData.PlayKey2)
+            {
+                session.PlayKey1 = _playKey1;
+                session.AccountId = loginData.AccountId;
+                session.AccountName = loginData.AccountName;
+                session.State = GameSessionState.CharacterScreen;
+
+                AuthLoginFailedPacket authSuccessPacket = new(-1, AuthFailedReason.NoText);
+                connection.Send(ref authSuccessPacket);
+
+                // Load characters
+                session.Characters = CharacterPacketHelper.LoadCharacterSelectInfo(session.AccountId);
+                
+                CharacterListPacket characterListPacket = new(session.AccountId, session.AccountName, session.Characters);
+                connection.Send(ref characterListPacket);
+                return ValueTask.CompletedTask;
+            }
         }
 
-        session.PlayKey1 = _playKey1;
-        session.AccountId = accountId.Value;
-        session.AccountName = _userName;
-        session.State = GameSessionState.CharacterScreen;
-
-        session.Characters.Clear();
-        session.Characters.AddRange(await DbUtility.GetCharacters(serverId, accountId.Value));
-
-        AuthLoginFailedPacket authSuccessPacket = new(-1, AuthFailedReason.NoText);
-        connection.Send(ref authSuccessPacket);
-
-        CharacterListPacket characterListPacket =
-            new(_userName, _playKey1, session.Characters, session.SelectedCharacter);
-        
-        connection.Send(ref characterListPacket);
+        AuthLoginFailedPacket authLoginFailedPacket = new(0, AuthFailedReason.AccessFailedTryLater);
+        connection.Send(ref authLoginFailedPacket, SendPacketOptions.CloseAfterSending);
+        return ValueTask.CompletedTask;
     }
 }

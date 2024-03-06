@@ -11,27 +11,26 @@ internal sealed class GamePacketHandler: PacketHandler<GameSession>
     {
         SetDefaultAllowedStates(GameSessionState.InGame);
         
-        RegisterPacket<RequestLogoutPacket>(0x00, GameSessionState.InGame | GameSessionState.CharacterScreen);
-        RegisterPacket<RequestCharacterCreatePacket>(0x0C, GameSessionState.CharacterScreen);
-        RegisterPacket<RequestCharacterDeletePacket>(0x0D, GameSessionState.CharacterScreen);
-        RegisterPacket<ProtocolVersionPacket>(0x0E, GameSessionState.ProtocolVersion);
-        RegisterPacket<RequestMovePacket>(0x0F, GameSessionState.InGame);
+        RegisterPacket<LogoutPacket>(IncomingPacketCodes.LOGOUT).WithAllowedStates(GameSessionState.InGame | GameSessionState.CharacterScreen);
+        RegisterPacket<CharacterCreatePacket>(IncomingPacketCodes.CHARACTER_CREATE).WithAllowedStates(GameSessionState.CharacterScreen);
+        RegisterPacket<CharacterDeletePacket>(IncomingPacketCodes.CHARACTER_DELETE).WithAllowedStates(GameSessionState.CharacterScreen);
+        RegisterPacket<ProtocolVersionPacket>(IncomingPacketCodes.PROTOCOL_VERSION).WithAllowedStates(GameSessionState.ProtocolVersion);
+        RegisterPacket<RequestMovePacket>(IncomingPacketCodes.MOVE_BACKWARD_TO_LOCATION);
         RegisterPacket<EnterWorldPacket>(0x11, GameSessionState.EnteringGame);
-        RegisterPacket<RequestCharacterSelectPacket>(0x12, GameSessionState.CharacterScreen);
-        RegisterPacket<RequestNewCharacterPacket>(0x13, GameSessionState.CharacterScreen);
-        RegisterPacket<AuthLoginPacket>(0x2B, GameSessionState.Authorization);
-        RegisterPacket<RequestRestartPacket>(0x57, GameSessionState.InGame);
+        RegisterPacket<CharacterSelectPacket>(IncomingPacketCodes.CHARACTER_SELECT).WithAllowedStates(GameSessionState.CharacterScreen);
+        RegisterPacket<NewCharacterPacket>(IncomingPacketCodes.NEW_CHARACTER).WithAllowedStates(GameSessionState.CharacterScreen);
+        RegisterPacket<AuthLoginPacket>(IncomingPacketCodes.AUTH_LOGIN).WithAllowedStates(GameSessionState.Authorization);
+        RegisterPacket<RequestRestartPacket>(IncomingPacketCodes.REQUEST_RESTART);
         RegisterPacket<RequestPositionPacket>(0x59, GameSessionState.InGame);
         RegisterPacket<RequestQuestListPacket>(0x62, GameSessionState.EnteringGame | GameSessionState.InGame);
-        RegisterPacket<RequestShowMiniMapPacket>(0x6C, GameSessionState.InGame);
-        RegisterPacket<SendBypassBuildCmdPacket>(0x74, GameSessionState.InGame);
-        RegisterPacket<RequestCharacterRestorePacket>(0x7B, GameSessionState.CharacterScreen);
+        RegisterPacket<RequestShowMiniMapPacket>(IncomingPacketCodes.REQUEST_SHOW_MINI_MAP);
+        RegisterPacket<SendBypassBuildCmdPacket>(IncomingPacketCodes.SEND_BYPASS_BUILD_CMD);
+        RegisterPacket<CharacterRestorePacket>(IncomingPacketCodes.CHARACTER_RESTORE).WithAllowedStates(GameSessionState.CharacterScreen);
 
-        RegisterExPacket<RequestManorListPacket>(0xD0, 0x0001, GameSessionState.EnteringGame | GameSessionState.InGame);
-        RegisterExPacket<RequestGoToLobbyPacket>(0xD0, 0x0033, GameSessionState.CharacterScreen);
-        RegisterExPacket<RequestCharacterNameCreatablePacket>(0xD0, 0x00A9, GameSessionState.CharacterScreen);
-        RegisterExPacket<RequestBRVersionPacket>(0xD0, 0x0249,
-            GameSessionState.Authorization | GameSessionState.CharacterScreen);
+        RegisterPacket<RequestManorListPacket>(IncomingPacketCodes.REQUEST_MANOR_LIST).WithAllowedStates(GameSessionState.EnteringGame | GameSessionState.InGame);
+        RegisterPacket<RequestGoToLobbyPacket>(IncomingPacketCodes.REQUEST_GOTO_LOBBY).WithAllowedStates(GameSessionState.CharacterScreen);
+        RegisterPacket<RequestCharacterNameCreatablePacket>(IncomingPacketCodes.REQUEST_CHARACTER_NAME_CREATABLE).WithAllowedStates(GameSessionState.CharacterScreen);
+        RegisterPacket<RequestBRVersionPacket>(IncomingPacketCodes.EX_BR_VERSION).WithAllowedStates(GameSessionState.Authorization | GameSessionState.CharacterScreen);
     }
 
     protected override bool OnPacketInvalidState(Connection connection, GameSession session)

@@ -1,8 +1,9 @@
-﻿using L2Dn.Packets;
+﻿using L2Dn.GameServer.Network.Enums;
+using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
-public readonly struct ExIsCharNameCreatable(CharacterNameValidationResult result): IOutgoingPacket
+public readonly struct ExIsCharNameCreatablePacket(CharacterNameValidationResult result): IOutgoingPacket
 {
     public void WriteContent(PacketBitWriter writer)
     {

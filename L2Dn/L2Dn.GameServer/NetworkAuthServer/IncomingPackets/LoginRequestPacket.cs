@@ -24,6 +24,12 @@ internal struct LoginRequestPacket: IIncomingPacket<AuthServerSession>
 
     public ValueTask ProcessAsync(Connection connection, AuthServerSession session)
     {
-        throw new NotImplementedException();
+        if (string.IsNullOrEmpty(_accountName))
+            return ValueTask.CompletedTask;
+
+        session.Logins[_accountName] = new AuthServerLoginData(_accountId, _accountName, DateTime.UtcNow, _loginKey1,
+            _loginKey2, _playKey1, _playKey2);
+
+        return ValueTask.CompletedTask;
     }
 }

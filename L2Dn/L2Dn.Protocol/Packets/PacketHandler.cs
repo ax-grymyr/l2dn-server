@@ -10,7 +10,7 @@ public class PacketHandler<TSession>
     private static readonly Logger _logger = LogManager.GetLogger(nameof(PacketHandler<TSession>));
     private readonly PacketHandlerHelper<TSession>?[] _helpers = new PacketHandlerHelper<TSession>?[256];
     private long _defaultStates;
-
+    
     public PacketRegistration RegisterPacket<TPacket>(int code)
         where TPacket: struct, IIncomingPacket<TSession> =>
         code switch

@@ -4,19 +4,15 @@ using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
-internal struct RequestGoToLobbyPacket: IIncomingPacket<GameSession>
+public struct RequestGoToLobbyPacket: IIncomingPacket<GameSession>
 {
     public void ReadContent(PacketBitReader reader)
     {
     }
 
-    public ValueTask ProcessAsync(Connection<GameSession> connection)
+    public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        GameSession session = connection.Session;
-
-        CharacterListPacket characterListPacket = new(session.AccountName, session.PlayKey1, session.Characters,
-            session.SelectedCharacter);
-
+        CharacterListPacket characterListPacket = new(session.AccountId, session.AccountName, session.Characters);
         connection.Send(ref characterListPacket);
 
         return ValueTask.CompletedTask;

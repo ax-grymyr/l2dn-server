@@ -14,6 +14,7 @@ internal struct PingResponsePacket: IIncomingPacket<AuthServerSession>
 
     public ValueTask ProcessAsync(Connection connection, AuthServerSession session)
     {
-        throw new NotImplementedException();
+        // do nothing
+        return ValueTask.CompletedTask;
     }
 }

@@ -2,13 +2,13 @@
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
-internal readonly struct ShowMiniMapPacket(int mapId, int sevenSignsPeriod): IOutgoingPacket
+public readonly struct ShowMiniMapPacket(int mapId): IOutgoingPacket
 {
     public void WriteContent(PacketBitWriter writer)
     {
-        writer.WriteByte(0xA3); // packet code (0x9D in C4)
+        writer.WritePacketCode(OutgoingPacketCodes.SHOW_MINIMAP);
         
         writer.WriteInt32(mapId);
-        writer.WriteInt32(sevenSignsPeriod);
+        writer.WriteInt32(0); // Seven Signs state
     }
 }

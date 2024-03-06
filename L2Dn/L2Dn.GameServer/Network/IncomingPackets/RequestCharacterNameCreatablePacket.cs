@@ -1,10 +1,13 @@
-﻿using L2Dn.GameServer.Network.OutgoingPackets;
+﻿using L2Dn.GameServer.Data.Sql;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Network;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
-internal struct RequestCharacterNameCreatablePacket: IIncomingPacket<GameSession>
+public struct RequestCharacterNameCreatablePacket: IIncomingPacket<GameSession>
 {
     private string? _name;
 
@@ -13,7 +16,7 @@ internal struct RequestCharacterNameCreatablePacket: IIncomingPacket<GameSession
         _name = reader.ReadString();
     }
 
-    public async ValueTask ProcessAsync(Connection<GameSession> connection)
+    public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
         CharacterNameValidationResult result = CharacterNameValidationResult.Ok;
         if (string.IsNullOrEmpty(_name) || _name.Length > 16)
@@ -22,14 +25,16 @@ internal struct RequestCharacterNameCreatablePacket: IIncomingPacket<GameSession
             result = CharacterNameValidationResult.InvalidName;
         else
         {
-            GameSession session = connection.Session;
-            bool exists = await DbUtility.DoesCharacterExistAsync(session.Config.GameServer.Id, _name);
-            if (exists)
+            int charId = CharInfoTable.getInstance().getIdByName(_name);
+            if (charId > 0)
+                result = CharacterNameValidationResult.NameAlreadyExists;
+            else if (FakePlayerData.getInstance().getProperName(_name) != null)
                 result = CharacterNameValidationResult.NameAlreadyExists;
         }
 
-        CharacterNameCreatablePacket characterNameCreatablePacket = new(result);
-        connection.Send(ref characterNameCreatablePacket);
+        ExIsCharNameCreatablePacket resultPacket = new ExIsCharNameCreatablePacket(result);
+        connection.Send(ref resultPacket);
+        return ValueTask.CompletedTask;
     }
 
     private static bool IsValidName(string name)

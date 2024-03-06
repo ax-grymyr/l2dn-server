@@ -14,6 +14,6 @@ internal struct RegistrationResultPacket: IIncomingPacket<AuthServerSession>
 
     public ValueTask ProcessAsync(Connection connection, AuthServerSession session)
     {
-        throw new NotImplementedException();
+        return ValueTask.CompletedTask;
     }
 }
