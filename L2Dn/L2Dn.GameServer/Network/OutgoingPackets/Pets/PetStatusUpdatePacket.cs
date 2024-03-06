@@ -25,8 +25,8 @@ public readonly struct PetStatusUpdatePacket: IOutgoingPacket
 		else if (_summon.isServitor())
 		{
 			Servitor sum = (Servitor)_summon;
-			_curFed = (int)sum.getLifeTimeRemaining().TotalMilliseconds;
-			_maxFed = sum.getLifeTime();
+			_curFed = (int)(sum.getLifeTimeRemaining() ?? TimeSpan.Zero).TotalSeconds; // TODO: milliseconds?
+			_maxFed = (int)(sum.getLifeTime() ?? TimeSpan.Zero).TotalSeconds;
 		}
 	}
 

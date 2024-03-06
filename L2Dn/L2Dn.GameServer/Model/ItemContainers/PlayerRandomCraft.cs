@@ -46,20 +46,11 @@ public class PlayerRandomCraft
 					_craftPoints = record.Points;
 					_isSayhaRoll = record.IsSayhaRoll;
 
-					CharacterRandomCraftItem item = record.Item1;
-					_rewardList.Add(new RandomCraftRewardItemHolder(item.Id, item.Count, item.Locked, item.LockLeft));
-
-					item = record.Item2;
-					_rewardList.Add(new RandomCraftRewardItemHolder(item.Id, item.Count, item.Locked, item.LockLeft));
-
-					item = record.Item3;
-					_rewardList.Add(new RandomCraftRewardItemHolder(item.Id, item.Count, item.Locked, item.LockLeft));
-
-					item = record.Item4;
-					_rewardList.Add(new RandomCraftRewardItemHolder(item.Id, item.Count, item.Locked, item.LockLeft));
-
-					item = record.Item5;
-					_rewardList.Add(new RandomCraftRewardItemHolder(item.Id, item.Count, item.Locked, item.LockLeft));
+					_rewardList.Add(new RandomCraftRewardItemHolder(record.Item1Id, record.Item1Count, record.Item1Locked, record.Item1LockLeft));
+					_rewardList.Add(new RandomCraftRewardItemHolder(record.Item2Id, record.Item2Count, record.Item2Locked, record.Item2LockLeft));
+					_rewardList.Add(new RandomCraftRewardItemHolder(record.Item3Id, record.Item3Count, record.Item3Locked, record.Item3LockLeft));
+					_rewardList.Add(new RandomCraftRewardItemHolder(record.Item4Id, record.Item4Count, record.Item4Locked, record.Item4LockLeft));
+					_rewardList.Add(new RandomCraftRewardItemHolder(record.Item5Id, record.Item5Count, record.Item5Locked, record.Item5LockLeft));
 				}
 				catch (Exception e)
 				{
@@ -95,19 +86,85 @@ public class PlayerRandomCraft
 			record.Points = _craftPoints;
 			record.IsSayhaRoll = _isSayhaRoll;
 
-			static CharacterRandomCraftItem GetRewardItem(RandomCraftRewardItemHolder? holder) => new()
+			if (_rewardList.Count > 0)
 			{
-				Id = holder?.getItemId() ?? 0,
-				Count = holder?.getItemCount() ?? 0,
-				Locked = holder?.isLocked() ?? false,
-				LockLeft = holder?.getLockLeft() ?? 0
-			};
+				RandomCraftRewardItemHolder holder = _rewardList[0];
+				record.Item1Id = holder.getItemId();
+				record.Item1Count = holder.getItemCount();
+				record.Item1Locked = holder.isLocked();
+				record.Item1LockLeft = holder.getLockLeft();
+			}
+			else
+			{
+				record.Item1Id = 0;
+				record.Item1Count = 0;
+				record.Item1Locked = false;
+				record.Item1LockLeft = 0;
+			}
 
-			record.Item1 = GetRewardItem(_rewardList.Count > 0 ? _rewardList[0] : null);
-			record.Item2 = GetRewardItem(_rewardList.Count > 1 ? _rewardList[1] : null);
-			record.Item3 = GetRewardItem(_rewardList.Count > 2 ? _rewardList[2] : null);
-			record.Item4 = GetRewardItem(_rewardList.Count > 3 ? _rewardList[3] : null);
-			record.Item5 = GetRewardItem(_rewardList.Count > 4 ? _rewardList[4] : null);
+			if (_rewardList.Count > 1)
+			{
+				RandomCraftRewardItemHolder holder = _rewardList[1];
+				record.Item2Id = holder.getItemId();
+				record.Item2Count = holder.getItemCount();
+				record.Item2Locked = holder.isLocked();
+				record.Item2LockLeft = holder.getLockLeft();
+			}
+			else
+			{
+				record.Item2Id = 0;
+				record.Item2Count = 0;
+				record.Item2Locked = false;
+				record.Item2LockLeft = 0;
+			}
+
+			if (_rewardList.Count > 2)
+			{
+				RandomCraftRewardItemHolder holder = _rewardList[2];
+				record.Item3Id = holder.getItemId();
+				record.Item3Count = holder.getItemCount();
+				record.Item3Locked = holder.isLocked();
+				record.Item3LockLeft = holder.getLockLeft();
+			}
+			else
+			{
+				record.Item3Id = 0;
+				record.Item3Count = 0;
+				record.Item3Locked = false;
+				record.Item3LockLeft = 0;
+			}
+
+			if (_rewardList.Count > 3)
+			{
+				RandomCraftRewardItemHolder holder = _rewardList[3];
+				record.Item4Id = holder.getItemId();
+				record.Item4Count = holder.getItemCount();
+				record.Item4Locked = holder.isLocked();
+				record.Item4LockLeft = holder.getLockLeft();
+			}
+			else
+			{
+				record.Item4Id = 0;
+				record.Item4Count = 0;
+				record.Item4Locked = false;
+				record.Item4LockLeft = 0;
+			}
+
+			if (_rewardList.Count > 4)
+			{
+				RandomCraftRewardItemHolder holder = _rewardList[4];
+				record.Item5Id = holder.getItemId();
+				record.Item5Count = holder.getItemCount();
+				record.Item5Locked = holder.isLocked();
+				record.Item5LockLeft = holder.getLockLeft();
+			}
+			else
+			{
+				record.Item5Id = 0;
+				record.Item5Count = 0;
+				record.Item5Locked = false;
+				record.Item5LockLeft = 0;
+			}
 
 			ctx.SaveChanges();
 		}
@@ -134,11 +191,6 @@ public class PlayerRandomCraft
 			record.FullPoints = _fullCraftPoints;
 			record.Points = _craftPoints;
 			record.IsSayhaRoll = _isSayhaRoll;
-			record.Item1 = default;
-			record.Item2 = default;
-			record.Item3 = default;
-			record.Item4 = default;
-			record.Item5 = default;
 
 			ctx.SaveChanges();
 		}

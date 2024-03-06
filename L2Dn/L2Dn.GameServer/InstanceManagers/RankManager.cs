@@ -280,7 +280,7 @@ public class RankManager
 			using GameServerDbContext ctx = new();
 			var query = (from c in ctx.Characters
 				from clan in ctx.Clans
-				where c.Id == clan.LeaderId && c.ClanId == clan.Id && clan.DissolvingExpireTime is null
+				where c.Id == clan.LeaderId && c.ClanId == clan.Id && clan.DissolvingExpireTime == null
 				orderby clan.Exp descending
 				select new
 				{

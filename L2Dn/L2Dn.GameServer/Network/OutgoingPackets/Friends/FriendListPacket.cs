@@ -36,11 +36,11 @@ public readonly struct FriendListPacket: IOutgoingPacket
 				{
 					using GameServerDbContext ctx = new();
 					var record = ctx.Characters.Where(r => r.Id == objId)
-						.Select(r => new { r.Name, r.IsOnline, r.Class, r.Level })
+						.Select(r => new { r.Name, r.OnlineStatus, r.Class, r.Level })
 						.SingleOrDefault();
 
 					if (record is not null)
-						_info.Add(new FriendInfo(objId, record.Name, record.IsOnline, record.Class, record.Level));
+						_info.Add(new FriendInfo(objId, record.Name, record.OnlineStatus == CharacterOnlineStatus.Online, record.Class, record.Level));
 				}
 				catch (Exception e)
 				{

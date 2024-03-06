@@ -126,11 +126,11 @@ public readonly struct SummonInfoPacket: IOutgoingPacket
 		}
 		if (summon.getOwner().getClan() != null)
 		{
-			_clanId = summon.getOwner().getAppearance().getVisibleClanId();
-			_clanCrest = summon.getOwner().getAppearance().getVisibleClanCrestId();
-			_clanLargeCrest = summon.getOwner().getAppearance().getVisibleClanLargeCrestId();
-			_allyCrest = summon.getOwner().getAppearance().getVisibleAllyId();
-			_allyId = summon.getOwner().getAppearance().getVisibleAllyCrestId();
+			_clanId = summon.getOwner().getAppearance().getVisibleClanId() ?? 0;
+			_clanCrest = summon.getOwner().getAppearance().getVisibleClanCrestId() ?? 0;
+			_clanLargeCrest = summon.getOwner().getAppearance().getVisibleClanLargeCrestId() ?? 0;
+			_allyCrest = summon.getOwner().getAppearance().getVisibleAllyId() ?? 0;
+			_allyId = summon.getOwner().getAppearance().getVisibleAllyCrestId() ?? 0;
 			_helper.AddComponent(NpcInfoType.CLAN);
 		}
 		

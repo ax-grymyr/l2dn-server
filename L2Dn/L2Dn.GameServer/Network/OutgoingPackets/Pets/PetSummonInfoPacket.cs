@@ -48,8 +48,8 @@ public readonly struct PetSummonInfoPacket: IOutgoingPacket
 		else if (summon.isServitor())
 		{
 			Servitor sum = (Servitor) _summon;
-			_curFed = (int)sum.getLifeTimeRemaining().TotalMilliseconds;
-			_maxFed = sum.getLifeTime();
+			_curFed = (int)(sum.getLifeTimeRemaining() ?? TimeSpan.Zero).TotalSeconds;
+			_maxFed = (int)(sum.getLifeTime() ?? TimeSpan.Zero).TotalSeconds;
 		}
 		if (summon.isBetrayed())
 		{

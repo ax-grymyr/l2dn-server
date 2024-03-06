@@ -1,14 +1,15 @@
 ﻿using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -86,7 +87,7 @@ public readonly struct FakePlayerInfoPacket: IOutgoingPacket
 		writer.WriteInt32(_objId);
 		writer.WriteString(_npc.getName());
 		writer.WriteInt16((short)_npc.getRace());
-		writer.WriteByte(_npc.getTemplate().getSex() == Sex.FEMALE);
+		writer.WriteByte(_npc.getTemplate().getSex() == Sex.Female);
 		writer.WriteInt32((int)_fpcHolder.getClassId().GetRootClass());
 		writer.WriteInt32(0); // Inventory.PAPERDOLL_UNDER
 		writer.WriteInt32(_fpcHolder.getEquipHead());
@@ -136,9 +137,9 @@ public readonly struct FakePlayerInfoPacket: IOutgoingPacket
 		if (_clan != null)
 		{
 			writer.WriteInt32(_clan.getId());
-			writer.WriteInt32(_clan.getCrestId());
-			writer.WriteInt32(_clan.getAllyId());
-			writer.WriteInt32(_clan.getAllyCrestId());
+			writer.WriteInt32(_clan.getCrestId() ?? 0);
+			writer.WriteInt32(_clan.getAllyId() ?? 0);
+			writer.WriteInt32(_clan.getAllyCrestId() ?? 0);
 		}
 		else
 		{
@@ -164,7 +165,7 @@ public readonly struct FakePlayerInfoPacket: IOutgoingPacket
 		writer.WriteInt32(0);
 		writer.WriteByte((byte)_fpcHolder.getWeaponEnchantLevel()); // isMounted() ? 0 : _enchantLevel
 		writer.WriteByte((byte)_npc.getTeam());
-		writer.WriteInt32(_clan != null ? _clan.getCrestLargeId() : 0);
+		writer.WriteInt32(_clan?.getCrestLargeId() ?? 0);
 		writer.WriteByte((byte)_fpcHolder.getNobleLevel());
 		writer.WriteByte((byte)(_fpcHolder.isHero() ? 2 : 0)); // 152 - Value for enabled changed to 2
 		writer.WriteByte(_fpcHolder.isFishing());

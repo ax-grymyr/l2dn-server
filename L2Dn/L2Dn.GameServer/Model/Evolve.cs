@@ -100,7 +100,7 @@ public class Evolve
 		
 		player.setPet(petSummon);
 		
-		player.sendPacket(new MagicSkillUsePacket(npc, 2046, 1, 1000, 600000));
+		player.sendPacket(new MagicSkillUsePacket(npc, 2046, 1, TimeSpan.FromMilliseconds(1000), TimeSpan.FromMilliseconds(600000)));
 		player.sendPacket(SystemMessageId.SUMMONING_YOUR_PET);
 		petSummon.spawnMe(oldX, oldY, oldZ);
 		petSummon.startFeed();
@@ -185,7 +185,7 @@ public class Evolve
 		
 		player.setPet(petSummon);
 		
-		player.sendPacket(new MagicSkillUsePacket(npc, 2046, 1, 1000, 600000));
+		player.sendPacket(new MagicSkillUsePacket(npc, 2046, 1, TimeSpan.FromMilliseconds(1000), TimeSpan.FromMilliseconds(600000)));
 		player.sendPacket(SystemMessageId.SUMMONING_YOUR_PET);
 		petSummon.spawnMe(player.getX(), player.getY(), player.getZ());
 		petSummon.startFeed();

@@ -11,9 +11,28 @@ public class CharacterRandomCraft
     public int Points { get; set; }
     public bool IsSayhaRoll { get; set; }
 
-    public CharacterRandomCraftItem Item1 { get; set; }
-    public CharacterRandomCraftItem Item2 { get; set; }
-    public CharacterRandomCraftItem Item3 { get; set; }
-    public CharacterRandomCraftItem Item4 { get; set; }
-    public CharacterRandomCraftItem Item5 { get; set; }
+    public int Item1Id { get; set; }
+    public long Item1Count { get; set; }
+    public bool Item1Locked { get; set; }
+    public int Item1LockLeft { get; set; }
+
+    public int Item2Id { get; set; }
+    public long Item2Count { get; set; }
+    public bool Item2Locked { get; set; }
+    public int Item2LockLeft { get; set; }
+
+    public int Item3Id { get; set; }
+    public long Item3Count { get; set; }
+    public bool Item3Locked { get; set; }
+    public int Item3LockLeft { get; set; }
+
+    public int Item4Id { get; set; }
+    public long Item4Count { get; set; }
+    public bool Item4Locked { get; set; }
+    public int Item4LockLeft { get; set; }
+
+    public int Item5Id { get; set; }
+    public long Item5Count { get; set; }
+    public bool Item5Locked { get; set; }
+    public int Item5LockLeft { get; set; }
 }

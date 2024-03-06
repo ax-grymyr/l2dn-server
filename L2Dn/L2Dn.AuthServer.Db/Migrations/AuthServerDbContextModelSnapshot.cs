@@ -81,7 +81,7 @@ namespace L2Dn.AuthServer.Db.Migrations
                         .HasColumnType("integer");
 
                     b.Property<bool>("Brackets")
-                        .HasColumnType("bool");
+                        .HasColumnType("boolean");
 
                     b.Property<string>("IPAddress")
                         .IsRequired()
@@ -89,7 +89,7 @@ namespace L2Dn.AuthServer.Db.Migrations
                         .HasColumnType("character varying(50)");
 
                     b.Property<bool>("IsPvpServer")
-                        .HasColumnType("bool");
+                        .HasColumnType("boolean");
 
                     b.Property<short>("MaxPlayerCount")
                         .HasColumnType("smallint");

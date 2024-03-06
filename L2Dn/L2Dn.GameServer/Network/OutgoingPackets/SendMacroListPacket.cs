@@ -31,7 +31,7 @@ public readonly struct SendMacroListPacket: IOutgoingPacket
             writer.WriteString(_macro.getName()); // Macro Name
             writer.WriteString(_macro.getDescr()); // Desc
             writer.WriteString(_macro.getAcronym()); // acronym
-            writer.WriteInt32(_macro.getIcon()); // icon
+            writer.WriteInt32(_macro.getIcon() ?? 0); // icon
             writer.WriteByte((byte)_macro.getCommands().Count); // count
             byte i = 1;
             foreach (MacroCmd cmd in _macro.getCommands())

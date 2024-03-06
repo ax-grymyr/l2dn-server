@@ -21,7 +21,7 @@ public readonly struct ReceiveVipInfoPacket: IOutgoingPacket
         }
 		
         VipManager vipManager = VipManager.getInstance();
-        byte vipTier = _player.getVipTier();
+        byte vipTier = (byte)_player.getVipTier();
 
         DateTime? expiration = _player.getVipTierExpiration();
         int vipDuration = expiration is null ? 0 : (int)(expiration.Value - DateTime.UtcNow).TotalSeconds;
@@ -31,7 +31,7 @@ public readonly struct ReceiveVipInfoPacket: IOutgoingPacket
         writer.WriteByte(vipTier);
         writer.WriteInt64(_player.getVipPoints());
         writer.WriteInt32(vipDuration);
-        writer.WriteInt64(vipManager.getPointsToLevel((byte) (vipTier + 1)));
+        writer.WriteInt64(vipManager.getPointsToLevel((byte)(vipTier + 1)));
         writer.WriteInt64(vipManager.getPointsDepreciatedOnLevel(vipTier));
         writer.WriteByte(vipTier);
         writer.WriteInt64(vipManager.getPointsToLevel(vipTier));
