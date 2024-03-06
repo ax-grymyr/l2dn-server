@@ -1,5 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using L2Dn.GameServer.Configuration;
+using L2Dn.GameServer.Model;
+using L2Dn.GameServer.NetworkAuthServer.OutgoingPackets;
 using L2Dn.Network;
 
 namespace L2Dn.GameServer.NetworkAuthServer;
@@ -13,4 +15,14 @@ internal sealed class AuthServerSession: Session
     public ConcurrentDictionary<string, AuthServerLoginData> Logins => _logins;
     
     public ServerConfig Config => ServerConfig.Instance;
+
+    public void setServerStatus(bool online)
+    {
+        Connection? connection = Connection;
+        if (connection != null)
+        {
+            int playerCount = World.getInstance().getPlayers().Count;
+            connection.Send(new UpdateStatusPacket(online, (ushort)playerCount));
+        }
+    }
 }

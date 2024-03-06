@@ -106,7 +106,7 @@ public class Config
 	public static bool PREMIUM_ONLY_ATTENDANCE_REWARDS;
 	public static bool VIP_ONLY_ATTENDANCE_REWARDS;
 	public static bool ATTENDANCE_REWARDS_SHARE_ACCOUNT;
-	public static int ATTENDANCE_REWARD_DELAY;
+	public static TimeSpan ATTENDANCE_REWARD_DELAY;
 	public static bool ATTENDANCE_POPUP_START;
 	public static bool ATTENDANCE_POPUP_WINDOW;
 	public static bool PLAYER_DELEVEL;
@@ -1548,19 +1548,19 @@ public class Config
 		TRAP_UPGRADE_PRICE2 = parser.getInt("TrapUpgradePriceLvl2", 4000000);
 		TRAP_UPGRADE_PRICE3 = parser.getInt("TrapUpgradePriceLvl3", 5000000);
 		TRAP_UPGRADE_PRICE4 = parser.getInt("TrapUpgradePriceLvl4", 6000000);
-		FS_TELE_FEE_RATIO = parser.getLong("FortressTeleportFunctionFeeRatio", 604800000);
+		FS_TELE_FEE_RATIO = TimeSpan.FromMilliseconds(parser.getLong("FortressTeleportFunctionFeeRatio", 604800000));
 		FS_TELE1_FEE = parser.getInt("FortressTeleportFunctionFeeLvl1", 1000);
 		FS_TELE2_FEE = parser.getInt("FortressTeleportFunctionFeeLvl2", 10000);
-		FS_SUPPORT_FEE_RATIO = parser.getLong("FortressSupportFunctionFeeRatio", 86400000);
+		FS_SUPPORT_FEE_RATIO = TimeSpan.FromMilliseconds(parser.getLong("FortressSupportFunctionFeeRatio", 86400000));
 		FS_SUPPORT1_FEE = parser.getInt("FortressSupportFeeLvl1", 7000);
 		FS_SUPPORT2_FEE = parser.getInt("FortressSupportFeeLvl2", 17000);
-		FS_MPREG_FEE_RATIO = parser.getLong("FortressMpRegenerationFunctionFeeRatio", 86400000);
+		FS_MPREG_FEE_RATIO = TimeSpan.FromMilliseconds(parser.getLong("FortressMpRegenerationFunctionFeeRatio", 86400000));
 		FS_MPREG1_FEE = parser.getInt("FortressMpRegenerationFeeLvl1", 6500);
 		FS_MPREG2_FEE = parser.getInt("FortressMpRegenerationFeeLvl2", 9300);
-		FS_HPREG_FEE_RATIO = parser.getLong("FortressHpRegenerationFunctionFeeRatio", 86400000);
+		FS_HPREG_FEE_RATIO = TimeSpan.FromMilliseconds(parser.getLong("FortressHpRegenerationFunctionFeeRatio", 86400000));
 		FS_HPREG1_FEE = parser.getInt("FortressHpRegenerationFeeLvl1", 2000);
 		FS_HPREG2_FEE = parser.getInt("FortressHpRegenerationFeeLvl2", 3500);
-		FS_EXPREG_FEE_RATIO = parser.getLong("FortressExpRegenerationFunctionFeeRatio", 86400000);
+		FS_EXPREG_FEE_RATIO = TimeSpan.FromMilliseconds(parser.getLong("FortressExpRegenerationFunctionFeeRatio", 86400000));
 		FS_EXPREG1_FEE = parser.getInt("FortressExpRegenerationFeeLvl1", 9000);
 		FS_EXPREG2_FEE = parser.getInt("FortressExpRegenerationFeeLvl2", 10000);
 		FS_UPDATE_FRQ = parser.getInt("FortressPeriodicUpdateFrequency", 360);
@@ -1620,7 +1620,7 @@ public class Config
 		PREMIUM_ONLY_ATTENDANCE_REWARDS = parser.getBoolean("PremiumOnlyAttendanceRewards", false);
 		VIP_ONLY_ATTENDANCE_REWARDS = parser.getBoolean("VipOnlyAttendanceRewards", false);
 		ATTENDANCE_REWARDS_SHARE_ACCOUNT = parser.getBoolean("AttendanceRewardsShareAccount", false);
-		ATTENDANCE_REWARD_DELAY = parser.getInt("AttendanceRewardDelay", 30);
+		ATTENDANCE_REWARD_DELAY = TimeSpan.FromMinutes(parser.getInt("AttendanceRewardDelay", 30));
 		ATTENDANCE_POPUP_START = parser.getBoolean("AttendancePopupStart", true);
 		ATTENDANCE_POPUP_WINDOW = parser.getBoolean("AttendancePopupWindow", false);
 
@@ -2302,8 +2302,8 @@ public class Config
 		ALT_OLY_WEEKLY_POINTS = parser.getInt("AltOlyWeeklyPoints", 10);
 		ALT_OLY_CLASSED = parser.getInt("AltOlyClassedParticipants", 10);
 		ALT_OLY_NONCLASSED = parser.getInt("AltOlyNonClassedParticipants", 20);
-		ALT_OLY_WINNER_REWARD = parser.GetIdValueMap<int>("AltOlyWinReward");
-		ALT_OLY_LOSER_REWARD = parser.GetIdValueMap<int>("AltOlyLoserReward");
+		ALT_OLY_WINNER_REWARD = parser.GetIdValueMap<int>("AltOlyWinReward").Select(x => new ItemHolder(x.Key, x.Value)).ToImmutableArray();
+		ALT_OLY_LOSER_REWARD = parser.GetIdValueMap<int>("AltOlyLoserReward").Select(x => new ItemHolder(x.Key, x.Value)).ToImmutableArray();
 		ALT_OLY_COMP_RITEM = parser.getInt("AltOlyCompRewItem", 45584);
 		ALT_OLY_MIN_MATCHES = parser.getInt("AltOlyMinMatchesForPoints", 10);
 		ALT_OLY_MARK_PER_POINT = parser.getInt("AltOlyMarkPerPoint", 20);
@@ -2326,7 +2326,7 @@ public class Config
 		ALT_OLY_WAIT_TIME = parser.getInt("AltOlyWaitTime", 60);
 		ALT_OLY_PERIOD = parser.getString("AltOlyPeriod", "MONTH");
 		ALT_OLY_PERIOD_MULTIPLIER = parser.getInt("AltOlyPeriodMultiplier", 1);
-		ALT_OLY_COMPETITION_DAYS = parser.GetIntList("AltOlyCompetitionDays").ToImmutableSortedSet();
+		ALT_OLY_COMPETITION_DAYS = parser.GetIntList("AltOlyCompetitionDays").Select(x => (DayOfWeek)x).ToImmutableSortedSet();
 
 		// TODO: instead of HEXID_FILE, game server can use token to access Login server 
 
@@ -2960,9 +2960,9 @@ public class Config
 		return result;
 	}
 
-	private static ImmutableDictionary<int, int> GetSkillDurationList(ConfigurationParser parser, string key)
+	private static ImmutableDictionary<int, TimeSpan> GetSkillDurationList(ConfigurationParser parser, string key)
 	{
-		var result = ImmutableDictionary<int, int>.Empty;
+		var result = ImmutableDictionary<int, TimeSpan>.Empty;
 		string value = parser.getString(key);
 		if (string.IsNullOrEmpty(value))
 			return result;
@@ -2983,7 +2983,7 @@ public class Config
 
 			try
 			{
-				result = result.Add(skillId, duration);
+				result = result.Add(skillId, TimeSpan.FromMilliseconds(duration));
 			}
 			catch (ArgumentException)
 			{

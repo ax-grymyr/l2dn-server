@@ -6,6 +6,7 @@ namespace L2Dn.GameServer.Network.OutgoingPackets.StoreReviews;
 
 public readonly struct ExPrivateStoreSearchItemPacket: IOutgoingPacket
 {
+    public const int MAX_ITEM_PER_PAGE = 120;
     private readonly int _page;
     private readonly int _maxPage;
     private readonly int _nSize;
@@ -28,7 +29,7 @@ public readonly struct ExPrivateStoreSearchItemPacket: IOutgoingPacket
         writer.WriteInt32(_nSize); // nSize
         if (_nSize > 0)
         {
-            for (int itemIndex = (_page - 1) * ExRequestPrivateStoreSearchList.MAX_ITEM_PER_PAGE; (itemIndex < (_page * ExRequestPrivateStoreSearchList.MAX_ITEM_PER_PAGE)) && (itemIndex < _items.Count); itemIndex++)
+            for (int itemIndex = (_page - 1) * MAX_ITEM_PER_PAGE; (itemIndex < (_page * MAX_ITEM_PER_PAGE)) && (itemIndex < _items.Count); itemIndex++)
             {
                 ShopItem shopItem = _items[itemIndex];
                 writer.WriteSizedString(shopItem.getOwner().getName()); // Vendor name

@@ -2,12 +2,13 @@
 
 namespace L2Dn.GameServer.NetworkAuthServer.OutgoingPackets;
 
-internal readonly struct UpdateStatusPacket(ushort playerCount): IOutgoingPacket
+internal readonly struct UpdateStatusPacket(bool online, ushort playerCount): IOutgoingPacket
 {
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.UpdateStatus);
         
+        writer.WriteByte(online);
         writer.WriteUInt16(playerCount);
     }
 }

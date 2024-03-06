@@ -144,6 +144,13 @@ internal class Disconnection
 		close(ref packet);
 	}
 	
+	public void defaultSequence<TPacket>(TPacket packet)
+		where TPacket: struct, IOutgoingPacket
+	{
+		defaultSequence();
+		close(ref packet);
+	}
+	
 	private void defaultSequence()
 	{
 		storeMe();

@@ -49,7 +49,7 @@ public class Spawn : Location, IIdentifiable, INamable
 	private SchedulingPattern _respawnPattern;
 	/** If True an Npc is respawned each time that another is killed */
 	private bool _doRespawn = true;
-	private readonly ConcurrentQueue<Npc> _spawnedNpcs = new();
+	private readonly List<Npc> _spawnedNpcs = new();
     private bool _randomWalk = false; // Is no random walk
 	private NpcSpawnTemplate _spawnTemplate;
 	
@@ -222,7 +222,7 @@ public class Spawn : Location, IIdentifiable, INamable
 		_currentCount--;
 		
 		// Remove this NPC from list of spawned
-		_spawnedNpcs.remove(oldNpc);
+		_spawnedNpcs.Remove(oldNpc);
 		
 		// Check if respawn is possible to prevent multiple respawning caused by lag
 		if (_doRespawn && ((_scheduledCount + _currentCount) < _maximumCount))
@@ -435,7 +435,7 @@ public class Spawn : Location, IIdentifiable, INamable
 			_spawnTemplate.notifySpawnNpc(npc);
 		}
 		
-		_spawnedNpcs.Enqueue(npc);
+		_spawnedNpcs.Add(npc);
 		
 		// Increase the current number of Npcs managed by this Spawn
 		_currentCount++;
@@ -507,19 +507,23 @@ public class Spawn : Location, IIdentifiable, INamable
 	
 	public Npc getLastSpawn()
 	{
-		_spawnedNpcs.TryPeek(out Npc? npc);
+		Npc? npc = _spawnedNpcs.Count > 0 ? _spawnedNpcs[0] : null; 
 		return npc;
 	}
 	
 	public bool deleteLastNpc()
 	{
-		if (_spawnedNpcs.TryDequeue(out Npc? npc))
+		if (_spawnedNpcs.Count > 0)
+		{
+			Npc npc = _spawnedNpcs[0];
+			_spawnedNpcs.RemoveAt(0);
 			return npc.deleteMe();
+		}
 			
 		return false;
 	}
 	
-	public ConcurrentQueue<Npc> getSpawnedNpcs()
+	public List<Npc> getSpawnedNpcs()
 	{
 		return _spawnedNpcs;
 	}

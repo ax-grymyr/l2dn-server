@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.NetworkAuthServer;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using NLog;
@@ -118,7 +119,7 @@ public class Shutdown
 			}
 			case ABORT:
 			{
-				LoginServerThread.getInstance().setServerStatus(ServerStatus.STATUS_AUTO);
+				AuthServerSession.Instance.setServerStatus(true);
 				break;
 			}
 		}
@@ -244,10 +245,12 @@ public class Shutdown
 				// Rehabilitate previous server status if shutdown is aborted.
 				if (_shutdownMode == ABORT)
 				{
-					if (LoginServerThread.getInstance().getServerStatus() == ServerStatus.STATUS_DOWN)
-					{
-						LoginServerThread.getInstance().setServerStatus((Config.SERVER_GMONLY) ? ServerStatus.STATUS_GM_ONLY : ServerStatus.STATUS_AUTO);
-					}
+					AuthServerSession.Instance.setServerStatus(true);
+					//
+					// if (AuthServerSession.Instance.getServerStatus() == ServerStatus.STATUS_DOWN)
+					// {
+					// 	AuthServerSession.Instance.setServerStatus((Config.SERVER_GMONLY) ? ServerStatus.STATUS_GM_ONLY : ServerStatus.STATUS_AUTO);
+					// }
 					break;
 				}
 				
@@ -276,9 +279,9 @@ public class Shutdown
 				}
 				
 				// Prevent players from logging in.
-				if ((_secondsShut <= 60) && (LoginServerThread.getInstance().getServerStatus() != ServerStatus.STATUS_DOWN))
+				if (_secondsShut <= 60)
 				{
-					LoginServerThread.getInstance().setServerStatus(ServerStatus.STATUS_DOWN);
+					AuthServerSession.Instance.setServerStatus(false);
 				}
 				
 				_secondsShut--;
@@ -343,7 +346,7 @@ public class Shutdown
 		// stop all thread pools
 		try
 		{
-			ThreadPool.shutdown();
+			//ThreadPool.shutdown();
 			LOGGER.Info("Thread Pool Manager: Manager has been shut down(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		}
 		catch (Exception t)
@@ -353,7 +356,7 @@ public class Shutdown
 		
 		try
 		{
-			LoginServerThread.getInstance().interrupt();
+			//AuthServerSession.Instance.interrupt();
 			LOGGER.Info("Login Server Thread: Thread interruped(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		}
 		catch (Exception t)
@@ -368,7 +371,7 @@ public class Shutdown
 		// commit data, last chance
 		try
 		{
-			DatabaseFactory.close();
+			//DatabaseFactory.close();
 			LOGGER.Info("Database Factory: Database connection has been shut down(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		}
 		catch (Exception t)
@@ -379,7 +382,7 @@ public class Shutdown
 		// Backup database.
 		if (Config.BACKUP_DATABASE)
 		{
-			DatabaseBackup.performBackup();
+			//DatabaseBackup.performBackup(); // TODO: backup?
 		}
 		
 		LOGGER.Info("The server has been successfully shut down in " + (tc1.getEstimatedTime() / 1000) + "seconds.");

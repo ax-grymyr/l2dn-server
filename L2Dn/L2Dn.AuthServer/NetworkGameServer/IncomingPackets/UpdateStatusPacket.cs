@@ -6,10 +6,12 @@ namespace L2Dn.AuthServer.NetworkGameServer.IncomingPackets;
 
 internal struct UpdateStatusPacket: IIncomingPacket<GameServerSession>
 {
+    private bool _online;
     private ushort _playerCount;
 
     public void ReadContent(PacketBitReader reader)
     {
+        _online = reader.ReadBoolean();
         _playerCount = reader.ReadUInt16();
     }
 
@@ -22,6 +24,7 @@ internal struct UpdateStatusPacket: IIncomingPacket<GameServerSession>
             return ValueTask.CompletedTask;
         }
 
+        serverInfo.IsOnline = _online;
         serverInfo.PlayerCount = _playerCount;
         return ValueTask.CompletedTask;
     }
