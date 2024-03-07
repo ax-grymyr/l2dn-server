@@ -3,6 +3,7 @@ using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.NetworkAuthServer.OutgoingPackets;
 using L2Dn.Network;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.NetworkAuthServer;
 
@@ -16,6 +17,8 @@ internal sealed class AuthServerSession: Session
     
     public ServerConfig Config => ServerConfig.Instance;
 
+    protected override long GetState() => AuthServerSessionState.Default.ToInt64();
+    
     public void setServerStatus(bool online)
     {
         Connection? connection = Connection;

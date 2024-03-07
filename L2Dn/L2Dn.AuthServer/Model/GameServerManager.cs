@@ -88,7 +88,7 @@ internal sealed class GameServerManager: ISingleton<GameServerManager>
         actualValue.MaxPlayerCount = serverInfo.MaxPlayerCount;
             
         // set server online
-        serverInfo.IsOnline = true;
+        actualValue.IsOnline = true;
         return RegistrationResult.Success;
     }
 

@@ -2644,11 +2644,10 @@ public class Config
 			CHECK_HTML_ENCODING = false;
 		}
 
-		MULTILANG_ALLOWED = parser.GetStringList("MultiLangAllowed", ',', MULTILANG_DEFAULT);
+		MULTILANG_ALLOWED = parser.GetStringList("MultiLangAllowed", ';', MULTILANG_DEFAULT);
 		if (!MULTILANG_ALLOWED.Contains(MULTILANG_DEFAULT))
 		{
-			LOGGER.Error(
-				$"Default language missing in entry 'MultiLangAllowed' in configuration file '{parser.FilePath}'");
+			LOGGER.Error($"Default language missing in entry 'MultiLangAllowed' in configuration file '{parser.FilePath}'");
 		}
 
 		MULTILANG_VOICED_ALLOW = parser.getBoolean("MultiLangVoiceCommand", true);
@@ -2903,6 +2902,10 @@ public class Config
 		string value = parser.getString(key);
 		if (string.IsNullOrEmpty(value))
 			return result;
+
+		value = value.Trim();
+		if (value.EndsWith(";"))
+			value = value.Substring(0, value.Length - 1);
 
 		// Format:
 		// level : times , count , restoration percent / times , count , percent;

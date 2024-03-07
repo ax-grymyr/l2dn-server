@@ -9,8 +9,11 @@ internal sealed class GameServerPacketHandler: PacketHandler<GameServerSession>
 {
     public GameServerPacketHandler()
     {
+        SetDefaultAllowedStates(GameServerSessionState.Default);
+        
         RegisterPacket<RegisterGameServerPacket>(IncomingPacketCodes.RegisterGameServer);
         RegisterPacket<PingRequestPacket>(IncomingPacketCodes.PingRequest);
+        RegisterPacket<UpdateStatusPacket>(IncomingPacketCodes.UpdateStatus);
     }
 
     protected override void OnDisconnected(Connection connection, GameServerSession session)

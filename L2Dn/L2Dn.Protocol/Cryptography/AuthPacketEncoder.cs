@@ -1,9 +1,8 @@
 ﻿using L2Dn.Conversion;
-using L2Dn.Cryptography;
 
-namespace L2Dn.AuthServer.Cryptography
+namespace L2Dn.Cryptography
 {
-    internal class AuthPacketEncoder: PacketEncoder
+    public class AuthPacketEncoder: PacketEncoder
     {
         private readonly ICryptoEngine _cryptoEngine;
 

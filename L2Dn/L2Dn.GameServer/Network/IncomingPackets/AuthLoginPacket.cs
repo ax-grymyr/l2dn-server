@@ -35,7 +35,7 @@ public struct AuthLoginPacket: IIncomingPacket<GameSession>
         if (AuthServerSession.Instance.Logins.TryRemove(_accountName, out AuthServerLoginData? loginData))
         {
             DateTime now = DateTime.UtcNow;
-            if (loginData.TimeStamp <= now && loginData.TimeStamp >= now.AddMinutes(1) &&
+            if (loginData.TimeStamp <= now && loginData.TimeStamp.AddMinutes(1) >= now &&
                 _loginKey1 == loginData.LoginKey1 && _loginKey2 == loginData.LoginKey2 &&
                 _playKey1 == loginData.PlayKey1 && _playKey2 == loginData.PlayKey2)
             {

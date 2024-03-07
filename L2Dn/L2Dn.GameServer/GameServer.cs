@@ -1,4 +1,6 @@
-﻿using L2Dn.GameServer.Configuration;
+﻿using L2Dn.Cryptography;
+using L2Dn.GameServer.Configuration;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.NetworkAuthServer;
 using L2Dn.Network;
@@ -16,9 +18,12 @@ public class GameServer
     private Task? _clientListenerTask;
 
     public static DateTime ServerStarted => _serverStarted;
-    
+
     public void Start()
     {
+        Config.Load(@"Config");
+        PlayerTemplateData.getInstance().load();
+        
         ClientListenerConfig clientListenerConfig = ServerConfig.Instance.ClientListener;
         Console.Title = $"Game Server {clientListenerConfig.ListenAddress}:{clientListenerConfig.Port}";
         _clientListener = new Listener<GameSession>(new GameSessionFactory(), new GamePacketEncoderFactory(),
@@ -27,10 +32,12 @@ public class GameServer
         _logger.Info($"Starting listener {clientListenerConfig.ListenAddress}:{clientListenerConfig.Port}...");
         _clientListenerTask = _clientListener.Start(_cancellationTokenSource.Token);
 
+        ReadOnlySpan<byte> authServerBlowfishKey = "N-%H\"$*iP{)U&/bK,{{zo4P;"u8;
         AuthServerConnectionConfig authServerConnectionConfig = ServerConfig.Instance.AuthServerConnection;
-        _authServerConnector = new Connector<AuthServerSession>(AuthServerSession.Instance, new AuthServerPacketEncoder(),
+        _authServerConnector = new Connector<AuthServerSession>(AuthServerSession.Instance,
+            new AuthPacketEncoder(new BlowfishEngine(authServerBlowfishKey)),
             new AuthServerPacketHandler(), authServerConnectionConfig.Address, authServerConnectionConfig.Port);
-        
+
         _authServerConnector.Start(_cancellationTokenSource.Token);
         _serverStarted = DateTime.UtcNow;
     }

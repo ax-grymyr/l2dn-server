@@ -2,5 +2,6 @@
 
 internal enum AuthServerSessionState
 {
-    None
+    None,
+    Default
 }

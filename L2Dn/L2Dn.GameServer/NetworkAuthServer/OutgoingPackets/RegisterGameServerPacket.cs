@@ -1,4 +1,6 @@
-﻿using L2Dn.GameServer.Configuration;
+﻿using L2Dn.Conversion;
+using L2Dn.GameServer.Configuration;
+using L2Dn.GameServer.Model;
 using L2Dn.Packets;
 using L2Dn.Utilities;
 using NLog;
@@ -37,7 +39,9 @@ internal readonly struct RegisterGameServerPacket: IOutgoingPacket
         writer.WriteUInt16((ushort)config.ClientListener.Port);
         writer.WriteByte(serverParams.AgeLimit);
         writer.WriteByte(serverParams.IsPvpServer);
-        writer.WriteUInt16(0); // todo: playerCount
+
+        int playerCount = World.getInstance().getPlayers().Count;
+        writer.WriteUInt16((ushort)playerCount);
         writer.WriteUInt16((ushort)serverParams.MaxPlayerCount);
         writer.WriteInt32((int)attributes);
         writer.WriteByte(serverParams.Brackets);

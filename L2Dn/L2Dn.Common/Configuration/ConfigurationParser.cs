@@ -296,7 +296,7 @@ public class ConfigurationParser
         char keyValueSeparator = ',')
         where T: struct, IParsable<T>
     {
-        if (!_values.TryGetValue(key, out string? value))
+        if (!_values.TryGetValue(key, out string? value) || string.Equals(value, "None", StringComparison.OrdinalIgnoreCase))
             return ImmutableDictionary<int, T>.Empty;
 
         return GetList(key, pairSeparator, s =>
@@ -304,7 +304,7 @@ public class ConfigurationParser
             string[] pair = s.Split(keyValueSeparator);
             int id = 0;
             T val = default;
-            bool ok = pair.Length == 2 && !int.TryParse(pair[0], CultureInfo.InvariantCulture, out id) &&
+            bool ok = pair.Length == 2 && int.TryParse(pair[0], CultureInfo.InvariantCulture, out id) &&
                       T.TryParse(pair[1], CultureInfo.InvariantCulture, out val);
 
             return ((id, val), ok);

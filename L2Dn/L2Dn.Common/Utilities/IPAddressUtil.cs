@@ -12,7 +12,7 @@ public static class IPAddressUtil
     {
         Span<byte> span = stackalloc byte[4];
         if (address.TryWriteBytes(span, out int bytesWritten) && bytesWritten == 4)
-            return BigEndianBitConverter.ToInt32(span);
+            return LittleEndianBitConverter.ToInt32(span);
 
         throw new ArgumentException($"Error converting IPv4 address '{address}' to integer", nameof(address));
     }
