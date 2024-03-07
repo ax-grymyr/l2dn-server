@@ -13,9 +13,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="Data\*.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
       <None Update="config.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
